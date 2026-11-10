@@ -10,7 +10,7 @@ import {
   writeFileSync,
 } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { dirname, join, relative } from 'node:path';
+import { basename, dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   compareVersions,
@@ -20,6 +20,12 @@ import {
   toStarlightPage,
 } from './lib/doc-links.mjs';
 import { PLATFORMS } from './lib/platforms.mjs';
+import {
+  SKILL_LOGOS,
+  SKILL_NAME,
+  SKILL_TEMPLATES,
+  artifactStylesheet,
+} from './lib/skill-package.mjs';
 
 const projectRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const contentRoot = join(projectRoot, 'src/content/docs');
@@ -138,14 +144,49 @@ const syncPlatform = (platform) => {
     return [page];
   });
   if (platform.providesBrandAssets) copyBrandAssets(checkout);
-  rmSync(checkout, { recursive: true, force: true });
-  return { platform: platform.id, ref, pages };
+  return { platform: platform.id, ref, pages, checkout };
 };
 
-PLATFORMS.map(syncPlatform).forEach(({ platform, ref, pages }) =>
+const packageSkill = (checkouts) => {
+  const archive = join(projectRoot, 'public/downloads', `${SKILL_NAME}.zip`);
+  rmSync(archive, { force: true });
+  if (!checkouts.web || !checkouts.office) return false;
+  const staging = mkdtempSync(join(tmpdir(), 'propellant-skill-'));
+  const skillRoot = join(staging, SKILL_NAME);
+  cpSync(join(projectRoot, 'skill', SKILL_NAME), skillRoot, { recursive: true });
+  mkdirSync(join(skillRoot, 'assets/templates'), { recursive: true });
+  mkdirSync(join(skillRoot, 'assets/logos'), { recursive: true });
+  SKILL_TEMPLATES.forEach((template) =>
+    cpSync(
+      join(checkouts.office, template),
+      join(skillRoot, 'assets/templates', basename(template)),
+    ),
+  );
+  SKILL_LOGOS.forEach((logo) =>
+    cpSync(join(checkouts.web, 'assets/logos', logo), join(skillRoot, 'assets/logos', logo)),
+  );
+  const websiteCss = readFileSync(join(checkouts.web, 'dist/website.css'), 'utf8');
+  writeFileSync(join(skillRoot, 'assets/propellant-website.css'), artifactStylesheet(websiteCss));
+  mkdirSync(dirname(archive), { recursive: true });
+  execFileSync('zip', ['-q', '-r', '-X', archive, SKILL_NAME], { cwd: staging });
+  rmSync(staging, { recursive: true, force: true });
+  return true;
+};
+
+const results = PLATFORMS.map(syncPlatform);
+results.forEach(({ platform, ref, pages }) =>
   console.log(
     ref
       ? `Synced ${pages.length} ${platform} pages from ${ref}`
       : `Skipped ${platform}: no release yet`,
   ),
 );
+const checkouts = Object.fromEntries(
+  results.filter(({ checkout }) => checkout).map(({ platform, checkout }) => [platform, checkout]),
+);
+console.log(
+  packageSkill(checkouts)
+    ? `Packaged the ${SKILL_NAME} skill for download`
+    : `Skipped the ${SKILL_NAME} skill: it needs releases of the web and office platforms`,
+);
+Object.values(checkouts).forEach((checkout) => rmSync(checkout, { recursive: true, force: true }));
