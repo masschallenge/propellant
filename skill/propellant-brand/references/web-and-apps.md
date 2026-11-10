@@ -19,10 +19,10 @@
 ## Production React apps
 
 Install from GitHub at the latest release tag (check the releases of
-`masschallenge/propellant-web`; it was v1.0.0 when this skill was written):
+`masschallenge/propellant-web`; it was v1.1.1 when this skill was last updated):
 
 ```bash
-npm install github:masschallenge/propellant-web#v1.0.0
+npm install github:masschallenge/propellant-web#v1.1.1
 ```
 
 In the global stylesheet:
