@@ -21,7 +21,7 @@ export const PLATFORMS = [
   {
     id: 'office',
     repository: 'masschallenge/propellant-office',
-    isRequired: false,
+    isRequired: true,
     providesBrandAssets: false,
     pages: {
       'README.md': 'office/index.md',

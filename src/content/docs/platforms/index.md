@@ -6,12 +6,12 @@ description: Propellant for each platform MassChallenge builds on.
 Each platform has its own version of Propellant, in its own repository, with its own releases. They
 all follow the same [brand](/brand/) and [guidelines](/guidelines/).
 
-| Platform                       | Status    | Repository                                                                        |
-| ------------------------------ | --------- | --------------------------------------------------------------------------------- |
-| [Web](/web/)                   | Available | [`masschallenge/propellant-web`](https://github.com/masschallenge/propellant-web) |
-| [iOS](/platforms/ios/)         | Planned   | Not created yet                                                                   |
-| [Android](/platforms/android/) | Planned   | Not created yet                                                                   |
-| [Office](/platforms/office/)   | Planned   | Not created yet                                                                   |
+| Platform                       | Status    | Repository                                                                              |
+| ------------------------------ | --------- | --------------------------------------------------------------------------------------- |
+| [Web](/web/)                   | Available | [`masschallenge/propellant-web`](https://github.com/masschallenge/propellant-web)       |
+| [iOS](/platforms/ios/)         | Planned   | Not created yet                                                                         |
+| [Android](/platforms/android/) | Planned   | Not created yet                                                                         |
+| [Office](/office/)             | Available | [`masschallenge/propellant-office`](https://github.com/masschallenge/propellant-office) |
 
 ## Adding a platform
 
