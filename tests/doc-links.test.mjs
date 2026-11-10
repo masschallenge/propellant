@@ -8,13 +8,15 @@ import {
   routeForPage,
   toStarlightPage,
 } from '../scripts/lib/doc-links.mjs';
-import { WEB_DOC_PAGES, WEB_DOC_PATTERNS, WEB_REPOSITORY } from '../scripts/lib/platforms.mjs';
+import { PLATFORMS } from '../scripts/lib/platforms.mjs';
 
-const rewriter = createLinkRewriter({
-  repository: WEB_REPOSITORY,
+const [web, office] = PLATFORMS;
+
+const rewriter = createLinkRewriter({ platform: web, ref: 'v1.0.0', platforms: PLATFORMS });
+const officeRewriter = createLinkRewriter({
+  platform: office,
   ref: 'v1.0.0',
-  pages: WEB_DOC_PAGES,
-  patterns: WEB_DOC_PATTERNS,
+  platforms: PLATFORMS,
 });
 
 describe('resolveRepositoryPath', () => {
@@ -29,11 +31,11 @@ describe('resolveRepositoryPath', () => {
 
 describe('pageForPath and routeForPage', () => {
   it('maps every web guide to its page on the site', () => {
-    expect(pageForPath('docs/brand.md', WEB_DOC_PAGES, WEB_DOC_PATTERNS)).toBe('brand/index.md');
-    expect(pageForPath('docs/websites/squarespace.md', WEB_DOC_PAGES, WEB_DOC_PATTERNS)).toBe(
+    expect(pageForPath('docs/brand.md', web.pages, web.patterns)).toBe('brand/index.md');
+    expect(pageForPath('docs/websites/squarespace.md', web.pages, web.patterns)).toBe(
       'web/websites/squarespace.md',
     );
-    expect(pageForPath('examples/website.html', WEB_DOC_PAGES, WEB_DOC_PATTERNS)).toBeNull();
+    expect(pageForPath('examples/website.html', web.pages, web.patterns)).toBeNull();
   });
 
   it('turns page files into clean routes', () => {
@@ -56,6 +58,34 @@ describe('createLinkRewriter', () => {
     expect(rewriter.rewriteLink('docs/websites/html.md', '../../examples/website.html')).toBe(
       'https://github.com/masschallenge/propellant-web/blob/v1.0.0/examples/website.html',
     );
+  });
+
+  it('links template files for download and keeps guides from another platform on the site', () => {
+    expect(
+      officeRewriter.rewriteLink('docs/word.md', '../templates/word/propellant-document.dotx'),
+    ).toBe(
+      'https://github.com/masschallenge/propellant-office/raw/v1.0.0/templates/word/propellant-document.dotx',
+    );
+    expect(
+      officeRewriter.rewriteLink(
+        'docs/photography.md',
+        'https://github.com/masschallenge/propellant-web/blob/main/docs/images.md',
+      ),
+    ).toBe('/guidelines/images/');
+    expect(officeRewriter.rewriteLink('docs/word.md', 'photography.md')).toBe(
+      '/guidelines/photography/',
+    );
+  });
+
+  it('keeps a link to another platform on GitHub until that page is published', () => {
+    const beforeRelease = createLinkRewriter({
+      platform: office,
+      ref: 'v1.0.0',
+      platforms: PLATFORMS,
+      hasPage: () => false,
+    });
+    const href = 'https://github.com/masschallenge/propellant-web/blob/main/docs/images.md';
+    expect(beforeRelease.rewriteLink('docs/photography.md', href)).toBe(href);
   });
 
   it('leaves absolute links and in-page anchors alone', () => {
