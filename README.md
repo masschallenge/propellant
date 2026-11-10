@@ -20,6 +20,13 @@ Each platform lives in its own repository. This site brings them together.
   into site links, and points everything else at GitHub. Synced pages are not committed.
 - The site is built with [Astro Starlight](https://starlight.astro.build).
 
+## The Propellant skill
+
+`skill/propellant-brand` is a Claude skill that applies Propellant to anything people make with
+Claude. Every build packages it with the latest templates, logos and web stylesheet and publishes
+it at `/downloads/propellant-brand.zip`. The [Propellant in Claude](src/content/docs/claude.md)
+page explains how to install it.
+
 ## Publishing
 
 Every merge to `main` publishes the site. It also rebuilds every morning, so a new platform release

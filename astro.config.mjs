@@ -72,6 +72,7 @@ export default defineConfig({
             officeSidebar,
           ],
         },
+        { label: 'Propellant in Claude', link: '/claude/' },
         { label: 'Contributing', link: '/contributing/' },
       ],
     }),
