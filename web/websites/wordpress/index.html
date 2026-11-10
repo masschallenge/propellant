@@ -1,0 +1,1000 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-g5ptsecz"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>WordPress | Propellant</title><link rel="canonical" href="https://propellant.masschallenge.org/web/websites/wordpress/"/><link rel="sitemap" href="/sitemap-index.xml"/><link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v7.3.8"/><meta name="generator" content="Starlight v0.42.6"/><meta property="og:title" content="WordPress"/><meta property="og:type" content="article"/><meta property="og:url" content="https://propellant.masschallenge.org/web/websites/wordpress/"/><meta property="og:locale" content="en"/><meta property="og:description" content="The MassChallenge design system, for every platform we build on."/><meta property="og:site_name" content="Propellant"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="The MassChallenge design system, for every platform we build on."/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg><svg aria-hidden="true" class="dark astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg><svg aria-hidden="true" class="auto astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg></template><link rel="stylesheet" href="/_astro/print.ehPL0gv-.css" media="print"><link rel="stylesheet" href="/_astro/common.CXeMA84i.css"><style>@layer starlight.components{svg:where(.astro-hkc32dio){color:var(--sl-icon-color);font-size:var(--sl-icon-size,1em);width:1em;height:1em;overflow:visible}}
+</style><script type="module" src="/_astro/page.cNngjUgL.js"></script></head><body class="astro-g5ptsecz"><a class="sl-skip-link astro-qb7clj6f" href="#_top">Skip to content</a><div class="page sl-flex astro-yntsjkba"><header class="header astro-yntsjkba"><div class="header astro-by6fddyj"><div class="title-wrapper sl-flex astro-by6fddyj"><a href="/" class="site-title sl-flex astro-6rvad3va"><img class="light:sl-hidden print:hidden astro-6rvad3va" alt src="/_astro/propellant-lockup-white.BZcLDIgz.svg" width="209" height="64"><img class="dark:sl-hidden print:block astro-6rvad3va" alt src="/_astro/propellant-lockup-color.CZ2WI5CL.svg" width="209" height="64"><span class="sr-only astro-6rvad3va" translate="no">Propellant</span></a></div><div class="sl-flex print:hidden astro-by6fddyj"><site-search class="astro-by6fddyj astro-b5kgnn7o" data-translations="{&quot;placeholder&quot;:&quot;Search&quot;}"><button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-b5kgnn7o"><svg aria-hidden="true" class="astro-b5kgnn7o astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg><span class="sl-hidden md:sl-block astro-b5kgnn7o" aria-hidden="true">Search</span><kbd class="sl-hidden md:sl-flex astro-b5kgnn7o" style="display: none;"><kbd class="astro-b5kgnn7o">Ctrl</kbd><kbd class="astro-b5kgnn7o">K</kbd></kbd></button><dialog style="padding:0" aria-label="Search" class="astro-b5kgnn7o"><div class="dialog-frame sl-flex astro-b5kgnn7o"><button data-close-modal class="sl-flex md:sl-hidden astro-b5kgnn7o">Cancel</button><div class="search-container astro-b5kgnn7o"><div id="starlight__search" class="astro-b5kgnn7o"></div></div></div></dialog></site-search><script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script><script type="module" src="/_astro/Search.astro_astro_type_script_index_0_lang.CHGOufdi.js"></script></div><div class="sl-hidden md:sl-flex print:hidden right-group astro-by6fddyj"><div class="sl-flex social-icons astro-by6fddyj"><a href="https://github.com/masschallenge/propellant" rel="me" class="sl-flex astro-n2mnl6yq"><span class="sr-only astro-n2mnl6yq">Propellant on GitHub</span><svg aria-hidden="true" class="astro-n2mnl6yq astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-2z5xp7gb"><span class="sr-only astro-2z5xp7gb">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-2z5xp7gb"><option value="dark" class="astro-2z5xp7gb">Dark</option><option value="light" class="astro-2z5xp7gb">Light</option><option value="auto" selected class="astro-2z5xp7gb">Auto</option></select><svg aria-hidden="true" class="icon caret astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
+	StarlightThemeProvider.updatePickers();
+</script><script type="module">var e=`starlight-theme`,t=e=>e===`auto`||e===`dark`||e===`light`?e:`auto`,n=()=>t(typeof localStorage<`u`&&localStorage.getItem(e));function r(t){typeof localStorage<`u`&&localStorage.setItem(e,t===`light`||t===`dark`?t:``)}var i=()=>matchMedia(`(prefers-color-scheme: light)`).matches?`light`:`dark`;function a(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e===`auto`?i():e,r(e)}matchMedia(`(prefers-color-scheme: light)`).addEventListener(`change`,()=>{n()===`auto`&&a(`auto`)});var o=class extends HTMLElement{constructor(){super(),a(n()),this.querySelector(`select`)?.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&a(t(e.currentTarget.value))})}};customElements.define(`starlight-theme-select`,o);</script><script type="module">var e=class extends HTMLElement{constructor(){super();let e=this.querySelector(`select`);e&&(e.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=e.currentTarget.value)}),window.addEventListener(`pageshow`,t=>{if(!t.persisted)return;let n=e.querySelector(`option[selected]`)?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}};customElements.define(`starlight-lang-select`,e);</script></div></div></header><nav class="sidebar print:hidden astro-yntsjkba" aria-label="Main"><button popovertarget="starlight__sidebar" class="sl-menu-button sl-flex md:sl-hidden print:hidden astro-r2osgdlg"><svg aria-hidden="true" class="open-menu astro-r2osgdlg astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg><svg aria-hidden="true" class="close-menu astro-r2osgdlg astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg><span class="sr-only astro-r2osgdlg">Menu</span></button><script type="module">var e=class extends HTMLElement{constructor(){super();let e=matchMedia(`(min-width: 50em)`),t=()=>{this.popover=e.matches?null:`auto`};t(),e.addEventListener(`change`,()=>t()),this.addEventListener(`toggle`,({newState:e})=>this.trapFocus(e===`open`))}trapFocus(e){document.querySelectorAll(`.main-frame, .sl-skip-link`).forEach(t=>{t.toggleAttribute(`inert`,e)})}};customElements.define(`sl-sidebar-pane`,e);</script><sl-sidebar-pane popover id="starlight__sidebar" class="sidebar-pane astro-yntsjkba"><div class="sidebar-content sl-flex astro-yntsjkba"><sl-sidebar-state-persist data-hash="0kehtv0" class="astro-ipdry5cl"><script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script><ul class="top-level astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/about/" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">About Propellant</span></a></li><li class="astro-rmhv4bp6"><a href="/brand/" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">Brand</span></a></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Guidelines</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="0"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/guidelines/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Overview</span></a></li><li class="astro-rmhv4bp6"><a href="/guidelines/photography/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Photography and video</span></a></li></ul></details></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Platforms</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="1"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/platforms/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Overview</span></a></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Web</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="2"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/web/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Overview</span></a></li><li class="astro-rmhv4bp6"><a href="/web/usage/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Using Propellant</span></a></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Websites</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="3"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/web/websites/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Using Propellant on websites</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/html/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Plain HTML</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/hubspot/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">HubSpot</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/squarespace/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Squarespace</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/webflow/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Webflow</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/wix/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Wix</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/wordpress/" aria-current="page" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">WordPress</span></a></li></ul></details></li></ul></details></li><li class="astro-rmhv4bp6"><a href="/platforms/ios/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">iOS</span><span class="sl-badge default small  astro-rmhv4bp6 astro-f4zorn72">Planned</span></a></li><li class="astro-rmhv4bp6"><a href="/platforms/android/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Android</span><span class="sl-badge default small  astro-rmhv4bp6 astro-f4zorn72">Planned</span></a></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Office</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="4"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/office/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Overview</span></a></li><li class="astro-rmhv4bp6"><a href="/office/foundations/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Designing documents, decks and spreadsheets</span></a></li><li class="astro-rmhv4bp6"><a href="/office/templates/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Installing the templates</span></a></li><li class="astro-rmhv4bp6"><a href="/office/word/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Word</span></a></li><li class="astro-rmhv4bp6"><a href="/office/powerpoint/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">PowerPoint</span></a></li><li class="astro-rmhv4bp6"><a href="/office/excel/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Excel</span></a></li><li class="astro-rmhv4bp6"><a href="/office/google-docs/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Google Docs</span></a></li><li class="astro-rmhv4bp6"><a href="/office/google-slides/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Google Slides</span></a></li><li class="astro-rmhv4bp6"><a href="/office/google-sheets/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Google Sheets</span></a></li></ul></details></li></ul></details></li><li class="astro-rmhv4bp6"><a href="/claude/" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">Propellant in Claude</span></a></li><li class="astro-rmhv4bp6"><a href="/contributing/" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">Contributing</span></a></li></ul><script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script></sl-sidebar-state-persist><div class="md:sl-hidden"><div class="mobile-preferences sl-flex astro-p4azlveh"><div class="social-icons astro-p4azlveh"><a href="https://github.com/masschallenge/propellant" rel="me" class="sl-flex astro-n2mnl6yq"><span class="sr-only astro-n2mnl6yq">Propellant on GitHub</span><svg aria-hidden="true" class="astro-n2mnl6yq astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-2z5xp7gb"><span class="sr-only astro-2z5xp7gb">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-2z5xp7gb"><option value="dark" class="astro-2z5xp7gb">Dark</option><option value="light" class="astro-2z5xp7gb">Light</option><option value="auto" selected class="astro-2z5xp7gb">Auto</option></select><svg aria-hidden="true" class="icon caret astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
+	StarlightThemeProvider.updatePickers();
+</script></div></div></div></sl-sidebar-pane></nav><div class="main-frame astro-yntsjkba"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-lrzkfocr"><aside class="right-sidebar-container print:hidden astro-lrzkfocr"><div class="right-sidebar astro-lrzkfocr"><div class="lg:sl-hidden astro-qok35upx"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-66cqc7ze"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-66cqc7ze"><details id="starlight__mobile-toc" class="astro-66cqc7ze"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-66cqc7ze"><span class="toggle sl-flex astro-66cqc7ze">On this page<svg aria-hidden="true" class="caret astro-66cqc7ze astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-66cqc7ze"></span></summary><div class="dropdown astro-66cqc7ze"><ul class="isMobile astro-jugkfwgx" style="--depth: 0;"><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#_top" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Overview</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#before-you-start" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Before you start</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-1-set-up-site-styles-no-code" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 1: Set up site styles (no code)</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#setup-a-block-themes-site-editor-and-styles" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Setup A: block themes (Site Editor and Styles)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#setup-b-classic-themes-the-customizer" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Setup B: classic themes (the Customizer)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#setup-c-page-builders-such-as-elementor" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Setup C: page builders such as Elementor</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-2-add-the-logo-and-site-icon" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 2: Add the logo and site icon</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#setup-a-block-themes" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Setup A: block themes</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#setup-b-classic-themes" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Setup B: classic themes</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#setup-c-elementor" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Setup C: Elementor</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#on-every-setup" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">On every setup</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-3-build-on-brand-pages" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 3: Build on brand pages</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#a-white-section" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">A White section</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#a-mist-section" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">A Mist section</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#a-deep-teal-section" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">A Deep teal section</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#the-heading-1-headline" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">The Heading 1 headline</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#primary-and-secondary-buttons" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Primary and secondary buttons</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#buttons-on-deep-teal" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Buttons on Deep teal</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#save-sections-to-reuse" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Save sections to reuse</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#build-a-sample-home-page" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Build a sample home page</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-4-custom-css-only-what-settings-cannot-do" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 4: Custom CSS (only what settings cannot do)</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#where-to-paste-it" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Where to paste it</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#snippet-button-hover-setups-a-and-b" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Snippet: button hover (setups A and B)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#snippet-phone-sizes-setup-a-without-fluid-type" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Snippet: phone sizes (setup A without fluid type)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#snippet-fonts-text-and-buttons-setup-b-without-a-typography-panel" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Snippet: fonts, text and buttons (setup B without a Typography panel)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#using-the-propellant-stylesheet-instead-setup-b" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Using the Propellant stylesheet instead (setup B)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#how-to-remove-it-later" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">How to remove it later</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#advanced-the-developer-route-child-theme" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Advanced: the developer route (child theme)</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#check-your-work" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Check your work</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#if-something-looks-off" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">If something looks off</span></a></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C3fM4Kra.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-qok35upx"><div class="sl-container astro-qok35upx"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-jugkfwgx" style="--depth: 0;"><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#_top" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Overview</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#before-you-start" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Before you start</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-1-set-up-site-styles-no-code" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 1: Set up site styles (no code)</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#setup-a-block-themes-site-editor-and-styles" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Setup A: block themes (Site Editor and Styles)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#setup-b-classic-themes-the-customizer" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Setup B: classic themes (the Customizer)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#setup-c-page-builders-such-as-elementor" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Setup C: page builders such as Elementor</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-2-add-the-logo-and-site-icon" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 2: Add the logo and site icon</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#setup-a-block-themes" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Setup A: block themes</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#setup-b-classic-themes" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Setup B: classic themes</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#setup-c-elementor" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Setup C: Elementor</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#on-every-setup" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">On every setup</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-3-build-on-brand-pages" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 3: Build on brand pages</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#a-white-section" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">A White section</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#a-mist-section" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">A Mist section</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#a-deep-teal-section" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">A Deep teal section</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#the-heading-1-headline" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">The Heading 1 headline</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#primary-and-secondary-buttons" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Primary and secondary buttons</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#buttons-on-deep-teal" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Buttons on Deep teal</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#save-sections-to-reuse" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Save sections to reuse</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#build-a-sample-home-page" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Build a sample home page</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-4-custom-css-only-what-settings-cannot-do" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 4: Custom CSS (only what settings cannot do)</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#where-to-paste-it" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Where to paste it</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#snippet-button-hover-setups-a-and-b" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Snippet: button hover (setups A and B)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#snippet-phone-sizes-setup-a-without-fluid-type" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Snippet: phone sizes (setup A without fluid type)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#snippet-fonts-text-and-buttons-setup-b-without-a-typography-panel" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Snippet: fonts, text and buttons (setup B without a Typography panel)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#using-the-propellant-stylesheet-instead-setup-b" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Using the Propellant stylesheet instead (setup B)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#how-to-remove-it-later" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">How to remove it later</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#advanced-the-developer-route-child-theme" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Advanced: the developer route (child theme)</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#check-your-work" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Check your work</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#if-something-looks-off" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">If something looks off</span></a></li></ul></nav></starlight-toc><script type="module" src="/_astro/TableOfContents.astro_astro_type_script_index_0_lang.BpJaGz7G.js"></script></div></div></div></aside><div class="main-pane astro-lrzkfocr"><main data-pagefind-body class="astro-g5ptsecz" lang="en" dir="ltr"><div class="content-panel astro-a7po4psb"><div class="sl-container astro-a7po4psb"><h1 id="_top" class="astro-bebwqqxs">WordPress</h1></div></div><div class="content-panel astro-a7po4psb"><div class="sl-container astro-a7po4psb"><div class="sl-markdown-content"><p>This guide gives a WordPress site the MassChallenge look: Lato for text, the Oswald headline, our
+teal palette, pill shaped buttons and the logo in the right places. Most of it is point and click.
+Plan on about an hour the first time, and less if your theme is already close.</p>
+<p>WordPress comes in a few shapes, and the steps depend on yours. Find your setup in the table, then
+follow only the parts marked for it.</p>
+<table>
+<thead>
+<tr>
+<th>Your setup</th>
+<th>How to tell</th>
+<th>Follow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A. Block theme</strong></td>
+<td>Your dashboard has <strong>Appearance &gt; Editor</strong>. Themes such as Twenty Twenty-Five work this way.</td>
+<td>Setup A in every part</td>
+</tr>
+<tr>
+<td><strong>B. Classic theme</strong></td>
+<td>Your dashboard has <strong>Appearance &gt; Customize</strong> but no <strong>Editor</strong>.</td>
+<td>Setup B in every part</td>
+</tr>
+<tr>
+<td><strong>C. Page builder</strong></td>
+<td>You build pages with a plugin such as Elementor, and the plugin has its own site settings.</td>
+<td>Setup C notes</td>
+</tr>
+</tbody>
+</table>
+<p>If you are starting a new site, pick a block theme (setup A). It gives you the most control without
+code.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="before-you-start">Before you start</h2><a class="sl-anchor-link" href="#before-you-start"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Before you start”</span></a></div>
+<p><strong>Which WordPress you have matters for custom code.</strong></p>
+<ul>
+<li><strong>Self-hosted WordPress (WordPress.org):</strong> every feature in this guide is free. You need to be an
+Administrator.</li>
+<li><strong>WordPress.com:</strong> the style settings in Part 1 work on every plan. Custom CSS (Part 4) needs a
+paid plan: WordPress.com lists it for the Personal, Premium, Business and Commerce plans. Uploading
+a child theme or installing a plugin (the advanced route at the end of Part 4) also needs a paid
+plan. Plans change, so check your plan page if a menu is missing.</li>
+</ul>
+<p><strong>Your WordPress version changes a few menu names.</strong> We point these out as we go. You can see your
+version at the bottom of any dashboard screen, or under <strong>Dashboard &gt; Updates</strong>.</p>
+<p><strong>Have these open:</strong></p>
+<ul>
+<li>The <a href="/web/websites/">website spec</a> in another tab. Every value in this guide comes from it.</li>
+<li>The logo files, downloaded to your computer. Open each link and save the image:
+<ul>
+<li><a href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/logos/masschallenge-logo-horizontal-color.png">Horizontal logo, color</a>
+for white and light backgrounds.</li>
+<li><a href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/logos/masschallenge-logo-horizontal-white.png">Horizontal logo, white</a>
+for Deep teal and dark backgrounds.</li>
+<li><a href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/logos/masschallenge-logo-monogram-color.png">Monogram, color</a>
+for the site icon (the small picture in the browser tab).</li>
+<li>The same folder also has <code dir="auto">-black</code> versions, and a <code dir="auto">masschallenge-logo-monogram-white.png</code>.</li>
+</ul>
+</li>
+</ul>
+<p>Upload the logo files to WordPress yourself, through the steps in Part 2. Do not link to a copy of
+the logo from another website.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="part-1-set-up-site-styles-no-code">Part 1: Set up site styles (no code)</h2><a class="sl-anchor-link" href="#part-1-set-up-site-styles-no-code"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Part 1: Set up site styles (no code)”</span></a></div>
+<p>This is the heart of the job. Set fonts, colors and buttons once here, and every page follows.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="setup-a-block-themes-site-editor-and-styles">Setup A: block themes (Site Editor and Styles)</h3><a class="sl-anchor-link" href="#setup-a-block-themes-site-editor-and-styles"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Setup A: block themes (Site Editor and Styles)”</span></a></div>
+<p>In a block theme, <strong>Styles</strong> is one panel that controls the whole site: fonts, colors, spacing and
+the default look of each type of block. WordPress calls these “global styles”. Whatever you set
+here applies everywhere, unless someone has styled a single block by hand.</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="step-1-open-styles">Step 1: Open Styles</h4><a class="sl-anchor-link" href="#step-1-open-styles"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 1: Open Styles”</span></a></div>
+<ol>
+<li>In the dashboard, go to <strong>Appearance &gt; Editor</strong>.</li>
+<li>Click <strong>Styles</strong> in the left menu, or the half filled circle icon at the top right.</li>
+<li>If a welcome guide appears, close it.</li>
+</ol>
+<p>You will move between three main sections: <strong>Typography</strong>, <strong>Colors</strong> and <strong>Blocks</strong>. The <strong>Save</strong>
+button is at the top right. Save after each step so nothing is lost.</p>
+<p>If your theme offers <strong>Browse styles</strong> (ready made style variations), you can ignore them. You are
+about to set your own.</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="step-2-add-lato-and-oswald-with-the-font-library">Step 2: Add Lato and Oswald with the Font Library</h4><a class="sl-anchor-link" href="#step-2-add-lato-and-oswald-with-the-font-library"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 2: Add Lato and Oswald with the Font Library”</span></a></div>
+<p>The Font Library installs fonts on your own site, so visitors do not load them from Google.</p>
+<ol>
+<li>Open the Font Library:
+<ul>
+<li><strong>WordPress 7.0 or later:</strong> go to <strong>Appearance &gt; Fonts</strong> in the dashboard.</li>
+<li><strong>WordPress 6.5 to 6.9:</strong> in <strong>Styles</strong>, click <strong>Typography</strong>, then the <strong>Manage fonts</strong> button
+(an icon next to the <strong>Fonts</strong> heading).</li>
+<li><strong>WordPress.com:</strong> use whichever of the two your dashboard shows.</li>
+</ul>
+</li>
+<li>Click the <strong>Install Fonts</strong> tab. The first time, click <strong>Allow access to Google Fonts</strong>.</li>
+<li>Search for <strong>Lato</strong>. Click it, tick <strong>400 (Regular)</strong> and <strong>700 (Bold)</strong>, also tick <strong>400 Italic</strong>
+if you use italics, then click <strong>Install</strong>.</li>
+<li>Search for <strong>Oswald</strong>. Click it, tick <strong>500 (Medium)</strong>, then click <strong>Install</strong>.</li>
+<li>Click the <strong>Library</strong> tab and check both fonts are listed.</li>
+</ol>
+<p>If you would rather not connect to Google, download Lato and Oswald from Google Fonts on your
+computer and add the files on the <strong>Upload</strong> tab instead (it accepts .ttf, .otf, .woff and .woff2).</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="step-3-create-a-font-size-for-each-text-style">Step 3: Create a font size for each text style</h4><a class="sl-anchor-link" href="#step-3-create-a-font-size-for-each-text-style"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 3: Create a font size for each text style”</span></a></div>
+<p>WordPress has no separate phone sizes. Instead it uses “fluid” sizes: you give a smallest and a
+largest size, and the text scales smoothly between them as the screen gets wider. That is how you
+get both the desktop and mobile sizes from the spec.</p>
+<ol>
+<li>In <strong>Styles</strong>, click <strong>Typography</strong>, then <strong>Font sizes</strong> (in some versions this sits under a
+<strong>Presets</strong> heading).</li>
+<li>Add a size for each row below. Click <strong>+</strong> (Add font size) to create one, or click an existing
+size to change it.</li>
+<li>Give it the name from the table, turn on <strong>Custom fluid values</strong>, and enter the minimum and
+maximum.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Minimum (phones)</th>
+<th>Maximum (desktop)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Heading 1</td>
+<td>40px</td>
+<td>64px</td>
+</tr>
+<tr>
+<td>Heading 2</td>
+<td>30px</td>
+<td>40px</td>
+</tr>
+<tr>
+<td>Heading 3</td>
+<td>24px</td>
+<td>30px</td>
+</tr>
+<tr>
+<td>Heading 4</td>
+<td>20px</td>
+<td>24px</td>
+</tr>
+<tr>
+<td>Paragraph large</td>
+<td>18px</td>
+<td>20px</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>16px</td>
+<td>17px</td>
+</tr>
+<tr>
+<td>Paragraph small</td>
+<td>14px</td>
+<td>14px (turn <strong>Custom fluid values</strong> off and enter 14px)</td>
+</tr>
+<tr>
+<td>Button</td>
+<td>16px</td>
+<td>16px (turn <strong>Custom fluid values</strong> off and enter 16px)</td>
+</tr>
+</tbody>
+</table>
+<p>If you do not see <strong>Custom fluid values</strong>, your theme has fluid type switched off. Enter the desktop
+size for each one, and add the “Phone sizes” snippet in Part 4.</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="step-4-set-the-typography-for-each-element">Step 4: Set the typography for each element</h4><a class="sl-anchor-link" href="#step-4-set-the-typography-for-each-element"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 4: Set the typography for each element”</span></a></div>
+<p>An “element” is a kind of text WordPress styles across the whole site: text, links, headings,
+captions and buttons.</p>
+<ol>
+<li>
+<p>In <strong>Styles</strong>, click <strong>Typography</strong>. Under <strong>Elements</strong>, click <strong>Text</strong> and set:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Font</td>
+<td>Lato</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>Paragraph</td>
+</tr>
+<tr>
+<td>Appearance (the weight)</td>
+<td>Regular (400)</td>
+</tr>
+<tr>
+<td>Line height</td>
+<td>1.6</td>
+</tr>
+<tr>
+<td>Letter spacing</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Letter case</td>
+<td>None (no change)</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Go back and click <strong>Headings</strong>. Choose the <strong>All</strong> tab and set <strong>Font</strong> to Lato, <strong>Appearance</strong> to
+Bold (700) and <strong>Letter case</strong> to none. Every heading level now starts from Lato Bold.</p>
+</li>
+<li>
+<p>Choose the <strong>H1</strong> tab. This is the big brand headline:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Font</td>
+<td>Oswald</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>Heading 1</td>
+</tr>
+<tr>
+<td>Appearance</td>
+<td>Medium (500)</td>
+</tr>
+<tr>
+<td>Line height</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Letter spacing</td>
+<td>0.01em (pick the <strong>em</strong> unit)</td>
+</tr>
+<tr>
+<td>Letter case</td>
+<td>Uppercase</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Set the other heading levels the same way. Each one is Lato, Bold (700), letter spacing 0 and no
+letter case change:</p>
+<table>
+<thead>
+<tr>
+<th>Tab</th>
+<th>Size</th>
+<th>Line height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H2</td>
+<td>Heading 2</td>
+<td>1.15</td>
+</tr>
+<tr>
+<td>H3</td>
+<td>Heading 3</td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>H4</td>
+<td>Heading 4</td>
+<td>1.25</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Go back and click <strong>Captions</strong>: Lato, size <strong>Paragraph small</strong>, Regular (400), line height 1.5.</p>
+</li>
+<li>
+<p>Go back and click <strong>Buttons</strong>: Lato, size <strong>Button</strong>, Bold (700), line height 1, letter spacing 0,
+letter case none. Buttons are sentence case, never capitals.</p>
+</li>
+<li>
+<p>Leave <strong>Links</strong> on the default, so links match the text around them.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+<p>Paragraph large is for the odd standout paragraph, such as the line under a headline. Pick the
+<strong>Paragraph large</strong> size on that paragraph when you write it, and set its line height to 1.5.</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="step-5-add-the-color-palette">Step 5: Add the color palette</h4><a class="sl-anchor-link" href="#step-5-add-the-color-palette"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 5: Add the color palette”</span></a></div>
+<p>The palette is the set of colors offered in every color picker on the site. You will add all eleven
+spec colors so nobody has to type a hex code again.</p>
+<ol>
+<li>
+<p>In <strong>Styles</strong>, click <strong>Colors</strong>, then <strong>Palette</strong>.</p>
+</li>
+<li>
+<p>Under <strong>Custom</strong>, click <strong>+</strong> to add a color. Click the new color, type its name and enter the
+hex value. Repeat for every row:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Hex</th>
+<th>Use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>White</td>
+<td><code dir="auto">#FFFFFF</code></td>
+<td>Page background</td>
+</tr>
+<tr>
+<td>Mist</td>
+<td><code dir="auto">#F3F6F7</code></td>
+<td>Alternate section background</td>
+</tr>
+<tr>
+<td>Ink</td>
+<td><code dir="auto">#1E282B</code></td>
+<td>Body text and headings</td>
+</tr>
+<tr>
+<td>Slate</td>
+<td><code dir="auto">#4B575B</code></td>
+<td>Secondary text, such as captions</td>
+</tr>
+<tr>
+<td>Teal</td>
+<td><code dir="auto">#065E6F</code></td>
+<td>Links and buttons</td>
+</tr>
+<tr>
+<td>Deep teal</td>
+<td><code dir="auto">#044451</code></td>
+<td>Button hover, and dark brand sections</td>
+</tr>
+<tr>
+<td>Bright teal</td>
+<td><code dir="auto">#0FACBD</code></td>
+<td>Accents on Deep teal sections only</td>
+</tr>
+<tr>
+<td>Pale teal</td>
+<td><code dir="auto">#D9F6FA</code></td>
+<td>Secondary buttons and tinted sections</td>
+</tr>
+<tr>
+<td>Line</td>
+<td><code dir="auto">#DBE1E3</code></td>
+<td>Lines and dividers</td>
+</tr>
+<tr>
+<td>Yellow</td>
+<td><code dir="auto">#FFC801</code></td>
+<td>Highlights, always with Ink text</td>
+</tr>
+<tr>
+<td>Magenta</td>
+<td><code dir="auto">#A30253</code></td>
+<td>Errors</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Click <strong>Done</strong>.</p>
+</li>
+</ol>
+<p>Your theme also has its own <strong>Theme</strong> colors, and its header, footer and patterns use them. To keep
+those parts on brand, open the three dots menu next to <strong>Theme</strong>, choose <strong>Edit colors</strong>, and
+change each one to the closest spec color. Names vary by theme. If yours uses names such as Base,
+Contrast and Accent, set <strong>Base</strong> to White <code dir="auto">#FFFFFF</code> and <strong>Contrast</strong> to Ink <code dir="auto">#1E282B</code>, then look at
+where each Accent appears on your site and give it the spec color for that job (for example, an
+accent used for links becomes Teal <code dir="auto">#065E6F</code>, and a light background accent becomes Mist
+<code dir="auto">#F3F6F7</code>).</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="step-6-set-the-colors-for-each-element">Step 6: Set the colors for each element</h4><a class="sl-anchor-link" href="#step-6-set-the-colors-for-each-element"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 6: Set the colors for each element”</span></a></div>
+<ol>
+<li>
+<p>In <strong>Styles &gt; Colors</strong>, under <strong>Elements</strong>, set:</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Setting</th>
+<th>Color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Background</td>
+<td></td>
+<td>White <code dir="auto">#FFFFFF</code></td>
+</tr>
+<tr>
+<td>Text</td>
+<td></td>
+<td>Ink <code dir="auto">#1E282B</code></td>
+</tr>
+<tr>
+<td>Links</td>
+<td>Default</td>
+<td>Teal <code dir="auto">#065E6F</code></td>
+</tr>
+<tr>
+<td>Headings</td>
+<td>All</td>
+<td>Ink <code dir="auto">#1E282B</code></td>
+</tr>
+<tr>
+<td>Captions</td>
+<td>Text</td>
+<td>Slate <code dir="auto">#4B575B</code></td>
+</tr>
+<tr>
+<td>Buttons</td>
+<td>Text</td>
+<td>White <code dir="auto">#FFFFFF</code></td>
+</tr>
+<tr>
+<td>Buttons</td>
+<td>Background</td>
+<td>Teal <code dir="auto">#065E6F</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+<div class="sl-heading-wrapper level-h4"><h4 id="step-7-style-the-primary-and-secondary-buttons">Step 7: Style the primary and secondary buttons</h4><a class="sl-anchor-link" href="#step-7-style-the-primary-and-secondary-buttons"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 7: Style the primary and secondary buttons”</span></a></div>
+<p>The Button block comes with two built in “block style variations”: <strong>Fill</strong> and <strong>Outline</strong>. A block
+style variation is a ready made look you can pick for a single block. We set Fill as the primary
+button and turn Outline into our secondary button, so anyone editing a page can switch between them
+with one click.</p>
+<ol>
+<li>In <strong>Styles</strong>, click <strong>Blocks</strong>, then search for and click <strong>Button</strong>.</li>
+<li>Set the default (Fill) look:
+<ul>
+<li><strong>Color:</strong> Text White <code dir="auto">#FFFFFF</code>, Background Teal <code dir="auto">#065E6F</code>.</li>
+<li><strong>Typography:</strong> Lato, size Button, Bold (700), line height 1, letter case none.</li>
+<li><strong>Dimensions &gt; Padding:</strong> 14px top and bottom, 28px left and right. Click the link icon to set
+the sides separately.</li>
+<li><strong>Border &amp; Shadow:</strong> border width 0, no shadow, and <strong>Radius</strong> 9999px. A radius bigger than the
+button makes the ends fully round, which is the pill shape.</li>
+</ul>
+</li>
+<li>If the panel shows a <strong>Hover</strong> state, choose it and set Background to Deep teal <code dir="auto">#044451</code>. Many
+versions do not offer hover for all buttons at once. In that case the hover snippet in Part 4
+adds it.</li>
+<li>Find the style variations (shown as <strong>Fill</strong> and <strong>Outline</strong>, near the top of the Button panel)
+and click <strong>Outline</strong>. Set:
+<ul>
+<li><strong>Color:</strong> Text Teal <code dir="auto">#065E6F</code>, Background Pale teal <code dir="auto">#D9F6FA</code>.</li>
+<li><strong>Border:</strong> width 0. Keep the same radius, padding and typography as above.</li>
+</ul>
+</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>The secondary button will still be called “Outline” in the editor. Tell your team that Outline means
+the secondary button.</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="step-8-set-the-page-width-images-and-sections">Step 8: Set the page width, images and sections</h4><a class="sl-anchor-link" href="#step-8-set-the-page-width-images-and-sections"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 8: Set the page width, images and sections”</span></a></div>
+<ol>
+<li>In <strong>Styles</strong>, click <strong>Layout</strong> and set <strong>Content</strong> width to 720px. This keeps paragraphs to
+about 68 characters a line. Leave <strong>Wide</strong> as it is.</li>
+<li>In <strong>Styles &gt; Blocks</strong>, click <strong>Image</strong>, open <strong>Border &amp; Shadow</strong> and set <strong>Radius</strong> to 12px.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<div class="sl-heading-wrapper level-h4"><h4 id="step-9-check-on-a-phone">Step 9: Check on a phone</h4><a class="sl-anchor-link" href="#step-9-check-on-a-phone"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 9: Check on a phone”</span></a></div>
+<p>At the top of the Site Editor, open the <strong>Preview</strong> menu (a screen icon in some versions) and choose
+<strong>Mobile</strong>. Check that the headline is smaller and still on one or two lines, and that buttons fit.
+Switch back to <strong>Desktop</strong> when you are done.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="setup-b-classic-themes-the-customizer">Setup B: classic themes (the Customizer)</h3><a class="sl-anchor-link" href="#setup-b-classic-themes-the-customizer"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Setup B: classic themes (the Customizer)”</span></a></div>
+<p>Classic themes put their settings in the Customizer. Each theme builds its own Customizer, so the
+panels differ from theme to theme. WordPress itself always gives you <strong>Site Identity</strong> and
+<strong>Additional CSS</strong>. Fonts, colors and buttons depend on what your theme offers.</p>
+<ol>
+<li>
+<p>Go to <strong>Appearance &gt; Customize</strong>.</p>
+</li>
+<li>
+<p>Look for a <strong>Colors</strong> panel (it may be called <strong>Colors &amp; Dark Mode</strong>, <strong>Global</strong> or <strong>Design</strong>).
+Match your theme’s color slots to the spec:</p>
+<table>
+<thead>
+<tr>
+<th>Common theme label</th>
+<th>Spec color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Background color</td>
+<td>White <code dir="auto">#FFFFFF</code></td>
+</tr>
+<tr>
+<td>Text color, Body text</td>
+<td>Ink <code dir="auto">#1E282B</code></td>
+</tr>
+<tr>
+<td>Heading color</td>
+<td>Ink <code dir="auto">#1E282B</code></td>
+</tr>
+<tr>
+<td>Primary, Accent, Link color</td>
+<td>Teal <code dir="auto">#065E6F</code></td>
+</tr>
+<tr>
+<td>Link hover, Accent hover</td>
+<td>Deep teal <code dir="auto">#044451</code></td>
+</tr>
+<tr>
+<td>Button background</td>
+<td>Teal <code dir="auto">#065E6F</code></td>
+</tr>
+<tr>
+<td>Button text</td>
+<td>White <code dir="auto">#FFFFFF</code></td>
+</tr>
+<tr>
+<td>Button hover background</td>
+<td>Deep teal <code dir="auto">#044451</code></td>
+</tr>
+<tr>
+<td>Border, Divider</td>
+<td>Line <code dir="auto">#DBE1E3</code></td>
+</tr>
+<tr>
+<td>Alternate background, Light background</td>
+<td>Mist <code dir="auto">#F3F6F7</code></td>
+</tr>
+</tbody>
+</table>
+<p>Turn off any dark mode switch, so the colors stay as set.</p>
+</li>
+<li>
+<p>Look for a <strong>Typography</strong> or <strong>Fonts</strong> panel. If you find one, set body text to Lato, Regular
+(400), 17px, line height 1.6, and headings to Lato, Bold (700). Then set H1 to Oswald, Medium
+(500), 64px, line height 1, letter spacing 0.01em, uppercase. Use the H2 to H4 sizes and line
+heights from the spec. If your theme has separate mobile sizes, enter the sizes in brackets from
+the spec (H1 40px, H2 30px, H3 24px, H4 20px, text 16px).</p>
+</li>
+<li>
+<p>Look for a <strong>Buttons</strong> panel. If you find one, set the corner radius as high as it goes (or
+9999px), padding to 14px top and bottom and 28px left and right, and font to Lato Bold (700) at
+16px with no capitals.</p>
+</li>
+<li>
+<p>Click <strong>Publish</strong>.</p>
+</li>
+</ol>
+<p>No Typography panel? That is common in classic themes. Use the “Classic theme fonts and text”
+snippet in Part 4. On WordPress 7.0 or later you can also install Lato and Oswald in <strong>Appearance &gt;
+Fonts</strong> (Step 2 of setup A), but a classic theme still needs the snippet to use them.</p>
+<p>Your pages and posts still use the block editor, so the Group, Cover and Buttons steps in Part 3
+work for you too.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="setup-c-page-builders-such-as-elementor">Setup C: page builders such as Elementor</h3><a class="sl-anchor-link" href="#setup-c-page-builders-such-as-elementor"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Setup C: page builders such as Elementor”</span></a></div>
+<p>A page builder has its own global settings, and they win over the WordPress theme on the pages it
+builds. Set them once and the builder’s widgets follow. In Elementor:</p>
+<ol>
+<li>
+<p>Open any page with <strong>Edit with Elementor</strong>, click the Elementor menu at the top left, and choose
+<strong>Site Settings</strong>.</p>
+</li>
+<li>
+<p>Under <strong>Design System &gt; Global Colors</strong>, set the four system colors, then add the rest of the
+spec colors as custom colors with the same names and hex values as the palette table in Step 5
+above:</p>
+<table>
+<thead>
+<tr>
+<th>Elementor slot</th>
+<th>Spec color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary (used by headings)</td>
+<td>Ink <code dir="auto">#1E282B</code></td>
+</tr>
+<tr>
+<td>Secondary</td>
+<td>Slate <code dir="auto">#4B575B</code></td>
+</tr>
+<tr>
+<td>Text</td>
+<td>Ink <code dir="auto">#1E282B</code></td>
+</tr>
+<tr>
+<td>Accent (used by buttons)</td>
+<td>Teal <code dir="auto">#065E6F</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Under <strong>Design System &gt; Global Fonts</strong>, set:</p>
+<table>
+<thead>
+<tr>
+<th>Elementor slot</th>
+<th>Font</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary (headings)</td>
+<td>Lato, 700</td>
+</tr>
+<tr>
+<td>Secondary</td>
+<td>Lato, 700</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>Lato, 400, line height 1.6</td>
+</tr>
+<tr>
+<td>Accent (buttons)</td>
+<td>Lato, 700, 16px, no text transform</td>
+</tr>
+</tbody>
+</table>
+<p>Add one more global font named <strong>Heading 1</strong>: Oswald, 500, line height 1, letter spacing 0.01em,
+uppercase. Pick it on your big headline only.</p>
+</li>
+<li>
+<p>Under <strong>Theme Style</strong>, set <strong>Typography</strong> for body text and H1 to H4 with the sizes from the
+spec (Elementor lets you switch to tablet and mobile sizes with the device icon next to each
+size). Set <strong>Buttons</strong> to Teal <code dir="auto">#065E6F</code> background, White text, Deep teal <code dir="auto">#044451</code> on hover, a
+large border radius for pill ends, and 14px by 28px padding.</p>
+</li>
+<li>
+<p>Click <strong>Update</strong>.</p>
+</li>
+</ol>
+<p>Other page builders have the same ideas under different names, usually “global colors”, “global
+fonts” and “theme style”. Use the same mapping.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="part-2-add-the-logo-and-site-icon">Part 2: Add the logo and site icon</h2><a class="sl-anchor-link" href="#part-2-add-the-logo-and-site-icon"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Part 2: Add the logo and site icon”</span></a></div>
+<p>The site icon is the small picture in the browser tab and on phone home screens. WordPress needs it
+square, at least 512 by 512 pixels. The monogram file is wider than it is tall, so first place it in
+the middle of a square, at least 512 by 512 pixel canvas, in any image editor. Leave space around
+it and never stretch it. Save that as a PNG.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="setup-a-block-themes">Setup A: block themes</h3><a class="sl-anchor-link" href="#setup-a-block-themes"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Setup A: block themes”</span></a></div>
+<ol>
+<li>Go to <strong>Appearance &gt; Editor</strong> and click <strong>Identity</strong> in the left menu (newer versions). Click the
+<strong>Site Logo</strong> area and upload <code dir="auto">masschallenge-logo-horizontal-color.png</code>. Click the <strong>Site Icon</strong>
+area and upload your square monogram.</li>
+<li>No <strong>Identity</strong> menu? Open <strong>Patterns &gt; Template Parts &gt; Header</strong> (in older versions,
+<strong>Template Parts &gt; Header</strong>), click the <strong>Site Logo</strong> block and upload the logo there. Set the
+site icon in <strong>Settings &gt; General &gt; Site Icon</strong> (WordPress 6.5 or later) or in the Site Logo
+block’s settings.</li>
+<li>Select the Site Logo block in your header and set its <strong>Image width</strong> to about 240px. That shows
+the logo about 32px tall. Never go below 180px wide (24px tall): below that the name is hard to
+read, so use the monogram instead.</li>
+<li>In the block’s settings, turn on <strong>Link image to home</strong> if your theme offers it.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>If your header has a Deep teal background, use <code dir="auto">masschallenge-logo-horizontal-white.png</code> there. The
+color logo is only for white and light backgrounds.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="setup-b-classic-themes">Setup B: classic themes</h3><a class="sl-anchor-link" href="#setup-b-classic-themes"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Setup B: classic themes”</span></a></div>
+<ol>
+<li>Go to <strong>Appearance &gt; Customize &gt; Site Identity</strong>.</li>
+<li>Click <strong>Select logo</strong>, upload <code dir="auto">masschallenge-logo-horizontal-color.png</code> and click <strong>Choose logo</strong>.
+If WordPress offers to crop it, choose <strong>Skip cropping</strong>.</li>
+<li>If your theme shows the site title next to the logo, untick <strong>Display Site Title and Tagline</strong>,
+since the logo already says MassChallenge.</li>
+<li>Under <strong>Site Icon</strong>, click <strong>Select site icon</strong> (or <strong>Select Image</strong>) and upload your square
+monogram.</li>
+<li>Click <strong>Publish</strong>.</li>
+</ol>
+<div class="sl-heading-wrapper level-h3"><h3 id="setup-c-elementor">Setup C: Elementor</h3><a class="sl-anchor-link" href="#setup-c-elementor"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Setup C: Elementor”</span></a></div>
+<p>In <strong>Site Settings &gt; Site Identity</strong>, upload the logo and the square monogram as the favicon (the
+site icon).</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="on-every-setup">On every setup</h3><a class="sl-anchor-link" href="#on-every-setup"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “On every setup”</span></a></div>
+<p>Keep clear space around the logo of at least half its height. Do not add a shadow, recolor it or
+put it inside a box. The <a href="/brand/">brand guidelines</a> have the full rules.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="part-3-build-on-brand-pages">Part 3: Build on brand pages</h2><a class="sl-anchor-link" href="#part-3-build-on-brand-pages"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Part 3: Build on brand pages”</span></a></div>
+<p>These steps use the block editor, which all block themes and most classic themes use for pages.
+Open a page with <strong>Pages &gt; Add New Page</strong> (or edit an existing one).</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="a-white-section">A White section</h3><a class="sl-anchor-link" href="#a-white-section"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “A White section”</span></a></div>
+<ol>
+<li>Click <strong>+</strong> (the block inserter) and add a <strong>Group</strong> block.</li>
+<li>In the block settings on the right, open the <strong>Styles</strong> tab (the half filled circle).</li>
+<li>Under <strong>Color</strong>, leave <strong>Background</strong> empty. It shows the site background, White.</li>
+<li>Under <strong>Dimensions &gt; Padding</strong>, set top and bottom to 96px.</li>
+<li>Add your heading, paragraphs and buttons inside the Group.</li>
+</ol>
+<div class="sl-heading-wrapper level-h3"><h3 id="a-mist-section">A Mist section</h3><a class="sl-anchor-link" href="#a-mist-section"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “A Mist section”</span></a></div>
+<p>Follow the same steps, then set <strong>Color &gt; Background</strong> to <strong>Mist</strong> <code dir="auto">#F3F6F7</code> from the palette. Use
+Mist to separate sections that sit next to each other. Do not stack two Mist sections in a row.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="a-deep-teal-section">A Deep teal section</h3><a class="sl-anchor-link" href="#a-deep-teal-section"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “A Deep teal section”</span></a></div>
+<ol>
+<li>Add a <strong>Group</strong> block, or a <strong>Cover</strong> block if you want a photo behind the text.</li>
+<li>Group: set <strong>Color &gt; Background</strong> to <strong>Deep teal</strong> <code dir="auto">#044451</code>, <strong>Text</strong> to <strong>White</strong>, and <strong>Link</strong>
+to <strong>White</strong>. Cover: add your image, then set the <strong>Overlay</strong> color to <strong>Deep teal</strong> and raise the
+overlay opacity until the text is easy to read.</li>
+<li>Set top and bottom <strong>Padding</strong> to 96px.</li>
+<li>For accents, such as a small line of text above the headline, use <strong>Bright teal</strong> <code dir="auto">#0FACBD</code>.
+Never put Teal text on Deep teal.</li>
+<li>If you added the hover snippet from Part 4, open <strong>Advanced</strong> and type <code dir="auto">propellant-brand-band</code> in
+<strong>Additional CSS class(es)</strong>. The snippet then styles the buttons in this section for you.</li>
+</ol>
+<div class="sl-heading-wrapper level-h3"><h3 id="the-heading-1-headline">The Heading 1 headline</h3><a class="sl-anchor-link" href="#the-heading-1-headline"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “The Heading 1 headline”</span></a></div>
+<p>Add a <strong>Heading</strong> block and choose <strong>H1</strong> in its toolbar. It picks up Oswald capitals from Step 4.
+Type it in normal sentence case: the capitals come from the style, so the words stay readable to
+screen readers and search engines. Use one H1 per page.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="primary-and-secondary-buttons">Primary and secondary buttons</h3><a class="sl-anchor-link" href="#primary-and-secondary-buttons"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Primary and secondary buttons”</span></a></div>
+<ol>
+<li>Add a <strong>Buttons</strong> block. It starts with one button. That is your primary button: Teal with
+White text, as a pill.</li>
+<li>Click the <strong>+</strong> inside the Buttons block to add a second button.</li>
+<li>Select the second button, open <strong>Styles</strong> in its settings (or <strong>Change block style</strong> in its
+toolbar) and choose <strong>Outline</strong>. That is your secondary button: Pale teal with Teal text.</li>
+<li>Write button labels in sentence case with a verb, such as “Apply now” or “Meet the startups”.</li>
+</ol>
+<div class="sl-heading-wrapper level-h3"><h3 id="buttons-on-deep-teal">Buttons on Deep teal</h3><a class="sl-anchor-link" href="#buttons-on-deep-teal"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Buttons on Deep teal”</span></a></div>
+<p>On a Deep teal section, buttons are White with Deep teal text and turn Pale teal on hover.</p>
+<ul>
+<li><strong>With the hover snippet</strong> (Part 4) and the <code dir="auto">propellant-brand-band</code> class on the section: just
+add a Buttons block. It turns white on its own.</li>
+<li><strong>Without code:</strong> select the button and set <strong>Color &gt; Text</strong> to <strong>Deep teal</strong> and <strong>Background</strong>
+to <strong>White</strong>. On WordPress 7.1 or later, choose the <strong>Hover</strong> state at the top of the button’s
+settings and set <strong>Background</strong> to <strong>Pale teal</strong> <code dir="auto">#D9F6FA</code>.</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="save-sections-to-reuse">Save sections to reuse</h3><a class="sl-anchor-link" href="#save-sections-to-reuse"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Save sections to reuse”</span></a></div>
+<p>Once a section looks right, select the Group, open the three dots menu in its toolbar and choose
+<strong>Create pattern</strong>. Name it, for example “Deep teal section”, and leave <strong>Synced</strong> off so each copy
+can have its own words. It now appears in the inserter under <strong>Patterns</strong> for everyone.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="build-a-sample-home-page">Build a sample home page</h3><a class="sl-anchor-link" href="#build-a-sample-home-page"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Build a sample home page”</span></a></div>
+<ol>
+<li><strong>Hero (Deep teal):</strong> a Deep teal Group with the white horizontal logo or no logo (the header
+already has one), an H1 headline, one Paragraph large sentence and a Buttons block with one
+White button.</li>
+<li><strong>About (White):</strong> a White Group with an H2, two short paragraphs and a primary plus a
+secondary button.</li>
+<li><strong>Highlights (Mist):</strong> a Mist Group with a <strong>Columns</strong> block of three columns. In each column,
+add an Image (rounded to 12px by Step 8), an H3 and a short paragraph.</li>
+<li><strong>Call to action (Deep teal):</strong> reuse your Deep teal pattern with a short H2 and one button.</li>
+<li>Click <strong>Publish</strong>, then view the page on a computer and a phone.</li>
+</ol>
+<div class="sl-heading-wrapper level-h2"><h2 id="part-4-custom-css-only-what-settings-cannot-do">Part 4: Custom CSS (only what settings cannot do)</h2><a class="sl-anchor-link" href="#part-4-custom-css-only-what-settings-cannot-do"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Part 4: Custom CSS (only what settings cannot do)”</span></a></div>
+<p><strong>This part is optional.</strong> Custom CSS is a short piece of code that changes how the site looks.
+Use only the snippets you need. Each one starts with a comment line so the next person knows where
+it came from.</p>
+<p>What the settings cannot do, and these snippets fix:</p>
+<ul>
+<li><strong>Button hover colors for all buttons at once.</strong> Many WordPress versions only let you set button
+hover one button at a time, or not at all.</li>
+<li><strong>Buttons on Deep teal without styling each one by hand.</strong></li>
+<li><strong>Phone sizes</strong> when your theme has fluid type switched off.</li>
+<li><strong>Fonts and text in classic themes</strong> that have no Typography panel.</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="where-to-paste-it">Where to paste it</h3><a class="sl-anchor-link" href="#where-to-paste-it"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Where to paste it”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Setup</th>
+<th>Where</th>
+<th>Who can use it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. Block theme</td>
+<td><strong>Appearance &gt; Editor &gt; Styles</strong>, open the three dots menu at the top of the Styles panel and choose <strong>Additional CSS</strong>. Paste, then click <strong>Save</strong>.</td>
+<td>Self-hosted: everyone. WordPress.com: Personal plan and above.</td>
+</tr>
+<tr>
+<td>B. Classic theme</td>
+<td><strong>Appearance &gt; Customize &gt; Additional CSS</strong>. Paste, then click <strong>Publish</strong>.</td>
+<td>Self-hosted: everyone. WordPress.com: Personal plan and above.</td>
+</tr>
+<tr>
+<td>C. Elementor</td>
+<td><strong>Site Settings &gt; Custom CSS</strong>.</td>
+<td>May need Elementor Pro.</td>
+</tr>
+</tbody>
+</table>
+<p>Paste each snippet below anything already in the box. CSS saved here stays when your theme
+updates, but is cleared if you switch themes, so keep a copy.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="snippet-button-hover-setups-a-and-b">Snippet: button hover (setups A and B)</h3><a class="sl-anchor-link" href="#snippet-button-hover-setups-a-and-b"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Snippet: button hover (setups A and B)”</span></a></div>
+<p>Adds the spec hover colors to primary buttons, secondary (Outline) buttons, and buttons in any
+section with the <code dir="auto">propellant-brand-band</code> class. It also makes buttons on those sections White with
+Deep teal text.</p>
+<div class="expressive-code"><link rel="stylesheet" href="/_astro/ec.w36nc.css"><script type="module" src="/_astro/ec.0vx5m.js"></script><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="css"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">/* Propellant website styles: see github.com/masschallenge/propellant-web */</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">.wp-block-button__link:hover</span><span style="--0:#C792EA;--1:#8844AE">,</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">.wp-element-button:hover</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">background-color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">044451</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">ffffff</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">.is-style-outline</span><span style="--0:#C792EA;--1:#8844AE"> </span><span style="--0:#C5E478;--1:#3B61B0">.wp-block-button__link:hover</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">background-color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">c4eef4</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">065e6f</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">.propellant-brand-band</span><span style="--0:#C792EA;--1:#8844AE"> </span><span style="--0:#C5E478;--1:#3B61B0">.wp-block-button__link</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">background-color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">ffffff</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">044451</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">.propellant-brand-band</span><span style="--0:#C792EA;--1:#8844AE"> </span><span style="--0:#C5E478;--1:#3B61B0">.wp-block-button__link:hover</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">background-color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">d9f6fa</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">044451</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="/* Propellant website styles: see github.com/masschallenge/propellant-web */.wp-block-button__link:hover,.wp-element-button:hover {  background-color: #044451;  color: #ffffff;}.is-style-outline .wp-block-button__link:hover {  background-color: #c4eef4;  color: #065e6f;}.propellant-brand-band .wp-block-button__link {  background-color: #ffffff;  color: #044451;}.propellant-brand-band .wp-block-button__link:hover {  background-color: #d9f6fa;  color: #044451;}"><div></div></button></div></figure></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="snippet-phone-sizes-setup-a-without-fluid-type">Snippet: phone sizes (setup A without fluid type)</h3><a class="sl-anchor-link" href="#snippet-phone-sizes-setup-a-without-fluid-type"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Snippet: phone sizes (setup A without fluid type)”</span></a></div>
+<p>Uses the spec’s mobile sizes on screens narrower than a tablet, and trims section spacing to 64px
+on any Group that has <code dir="auto">propellant-section</code> in <strong>Advanced &gt; Additional CSS class(es)</strong>. The
+<code dir="auto">!important</code> is needed because WordPress writes padding straight onto each block.</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="css"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">/* Propellant website styles: see github.com/masschallenge/propellant-web */</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">@media</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">(</span><span style="--0:#80CBC4;--1:#096E72">max-width</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">767</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D9F5DD;--1:#111111">)</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#FF6D6D;--1:#984E4D">h1</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">40</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">; }</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#FF6D6D;--1:#984E4D">h2</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">30</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">; }</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#FF6D6D;--1:#984E4D">h3</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">24</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">; }</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#FF6D6D;--1:#984E4D">h4</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">20</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">; }</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#FF6D6D;--1:#984E4D">body</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">16</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">; }</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#C5E478;--1:#3B61B0">.propellant-section</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#80CBC4;--1:#096E72">padding-top</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">64</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8844AE">!important</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#80CBC4;--1:#096E72">padding-bottom</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">64</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8844AE">!important</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="/* Propellant website styles: see github.com/masschallenge/propellant-web */@media (max-width: 767px) {  h1 { font-size: 40px; }  h2 { font-size: 30px; }  h3 { font-size: 24px; }  h4 { font-size: 20px; }  body { font-size: 16px; }  .propellant-section {    padding-top: 64px !important;    padding-bottom: 64px !important;  }}"><div></div></button></div></figure></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="snippet-fonts-text-and-buttons-setup-b-without-a-typography-panel">Snippet: fonts, text and buttons (setup B without a Typography panel)</h3><a class="sl-anchor-link" href="#snippet-fonts-text-and-buttons-setup-b-without-a-typography-panel"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Snippet: fonts, text and buttons (setup B without a Typography panel)”</span></a></div>
+<p>Loads Lato and Oswald from Google Fonts and sets every text style and the button shape from the
+spec. Keep the <code dir="auto">@import</code> line at the very top of the Additional CSS box, above anything else, or the
+fonts will not load. Add the button hover snippet above as well.</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="css"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">/* Propellant website styles: see github.com/masschallenge/propellant-web */</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">@import</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">url</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Oswald:wght@500&amp;display=swap</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">);</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#FF6D6D;--1:#984E4D">body</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">font-family</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Lato</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">sans-serif</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">17</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">line-height</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">1.6</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">1e282b</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">background-color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">ffffff</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#FF6D6D;--1:#984E4D">h1</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">font-family</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Oswald</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">sans-serif</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">font-weight</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">500</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">64</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">line-height</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">1</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">letter-spacing</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">0.01</span><span style="--0:#FFEB95">em</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">text-transform</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#FF6D6D;--1:#984E4D">uppercase</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#FF6D6D;--1:#984E4D">h2</span><span style="--0:#C792EA;--1:#8844AE">, </span><span style="--0:#FF6D6D;--1:#984E4D">h3</span><span style="--0:#C792EA;--1:#8844AE">, </span><span style="--0:#FF6D6D;--1:#984E4D">h4</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">font-family</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Lato</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">sans-serif</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">font-weight</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">700</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">1e282b</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">letter-spacing</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">0</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">text-transform</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#FF6D6D;--1:#984E4D">none</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#FF6D6D;--1:#984E4D">h2</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">40</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">; </span><span style="--0:#80CBC4;--1:#096E72">line-height</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">1.15</span><span style="--0:#D6DEEB;--1:#403F53">; }</span></div></div><div class="ec-line"><div class="code"><span style="--0:#FF6D6D;--1:#984E4D">h3</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">30</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">; </span><span style="--0:#80CBC4;--1:#096E72">line-height</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">1.2</span><span style="--0:#D6DEEB;--1:#403F53">; }</span></div></div><div class="ec-line"><div class="code"><span style="--0:#FF6D6D;--1:#984E4D">h4</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">24</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">; </span><span style="--0:#80CBC4;--1:#096E72">line-height</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">1.25</span><span style="--0:#D6DEEB;--1:#403F53">; }</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#FF6D6D;--1:#984E4D">a</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#80CBC4;--1:#096E72">color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">065e6f</span></span><span style="--0:#D6DEEB;--1:#403F53">; }</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">.wp-block-button__link</span><span style="--0:#C792EA;--1:#8844AE">,</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">.wp-element-button</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">font-family</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Lato</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">sans-serif</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">font-weight</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">700</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">16</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">line-height</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">1</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">padding</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">14</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--1:#AA0982"><span style="--0:#F78C6C">28</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">border</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">0</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">border-radius</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">9999</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">box-shadow</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#FF6D6D;--1:#984E4D">none</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">text-transform</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#FF6D6D;--1:#984E4D">none</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">background-color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">065e6f</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">ffffff</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">.is-style-outline</span><span style="--0:#C792EA;--1:#8844AE"> </span><span style="--0:#C5E478;--1:#3B61B0">.wp-block-button__link</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">background-color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">d9f6fa</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">065e6f</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">@media</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">(</span><span style="--0:#80CBC4;--1:#096E72">max-width</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">767</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D9F5DD;--1:#111111">)</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#FF6D6D;--1:#984E4D">body</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">16</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">; }</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#FF6D6D;--1:#984E4D">h1</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">40</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">; }</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#FF6D6D;--1:#984E4D">h2</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">30</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">; }</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#FF6D6D;--1:#984E4D">h3</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">24</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">; }</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#FF6D6D;--1:#984E4D">h4</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">20</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">; }</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="/* Propellant website styles: see github.com/masschallenge/propellant-web */@import url(&quot;https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Oswald:wght@500&amp;display=swap&quot;);body {  font-family: &quot;Lato&quot;, sans-serif;  font-size: 17px;  line-height: 1.6;  color: #1e282b;  background-color: #ffffff;}h1 {  font-family: &quot;Oswald&quot;, sans-serif;  font-weight: 500;  font-size: 64px;  line-height: 1;  letter-spacing: 0.01em;  text-transform: uppercase;}h2, h3, h4 {  font-family: &quot;Lato&quot;, sans-serif;  font-weight: 700;  color: #1e282b;  letter-spacing: 0;  text-transform: none;}h2 { font-size: 40px; line-height: 1.15; }h3 { font-size: 30px; line-height: 1.2; }h4 { font-size: 24px; line-height: 1.25; }a { color: #065e6f; }.wp-block-button__link,.wp-element-button {  font-family: &quot;Lato&quot;, sans-serif;  font-weight: 700;  font-size: 16px;  line-height: 1;  padding: 14px 28px;  border: 0;  border-radius: 9999px;  box-shadow: none;  text-transform: none;  background-color: #065e6f;  color: #ffffff;}.is-style-outline .wp-block-button__link {  background-color: #d9f6fa;  color: #065e6f;}@media (max-width: 767px) {  body { font-size: 16px; }  h1 { font-size: 40px; }  h2 { font-size: 30px; }  h3 { font-size: 24px; }  h4 { font-size: 20px; }}"><div></div></button></div></figure></div>
+<p>If you installed Lato and Oswald in <strong>Appearance &gt; Fonts</strong> (WordPress 7.0 or later), you can delete
+the <code dir="auto">@import</code> line.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="using-the-propellant-stylesheet-instead-setup-b">Using the Propellant stylesheet instead (setup B)</h3><a class="sl-anchor-link" href="#using-the-propellant-stylesheet-instead-setup-b"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Using the Propellant stylesheet instead (setup B)”</span></a></div>
+<p>The <a href="/web/websites/#the-propellant-stylesheet">Propellant stylesheet</a> loads the exact fonts and
+adds ready made class names. In a classic theme, put this line at the very top of <strong>Additional
+CSS</strong>:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="css"><code><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">@import</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">url</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/dist/website.css</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">);</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="@import url(&quot;https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/dist/website.css&quot;);"><div></div></button></div></figure></div>
+<p>Then type class names into a block’s <strong>Advanced &gt; Additional CSS class(es)</strong> box:</p>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Class</th>
+<th>What you get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H1 Heading</td>
+<td><code dir="auto">propellant-headline</code></td>
+<td>Heading 1 from the spec, in Oswald capitals</td>
+</tr>
+<tr>
+<td>H2, H3, H4 Heading</td>
+<td><code dir="auto">propellant-title-1</code>, <code dir="auto">propellant-title-2</code>, <code dir="auto">propellant-title-3</code></td>
+<td>Heading 2, 3 and 4 from the spec</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td><code dir="auto">propellant-body</code></td>
+<td>Paragraph from the spec</td>
+</tr>
+<tr>
+<td>Paragraph (small print)</td>
+<td><code dir="auto">propellant-caption</code></td>
+<td>Paragraph small, in Slate</td>
+</tr>
+<tr>
+<td>Group</td>
+<td><code dir="auto">propellant-brand-band</code></td>
+<td>A Deep teal section with White text</td>
+</tr>
+</tbody>
+</table>
+<p>Skip <code dir="auto">propellant-button</code> in WordPress: the class lands
+on the wrapper around the button, not the button itself, so keep using the button settings above.</p>
+<p>In a block theme, the Styles <strong>Additional CSS</strong> box does not reliably run <code dir="auto">@import</code> lines, so use the
+developer route below to load the stylesheet.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="how-to-remove-it-later">How to remove it later</h3><a class="sl-anchor-link" href="#how-to-remove-it-later"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “How to remove it later”</span></a></div>
+<p>Open the same Additional CSS box, select everything from a <code dir="auto">/* Propellant website styles</code> comment
+line down to the end of that snippet, delete it and save. The class names left on blocks do nothing
+once the CSS is gone, so they are safe to leave.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="advanced-the-developer-route-child-theme">Advanced: the developer route (child theme)</h3><a class="sl-anchor-link" href="#advanced-the-developer-route-child-theme"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Advanced: the developer route (child theme)”</span></a></div>
+<p>This is for people comfortable editing theme files. It puts the brand palette, fonts and the
+Propellant stylesheet into a child theme, so they live in files you can keep in version control
+rather than in settings. A child theme is a small theme that borrows everything from your main
+(parent) theme and adds your changes, so theme updates do not wipe them out.</p>
+<p>On self-hosted WordPress, upload the child theme in <strong>Appearance &gt; Themes &gt; Add New Theme &gt; Upload
+Theme</strong>, or by FTP. On WordPress.com, uploading themes needs a paid plan.</p>
+<p>Create a folder named <code dir="auto">propellant-child</code> with three files. Change <code dir="auto">twentytwentyfive</code> to your parent
+theme’s folder name.</p>
+<p><code dir="auto">style.css</code>:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="css"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">/*</span></div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">Theme Name: Propellant child</span></div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">Template: twentytwentyfive</span></div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">*/</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="/*Theme Name: Propellant childTemplate: twentytwentyfive*/"><div></div></button></div></figure></div>
+<p><code dir="auto">functions.php</code> loads the Propellant stylesheet on the site and in the editor, and adds two section
+styles (Mist and Deep teal) that anyone can pick from a Group or Cover block’s <strong>Styles</strong> panel:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="php"><code><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">&lt;?</span><span style="--0:#82AAFF;--1:#3B61B0">php</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">const</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3B61B0">PROPELLANT_STYLESHEET</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8844AE">=</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/dist/website.css</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">add_action</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">wp_enqueue_scripts</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">,</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#C792EA;--1:#8844AE">function</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D9F5DD;--1:#111111">()</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D6DEEB;--1:#403F53">{</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#82AAFF;--1:#3B61B0">  </span></span><span style="--0:#82AAFF;--1:#3B61B0">wp_enqueue_style</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">propellant-website</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">,</span><span style="--0:#82AAFF;--1:#3B61B0"> PROPELLANT_STYLESHEET</span><span style="--0:#D6DEEB;--1:#403F53">,</span><span style="--1:#3B61B0"><span style="--0:#82AAFF"> </span><span style="--0:#C5E478">array</span></span><span style="--0:#D6DEEB;--1:#403F53">(),</span><span style="--0:#82AAFF;--1:#3B61B0"> null </span><span style="--0:#D6DEEB;--1:#403F53">);</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D6DEEB;--1:#403F53">);</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">add_action</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">after_setup_theme</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">,</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#C792EA;--1:#8844AE">function</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D9F5DD;--1:#111111">()</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D6DEEB;--1:#403F53">{</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#82AAFF;--1:#3B61B0">  </span></span><span style="--0:#82AAFF;--1:#3B61B0">add_editor_style</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3B61B0"> PROPELLANT_STYLESHEET </span><span style="--0:#D6DEEB;--1:#403F53">);</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D6DEEB;--1:#403F53">);</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">add_action</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">init</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">,</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#C792EA;--1:#8844AE">function</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D9F5DD;--1:#111111">()</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D6DEEB;--1:#403F53">{</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#82AAFF;--1:#3B61B0">  </span></span><span style="--0:#82AAFF;--1:#3B61B0">register_block_style</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--1:#3B61B0"><span style="--0:#82AAFF"> </span><span style="--0:#C5E478">array</span></span><span style="--0:#D6DEEB;--1:#403F53">( </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">core/group</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">core/cover</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> ),</span><span style="--1:#3B61B0"><span style="--0:#82AAFF"> </span><span style="--0:#C5E478">array</span></span><span style="--0:#D6DEEB;--1:#403F53">(</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">name</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">       </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">propellant-mist</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">label</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">      </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">Mist section</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">style_data</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">array</span><span style="--0:#D6DEEB;--1:#403F53">(</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">color</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">array</span><span style="--0:#D6DEEB;--1:#403F53">( </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">background</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">#F3F6F7</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">text</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">#1E282B</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> ),</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">),</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">)</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D6DEEB;--1:#403F53">);</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#82AAFF;--1:#3B61B0">  </span></span><span style="--0:#82AAFF;--1:#3B61B0">register_block_style</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--1:#3B61B0"><span style="--0:#82AAFF"> </span><span style="--0:#C5E478">array</span></span><span style="--0:#D6DEEB;--1:#403F53">( </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">core/group</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">core/cover</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> ),</span><span style="--1:#3B61B0"><span style="--0:#82AAFF"> </span><span style="--0:#C5E478">array</span></span><span style="--0:#D6DEEB;--1:#403F53">(</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">name</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">       </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">propellant-deep-teal</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">label</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">      </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">Deep teal section</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">style_data</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">array</span><span style="--0:#D6DEEB;--1:#403F53">(</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">color</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">    </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">array</span><span style="--0:#D6DEEB;--1:#403F53">( </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">background</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">#044451</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">text</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">#FFFFFF</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> ),</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">elements</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">array</span><span style="--0:#D6DEEB;--1:#403F53">(</span></div></div><div class="ec-line"><div class="code"><span class="indent">        </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">link</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">   </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">array</span><span style="--0:#D6DEEB;--1:#403F53">( </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">color</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">array</span><span style="--0:#D6DEEB;--1:#403F53">( </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">text</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">#FFFFFF</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> ) ),</span></div></div><div class="ec-line"><div class="code"><span class="indent">        </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">button</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">array</span><span style="--0:#D6DEEB;--1:#403F53">(</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">color</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">  </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">array</span><span style="--0:#D6DEEB;--1:#403F53">( </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">background</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">#FFFFFF</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">text</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">#044451</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> ),</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">:hover</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">array</span><span style="--0:#D6DEEB;--1:#403F53">( </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">color</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">array</span><span style="--0:#D6DEEB;--1:#403F53">( </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">background</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=&gt;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">#D9F6FA</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53"> ) ),</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">),</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">      </span></span><span style="--0:#D6DEEB;--1:#403F53">),</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">),</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">)</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D6DEEB;--1:#403F53">);</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span><span style="--0:#82AAFF;--1:#3B61B0"> </span><span style="--0:#D6DEEB;--1:#403F53">);</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="<?phpconst PROPELLANT_STYLESHEET =  &#x27;https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/dist/website.css&#x27;;add_action( &#x27;wp_enqueue_scripts&#x27;, function () {  wp_enqueue_style( &#x27;propellant-website&#x27;, PROPELLANT_STYLESHEET, array(), null );} );add_action( &#x27;after_setup_theme&#x27;, function () {  add_editor_style( PROPELLANT_STYLESHEET );} );add_action( &#x27;init&#x27;, function () {  register_block_style( array( &#x27;core/group&#x27;, &#x27;core/cover&#x27; ), array(    &#x27;name&#x27;       => &#x27;propellant-mist&#x27;,    &#x27;label&#x27;      => &#x27;Mist section&#x27;,    &#x27;style_data&#x27; => array(      &#x27;color&#x27; => array( &#x27;background&#x27; => &#x27;#F3F6F7&#x27;, &#x27;text&#x27; => &#x27;#1E282B&#x27; ),    ),  ) );  register_block_style( array( &#x27;core/group&#x27;, &#x27;core/cover&#x27; ), array(    &#x27;name&#x27;       => &#x27;propellant-deep-teal&#x27;,    &#x27;label&#x27;      => &#x27;Deep teal section&#x27;,    &#x27;style_data&#x27; => array(      &#x27;color&#x27;    => array( &#x27;background&#x27; => &#x27;#044451&#x27;, &#x27;text&#x27; => &#x27;#FFFFFF&#x27; ),      &#x27;elements&#x27; => array(        &#x27;link&#x27;   => array( &#x27;color&#x27; => array( &#x27;text&#x27; => &#x27;#FFFFFF&#x27; ) ),        &#x27;button&#x27; => array(          &#x27;color&#x27;  => array( &#x27;background&#x27; => &#x27;#FFFFFF&#x27;, &#x27;text&#x27; => &#x27;#044451&#x27; ),          &#x27;:hover&#x27; => array( &#x27;color&#x27; => array( &#x27;background&#x27; => &#x27;#D9F6FA&#x27; ) ),        ),      ),    ),  ) );} );"><div></div></button></div></figure></div>
+<p><code dir="auto">theme.json</code> adds the spec palette and font families. The fonts load from the Propellant release
+(Lato ships there under the name Propellant Sans, which is Lato 2.0). This palette replaces your
+parent theme’s palette, so White and Ink keep the parent’s <code dir="auto">base</code> and <code dir="auto">contrast</code> slugs (the internal
+names its header and footer use). Check every page after switching, and remove any Lato or Oswald
+you installed in the Font Library so there is only one copy.</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#7FDBCA;--1:#096E72">"$schema"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">https://schemas.wp.org/trunk/theme.json</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#7FDBCA;--1:#096E72">"version"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">3</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#7FDBCA;--1:#096E72">"settings"</span><span style="--0:#D6DEEB;--1:#403F53">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#7FDBCA;--1:#096E72">"color"</span><span style="--0:#D6DEEB;--1:#403F53">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#7FDBCA;--1:#096E72">"palette"</span><span style="--0:#D6DEEB;--1:#403F53">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#7FDBCA;--1:#096E72">"slug"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">base</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"name"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">White</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"color"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">#FFFFFF</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> },</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#7FDBCA;--1:#096E72">"slug"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">mist</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"name"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Mist</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"color"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">#F3F6F7</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> },</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#7FDBCA;--1:#096E72">"slug"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">contrast</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"name"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Ink</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"color"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">#1E282B</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> },</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#7FDBCA;--1:#096E72">"slug"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">slate</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"name"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Slate</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"color"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">#4B575B</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> },</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#7FDBCA;--1:#096E72">"slug"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">teal</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"name"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Teal</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"color"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">#065E6F</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> },</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#7FDBCA;--1:#096E72">"slug"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">deep-teal</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"name"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Deep teal</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"color"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">#044451</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> },</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#7FDBCA;--1:#096E72">"slug"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">bright-teal</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"name"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Bright teal</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"color"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">#0FACBD</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> },</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#7FDBCA;--1:#096E72">"slug"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">pale-teal</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"name"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Pale teal</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"color"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">#D9F6FA</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> },</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#7FDBCA;--1:#096E72">"slug"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">line</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"name"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Line</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"color"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">#DBE1E3</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> },</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#7FDBCA;--1:#096E72">"slug"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">yellow</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"name"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Yellow</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"color"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">#FFC801</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> },</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#7FDBCA;--1:#096E72">"slug"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">magenta</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"name"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Magenta</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">"color"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">#A30253</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> }</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">      </span></span><span style="--0:#D6DEEB;--1:#403F53">]</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#7FDBCA;--1:#096E72">"typography"</span><span style="--0:#D6DEEB;--1:#403F53">: {</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#7FDBCA;--1:#096E72">"fontFamilies"</span><span style="--0:#D6DEEB;--1:#403F53">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#7FDBCA;--1:#096E72">"slug"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">lato</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#7FDBCA;--1:#096E72">"name"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Lato</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#7FDBCA;--1:#096E72">"fontFamily"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Lato, sans-serif</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#7FDBCA;--1:#096E72">"fontFace"</span><span style="--0:#D6DEEB;--1:#403F53">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">            </span></span><span style="--0:#D6DEEB;--1:#403F53">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">              </span><span style="--0:#7FDBCA;--1:#096E72">"fontFamily"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Lato</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">              </span><span style="--0:#7FDBCA;--1:#096E72">"fontWeight"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">400</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">              </span><span style="--0:#7FDBCA;--1:#096E72">"fontStyle"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">normal</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">              </span><span style="--0:#7FDBCA;--1:#096E72">"src"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/fonts/propellant-sans-400-latin.woff2</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">            </span></span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">            </span></span><span style="--0:#D6DEEB;--1:#403F53">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">              </span><span style="--0:#7FDBCA;--1:#096E72">"fontFamily"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Lato</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">              </span><span style="--0:#7FDBCA;--1:#096E72">"fontWeight"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">700</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">              </span><span style="--0:#7FDBCA;--1:#096E72">"fontStyle"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">normal</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">              </span><span style="--0:#7FDBCA;--1:#096E72">"src"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/fonts/propellant-sans-700-latin.woff2</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">            </span></span><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">          </span></span><span style="--0:#D6DEEB;--1:#403F53">]</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#7FDBCA;--1:#096E72">"slug"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">oswald</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#7FDBCA;--1:#096E72">"name"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Oswald</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#7FDBCA;--1:#096E72">"fontFamily"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Oswald, sans-serif</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#7FDBCA;--1:#096E72">"fontFace"</span><span style="--0:#D6DEEB;--1:#403F53">: [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">            </span></span><span style="--0:#D6DEEB;--1:#403F53">{</span></div></div><div class="ec-line"><div class="code"><span class="indent">              </span><span style="--0:#7FDBCA;--1:#096E72">"fontFamily"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">Oswald</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">              </span><span style="--0:#7FDBCA;--1:#096E72">"fontWeight"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">400 700</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">              </span><span style="--0:#7FDBCA;--1:#096E72">"fontStyle"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">normal</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">              </span><span style="--0:#7FDBCA;--1:#096E72">"src"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C789D6;--1:#7C5686">https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/fonts/oswald-latin-variable.woff2</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">            </span></span><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">          </span></span><span style="--0:#D6DEEB;--1:#403F53">]</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">        </span></span><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">      </span></span><span style="--0:#D6DEEB;--1:#403F53">]</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &quot;$schema&quot;: &quot;https://schemas.wp.org/trunk/theme.json&quot;,  &quot;version&quot;: 3,  &quot;settings&quot;: {    &quot;color&quot;: {      &quot;palette&quot;: [        { &quot;slug&quot;: &quot;base&quot;, &quot;name&quot;: &quot;White&quot;, &quot;color&quot;: &quot;#FFFFFF&quot; },        { &quot;slug&quot;: &quot;mist&quot;, &quot;name&quot;: &quot;Mist&quot;, &quot;color&quot;: &quot;#F3F6F7&quot; },        { &quot;slug&quot;: &quot;contrast&quot;, &quot;name&quot;: &quot;Ink&quot;, &quot;color&quot;: &quot;#1E282B&quot; },        { &quot;slug&quot;: &quot;slate&quot;, &quot;name&quot;: &quot;Slate&quot;, &quot;color&quot;: &quot;#4B575B&quot; },        { &quot;slug&quot;: &quot;teal&quot;, &quot;name&quot;: &quot;Teal&quot;, &quot;color&quot;: &quot;#065E6F&quot; },        { &quot;slug&quot;: &quot;deep-teal&quot;, &quot;name&quot;: &quot;Deep teal&quot;, &quot;color&quot;: &quot;#044451&quot; },        { &quot;slug&quot;: &quot;bright-teal&quot;, &quot;name&quot;: &quot;Bright teal&quot;, &quot;color&quot;: &quot;#0FACBD&quot; },        { &quot;slug&quot;: &quot;pale-teal&quot;, &quot;name&quot;: &quot;Pale teal&quot;, &quot;color&quot;: &quot;#D9F6FA&quot; },        { &quot;slug&quot;: &quot;line&quot;, &quot;name&quot;: &quot;Line&quot;, &quot;color&quot;: &quot;#DBE1E3&quot; },        { &quot;slug&quot;: &quot;yellow&quot;, &quot;name&quot;: &quot;Yellow&quot;, &quot;color&quot;: &quot;#FFC801&quot; },        { &quot;slug&quot;: &quot;magenta&quot;, &quot;name&quot;: &quot;Magenta&quot;, &quot;color&quot;: &quot;#A30253&quot; }      ]    },    &quot;typography&quot;: {      &quot;fontFamilies&quot;: [        {          &quot;slug&quot;: &quot;lato&quot;,          &quot;name&quot;: &quot;Lato&quot;,          &quot;fontFamily&quot;: &quot;Lato, sans-serif&quot;,          &quot;fontFace&quot;: [            {              &quot;fontFamily&quot;: &quot;Lato&quot;,              &quot;fontWeight&quot;: &quot;400&quot;,              &quot;fontStyle&quot;: &quot;normal&quot;,              &quot;src&quot;: &quot;https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/fonts/propellant-sans-400-latin.woff2&quot;            },            {              &quot;fontFamily&quot;: &quot;Lato&quot;,              &quot;fontWeight&quot;: &quot;700&quot;,              &quot;fontStyle&quot;: &quot;normal&quot;,              &quot;src&quot;: &quot;https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/fonts/propellant-sans-700-latin.woff2&quot;            }          ]        },        {          &quot;slug&quot;: &quot;oswald&quot;,          &quot;name&quot;: &quot;Oswald&quot;,          &quot;fontFamily&quot;: &quot;Oswald, sans-serif&quot;,          &quot;fontFace&quot;: [            {              &quot;fontFamily&quot;: &quot;Oswald&quot;,              &quot;fontWeight&quot;: &quot;400 700&quot;,              &quot;fontStyle&quot;: &quot;normal&quot;,              &quot;src&quot;: &quot;https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/fonts/oswald-latin-variable.woff2&quot;            }          ]        }      ]    }  }}"><div></div></button></div></figure></div>
+<p>Activate the child theme in <strong>Appearance &gt; Themes</strong>, then follow Part 1, Setup A, from Step 3. Your
+choices in Styles are saved on top of <code dir="auto">theme.json</code>, so if a color or font from the file does not
+show, open <strong>Styles</strong>, then the three dots menu, and choose <strong>Reset to defaults</strong>. To undo the whole
+route, switch back to the parent theme.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="check-your-work">Check your work</h2><a class="sl-anchor-link" href="#check-your-work"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Check your work”</span></a></div>
+<p>Check on a computer, then on a phone (or the Mobile preview).</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> The H1 headline is Oswald, in capitals, about 64px on a computer and 40px on a phone.</li>
+<li class="task-list-item"><input type="checkbox" disabled> All other text is Lato. Headings H2 to H4 are bold and in sentence case.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Body text is Ink <code dir="auto">#1E282B</code> on White, and paragraphs are no wider than about 720px.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Links are Teal <code dir="auto">#065E6F</code>.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Primary buttons are Teal pills with White text and turn Deep teal on hover.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Secondary buttons are Pale teal pills with Teal text.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Deep teal sections have White text and White buttons with Deep teal text, and no Teal text.</li>
+<li class="task-list-item"><input type="checkbox" disabled> The logo is the color version on light backgrounds and the white version on Deep teal, at
+least 24px tall, with room around it.</li>
+<li class="task-list-item"><input type="checkbox" disabled> The site icon shows the monogram in the browser tab.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Images have 12px rounded corners.</li>
+<li class="task-list-item"><input type="checkbox" disabled> On a phone, nothing runs off the side and buttons are easy to tap.</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="if-something-looks-off">If something looks off</h2><a class="sl-anchor-link" href="#if-something-looks-off"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “If something looks off”</span></a></div>
+<ul>
+<li><strong>A font change did not show up on the live site.</strong> Make sure you clicked <strong>Save</strong> (Site Editor)
+or <strong>Publish</strong> (Customizer), then reload the page. If your site uses a caching plugin or host
+cache, clear it.</li>
+<li><strong>One button or heading ignores the global styles.</strong> It was styled by hand on that page. Select
+it, and in its settings click the three dots next to <strong>Color</strong> or <strong>Typography</strong> and choose
+<strong>Reset all</strong>. Also, a button colored by hand from the palette will not pick up the hover
+snippet, so reset its colors and let the global styles do the work.</li>
+<li><strong>Lato or Oswald is not in the font list.</strong> Open the Font Library <strong>Library</strong> tab. If the font is
+missing, install it again (Step 2). If it is listed, check the weights you need (Lato 400 and 700,
+Oswald 500) are ticked, then click <strong>Update</strong>.</li>
+<li><strong>Additional CSS or Fonts is missing from the menu.</strong> On WordPress.com, custom CSS needs a paid
+plan. On self-hosted WordPress, update to the latest version: Additional CSS moved into the
+Styles three dots menu in 6.9, and the Font Library moved to <strong>Appearance &gt; Fonts</strong> in 7.0.</li>
+<li><strong>The logo looks squashed or blurry.</strong> Use the original PNG from the links above, never a
+screenshot, and size it with the Site Logo block’s width setting rather than by dragging.</li>
+<li><strong>The headline is in capitals in the editor’s list view and in search results.</strong> You typed it in
+capitals. Retype it in sentence case and let the H1 style add the capitals.</li>
+</ul>
+</div><footer class="sl-flex astro-ddtxxk7k"><div class="meta sl-flex astro-ddtxxk7k"><a href="https://github.com/masschallenge/propellant-web/edit/main/docs/websites/wordpress.md" class="sl-flex print:hidden astro-qlekgd3o"><svg aria-hidden="true" class="astro-qlekgd3o astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.2em;"><path d="M22 7.24a1 1 0 0 0-.29-.71l-4.24-4.24a1 1 0 0 0-1.1-.22 1 1 0 0 0-.32.22l-2.83 2.83L2.29 16.05a1 1 0 0 0-.29.71V21a1 1 0 0 0 1 1h4.24a1 1 0 0 0 .76-.29l10.87-10.93L21.71 8c.1-.1.17-.2.22-.33a1 1 0 0 0 0-.24v-.14l.07-.05ZM6.83 20H4v-2.83l9.93-9.93 2.83 2.83L6.83 20ZM18.17 8.66l-2.83-2.83 1.42-1.41 2.82 2.82-1.41 1.42Z"/></svg>Edit page</a></div><div class="pagination-links print:hidden astro-b5raizh3" dir="ltr"><a href="/web/websites/wix/" rel="prev" class="astro-b5raizh3"><svg aria-hidden="true" class="astro-b5raizh3 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg><span class="astro-b5raizh3">Previous<br class="astro-b5raizh3"><span class="link-title astro-b5raizh3">Wix</span></span></a><a href="/platforms/ios/" rel="next" class="astro-b5raizh3"><svg aria-hidden="true" class="astro-b5raizh3 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg><span class="astro-b5raizh3">Next<br class="astro-b5raizh3"><span class="link-title astro-b5raizh3">iOS</span></span></a></div></footer></div></div></main></div></div></div></div></body></html>

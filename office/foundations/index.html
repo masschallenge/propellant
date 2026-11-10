@@ -1,0 +1,556 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-g5ptsecz"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Designing documents, decks and spreadsheets | Propellant</title><link rel="canonical" href="https://propellant.masschallenge.org/office/foundations/"/><link rel="sitemap" href="/sitemap-index.xml"/><link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v7.3.8"/><meta name="generator" content="Starlight v0.42.6"/><meta property="og:title" content="Designing documents, decks and spreadsheets"/><meta property="og:type" content="article"/><meta property="og:url" content="https://propellant.masschallenge.org/office/foundations/"/><meta property="og:locale" content="en"/><meta property="og:description" content="The MassChallenge design system, for every platform we build on."/><meta property="og:site_name" content="Propellant"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="The MassChallenge design system, for every platform we build on."/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg><svg aria-hidden="true" class="dark astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg><svg aria-hidden="true" class="auto astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg></template><link rel="stylesheet" href="/_astro/print.ehPL0gv-.css" media="print"><link rel="stylesheet" href="/_astro/common.CXeMA84i.css"><style>@layer starlight.components{svg:where(.astro-hkc32dio){color:var(--sl-icon-color);font-size:var(--sl-icon-size,1em);width:1em;height:1em;overflow:visible}}
+</style><script type="module" src="/_astro/page.cNngjUgL.js"></script></head><body class="astro-g5ptsecz"><a class="sl-skip-link astro-qb7clj6f" href="#_top">Skip to content</a><div class="page sl-flex astro-yntsjkba"><header class="header astro-yntsjkba"><div class="header astro-by6fddyj"><div class="title-wrapper sl-flex astro-by6fddyj"><a href="/" class="site-title sl-flex astro-6rvad3va"><img class="light:sl-hidden print:hidden astro-6rvad3va" alt src="/_astro/propellant-lockup-white.BZcLDIgz.svg" width="209" height="64"><img class="dark:sl-hidden print:block astro-6rvad3va" alt src="/_astro/propellant-lockup-color.CZ2WI5CL.svg" width="209" height="64"><span class="sr-only astro-6rvad3va" translate="no">Propellant</span></a></div><div class="sl-flex print:hidden astro-by6fddyj"><site-search class="astro-by6fddyj astro-b5kgnn7o" data-translations="{&quot;placeholder&quot;:&quot;Search&quot;}"><button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-b5kgnn7o"><svg aria-hidden="true" class="astro-b5kgnn7o astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg><span class="sl-hidden md:sl-block astro-b5kgnn7o" aria-hidden="true">Search</span><kbd class="sl-hidden md:sl-flex astro-b5kgnn7o" style="display: none;"><kbd class="astro-b5kgnn7o">Ctrl</kbd><kbd class="astro-b5kgnn7o">K</kbd></kbd></button><dialog style="padding:0" aria-label="Search" class="astro-b5kgnn7o"><div class="dialog-frame sl-flex astro-b5kgnn7o"><button data-close-modal class="sl-flex md:sl-hidden astro-b5kgnn7o">Cancel</button><div class="search-container astro-b5kgnn7o"><div id="starlight__search" class="astro-b5kgnn7o"></div></div></div></dialog></site-search><script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script><script type="module" src="/_astro/Search.astro_astro_type_script_index_0_lang.CHGOufdi.js"></script></div><div class="sl-hidden md:sl-flex print:hidden right-group astro-by6fddyj"><div class="sl-flex social-icons astro-by6fddyj"><a href="https://github.com/masschallenge/propellant" rel="me" class="sl-flex astro-n2mnl6yq"><span class="sr-only astro-n2mnl6yq">Propellant on GitHub</span><svg aria-hidden="true" class="astro-n2mnl6yq astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-2z5xp7gb"><span class="sr-only astro-2z5xp7gb">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-2z5xp7gb"><option value="dark" class="astro-2z5xp7gb">Dark</option><option value="light" class="astro-2z5xp7gb">Light</option><option value="auto" selected class="astro-2z5xp7gb">Auto</option></select><svg aria-hidden="true" class="icon caret astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
+	StarlightThemeProvider.updatePickers();
+</script><script type="module">var e=`starlight-theme`,t=e=>e===`auto`||e===`dark`||e===`light`?e:`auto`,n=()=>t(typeof localStorage<`u`&&localStorage.getItem(e));function r(t){typeof localStorage<`u`&&localStorage.setItem(e,t===`light`||t===`dark`?t:``)}var i=()=>matchMedia(`(prefers-color-scheme: light)`).matches?`light`:`dark`;function a(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e===`auto`?i():e,r(e)}matchMedia(`(prefers-color-scheme: light)`).addEventListener(`change`,()=>{n()===`auto`&&a(`auto`)});var o=class extends HTMLElement{constructor(){super(),a(n()),this.querySelector(`select`)?.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&a(t(e.currentTarget.value))})}};customElements.define(`starlight-theme-select`,o);</script><script type="module">var e=class extends HTMLElement{constructor(){super();let e=this.querySelector(`select`);e&&(e.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=e.currentTarget.value)}),window.addEventListener(`pageshow`,t=>{if(!t.persisted)return;let n=e.querySelector(`option[selected]`)?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}};customElements.define(`starlight-lang-select`,e);</script></div></div></header><nav class="sidebar print:hidden astro-yntsjkba" aria-label="Main"><button popovertarget="starlight__sidebar" class="sl-menu-button sl-flex md:sl-hidden print:hidden astro-r2osgdlg"><svg aria-hidden="true" class="open-menu astro-r2osgdlg astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg><svg aria-hidden="true" class="close-menu astro-r2osgdlg astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg><span class="sr-only astro-r2osgdlg">Menu</span></button><script type="module">var e=class extends HTMLElement{constructor(){super();let e=matchMedia(`(min-width: 50em)`),t=()=>{this.popover=e.matches?null:`auto`};t(),e.addEventListener(`change`,()=>t()),this.addEventListener(`toggle`,({newState:e})=>this.trapFocus(e===`open`))}trapFocus(e){document.querySelectorAll(`.main-frame, .sl-skip-link`).forEach(t=>{t.toggleAttribute(`inert`,e)})}};customElements.define(`sl-sidebar-pane`,e);</script><sl-sidebar-pane popover id="starlight__sidebar" class="sidebar-pane astro-yntsjkba"><div class="sidebar-content sl-flex astro-yntsjkba"><sl-sidebar-state-persist data-hash="0kehtv0" class="astro-ipdry5cl"><script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script><ul class="top-level astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/about/" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">About Propellant</span></a></li><li class="astro-rmhv4bp6"><a href="/brand/" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">Brand</span></a></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Guidelines</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="0"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/guidelines/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Overview</span></a></li><li class="astro-rmhv4bp6"><a href="/guidelines/photography/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Photography and video</span></a></li></ul></details></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Platforms</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="1"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/platforms/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Overview</span></a></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Web</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="2"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/web/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Overview</span></a></li><li class="astro-rmhv4bp6"><a href="/web/usage/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Using Propellant</span></a></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Websites</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="3"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/web/websites/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Using Propellant on websites</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/html/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Plain HTML</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/hubspot/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">HubSpot</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/squarespace/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Squarespace</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/webflow/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Webflow</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/wix/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Wix</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/wordpress/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">WordPress</span></a></li></ul></details></li></ul></details></li><li class="astro-rmhv4bp6"><a href="/platforms/ios/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">iOS</span><span class="sl-badge default small  astro-rmhv4bp6 astro-f4zorn72">Planned</span></a></li><li class="astro-rmhv4bp6"><a href="/platforms/android/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Android</span><span class="sl-badge default small  astro-rmhv4bp6 astro-f4zorn72">Planned</span></a></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Office</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="4"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/office/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Overview</span></a></li><li class="astro-rmhv4bp6"><a href="/office/foundations/" aria-current="page" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Designing documents, decks and spreadsheets</span></a></li><li class="astro-rmhv4bp6"><a href="/office/templates/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Installing the templates</span></a></li><li class="astro-rmhv4bp6"><a href="/office/word/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Word</span></a></li><li class="astro-rmhv4bp6"><a href="/office/powerpoint/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">PowerPoint</span></a></li><li class="astro-rmhv4bp6"><a href="/office/excel/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Excel</span></a></li><li class="astro-rmhv4bp6"><a href="/office/google-docs/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Google Docs</span></a></li><li class="astro-rmhv4bp6"><a href="/office/google-slides/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Google Slides</span></a></li><li class="astro-rmhv4bp6"><a href="/office/google-sheets/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Google Sheets</span></a></li></ul></details></li></ul></details></li><li class="astro-rmhv4bp6"><a href="/claude/" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">Propellant in Claude</span></a></li><li class="astro-rmhv4bp6"><a href="/contributing/" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">Contributing</span></a></li></ul><script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script></sl-sidebar-state-persist><div class="md:sl-hidden"><div class="mobile-preferences sl-flex astro-p4azlveh"><div class="social-icons astro-p4azlveh"><a href="https://github.com/masschallenge/propellant" rel="me" class="sl-flex astro-n2mnl6yq"><span class="sr-only astro-n2mnl6yq">Propellant on GitHub</span><svg aria-hidden="true" class="astro-n2mnl6yq astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-2z5xp7gb"><span class="sr-only astro-2z5xp7gb">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-2z5xp7gb"><option value="dark" class="astro-2z5xp7gb">Dark</option><option value="light" class="astro-2z5xp7gb">Light</option><option value="auto" selected class="astro-2z5xp7gb">Auto</option></select><svg aria-hidden="true" class="icon caret astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
+	StarlightThemeProvider.updatePickers();
+</script></div></div></div></sl-sidebar-pane></nav><div class="main-frame astro-yntsjkba"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-lrzkfocr"><aside class="right-sidebar-container print:hidden astro-lrzkfocr"><div class="right-sidebar astro-lrzkfocr"><div class="lg:sl-hidden astro-qok35upx"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-66cqc7ze"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-66cqc7ze"><details id="starlight__mobile-toc" class="astro-66cqc7ze"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-66cqc7ze"><span class="toggle sl-flex astro-66cqc7ze">On this page<svg aria-hidden="true" class="caret astro-66cqc7ze astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-66cqc7ze"></span></summary><div class="dropdown astro-66cqc7ze"><ul class="isMobile astro-jugkfwgx" style="--depth: 0;"><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#_top" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Overview</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#start-from-a-template" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Start from a template</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#fonts" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Fonts</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#getting-the-fonts" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Getting the fonts</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#sending-files-outside-masschallenge" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Sending files outside MassChallenge</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#color" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Color</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#using-color" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Using color</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#charts" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Charts</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#type-styles" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Type styles</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#documents-word-and-google-docs" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Documents (Word and Google Docs)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#slides-powerpoint-and-google-slides" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Slides (PowerPoint and Google Slides)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#spreadsheets-excel-and-google-sheets" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Spreadsheets (Excel and Google Sheets)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#case" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Case</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#the-logo" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">The logo</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#layout" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Layout</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#writing" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Writing</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#accessibility" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Accessibility</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#photography-and-video" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Photography and video</span></a></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C3fM4Kra.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-qok35upx"><div class="sl-container astro-qok35upx"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-jugkfwgx" style="--depth: 0;"><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#_top" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Overview</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#start-from-a-template" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Start from a template</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#fonts" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Fonts</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#getting-the-fonts" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Getting the fonts</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#sending-files-outside-masschallenge" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Sending files outside MassChallenge</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#color" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Color</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#using-color" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Using color</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#charts" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Charts</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#type-styles" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Type styles</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#documents-word-and-google-docs" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Documents (Word and Google Docs)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#slides-powerpoint-and-google-slides" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Slides (PowerPoint and Google Slides)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#spreadsheets-excel-and-google-sheets" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Spreadsheets (Excel and Google Sheets)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#case" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Case</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#the-logo" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">The logo</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#layout" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Layout</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#writing" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Writing</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#accessibility" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Accessibility</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#photography-and-video" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Photography and video</span></a></li></ul></nav></starlight-toc><script type="module" src="/_astro/TableOfContents.astro_astro_type_script_index_0_lang.BpJaGz7G.js"></script></div></div></div></aside><div class="main-pane astro-lrzkfocr"><main data-pagefind-body class="astro-g5ptsecz" lang="en" dir="ltr"><div class="content-panel astro-a7po4psb"><div class="sl-container astro-a7po4psb"><h1 id="_top" class="astro-bebwqqxs">Designing documents, decks and spreadsheets</h1></div></div><div class="content-panel astro-a7po4psb"><div class="sl-container astro-a7po4psb"><div class="sl-markdown-content"><p>Everything MassChallenge sends out, from a one page memo to a pitch deck to a budget, should look
+like it came from the same team that built our website. This page sets the shared rules. The
+guides for each app show you where to find the settings, and the templates have everything set up
+already.</p>
+<p>The rules come straight from Propellant, so a document and the website use the same colors, fonts
+and voice.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="start-from-a-template">Start from a template</h2><a class="sl-anchor-link" href="#start-from-a-template"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Start from a template”</span></a></div>
+<p>The fastest way to get every rule right is to start from a Propellant template. They have the
+colors, fonts, styles, logo and page setup built in.</p>
+<table>
+<thead>
+<tr>
+<th>App</th>
+<th>Template</th>
+<th>Guide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Word</td>
+<td><a href="https://github.com/masschallenge/propellant-office/raw/v1.0.0/templates/word/propellant-document.dotx"><code dir="auto">propellant-document.dotx</code></a></td>
+<td><a href="/office/word/">Word</a></td>
+</tr>
+<tr>
+<td>PowerPoint</td>
+<td><a href="https://github.com/masschallenge/propellant-office/raw/v1.0.0/templates/powerpoint/propellant-presentation.potx"><code dir="auto">propellant-presentation.potx</code></a></td>
+<td><a href="/office/powerpoint/">PowerPoint</a></td>
+</tr>
+<tr>
+<td>Excel</td>
+<td><a href="https://github.com/masschallenge/propellant-office/raw/v1.0.0/templates/excel/propellant-workbook.xltx"><code dir="auto">propellant-workbook.xltx</code></a></td>
+<td><a href="/office/excel/">Excel</a></td>
+</tr>
+<tr>
+<td>Google Docs</td>
+<td><a href="https://github.com/masschallenge/propellant-office/raw/v1.0.0/templates/word/propellant-document.docx"><code dir="auto">propellant-document.docx</code></a></td>
+<td><a href="/office/google-docs/">Google Docs</a></td>
+</tr>
+<tr>
+<td>Google Slides</td>
+<td><a href="https://github.com/masschallenge/propellant-office/raw/v1.0.0/templates/powerpoint/propellant-presentation.pptx"><code dir="auto">propellant-presentation.pptx</code></a></td>
+<td><a href="/office/google-slides/">Google Slides</a></td>
+</tr>
+<tr>
+<td>Google Sheets</td>
+<td><a href="https://github.com/masschallenge/propellant-office/raw/v1.0.0/templates/excel/propellant-workbook.xlsx"><code dir="auto">propellant-workbook.xlsx</code></a></td>
+<td><a href="/office/google-sheets/">Google Sheets</a></td>
+</tr>
+</tbody>
+</table>
+<p><a href="/office/templates/">Installing the templates</a> explains how to add them to each app, and how an
+administrator can share them with everyone.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="fonts">Fonts</h2><a class="sl-anchor-link" href="#fonts"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Fonts”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Font</th>
+<th>Use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lato</td>
+<td>Everything: body text, headings, tables, labels and captions.</td>
+</tr>
+<tr>
+<td>Oswald</td>
+<td>Only the big headline: a document title, a slide title or a sheet title. Always in capitals.</td>
+</tr>
+</tbody>
+</table>
+<p>Oswald is a narrow, condensed font. It is made for short, large headlines and is hard to read in
+long text, so never use it for paragraphs, bullets or table text.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="getting-the-fonts">Getting the fonts</h3><a class="sl-anchor-link" href="#getting-the-fonts"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Getting the fonts”</span></a></div>
+<p>Both fonts are free, open source fonts from <a href="https://fonts.google.com">Google Fonts</a>.</p>
+<ul>
+<li><strong>Google Docs, Sheets and Slides</strong> can use both. Open the font menu, choose <strong>More fonts</strong> and
+search for Lato and Oswald.</li>
+<li><strong>Microsoft Word, PowerPoint and Excel</strong> do not include them. Lato and Oswald are not among
+Microsoft 365’s <a href="https://support.microsoft.com/en-us/office/cloud-fonts-in-office-f7b009fe-037f-45ed-a556-b5fe6ede6adb">cloud fonts</a>,
+so each computer needs them installed. Ask IT to install them for you, or download them from
+<a href="https://fonts.google.com/specimen/Lato">Lato</a> and <a href="https://fonts.google.com/specimen/Oswald">Oswald</a>
+and install them yourself. A Microsoft 365 administrator can also
+<a href="https://learn.microsoft.com/en-us/sharepoint/support-for-organization-fonts-in-powerpoint-for-the-web">publish them as organization fonts</a>
+so they work in Office on the web.</li>
+</ul>
+<p>If a computer does not have the fonts, Office swaps in another font and the layout can shift.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="sending-files-outside-masschallenge">Sending files outside MassChallenge</h3><a class="sl-anchor-link" href="#sending-files-outside-masschallenge"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Sending files outside MassChallenge”</span></a></div>
+<p>People outside MassChallenge may not have Lato and Oswald. Before you send a Word or PowerPoint
+file that someone else will open:</p>
+<ul>
+<li><strong>Send a PDF</strong> when they only need to read it. A PDF keeps the fonts exactly.</li>
+<li><strong>Embed the fonts</strong> when they need to edit it. In Word or PowerPoint on Windows, choose
+<strong>File</strong>, <strong>Options</strong>, <strong>Save</strong>, then <strong>Embed fonts in the file</strong>, and leave “Embed only the
+characters used” off. Recent Word and PowerPoint for Mac support this too.
+<a href="https://support.microsoft.com/en-us/office/benefits-of-embedding-custom-fonts-cb3982aa-ea76-4323-b008-86670f222dbc">Microsoft explains embedding</a>.
+Embedded fonts do not show in Office on the web, and Excel cannot embed fonts.</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="color">Color</h2><a class="sl-anchor-link" href="#color"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Color”</span></a></div>
+<p>Every template uses the Propellant theme. A theme is the set of twelve named colors and two fonts
+that Office and Google offer at the top of every color and font menu. Pick colors from the theme
+row, never from “More colors”, and your file stays on brand even if the theme is updated later.</p>
+<table>
+<thead>
+<tr>
+<th>Theme slot</th>
+<th>Name</th>
+<th>Hex</th>
+<th>Use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dark 1 (text)</td>
+<td>Ink</td>
+<td><code dir="auto">#1E282B</code></td>
+<td>Body text and headings</td>
+</tr>
+<tr>
+<td>Light 1 (background)</td>
+<td>White</td>
+<td><code dir="auto">#FFFFFF</code></td>
+<td>Page and slide backgrounds</td>
+</tr>
+<tr>
+<td>Dark 2</td>
+<td>Deep teal</td>
+<td><code dir="auto">#044451</code></td>
+<td>Title slides, section slides, table headers, cover pages</td>
+</tr>
+<tr>
+<td>Light 2</td>
+<td>Mist</td>
+<td><code dir="auto">#F3F6F7</code></td>
+<td>Alternate rows and quiet panels</td>
+</tr>
+<tr>
+<td>Accent 1</td>
+<td>Teal</td>
+<td><code dir="auto">#065E6F</code></td>
+<td>Links and the first chart series</td>
+</tr>
+<tr>
+<td>Accent 2</td>
+<td>Yellow</td>
+<td><code dir="auto">#FFC801</code></td>
+<td>Highlights, always with Ink text, and the second chart series</td>
+</tr>
+<tr>
+<td>Accent 3</td>
+<td>Slate</td>
+<td><code dir="auto">#4B575B</code></td>
+<td>Secondary text and the third chart series</td>
+</tr>
+<tr>
+<td>Accent 4</td>
+<td>Bright teal</td>
+<td><code dir="auto">#0FACBD</code></td>
+<td>Accents on Deep teal and the fourth chart series</td>
+</tr>
+<tr>
+<td>Accent 5</td>
+<td>Deep teal</td>
+<td><code dir="auto">#044451</code></td>
+<td>The fifth chart series</td>
+</tr>
+<tr>
+<td>Accent 6</td>
+<td>Gray</td>
+<td><code dir="auto">#848F92</code></td>
+<td>Comparison data, such as last year</td>
+</tr>
+<tr>
+<td>Hyperlink</td>
+<td>Teal</td>
+<td><code dir="auto">#065E6F</code></td>
+<td>Links</td>
+</tr>
+<tr>
+<td>Followed hyperlink</td>
+<td>Deep teal</td>
+<td><code dir="auto">#044451</code></td>
+<td>Visited links</td>
+</tr>
+</tbody>
+</table>
+<p>Two more brand colors sit outside the theme on purpose:</p>
+<ul>
+<li><strong>Pale teal <code dir="auto">#D9F6FA</code></strong> tints a callout box or a highlighted row.</li>
+<li><strong>Mid teal <code dir="auto">#068DA4</code></strong> is a supporting accent for shapes and icons.</li>
+<li><strong>Magenta <code dir="auto">#A30253</code></strong> means something is wrong or late. It is not in the theme so it never ends
+up in a chart or a decoration by accident.</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="using-color">Using color</h3><a class="sl-anchor-link" href="#using-color"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Using color”</span></a></div>
+<ul>
+<li>
+<p>Most of the page is White, with Ink text. Color is an accent, not a background for everything.</p>
+</li>
+<li>
+<p>Use Deep teal for big brand moments: a title slide, a section divider, a cover. On Deep teal use
+White text and Bright teal accents, never Teal text.</p>
+</li>
+<li>
+<p>Keep headings in Ink. Teal is for links and things people can click.</p>
+</li>
+<li>
+<p>Never show meaning with color alone. Pair every status color with a word, such as On track or
+Late.</p>
+</li>
+<li>
+<p>Keep text readable: a contrast ratio of at least 4.5:1 with its background, as the
+<a href="https://www.w3.org/TR/WCAG21/#contrast-minimum">WCAG guidelines</a> require. These pairings pass:</p>
+<table>
+<thead>
+<tr>
+<th>Text</th>
+<th>Background</th>
+<th>Contrast</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ink</td>
+<td>White, Mist or Pale teal</td>
+<td>13.3:1 or more</td>
+</tr>
+<tr>
+<td>Ink</td>
+<td>Yellow</td>
+<td>9.7:1</td>
+</tr>
+<tr>
+<td>Slate</td>
+<td>White or Mist</td>
+<td>6.9:1 or more</td>
+</tr>
+<tr>
+<td>Teal</td>
+<td>White</td>
+<td>7.4:1</td>
+</tr>
+<tr>
+<td>White</td>
+<td>Deep teal</td>
+<td>10.8:1</td>
+</tr>
+<tr>
+<td>White</td>
+<td>Teal</td>
+<td>7.4:1</td>
+</tr>
+<tr>
+<td>Bright teal</td>
+<td>Deep teal</td>
+<td>3.9:1, so only for text 18 pt or larger</td>
+</tr>
+</tbody>
+</table>
+<p>Bright teal, Mid teal, Yellow and Gray are too light for text on White.</p>
+</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="charts">Charts</h3><a class="sl-anchor-link" href="#charts"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Charts”</span></a></div>
+<ul>
+<li>A chart with one series uses Teal. Most charts need only one.</li>
+<li>Charts take their colors from the theme in the order above, so do not recolor series by hand.</li>
+<li>With two or more series, show the values or series names on the chart itself, not only in a
+legend. Yellow, Bright teal and Gray are light against White, so labels are what make them
+readable, and they help anyone who cannot tell the colors apart.</li>
+<li>Keep to four series or fewer. Fold the rest into Other, or split the chart.</li>
+<li>Use one value axis. Two measures on different scales belong in two charts.</li>
+<li>Never use Magenta for a series: it means something is wrong.</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="type-styles">Type styles</h2><a class="sl-anchor-link" href="#type-styles"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Type styles”</span></a></div>
+<p>Use the built-in styles in the templates instead of formatting text by hand. Styles keep a long
+document consistent, build the table of contents and tell screen readers how the document is
+organized.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="documents-word-and-google-docs">Documents (Word and Google Docs)</h3><a class="sl-anchor-link" href="#documents-word-and-google-docs"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Documents (Word and Google Docs)”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Style</th>
+<th>Font</th>
+<th>Size</th>
+<th>Color</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title</td>
+<td>Oswald</td>
+<td>32 pt</td>
+<td>Deep teal</td>
+<td>Capitals, once per document</td>
+</tr>
+<tr>
+<td>Subtitle</td>
+<td>Lato</td>
+<td>14 pt</td>
+<td>Slate</td>
+<td></td>
+</tr>
+<tr>
+<td>Heading 1</td>
+<td>Lato Bold</td>
+<td>20 pt</td>
+<td>Ink</td>
+<td>Sections</td>
+</tr>
+<tr>
+<td>Heading 2</td>
+<td>Lato Bold</td>
+<td>15 pt</td>
+<td>Ink</td>
+<td>Parts of a section</td>
+</tr>
+<tr>
+<td>Heading 3</td>
+<td>Lato Bold</td>
+<td>12.5 pt</td>
+<td>Ink</td>
+<td>Rarely needed</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td>Lato</td>
+<td>11 pt</td>
+<td>Ink</td>
+<td>Line spacing 1.4, 8 pt after each paragraph</td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="slides-powerpoint-and-google-slides">Slides (PowerPoint and Google Slides)</h3><a class="sl-anchor-link" href="#slides-powerpoint-and-google-slides"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Slides (PowerPoint and Google Slides)”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Style</th>
+<th>Font</th>
+<th>Size</th>
+<th>Color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title on a white slide</td>
+<td>Oswald, capitals</td>
+<td>40 pt</td>
+<td>Ink</td>
+</tr>
+<tr>
+<td>Title on a Deep teal slide</td>
+<td>Oswald, capitals</td>
+<td>54 pt</td>
+<td>White</td>
+</tr>
+<tr>
+<td>Body, first level</td>
+<td>Lato</td>
+<td>24 pt</td>
+<td>Ink</td>
+</tr>
+<tr>
+<td>Body, second level</td>
+<td>Lato</td>
+<td>20 pt</td>
+<td>Slate</td>
+</tr>
+<tr>
+<td>Smallest text, such as a source</td>
+<td>Lato</td>
+<td>18 pt</td>
+<td>Slate</td>
+</tr>
+</tbody>
+</table>
+<p>Microsoft <a href="https://support.microsoft.com/en-us/accessibility/powerpoint/make-your-powerpoint-presentations-accessible-to-people-with-disabilities">recommends 18 pt or larger</a>
+for slide text. Never go smaller.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="spreadsheets-excel-and-google-sheets">Spreadsheets (Excel and Google Sheets)</h3><a class="sl-anchor-link" href="#spreadsheets-excel-and-google-sheets"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Spreadsheets (Excel and Google Sheets)”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Style</th>
+<th>Font</th>
+<th>Size</th>
+<th>Color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sheet title</td>
+<td>Oswald, capitals</td>
+<td>24 pt</td>
+<td>Deep teal</td>
+</tr>
+<tr>
+<td>Header row</td>
+<td>Lato Bold</td>
+<td>11 pt</td>
+<td>White on Deep teal</td>
+</tr>
+<tr>
+<td>Cells</td>
+<td>Lato</td>
+<td>11 pt</td>
+<td>Ink, with Mist stripes</td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="case">Case</h3><a class="sl-anchor-link" href="#case"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Case”</span></a></div>
+<p>Only Oswald titles are in capitals. Everything else, headings and table headers included, is in
+sentence case: a capital first letter and lower case after it, except for names.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="the-logo">The logo</h2><a class="sl-anchor-link" href="#the-logo"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “The logo”</span></a></div>
+<p>Use the logo files in <a href="https://github.com/masschallenge/propellant-office/blob/v1.0.0/assets/logos"><code dir="auto">assets/logos</code></a>, never a copy from a website or an old
+file.</p>
+<table>
+<thead>
+<tr>
+<th>Background</th>
+<th>Logo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>White or a light color</td>
+<td>Full color: <code dir="auto">masschallenge-logo-horizontal-color.png</code></td>
+</tr>
+<tr>
+<td>Deep teal, a dark color or a dark photo</td>
+<td>White: <code dir="auto">masschallenge-logo-horizontal-white.png</code></td>
+</tr>
+<tr>
+<td>One color printing</td>
+<td>Black: <code dir="auto">masschallenge-logo-horizontal-black.png</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Put the logo once per page or slide, in a corner. The templates place it for you.</li>
+<li>Leave clear space around it equal to half its height.</li>
+<li>Never stretch, recolor, outline or redraw it, and never put the full color logo on Deep teal.</li>
+<li>In a document, keep the horizontal logo at least a third of an inch (8 mm) tall so the wordmark
+stays readable. Use the MC monogram alone only where MassChallenge is already named.</li>
+</ul>
+<p>The <a href="/brand/">brand guidelines</a>
+have the full logo rules.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="layout">Layout</h2><a class="sl-anchor-link" href="#layout"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Layout”</span></a></div>
+<ul>
+<li><strong>Leave space.</strong> White space makes a page easier to read. Do not fill every corner.</li>
+<li><strong>Align to the margins.</strong> Line up text, images and charts on the same left edge.</li>
+<li><strong>One idea per slide, one table per sheet, one purpose per document.</strong></li>
+<li><strong>Round the corners of photos and panels</strong> slightly, about 0.12 inch (3 mm), as the website does
+with 12 pixels. Logos and charts stay square.</li>
+<li><strong>Use real lists.</strong> Use the bullet and numbering buttons, never typed dashes or asterisks.</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="writing">Writing</h2><a class="sl-anchor-link" href="#writing"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Writing”</span></a></div>
+<p>Documents sound like the rest of MassChallenge: bold and human, direct and plain spoken.</p>
+<ul>
+<li>Put the point first: the decision, the ask or the takeaway.</li>
+<li>Use short sentences and everyday words. Write “we” for MassChallenge and “you” for the reader.</li>
+<li>Make a slide title say the takeaway, not the topic: “Applications grew in every program”, not
+“Applications”.</li>
+<li>Skip buzzwords such as leverage, seamless and robust, and skip exclamation marks.</li>
+<li>Use commas, colons and periods. Do not use em dashes or en dashes.</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="accessibility">Accessibility</h2><a class="sl-anchor-link" href="#accessibility"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Accessibility”</span></a></div>
+<p>Everything we send should work for people who use screen readers, magnifiers or high contrast
+settings.</p>
+<ul>
+<li>Use the built-in title, heading and list styles so the structure is real, not just visual.</li>
+<li>Give every photo, chart and diagram alt text that says what it shows. Mark purely decorative
+images as decorative.</li>
+<li>Give every slide a unique title, even if you hide it.</li>
+<li>Run the checker before you share: in Word, PowerPoint and Excel choose <strong>Review</strong>, then
+<a href="https://support.microsoft.com/en-us/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f"><strong>Check Accessibility</strong></a>.
+Google Docs, Sheets and Slides have no built-in checker, so check headings, alt text and slide
+titles by hand.</li>
+<li>Use link text that says where it goes, such as “the application guide”, never “click here”.</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="photography-and-video">Photography and video</h2><a class="sl-anchor-link" href="#photography-and-video"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Photography and video”</span></a></div>
+<p>People are at the heart of how MassChallenge looks. The
+<a href="/guidelines/photography/">photography and video guide</a> covers choosing, treating and placing photos and
+videos, from your own event photos to licensed stock.</p>
+</div><footer class="sl-flex astro-ddtxxk7k"><div class="meta sl-flex astro-ddtxxk7k"><a href="https://github.com/masschallenge/propellant-office/edit/main/docs/foundations.md" class="sl-flex print:hidden astro-qlekgd3o"><svg aria-hidden="true" class="astro-qlekgd3o astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.2em;"><path d="M22 7.24a1 1 0 0 0-.29-.71l-4.24-4.24a1 1 0 0 0-1.1-.22 1 1 0 0 0-.32.22l-2.83 2.83L2.29 16.05a1 1 0 0 0-.29.71V21a1 1 0 0 0 1 1h4.24a1 1 0 0 0 .76-.29l10.87-10.93L21.71 8c.1-.1.17-.2.22-.33a1 1 0 0 0 0-.24v-.14l.07-.05ZM6.83 20H4v-2.83l9.93-9.93 2.83 2.83L6.83 20ZM18.17 8.66l-2.83-2.83 1.42-1.41 2.82 2.82-1.41 1.42Z"/></svg>Edit page</a></div><div class="pagination-links print:hidden astro-b5raizh3" dir="ltr"><a href="/office/" rel="prev" class="astro-b5raizh3"><svg aria-hidden="true" class="astro-b5raizh3 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg><span class="astro-b5raizh3">Previous<br class="astro-b5raizh3"><span class="link-title astro-b5raizh3">Overview</span></span></a><a href="/office/templates/" rel="next" class="astro-b5raizh3"><svg aria-hidden="true" class="astro-b5raizh3 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg><span class="astro-b5raizh3">Next<br class="astro-b5raizh3"><span class="link-title astro-b5raizh3">Installing the templates</span></span></a></div></footer></div></div></main></div></div></div></div></body></html>

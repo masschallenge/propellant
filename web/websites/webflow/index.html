@@ -1,0 +1,807 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-g5ptsecz"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Webflow | Propellant</title><link rel="canonical" href="https://propellant.masschallenge.org/web/websites/webflow/"/><link rel="sitemap" href="/sitemap-index.xml"/><link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v7.3.8"/><meta name="generator" content="Starlight v0.42.6"/><meta property="og:title" content="Webflow"/><meta property="og:type" content="article"/><meta property="og:url" content="https://propellant.masschallenge.org/web/websites/webflow/"/><meta property="og:locale" content="en"/><meta property="og:description" content="The MassChallenge design system, for every platform we build on."/><meta property="og:site_name" content="Propellant"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="The MassChallenge design system, for every platform we build on."/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg><svg aria-hidden="true" class="dark astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg><svg aria-hidden="true" class="auto astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg></template><link rel="stylesheet" href="/_astro/print.ehPL0gv-.css" media="print"><link rel="stylesheet" href="/_astro/common.CXeMA84i.css"><style>@layer starlight.components{svg:where(.astro-hkc32dio){color:var(--sl-icon-color);font-size:var(--sl-icon-size,1em);width:1em;height:1em;overflow:visible}}
+</style><script type="module" src="/_astro/page.cNngjUgL.js"></script></head><body class="astro-g5ptsecz"><a class="sl-skip-link astro-qb7clj6f" href="#_top">Skip to content</a><div class="page sl-flex astro-yntsjkba"><header class="header astro-yntsjkba"><div class="header astro-by6fddyj"><div class="title-wrapper sl-flex astro-by6fddyj"><a href="/" class="site-title sl-flex astro-6rvad3va"><img class="light:sl-hidden print:hidden astro-6rvad3va" alt src="/_astro/propellant-lockup-white.BZcLDIgz.svg" width="209" height="64"><img class="dark:sl-hidden print:block astro-6rvad3va" alt src="/_astro/propellant-lockup-color.CZ2WI5CL.svg" width="209" height="64"><span class="sr-only astro-6rvad3va" translate="no">Propellant</span></a></div><div class="sl-flex print:hidden astro-by6fddyj"><site-search class="astro-by6fddyj astro-b5kgnn7o" data-translations="{&quot;placeholder&quot;:&quot;Search&quot;}"><button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-b5kgnn7o"><svg aria-hidden="true" class="astro-b5kgnn7o astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg><span class="sl-hidden md:sl-block astro-b5kgnn7o" aria-hidden="true">Search</span><kbd class="sl-hidden md:sl-flex astro-b5kgnn7o" style="display: none;"><kbd class="astro-b5kgnn7o">Ctrl</kbd><kbd class="astro-b5kgnn7o">K</kbd></kbd></button><dialog style="padding:0" aria-label="Search" class="astro-b5kgnn7o"><div class="dialog-frame sl-flex astro-b5kgnn7o"><button data-close-modal class="sl-flex md:sl-hidden astro-b5kgnn7o">Cancel</button><div class="search-container astro-b5kgnn7o"><div id="starlight__search" class="astro-b5kgnn7o"></div></div></div></dialog></site-search><script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script><script type="module" src="/_astro/Search.astro_astro_type_script_index_0_lang.CHGOufdi.js"></script></div><div class="sl-hidden md:sl-flex print:hidden right-group astro-by6fddyj"><div class="sl-flex social-icons astro-by6fddyj"><a href="https://github.com/masschallenge/propellant" rel="me" class="sl-flex astro-n2mnl6yq"><span class="sr-only astro-n2mnl6yq">Propellant on GitHub</span><svg aria-hidden="true" class="astro-n2mnl6yq astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-2z5xp7gb"><span class="sr-only astro-2z5xp7gb">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-2z5xp7gb"><option value="dark" class="astro-2z5xp7gb">Dark</option><option value="light" class="astro-2z5xp7gb">Light</option><option value="auto" selected class="astro-2z5xp7gb">Auto</option></select><svg aria-hidden="true" class="icon caret astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
+	StarlightThemeProvider.updatePickers();
+</script><script type="module">var e=`starlight-theme`,t=e=>e===`auto`||e===`dark`||e===`light`?e:`auto`,n=()=>t(typeof localStorage<`u`&&localStorage.getItem(e));function r(t){typeof localStorage<`u`&&localStorage.setItem(e,t===`light`||t===`dark`?t:``)}var i=()=>matchMedia(`(prefers-color-scheme: light)`).matches?`light`:`dark`;function a(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e===`auto`?i():e,r(e)}matchMedia(`(prefers-color-scheme: light)`).addEventListener(`change`,()=>{n()===`auto`&&a(`auto`)});var o=class extends HTMLElement{constructor(){super(),a(n()),this.querySelector(`select`)?.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&a(t(e.currentTarget.value))})}};customElements.define(`starlight-theme-select`,o);</script><script type="module">var e=class extends HTMLElement{constructor(){super();let e=this.querySelector(`select`);e&&(e.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=e.currentTarget.value)}),window.addEventListener(`pageshow`,t=>{if(!t.persisted)return;let n=e.querySelector(`option[selected]`)?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}};customElements.define(`starlight-lang-select`,e);</script></div></div></header><nav class="sidebar print:hidden astro-yntsjkba" aria-label="Main"><button popovertarget="starlight__sidebar" class="sl-menu-button sl-flex md:sl-hidden print:hidden astro-r2osgdlg"><svg aria-hidden="true" class="open-menu astro-r2osgdlg astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg><svg aria-hidden="true" class="close-menu astro-r2osgdlg astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg><span class="sr-only astro-r2osgdlg">Menu</span></button><script type="module">var e=class extends HTMLElement{constructor(){super();let e=matchMedia(`(min-width: 50em)`),t=()=>{this.popover=e.matches?null:`auto`};t(),e.addEventListener(`change`,()=>t()),this.addEventListener(`toggle`,({newState:e})=>this.trapFocus(e===`open`))}trapFocus(e){document.querySelectorAll(`.main-frame, .sl-skip-link`).forEach(t=>{t.toggleAttribute(`inert`,e)})}};customElements.define(`sl-sidebar-pane`,e);</script><sl-sidebar-pane popover id="starlight__sidebar" class="sidebar-pane astro-yntsjkba"><div class="sidebar-content sl-flex astro-yntsjkba"><sl-sidebar-state-persist data-hash="0kehtv0" class="astro-ipdry5cl"><script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script><ul class="top-level astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/about/" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">About Propellant</span></a></li><li class="astro-rmhv4bp6"><a href="/brand/" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">Brand</span></a></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Guidelines</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="0"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/guidelines/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Overview</span></a></li><li class="astro-rmhv4bp6"><a href="/guidelines/photography/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Photography and video</span></a></li></ul></details></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Platforms</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="1"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/platforms/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Overview</span></a></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Web</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="2"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/web/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Overview</span></a></li><li class="astro-rmhv4bp6"><a href="/web/usage/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Using Propellant</span></a></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Websites</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="3"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/web/websites/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Using Propellant on websites</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/html/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Plain HTML</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/hubspot/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">HubSpot</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/squarespace/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Squarespace</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/webflow/" aria-current="page" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Webflow</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/wix/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Wix</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/wordpress/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">WordPress</span></a></li></ul></details></li></ul></details></li><li class="astro-rmhv4bp6"><a href="/platforms/ios/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">iOS</span><span class="sl-badge default small  astro-rmhv4bp6 astro-f4zorn72">Planned</span></a></li><li class="astro-rmhv4bp6"><a href="/platforms/android/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Android</span><span class="sl-badge default small  astro-rmhv4bp6 astro-f4zorn72">Planned</span></a></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Office</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="4"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/office/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Overview</span></a></li><li class="astro-rmhv4bp6"><a href="/office/foundations/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Designing documents, decks and spreadsheets</span></a></li><li class="astro-rmhv4bp6"><a href="/office/templates/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Installing the templates</span></a></li><li class="astro-rmhv4bp6"><a href="/office/word/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Word</span></a></li><li class="astro-rmhv4bp6"><a href="/office/powerpoint/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">PowerPoint</span></a></li><li class="astro-rmhv4bp6"><a href="/office/excel/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Excel</span></a></li><li class="astro-rmhv4bp6"><a href="/office/google-docs/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Google Docs</span></a></li><li class="astro-rmhv4bp6"><a href="/office/google-slides/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Google Slides</span></a></li><li class="astro-rmhv4bp6"><a href="/office/google-sheets/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Google Sheets</span></a></li></ul></details></li></ul></details></li><li class="astro-rmhv4bp6"><a href="/claude/" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">Propellant in Claude</span></a></li><li class="astro-rmhv4bp6"><a href="/contributing/" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">Contributing</span></a></li></ul><script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script></sl-sidebar-state-persist><div class="md:sl-hidden"><div class="mobile-preferences sl-flex astro-p4azlveh"><div class="social-icons astro-p4azlveh"><a href="https://github.com/masschallenge/propellant" rel="me" class="sl-flex astro-n2mnl6yq"><span class="sr-only astro-n2mnl6yq">Propellant on GitHub</span><svg aria-hidden="true" class="astro-n2mnl6yq astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-2z5xp7gb"><span class="sr-only astro-2z5xp7gb">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-2z5xp7gb"><option value="dark" class="astro-2z5xp7gb">Dark</option><option value="light" class="astro-2z5xp7gb">Light</option><option value="auto" selected class="astro-2z5xp7gb">Auto</option></select><svg aria-hidden="true" class="icon caret astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
+	StarlightThemeProvider.updatePickers();
+</script></div></div></div></sl-sidebar-pane></nav><div class="main-frame astro-yntsjkba"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-lrzkfocr"><aside class="right-sidebar-container print:hidden astro-lrzkfocr"><div class="right-sidebar astro-lrzkfocr"><div class="lg:sl-hidden astro-qok35upx"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-66cqc7ze"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-66cqc7ze"><details id="starlight__mobile-toc" class="astro-66cqc7ze"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-66cqc7ze"><span class="toggle sl-flex astro-66cqc7ze">On this page<svg aria-hidden="true" class="caret astro-66cqc7ze astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-66cqc7ze"></span></summary><div class="dropdown astro-66cqc7ze"><ul class="isMobile astro-jugkfwgx" style="--depth: 0;"><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#_top" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Overview</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#before-you-start" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Before you start</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-1-set-up-site-styles-no-code" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 1: Set up site styles (no code)</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#how-webflow-styling-works" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">How Webflow styling works</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-1-add-oswald" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 1: Add Oswald</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-2-make-a-propellant-variable-collection" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 2: Make a Propellant variable collection</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-3-add-the-color-variables" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 3: Add the color variables</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-4-add-the-font-variables" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 4: Add the font variables</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-5-add-the-size-variables" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 5: Add the size variables</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-6-add-the-mobile-sizes-with-a-mode" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 6: Add the mobile sizes with a mode</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-7-style-the-body-all-pages-tag" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 7: Style the Body (All Pages) tag</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-8-style-all-h1-to-all-h4-headings" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 8: Style All H1 to All H4 headings</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-9-style-all-paragraphs-and-all-links" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 9: Style All Paragraphs and All Links</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-10-make-the-paragraph-size-classes" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 10: Make the paragraph size classes</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-11-make-the-button-classes" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 11: Make the button classes</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-12-make-the-section-classes" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 12: Make the section classes</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-13-round-images-and-cards" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 13: Round images and cards</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-14-only-if-needed-mobile-without-modes" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 14 (only if needed): Mobile without modes</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-2-add-the-logo-and-site-icon" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 2: Add the logo and site icon</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#the-logo" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">The logo</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#the-site-icon-favicon" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">The site icon (favicon)</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-3-build-on-brand-pages" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 3: Build on brand pages</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#build-a-sample-home-page" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Build a sample home page</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#publish" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Publish</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-4-custom-code-optional" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 4: Custom code (optional)</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#alternative-the-propellant-stylesheet" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Alternative: the Propellant stylesheet</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#check-your-work" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Check your work</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#if-something-looks-off" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">If something looks off</span></a></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C3fM4Kra.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-qok35upx"><div class="sl-container astro-qok35upx"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-jugkfwgx" style="--depth: 0;"><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#_top" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Overview</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#before-you-start" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Before you start</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-1-set-up-site-styles-no-code" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 1: Set up site styles (no code)</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#how-webflow-styling-works" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">How Webflow styling works</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-1-add-oswald" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 1: Add Oswald</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-2-make-a-propellant-variable-collection" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 2: Make a Propellant variable collection</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-3-add-the-color-variables" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 3: Add the color variables</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-4-add-the-font-variables" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 4: Add the font variables</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-5-add-the-size-variables" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 5: Add the size variables</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-6-add-the-mobile-sizes-with-a-mode" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 6: Add the mobile sizes with a mode</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-7-style-the-body-all-pages-tag" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 7: Style the Body (All Pages) tag</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-8-style-all-h1-to-all-h4-headings" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 8: Style All H1 to All H4 headings</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-9-style-all-paragraphs-and-all-links" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 9: Style All Paragraphs and All Links</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-10-make-the-paragraph-size-classes" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 10: Make the paragraph size classes</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-11-make-the-button-classes" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 11: Make the button classes</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-12-make-the-section-classes" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 12: Make the section classes</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-13-round-images-and-cards" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 13: Round images and cards</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-14-only-if-needed-mobile-without-modes" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 14 (only if needed): Mobile without modes</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-2-add-the-logo-and-site-icon" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 2: Add the logo and site icon</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#the-logo" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">The logo</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#the-site-icon-favicon" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">The site icon (favicon)</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-3-build-on-brand-pages" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 3: Build on brand pages</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#build-a-sample-home-page" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Build a sample home page</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#publish" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Publish</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-4-custom-code-optional" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 4: Custom code (optional)</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#alternative-the-propellant-stylesheet" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Alternative: the Propellant stylesheet</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#check-your-work" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Check your work</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#if-something-looks-off" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">If something looks off</span></a></li></ul></nav></starlight-toc><script type="module" src="/_astro/TableOfContents.astro_astro_type_script_index_0_lang.BpJaGz7G.js"></script></div></div></div></aside><div class="main-pane astro-lrzkfocr"><main data-pagefind-body class="astro-g5ptsecz" lang="en" dir="ltr"><div class="content-panel astro-a7po4psb"><div class="sl-container astro-a7po4psb"><h1 id="_top" class="astro-bebwqqxs">Webflow</h1></div></div><div class="content-panel astro-a7po4psb"><div class="sl-container astro-a7po4psb"><div class="sl-markdown-content"><p>Webflow gives you everything you need to build a MassChallenge-style site without writing code.
+You store the brand colors, fonts and sizes once as variables, style every heading, paragraph and
+link at once, and make a handful of classes for buttons and sections. By the end you will have a
+site with the right fonts, colors, headline, pill buttons, White, Mist and Deep teal sections, the
+logo and a site icon, and it will look right on phones too. Plan on about two hours the first time,
+most of it in Part 1.</p>
+<p>Keep the <a href="/web/websites/">website spec</a> open in another tab while you work. Every value in this
+guide comes from it.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="before-you-start">Before you start</h2><a class="sl-anchor-link" href="#before-you-start"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Before you start”</span></a></div>
+<p><strong>Your plan.</strong> You can do almost all of this guide on any Webflow plan, including the free one:</p>
+<ul>
+<li>Google Fonts, variables, tag styles and classes are part of the Designer (the Webflow editor).
+Webflow says you do not need a paid plan to use Google Fonts.</li>
+<li>Custom code (Part 4, optional) needs a paid Core, Growth, Agency or Freelancer Workspace, or an
+active Site plan on this site. You do not need custom code to follow the spec.</li>
+<li>Publishing to your own domain (such as yourdomain.org) needs a Site plan. Without one you can
+publish to a free <code dir="auto">yoursite.webflow.io</code> address.</li>
+</ul>
+<p><strong>Words you will meet.</strong> Webflow uses a few terms from web design. Here is what they mean:</p>
+<ul>
+<li><strong>Variable</strong>: a named, saved value, such as a color called Teal. Change it once and everything
+that uses it updates.</li>
+<li><strong>Tag style</strong>: a style for every element of one kind, such as All H1 Headings. Webflow shows
+tags in pink.</li>
+<li><strong>Class</strong>: a named style you give to chosen elements, such as a button. Webflow shows classes in
+blue.</li>
+<li><strong>Combo class</strong>: a second class added after the first, which changes only a few things. A
+secondary button is the primary button class plus a combo class.</li>
+<li><strong>Breakpoint</strong>: a screen width where your design can change, such as Mobile landscape.</li>
+</ul>
+<p><strong>The logo files.</strong> Download these from our public file store (right click each link, then save):</p>
+<ul>
+<li>Horizontal logo, full color, for White and Mist backgrounds:
+<a href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/logos/masschallenge-logo-horizontal-color.png">masschallenge-logo-horizontal-color.png</a></li>
+<li>Horizontal logo, white, for Deep teal backgrounds:
+<a href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/logos/masschallenge-logo-horizontal-white.png">masschallenge-logo-horizontal-white.png</a></li>
+<li>Monogram, full color, for the site icon:
+<a href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/logos/masschallenge-logo-monogram-color.png">masschallenge-logo-monogram-color.png</a></li>
+</ul>
+<p>There are also <code dir="auto">-black</code> versions of both lockups, and a <code dir="auto">-white</code> monogram, at the same address. Use
+these files only, never a copy of the logo from somewhere else. The
+<a href="/brand/">brand guidelines</a> explain when to use each one.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="part-1-set-up-site-styles-no-code">Part 1: Set up site styles (no code)</h2><a class="sl-anchor-link" href="#part-1-set-up-site-styles-no-code"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Part 1: Set up site styles (no code)”</span></a></div>
+<p>This is the heart of the guide. You will do it once, and every page you build afterwards starts
+on brand.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="how-webflow-styling-works">How Webflow styling works</h3><a class="sl-anchor-link" href="#how-webflow-styling-works"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “How Webflow styling works”</span></a></div>
+<p>Webflow styles in layers. The <strong>Body (All Pages)</strong> tag sets the defaults for the whole site. Tags
+such as <strong>All H1 Headings</strong> and <strong>All Paragraphs</strong> then refine one kind of element. <strong>Classes</strong> sit
+on top and change chosen elements, such as buttons and sections. Each layer only overrides what you
+set on it, and everything else is inherited from the layer below.</p>
+<p><strong>Variables</strong> sit alongside this. You save each brand value once in the Variables panel and link
+styles to it. You can then give a variable a second value for phones (a mode), so the mobile sizes
+take care of themselves.</p>
+<p>You do all of this in the <strong>Style panel</strong>, the panel on the right of the Designer. At the top of it
+is the <strong>Style selector</strong> field, which shows what you are styling: a pink tag, a blue class or a
+green state such as Hover.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-1-add-oswald">Step 1: Add Oswald</h3><a class="sl-anchor-link" href="#step-1-add-oswald"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 1: Add Oswald”</span></a></div>
+<p>Lato is already built into the Webflow Designer, so you only need to add Oswald.</p>
+<ol>
+<li>Open <strong>Site settings</strong>, then the <strong>Fonts</strong> tab.</li>
+<li>Under <strong>Google fonts</strong>, choose <strong>Oswald</strong>.</li>
+<li>Tick the <strong>500</strong> (Medium) variant. That is the only weight the headline uses.</li>
+<li>Click <strong>Add font</strong>.</li>
+<li>Go back to the Designer and refresh the page in your browser. Oswald now appears in <strong>Style
+panel &gt; Typography &gt; Font</strong>, under Google fonts.</li>
+</ol>
+<p>You will not see Lato in the Site settings list. That is expected: Webflow leaves out the Google
+fonts it already includes. Lato is in the Font dropdown under Google fonts.</p>
+<blockquote>
+<p>Webflow notes that its Google Fonts connection sends visitors’ IP addresses to Google. If your
+privacy rules do not allow that, download Lato and Oswald from Google Fonts and upload them under
+<strong>Site settings &gt; Fonts &gt; Custom fonts</strong> instead. Everything else in this guide stays the same.</p>
+</blockquote>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-2-make-a-propellant-variable-collection">Step 2: Make a Propellant variable collection</h3><a class="sl-anchor-link" href="#step-2-make-a-propellant-variable-collection"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 2: Make a Propellant variable collection”</span></a></div>
+<p>A collection keeps all the brand values together, so the next person can find them.</p>
+<ol>
+<li>Open the <strong>Variables</strong> panel from the left toolbar of the Designer.</li>
+<li>Click the <strong>plus</strong> icon next to <strong>Site variables</strong>.</li>
+<li>Name the collection <code dir="auto">Propellant</code> and click <strong>Create</strong>.</li>
+</ol>
+<p>To add each variable below: click <strong>New variable</strong>, choose the type (Color, Size or Font Family),
+then hover over the new variable’s name and click the settings <strong>cog</strong> to rename it. Type the
+name exactly as shown. The part before the slash puts it in a group, so <code dir="auto">Colors/Teal</code> appears as
+Teal inside a Colors group. Click the value to set it.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-3-add-the-color-variables">Step 3: Add the color variables</h3><a class="sl-anchor-link" href="#step-3-add-the-color-variables"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 3: Add the color variables”</span></a></div>
+<p>Create one <strong>Color</strong> variable for each row. This is the full spec palette, plus the secondary
+button hover color from the buttons table.</p>
+<table>
+<thead>
+<tr>
+<th>Variable name</th>
+<th>Hex</th>
+<th>Use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">Colors/White</code></td>
+<td><code dir="auto">#FFFFFF</code></td>
+<td>Page background, text on Deep teal</td>
+</tr>
+<tr>
+<td><code dir="auto">Colors/Mist</code></td>
+<td><code dir="auto">#F3F6F7</code></td>
+<td>Alternate section background</td>
+</tr>
+<tr>
+<td><code dir="auto">Colors/Ink</code></td>
+<td><code dir="auto">#1E282B</code></td>
+<td>Body text and headings</td>
+</tr>
+<tr>
+<td><code dir="auto">Colors/Slate</code></td>
+<td><code dir="auto">#4B575B</code></td>
+<td>Secondary text, such as captions</td>
+</tr>
+<tr>
+<td><code dir="auto">Colors/Teal</code></td>
+<td><code dir="auto">#065E6F</code></td>
+<td>Links and buttons</td>
+</tr>
+<tr>
+<td><code dir="auto">Colors/Deep teal</code></td>
+<td><code dir="auto">#044451</code></td>
+<td>Button hover, and dark brand sections</td>
+</tr>
+<tr>
+<td><code dir="auto">Colors/Bright teal</code></td>
+<td><code dir="auto">#0FACBD</code></td>
+<td>Accents on Deep teal sections only</td>
+</tr>
+<tr>
+<td><code dir="auto">Colors/Pale teal</code></td>
+<td><code dir="auto">#D9F6FA</code></td>
+<td>Secondary buttons and tinted sections</td>
+</tr>
+<tr>
+<td><code dir="auto">Colors/Pale teal hover</code></td>
+<td><code dir="auto">#C4EEF4</code></td>
+<td>Secondary button hover</td>
+</tr>
+<tr>
+<td><code dir="auto">Colors/Line</code></td>
+<td><code dir="auto">#DBE1E3</code></td>
+<td>Lines and dividers</td>
+</tr>
+<tr>
+<td><code dir="auto">Colors/Yellow</code></td>
+<td><code dir="auto">#FFC801</code></td>
+<td>Highlights, always with Ink text</td>
+</tr>
+<tr>
+<td><code dir="auto">Colors/Magenta</code></td>
+<td><code dir="auto">#A30253</code></td>
+<td>Errors</td>
+</tr>
+</tbody>
+</table>
+<p>If your site already has swatches, Webflow has turned them into color variables. You can leave
+them or delete the ones you no longer use.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-4-add-the-font-variables">Step 4: Add the font variables</h3><a class="sl-anchor-link" href="#step-4-add-the-font-variables"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 4: Add the font variables”</span></a></div>
+<p>Create two <strong>Font Family</strong> variables:</p>
+<table>
+<thead>
+<tr>
+<th>Variable name</th>
+<th>Font</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">Fonts/Body</code></td>
+<td>Lato</td>
+</tr>
+<tr>
+<td><code dir="auto">Fonts/Headline</code></td>
+<td>Oswald</td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-5-add-the-size-variables">Step 5: Add the size variables</h3><a class="sl-anchor-link" href="#step-5-add-the-size-variables"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 5: Add the size variables”</span></a></div>
+<p>Create one <strong>Size</strong> variable for each row, using the <strong>Desktop</strong> value and the px unit. You will add
+the Mobile values in the next step.</p>
+<table>
+<thead>
+<tr>
+<th>Variable name</th>
+<th>Desktop</th>
+<th>Mobile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">Type/Heading 1</code></td>
+<td>64px</td>
+<td>40px</td>
+</tr>
+<tr>
+<td><code dir="auto">Type/Heading 2</code></td>
+<td>40px</td>
+<td>30px</td>
+</tr>
+<tr>
+<td><code dir="auto">Type/Heading 3</code></td>
+<td>30px</td>
+<td>24px</td>
+</tr>
+<tr>
+<td><code dir="auto">Type/Heading 4</code></td>
+<td>24px</td>
+<td>20px</td>
+</tr>
+<tr>
+<td><code dir="auto">Type/Paragraph large</code></td>
+<td>20px</td>
+<td>18px</td>
+</tr>
+<tr>
+<td><code dir="auto">Type/Paragraph</code></td>
+<td>17px</td>
+<td>16px</td>
+</tr>
+<tr>
+<td><code dir="auto">Type/Paragraph small</code></td>
+<td>14px</td>
+<td>14px</td>
+</tr>
+<tr>
+<td><code dir="auto">Type/Button</code></td>
+<td>16px</td>
+<td>16px</td>
+</tr>
+<tr>
+<td><code dir="auto">Space/Section</code></td>
+<td>96px</td>
+<td>64px</td>
+</tr>
+<tr>
+<td><code dir="auto">Space/Button vertical</code></td>
+<td>14px</td>
+<td>14px</td>
+</tr>
+<tr>
+<td><code dir="auto">Space/Button horizontal</code></td>
+<td>28px</td>
+<td>28px</td>
+</tr>
+<tr>
+<td><code dir="auto">Layout/Text width</code></td>
+<td>720px</td>
+<td>720px</td>
+</tr>
+<tr>
+<td><code dir="auto">Radius/Card</code></td>
+<td>12px</td>
+<td>12px</td>
+</tr>
+<tr>
+<td><code dir="auto">Radius/Pill</code></td>
+<td>9999px</td>
+<td>9999px</td>
+</tr>
+</tbody>
+</table>
+<p><code dir="auto">Radius/Pill</code> is a very large corner radius, which is how a web page draws fully rounded pill
+ends. <code dir="auto">Layout/Text width</code> keeps paragraphs to about 68 characters a line.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-6-add-the-mobile-sizes-with-a-mode">Step 6: Add the mobile sizes with a mode</h3><a class="sl-anchor-link" href="#step-6-add-the-mobile-sizes-with-a-mode"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 6: Add the mobile sizes with a mode”</span></a></div>
+<p>A mode is a second set of values for the same variables. A responsive mode switches on by itself at
+a breakpoint, so you link each style once and it shrinks on phones automatically.</p>
+<ol>
+<li>In the Variables panel, with the Propellant collection open, click the <strong>New mode</strong> dropdown
+arrow.</li>
+<li>Name the mode <code dir="auto">Mobile</code>.</li>
+<li>In the <strong>Responsive</strong> dropdown, choose <strong>Mobile landscape</strong>. That covers screens 767px wide and
+below, which includes phones held either way.</li>
+<li>Click <strong>Create</strong>. Every value starts as a copy of the Base (desktop) value.</li>
+<li>In the Mobile column, click each value that changes and type the Mobile number from the table
+in Step 5: Heading 1 40px, Heading 2 30px, Heading 3 24px, Heading 4 20px, Paragraph large 18px,
+Paragraph 16px and Section 64px. Leave the others as they are.</li>
+</ol>
+<p>You will check this on the Mobile portrait breakpoint in “Check your work”.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-7-style-the-body-all-pages-tag">Step 7: Style the Body (All Pages) tag</h3><a class="sl-anchor-link" href="#step-7-style-the-body-all-pages-tag"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 7: Style the Body (All Pages) tag”</span></a></div>
+<p>These are the defaults every page inherits.</p>
+<ol>
+<li>Open any page and click the <strong>Body</strong> element in the Navigator (the page structure list on the
+left).</li>
+<li>In the Style panel, click the <strong>Style selector</strong> field. Under <strong>HTML Tag</strong>, choose <strong>Body (All
+Pages)</strong>.</li>
+<li>Under <strong>Typography</strong>, set:
+<ul>
+<li><strong>Font</strong>: hover over the field, click the purple dot in its top left corner and choose
+<code dir="auto">Fonts/Body</code>. (This purple dot is how you link any field to a variable.)</li>
+<li><strong>Weight</strong>: 400 (Normal).</li>
+<li><strong>Size</strong>: link to <code dir="auto">Type/Paragraph</code>.</li>
+<li><strong>Height</strong> (line height): type <code dir="auto">1.6</code>, then choose the <strong>-</strong> unit so it has no unit. A unitless
+line height grows and shrinks with the text.</li>
+<li><strong>Color</strong>: link to <code dir="auto">Colors/Ink</code>.</li>
+</ul>
+</li>
+<li>Under <strong>Backgrounds</strong>, set <strong>Color</strong> to <code dir="auto">Colors/White</code>.</li>
+</ol>
+<p>Set the text color here, on the Body, and not on the heading and paragraph tags. That way a Deep
+teal section can switch all its text to White in one place (Part 3).</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-8-style-all-h1-to-all-h4-headings">Step 8: Style All H1 to All H4 headings</h3><a class="sl-anchor-link" href="#step-8-style-all-h1-to-all-h4-headings"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 8: Style All H1 to All H4 headings”</span></a></div>
+<p>Add a Heading to any page from <strong>Add panel &gt; Typography</strong> so you have one to click. Select it, make
+sure it has no class, then open the Style selector field and choose the tag. Set each tag as
+below, and link the font and size to the variables shown.</p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Font</th>
+<th>Weight</th>
+<th>Size</th>
+<th>Height</th>
+<th>Letter spacing</th>
+<th>Letter case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All H1 Headings</td>
+<td><code dir="auto">Fonts/Headline</code></td>
+<td>500 (Medium)</td>
+<td><code dir="auto">Type/Heading 1</code></td>
+<td><code dir="auto">1</code> (no unit)</td>
+<td><code dir="auto">0.01em</code></td>
+<td>All capitals</td>
+</tr>
+<tr>
+<td>All H2 Headings</td>
+<td><code dir="auto">Fonts/Body</code></td>
+<td>700 (Bold)</td>
+<td><code dir="auto">Type/Heading 2</code></td>
+<td><code dir="auto">1.15</code> (no unit)</td>
+<td>leave empty</td>
+<td>leave empty</td>
+</tr>
+<tr>
+<td>All H3 Headings</td>
+<td><code dir="auto">Fonts/Body</code></td>
+<td>700 (Bold)</td>
+<td><code dir="auto">Type/Heading 3</code></td>
+<td><code dir="auto">1.2</code> (no unit)</td>
+<td>leave empty</td>
+<td>leave empty</td>
+</tr>
+<tr>
+<td>All H4 Headings</td>
+<td><code dir="auto">Fonts/Body</code></td>
+<td>700 (Bold)</td>
+<td><code dir="auto">Type/Heading 4</code></td>
+<td><code dir="auto">1.25</code> (no unit)</td>
+<td>leave empty</td>
+<td>leave empty</td>
+</tr>
+</tbody>
+</table>
+<p>To change which heading level you are styling, select the heading and change its level (H1, H2
+and so on) in the Settings panel, or add one heading of each level and select each in turn.</p>
+<p>For the H1 headline:</p>
+<ul>
+<li><strong>Letter spacing</strong> and <strong>letter case</strong> are under <strong>More type options</strong> at the bottom of the
+Typography section. Type <code dir="auto">0.01em</code> (that is the spec’s 1%) for letter spacing, and choose the
+all capitals option (shown as <strong>AA</strong>) for letter case.</li>
+<li>Type your headline in sentence case, such as “Founders build here”. Webflow turns it into
+capitals for you. Screen readers then read words, not letters.</li>
+<li>If you cannot find the letter case control, use <strong>Style panel &gt; Custom properties</strong> instead:
+click <strong>Add</strong>, type <code dir="auto">text-transform</code> as the name and <code dir="auto">uppercase</code> as the value, and press Enter.</li>
+</ul>
+<p>Leave the color empty on all four tags, so they inherit Ink from the Body.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-9-style-all-paragraphs-and-all-links">Step 9: Style All Paragraphs and All Links</h3><a class="sl-anchor-link" href="#step-9-style-all-paragraphs-and-all-links"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 9: Style All Paragraphs and All Links”</span></a></div>
+<p><strong>All Paragraphs.</strong> Select a paragraph with no class, open the Style selector field and choose
+<strong>All Paragraphs</strong>. Set:</p>
+<ul>
+<li><strong>Size</strong>: link to <code dir="auto">Type/Paragraph</code>.</li>
+<li><strong>Height</strong>: <code dir="auto">1.6</code> (no unit).</li>
+<li><strong>Size section &gt; Max W</strong> (maximum width): link to <code dir="auto">Layout/Text width</code>.</li>
+</ul>
+<p><strong>All Links.</strong> Select a text link, open the Style selector field and choose <strong>All Links</strong>. Set:</p>
+<ul>
+<li><strong>Color</strong>: link to <code dir="auto">Colors/Teal</code>.</li>
+<li><strong>Decoration</strong>: underline.</li>
+</ul>
+<p>Webflow treats buttons as links too, so buttons start out teal and underlined. The button classes
+in Step 11 fix that.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-10-make-the-paragraph-size-classes">Step 10: Make the paragraph size classes</h3><a class="sl-anchor-link" href="#step-10-make-the-paragraph-size-classes"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 10: Make the paragraph size classes”</span></a></div>
+<p>The spec has two more text sizes, so make a class for each. Select a paragraph, click the Style
+selector field, type the class name and press Enter. Then set:</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Size</th>
+<th>Height</th>
+<th>Color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">paragraph-large</code></td>
+<td><code dir="auto">Type/Paragraph large</code></td>
+<td><code dir="auto">1.5</code> (no unit)</td>
+<td>leave empty</td>
+</tr>
+<tr>
+<td><code dir="auto">paragraph-small</code></td>
+<td><code dir="auto">Type/Paragraph small</code></td>
+<td><code dir="auto">1.5</code> (no unit)</td>
+<td><code dir="auto">Colors/Slate</code> (for captions)</td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-11-make-the-button-classes">Step 11: Make the button classes</h3><a class="sl-anchor-link" href="#step-11-make-the-button-classes"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 11: Make the button classes”</span></a></div>
+<p>You will make one base class for the primary button, then two combo classes for the other button
+styles. Webflow buttons come from <strong>Add panel &gt; Links &gt; Button</strong>.</p>
+<p><strong>Primary button: <code dir="auto">brand-button</code>.</strong> Add a Button, click the Style selector field, type
+<code dir="auto">brand-button</code> and press Enter. Set:</p>
+<ul>
+<li><strong>Typography</strong>: Font <code dir="auto">Fonts/Body</code>, Weight 700 (Bold), Size <code dir="auto">Type/Button</code>, Height <code dir="auto">1</code> (no unit),
+Color <code dir="auto">Colors/White</code>, Decoration none (click the <strong>X</strong>).</li>
+<li><strong>Backgrounds</strong>: Color <code dir="auto">Colors/Teal</code>.</li>
+<li><strong>Spacing</strong>: padding top and bottom <code dir="auto">Space/Button vertical</code>, left and right
+<code dir="auto">Space/Button horizontal</code>.</li>
+<li><strong>Borders</strong>: Radius <code dir="auto">Radius/Pill</code>. No border width and no shadow.</li>
+</ul>
+<p>Now the hover color. Click the dropdown arrow in the Style selector field, choose <strong>Hover</strong> from
+the <strong>States</strong> menu (a green Hover label appears), and set <strong>Backgrounds &gt; Color</strong> to
+<code dir="auto">Colors/Deep teal</code>. Choose <strong>None</strong> in the same menu to go back to the normal state.</p>
+<p><strong>Secondary button: <code dir="auto">brand-button</code> plus <code dir="auto">is-secondary</code>.</strong> Add a second Button. Type
+<code dir="auto">brand-button</code>, press Enter, then type <code dir="auto">is-secondary</code> and press Enter. The second class is a combo
+class: it starts with everything from <code dir="auto">brand-button</code> and only changes what you set here.</p>
+<ul>
+<li><strong>Backgrounds</strong>: Color <code dir="auto">Colors/Pale teal</code>.</li>
+<li><strong>Typography</strong>: Color <code dir="auto">Colors/Teal</code>.</li>
+<li><strong>Hover</strong> state: Backgrounds Color <code dir="auto">Colors/Pale teal hover</code>.</li>
+</ul>
+<p><strong>Button on Deep teal: <code dir="auto">brand-button</code> plus <code dir="auto">is-on-dark</code>.</strong> Add a third Button, apply
+<code dir="auto">brand-button</code>, then the combo class <code dir="auto">is-on-dark</code>:</p>
+<ul>
+<li><strong>Backgrounds</strong>: Color <code dir="auto">Colors/White</code>.</li>
+<li><strong>Typography</strong>: Color <code dir="auto">Colors/Deep teal</code>.</li>
+<li><strong>Hover</strong> state: Backgrounds Color <code dir="auto">Colors/Pale teal</code>.</li>
+</ul>
+<p>Write button labels in sentence case with a verb, such as “Apply now” or “Meet the startups”.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-12-make-the-section-classes">Step 12: Make the section classes</h3><a class="sl-anchor-link" href="#step-12-make-the-section-classes"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 12: Make the section classes”</span></a></div>
+<p>Sections work the same way: one base class and two combo classes.</p>
+<ol>
+<li>From <strong>Add panel &gt; Structure</strong>, add a <strong>Box</strong>. (In older versions of Webflow, add a <strong>Section</strong>
+instead and skip the next step.)</li>
+<li>In the <strong>Settings</strong> panel, set the <strong>Tag</strong> to <strong>Section</strong>.</li>
+<li>Click the Style selector field, type <code dir="auto">brand-section</code> and press Enter. Set:
+<ul>
+<li><strong>Spacing</strong>: padding top and bottom <code dir="auto">Space/Section</code>.</li>
+<li><strong>Backgrounds</strong>: Color <code dir="auto">Colors/White</code>.</li>
+</ul>
+</li>
+<li>Add a second section with <code dir="auto">brand-section</code> plus the combo class <code dir="auto">is-mist</code>, and set
+<strong>Backgrounds &gt; Color</strong> to <code dir="auto">Colors/Mist</code>.</li>
+<li>Add a third section with <code dir="auto">brand-section</code> plus the combo class <code dir="auto">is-deep-teal</code>, and set
+<strong>Backgrounds &gt; Color</strong> to <code dir="auto">Colors/Deep teal</code> and <strong>Typography &gt; Color</strong> to <code dir="auto">Colors/White</code>.
+Headings and paragraphs inside it turn White, because they inherit their color.</li>
+</ol>
+<p><strong>Links on Deep teal.</strong> Text links keep their Teal color, and Teal on Deep teal is not allowed.
+Give any text link inside a Deep teal section the class <code dir="auto">link-on-dark</code> and set its
+<strong>Typography &gt; Color</strong> to <code dir="auto">Colors/White</code>. For a small accent on Deep teal, such as an icon or a
+short label, use <code dir="auto">Colors/Bright teal</code>.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-13-round-images-and-cards">Step 13: Round images and cards</h3><a class="sl-anchor-link" href="#step-13-round-images-and-cards"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 13: Round images and cards”</span></a></div>
+<p>Select an image, open the Style selector field and choose <strong>All Images</strong>. Set <strong>Borders &gt; Radius</strong>
+to <code dir="auto">Radius/Card</code>. Do the same on any card class you make later.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-14-only-if-needed-mobile-without-modes">Step 14 (only if needed): Mobile without modes</h3><a class="sl-anchor-link" href="#step-14-only-if-needed-mobile-without-modes"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 14 (only if needed): Mobile without modes”</span></a></div>
+<p>The Mobile mode in Step 6 should handle phone sizes everywhere. If a size does not change on a
+phone, set it directly: click the <strong>Mobile landscape</strong> icon in the canvas bar (above the canvas),
+select the element, choose the same tag or class in the Style selector, and type the Mobile value
+from the table in Step 5. Styles set on Mobile landscape also apply to Mobile portrait.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="part-2-add-the-logo-and-site-icon">Part 2: Add the logo and site icon</h2><a class="sl-anchor-link" href="#part-2-add-the-logo-and-site-icon"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Part 2: Add the logo and site icon”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="the-logo">The logo</h3><a class="sl-anchor-link" href="#the-logo"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “The logo”</span></a></div>
+<p>In Webflow the logo is part of the page, in the navigation bar, rather than a site setting.</p>
+<ol>
+<li>Open the <strong>Assets</strong> panel in the left toolbar, click the <strong>cloud</strong> icon and upload the
+horizontal color logo (and the white one, if you will use a Deep teal footer).</li>
+<li>From <strong>Add panel &gt; Other</strong>, drag a <strong>Navbar</strong> to the top of your page.</li>
+<li>Drag the color logo from the Assets panel into the Navbar’s <strong>Brand</strong> link.</li>
+<li>Select the logo image and set <strong>Style panel &gt; Size &gt; Height</strong> to <code dir="auto">32px</code>, with width left on
+Auto so the proportions stay right. Never go below 24px tall; on very small spaces use the
+monogram instead.</li>
+<li>In the image’s settings, set the alt text (the description screen readers announce) to
+<code dir="auto">MassChallenge</code>.</li>
+<li>Select the Brand link, open <strong>Settings panel &gt; Link settings</strong>, choose <strong>Page</strong> and pick your
+home page.</li>
+</ol>
+<p>Keep clear space around the logo of at least half its height (16px for a 32px logo). Do not
+stretch, recolor or add effects. On a Deep teal background, use the white logo.</p>
+<p>To make the Navbar appear on every page, right click it and turn it into a component, then add that
+component to each page.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="the-site-icon-favicon">The site icon (favicon)</h3><a class="sl-anchor-link" href="#the-site-icon-favicon"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “The site icon (favicon)”</span></a></div>
+<p>The site icon is the little picture in the browser tab. Webflow needs one square image and makes
+every size from it.</p>
+<ol>
+<li>Make the monogram square first. The monogram file is wider than it is tall, so open it in any
+image editor, put it in the middle of a square transparent canvas, and add empty space above
+and below. Do not stretch or crop it.</li>
+<li>Open <strong>Site settings &gt; General &gt; Icons</strong> and click <strong>Upload icon</strong>.</li>
+<li>Upload your square monogram and select which icons to update.</li>
+<li>Click <strong>Apply</strong>, then publish your site and refresh it in your browser to see the new icon.</li>
+</ol>
+<div class="sl-heading-wrapper level-h2"><h2 id="part-3-build-on-brand-pages">Part 3: Build on brand pages</h2><a class="sl-anchor-link" href="#part-3-build-on-brand-pages"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Part 3: Build on brand pages”</span></a></div>
+<p>With Part 1 done, building a page is mostly a matter of choosing the right class. The quickest way
+to apply a class is to select an element, click the Style selector field (or press Command + Enter
+on a Mac, Control + Enter on Windows), start typing the name and press Enter.</p>
+<table>
+<thead>
+<tr>
+<th>You want</th>
+<th>Element</th>
+<th>Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A White section</td>
+<td>Box with the Section tag</td>
+<td><code dir="auto">brand-section</code></td>
+</tr>
+<tr>
+<td>A Mist section</td>
+<td>Box with the Section tag</td>
+<td><code dir="auto">brand-section</code> <code dir="auto">is-mist</code></td>
+</tr>
+<tr>
+<td>A Deep teal section</td>
+<td>Box with the Section tag</td>
+<td><code dir="auto">brand-section</code> <code dir="auto">is-deep-teal</code></td>
+</tr>
+<tr>
+<td>The big headline</td>
+<td>Heading set to H1</td>
+<td>none (the tag does it)</td>
+</tr>
+<tr>
+<td>A primary button</td>
+<td>Button</td>
+<td><code dir="auto">brand-button</code></td>
+</tr>
+<tr>
+<td>A secondary button</td>
+<td>Button</td>
+<td><code dir="auto">brand-button</code> <code dir="auto">is-secondary</code></td>
+</tr>
+<tr>
+<td>A button on Deep teal</td>
+<td>Button</td>
+<td><code dir="auto">brand-button</code> <code dir="auto">is-on-dark</code></td>
+</tr>
+<tr>
+<td>A link on Deep teal</td>
+<td>Text link</td>
+<td><code dir="auto">link-on-dark</code></td>
+</tr>
+<tr>
+<td>An intro paragraph</td>
+<td>Paragraph</td>
+<td><code dir="auto">paragraph-large</code></td>
+</tr>
+<tr>
+<td>A caption or note</td>
+<td>Paragraph</td>
+<td><code dir="auto">paragraph-small</code></td>
+</tr>
+</tbody>
+</table>
+<p>To apply a combo class, apply the base class first, then type the combo class name. Typing a
+comma after the first name adds it and lets you type the next one straight away.</p>
+<p>A few rules from the spec to keep in mind:</p>
+<ul>
+<li>Use one H1 per page, for the big headline. Use H2, H3 and H4 for everything below it.</li>
+<li>Never put Teal text or a primary button on Deep teal. Use White text and the <code dir="auto">is-on-dark</code> button.</li>
+<li>Yellow is for highlights only, and always with Ink text on it.</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="build-a-sample-home-page">Build a sample home page</h3><a class="sl-anchor-link" href="#build-a-sample-home-page"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Build a sample home page”</span></a></div>
+<ol>
+<li>Add the Navbar component with the logo at the top.</li>
+<li><strong>Hero, on White.</strong> Add a <code dir="auto">brand-section</code>. Inside it, add a Heading set to H1 (for example
+“Founders build here”), a paragraph with <code dir="auto">paragraph-large</code>, and two Buttons: one <code dir="auto">brand-button</code>
+(“Apply now”) and one <code dir="auto">brand-button</code> <code dir="auto">is-secondary</code> (“Learn more”).</li>
+<li><strong>Story, on Mist.</strong> Add a <code dir="auto">brand-section</code> <code dir="auto">is-mist</code> with an H2, two paragraphs and an image.</li>
+<li><strong>Call to action, on Deep teal.</strong> Add a <code dir="auto">brand-section</code> <code dir="auto">is-deep-teal</code> with an H2, a paragraph and
+a <code dir="auto">brand-button</code> <code dir="auto">is-on-dark</code> button.</li>
+<li><strong>Footer.</strong> Add a <code dir="auto">brand-section</code> <code dir="auto">is-deep-teal</code> with the white logo and your links, each with
+<code dir="auto">link-on-dark</code>.</li>
+<li>Click <strong>Preview</strong> (the eye icon) to see the page as a visitor would, then switch to the Mobile
+landscape and Mobile portrait breakpoints in the canvas bar to check phones.</li>
+</ol>
+<p>To keep content from running edge to edge on wide screens, put a Box inside each section and give
+it a maximum width and Auto left and right margins. The spec does not set a page width, so choose
+one that suits your layout and use it for every section.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="publish">Publish</h3><a class="sl-anchor-link" href="#publish"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Publish”</span></a></div>
+<ol>
+<li>Click <strong>Publish</strong> at the top right of the Designer (or press Shift + P).</li>
+<li>Tick the domain(s) to publish to: your <code dir="auto">webflow.io</code> address, your own domain, or both.</li>
+<li>Click <strong>Publish to selected domains</strong>.</li>
+</ol>
+<p>To try changes before they go public, tick only the <code dir="auto">webflow.io</code> address.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="part-4-custom-code-optional">Part 4: Custom code (optional)</h2><a class="sl-anchor-link" href="#part-4-custom-code-optional"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Part 4: Custom code (optional)”</span></a></div>
+<p><strong>You do not need custom code for Webflow.</strong> Parts 1 to 3 cover the whole spec with Webflow’s own
+variables, tags and classes, and those are the better choice: the next person can see and change
+them in the Style panel, and they show on the canvas while you edit. If you ever need a style that
+the Style panel has no control for, add it under <strong>Style panel &gt; Custom properties</strong> on the class
+or tag. That is still no code to maintain.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="alternative-the-propellant-stylesheet">Alternative: the Propellant stylesheet</h3><a class="sl-anchor-link" href="#alternative-the-propellant-stylesheet"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Alternative: the Propellant stylesheet”</span></a></div>
+<p>If you would rather use our ready made classes than build your own, you can load the Propellant
+stylesheet and type its class names into Webflow. Use this instead of Steps 10 to 12 of Part 1, not
+as well as them. You still need Step 1 (Oswald), and the tag styles from Steps 7 to 9 are still
+worth doing.</p>
+<p>This needs a paid Core, Growth, Agency or Freelancer Workspace, or an active Site plan.</p>
+<ol>
+<li>
+<p>Open <strong>Site settings</strong>, then the <strong>Custom code</strong> tab.</p>
+</li>
+<li>
+<p>Paste this into the <strong>Head code</strong> box:</p>
+<div class="expressive-code"><link rel="stylesheet" href="/_astro/ec.w36nc.css"><script type="module" src="/_astro/ec.0vx5m.js"></script><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="html"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">&lt;!-- Propellant website styles: see github.com/masschallenge/propellant-web --&gt;</span></div></div><div class="ec-line"><div class="code"><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;</span><span style="--0:#CAECE6">link</span></span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#C5E478;--1:#3B61B0">rel</span><span style="--0:#7FDBCA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">stylesheet</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#C5E478;--1:#3B61B0">href</span><span style="--0:#7FDBCA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/dist/website.css</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#8844AE">/&gt;</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="<!-- Propellant website styles: see github.com/masschallenge/propellant-web --><link  rel=&quot;stylesheet&quot;  href=&quot;https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/dist/website.css&quot;/>"><div></div></button></div></figure></div>
+<p>The first line is a label, so the next person knows where the code came from. Keep it.</p>
+</li>
+<li>
+<p>Click <strong>Save changes</strong>, then publish.</p>
+</li>
+<li>
+<p>In the Designer, select an element, click the Style selector field, type one of the class names
+below and press Enter. Do not add any styles to these classes in the Style panel; the
+stylesheet does that.</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>On this element</th>
+<th>Type this class</th>
+<th>What you get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Heading set to H1</td>
+<td><code dir="auto">propellant-headline</code></td>
+<td>The Oswald capitals headline</td>
+</tr>
+<tr>
+<td>Button</td>
+<td><code dir="auto">propellant-button</code></td>
+<td>The primary pill button</td>
+</tr>
+<tr>
+<td>Button</td>
+<td><code dir="auto">propellant-button</code>, then <code dir="auto">propellant-button-secondary</code></td>
+<td>The secondary button</td>
+</tr>
+<tr>
+<td>Box with the Section tag</td>
+<td><code dir="auto">propellant-brand-band</code></td>
+<td>A Deep teal section with White text and White buttons</td>
+</tr>
+<tr>
+<td>Text link</td>
+<td><code dir="auto">propellant-link</code></td>
+<td>A teal, underlined link</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td><code dir="auto">propellant-body</code></td>
+<td>Paragraph text</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td><code dir="auto">propellant-caption</code></td>
+<td>Small print, such as dates and notes</td>
+</tr>
+<tr>
+<td>Section or Box</td>
+<td><code dir="auto">propellant-text</code></td>
+<td>The body font and text color for a whole section</td>
+</tr>
+</tbody>
+</table>
+<p>Things to know:</p>
+<ul>
+<li>The stylesheet’s styles appear in <strong>Preview</strong> and on the published site, but you may not see
+them on the canvas while you edit. That is why Webflow’s own classes are easier to work with.</li>
+<li>The stylesheet uses the same values as the spec and loads Lato and Oswald itself. Keep Oswald
+in Site settings &gt; Fonts anyway, so it also shows on the canvas while you edit.</li>
+</ul>
+<p><strong>To remove it later:</strong> take the <code dir="auto">propellant-</code> classes off your elements (click the class in the
+Style selector and press Delete), delete the lines from <strong>Site settings &gt; Custom code &gt; Head
+code</strong>, click <strong>Save changes</strong> and publish again.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="check-your-work">Check your work</h2><a class="sl-anchor-link" href="#check-your-work"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Check your work”</span></a></div>
+<p>On desktop, in Preview and on the published site:</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> The H1 headline is Oswald, in capitals, 64px, and there is only one per page.</li>
+<li class="task-list-item"><input type="checkbox" disabled> H2 to H4 and all body text are Lato, in sentence case, in Ink.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Links are Teal and underlined, and none sit on Deep teal.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Primary buttons are Teal pills with White text and turn Deep teal on hover.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Secondary buttons are Pale teal pills with Teal text.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Deep teal sections have White text, White buttons and the white logo.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Sections have about 96px of space above and below, and paragraphs stop at about 720px wide.</li>
+<li class="task-list-item"><input type="checkbox" disabled> The logo is the official file, at least 24px tall, and links to the home page.</li>
+<li class="task-list-item"><input type="checkbox" disabled> The site icon shows the monogram in the browser tab.</li>
+</ul>
+<p>On a phone (or the Mobile landscape and Mobile portrait breakpoints):</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> The H1 is 40px, H2 30px, H3 24px, H4 20px and paragraphs 16px.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Sections have about 64px of space above and below.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Buttons stay pills and their labels fit on one line.</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="if-something-looks-off">If something looks off</h2><a class="sl-anchor-link" href="#if-something-looks-off"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “If something looks off”</span></a></div>
+<ul>
+<li><strong>Headings are still in Webflow’s default font or size.</strong> The heading probably has a class with
+its own font or size. Select it, look at the Style selector, and remove the class (or reset the
+font and size on it) so it falls back to the All H1 to All H4 tags.</li>
+<li><strong>Text in a Deep teal section is dark.</strong> The color was set on a heading or paragraph tag or class
+rather than on the Body. Clear the color there (click the blue or pink label next to Color and
+choose Reset) so it inherits White from the section.</li>
+<li><strong>Buttons are underlined or turn a different color on hover.</strong> Buttons inherit from All Links.
+Select the button, set <strong>Decoration</strong> to none on <code dir="auto">brand-button</code>, and check that the Hover state
+is set on the button class, not only on All Links.</li>
+<li><strong>Sizes do not shrink on phones.</strong> Check that the Mobile mode in the Variables panel has its
+Responsive setting on Mobile landscape, and that the style is linked to a variable (the value
+shows in purple). If it shows a plain number, link it to the variable, or use Step 14.</li>
+<li><strong>Oswald is missing from the Font list.</strong> Refresh the Designer after adding it in Site settings.
+If it is still missing, check that it is listed under <strong>Site settings &gt; Fonts &gt; Google fonts</strong>.</li>
+<li><strong>The stylesheet classes do nothing.</strong> Custom code only runs in Preview and on the published
+site, and only after you save it and publish. Check that the code is in Head code, not Footer
+code, and that your plan includes custom code.</li>
+</ul>
+</div><footer class="sl-flex astro-ddtxxk7k"><div class="meta sl-flex astro-ddtxxk7k"><a href="https://github.com/masschallenge/propellant-web/edit/main/docs/websites/webflow.md" class="sl-flex print:hidden astro-qlekgd3o"><svg aria-hidden="true" class="astro-qlekgd3o astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.2em;"><path d="M22 7.24a1 1 0 0 0-.29-.71l-4.24-4.24a1 1 0 0 0-1.1-.22 1 1 0 0 0-.32.22l-2.83 2.83L2.29 16.05a1 1 0 0 0-.29.71V21a1 1 0 0 0 1 1h4.24a1 1 0 0 0 .76-.29l10.87-10.93L21.71 8c.1-.1.17-.2.22-.33a1 1 0 0 0 0-.24v-.14l.07-.05ZM6.83 20H4v-2.83l9.93-9.93 2.83 2.83L6.83 20ZM18.17 8.66l-2.83-2.83 1.42-1.41 2.82 2.82-1.41 1.42Z"/></svg>Edit page</a></div><div class="pagination-links print:hidden astro-b5raizh3" dir="ltr"><a href="/web/websites/squarespace/" rel="prev" class="astro-b5raizh3"><svg aria-hidden="true" class="astro-b5raizh3 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg><span class="astro-b5raizh3">Previous<br class="astro-b5raizh3"><span class="link-title astro-b5raizh3">Squarespace</span></span></a><a href="/web/websites/wix/" rel="next" class="astro-b5raizh3"><svg aria-hidden="true" class="astro-b5raizh3 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg><span class="astro-b5raizh3">Next<br class="astro-b5raizh3"><span class="link-title astro-b5raizh3">Wix</span></span></a></div></footer></div></div></main></div></div></div></div></body></html>

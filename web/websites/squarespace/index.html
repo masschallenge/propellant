@@ -1,0 +1,871 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-g5ptsecz"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Squarespace | Propellant</title><link rel="canonical" href="https://propellant.masschallenge.org/web/websites/squarespace/"/><link rel="sitemap" href="/sitemap-index.xml"/><link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v7.3.8"/><meta name="generator" content="Starlight v0.42.6"/><meta property="og:title" content="Squarespace"/><meta property="og:type" content="article"/><meta property="og:url" content="https://propellant.masschallenge.org/web/websites/squarespace/"/><meta property="og:locale" content="en"/><meta property="og:description" content="The MassChallenge design system, for every platform we build on."/><meta property="og:site_name" content="Propellant"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="The MassChallenge design system, for every platform we build on."/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg><svg aria-hidden="true" class="dark astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg><svg aria-hidden="true" class="auto astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg></template><link rel="stylesheet" href="/_astro/print.ehPL0gv-.css" media="print"><link rel="stylesheet" href="/_astro/common.CXeMA84i.css"><style>@layer starlight.components{svg:where(.astro-hkc32dio){color:var(--sl-icon-color);font-size:var(--sl-icon-size,1em);width:1em;height:1em;overflow:visible}}
+</style><script type="module" src="/_astro/page.cNngjUgL.js"></script></head><body class="astro-g5ptsecz"><a class="sl-skip-link astro-qb7clj6f" href="#_top">Skip to content</a><div class="page sl-flex astro-yntsjkba"><header class="header astro-yntsjkba"><div class="header astro-by6fddyj"><div class="title-wrapper sl-flex astro-by6fddyj"><a href="/" class="site-title sl-flex astro-6rvad3va"><img class="light:sl-hidden print:hidden astro-6rvad3va" alt src="/_astro/propellant-lockup-white.BZcLDIgz.svg" width="209" height="64"><img class="dark:sl-hidden print:block astro-6rvad3va" alt src="/_astro/propellant-lockup-color.CZ2WI5CL.svg" width="209" height="64"><span class="sr-only astro-6rvad3va" translate="no">Propellant</span></a></div><div class="sl-flex print:hidden astro-by6fddyj"><site-search class="astro-by6fddyj astro-b5kgnn7o" data-translations="{&quot;placeholder&quot;:&quot;Search&quot;}"><button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-b5kgnn7o"><svg aria-hidden="true" class="astro-b5kgnn7o astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg><span class="sl-hidden md:sl-block astro-b5kgnn7o" aria-hidden="true">Search</span><kbd class="sl-hidden md:sl-flex astro-b5kgnn7o" style="display: none;"><kbd class="astro-b5kgnn7o">Ctrl</kbd><kbd class="astro-b5kgnn7o">K</kbd></kbd></button><dialog style="padding:0" aria-label="Search" class="astro-b5kgnn7o"><div class="dialog-frame sl-flex astro-b5kgnn7o"><button data-close-modal class="sl-flex md:sl-hidden astro-b5kgnn7o">Cancel</button><div class="search-container astro-b5kgnn7o"><div id="starlight__search" class="astro-b5kgnn7o"></div></div></div></dialog></site-search><script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script><script type="module" src="/_astro/Search.astro_astro_type_script_index_0_lang.CHGOufdi.js"></script></div><div class="sl-hidden md:sl-flex print:hidden right-group astro-by6fddyj"><div class="sl-flex social-icons astro-by6fddyj"><a href="https://github.com/masschallenge/propellant" rel="me" class="sl-flex astro-n2mnl6yq"><span class="sr-only astro-n2mnl6yq">Propellant on GitHub</span><svg aria-hidden="true" class="astro-n2mnl6yq astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-2z5xp7gb"><span class="sr-only astro-2z5xp7gb">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-2z5xp7gb"><option value="dark" class="astro-2z5xp7gb">Dark</option><option value="light" class="astro-2z5xp7gb">Light</option><option value="auto" selected class="astro-2z5xp7gb">Auto</option></select><svg aria-hidden="true" class="icon caret astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
+	StarlightThemeProvider.updatePickers();
+</script><script type="module">var e=`starlight-theme`,t=e=>e===`auto`||e===`dark`||e===`light`?e:`auto`,n=()=>t(typeof localStorage<`u`&&localStorage.getItem(e));function r(t){typeof localStorage<`u`&&localStorage.setItem(e,t===`light`||t===`dark`?t:``)}var i=()=>matchMedia(`(prefers-color-scheme: light)`).matches?`light`:`dark`;function a(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e===`auto`?i():e,r(e)}matchMedia(`(prefers-color-scheme: light)`).addEventListener(`change`,()=>{n()===`auto`&&a(`auto`)});var o=class extends HTMLElement{constructor(){super(),a(n()),this.querySelector(`select`)?.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&a(t(e.currentTarget.value))})}};customElements.define(`starlight-theme-select`,o);</script><script type="module">var e=class extends HTMLElement{constructor(){super();let e=this.querySelector(`select`);e&&(e.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=e.currentTarget.value)}),window.addEventListener(`pageshow`,t=>{if(!t.persisted)return;let n=e.querySelector(`option[selected]`)?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}};customElements.define(`starlight-lang-select`,e);</script></div></div></header><nav class="sidebar print:hidden astro-yntsjkba" aria-label="Main"><button popovertarget="starlight__sidebar" class="sl-menu-button sl-flex md:sl-hidden print:hidden astro-r2osgdlg"><svg aria-hidden="true" class="open-menu astro-r2osgdlg astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg><svg aria-hidden="true" class="close-menu astro-r2osgdlg astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg><span class="sr-only astro-r2osgdlg">Menu</span></button><script type="module">var e=class extends HTMLElement{constructor(){super();let e=matchMedia(`(min-width: 50em)`),t=()=>{this.popover=e.matches?null:`auto`};t(),e.addEventListener(`change`,()=>t()),this.addEventListener(`toggle`,({newState:e})=>this.trapFocus(e===`open`))}trapFocus(e){document.querySelectorAll(`.main-frame, .sl-skip-link`).forEach(t=>{t.toggleAttribute(`inert`,e)})}};customElements.define(`sl-sidebar-pane`,e);</script><sl-sidebar-pane popover id="starlight__sidebar" class="sidebar-pane astro-yntsjkba"><div class="sidebar-content sl-flex astro-yntsjkba"><sl-sidebar-state-persist data-hash="0kehtv0" class="astro-ipdry5cl"><script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script><ul class="top-level astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/about/" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">About Propellant</span></a></li><li class="astro-rmhv4bp6"><a href="/brand/" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">Brand</span></a></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Guidelines</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="0"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/guidelines/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Overview</span></a></li><li class="astro-rmhv4bp6"><a href="/guidelines/photography/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Photography and video</span></a></li></ul></details></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Platforms</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="1"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/platforms/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Overview</span></a></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Web</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="2"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/web/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Overview</span></a></li><li class="astro-rmhv4bp6"><a href="/web/usage/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Using Propellant</span></a></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Websites</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="3"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/web/websites/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Using Propellant on websites</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/html/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Plain HTML</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/hubspot/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">HubSpot</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/squarespace/" aria-current="page" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Squarespace</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/webflow/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Webflow</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/wix/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Wix</span></a></li><li class="astro-rmhv4bp6"><a href="/web/websites/wordpress/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">WordPress</span></a></li></ul></details></li></ul></details></li><li class="astro-rmhv4bp6"><a href="/platforms/ios/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">iOS</span><span class="sl-badge default small  astro-rmhv4bp6 astro-f4zorn72">Planned</span></a></li><li class="astro-rmhv4bp6"><a href="/platforms/android/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Android</span><span class="sl-badge default small  astro-rmhv4bp6 astro-f4zorn72">Planned</span></a></li><li class="astro-rmhv4bp6"><details open class="astro-rmhv4bp6"><summary class="astro-rmhv4bp6"><span class="group-label astro-rmhv4bp6"><span class="large astro-rmhv4bp6">Office</span></span><svg aria-hidden="true" class="caret astro-rmhv4bp6 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="4"></sl-sidebar-restore><ul class="astro-rmhv4bp6"><li class="astro-rmhv4bp6"><a href="/office/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Overview</span></a></li><li class="astro-rmhv4bp6"><a href="/office/foundations/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Designing documents, decks and spreadsheets</span></a></li><li class="astro-rmhv4bp6"><a href="/office/templates/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Installing the templates</span></a></li><li class="astro-rmhv4bp6"><a href="/office/word/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Word</span></a></li><li class="astro-rmhv4bp6"><a href="/office/powerpoint/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">PowerPoint</span></a></li><li class="astro-rmhv4bp6"><a href="/office/excel/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Excel</span></a></li><li class="astro-rmhv4bp6"><a href="/office/google-docs/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Google Docs</span></a></li><li class="astro-rmhv4bp6"><a href="/office/google-slides/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Google Slides</span></a></li><li class="astro-rmhv4bp6"><a href="/office/google-sheets/" class="astro-rmhv4bp6"><span class="astro-rmhv4bp6">Google Sheets</span></a></li></ul></details></li></ul></details></li><li class="astro-rmhv4bp6"><a href="/claude/" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">Propellant in Claude</span></a></li><li class="astro-rmhv4bp6"><a href="/contributing/" class="large astro-rmhv4bp6"><span class="astro-rmhv4bp6">Contributing</span></a></li></ul><script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script></sl-sidebar-state-persist><div class="md:sl-hidden"><div class="mobile-preferences sl-flex astro-p4azlveh"><div class="social-icons astro-p4azlveh"><a href="https://github.com/masschallenge/propellant" rel="me" class="sl-flex astro-n2mnl6yq"><span class="sr-only astro-n2mnl6yq">Propellant on GitHub</span><svg aria-hidden="true" class="astro-n2mnl6yq astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-2z5xp7gb"><span class="sr-only astro-2z5xp7gb">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-2z5xp7gb"><option value="dark" class="astro-2z5xp7gb">Dark</option><option value="light" class="astro-2z5xp7gb">Light</option><option value="auto" selected class="astro-2z5xp7gb">Auto</option></select><svg aria-hidden="true" class="icon caret astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
+	StarlightThemeProvider.updatePickers();
+</script></div></div></div></sl-sidebar-pane></nav><div class="main-frame astro-yntsjkba"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-lrzkfocr"><aside class="right-sidebar-container print:hidden astro-lrzkfocr"><div class="right-sidebar astro-lrzkfocr"><div class="lg:sl-hidden astro-qok35upx"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-66cqc7ze"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-66cqc7ze"><details id="starlight__mobile-toc" class="astro-66cqc7ze"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-66cqc7ze"><span class="toggle sl-flex astro-66cqc7ze">On this page<svg aria-hidden="true" class="caret astro-66cqc7ze astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-66cqc7ze"></span></summary><div class="dropdown astro-66cqc7ze"><ul class="isMobile astro-jugkfwgx" style="--depth: 0;"><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#_top" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Overview</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#before-you-start" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Before you start</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-1-set-up-site-styles-no-code" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 1: Set up site styles (no code)</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#open-site-styles" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Open Site styles</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-1-fonts" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 1: Fonts</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-2-colors" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 2: Colors</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-3-buttons" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 3: Buttons</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-4-spacing" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 4: Spacing</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-5-mobile" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 5: Mobile</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-2-add-the-logo-and-site-icon" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 2: Add the logo and site icon</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#the-logo" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">The logo</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#the-site-icon-favicon" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">The site icon (favicon)</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-3-build-on-brand-pages" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 3: Build on brand pages</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#give-each-section-its-color" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Give each section its color</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#section-spacing" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Section spacing</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#add-the-headline-and-text" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Add the headline and text</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#add-buttons" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Add buttons</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#sample-home-page" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Sample home page</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-4-custom-css-only-what-settings-cannot-do" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 4: Custom CSS (only what settings cannot do)</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#where-to-paste-it" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Where to paste it</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#snippet-a-the-oswald-headline" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Snippet A: the Oswald headline</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#snippet-b-button-hover-colors" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Snippet B: button hover colors</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#snippet-c-exact-headline-sizes-optional" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Snippet C: exact headline sizes (optional)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#alternative-load-the-propellant-stylesheet-core-plan-and-above" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Alternative: load the Propellant stylesheet (Core plan and above)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#removing-the-code-later" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Removing the code later</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#check-your-work" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Check your work</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#if-something-looks-off" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">If something looks off</span></a></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C3fM4Kra.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-qok35upx"><div class="sl-container astro-qok35upx"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-jugkfwgx" style="--depth: 0;"><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#_top" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Overview</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#before-you-start" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Before you start</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-1-set-up-site-styles-no-code" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 1: Set up site styles (no code)</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#open-site-styles" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Open Site styles</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-1-fonts" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 1: Fonts</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-2-colors" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 2: Colors</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-3-buttons" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 3: Buttons</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-4-spacing" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 4: Spacing</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#step-5-mobile" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Step 5: Mobile</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-2-add-the-logo-and-site-icon" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 2: Add the logo and site icon</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#the-logo" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">The logo</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#the-site-icon-favicon" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">The site icon (favicon)</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-3-build-on-brand-pages" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 3: Build on brand pages</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#give-each-section-its-color" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Give each section its color</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#section-spacing" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Section spacing</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#add-the-headline-and-text" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Add the headline and text</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#add-buttons" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Add buttons</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#sample-home-page" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Sample home page</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#part-4-custom-css-only-what-settings-cannot-do" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Part 4: Custom CSS (only what settings cannot do)</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#where-to-paste-it" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Where to paste it</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#snippet-a-the-oswald-headline" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Snippet A: the Oswald headline</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#snippet-b-button-hover-colors" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Snippet B: button hover colors</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#snippet-c-exact-headline-sizes-optional" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Snippet C: exact headline sizes (optional)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#alternative-load-the-propellant-stylesheet-core-plan-and-above" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Alternative: load the Propellant stylesheet (Core plan and above)</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#removing-the-code-later" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Removing the code later</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#check-your-work" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Check your work</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#if-something-looks-off" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">If something looks off</span></a></li></ul></nav></starlight-toc><script type="module" src="/_astro/TableOfContents.astro_astro_type_script_index_0_lang.BpJaGz7G.js"></script></div></div></div></aside><div class="main-pane astro-lrzkfocr"><main data-pagefind-body class="astro-g5ptsecz" lang="en" dir="ltr"><div class="content-panel astro-a7po4psb"><div class="sl-container astro-a7po4psb"><h1 id="_top" class="astro-bebwqqxs">Squarespace</h1></div></div><div class="content-panel astro-a7po4psb"><div class="sl-container astro-a7po4psb"><div class="sl-markdown-content"><p>This guide takes a Squarespace 7.1 site, new or existing, and gives it the MassChallenge look:
+Lato text, the Oswald headline in capitals, the teal palette, pill shaped buttons and sections in
+White, Mist and Deep teal. Most of it is point and click in Squarespace’s own style settings. One
+optional step adds a few lines of code for the headline. Plan on about an hour the first time,
+and less once you know where things live.</p>
+<p>All of the steps are for Squarespace version 7.1, the current version. If your site is on version
+7.0, the menus are different and this guide will not match. To check, open the <strong>Pages</strong> panel
+and look at the bottom: Squarespace shows your site’s version there.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="before-you-start">Before you start</h2><a class="sl-anchor-link" href="#before-you-start"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Before you start”</span></a></div>
+<p><strong>Your plan.</strong> Most of this guide works on every Squarespace plan. The code steps depend on your
+plan:</p>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Where it lives</th>
+<th>Plans that allow it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Custom CSS (small pieces of style code)</td>
+<td>Pages panel, <strong>Custom Code</strong>, <strong>Custom CSS</strong></td>
+<td>All plans</td>
+</tr>
+<tr>
+<td>Code injection (code added to the head of every page)</td>
+<td>Pages panel, <strong>Custom Code</strong>, <strong>Code Injection</strong></td>
+<td>Core, Plus, Advanced and some older (legacy) plans</td>
+</tr>
+</tbody>
+</table>
+<p>You only need Custom CSS for this guide, so any plan will do. Code injection is an alternative for
+one step, and it is only on Core and above.</p>
+<p><strong>Keep the spec open.</strong> Every value you will type comes from the <a href="/web/websites/">website spec</a>.
+Keep it open in another tab so you can copy hex codes from it.</p>
+<p><strong>Download the logo files.</strong> Use these files only, never a copy from somewhere else. Open each link
+and save the image to your computer:</p>
+<ul>
+<li>Full color horizontal logo, for the header on White:
+<a href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/logos/masschallenge-logo-horizontal-color.png">https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/logos/masschallenge-logo-horizontal-color.png</a></li>
+<li>White horizontal logo, for Deep teal backgrounds:
+<a href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/logos/masschallenge-logo-horizontal-white.png">https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/logos/masschallenge-logo-horizontal-white.png</a></li>
+<li>Full color monogram (the MC mark on its own), for the browser icon:
+<a href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/logos/masschallenge-logo-monogram-color.png">https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/assets/logos/masschallenge-logo-monogram-color.png</a></li>
+<li>There are also <code dir="auto">-white</code> and <code dir="auto">-black</code> versions of the monogram, and a <code dir="auto">-black</code> horizontal logo,
+at the same address with the color word changed. The <a href="/brand/">brand guidelines</a> say when to
+use each one.</li>
+</ul>
+<p><strong>One habit that saves trouble.</strong> In Squarespace, style settings apply to the whole site. If you
+change a font size or color with the text toolbar inside a single block, that block stops
+following the site settings. Set things once in Site styles and leave the toolbar for choosing a
+format such as Heading 2.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="part-1-set-up-site-styles-no-code">Part 1: Set up site styles (no code)</h2><a class="sl-anchor-link" href="#part-1-set-up-site-styles-no-code"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Part 1: Set up site styles (no code)”</span></a></div>
+<p>This is the main part of the guide. You will set fonts, colors and buttons once, and every page
+picks them up.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="open-site-styles">Open Site styles</h3><a class="sl-anchor-link" href="#open-site-styles"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Open Site styles”</span></a></div>
+<ol>
+<li>Open the <strong>Pages</strong> panel and click any page.</li>
+<li>Click the <strong>paintbrush</strong> icon in the top right corner. The <strong>Site styles</strong> panel opens.</li>
+<li>You will see sections such as <strong>Fonts</strong>, <strong>Colors</strong>, <strong>Buttons</strong> and <strong>Spacing</strong>. Click the
+<strong>&gt;</strong> arrow next to a section to open its settings.</li>
+</ol>
+<p>Two warnings before you start:</p>
+<ul>
+<li>Site styles has a <strong>Themes</strong> option, and Fonts and Buttons each offer ready made <strong>packs</strong>.
+Picking a theme or a pack replaces your fonts, colors or buttons in one go. Once you have set
+things up, do not click a different theme or pack. If you do by accident, use the <strong>undo</strong> arrow
+at the top of the panel.</li>
+<li>Click <strong>Save</strong> at the top of the editor when you finish each section, so nothing is lost.</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-1-fonts">Step 1: Fonts</h3><a class="sl-anchor-link" href="#step-1-fonts"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 1: Fonts”</span></a></div>
+<p>How Squarespace fonts work, in plain words: text comes in four groups, <strong>Headings</strong>,
+<strong>Paragraphs</strong>, <strong>Buttons</strong> and <strong>Miscellaneous</strong> (small extras such as dates and captions). Each
+group has one font for the whole group. Inside Headings there are four sizes, Heading 1 to Heading
+4. Inside Paragraphs there are three sizes, Paragraph 1 (large), Paragraph 2 (normal) and
+Paragraph 3 (small). Sizes are set in <strong>rem</strong>, which means “times the base size”. With a base size
+of 16, 2rem is 32 pixels.</p>
+<p>That one font per group is the only real limit. All four heading sizes share one font and one
+capitals setting, so Squarespace cannot set Heading 1 in Oswald capitals and Headings 2 to 4 in
+Lato on its own. You will set every heading to Lato here, and Part 4 adds a few lines of code that
+turn Heading 1 into the Oswald headline. If you skip Part 4, Heading 1 stays a large, bold Lato
+heading, which still looks tidy and on brand.</p>
+<p><strong>Choose a starting font pack</strong></p>
+<ol>
+<li>In Site styles, click <strong>Fonts</strong>.</li>
+<li>If you want, click <strong>&gt;</strong> next to Fonts, then <strong>All Font Packs</strong>, then <strong>Sans-serif</strong>, and pick
+any pack. It does not matter which: you are about to change every font in it. If your site
+already has a pack, skip this.</li>
+</ol>
+<p><strong>Set the base size</strong></p>
+<ol>
+<li>Click <strong>&gt;</strong> next to <strong>Fonts</strong>.</li>
+<li>Use the <strong>+</strong> and <strong>-</strong> buttons to set the <strong>Base size</strong> to <strong>16</strong>. Every size below assumes a
+base of 16.</li>
+</ol>
+<p><strong>Headings</strong></p>
+<p>Click <strong>Headings</strong> and set:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Font</td>
+<td><strong>Lato</strong> (type “Lato” in the font search)</td>
+</tr>
+<tr>
+<td>Style or weight</td>
+<td><strong>700</strong> (Bold)</td>
+</tr>
+<tr>
+<td>Line height</td>
+<td><strong>1.2em</strong> (see the note below)</td>
+</tr>
+<tr>
+<td>Letter spacing</td>
+<td><strong>0em</strong></td>
+</tr>
+<tr>
+<td>Text transform</td>
+<td><strong>None</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Then set each size:</p>
+<table>
+<thead>
+<tr>
+<th>Squarespace size</th>
+<th>Spec style</th>
+<th>Desktop size in the spec</th>
+<th>Enter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Heading 1</td>
+<td>Heading 1 (the big headline)</td>
+<td>64px</td>
+<td><strong>4rem</strong></td>
+</tr>
+<tr>
+<td>Heading 2</td>
+<td>Heading 2</td>
+<td>40px</td>
+<td><strong>2.5rem</strong></td>
+</tr>
+<tr>
+<td>Heading 3</td>
+<td>Heading 3</td>
+<td>30px</td>
+<td><strong>1.875rem</strong></td>
+</tr>
+<tr>
+<td>Heading 4</td>
+<td>Heading 4</td>
+<td>24px</td>
+<td><strong>1.5rem</strong></td>
+</tr>
+</tbody>
+</table>
+<p>A note on line height: the spec gives each heading its own line height (1.0, 1.15, 1.2 and 1.25).
+If your panel shows a line height for each heading size, enter those values in em (1.0em, 1.15em,
+1.2em, 1.25em). If it shows one line height for all headings, use 1.2em, which sits in the middle
+and looks right for Headings 2 to 4. Part 4 sets Heading 1 to 1.0.</p>
+<p>If a slider will not land on an exact value, click the number and type it.</p>
+<p><strong>Paragraphs</strong></p>
+<p>Click <strong>Paragraphs</strong> and set:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Font</td>
+<td><strong>Lato</strong></td>
+</tr>
+<tr>
+<td>Style or weight</td>
+<td><strong>400</strong> (Regular)</td>
+</tr>
+<tr>
+<td>Line height</td>
+<td><strong>1.6em</strong> (see the note below)</td>
+</tr>
+<tr>
+<td>Letter spacing</td>
+<td><strong>0em</strong></td>
+</tr>
+<tr>
+<td>Text transform</td>
+<td><strong>None</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Then set each size:</p>
+<table>
+<thead>
+<tr>
+<th>Squarespace size</th>
+<th>Spec style</th>
+<th>Desktop size in the spec</th>
+<th>Enter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Paragraph 1</td>
+<td>Paragraph large</td>
+<td>20px</td>
+<td><strong>1.25rem</strong></td>
+</tr>
+<tr>
+<td>Paragraph 2</td>
+<td>Paragraph</td>
+<td>17px</td>
+<td><strong>1.0625rem</strong></td>
+</tr>
+<tr>
+<td>Paragraph 3</td>
+<td>Paragraph small</td>
+<td>14px</td>
+<td><strong>0.875rem</strong></td>
+</tr>
+</tbody>
+</table>
+<p>If your panel offers a line height for each paragraph size, use 1.5em for Paragraph 1, 1.6em for
+Paragraph 2 and 1.5em for Paragraph 3. If there is one value for all, use 1.6em.</p>
+<p><strong>Buttons</strong></p>
+<p>Click <strong>Buttons</strong> (inside Fonts) and set:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Font</td>
+<td><strong>Lato</strong></td>
+</tr>
+<tr>
+<td>Style or weight</td>
+<td><strong>700</strong> (Bold)</td>
+</tr>
+<tr>
+<td>Size</td>
+<td><strong>1rem</strong> (16px)</td>
+</tr>
+<tr>
+<td>Letter spacing</td>
+<td><strong>0em</strong></td>
+</tr>
+<tr>
+<td>Text transform</td>
+<td><strong>None</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Buttons are in sentence case, never capitals, so make sure Text transform is <strong>None</strong>. If your
+panel shows separate font settings for Primary, Secondary and Tertiary buttons, set all three the
+same way.</p>
+<p><strong>Miscellaneous</strong></p>
+<p>Click <strong>Miscellaneous</strong> and set the font to <strong>Lato</strong>, weight <strong>400</strong>, letter spacing <strong>0em</strong> and
+text transform <strong>None</strong>. This covers small text such as dates, so it should match your paragraphs.</p>
+<p><strong>If Lato is not in the list</strong></p>
+<p>Squarespace’s library holds hundreds of Google Fonts but not every one. Lato should be there; if
+your search finds nothing, you can upload it:</p>
+<ol>
+<li>Download Lato from Google Fonts (fonts.google.com, search “Lato”). You need the Regular (400)
+and Bold (700) files.</li>
+<li>In Site styles, click <strong>&gt;</strong> next to Fonts, then click <strong>Headings</strong> (or Paragraphs).</li>
+<li>Click the font dropdown, then click the <strong>upload</strong> icon.</li>
+<li>Drag in one font file, or click <strong>+</strong> and choose it. Upload each weight as its own file.
+Squarespace accepts .otf, .ttf, .woff and .woff2 files.</li>
+<li>Your fonts appear under <strong>Uploaded</strong> in every font dropdown. Choose Lato there.</li>
+</ol>
+<p>You do not need to do this for Oswald. Part 4 loads Oswald for you.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-2-colors">Step 2: Colors</h3><a class="sl-anchor-link" href="#step-2-colors"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 2: Colors”</span></a></div>
+<p>How Squarespace colors work, in plain words: there are two layers.</p>
+<ol>
+<li><strong>The palette.</strong> Every site has a palette of exactly five colors. They are the starting point
+for everything else.</li>
+<li><strong>Color themes.</strong> Squarespace builds ten color themes from the palette. A color theme is a full
+set of colors for one section: its background, headings, paragraphs, links and buttons. You
+give each section of a page one theme. The ten themes are named from lightest to darkest:
+<strong>Lightest 1</strong>, <strong>Lightest 2</strong>, <strong>Light 1</strong>, <strong>Light 2</strong>, <strong>Bright 1</strong>, <strong>Bright 2</strong>,
+<strong>Dark 1</strong>, <strong>Dark 2</strong>, <strong>Darkest 1</strong> and <strong>Darkest 2</strong>.</li>
+</ol>
+<p>Inside a theme you can pick any color for any part, either one of the five palette colors or a
+<strong>Custom</strong> color you type in. That is how you get colors such as Pale teal, which do not fit in a
+five color palette.</p>
+<p>We use three themes, one for each kind of section in the spec:</p>
+<table>
+<thead>
+<tr>
+<th>Section in the spec</th>
+<th>Squarespace theme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>White (the normal page background)</td>
+<td><strong>Lightest 1</strong></td>
+</tr>
+<tr>
+<td>Mist (the alternate section background)</td>
+<td><strong>Light 1</strong></td>
+</tr>
+<tr>
+<td>Deep teal (the dark brand section)</td>
+<td><strong>Darkest 1</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Edit the palette</strong></p>
+<ol>
+<li>In Site styles, click <strong>&gt;</strong> next to <strong>Colors</strong>.</li>
+<li>Click <strong>Edit palette</strong>.</li>
+<li>Click each of the five colors in turn and type its hex code into the value field, so the palette
+matches this table from lightest to darkest:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Palette position</th>
+<th>Spec color</th>
+<th>Hex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 (lightest)</td>
+<td>White</td>
+<td><code dir="auto">#FFFFFF</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Mist</td>
+<td><code dir="auto">#F3F6F7</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Teal</td>
+<td><code dir="auto">#065E6F</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Deep teal</td>
+<td><code dir="auto">#044451</code></td>
+</tr>
+<tr>
+<td>5 (darkest)</td>
+<td>Ink</td>
+<td><code dir="auto">#1E282B</code></td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>Changing the palette can change your color themes too, so always edit the palette first and the
+themes second. If you edit the palette again later, check your three themes afterwards.</p>
+<p><strong>Edit the three color themes</strong></p>
+<p>For each of the three themes below:</p>
+<ol>
+<li>In the Colors panel, click the theme (for example <strong>Lightest 1</strong>).</li>
+<li>Click a part, such as <strong>Background</strong>. Pick from the <strong>Palette</strong> tab, or click <strong>Custom</strong> and type
+the hex code.</li>
+<li>Work through every part in the table.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>The exact names of the parts can differ slightly from site to site. Squarespace calls the four
+heading sizes Heading (Extra Large), Heading (Large), Heading (Medium) and Heading (Small): they
+are Heading 1 to Heading 4. Paragraphs are Paragraph (Large), Paragraph (Medium) and Paragraph
+(Small). If you see a part that is not in this table, such as a block’s own colors, match it to the
+closest row.</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Lightest 1 (White)</th>
+<th>Light 1 (Mist)</th>
+<th>Darkest 1 (Deep teal)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Background</td>
+<td>White <code dir="auto">#FFFFFF</code></td>
+<td>Mist <code dir="auto">#F3F6F7</code></td>
+<td>Deep teal <code dir="auto">#044451</code></td>
+</tr>
+<tr>
+<td>All four headings</td>
+<td>Ink <code dir="auto">#1E282B</code></td>
+<td>Ink <code dir="auto">#1E282B</code></td>
+<td>White <code dir="auto">#FFFFFF</code></td>
+</tr>
+<tr>
+<td>Paragraph (Large) and (Medium)</td>
+<td>Ink <code dir="auto">#1E282B</code></td>
+<td>Ink <code dir="auto">#1E282B</code></td>
+<td>White <code dir="auto">#FFFFFF</code></td>
+</tr>
+<tr>
+<td>Paragraph (Small)</td>
+<td>Slate <code dir="auto">#4B575B</code></td>
+<td>Slate <code dir="auto">#4B575B</code></td>
+<td>White <code dir="auto">#FFFFFF</code></td>
+</tr>
+<tr>
+<td>Links (paragraph and heading links)</td>
+<td>Teal <code dir="auto">#065E6F</code></td>
+<td>Teal <code dir="auto">#065E6F</code></td>
+<td>White <code dir="auto">#FFFFFF</code></td>
+</tr>
+<tr>
+<td>Primary button background</td>
+<td>Teal <code dir="auto">#065E6F</code></td>
+<td>Teal <code dir="auto">#065E6F</code></td>
+<td>White <code dir="auto">#FFFFFF</code></td>
+</tr>
+<tr>
+<td>Primary button text</td>
+<td>White <code dir="auto">#FFFFFF</code></td>
+<td>White <code dir="auto">#FFFFFF</code></td>
+<td>Deep teal <code dir="auto">#044451</code></td>
+</tr>
+<tr>
+<td>Secondary button background</td>
+<td>Pale teal <code dir="auto">#D9F6FA</code></td>
+<td>Pale teal <code dir="auto">#D9F6FA</code></td>
+<td>White <code dir="auto">#FFFFFF</code></td>
+</tr>
+<tr>
+<td>Secondary button text</td>
+<td>Teal <code dir="auto">#065E6F</code></td>
+<td>Teal <code dir="auto">#065E6F</code></td>
+<td>Deep teal <code dir="auto">#044451</code></td>
+</tr>
+<tr>
+<td>Tertiary button background</td>
+<td>Pale teal <code dir="auto">#D9F6FA</code></td>
+<td>Pale teal <code dir="auto">#D9F6FA</code></td>
+<td>White <code dir="auto">#FFFFFF</code></td>
+</tr>
+<tr>
+<td>Tertiary button text</td>
+<td>Teal <code dir="auto">#065E6F</code></td>
+<td>Teal <code dir="auto">#065E6F</code></td>
+<td>Deep teal <code dir="auto">#044451</code></td>
+</tr>
+<tr>
+<td>Lines and dividers</td>
+<td>Line <code dir="auto">#DBE1E3</code></td>
+<td>Line <code dir="auto">#DBE1E3</code></td>
+<td>Bright teal <code dir="auto">#0FACBD</code></td>
+</tr>
+<tr>
+<td>Site title and navigation links (if listed)</td>
+<td>Ink <code dir="auto">#1E282B</code></td>
+<td>Ink <code dir="auto">#1E282B</code></td>
+<td>White <code dir="auto">#FFFFFF</code></td>
+</tr>
+</tbody>
+</table>
+<p>Why the buttons look like this: on Deep teal the spec allows only White buttons with Deep teal
+text, so every button type in that theme is set the same way. Squarespace only uses Tertiary
+buttons in a few places, such as the cookie banner, so we make them match Secondary.</p>
+<p>Never put Teal text on Deep teal. If you see Teal anywhere in the Darkest 1 column on your screen,
+change it to White.</p>
+<p>You can leave the other seven themes alone. Just use only these three for your sections. Yellow and
+Magenta from the spec are not set here: Yellow is for occasional highlights (always with Ink text)
+and Magenta is for errors.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-3-buttons">Step 3: Buttons</h3><a class="sl-anchor-link" href="#step-3-buttons"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 3: Buttons”</span></a></div>
+<p>How Squarespace buttons work, in plain words: there are three button types, <strong>Primary</strong>,
+<strong>Secondary</strong> and <strong>Tertiary</strong>. Each has its own shape, outline and padding (the space between the
+text and the edge of the button). Colors do not live here: they come from the color theme of the
+section, which you set in Step 2.</p>
+<p>Most buttons on a Squarespace site are Primary. Button blocks, header buttons and form submit
+buttons can be switched to Secondary or Tertiary.</p>
+<ol>
+<li>In Site styles, click <strong>&gt;</strong> next to <strong>Buttons</strong>.</li>
+<li>Click <strong>Primary</strong> and set:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fill</td>
+<td><strong>Fill</strong> (a solid background, sometimes called Solid). Not No Fill.</td>
+</tr>
+<tr>
+<td>Shape</td>
+<td><strong>Pill</strong> (fully rounded ends)</td>
+</tr>
+<tr>
+<td>Outline</td>
+<td>Slide to <strong>0</strong> (no border)</td>
+</tr>
+<tr>
+<td>Padding</td>
+<td>Click <strong>…</strong> and set <strong>Top &amp; Bottom</strong> to <strong>14px</strong> and <strong>Left &amp; Right</strong> to <strong>28px</strong></td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>Click <strong>Font</strong> if you did not set button fonts in Step 1: Lato, 700, 1rem, letter spacing 0em,
+text transform None.</li>
+<li>Click <strong>Apply to all Button Types</strong>, so Secondary and Tertiary get the same shape and padding.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>If the padding field does not accept pixels, choose <strong>M</strong> and compare the button with the spec:
+it should be a little under three times as wide as it is tall for a short label such as “Apply”.</p>
+<p>If you see shadow or raised options, turn them off. The spec has no borders and no shadows.</p>
+<p>Hover color: Squarespace has no setting for the color a button turns when you point at it. It
+fades the button slightly instead. The spec asks for a set hover color (Deep teal for primary).
+Part 4 has a small snippet for that. It is optional: a faded hover still works.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-4-spacing">Step 4: Spacing</h3><a class="sl-anchor-link" href="#step-4-spacing"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 4: Spacing”</span></a></div>
+<p>The spec asks for about 96px of space above and below each section on desktop and 64px on phones,
+and for paragraphs about 720px wide.</p>
+<ol>
+<li>In Site styles, click <strong>Spacing</strong>. You can leave <strong>Site Margin</strong> (the space between your content
+and the edge of the screen) at its default.</li>
+<li>Section spacing is set on each section, not here. See “Section spacing” in Part 3.</li>
+</ol>
+<div class="sl-heading-wrapper level-h3"><h3 id="step-5-mobile">Step 5: Mobile</h3><a class="sl-anchor-link" href="#step-5-mobile"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Step 5: Mobile”</span></a></div>
+<p>Squarespace 7.1 always rearranges and resizes your site for phones, and you cannot turn that off.
+There is no separate set of mobile font sizes in Site styles: headings shrink on their own as the
+screen gets narrower. The spec’s mobile sizes (for example 40px for Heading 1) are close to what
+Squarespace does by itself. If your Heading 1 is too big or too small on a phone, Part 4 has a
+snippet that sets it to exactly 40px.</p>
+<p>To see your phone layout, switch the editor to its mobile view (the phone icon at the top of the
+page editor). In Fluid Engine sections (Squarespace’s drag and drop grid), you can move and resize
+blocks for mobile separately from desktop. Always check every page there before you publish.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="part-2-add-the-logo-and-site-icon">Part 2: Add the logo and site icon</h2><a class="sl-anchor-link" href="#part-2-add-the-logo-and-site-icon"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Part 2: Add the logo and site icon”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="the-logo">The logo</h3><a class="sl-anchor-link" href="#the-logo"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “The logo”</span></a></div>
+<ol>
+<li>Click <strong>Edit</strong> in the top left corner of the page.</li>
+<li>Hover over the header (the strip at the top with your site name) and click <strong>Edit Site Header</strong>.</li>
+<li>Click the site title or logo, then click the <strong>pencil</strong> icon.</li>
+<li>In <strong>Logo Image</strong>, click <strong>+</strong>, then <strong>Upload File</strong>, and choose
+<code dir="auto">masschallenge-logo-horizontal-color.png</code>.</li>
+<li>Use the slider to set the logo height. Keep it at <strong>24px or taller</strong>, because below 24px the
+wordmark stops being readable. A height around 32px works well in most headers.</li>
+<li>In <strong>Mobile Logo Image</strong>, upload the same file and use <strong>Mobile Logo Max Height</strong> to keep it at
+least 24px tall.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>Keep the header on a White background so the full color logo fits. In <strong>Edit Site Header</strong>, click
+<strong>Colors</strong> and choose <strong>Lightest 1</strong>. If you ever give the header a Deep teal background, upload
+<code dir="auto">masschallenge-logo-horizontal-white.png</code> instead: never put the full color logo on Deep teal.</p>
+<p>Logo rules from the <a href="/brand/">brand guidelines</a>:</p>
+<ul>
+<li>Keep clear space around the logo equal to half its height. A 32px logo needs 16px of space on
+every side.</li>
+<li>Do not stretch, crop, recolor or add effects to it.</li>
+<li>Do not use Squarespace’s image editor on the logo. It saves images as .jpg, which turns the
+transparent background white. Upload the .png file as it is.</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="the-site-icon-favicon">The site icon (favicon)</h3><a class="sl-anchor-link" href="#the-site-icon-favicon"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “The site icon (favicon)”</span></a></div>
+<p>The site icon, or favicon, is the small picture in the browser tab. Use the monogram.</p>
+<ol>
+<li>Open <strong>Settings</strong>, then <strong>Website</strong>, then <strong>Favicon</strong>. (The help center links straight to this
+panel; on some accounts it is called <strong>Browser icon</strong>.)</li>
+<li>Drag <code dir="auto">masschallenge-logo-monogram-color.png</code> into the uploader, or click it and choose the file.</li>
+<li>Optional: add a dark mode version with <code dir="auto">masschallenge-logo-monogram-white.png</code>. You must add the
+normal icon first.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>Squarespace’s limits: the file must be .png (recommended), under 100 KB, and works best between
+100 and 300 pixels. The monogram file is 321 by 177 pixels and about 6 KB, so it uploads fine.
+Because it is wider than it is tall, it shows small in the tab. If it looks squashed, place it in
+the middle of a transparent square image (321 by 321 pixels) in any image editor and upload that.</p>
+<p>Browsers hold on to old icons. If you still see the old one, clear your browser’s cache or open the
+site in a private window.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="part-3-build-on-brand-pages">Part 3: Build on brand pages</h2><a class="sl-anchor-link" href="#part-3-build-on-brand-pages"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Part 3: Build on brand pages”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="give-each-section-its-color">Give each section its color</h3><a class="sl-anchor-link" href="#give-each-section-its-color"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Give each section its color”</span></a></div>
+<p>Every page is made of sections. Give each one a theme:</p>
+<ol>
+<li>Open the <strong>Pages</strong> panel, click the page, and click <strong>Edit</strong>.</li>
+<li>Hover over a section and click <strong>Edit Section</strong>.</li>
+<li>Click <strong>Colors</strong> and choose:
+<ul>
+<li><strong>Lightest 1</strong> for a White section,</li>
+<li><strong>Light 1</strong> for a Mist section,</li>
+<li><strong>Darkest 1</strong> for a Deep teal section.</li>
+</ul>
+</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>Alternate White and Mist to separate sections, and use Deep teal sparingly for the moments that
+matter, such as a call to apply.</p>
+<p>A theme changes every color in the section, including any color you picked with the text toolbar.
+Remember too that editing a theme changes every section on the site that uses it. That is what you
+want: change Darkest 1 once and every Deep teal section follows.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="section-spacing">Section spacing</h3><a class="sl-anchor-link" href="#section-spacing"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Section spacing”</span></a></div>
+<ol>
+<li>In <strong>Edit Section</strong>, click <strong>Design</strong> (it may be called <strong>Format</strong>).</li>
+<li>Leave <strong>Fill Screen</strong> off unless you want a full height section.</li>
+<li>In a Fluid Engine section, leave about one empty grid row above and below your content, and
+adjust <strong>Row Count</strong> until the space looks like about 96px on desktop. In a classic section, use
+<strong>Section Height</strong> and pick a small or medium height.</li>
+<li>Keep text blocks to about 720px wide (roughly 68 characters a line). On a normal width page,
+that is a little over half the width of the grid. Long full width paragraphs are hard to read.</li>
+<li>Check the mobile view: aim for about 64px of space above and below.</li>
+</ol>
+<p>Squarespace does not let you type an exact pixel value for section spacing, so judge it by eye.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="add-the-headline-and-text">Add the headline and text</h3><a class="sl-anchor-link" href="#add-the-headline-and-text"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Add the headline and text”</span></a></div>
+<ol>
+<li>Add a <strong>Text</strong> block.</li>
+<li>Type your headline, select it, and choose <strong>Heading 1</strong> from the format menu in the text
+toolbar. Type it in normal sentence case: the capitals come from the Oswald style in Part 4, not
+from your keyboard.</li>
+<li>Use <strong>Heading 1</strong> once per page, for the big headline only. Use <strong>Heading 2</strong> for section
+titles, <strong>Heading 3</strong> and <strong>Heading 4</strong> below that.</li>
+<li>Use <strong>Paragraph 2</strong> for normal text, <strong>Paragraph 1</strong> for a short introduction under the
+headline, and <strong>Paragraph 3</strong> for small print such as dates.</li>
+<li>Do not change fonts, sizes or colors with the toolbar. Let Site styles do it.</li>
+</ol>
+<div class="sl-heading-wrapper level-h3"><h3 id="add-buttons">Add buttons</h3><a class="sl-anchor-link" href="#add-buttons"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Add buttons”</span></a></div>
+<ol>
+<li>Add a <strong>Button</strong> block.</li>
+<li>In the <strong>Content</strong> tab, type the label. Use sentence case and a verb, such as “Apply now” or
+“Meet the startups”.</li>
+<li>In the <strong>Design</strong> tab, open the <strong>Primary Button</strong> dropdown:
+<ul>
+<li>Keep <strong>Primary Button</strong> for the main action (Teal).</li>
+<li>Choose <strong>Secondary Button</strong> for a second, quieter action (Pale teal).</li>
+</ul>
+</li>
+<li>Under <strong>Size</strong>, choose <strong>M</strong>, the size that matches the padding you set in Part 1.</li>
+<li>In a Fluid Engine section, set the button to <strong>Fit</strong> rather than <strong>Fill</strong>, so it keeps its pill
+shape and padding.</li>
+</ol>
+<p>On a Deep teal section, buttons turn White with Deep teal text on their own, because of the
+Darkest 1 theme. Use one primary button there.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="sample-home-page">Sample home page</h3><a class="sl-anchor-link" href="#sample-home-page"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Sample home page”</span></a></div>
+<p>A simple page you can build in about fifteen minutes. Replace the bracketed text with your own.</p>
+<ol>
+<li><strong>Hero, White (Lightest 1).</strong> A Text block with your headline as Heading 1, then one or two
+sentences as Paragraph 1. Below it, a primary Button block (“[Main action]”) and a secondary
+Button block (“[Second action]”) side by side.</li>
+<li><strong>What we do, Mist (Light 1).</strong> A Heading 2 title. Under it, three short columns, each a Heading
+4 and a Paragraph 2. Add an image block above each column if you have photos.</li>
+<li><strong>Proof, White (Lightest 1).</strong> A Heading 2 and a short Paragraph 2, then a line of logos or a
+quote.</li>
+<li><strong>Call to action, Deep teal (Darkest 1).</strong> A Heading 2 and one sentence in Paragraph 1, with one
+primary Button block. It shows as a White button with Deep teal text.</li>
+<li><strong>Footer.</strong> Edit the footer section and give it <strong>Lightest 1</strong> or <strong>Light 1</strong>. If you add a logo
+to a Deep teal footer, use the white logo file.</li>
+</ol>
+<div class="sl-heading-wrapper level-h2"><h2 id="part-4-custom-css-only-what-settings-cannot-do">Part 4: Custom CSS (only what settings cannot do)</h2><a class="sl-anchor-link" href="#part-4-custom-css-only-what-settings-cannot-do"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Part 4: Custom CSS (only what settings cannot do)”</span></a></div>
+<p>This part is optional. Your site is already on brand after Parts 1 to 3. Custom CSS is a few lines
+of style code that you paste into one box; it adds three things that Squarespace settings cannot
+do:</p>
+<table>
+<thead>
+<tr>
+<th>Snippet</th>
+<th>What it fixes</th>
+<th>Why settings cannot do it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A: the headline</td>
+<td>Heading 1 in Oswald, medium weight, capitals, line height 1.0, letter spacing 1%</td>
+<td>All heading sizes share one font and one capitals setting</td>
+</tr>
+<tr>
+<td>B: button hovers</td>
+<td>Primary hover turns Deep teal, secondary hover turns <code dir="auto">#C4EEF4</code>, White buttons on Deep teal turn Pale teal</td>
+<td>There is no hover color setting</td>
+</tr>
+<tr>
+<td>C: exact headline sizes (optional)</td>
+<td>Heading 1 at exactly 64px on desktop and 40px on phones</td>
+<td>Squarespace scales headings with the screen, so sizes are close but not exact</td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="where-to-paste-it">Where to paste it</h3><a class="sl-anchor-link" href="#where-to-paste-it"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Where to paste it”</span></a></div>
+<ol>
+<li>Open the <strong>Pages</strong> panel.</li>
+<li>At the bottom, click <strong>Custom Code</strong>, then <strong>Custom CSS</strong>. (On some sites this is under
+<strong>Design</strong>, then <strong>Custom CSS</strong>, or <strong>Website Tools</strong>, then <strong>Custom CSS</strong>.)</li>
+<li>Paste the snippets into the box. If the box already has code, paste snippet A at the very top,
+above everything else, and the others at the end.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>The Custom CSS panel is available on every plan.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="snippet-a-the-oswald-headline">Snippet A: the Oswald headline</h3><a class="sl-anchor-link" href="#snippet-a-the-oswald-headline"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Snippet A: the Oswald headline”</span></a></div>
+<div class="expressive-code"><link rel="stylesheet" href="/_astro/ec.w36nc.css"><script type="module" src="/_astro/ec.0vx5m.js"></script><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="css"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">/* Propellant website styles: see github.com/masschallenge/propellant-web */</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">@import</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">url</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">https://fonts.googleapis.com/css2?family=Oswald:wght@500&amp;display=swap</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">);</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">.sqs-block-html</span><span style="--0:#C792EA;--1:#8844AE"> </span><span style="--0:#FF6D6D;--1:#984E4D">h1</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">font-family</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Oswald</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#7FDBCA;--1:#096E72">sans-serif</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">font-weight</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">500</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">line-height</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">1</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">letter-spacing</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">0.01</span><span style="--0:#FFEB95">em</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">text-transform</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#FF6D6D;--1:#984E4D">uppercase</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="/* Propellant website styles: see github.com/masschallenge/propellant-web */@import url(&quot;https://fonts.googleapis.com/css2?family=Oswald:wght@500&amp;display=swap&quot;);.sqs-block-html h1 {  font-family: &quot;Oswald&quot;, sans-serif;  font-weight: 500;  line-height: 1;  letter-spacing: 0.01em;  text-transform: uppercase;}"><div></div></button></div></figure></div>
+<p>What it does, line by line: the <code dir="auto">@import</code> line loads Oswald from Google Fonts, the same place
+Squarespace gets its fonts. The rest styles Heading 1, but only inside Text blocks (that is what
+<code dir="auto">.sqs-block-html</code> means). We target Text blocks on purpose: some built in pages, such as blog
+posts and product pages, also use Heading 1 for their titles, and this keeps them in Lato.</p>
+<p>The <code dir="auto">@import</code> line must be the first rule in the box (the comment line above it is fine). If it is
+lower down, browsers ignore it and the headline stays in Lato.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="snippet-b-button-hover-colors">Snippet B: button hover colors</h3><a class="sl-anchor-link" href="#snippet-b-button-hover-colors"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Snippet B: button hover colors”</span></a></div>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="css"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">/* Propellant website styles: see github.com/masschallenge/propellant-web */</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">.sqs-button-element--primary:hover</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">background-color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">044451</span></span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8844AE">!important</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">opacity</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">1</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8844AE">!important</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">.sqs-button-element--secondary:hover</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">background-color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">c4eef4</span></span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8844AE">!important</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">opacity</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">1</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8844AE">!important</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">[</span><span style="--0:#C5E478;--1:#3B61B0">data-section-theme</span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">black</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C792EA;--1:#8844AE">] </span><span style="--0:#C5E478;--1:#3B61B0">.sqs-button-element--primary:hover</span><span style="--0:#C792EA;--1:#8844AE">,</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">[</span><span style="--0:#C5E478;--1:#3B61B0">data-section-theme</span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">black</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#C792EA;--1:#8844AE">] </span><span style="--0:#C5E478;--1:#3B61B0">.sqs-button-element--secondary:hover</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">background-color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">d9f6fa</span></span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8844AE">!important</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">color</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">#</span><span style="--0:#FFEB95">044451</span></span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8844AE">!important</span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="/* Propellant website styles: see github.com/masschallenge/propellant-web */.sqs-button-element--primary:hover {  background-color: #044451 !important;  opacity: 1 !important;}.sqs-button-element--secondary:hover {  background-color: #c4eef4 !important;  opacity: 1 !important;}[data-section-theme=&quot;black&quot;] .sqs-button-element--primary:hover,[data-section-theme=&quot;black&quot;] .sqs-button-element--secondary:hover {  background-color: #d9f6fa !important;  color: #044451 !important;}"><div></div></button></div></figure></div>
+<p><code dir="auto">.sqs-button-element--primary</code> and <code dir="auto">--secondary</code> are the names Squarespace gives primary and
+secondary buttons. <code dir="auto">!important</code> makes sure our hover wins over Squarespace’s fade.
+<code dir="auto">[data-section-theme="black"]</code> is the name Squarespace uses behind the scenes for the <strong>Darkest 1</strong>
+theme, so the last rule only touches buttons on Deep teal sections. If you chose a different theme
+for Deep teal, this last rule will not apply; switch those sections to Darkest 1.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="snippet-c-exact-headline-sizes-optional">Snippet C: exact headline sizes (optional)</h3><a class="sl-anchor-link" href="#snippet-c-exact-headline-sizes-optional"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Snippet C: exact headline sizes (optional)”</span></a></div>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="css"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">/* Propellant website styles: see github.com/masschallenge/propellant-web */</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">.sqs-block-html</span><span style="--0:#C792EA;--1:#8844AE"> </span><span style="--0:#FF6D6D;--1:#984E4D">h1</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">64</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">@media</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">(</span><span style="--0:#80CBC4;--1:#096E72">max-width</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">767</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D9F5DD;--1:#111111">)</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#C5E478;--1:#3B61B0">.sqs-block-html</span><span style="--0:#C792EA;--1:#8844AE"> </span><span style="--0:#FF6D6D;--1:#984E4D">h1</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#80CBC4;--1:#096E72">font-size</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--1:#AA0982"><span style="--0:#F78C6C">40</span><span style="--0:#FFEB95">px</span></span><span style="--0:#D6DEEB;--1:#403F53">;</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="/* Propellant website styles: see github.com/masschallenge/propellant-web */.sqs-block-html h1 {  font-size: 64px;}@media (max-width: 767px) {  .sqs-block-html h1 {    font-size: 40px;  }}"><div></div></button></div></figure></div>
+<p>The second part applies only on screens 767px wide or narrower, which is where Squarespace switches
+to its phone layout.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="alternative-load-the-propellant-stylesheet-core-plan-and-above">Alternative: load the Propellant stylesheet (Core plan and above)</h3><a class="sl-anchor-link" href="#alternative-load-the-propellant-stylesheet-core-plan-and-above"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Alternative: load the Propellant stylesheet (Core plan and above)”</span></a></div>
+<p>If your plan includes code injection, you can load the Propellant stylesheet instead of using
+<code dir="auto">@import</code>. It loads the exact Oswald and Lato files we use, and adds ready made classes.</p>
+<ol>
+<li>Open the <strong>Pages</strong> panel, click <strong>Custom Code</strong>, then <strong>Code Injection</strong>.</li>
+<li>In the <strong>Header</strong> box, paste:</li>
+</ol>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="html"><code><div class="ec-line"><div class="code"><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;</span><span style="--0:#CAECE6">link</span></span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#C5E478;--1:#3B61B0">rel</span><span style="--0:#7FDBCA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">stylesheet</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#C5E478;--1:#3B61B0">href</span><span style="--0:#7FDBCA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/dist/website.css</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#8844AE">/&gt;</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="<link  rel=&quot;stylesheet&quot;  href=&quot;https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v1.0.0/dist/website.css&quot;/>"><div></div></button></div></figure></div>
+<ol start="3">
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>The stylesheet only styles elements that carry one of its class names, so it never changes the
+rest of your site. Squarespace’s own blocks do not let you add class names, so you use the classes
+inside a <strong>Code</strong> block, where you write a little HTML. For example:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="html"><code><div class="ec-line"><div class="code"><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;</span><span style="--0:#CAECE6">h1</span><span style="--0:#7FDBCA"> </span></span><span style="--0:#C5E478;--1:#3B61B0">class</span><span style="--0:#7FDBCA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">propellant-headline</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#7FDBCA;--1:#8844AE">&gt;</span><span style="--0:#D6DEEB;--1:#403F53">Your headline here</span><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;/</span><span style="--0:#CAECE6">h1</span><span style="--0:#7FDBCA">&gt;</span></span></div></div><div class="ec-line"><div class="code"><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;</span><span style="--0:#CAECE6">a</span><span style="--0:#7FDBCA"> </span></span><span style="--0:#C5E478;--1:#3B61B0">class</span><span style="--0:#7FDBCA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">propellant-button</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#7FDBCA;--1:#8844AE"> </span><span style="--0:#C5E478;--1:#3B61B0">href</span><span style="--0:#7FDBCA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">/apply</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#7FDBCA;--1:#8844AE">&gt;</span><span style="--0:#D6DEEB;--1:#403F53">Apply now</span><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;/</span><span style="--0:#CAECE6">a</span><span style="--0:#7FDBCA">&gt;</span></span></div></div><div class="ec-line"><div class="code"><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;</span><span style="--0:#CAECE6">a</span><span style="--0:#7FDBCA"> </span></span><span style="--0:#C5E478;--1:#3B61B0">class</span><span style="--0:#7FDBCA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">propellant-button propellant-button-secondary</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#7FDBCA;--1:#8844AE"> </span><span style="--0:#C5E478;--1:#3B61B0">href</span><span style="--0:#7FDBCA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">/about</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#7FDBCA;--1:#8844AE">&gt;</span><span style="--0:#D6DEEB;--1:#403F53">Learn more</span><span style="--1:#8844AE"><span style="--0:#7FDBCA">&lt;/</span><span style="--0:#CAECE6">a</span><span style="--0:#7FDBCA">&gt;</span></span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="<h1 class=&quot;propellant-headline&quot;>Your headline here</h1><a class=&quot;propellant-button&quot; href=&quot;/apply&quot;>Apply now</a><a class=&quot;propellant-button propellant-button-secondary&quot; href=&quot;/about&quot;>Learn more</a>"><div></div></button></div></figure></div>
+<p><code dir="auto">propellant-headline</code> is Heading 1 from the spec, <code dir="auto">propellant-title-1</code>, <code dir="auto">propellant-title-2</code> and
+<code dir="auto">propellant-title-3</code> are Headings 2 to 4, <code dir="auto">propellant-body</code> is Paragraph and <code dir="auto">propellant-caption</code>
+is Paragraph small. A <code dir="auto">&lt;div class="propellant-brand-band"&gt;</code> wrapped around your HTML gives a Deep
+teal band with White text and White buttons. The full list is in the
+<a href="/web/websites/#the-propellant-stylesheet">website spec</a>. For most sites, snippets A and B are
+simpler: they work with normal Text and Button blocks, so anyone can edit the page later.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="removing-the-code-later">Removing the code later</h3><a class="sl-anchor-link" href="#removing-the-code-later"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Removing the code later”</span></a></div>
+<p>Open <strong>Custom Code</strong>, then <strong>Custom CSS</strong> (or <strong>Code Injection</strong>), select the lines from the
+<code dir="auto">/* Propellant website styles</code> comment down to the end of that snippet, delete them and click
+<strong>Save</strong>. Your site goes back to the plain Site styles from Part 1. Keep the comment line on
+anything you leave in place, so the next person knows where it came from.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="check-your-work">Check your work</h2><a class="sl-anchor-link" href="#check-your-work"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Check your work”</span></a></div>
+<p>On a computer:</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Normal text and Headings 2 to 4 are in Lato. Heading 2 to 4 are bold.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Heading 1 is in tall Oswald capitals (if you added snippet A), and it is the only text in
+capitals.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Buttons are pills in sentence case: primary Teal with White text, secondary Pale teal with
+Teal text.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Hovering a primary button turns it Deep teal (if you added snippet B).</li>
+<li class="task-list-item"><input type="checkbox" disabled> White, Mist and Deep teal sections each use Lightest 1, Light 1 and Darkest 1.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Nothing on a Deep teal section is Teal. Text and buttons there are White.</li>
+<li class="task-list-item"><input type="checkbox" disabled> The full color logo sits on a White header, at least 24px tall, with room around it.</li>
+<li class="task-list-item"><input type="checkbox" disabled> The monogram shows in the browser tab.</li>
+</ul>
+<p>On a phone (use the mobile view in the editor, then check the published site on a real phone):</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Heading 1 is about 40px and fits without breaking words awkwardly.</li>
+<li class="task-list-item"><input type="checkbox" disabled> The mobile logo is at least 24px tall.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Buttons stay pill shaped and easy to tap.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Sections have clear space above and below, about 64px.</li>
+</ul>
+<p>Code can behave differently in the editor than on the live site. Open your published site in a
+private window to see it the way visitors do.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="if-something-looks-off">If something looks off</h2><a class="sl-anchor-link" href="#if-something-looks-off"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “If something looks off”</span></a></div>
+<ul>
+<li><strong>Heading 1 is still in Lato.</strong> Check the text is set to Heading 1 in the format menu, not just
+made bigger. Check the <code dir="auto">@import</code> line is the first rule in the Custom CSS box and that you clicked
+Save. Then reload the page.</li>
+<li><strong>One block ignores the site colors or fonts.</strong> Someone styled it with the text toolbar. Select
+the text and clear the formatting, or pick the format again from the format menu, so it follows
+Site styles.</li>
+<li><strong>A whole section changed color after you edited the palette.</strong> Palette changes flow into the
+color themes. Open Lightest 1, Light 1 and Darkest 1 again and re-enter the values from the table
+in Step 2.</li>
+<li><strong>Your fonts or buttons suddenly changed.</strong> A theme or pack was clicked in Site styles. Use the
+undo arrow at the top of the panel, or set Step 1 or Step 3 again.</li>
+<li><strong>A button is square or stretched.</strong> In a Fluid Engine section, set the Button block to <strong>Fit</strong>,
+not <strong>Fill</strong>. If all buttons are square, check <strong>Shape</strong> is <strong>Pill</strong> in Site styles, <strong>Buttons</strong>,
+for each button type.</li>
+<li><strong>The old browser icon still shows.</strong> Browsers keep icons for a long time. Clear the cache or
+open the site in a private window.</li>
+</ul>
+</div><footer class="sl-flex astro-ddtxxk7k"><div class="meta sl-flex astro-ddtxxk7k"><a href="https://github.com/masschallenge/propellant-web/edit/main/docs/websites/squarespace.md" class="sl-flex print:hidden astro-qlekgd3o"><svg aria-hidden="true" class="astro-qlekgd3o astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.2em;"><path d="M22 7.24a1 1 0 0 0-.29-.71l-4.24-4.24a1 1 0 0 0-1.1-.22 1 1 0 0 0-.32.22l-2.83 2.83L2.29 16.05a1 1 0 0 0-.29.71V21a1 1 0 0 0 1 1h4.24a1 1 0 0 0 .76-.29l10.87-10.93L21.71 8c.1-.1.17-.2.22-.33a1 1 0 0 0 0-.24v-.14l.07-.05ZM6.83 20H4v-2.83l9.93-9.93 2.83 2.83L6.83 20ZM18.17 8.66l-2.83-2.83 1.42-1.41 2.82 2.82-1.41 1.42Z"/></svg>Edit page</a></div><div class="pagination-links print:hidden astro-b5raizh3" dir="ltr"><a href="/web/websites/hubspot/" rel="prev" class="astro-b5raizh3"><svg aria-hidden="true" class="astro-b5raizh3 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg><span class="astro-b5raizh3">Previous<br class="astro-b5raizh3"><span class="link-title astro-b5raizh3">HubSpot</span></span></a><a href="/web/websites/webflow/" rel="next" class="astro-b5raizh3"><svg aria-hidden="true" class="astro-b5raizh3 astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg><span class="astro-b5raizh3">Next<br class="astro-b5raizh3"><span class="link-title astro-b5raizh3">Webflow</span></span></a></div></footer></div></div></main></div></div></div></div></body></html>
