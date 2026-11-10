@@ -1,6 +1,7 @@
 import { execFileSync } from 'node:child_process';
 import {
   cpSync,
+  existsSync,
   mkdirSync,
   mkdtempSync,
   readFileSync,
@@ -18,28 +19,42 @@ import {
   rewriteMarkdown,
   toStarlightPage,
 } from './lib/doc-links.mjs';
-import { WEB_DOC_PAGES, WEB_DOC_PATTERNS, WEB_REPOSITORY } from './lib/platforms.mjs';
+import { PLATFORMS } from './lib/platforms.mjs';
 
 const projectRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const contentRoot = join(projectRoot, 'src/content/docs');
 
-const latestReleaseTag = (repository) => {
-  const listing = execFileSync(
-    'git',
-    ['ls-remote', '--tags', '--refs', `https://github.com/${repository}.git`],
-    {
+const releaseTags = (source) => {
+  try {
+    const listing = execFileSync('git', ['ls-remote', '--tags', '--refs', source], {
       encoding: 'utf8',
-    },
-  );
-  const tags = listing
-    .split('\n')
-    .map((line) => line.split('refs/tags/')[1])
-    .filter((tag) => tag && /^v\d+\.\d+\.\d+$/.test(tag));
-  if (!tags.length) throw new Error(`${repository} has no release tags`);
-  return tags.sort(compareVersions).at(-1);
+      stdio: ['ignore', 'pipe', 'ignore'],
+    });
+    return listing
+      .split('\n')
+      .map((line) => line.split('refs/tags/')[1])
+      .filter((tag) => tag && /^v\d+\.\d+\.\d+$/.test(tag));
+  } catch {
+    return [];
+  }
 };
 
-const cloneAtRef = (repository, ref) => {
+const environmentSetting = (platform, setting) =>
+  process.env[`PROPELLANT_${platform.id.toUpperCase()}_${setting}`];
+
+const sourceFor = (platform) =>
+  environmentSetting(platform, 'SOURCE') || `https://github.com/${platform.repository}.git`;
+
+const resolveRef = (platform) => {
+  const override = environmentSetting(platform, 'REF');
+  if (override) return override;
+  const tags = releaseTags(sourceFor(platform));
+  if (tags.length) return tags.sort(compareVersions).at(-1);
+  if (platform.isRequired) throw new Error(`${platform.repository} has no release tags`);
+  return null;
+};
+
+const cloneAtRef = (source, ref) => {
   const checkout = mkdtempSync(join(tmpdir(), 'propellant-'));
   execFileSync(
     'git',
@@ -52,12 +67,10 @@ const cloneAtRef = (repository, ref) => {
       '1',
       '--branch',
       ref,
-      `https://github.com/${repository}.git`,
+      source,
       checkout,
     ],
-    {
-      stdio: 'inherit',
-    },
+    { stdio: 'inherit' },
   );
   return checkout;
 };
@@ -75,36 +88,10 @@ const writePage = (page, contents) => {
   writeFileSync(pageFile, contents);
 };
 
-const syncWeb = () => {
-  const ref = process.env.PROPELLANT_WEB_REF || latestReleaseTag(WEB_REPOSITORY);
-  const checkout = cloneAtRef(WEB_REPOSITORY, ref);
-  const rewriter = createLinkRewriter({
-    repository: WEB_REPOSITORY,
-    ref,
-    pages: WEB_DOC_PAGES,
-    patterns: WEB_DOC_PATTERNS,
-  });
-  const sources = [
-    'README.md',
-    ...markdownFiles(join(checkout, 'docs')).map((path) => `docs/${path}`),
-  ];
+const removeSyncedPages = (platform) =>
+  Object.values(platform.pages).forEach((page) => rmSync(join(contentRoot, page), { force: true }));
 
-  rmSync(join(contentRoot, 'web'), { recursive: true, force: true });
-  rmSync(join(contentRoot, 'brand'), { recursive: true, force: true });
-  rmSync(join(contentRoot, 'guidelines/images.md'), { force: true });
-
-  const synced = sources.flatMap((source) => {
-    const page = pageForPath(source, WEB_DOC_PAGES, WEB_DOC_PATTERNS);
-    if (page === null) return [];
-    const markdown = readFileSync(join(checkout, source), 'utf8');
-    const contents = toStarlightPage(rewriteMarkdown(markdown, source, rewriter), {
-      editUrl: `https://github.com/${WEB_REPOSITORY}/edit/main/${source}`,
-      sourceLabel: `${WEB_REPOSITORY}/${source}`,
-    });
-    writePage(page, contents);
-    return [page];
-  });
-
+const copyBrandAssets = (checkout) => {
   mkdirSync(join(projectRoot, 'public/fonts'), { recursive: true });
   readdirSync(join(checkout, 'assets/fonts'))
     .filter((name) => name.endsWith('.woff2'))
@@ -118,10 +105,47 @@ const syncWeb = () => {
     join(checkout, 'assets/brand/propellant-icon.svg'),
     join(projectRoot, 'public/favicon.svg'),
   );
-
-  rmSync(checkout, { recursive: true, force: true });
-  return { platform: 'web', ref, pages: synced };
 };
 
-const { ref, pages } = syncWeb();
-console.log(`Synced ${pages.length} web pages from ${WEB_REPOSITORY} ${ref}`);
+const syncPlatform = (platform) => {
+  removeSyncedPages(platform);
+  rmSync(join(contentRoot, platform.id), { recursive: true, force: true });
+  const ref = resolveRef(platform);
+  if (ref === null) return { platform: platform.id, ref: null, pages: [] };
+  const checkout = cloneAtRef(sourceFor(platform), ref);
+  const rewriter = createLinkRewriter({
+    platform,
+    ref,
+    platforms: PLATFORMS,
+    hasPage: (page) => existsSync(join(contentRoot, page)),
+  });
+  const docsDirectory = join(checkout, 'docs');
+  const sources = [
+    'README.md',
+    ...(existsSync(docsDirectory)
+      ? markdownFiles(docsDirectory).map((path) => `docs/${path}`)
+      : []),
+  ];
+  const pages = sources.flatMap((source) => {
+    const page = pageForPath(source, platform.pages, platform.patterns);
+    if (page === null) return [];
+    const markdown = readFileSync(join(checkout, source), 'utf8');
+    const contents = toStarlightPage(rewriteMarkdown(markdown, source, rewriter), {
+      editUrl: `https://github.com/${platform.repository}/edit/main/${source}`,
+      sourceLabel: `${platform.repository}/${source}`,
+    });
+    writePage(page, contents);
+    return [page];
+  });
+  if (platform.providesBrandAssets) copyBrandAssets(checkout);
+  rmSync(checkout, { recursive: true, force: true });
+  return { platform: platform.id, ref, pages };
+};
+
+PLATFORMS.map(syncPlatform).forEach(({ platform, ref, pages }) =>
+  console.log(
+    ref
+      ? `Synced ${pages.length} ${platform} pages from ${ref}`
+      : `Skipped ${platform}: no release yet`,
+  ),
+);

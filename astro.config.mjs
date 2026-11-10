@@ -1,5 +1,25 @@
+import { existsSync } from 'node:fs';
 import starlight from '@astrojs/starlight';
 import { defineConfig } from 'astro/config';
+
+const hasOfficeDocs = existsSync('./src/content/docs/office/index.md');
+
+const officeSidebar = hasOfficeDocs
+  ? {
+      label: 'Office',
+      items: [
+        { label: 'Overview', link: '/office/' },
+        { label: 'Designing documents, decks and spreadsheets', link: '/office/foundations/' },
+        { label: 'Installing the templates', link: '/office/templates/' },
+        { label: 'Word', link: '/office/word/' },
+        { label: 'PowerPoint', link: '/office/powerpoint/' },
+        { label: 'Excel', link: '/office/excel/' },
+        { label: 'Google Docs', link: '/office/google-docs/' },
+        { label: 'Google Slides', link: '/office/google-slides/' },
+        { label: 'Google Sheets', link: '/office/google-sheets/' },
+      ],
+    }
+  : { label: 'Office', link: '/platforms/office/', badge: { text: 'Planned', variant: 'default' } };
 
 export default defineConfig({
   site: 'https://propellant.masschallenge.org',
@@ -49,11 +69,7 @@ export default defineConfig({
               link: '/platforms/android/',
               badge: { text: 'Planned', variant: 'default' },
             },
-            {
-              label: 'Office',
-              link: '/platforms/office/',
-              badge: { text: 'Planned', variant: 'default' },
-            },
+            officeSidebar,
           ],
         },
         { label: 'Contributing', link: '/contributing/' },

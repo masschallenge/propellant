@@ -8,3 +8,5 @@ src/content/docs/web
 src/content/docs/brand
 src/content/docs/guidelines/images.md
 yarn.lock
+src/content/docs/office
+src/content/docs/guidelines/photography.md

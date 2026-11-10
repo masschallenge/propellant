@@ -21,15 +21,37 @@ export const routeForPage = (page) =>
 
 const isAbsolute = (href) => /^[a-z][a-z0-9+.-]*:/i.test(href) || href.startsWith('//');
 
-export const createLinkRewriter = ({ repository, ref, pages, patterns }) => {
+const DOWNLOADABLE = /\.(docx|dotx|pptx|potx|xlsx|xltx|thmx|pdf|zip|png|jpe?g|svg)$/i;
+const GITHUB_FILE = /^https:\/\/github\.com\/([^/]+\/[^/]+)\/blob\/[^/]+\/([^#]+)(#.*)?$/;
+
+const siteRouteForGithubLink = (href, platforms, hasPage) => {
+  const match = href.match(GITHUB_FILE);
+  if (!match) return null;
+  const [, repository, path, anchor = ''] = match;
+  const platform = platforms.find((candidate) => candidate.repository === repository);
+  if (!platform) return null;
+  const page = pageForPath(path, platform.pages, platform.patterns);
+  return page !== null && hasPage(page) ? `${routeForPage(page)}${anchor}` : null;
+};
+
+export const createLinkRewriter = ({
+  platform,
+  ref,
+  platforms = [platform],
+  hasPage = () => true,
+}) => {
+  const { repository, pages, patterns } = platform;
+
   const rewriteLink = (fromDocument, href) => {
-    if (isAbsolute(href) || href.startsWith('#')) return href;
+    if (href.startsWith('#')) return href;
+    if (isAbsolute(href)) return siteRouteForGithubLink(href, platforms, hasPage) ?? href;
     const [target, anchor] = href.split('#');
     const path = resolveRepositoryPath(fromDocument, target);
     const page = pageForPath(path, pages, patterns);
     const suffix = anchor ? `#${anchor}` : '';
     if (page !== null) return `${routeForPage(page)}${suffix}`;
-    return `https://github.com/${repository}/blob/${ref}/${path}${suffix}`;
+    const view = DOWNLOADABLE.test(path) ? 'raw' : 'blob';
+    return `https://github.com/${repository}/${view}/${ref}/${path}${suffix}`;
   };
 
   const rewriteAsset = (fromDocument, src) => {
