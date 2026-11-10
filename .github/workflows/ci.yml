@@ -19,4 +19,5 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn format:check
       - run: yarn test
+      - run: python3 -m unittest discover -s tests/skill
       - run: yarn build
