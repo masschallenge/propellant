@@ -1,0 +1,10 @@
+dist
+node_modules
+.astro
+src/assets/brand
+public/fonts
+public/favicon.svg
+src/content/docs/web
+src/content/docs/brand
+src/content/docs/guidelines/images.md
+yarn.lock

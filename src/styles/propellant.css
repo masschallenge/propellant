@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'Propellant Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/propellant-sans-400-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Propellant Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/propellant-sans-400-italic-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Propellant Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/propellant-sans-600-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Propellant Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/propellant-sans-700-latin.woff2') format('woff2');
+}
+
+:root {
+  --sl-font: 'Propellant Sans', system-ui, sans-serif;
+  --sl-color-accent-low: #033a45;
+  --sl-color-accent: #0facbd;
+  --sl-color-accent-high: #c4eef4;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #ebf0f1;
+  --sl-color-gray-2: #cad0d2;
+  --sl-color-gray-3: #99a2a4;
+  --sl-color-gray-4: #4b575b;
+  --sl-color-gray-5: #343d40;
+  --sl-color-gray-6: #1e282b;
+  --sl-color-black: #11171a;
+}
+
+:root[data-theme='light'] {
+  --sl-color-accent-low: #d9f6fa;
+  --sl-color-accent: #065e6f;
+  --sl-color-accent-high: #033a45;
+  --sl-color-white: #11171a;
+  --sl-color-gray-1: #1e282b;
+  --sl-color-gray-2: #343d40;
+  --sl-color-gray-3: #4b575b;
+  --sl-color-gray-4: #848f92;
+  --sl-color-gray-5: #cad0d2;
+  --sl-color-gray-6: #ebf0f1;
+  --sl-color-gray-7: #f8fafb;
+  --sl-color-black: #ffffff;
+}
+
+.site-title img {
+  height: 2rem;
+  width: auto;
+}
+
+.sl-badge {
+  font-family: var(--sl-font);
+  font-weight: 600;
+}

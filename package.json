@@ -1,0 +1,28 @@
+{
+  "name": "propellant",
+  "private": true,
+  "type": "module",
+  "description": "The Propellant design system documentation site, across every platform.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "sync": "node scripts/sync-platform-docs.mjs",
+    "dev": "node scripts/sync-platform-docs.mjs && astro dev",
+    "build": "node scripts/sync-platform-docs.mjs && astro build",
+    "preview": "astro preview",
+    "test": "vitest run",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@astrojs/starlight": "0.42.6",
+    "astro": "7.3.8",
+    "sharp": "0.34.4"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2",
+    "vitest": "4.1.12"
+  }
+}
