@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import logoColor from '@masschallenge/propellant-web/assets/logos/masschallenge-logo-horizontal-color.png';
 import logoWhite from '@masschallenge/propellant-web/assets/logos/masschallenge-logo-horizontal-white.png';
+import { POSITIONING, PRIMARY_LINE } from '../../../brand/messaging';
 import { EMPTY_SIGNATURE, signatureHtml } from '../../../brand/signature';
 import PhotoSlot from './PhotoSlot.astro';
 import Piece from './Piece.astro';
@@ -25,7 +26,7 @@ const signature = signatureHtml(
       <div class="flex items-center gap-4 border-0 border-b border-solid border-[var(--gray-100)] px-5 py-3">
         <Image src={logoColor} alt="MassChallenge" class="h-5 w-auto" />
         <span class="ml-auto hidden gap-4 text-[13px] text-[var(--gray-500)] sm:flex" aria-hidden="true">
-          <span>Programs</span><span>Startups</span><span>Mentors</span>
+          <span>Challenge Areas</span><span>Our accelerators</span><span>Our network</span>
         </span>
         <span class="ml-auto rounded-full bg-[var(--teal-800)] px-3 py-1 text-[12px] font-semibold text-white sm:ml-0">
           Apply
@@ -36,10 +37,10 @@ const signature = signatureHtml(
           <p
             class="m-0 font-[family-name:var(--type-family-brand)] text-[clamp(1.6rem,4vw,2.6rem)] font-medium uppercase leading-[1]"
           >
-            It takes a community to raise a startup
+            {POSITIONING[0]}
           </p>
           <p class="m-0 max-w-[36ch] text-[14px] leading-[1.5] text-[var(--teal-100)]">
-            We back the rare humans with the grit to solve the toughest challenges.
+            {PRIMARY_LINE}
           </p>
         </div>
         <PhotoSlot tone="teal" class="min-h-[140px]" />

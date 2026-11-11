@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { BOILERPLATES, PRIMARY_LINE } from '../../src/brand/messaging';
 import { checkVoice, isTitleCase, segmentText } from '../../src/brand/voice-check';
 
 const EM_DASH = String.fromCharCode(0x2014);
@@ -65,5 +66,28 @@ describe('voice checker', () => {
     const segments = segmentText(text, checkVoice(text));
     expect(segments.map((segment) => segment.text).join('')).toBe(text);
     expect(segments.filter((segment) => segment.issue)).toHaveLength(3);
+  });
+
+  it('flags the founder testimonial used as a MassChallenge line', () => {
+    expect(kinds('It takes a community to raise a startup.')).toEqual(['borrowed-line']);
+    expect(checkVoice('it takes a community to raise a startup')[0].fix).toMatch(/rare humans/);
+  });
+
+  it('flags an ampersand in running text but not in a tight label', () => {
+    expect(kinds('We work with founders & experts in every Challenge Area.')).toEqual([
+      'ampersand',
+    ]);
+    expect(kinds('Healthcare & Life Sciences')).not.toContain('ampersand');
+  });
+
+  it('flags the unconfirmed jobs figure', () => {
+    expect(kinds('Alumni created 77K jobs.')).toEqual(['figure']);
+    expect(kinds('Alumni created 77,000 jobs.')).toEqual(['figure']);
+    expect(kinds('Alumni created 90K jobs.')).toEqual([]);
+  });
+
+  it('passes the approved boilerplate', () => {
+    BOILERPLATES.forEach((boilerplate) => expect(checkVoice(boilerplate.text)).toEqual([]));
+    expect(checkVoice(PRIMARY_LINE)).toEqual([]);
   });
 });

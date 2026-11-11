@@ -7,6 +7,7 @@ import {
   Textarea,
 } from '@masschallenge/propellant-web';
 import { TEXT_STYLES, textStyleTokens } from '../../../brand/design-tokens';
+import { PRIMARY_LINE } from '../../../brand/messaging';
 import type { TokenMap } from '../../../brand/design-tokens';
 import { CopyIcon } from '../logo/icons';
 import { useCopyToast } from '../color/useCopyToast';
@@ -25,7 +26,7 @@ const FONT_FAMILY: Record<FontId, { name: string; token: string }> = {
 
 const TypeTester = ({ tokens, shrinkingStyles }: TypeTesterProps) => {
   const { copy, toast } = useCopyToast();
-  const [words, setWords] = React.useState('It takes a community to raise a startup.');
+  const [words, setWords] = React.useState(PRIMARY_LINE);
   const [styleId, setStyleId] = React.useState('title1');
   const [fontId, setFontId] = React.useState<FontId>('sans');
   const [isDarkPreview, setIsDarkPreview] = React.useState(false);

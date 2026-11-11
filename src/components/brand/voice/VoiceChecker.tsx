@@ -11,10 +11,13 @@ const ISSUE_NAME: Record<VoiceIssue['kind'], string> = {
   'title-case': 'Title Case',
   'mc-word': 'MC as a word',
   'name-spelling': 'Name spelled wrongly',
+  'borrowed-line': 'Not our line',
+  ampersand: 'Ampersand',
+  figure: 'Figure to check',
 };
 
 const STARTER =
-  'Oops! Our robust Mass Challenge portal lets you leverage MC mentors.\nSubmit Application';
+  'Oops! Our robust Mass Challenge portal lets you leverage MC mentors.\nIt takes a community to raise a startup, and our alumni created 77K jobs & more.\nSubmit Application';
 
 const VoiceChecker = () => {
   const [text, setText] = React.useState(STARTER);

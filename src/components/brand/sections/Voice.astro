@@ -3,6 +3,7 @@ import SectionHeading from '../SectionHeading.astro';
 import SubHeading from '../logo/SubHeading.astro';
 import VoicePairs from '../voice/VoicePairs';
 import VoiceChecker from '../voice/VoiceChecker';
+import Messaging from '../voice/Messaging';
 
 const pairs = [
   {
@@ -31,7 +32,7 @@ const principles = [
   <SectionHeading
     eyebrow="Voice"
     title="Voice"
-    lead="MassChallenge sounds bold and human: direct, plain spoken and on the side of the community we serve. In a product, keep the confidence and drop the slogans."
+    lead="MassChallenge sounds bold and ambitious, founder first, and about outcomes and access: rare humans, grit, from proof to scale. Headlines are short and declarative. In a product, keep the confidence and drop the slogans."
   />
 
   <ul class="m-0 mb-10 grid list-none gap-3 p-0 sm:grid-cols-2 lg:grid-cols-4">
@@ -47,13 +48,20 @@ const principles = [
     }
   </ul>
 
+  <SubHeading
+    id="messaging"
+    title="Messaging"
+    lead="What we say about MassChallenge, word for word, from masschallenge.org as read on 2026-11-11. Copy it rather than retyping it."
+  />
+  <Messaging client:visible />
+
   <SubHeading id="voice-pairs" title="Don't write, write" lead="Straight from the brand guidelines. Press a card to flip it." />
   <VoicePairs client:visible pairs={pairs} />
 
   <SubHeading
     id="voice-checker"
     title="Check your words"
-    lead="It flags buzzwords, exclamation marks, dashes, Oops, Title Case in short labels, MC used as a word, and MassChallenge spelled wrongly. It is a helper, not a judge: read the flag and decide."
+    lead="It flags buzzwords, exclamation marks, dashes, Oops, Title Case in short labels, MC used as a word, MassChallenge spelled wrongly, a borrowed line used as a tagline, an ampersand in running text and the unconfirmed 77K figure. It is a helper, not a judge: read the flag and decide."
   />
   <VoiceChecker client:visible />
 </section>

@@ -5,7 +5,10 @@ export type VoiceIssueKind =
   | 'oops'
   | 'title-case'
   | 'mc-word'
-  | 'name-spelling';
+  | 'name-spelling'
+  | 'borrowed-line'
+  | 'ampersand'
+  | 'figure';
 
 export interface VoiceIssue {
   kind: VoiceIssueKind;
@@ -29,6 +32,11 @@ export const VOICE_RULES: Record<VoiceIssueKind, string> = {
   'title-case': 'Use sentence case for every title, label and button.',
   'mc-word': 'Do not abbreviate it to MC in running text. The MC monogram is a logo, not a word.',
   'name-spelling': 'Write MassChallenge as one word with a capital M and a capital C.',
+  'borrowed-line':
+    '"It takes a community to raise a startup" is a founder testimonial on the home page, not a MassChallenge line. Never present it as a tagline.',
+  ampersand: 'Write "and" in running text. "&" is only for tight labels.',
+  figure:
+    'Use the approved figures with their as of date. The About page says 90K jobs; use 90K until the brand team confirms the 77K figure.',
 };
 
 const MINOR_WORDS = new Set([
@@ -92,6 +100,17 @@ const PATTERN_RULES: PatternRule[] = [
     accept: (match) => match === 'MassChallenge',
     fix: () => 'Write MassChallenge.',
   },
+  {
+    kind: 'borrowed-line',
+    pattern: /it takes a community to raise a startup/gi,
+    fix: () =>
+      'Use the primary line instead: We back the rare humans with the grit to solve the toughest challenges.',
+  },
+  {
+    kind: 'figure',
+    pattern: /\b77(?:K\b|,000\b)/gi,
+    fix: () => 'Write 90K jobs, as of 2026-11-11, from the About page.',
+  },
 ];
 
 const patternIssues = (text: string): VoiceIssue[] =>
@@ -145,8 +164,31 @@ const titleCaseIssues = (text: string): VoiceIssue[] => {
   return issues;
 };
 
+const ampersandIssues = (text: string): VoiceIssue[] => {
+  const issues: VoiceIssue[] = [];
+  let offset = 0;
+  text.split('\n').forEach((line) => {
+    const words = line.trim().split(/\s+/).filter(Boolean);
+    if (words.length > SHORT_LABEL_WORDS) {
+      [...line.matchAll(/&/g)].forEach((found) => {
+        const start = offset + (found.index ?? 0);
+        issues.push({
+          kind: 'ampersand',
+          match: '&',
+          start,
+          end: start + 1,
+          rule: VOICE_RULES.ampersand,
+          fix: 'Write "and".',
+        });
+      });
+    }
+    offset += line.length + 1;
+  });
+  return issues;
+};
+
 export const checkVoice = (text: string): VoiceIssue[] =>
-  [...patternIssues(text), ...titleCaseIssues(text)].sort(
+  [...patternIssues(text), ...ampersandIssues(text), ...titleCaseIssues(text)].sort(
     (first, second) => first.start - second.start || first.end - second.end,
   );
 
