@@ -42,7 +42,7 @@ const CopyValue = ({ label, value, copied = value, onCopy }: CopyValueProps) => 
       <span className="text-[length:var(--type-caption-size)] font-semibold uppercase tracking-[0.06em] text-[var(--label-secondary)]">
         {label}
       </span>
-      <span className="truncate font-[family-name:var(--type-family-mono)] text-[length:var(--type-subheadline-size)] text-[var(--label)]">
+      <span className="break-words font-[family-name:var(--type-family-mono)] text-[length:var(--type-subheadline-size)] text-[var(--label)]">
         {value}
       </span>
     </span>
