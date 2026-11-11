@@ -28,6 +28,8 @@ export const SITE_ORIGIN = 'https://propellant.masschallenge.org';
 
 export const EMAIL_FONT_STACK = 'Lato, Arial, Helvetica, sans-serif';
 
+export const SIGNATURE_LOGO_FOLDER = 'email-signature';
+
 export const SIGNATURE_LOGOS: Record<
   SignatureLogo,
   { label: string; file: string; width: number; height: number }
@@ -73,7 +75,7 @@ const TEAL = findColor('teal').hex;
 const WHITE = findColor('white').hex;
 
 export const logoUrl = (logo: SignatureLogo, origin = SITE_ORIGIN) =>
-  `${origin}/downloads/logos/${SIGNATURE_LOGOS[logo].file}`;
+  `${origin}/${SIGNATURE_LOGO_FOLDER}/${SIGNATURE_LOGOS[logo].file}`;
 
 export const escapeHtml = (text: string) =>
   text

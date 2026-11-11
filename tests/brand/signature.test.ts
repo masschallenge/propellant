@@ -1,8 +1,11 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
   EMAIL_FONT_STACK,
   EMPTY_SIGNATURE,
   SIGNATURE_LOGOS,
+  SIGNATURE_LOGO_FOLDER,
   SIGNATURE_OFFICES,
   cleanFields,
   escapeHtml,
@@ -108,16 +111,26 @@ describe('the email HTML', () => {
 
   it('loads the logo from an absolute URL on the Propellant site with its size set', () => {
     expect(logoUrl('horizontal')).toBe(
-      'https://propellant.masschallenge.org/downloads/logos/masschallenge-logo-horizontal-color.png',
+      'https://propellant.masschallenge.org/email-signature/masschallenge-logo-horizontal-color.png',
     );
     expect(html).toContain(`src="${logoUrl('horizontal')}"`);
     expect(html).toContain('alt="MassChallenge"');
     expect(signatureHtml(person, 'http://localhost:4321')).toContain(
-      'src="http://localhost:4321/downloads/logos/',
+      'src="http://localhost:4321/email-signature/',
     );
     const monogram = signatureHtml({ ...person, logo: 'monogram' });
     expect(monogram).toContain(SIGNATURE_LOGOS.monogram.file);
     expect(monogram).toContain(`width="${SIGNATURE_LOGOS.monogram.width}"`);
+  });
+
+  it('serves each signature logo from a committed file that matches the released logo', () => {
+    Object.values(SIGNATURE_LOGOS).forEach((logo) => {
+      const committed = readFileSync(join('public', SIGNATURE_LOGO_FOLDER, logo.file));
+      const released = readFileSync(
+        join('node_modules/@masschallenge/propellant-web/assets/logos', logo.file),
+      );
+      expect(committed.equals(released), logo.file).toBe(true);
+    });
   });
 
   it('keeps the logo on white with clear space of half its height', () => {
