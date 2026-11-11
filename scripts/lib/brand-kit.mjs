@@ -17,13 +17,24 @@ const hexToRgbText = (hex) => {
   return [0, 2, 4].map((offset) => parseInt(digits.slice(offset, offset + 2), 16)).join(', ');
 };
 
-export const colorsJson = ({ brandColors, logoColors }) =>
+const cmykText = (cmyk) => cmyk.join(', ');
+
+export const colorsJson = ({ brandColors, supportingColors, logoColors, print }) =>
   `${JSON.stringify(
     {
       brandColors: brandColors.map((color) => ({
         name: color.name,
         hex: color.hex,
         rgb: hexToRgbText(color.hex),
+        cmyk: cmykText(color.cmyk),
+        token: color.token,
+        role: color.role,
+      })),
+      supportingColors: supportingColors.map((color) => ({
+        name: color.name,
+        hex: color.hex,
+        rgb: hexToRgbText(color.hex),
+        cmyk: cmykText(color.cmyk),
         token: color.token,
         role: color.role,
       })),
@@ -31,8 +42,10 @@ export const colorsJson = ({ brandColors, logoColors }) =>
         name: color.name,
         hex: color.hex,
         rgb: hexToRgbText(color.hex),
+        cmyk: cmykText(color.cmyk),
         part: color.part,
       })),
+      print,
     },
     null,
     2,
@@ -42,12 +55,13 @@ const colorLines = (color, detail) => [
   color.name,
   `  HEX    ${color.hex}`,
   `  RGB    ${hexToRgbText(color.hex)}`,
+  `  CMYK   ${cmykText(color.cmyk)}`,
   ...(color.token ? [`  Token  var(${color.token})`] : []),
   `  ${detail}`,
   '',
 ];
 
-export const colorsText = ({ brandColors, logoColors }) =>
+export const colorsText = ({ brandColors, supportingColors, logoColors, print }) =>
   [
     'MassChallenge colors',
     '',
@@ -56,12 +70,20 @@ export const colorsText = ({ brandColors, logoColors }) =>
     'BRAND PALETTE',
     '',
     ...brandColors.flatMap((color) => colorLines(color, color.role)),
+    'SUPPORTING NEUTRALS',
+    '',
+    'For rules, table lines and charts.',
+    '',
+    ...supportingColors.flatMap((color) => colorLines(color, color.role)),
     'LOGO COLORS',
     '',
     'These belong to the logo files only. Never use them to recolor the logo or for other design.',
     '',
     ...logoColors.flatMap((color) => colorLines(color, `The ${color.part} of the logo`)),
-    'There are no official CMYK or Pantone values yet. Ask the brand team before you print.',
+    'PRINT',
+    '',
+    print.cmyk,
+    print.pantone,
     '',
   ].join('\n');
 
@@ -95,6 +117,7 @@ export const readmeText = () =>
     '  https://fonts.google.com/specimen/Lato and https://fonts.google.com/specimen/Oswald',
     '',
     'colors.txt and colors.json',
-    '  The brand palette and the logo colors with HEX, RGB and the Propellant token for each.',
+    '  The brand palette, the supporting neutrals and the logo colors with HEX, RGB, print CMYK',
+    '  and the Propellant token for each, and how the CMYK values were calculated.',
     '',
   ].join('\n');

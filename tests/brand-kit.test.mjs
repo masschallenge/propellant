@@ -41,32 +41,41 @@ describe('the brand kit contents', () => {
 });
 
 describe('the color files', () => {
-  it('lists every brand and logo color with its hex and rgb', () => {
+  it('lists every brand, supporting and logo color with its hex, rgb and cmyk', () => {
     const text = colorsText(colors);
-    [...colors.brandColors, ...colors.logoColors].forEach((color) => {
+    [...colors.brandColors, ...colors.supportingColors, ...colors.logoColors].forEach((color) => {
       expect(text).toContain(color.name);
       expect(text).toContain(color.hex);
+      expect(text).toContain(`CMYK   ${color.cmyk.join(', ')}`);
     });
     expect(text).toContain('RGB    4, 68, 81');
+    expect(text).toContain('CMYK   100, 64, 53, 50');
     expect(text).toContain('Token  var(--teal-900)');
+    expect(text).toContain('SUPPORTING NEUTRALS');
   });
 
   it('writes valid JSON with the same colors', () => {
     const parsed = JSON.parse(colorsJson(colors));
     expect(parsed.brandColors).toHaveLength(colors.brandColors.length);
     expect(parsed.logoColors).toHaveLength(colors.logoColors.length);
+    expect(parsed.supportingColors).toHaveLength(colors.supportingColors.length);
     expect(parsed.brandColors[0]).toEqual({
       name: 'Deep teal',
       hex: '#044451',
       rgb: '4, 68, 81',
+      cmyk: '100, 64, 53, 50',
       token: '--teal-900',
       role: colors.brandColors[0].role,
     });
+    expect(parsed.logoColors[1].cmyk).toBe('77, 11, 27, 0');
   });
 
-  it('does not invent print values', () => {
-    expect(colorsText(colors)).not.toMatch(/CMYK\s+\d/);
-    expect(colorsJson(colors)).not.toMatch(/cmyk|pantone/i);
+  it('says how the print values were made and that Pantone is not set', () => {
+    [colorsText(colors), colorsJson(colors)].forEach((file) => {
+      expect(file).toContain('Artifex CMYK SWOP profile');
+      expect(file).toContain('Pantone matches are not set; print from the CMYK values.');
+    });
+    expect(colorsText(colors)).not.toMatch(/PMS\s*\d|Pantone\s+\d/);
   });
 });
 

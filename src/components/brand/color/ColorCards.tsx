@@ -1,7 +1,14 @@
 import * as React from 'react';
 import { formatRgb, isDark } from '../../../brand/contrast';
-import { BRAND_COLORS, LOGO_COLORS } from '../../../brand/palette';
-import type { BrandColor } from '../../../brand/palette';
+import {
+  BRAND_COLORS,
+  LOGO_COLORS,
+  PRINT_NOTES,
+  SUPPORTING_COLORS,
+  chartColors,
+  formatCmyk,
+} from '../../../brand/palette';
+import type { BrandColor, Cmyk } from '../../../brand/palette';
 import { contrastScores } from '../../../brand/pairings';
 import { CopyIcon } from '../logo/icons';
 import { useCopyToast } from './useCopyToast';
@@ -66,6 +73,7 @@ const ColorCard = ({ color, onCopy }: ColorCardProps) => (
       <div className="flex flex-col gap-1.5">
         <CopyValue label="Hex" value={color.hex} onCopy={onCopy} />
         <CopyValue label="RGB" value={rgbDigits(color.hex)} onCopy={onCopy} />
+        <CopyValue label="CMYK" value={formatCmyk(color.cmyk)} onCopy={onCopy} />
         <CopyValue
           label="Token"
           value={color.token}
@@ -98,6 +106,73 @@ const ColorCard = ({ color, onCopy }: ColorCardProps) => (
   </article>
 );
 
+interface SmallHeadingProps {
+  title: string;
+  badge: string;
+  lead: string;
+}
+
+const SmallHeading = ({ title, badge, lead }: SmallHeadingProps) => (
+  <div className="max-w-[68ch]">
+    <h4 className="m-0 flex flex-wrap items-center gap-2 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">
+      {title}
+      <span className="inline-flex min-h-5 items-center rounded-full border border-solid border-[var(--separator-strong)] px-2 text-[length:var(--type-caption-size)] font-semibold text-[var(--label-secondary)]">
+        {badge}
+      </span>
+    </h4>
+    <p className="m-0 mt-1 text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
+      {lead}
+    </p>
+  </div>
+);
+
+interface SmallColorCardProps {
+  name: string;
+  hex: string;
+  cmyk: Cmyk;
+  detail: string;
+  tag: string;
+  token?: string;
+  isDashed?: boolean;
+  onCopy: (value: string) => void;
+}
+
+const SmallColorCard = ({
+  name,
+  hex,
+  cmyk,
+  detail,
+  tag,
+  token,
+  isDashed = false,
+  onCopy,
+}: SmallColorCardProps) => (
+  <article
+    className={`flex flex-col overflow-hidden rounded-[var(--corner-xl)] border bg-[var(--bg)] ${isDashed ? 'border-dashed border-[var(--separator-strong)]' : 'border-solid border-[var(--separator)]'}`}
+  >
+    <div
+      className={`flex min-h-[88px] flex-col justify-between gap-3 p-4 ${paintText(hex)}`}
+      style={{ background: hex }}
+    >
+      <p className="m-0 text-[length:var(--type-caption-size)] font-bold uppercase tracking-[0.1em]">
+        {tag}
+      </p>
+      <h5 className="m-0 text-[length:var(--type-title3-size)] font-semibold">{name}</h5>
+    </div>
+    <div className="flex flex-col gap-1.5 p-4">
+      <p className="m-0 mb-1 text-[length:var(--type-subheadline-size)] text-[var(--label-secondary)]">
+        {detail}
+      </p>
+      <CopyValue label="Hex" value={hex} onCopy={onCopy} />
+      <CopyValue label="RGB" value={rgbDigits(hex)} onCopy={onCopy} />
+      <CopyValue label="CMYK" value={formatCmyk(cmyk)} onCopy={onCopy} />
+      {token ? (
+        <CopyValue label="Token" value={token} copied={`var(${token})`} onCopy={onCopy} />
+      ) : null}
+    </div>
+  </article>
+);
+
 const ColorCards = () => {
   const { copy, toast } = useCopyToast();
   const handleCopy = (value: string) => {
@@ -112,44 +187,52 @@ const ColorCards = () => {
         ))}
       </div>
 
+      <p className="m-0 mt-4 max-w-[68ch] text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">
+        {PRINT_NOTES.cmyk} {PRINT_NOTES.pantone}
+      </p>
+
       <div className="mt-10 flex flex-col gap-4">
-        <div className="max-w-[68ch]">
-          <h4 className="m-0 flex flex-wrap items-center gap-2 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">
-            Logo colors
-            <span className="inline-flex min-h-5 items-center rounded-full border border-solid border-[var(--separator-strong)] px-2 text-[length:var(--type-caption-size)] font-semibold text-[var(--label-secondary)]">
-              Logo only
-            </span>
-          </h4>
-          <p className="m-0 mt-1 text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
-            These are the colors of the logo files. They belong to the logo only; interface colors
-            come from the palette above.
-          </p>
+        <SmallHeading
+          title="Supporting neutrals"
+          badge="Lines and charts"
+          lead={`Two grays from the Propellant tokens for rules, table lines and charts. Chart colors always go in this order, with direct labels: ${chartColors()
+            .map((color) => color.name)
+            .join(', ')}.`}
+        />
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
+          {SUPPORTING_COLORS.map((color) => (
+            <SmallColorCard
+              key={color.id}
+              name={color.name}
+              hex={color.hex}
+              cmyk={color.cmyk}
+              detail={color.role}
+              tag="Supporting"
+              token={color.token}
+              onCopy={handleCopy}
+            />
+          ))}
         </div>
+      </div>
+
+      <div className="mt-10 flex flex-col gap-4">
+        <SmallHeading
+          title="Logo colors"
+          badge="Logo only"
+          lead="These are the colors of the logo files. They belong to the logo only; interface colors come from the palette above."
+        />
         <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
           {LOGO_COLORS.map((color) => (
-            <article
+            <SmallColorCard
               key={color.name}
-              className="flex flex-col overflow-hidden rounded-[var(--corner-xl)] border border-dashed border-[var(--separator-strong)] bg-[var(--bg)]"
-            >
-              <div
-                className={`flex min-h-[88px] flex-col justify-between gap-3 p-4 ${paintText(color.hex)}`}
-                style={{ background: color.hex }}
-              >
-                <p className="m-0 text-[length:var(--type-caption-size)] font-bold uppercase tracking-[0.1em]">
-                  Logo only
-                </p>
-                <h5 className="m-0 text-[length:var(--type-title3-size)] font-semibold">
-                  {color.name}
-                </h5>
-              </div>
-              <div className="flex flex-col gap-1.5 p-4">
-                <p className="m-0 mb-1 text-[length:var(--type-subheadline-size)] text-[var(--label-secondary)]">
-                  {color.part}
-                </p>
-                <CopyValue label="Hex" value={color.hex} onCopy={handleCopy} />
-                <CopyValue label="RGB" value={rgbDigits(color.hex)} onCopy={handleCopy} />
-              </div>
-            </article>
+              name={color.name}
+              hex={color.hex}
+              cmyk={color.cmyk}
+              detail={color.part}
+              tag="Logo only"
+              isDashed
+              onCopy={handleCopy}
+            />
           ))}
         </div>
       </div>

@@ -1,6 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import colorData from '../../src/brand/colors.json';
-import { BRAND_COLORS, LOGO_COLORS } from '../../src/brand/palette';
+import {
+  BRAND_COLORS,
+  LOGO_COLORS,
+  PRINT_NOTES,
+  SUPPORTING_COLORS,
+  chartColors,
+  formatCmyk,
+} from '../../src/brand/palette';
 
 describe('one source for the colors', () => {
   it('re-exports the colors from the shared JSON file', () => {
@@ -10,5 +17,51 @@ describe('one source for the colors', () => {
 
   it('keeps the logo colors from the brand guidelines', () => {
     expect(LOGO_COLORS.map((color) => color.hex)).toEqual(['#828486', '#17ACBC']);
+    expect(LOGO_COLORS.map((color) => formatCmyk(color.cmyk))).toEqual([
+      '53, 44, 43, 7',
+      '77, 11, 27, 0',
+    ]);
+  });
+
+  it('settles the resolved conflicts on Magenta and Mist', () => {
+    const hexOf = (id: string) => BRAND_COLORS.find((color) => color.id === id)?.hex;
+    expect(hexOf('magenta')).toBe('#BF0261');
+    expect(hexOf('mist')).toBe('#F3FBFC');
+  });
+
+  it('gives every color a print CMYK value in whole percent', () => {
+    [...BRAND_COLORS, ...SUPPORTING_COLORS, ...LOGO_COLORS].forEach((color) => {
+      expect(color.cmyk).toHaveLength(4);
+      color.cmyk.forEach((channel) => {
+        expect(Number.isInteger(channel)).toBe(true);
+        expect(channel).toBeGreaterThanOrEqual(0);
+        expect(channel).toBeLessThanOrEqual(100);
+      });
+    });
+    expect(formatCmyk(BRAND_COLORS[0].cmyk)).toBe('100, 64, 53, 50');
+  });
+
+  it('explains the print values and sets no Pantone matches', () => {
+    expect(PRINT_NOTES.cmyk).toMatch(/Artifex CMYK SWOP profile/);
+    expect(PRINT_NOTES.cmyk).toMatch(/printed proof/);
+    expect(PRINT_NOTES.pantone).toBe('Pantone matches are not set; print from the CMYK values.');
+  });
+
+  it('adds the two supporting neutrals from the Propellant tokens', () => {
+    expect(SUPPORTING_COLORS.map((color) => [color.hex, color.token])).toEqual([
+      ['#DBE1E3', '--gray-100'],
+      ['#848F92', '--gray-300'],
+    ]);
+  });
+
+  it('orders the chart colors the same way everywhere', () => {
+    expect(chartColors().map((color) => color.name)).toEqual([
+      'Teal',
+      'Yellow',
+      'Slate',
+      'Bright teal',
+      'Deep teal',
+      'Gray 300',
+    ]);
   });
 });
