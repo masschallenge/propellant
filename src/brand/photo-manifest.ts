@@ -1,4 +1,4 @@
-import { WEBSITE_RIGHTS_NOTE, type LibraryPhoto } from './photo-library';
+import type { LibraryPhoto } from './photo-library';
 
 export const WEBSITE_PHOTOS: LibraryPhoto[] = [
   {
@@ -8,8 +8,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1536,
     height: 1024,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/case-study/access-life/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: '5',
@@ -18,8 +16,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 800,
     height: 533,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/case-study/bizkaia/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'autodesk-0',
@@ -28,8 +24,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 800,
     height: 533,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/case-study/autodesk/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'img-8966',
@@ -38,8 +32,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 800,
     height: 533,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/case-study/sena/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'barry-callebaut-masschallenge-case-study-1-1',
@@ -48,8 +40,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1200,
     height: 716,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/case-study/barry-callebaut-group-masschallenge/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'img-6017-1024x683',
@@ -58,8 +48,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1024,
     height: 683,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/collaborators/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'img-1076-2',
@@ -68,10 +56,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1200,
     height: 800,
     category: 'community',
-    sourcePages: [
-      'https://masschallenge.org/case-study/commonwealth-and-masschallenge-fintech-2020-2021/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'img-8321-1240x827',
@@ -80,8 +64,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1240,
     height: 827,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/alumni-highlight-case-study-3-2/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'masschallenge-fintech',
@@ -90,8 +72,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1200,
     height: 646,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/programs-fintech/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'masschallenge-healthtech',
@@ -100,8 +80,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1200,
     height: 800,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/programs-healthtech/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'mentormethod-1200x800-1536x1024',
@@ -110,8 +88,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1536,
     height: 1024,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/case-study/the-mentor-method-masschallenge-texas/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'sqzbiotech-1200x800-1536x1024',
@@ -120,8 +96,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1536,
     height: 1024,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/case-study/sqz-biotech-armon-sharei/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'mc-pledge',
@@ -130,8 +104,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1200,
     height: 507,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/mcpledge/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'benin-cohort-1024x649',
@@ -140,10 +112,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1024,
     height: 649,
     category: 'community',
-    sourcePages: [
-      'https://masschallenge.org/case-study/bridge-to-masschallenge-benin-a-region-ready-for-exponential-innovation/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'img-0236-1536x1024',
@@ -152,8 +120,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1536,
     height: 1024,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/fintech-showcase/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'kataram-masschallenge-scaled-e1765550679813-1024x639',
@@ -162,13 +128,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1024,
     height: 639,
     category: 'community',
-    sourcePages: [
-      'https://masschallenge.org/',
-      'https://masschallenge.org/give/',
-      'https://masschallenge.org/join/',
-      'https://masschallenge.org/startups/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'foundershandshake-1024x1024',
@@ -177,8 +136,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1024,
     height: 1024,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/united-states-early-stage/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'dsc01515-web-anne-laure-lechat-scaled-e1737073080301',
@@ -187,9 +144,7 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 866,
     height: 934,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/programs-united-kingdom/'],
     credit: 'Anne-Laure Lechat (from the file name)',
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'dsc09470-web-a-l-lechat-2-scaled-e1737069599990',
@@ -198,9 +153,7 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 883,
     height: 875,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/programs-united-kingdom/'],
     credit: 'Anne-Laure Lechat (from the file name)',
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'afl-pitch-square-1024x926',
@@ -209,8 +162,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1024,
     height: 926,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/programs-airforce-2/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'afl-pitch-square2-1024x926',
@@ -219,8 +170,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1024,
     height: 926,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/programs-airforce-2/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'deloitte2025-site-image-03-1536x1227',
@@ -229,8 +178,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1536,
     height: 1227,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/programs-deloitte/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'katarammc8th-609-1536x1025',
@@ -239,8 +186,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1536,
     height: 1025,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/issnl_techinspaceprize/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'dsc03776-1024x673',
@@ -249,8 +194,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1024,
     height: 673,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/collaborators/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'mcuk-2025-awards-group-1024x683',
@@ -259,8 +202,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1024,
     height: 683,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/programs-united-kingdom/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'mcuk-2025-awards-pitch-768x512',
@@ -269,8 +210,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 768,
     height: 512,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/programs-united-kingdom/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'dsc08107-md-anne-laure-lechat-scaled',
@@ -279,9 +218,7 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 2560,
     height: 1920,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/programs-switzerland/'],
     credit: 'Anne-Laure Lechat (from the file name)',
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'dsc08158-md-anne-laure-lechat-scaled',
@@ -290,9 +227,7 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 2560,
     height: 1920,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/programs-switzerland/'],
     credit: 'Anne-Laure Lechat (from the file name)',
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'dsc08265-md-anne-laure-lechat-scaled',
@@ -301,9 +236,7 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 2560,
     height: 1920,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/programs-switzerland/'],
     credit: 'Anne-Laure Lechat (from the file name)',
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'mcuk-2025-awards-group-large-1024x682',
@@ -312,8 +245,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1024,
     height: 682,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/event/masschallenge-uk-accelerator-2026-launch/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'dsc04988-large-1240x452',
@@ -322,8 +253,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1240,
     height: 452,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/programs-switzerland/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'dsc07146-768x505',
@@ -332,8 +261,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 768,
     height: 505,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/programs-switzerland/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'sanofi-1',
@@ -342,8 +269,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/sanofi-thrive-challenge/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'dsc00306-hd-anne-laure-lechat-768x383',
@@ -352,9 +277,7 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 768,
     height: 383,
     category: 'community',
-    sourcePages: ['https://masschallenge.org/programs-united-kingdom/'],
     credit: 'Anne-Laure Lechat (from the file name)',
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'impact00131-3',
@@ -363,8 +286,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 800,
     height: 533,
     category: 'founders-at-work',
-    sourcePages: ['https://masschallenge.org/case-study/procter-gamble/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'swissre-1536x1024',
@@ -373,8 +294,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1536,
     height: 1024,
     category: 'founders-at-work',
-    sourcePages: ['https://masschallenge.org/case-study/swiss-re/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'brandeis-masschallenge-partner',
@@ -383,10 +302,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1200,
     height: 800,
     category: 'founders-at-work',
-    sourcePages: [
-      'https://masschallenge.org/case-study/fintech-brandeis-partnered-business-experiential-learning-support-entrepreneurs/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: '11-cannabusiness-masschallenge-texas',
@@ -395,8 +310,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 750,
     height: 499,
     category: 'founders-at-work',
-    sourcePages: ['https://masschallenge.org/collaborators/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'barry-callebaut-2-1024x683',
@@ -405,21 +318,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1024,
     height: 683,
     category: 'founders-at-work',
-    sourcePages: ['https://masschallenge.org/case-study/barry-callebaut-group-masschallenge/'],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'photo-1581091226825-a6a2a5aee158-1-0',
-    src: 'https://masschallenge.org/wp-content/uploads/2020/10/photo-1581091226825-a6a2a5aee158-1_0.jpeg',
-    alt: 'An engineer typing on a laptop inside a test rig full of wiring and electronics',
-    width: 975,
-    height: 650,
-    category: 'founders-at-work',
-    sourcePages: [
-      'https://masschallenge.org/case-study/how-elta-systems-worked-with-masschallenge-israel-to-increase-their-startup-pipeline-and-supercharge-their-innovation-strategy/',
-    ],
-    stockNote: 'The file name looks like a stock photo download.',
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: '1-givaudan-microcaps',
@@ -428,8 +326,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1200,
     height: 757,
     category: 'founders-at-work',
-    sourcePages: ['https://masschallenge.org/case-study/givaudan-microcaps-story/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'giv-doc-bud-people-03-1024x598',
@@ -438,8 +334,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1024,
     height: 598,
     category: 'founders-at-work',
-    sourcePages: ['https://masschallenge.org/case-study/givaudan-microcaps-story/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'movinganalytics-pic',
@@ -448,10 +342,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1200,
     height: 802,
     category: 'founders-at-work',
-    sourcePages: [
-      'https://masschallenge.org/case-study/moving-analytics-ade-adesanya-entrepreneurs-impact/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'waku-feature',
@@ -460,10 +350,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1189,
     height: 787,
     category: 'founders-at-work',
-    sourcePages: [
-      'https://masschallenge.org/case-study/how-the-early-stage-startup-waku-is-creating-investor-ambassadors-and-scaling-growth-with-a-covid-pivot/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'locker-lifestyle-masschallenge-katarina-samardzija',
@@ -472,8 +358,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 700,
     height: 400,
     category: 'founders-at-work',
-    sourcePages: ['https://masschallenge.org/case-study/locker-lifestyle-katarina-samardzija/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'israel-masschallenge-2022',
@@ -482,8 +366,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1200,
     height: 827,
     category: 'founders-at-work',
-    sourcePages: ['https://masschallenge.org/programs-israel/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'pangeaapp-1200x800-1536x1024',
@@ -492,8 +374,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1536,
     height: 1024,
     category: 'founders-at-work',
-    sourcePages: ['https://masschallenge.org/case-study/pangeaapp-and-masschallenge/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'lambavision-casestudy-1200x800-1536x1024',
@@ -502,11 +382,7 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1536,
     height: 1024,
     category: 'founders-at-work',
-    sourcePages: [
-      'https://masschallenge.org/case-study/how-lambdavision-got-funding-to-work-in-space-through-masschallenge/',
-    ],
     credit: 'Peter Morenus, UConn (shown on the image)',
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'mc-mexico-1024x648',
@@ -515,25 +391,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1024,
     height: 648,
     category: 'founders-at-work',
-    sourcePages: [
-      'https://masschallenge.org/',
-      'https://masschallenge.org/give/',
-      'https://masschallenge.org/join/',
-      'https://masschallenge.org/startups/',
-      'https://masschallenge.org/programs-netsuite/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'adobestock-1692265746-scaled-1-768x512',
-    src: 'https://masschallenge.org/wp-content/uploads/2025/12/AdobeStock_1692265746-scaled-1-768x512.jpeg',
-    alt: 'A woman in glasses reading her laptop thoughtfully at a desk in a warm, cafe style office',
-    width: 768,
-    height: 512,
-    category: 'founders-at-work',
-    sourcePages: ['https://masschallenge.org/heba-2027/'],
-    stockNote: 'The file name says Adobe Stock.',
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'young-woman-at-computer-scaled-1-1024x683',
@@ -542,8 +399,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1024,
     height: 683,
     category: 'founders-at-work',
-    sourcePages: ['https://masschallenge.org/sharkninja-innovation-challenge/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'crypto-1-605x571',
@@ -552,8 +407,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 605,
     height: 571,
     category: 'places',
-    sourcePages: ['https://masschallenge.org/portfolio/parallel-platforms/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'startup-3-605x533',
@@ -562,8 +415,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 605,
     height: 533,
     category: 'places',
-    sourcePages: ['https://masschallenge.org/portfolio/idea-collaboration/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'banner-seme-one-2-1024x571',
@@ -572,10 +423,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1024,
     height: 571,
     category: 'places',
-    sourcePages: [
-      'https://masschallenge.org/case-study/bridge-to-masschallenge-benin-a-region-ready-for-exponential-innovation/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'boston-1024x683',
@@ -584,8 +431,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1024,
     height: 683,
     category: 'places',
-    sourcePages: ['https://masschallenge.org/hubs-united-states/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'dallas-1024x682',
@@ -594,8 +439,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1024,
     height: 682,
     category: 'places',
-    sourcePages: ['https://masschallenge.org/hubs-united-states/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: '37842d-127-scaled',
@@ -604,8 +447,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 2560,
     height: 1707,
     category: 'places',
-    sourcePages: ['https://masschallenge.org/smu-cox-fintech-accelerator/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'innovate-1',
@@ -614,8 +455,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'places',
-    sourcePages: ['https://masschallenge.org/innovate-2026/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'about-page-1',
@@ -624,222 +463,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'places',
-    sourcePages: ['https://masschallenge.org/masschallenge-events/'],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'ginko',
-    src: 'https://masschallenge.org/wp-content/uploads/2018/07/Ginko.jpg',
-    alt: 'Close up of rows of automated lab equipment with fine tubing',
-    width: 960,
-    height: 640,
-    category: 'technology',
-    sourcePages: ['https://masschallenge.org/case-study/ginkgo-bioworks/'],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'watch-gallery-2-605x467',
-    src: 'https://masschallenge.org/wp-content/uploads/2019/04/Watch-gallery-2-605x467.jpg',
-    alt: 'A hand holding a smartwatch showing the time, its open box behind',
-    width: 605,
-    height: 467,
-    category: 'technology',
-    sourcePages: ['https://masschallenge.org/portfolio/mobile-marketing/'],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'watch-gallery-3-605x467',
-    src: 'https://masschallenge.org/wp-content/uploads/2019/04/Watch-gallery-3-605x467.jpg',
-    alt: 'A hand tapping the app screen of a smartwatch on a wrist',
-    width: 605,
-    height: 467,
-    category: 'technology',
-    sourcePages: ['https://masschallenge.org/portfolio/growth-strategies/'],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'watch-gallery-6-605x467',
-    src: 'https://masschallenge.org/wp-content/uploads/2019/04/Watch-gallery-6-605x467.jpg',
-    alt: 'Hands resting on a wooden table, one wrist wearing a smartwatch showing a timer',
-    width: 605,
-    height: 467,
-    category: 'technology',
-    sourcePages: ['https://masschallenge.org/portfolio/engage-worldwide/'],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'westlight-masschallenge',
-    src: 'https://masschallenge.org/wp-content/uploads/2020/02/westlight-masschallenge.jpg',
-    alt: 'Strands of optical fiber glowing blue against a dark background',
-    width: 1200,
-    height: 800,
-    category: 'technology',
-    sourcePages: [
-      'https://masschallenge.org/case-study/how-the-early-stage-startup-westlight-ai-gained-over-750k-in-funding-from-the-air-force-through-masschallenge/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'drone-guard-2-1024x640',
-    src: 'https://masschallenge.org/wp-content/uploads/2020/10/Drone-Guard-2-1024x640.jpg',
-    alt: 'Drone detection radar and camera units on tripods in a green field, a small drone in the air',
-    width: 1024,
-    height: 640,
-    category: 'technology',
-    sourcePages: [
-      'https://masschallenge.org/case-study/how-elta-systems-worked-with-masschallenge-israel-to-increase-their-startup-pipeline-and-supercharge-their-innovation-strategy/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'sigint-aircraft-01-1024x576',
-    src: 'https://masschallenge.org/wp-content/uploads/2020/10/SIGINT-Aircraft-01-1024x576.jpg',
-    alt: 'A white business jet fitted for signals intelligence flying against blue sky and clouds',
-    width: 1024,
-    height: 576,
-    category: 'technology',
-    sourcePages: [
-      'https://masschallenge.org/case-study/how-elta-systems-worked-with-masschallenge-israel-to-increase-their-startup-pipeline-and-supercharge-their-innovation-strategy/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'casis-exterior-768x512',
-    src: 'https://masschallenge.org/wp-content/uploads/2021/01/CASIS-Exterior-768x512.jpg',
-    alt: 'A cargo spacecraft held by a robotic arm outside the International Space Station, with Earth below',
-    width: 768,
-    height: 512,
-    category: 'technology',
-    sourcePages: [
-      'https://masschallenge.org/casestudies/ecosystem/',
-      'https://masschallenge.org/case-study/how-masschallenge-casis-boeing-startups-space/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'philip-brown-xlx3oql0mu-unsplash-768x432',
-    src: 'https://masschallenge.org/wp-content/uploads/2021/01/philip-brown-Xlx3OQL0mU-unsplash-768x432.jpg',
-    alt: 'A modern stealth fighter jet flying beside a vintage propeller plane',
-    width: 768,
-    height: 432,
-    category: 'technology',
-    sourcePages: [
-      'https://masschallenge.org/casestudies/ecosystem/',
-      'https://masschallenge.org/case-study/federal-funding-early-stage-startups-simplesense/',
-    ],
-    stockNote: 'The file name says Unsplash.',
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'microcaps-image',
-    src: 'https://masschallenge.org/wp-content/uploads/2021/04/microcaps-image.jpg',
-    alt: 'Purple spherical microcapsules under a microscope, with a 200 micrometer scale bar',
-    width: 800,
-    height: 600,
-    category: 'technology',
-    sourcePages: ['https://masschallenge.org/case-study/givaudan-microcaps-story/'],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'bloom-barry-callebaut-mc',
-    src: 'https://masschallenge.org/wp-content/uploads/2021/06/Bloom-Barry-Callebaut-Mc.jpeg',
-    alt: 'Two flasks and a vial of powders and oil in front of a pile of empty shells',
-    width: 1200,
-    height: 800,
-    category: 'technology',
-    sourcePages: [
-      'https://masschallenge.org/case-study/bloom-and-barry-callebaut-lead-the-biomass-revolution/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'healium-1200x800-1536x1024',
-    src: 'https://masschallenge.org/wp-content/uploads/2022/12/Healium_1200x800-1536x1024.png.webp',
-    alt: 'A person wearing a virtual reality headset sitting on a sofa, surrounded by a swirling space scene',
-    width: 1536,
-    height: 1024,
-    category: 'technology',
-    sourcePages: ['https://masschallenge.org/case-study/healium-sarah-hill/'],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'oil-1024x683',
-    src: 'https://masschallenge.org/wp-content/uploads/2023/11/Oil-1024x683.png.webp',
-    alt: 'Close up of golden oil droplets of many sizes',
-    width: 1024,
-    height: 683,
-    category: 'technology',
-    sourcePages: ['https://masschallenge.org/case-study/collaboration-agrifood-change/'],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'vz-heroimage-768x432',
-    src: 'https://masschallenge.org/wp-content/uploads/2026/01/Vz_HeroImage-768x432.jpg.webp',
-    alt: 'A red Verizon Frontline response trailer with a satellite dish and mast in a desert at dusk',
-    width: 768,
-    height: 432,
-    category: 'technology',
-    sourcePages: [
-      'https://masschallenge.org/verizon-community-disaster-resilience-innovation-accelerator/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'photo-filter-3',
-    src: 'https://masschallenge.org/wp-content/uploads/2026/04/photo-filter-3.png',
-    alt: 'An abstract teal glow swirling across a dark background',
-    width: 1920,
-    height: 1080,
-    category: 'technology',
-    sourcePages: [
-      'https://masschallenge.org/resolve-2026-2/',
-      'https://masschallenge.org/resolve-2026/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'bbio-taiwancohort',
-    src: 'https://masschallenge.org/wp-content/uploads/2026/08/bbio-taiwancohort.png',
-    alt: 'An abstract network of glowing lines and points in teal and magenta on a dark background',
-    width: 1920,
-    height: 1080,
-    category: 'technology',
-    sourcePages: ['https://masschallenge.org/our-accelerators/'],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'breakthroughbio',
-    src: 'https://masschallenge.org/wp-content/uploads/2026/08/breakthroughbio.png',
-    alt: 'An illustration of lungs and a heartbeat line drawn in glowing points over a pale teal background',
-    width: 1920,
-    height: 1080,
-    category: 'technology',
-    sourcePages: ['https://masschallenge.org/breakthrough-bio/'],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'cohort-taiwan',
-    src: 'https://masschallenge.org/wp-content/uploads/2026/08/cohort-taiwan.png',
-    alt: 'Gloved hands with a dropper and a test tube, overlaid with glowing medical and DNA icons',
-    width: 1920,
-    height: 1080,
-    category: 'technology',
-    sourcePages: [
-      'https://masschallenge.org/challenge-program/',
-      'https://masschallenge.org/breakthrough-bio/taiwan-cohort/',
-      'https://masschallenge.org/programs-challenge/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
-  },
-  {
-    id: 'challenge-hero-image',
-    src: 'https://masschallenge.org/wp-content/uploads/2026/10/challenge-hero-image.png',
-    alt: 'An abstract blue technology graphic of hexagon icons and circuit lines',
-    width: 1920,
-    height: 1080,
-    category: 'technology',
-    sourcePages: ['https://masschallenge.org/2026-2027-challenge-cycle/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'challenge-areas',
@@ -848,8 +471,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'teal-duotone',
-    sourcePages: ['https://masschallenge.org/our-network/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'corp-innovation-1',
@@ -858,8 +479,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'teal-duotone',
-    sourcePages: ['https://masschallenge.org/experts/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'home',
@@ -868,8 +487,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'teal-duotone',
-    sourcePages: ['https://masschallenge.org/healthcare-and-life-sciences/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'network',
@@ -878,13 +495,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'teal-duotone',
-    sourcePages: [
-      'https://masschallenge.org/',
-      'https://masschallenge.org/healthcare-life-sciences-traction-2026/',
-      'https://masschallenge.org/join/',
-      'https://masschallenge.org/startups/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'website-hero-images-2',
@@ -893,8 +503,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'teal-duotone',
-    sourcePages: ['https://masschallenge.org/global-financial-systems/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'about',
@@ -903,8 +511,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'teal-duotone',
-    sourcePages: ['https://masschallenge.org/about-us/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'accelerators-1',
@@ -913,8 +519,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'teal-duotone',
-    sourcePages: ['https://masschallenge.org/collaborators/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'climate',
@@ -923,8 +527,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'teal-duotone',
-    sourcePages: ['https://masschallenge.org/climate/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'corp-inno',
@@ -933,8 +535,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'teal-duotone',
-    sourcePages: ['https://masschallenge.org/corporate-partnerships/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'food-systems-hero-1',
@@ -943,8 +543,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'teal-duotone',
-    sourcePages: ['https://masschallenge.org/sustainable-food-systems/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'founders-2',
@@ -953,8 +551,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'teal-duotone',
-    sourcePages: ['https://masschallenge.org/founders/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'photo-filter-1',
@@ -963,8 +559,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'teal-duotone',
-    sourcePages: ['https://masschallenge.org/give/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'programs',
@@ -973,8 +567,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'teal-duotone',
-    sourcePages: ['https://masschallenge.org/our-challenge-areas/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 's-and-r',
@@ -983,8 +575,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'teal-duotone',
-    sourcePages: ['https://masschallenge.org/security-and-resiliency/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'hero-mobi-e1766028067188',
@@ -993,12 +583,6 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1917,
     height: 973,
     category: 'teal-duotone',
-    sourcePages: [
-      'https://masschallenge.org/traction-program/',
-      'https://masschallenge.org/healthcare-life-sciences-traction-2026/',
-      'https://masschallenge.org/programs-early-stage/',
-    ],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
   {
     id: 'uses-sr',
@@ -1007,7 +591,5 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1920,
     height: 1080,
     category: 'teal-duotone',
-    sourcePages: ['https://masschallenge.org/security-and-resiliency-traction-2026/'],
-    rights: WEBSITE_RIGHTS_NOTE,
   },
 ];
