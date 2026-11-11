@@ -24,6 +24,31 @@ export const PATTERN_COVERS: PatternCover[] = [
   },
 ];
 
+export interface ProgramLockup {
+  name: string;
+  surfaceColorId: string;
+  monogramTreatment: 'color' | 'white';
+  dividerColorId: string;
+  nameColorId: string;
+}
+
+export const PROGRAM_LOCKUPS: ProgramLockup[] = [
+  {
+    name: 'RESOLVE 2026',
+    surfaceColorId: 'white',
+    monogramTreatment: 'color',
+    dividerColorId: 'teal',
+    nameColorId: 'ink',
+  },
+  {
+    name: 'RESOLVE 2026',
+    surfaceColorId: 'deep-teal',
+    monogramTreatment: 'white',
+    dividerColorId: 'bright-teal',
+    nameColorId: 'white',
+  },
+];
+
 export interface StatCallout {
   value: string;
   label: string;

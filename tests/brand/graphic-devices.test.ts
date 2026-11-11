@@ -26,8 +26,8 @@ describe('the graphic devices', () => {
     );
   });
 
-  it('draws the pattern, stat callouts, timelines and icons from the brand instead', () => {
-    ['pattern', 'stat-callout', 'timeline', 'icons'].forEach((id) =>
+  it('draws the pattern, lockups, stat callouts, timelines and icons from the brand', () => {
+    ['pattern', 'program-lockup', 'stat-callout', 'timeline', 'icons'].forEach((id) =>
       expect(GRAPHIC_EXAMPLES).not.toHaveProperty(id),
     );
   });
