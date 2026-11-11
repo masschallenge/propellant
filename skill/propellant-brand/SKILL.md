@@ -11,15 +11,17 @@ follow it automatically. Do not ask the person to choose colors or fonts, and do
 
 ## Step 1: pick the reference for what you are making
 
-| Making                                                | Read                                                       | Start from                                                                                     |
-| ----------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| A React app or production web page                    | [references/web-and-apps.md](references/web-and-apps.md)   | The `@masschallenge/propellant-web` package                                                    |
-| A prototype, HTML artifact, dashboard or landing page | [references/web-and-apps.md](references/web-and-apps.md)   | [assets/propellant-website.css](assets/propellant-website.css)                                 |
-| A slide deck (PowerPoint or Google Slides)            | [references/presentations.md](references/presentations.md) | [assets/templates/propellant-presentation.pptx](assets/templates/propellant-presentation.pptx) |
-| A document (Word or Google Docs)                      | [references/documents.md](references/documents.md)         | [assets/templates/propellant-document.docx](assets/templates/propellant-document.docx)         |
-| A spreadsheet (Excel or Google Sheets)                | [references/spreadsheets.md](references/spreadsheets.md)   | [assets/templates/propellant-workbook.xlsx](assets/templates/propellant-workbook.xlsx)         |
-| Anything with a chart                                 | [references/charts.md](references/charts.md)               |                                                                                                |
-| Anything with photos or video                         | [references/photography.md](references/photography.md)     |                                                                                                |
+| Making                                                                            | Read                                                       | Start from                                                                                     |
+| --------------------------------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| A React app or production web page                                                | [references/web-and-apps.md](references/web-and-apps.md)   | The `@masschallenge/propellant-web` package                                                    |
+| A prototype, HTML artifact, dashboard or landing page                             | [references/web-and-apps.md](references/web-and-apps.md)   | [assets/propellant-website.css](assets/propellant-website.css)                                 |
+| A slide deck (PowerPoint or Google Slides)                                        | [references/presentations.md](references/presentations.md) | [assets/templates/propellant-presentation.pptx](assets/templates/propellant-presentation.pptx) |
+| A document (Word or Google Docs)                                                  | [references/documents.md](references/documents.md)         | [assets/templates/propellant-document.docx](assets/templates/propellant-document.docx)         |
+| A spreadsheet (Excel or Google Sheets)                                            | [references/spreadsheets.md](references/spreadsheets.md)   | [assets/templates/propellant-workbook.xlsx](assets/templates/propellant-workbook.xlsx)         |
+| Anything with a chart                                                             | [references/charts.md](references/charts.md)               |                                                                                                |
+| Anything with photos or video                                                     | [references/photography.md](references/photography.md)     |                                                                                                |
+| Copy about MassChallenge: lines, boilerplate, figures, contact details, addresses | [references/messaging.md](references/messaging.md)         |                                                                                                |
+| Graphics (pattern, duotone, lockups, stats, timelines, icons) or anything printed | [references/graphics.md](references/graphics.md)           |                                                                                                |
 
 For Office files, use the built-in document skills (docx, pptx, xlsx) for the file mechanics, but
 always open the Propellant template from `assets/templates` instead of creating a blank file. The
@@ -37,20 +39,25 @@ These hold for every output.
 | Ink         | `#1E282B` | Body text and headings                                             |
 | Slate       | `#4B575B` | Secondary text, captions                                           |
 | White       | `#FFFFFF` | Page and slide backgrounds                                         |
-| Mist        | `#F3F6F7` | Alternate sections and table rows                                  |
-| Line        | `#DBE1E3` | Dividers and borders                                               |
+| Mist        | `#F3FBFC` | Alternate sections and table rows                                  |
+| Gray 100    | `#DBE1E3` | Dividers, rules and table lines                                    |
 | Teal        | `#065E6F` | Links, buttons and the first chart series. Never headings.         |
 | Deep teal   | `#044451` | Brand surfaces: title slides, covers, dark sections, table headers |
+| Mid teal    | `#068DA4` | Supporting accents, shapes and icons                               |
 | Bright teal | `#0FACBD` | Accents on Deep teal only, at 18 pt or larger                      |
 | Pale teal   | `#D9F6FA` | Callouts, secondary buttons, tinted sections                       |
 | Yellow      | `#FFC801` | Highlights, always with Ink text                                   |
-| Magenta     | `#A30253` | Errors and things that are wrong. Never decorative.                |
+| Magenta     | `#BF0261` | Errors and things that are wrong. Never decorative.                |
 
 - Mostly White with Ink text. Deep teal is for a few big moments, not every surface.
 - On Deep teal: White text, White buttons with Deep teal text, Bright teal accents. Never Teal on
   Deep teal.
 - Never show meaning by color alone: pair status colors with a word.
-- Use no other colors. No gradients, except the photo duotone in the photography reference.
+- Use no other colors. No gradients, except the teal duotone in the photography reference.
+- The web palette is the standard everywhere, print included. For printing, use the CMYK values in
+  [references/graphics.md](references/graphics.md); Pantone matches are not set.
+- How much of each: White and neutrals for most of the page, teals for brand surfaces and actions,
+  a little Magenta and Yellow.
 
 ### Type
 
@@ -85,9 +92,14 @@ These hold for every output.
 
 ### Voice
 
-MassChallenge sounds bold and human: direct, plain spoken and on the side of the founders and
-community we serve. Read [references/voice.md](references/voice.md) before writing more than a few
-lines. The essentials:
+MassChallenge sounds bold and ambitious, founder first, and about outcomes and access. Read
+[references/voice.md](references/voice.md) before writing more than a few lines, and
+[references/messaging.md](references/messaging.md) before writing about MassChallenge itself. The
+essentials:
+
+- The primary line is "We back the rare humans with the grit to solve the toughest challenges."
+  "It takes a community to raise a startup." is a founder testimonial, never a tagline.
+- Use only the approved figures, with their as of date and source, and the boilerplate as written.
 
 - Lead with the point. Short sentences and everyday words.
 - "We" for MassChallenge, "you" for the reader.

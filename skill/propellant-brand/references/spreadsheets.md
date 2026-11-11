@@ -18,11 +18,11 @@ real.
 - **Sheet title:** Oswald, 24 pt, Deep teal `#044451`, typed in capitals, above the table.
 - **Header row:** Lato Bold 11 pt, White on Deep teal, sentence case, with units, such as
   "Budget (USD)". Freeze it.
-- **Cells:** Lato 11 pt, Ink. Mist `#F3F6F7` stripes on alternate rows.
+- **Cells:** Lato 11 pt, Ink. Mist `#F3FBFC` stripes on alternate rows.
 - **Numbers:** right aligned, thousands separators, the same decimals down a column, real dates.
   Negative numbers with a minus sign, never red alone.
 - **Status:** a word in its own column (On track, At risk, Late). Highlights in Pale teal
-  `#D9F6FA`, attention in Yellow `#FFC801` with Ink text, problems in Magenta `#A30253` with a word.
+  `#D9F6FA`, attention in Yellow `#FFC801` with Ink text, problems in Magenta `#BF0261` with a word.
 - **No merged cells** in tables, no hidden data others depend on, gridlines off on summary sheets.
 - **Formulas** others can follow: put inputs in labeled cells rather than typing numbers into
   formulas.

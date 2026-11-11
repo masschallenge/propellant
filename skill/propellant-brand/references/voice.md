@@ -1,8 +1,13 @@
 # Voice
 
-MassChallenge sounds bold and human. Our website says "We back the rare humans with the grit to
-solve the toughest challenges" and "It takes a community to raise a startup." Everything we write
-should sound like the same people: direct, plain spoken and on the side of the community we serve.
+MassChallenge sounds bold and ambitious, founder first, and about outcomes and access. Our primary
+line, from the website's home hero, is "We back the rare humans with the grit to solve the toughest
+challenges." Everything we write should sound like the same people: direct, plain spoken and on the
+side of the founders we back. For the positioning, boilerplate, approved figures and names, read
+[messaging.md](messaging.md).
+
+"It takes a community to raise a startup." is a founder testimonial on our home page (Rick
+Whittaker, CEO and CoFounder of AirShare), not a MassChallenge line. Never present it as a tagline.
 
 ## Rules
 
@@ -12,7 +17,9 @@ should sound like the same people: direct, plain spoken and on the side of the c
 - **Confident without hype.** No buzzwords such as leverage, seamless, robust, synergy, unlock,
   empower or best in class. No exclamation marks.
 - **Use the community's words:** programs, startups, founders, applications, mentors, judges,
-  partners, cohorts.
+  partners, cohorts. A mentor or judge is one kind of expert.
+- **No buzzwords from the website either:** the site uses "leverage" once and uses em dashes; the
+  standard drops both.
 - **Sentence case** for every title, heading, label and button. Capitals only in Oswald headlines.
 - **Buttons say what happens:** "Save changes", "Submit application", "Download the template".
 - **When something goes wrong,** say what happened and how to fix it, without apologizing or

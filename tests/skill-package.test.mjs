@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { SKILL_NAME, artifactStylesheet } from '../scripts/lib/skill-package.mjs';
 
@@ -49,5 +49,51 @@ describe('artifactStylesheet', () => {
   it('marks its own start and end so the brand checker can skip it', () => {
     expect(stylesheet.startsWith('/* propellant-website.css start */')).toBe(true);
     expect(stylesheet.trim().endsWith('/* propellant-website.css end */')).toBe(true);
+  });
+});
+
+describe('the skill references', () => {
+  const folder = `skill/${SKILL_NAME}/references`;
+  const references = Object.fromEntries(
+    readdirSync(folder).map((name) => [name, readFileSync(`${folder}/${name}`, 'utf8')]),
+  );
+  const colors = JSON.parse(readFileSync('src/brand/colors.json', 'utf8'));
+
+  it('never uses em or en dashes', () => {
+    Object.values(references).forEach((text) => expect(text).not.toMatch(/[\u2013\u2014]/));
+  });
+
+  it('never presents the founder testimonial as a MassChallenge line', () => {
+    [skill, ...Object.values(references)].forEach((text) => {
+      text
+        .split('\n\n')
+        .filter((paragraph) => paragraph.includes('takes a community to raise a startup'))
+        .forEach((paragraph) => expect(paragraph).toMatch(/testimonial/));
+    });
+  });
+
+  it('carries the primary line, the boilerplate and the contact details', () => {
+    const messaging = references['messaging.md'];
+    expect(messaging.replace(/\s+/g, ' ')).toContain(
+      'We back the rare humans with the grit to solve the toughest challenges.',
+    );
+    expect(messaging).toContain('contact@masschallenge.org');
+    expect(messaging).toContain('https://x.com/MassChallenge');
+    expect(messaging).toContain('90K');
+  });
+
+  it('lists the same print CMYK values as the guide', () => {
+    const graphics = references['graphics.md'];
+    [...colors.brandColors, ...colors.supportingColors, ...colors.logoColors].forEach((color) => {
+      expect(graphics).toMatch(new RegExp(`\`${color.hex}\`\\s*\\|\\s*${color.cmyk.join(' ')}\\s`));
+    });
+    expect(graphics).toContain('Pantone matches are not set; print from the CMYK values.');
+  });
+
+  it('uses the settled Mist and Magenta values', () => {
+    [skill, ...Object.values(references)].forEach((text) => {
+      expect(text).not.toContain('#F3F6F7');
+      expect(text).not.toContain('#A30253');
+    });
   });
 });
