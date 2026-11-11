@@ -3,6 +3,8 @@ import { describe, expect, it } from 'vitest';
 import {
   BRAND_KIT_FOLDERS,
   BRAND_KIT_NAME,
+  BRAND_KIT_URL,
+  brandKitFile,
   colorsJson,
   colorsText,
   isFontFile,
@@ -37,6 +39,11 @@ describe('the brand kit contents', () => {
 
   it('names the archive after MassChallenge', () => {
     expect(BRAND_KIT_NAME).toBe('masschallenge-brand-kit');
+  });
+
+  it('serves the archive from one URL and file', () => {
+    expect(BRAND_KIT_URL).toBe('/downloads/masschallenge-brand-kit.zip');
+    expect(brandKitFile('/site')).toBe('/site/public/downloads/masschallenge-brand-kit.zip');
   });
 });
 
