@@ -1,5 +1,3 @@
-export const MESSAGING_AS_OF = 'November 2026';
-
 export const PRIMARY_LINE =
   'We back the rare humans with the grit to solve the toughest challenges.';
 
@@ -59,8 +57,6 @@ export const APPROVED_FIGURES: ApprovedFigure[] = [
   { id: 'jobs', value: '90K', label: 'Jobs created' },
   { id: 'partners', value: '500+', label: 'Partners worldwide' },
 ];
-
-export const figureAsOfLine = (): string => `As of ${MESSAGING_AS_OF}`;
 
 export const CHALLENGE_AREAS = [
   'Healthcare and Life Sciences',

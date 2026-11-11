@@ -1,5 +1,5 @@
 import { contrastRatio } from './contrast';
-import { APPROVED_FIGURES, figureAsOfLine } from './messaging';
+import { APPROVED_FIGURES } from './messaging';
 import { SUPPORTING_COLORS, chartColors, findColor } from './palette';
 
 export interface PatternCover {
@@ -52,7 +52,6 @@ export const PROGRAM_LOCKUPS: ProgramLockup[] = [
 export interface StatCallout {
   value: string;
   label: string;
-  asOf: string;
   surfaceColorId: string;
   numberColorId: string;
   labelColorId: string;
@@ -68,7 +67,6 @@ export const STAT_CALLOUTS: StatCallout[] = [
   {
     value: figureValue('jobs'),
     label: 'JOBS CREATED',
-    asOf: figureAsOfLine(),
     surfaceColorId: 'white',
     numberColorId: 'deep-teal',
     labelColorId: 'ink',
@@ -76,7 +74,6 @@ export const STAT_CALLOUTS: StatCallout[] = [
   {
     value: figureValue('raised'),
     label: 'RAISED BY STARTUPS',
-    asOf: figureAsOfLine(),
     surfaceColorId: 'deep-teal',
     numberColorId: 'bright-teal',
     labelColorId: 'white',

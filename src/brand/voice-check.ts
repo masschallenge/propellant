@@ -36,7 +36,7 @@ export const VOICE_RULES: Record<VoiceIssueKind, string> = {
     '"It takes a community to raise a startup" is a founder\'s testimonial, not a MassChallenge line. Never present it as a tagline.',
   ampersand: 'Write "and" in running text. "&" is only for tight labels.',
   figure:
-    'Use the approved figures with their as of date. MassChallenge startups have created 90K jobs.',
+    'Use the approved figures from the brand guide. MassChallenge startups have created 90K jobs.',
 };
 
 const MINOR_WORDS = new Set([
@@ -109,7 +109,7 @@ const PATTERN_RULES: PatternRule[] = [
   {
     kind: 'figure',
     pattern: /\b77(?:K\b|,000\b)/gi,
-    fix: () => 'Write 90K jobs, with its as of date.',
+    fix: () => 'Write 90K jobs.',
   },
 ];
 

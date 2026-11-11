@@ -16,7 +16,7 @@ import {
   officeAddress,
 } from '../brand/contact';
 import { BRAND_NEEDS, BRAND_RESOURCES, BRAND_TOOLS, FINDER } from '../brand/home';
-import { APPROVED_FIGURES, PRIMARY_LINE, figureAsOfLine, findBoilerplate } from '../brand/messaging';
+import { APPROVED_FIGURES, PRIMARY_LINE, findBoilerplate } from '../brand/messaging';
 import { BRAND_COLORS, findColor } from '../brand/palette';
 import { WEBSITE_PHOTOS } from '../brand/photo-manifest';
 import { signatureHtml, EMPTY_SIGNATURE } from '../brand/signature';
@@ -208,7 +208,7 @@ const SOLID_BUTTON =
           Copy the approved boilerplate
         </a>
       </div>
-      <div class="flex flex-col gap-3">
+      <div>
         <dl class="m-0 grid grid-cols-2 gap-3 sm:grid-cols-3">
           {
             APPROVED_FIGURES.map((figure) => (
@@ -223,7 +223,6 @@ const SOLID_BUTTON =
             ))
           }
         </dl>
-        <p class="m-0 text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">{figureAsOfLine()}.</p>
       </div>
     </div>
   </section>

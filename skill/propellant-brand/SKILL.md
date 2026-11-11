@@ -99,7 +99,7 @@ essentials:
 
 - The primary line is "We back the rare humans with the grit to solve the toughest challenges."
   "It takes a community to raise a startup." is a founder testimonial, never a tagline.
-- Use only the approved figures, with their as of date and source, and the boilerplate as written.
+- Use only the approved figures and the boilerplate as written.
 
 - Lead with the point. Short sentences and everyday words.
 - "We" for MassChallenge, "you" for the reader.

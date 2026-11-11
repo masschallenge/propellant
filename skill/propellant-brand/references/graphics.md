@@ -12,7 +12,7 @@ redraw the logo.
 | Hexagon network frame | A circular photo crop inside a pale teal network of hexagons and lines                                                      | One photo beside text                    |
 | Co-brand lockup       | MassChallenge logo, a plus sign and the partner logo, on white with a thin teal border, or a teal panel with the white logo | Work made with a partner                 |
 | Program lockup        | The MC monogram, a thin vertical divider and the program name in capitals, such as MC \| RESOLVE 2026                       | A named program or event                 |
-| Stat callouts         | A large number with a short label in capitals                                                                               | One figure, with its as of date          |
+| Stat callouts         | A large number with a short label in capitals                                                                               | One figure that matters                  |
 | Program timelines     | Dots on a line, with each step above or below its dot                                                                       | Program and application dates            |
 | Icons                 | Single color line icons with rounded ends, Teal on light, Bright teal on dark                                               | Labels for areas and steps               |
 
