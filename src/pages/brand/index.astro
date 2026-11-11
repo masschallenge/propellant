@@ -1,0 +1,38 @@
+---
+import BrandLayout from '../../layouts/BrandLayout.astro';
+import Hero from '../../components/brand/Hero.astro';
+import SectionNav from '../../components/brand/SectionNav.astro';
+import StartHere from '../../components/brand/sections/StartHere.astro';
+import Logo from '../../components/brand/sections/Logo.astro';
+import Color from '../../components/brand/sections/Color.astro';
+import Type from '../../components/brand/sections/Type.astro';
+import Photos from '../../components/brand/sections/Photos.astro';
+import Voice from '../../components/brand/sections/Voice.astro';
+import Motion from '../../components/brand/sections/Motion.astro';
+import Components from '../../components/brand/sections/Components.astro';
+import InUse from '../../components/brand/sections/InUse.astro';
+import Templates from '../../components/brand/sections/Templates.astro';
+import MakeSomething from '../../components/brand/sections/MakeSomething.astro';
+---
+
+<BrandLayout
+  title="Brand guide"
+  description="The MassChallenge brand, shown rather than told: logos, color, type, photos, voice and motion, with everything ready to copy and download."
+  current="brand"
+>
+  <Hero />
+  <SectionNav />
+  <div class="mx-auto max-w-[1200px] px-4 sm:px-6">
+    <StartHere />
+    <Logo />
+    <Color />
+    <Type />
+    <Photos />
+    <Voice />
+    <Motion />
+    <Components />
+    <InUse />
+    <Templates />
+    <MakeSomething />
+  </div>
+</BrandLayout>

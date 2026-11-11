@@ -1,0 +1,82 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import { BRAND_COLORS } from '../../../brand/palette';
+
+const rules = [
+  {
+    before: 'Reach for the ',
+    key: 'horizontal logo',
+    after: ' first. Pick a background on its card and you get the right treatment.',
+    href: '#logo',
+    section: 'Logo',
+  },
+  {
+    before: `These ${BRAND_COLORS.length} colors are the `,
+    key: 'palette',
+    after: '. Copy the codes, and use the tokens in interfaces.',
+    href: '#color',
+    section: 'Color',
+  },
+  {
+    before: '',
+    key: 'Teal',
+    after: ' means you can act: buttons, links, selected controls and focus. Never headings.',
+    href: '#color-pairings',
+    section: 'Color',
+  },
+  {
+    before: '',
+    key: 'Propellant Sans',
+    after: ' for everything. Oswald capitals only for display headlines on public pages.',
+    href: '#type',
+    section: 'Type',
+  },
+  {
+    before: 'Use ',
+    key: 'sentence case',
+    after: ' for every title, label and button.',
+    href: '#type-rules',
+    section: 'Type',
+  },
+  {
+    before: 'Sound ',
+    key: 'bold and human',
+    after: ': plain words, no buzzwords, no exclamation marks.',
+    href: '#voice',
+    section: 'Voice',
+  },
+];
+---
+
+<section id="start-here" class="scroll-mt-28 py-16">
+  <SectionHeading
+    eyebrow="Start here"
+    title="The whole brand on one screen"
+    lead="If you only read one part, read this. Each rule links to the part of the guide that shows it."
+  />
+  <ol class="m-0 flex list-none flex-col p-0">
+    {
+      rules.map((rule, index) => (
+        <li class="flex items-baseline gap-4 border-t border-solid border-[var(--separator)] py-4 last:border-b sm:gap-6">
+          <span
+            class="w-8 flex-none font-[family-name:var(--type-family-brand)] text-[length:var(--type-title1-size)] font-medium tabular-nums text-[var(--tint)]"
+            aria-hidden="true"
+          >
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          <p class="m-0 flex-1 text-[length:var(--type-title3-size)] leading-[1.5] text-[var(--label)]">
+            {rule.before}
+            <strong class="font-bold">{rule.key}</strong>
+            {rule.after}{' '}
+            <a
+              href={rule.href}
+              class="whitespace-nowrap text-[length:var(--type-callout-size)] font-semibold text-[var(--tint)] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-[var(--focus-color)]"
+            >
+              See {rule.section.toLowerCase()}
+            </a>
+          </p>
+        </li>
+      ))
+    }
+  </ol>
+</section>

@@ -1,0 +1,154 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import LogoCards from '../logo/LogoCards';
+import ClearSpaceTool from '../logo/ClearSpaceTool';
+import MisuseGrid from '../logo/MisuseGrid.astro';
+import Marks from '../logo/Marks.astro';
+import GraphicDevices from '../logo/GraphicDevices.astro';
+import SubHeading from '../logo/SubHeading.astro';
+import { LOGO_FILES } from '../logo/logoFiles';
+import { LOGO_LOCKUPS } from '../../../brand/logo-usage';
+
+const fileColumns = [
+  {
+    id: 'png',
+    title: 'PNG',
+    tag: 'Files',
+    body: 'For documents, slides and anything you make outside the code. Each lockup comes in full color, white and black. Download it from the cards above.',
+  },
+  {
+    id: 'component',
+    title: 'The Logo component',
+    tag: 'Code',
+    body: 'In a product built with Propellant. It renders at 24px tall by default; size it with a height class such as h-8 and the width follows.',
+    code: ['<Logo />', '<Logo treatment="white" />', '<Logo lockup="monogram" />'],
+  },
+  {
+    id: 'never',
+    title: 'Screenshots and copies',
+    tag: 'Never',
+    body: 'A screenshot of the logo, a copy pulled off the website, or one lifted out of an old document. Download it fresh from this page instead.',
+  },
+];
+---
+
+<section id="logo" class="scroll-mt-28 py-16">
+  <SectionHeading
+    eyebrow="Logo"
+    title="Logo"
+    lead="Use the files we supply or the Logo component. Never redraw, retype or recolor it. Pick a background on a card and the logo switches to the right treatment for it."
+  />
+
+  <LogoCards client:visible />
+
+  <p
+    class="m-0 mt-4 max-w-[68ch] text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]"
+  >
+    The logo comes as PNG files only. There is no SVG of the MassChallenge logo on this site, and
+    we will not trace one. A vector original is available from the brand team.
+  </p>
+
+  <SubHeading id="logo-files" title="Which file do I use?" />
+  <div class="grid gap-4 md:grid-cols-3">
+    {
+      fileColumns.map((column) => (
+        <article
+          class:list={[
+            'flex flex-col gap-3 rounded-[var(--corner-xl)] border border-solid p-5',
+            column.id === 'never'
+              ? 'border-[var(--critical)] bg-[var(--critical-fill)]'
+              : 'border-[var(--separator)] bg-[var(--bg)]',
+          ]}
+        >
+          <p
+            class:list={[
+              'm-0 flex items-center gap-1.5 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[0.08em]',
+              column.id === 'never' ? 'text-[var(--critical)]' : 'text-[var(--tint)]',
+            ]}
+          >
+            {
+              column.id === 'never' ? (
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                  <path d="M6 6l12 12M18 6L6 18" />
+                </svg>
+              ) : null
+            }
+            {column.tag}
+          </p>
+          <h4 class="m-0 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">
+            {column.title}
+          </h4>
+          <p class="m-0 text-[length:var(--type-body-size)] leading-[var(--type-body-line)] text-[var(--label-secondary)]">
+            {column.body}
+          </p>
+          {
+            column.code ? (
+              <pre class="m-0 overflow-x-auto rounded-[var(--corner-md)] bg-[var(--bg-secondary)] p-3 font-[family-name:var(--type-family-mono)] text-[length:var(--type-footnote-size)] text-[var(--label)]"><code>{column.code.join('\n')}</code></pre>
+            ) : null
+          }
+        </article>
+      ))
+    }
+  </div>
+
+  <SubHeading
+    id="logo-room"
+    title="Give it room"
+    lead="The clear space on every side is half the height of the logo. Keep it free of text, images and edges. Move the slider to see it."
+  />
+  <ClearSpaceTool client:visible />
+
+  <SubHeading
+    id="logo-size"
+    title="Not too small"
+    lead="These are the smallest heights on screen, shown at actual size. Below them, the slider above shows a warning."
+  />
+  <div class="grid gap-4 sm:grid-cols-2">
+    {
+      LOGO_LOCKUPS.map((lockup) => (
+        <article class="flex flex-col gap-4 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5">
+          <div class="flex h-28 items-center justify-center rounded-[var(--corner-lg)] bg-[var(--gray-0)]">
+            <img
+              src={LOGO_FILES[lockup.id].color}
+              alt={`MassChallenge ${lockup.name.toLowerCase()} logo at ${lockup.minimumHeight}px tall`}
+              style={`height: ${lockup.minimumHeight}px`}
+              class="block w-auto"
+            />
+          </div>
+          <div>
+            <p class="m-0 text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">
+              {lockup.name}
+            </p>
+            <p class="m-0 text-[length:var(--type-title1-size)] font-bold tabular-nums text-[var(--label)]">
+              {lockup.minimumHeight}px
+            </p>
+            <p class="m-0 mt-1 text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
+              {lockup.minimumNote}
+            </p>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+
+  <SubHeading
+    id="logo-misuse"
+    title="Please don't"
+    lead="Each of these is the real logo, changed with a few lines of CSS to show what to avoid."
+  />
+  <MisuseGrid />
+
+  <SubHeading
+    id="marks"
+    title="Marks"
+    lead="The MassChallenge logo in its two lockups, and the Propellant mark, which belongs to the design system."
+  />
+  <Marks />
+
+  <SubHeading
+    id="graphic-devices"
+    title="Graphic devices"
+    lead="The shapes, frames and treatments masschallenge.org uses today. They are now the standard: use these, and build them from the palette and the logo files."
+  />
+  <GraphicDevices />
+</section>

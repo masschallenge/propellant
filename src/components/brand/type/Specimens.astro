@@ -1,0 +1,79 @@
+---
+import { weightUsage } from '../../../brand/design-tokens';
+import { TYPOGRAPHY_TOKENS } from './tokenSources';
+
+const usage = weightUsage(TYPOGRAPHY_TOKENS.base);
+const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const lower = 'abcdefghijklmnopqrstuvwxyz';
+const numerals = '0123456789';
+---
+
+<div class="grid gap-6 lg:grid-cols-[3fr_2fr]">
+  <article
+    class="flex min-w-0 flex-col gap-6 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5 sm:p-8"
+  >
+    <header class="flex flex-col gap-1">
+      <p class="m-0 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[0.08em] text-[var(--tint)]">
+        Everything
+      </p>
+      <h4 class="m-0 text-[length:var(--type-large-title-size)] font-bold text-[var(--label)]">Propellant Sans</h4>
+      <p class="m-0 max-w-[60ch] text-[length:var(--type-body-size)] leading-[var(--type-body-line)] text-[var(--label-secondary)]">
+        All interface and body text. It is Lato 2.0 at 400, 500, 600 and 700, plus 400 italic,
+        shipped with Propellant.
+      </p>
+    </header>
+    <p class="m-0 [overflow-wrap:anywhere] text-[length:var(--type-title1-size)] leading-[1.35] text-[var(--label)]">
+      {upper}<br />{lower}<br /><span class="tabular-nums">{numerals}</span>
+    </p>
+    <ul class="m-0 flex list-none flex-col p-0">
+      {
+        usage.map((entry) => (
+          <li class="flex flex-col gap-1 border-t border-solid border-[var(--separator)] py-3 sm:flex-row sm:items-baseline sm:gap-6">
+            <span class="w-44 flex-none text-[length:var(--type-title2-size)] text-[var(--label)]" style={`font-weight: ${entry.weight}`}>
+              {entry.name} {entry.weight}
+            </span>
+            <span class="text-[length:var(--type-subheadline-size)] text-[var(--label-secondary)]">
+              {entry.styles.length
+                ? `Used by ${entry.styles.map((style) => style.name).join(', ')}`
+                : 'No text style uses this weight on its own'}
+            </span>
+          </li>
+        ))
+      }
+      <li
+        class="flex flex-col gap-1 border-t border-solid border-[var(--separator)] py-3 sm:flex-row sm:items-baseline sm:gap-6"
+      >
+        <span class="w-44 flex-none text-[length:var(--type-title2-size)] italic text-[var(--label)]">Italic 400</span>
+        <span class="text-[length:var(--type-subheadline-size)] text-[var(--label-secondary)]">
+          Shipped with Propellant. No text style uses it, and the guidelines give it no set role.
+        </span>
+      </li>
+    </ul>
+  </article>
+
+  <article
+    class="flex min-w-0 flex-col gap-6 rounded-[var(--corner-xl)] bg-[var(--teal-900)] p-5 text-[var(--gray-0)] sm:p-8"
+  >
+    <header class="flex flex-col gap-1">
+      <p class="m-0 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[0.08em] text-[var(--teal-300)]">
+        Display only
+      </p>
+      <h4 class="m-0 font-[family-name:var(--type-family-brand)] text-[length:var(--type-large-title-size)] font-medium uppercase">
+        Oswald
+      </h4>
+      <p class="m-0 text-[length:var(--type-body-size)] leading-[var(--type-body-line)] text-[var(--teal-100)]">
+        Display headlines on public websites and pages, set in capitals. Never inside signed in
+        applications.
+      </p>
+    </header>
+    <p
+      class="m-0 [overflow-wrap:anywhere] font-[family-name:var(--type-family-brand)] text-[length:var(--type-display-size)] font-medium uppercase leading-[1.15]"
+    >
+      {upper}<br /><span class="tabular-nums">{numerals}</span>
+    </p>
+    <ul class="m-0 mt-auto flex list-none flex-col gap-2 p-0 text-[length:var(--type-callout-size)] text-[var(--teal-100)]">
+      <li>Capitals only. It is a narrow, condensed font made for short, large headlines.</li>
+      <li>Capitals belong only to Oswald headlines and the wordmark.</li>
+    </ul>
+  </article>
+</div>

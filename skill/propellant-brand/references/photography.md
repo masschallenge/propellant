@@ -13,6 +13,10 @@
 
 - Use photos the person provides, MassChallenge's own photos, or licensed stock the person has the
   rights to. Never pull images from a web search or social media.
+- The photos and videos used on masschallenge.org are listed in the brand guide's photo library
+  (propellant.masschallenge.org/brand/#photos). Every one carries the note: "Used on
+  masschallenge.org. Confirm releases before using it outside MassChallenge channels." The
+  Technology photos there may include licensed stock.
 - Never present a stock photo as a real person, startup, partner or event.
 - Never generate images of real, named people. If an image is AI generated, it must not depict a
   real person or event, and the person should know it is generated.
@@ -22,10 +26,10 @@
 
 ## Treatment
 
-| Treatment     | Use it for                                                                                                                                                                                                                            |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Natural color | News, event recaps, real people's stories, documentation                                                                                                                                                                              |
-| Brand duotone | Big brand moments: a title slide, a cover, a hero. Grayscale photo tinted from Deep teal `#044451` in the shadows to Pale teal `#D9F6FA` in the highlights, optionally fading to solid Deep teal on the side where the headline sits. |
+| Treatment     | Use it for                                                                                                                                                                                                                         |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Natural color | News, event recaps, real people's stories, documentation                                                                                                                                                                           |
+| Brand duotone | Big brand moments: a title slide, a cover, a hero. Grayscale photo washed from Deep teal `#044451` in the shadows to Bright teal `#0FACBD` in the highlights, as on masschallenge.org. Use it behind text and for section headers. |
 
 - Never duotone a portrait or a photo where people's identity matters.
 - No filters, heavy vignettes or color casts.

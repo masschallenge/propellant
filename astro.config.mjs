@@ -1,9 +1,16 @@
+import react from '@astrojs/react';
 import starlight from '@astrojs/starlight';
+import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://propellant.masschallenge.org',
+  vite: {
+    plugins: [tailwindcss()],
+    optimizeDeps: { include: ['react', 'react-dom', 'react-dom/client'] },
+  },
   integrations: [
+    react(),
     starlight({
       title: 'Propellant',
       description: 'The MassChallenge design system, for every platform we build on.',
@@ -25,7 +32,15 @@ export default defineConfig({
       lastUpdated: false,
       sidebar: [
         { label: 'About Propellant', link: '/about/' },
-        { label: 'Brand', link: '/brand/' },
+        {
+          label: 'Brand',
+          items: [
+            { label: 'Visual brand guide', link: '/brand/' },
+            { label: 'Brand reference', link: '/brand/reference/' },
+            { label: 'Content studio', link: '/studio/' },
+            { label: 'Email signature', link: '/studio/signature/' },
+          ],
+        },
         { label: 'Guidelines', items: [{ autogenerate: { directory: 'guidelines' } }] },
         {
           label: 'Platforms',
@@ -38,16 +53,6 @@ export default defineConfig({
                 { label: 'Using Propellant', link: '/web/usage/' },
                 { label: 'Websites', items: [{ autogenerate: { directory: 'web/websites' } }] },
               ],
-            },
-            {
-              label: 'iOS',
-              link: '/platforms/ios/',
-              badge: { text: 'Planned', variant: 'default' },
-            },
-            {
-              label: 'Android',
-              link: '/platforms/android/',
-              badge: { text: 'Planned', variant: 'default' },
             },
             {
               label: 'Office',

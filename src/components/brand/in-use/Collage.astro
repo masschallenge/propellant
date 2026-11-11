@@ -1,0 +1,154 @@
+---
+import { Image } from 'astro:assets';
+import logoColor from '@masschallenge/propellant-web/assets/logos/masschallenge-logo-horizontal-color.png';
+import logoWhite from '@masschallenge/propellant-web/assets/logos/masschallenge-logo-horizontal-white.png';
+import { CONTACT_EMAIL, WEBSITE_LABEL, copyrightLine, findSocial } from '../../../brand/contact';
+import { POSITIONING, PRIMARY_LINE } from '../../../brand/messaging';
+import { EMPTY_SIGNATURE, signatureHtml } from '../../../brand/signature';
+import PhotoSlot from './PhotoSlot.astro';
+import Piece from './Piece.astro';
+
+const signature = signatureHtml(
+  {
+    ...EMPTY_SIGNATURE,
+    name: 'Your name',
+    pronouns: 'your pronouns',
+    title: 'Your title',
+    team: 'your team',
+    email: 'Your email address',
+    office: 'boston',
+    showSocial: true,
+  },
+  '',
+);
+---
+
+<div class="grid grid-cols-1 items-start gap-5 md:grid-cols-6">
+  <Piece label="Website header" class="md:col-span-4">
+    <div class="flex h-full flex-col bg-white text-[var(--gray-800)]">
+      <div class="flex items-center gap-4 border-0 border-b border-solid border-[var(--gray-100)] px-5 py-3">
+        <Image src={logoColor} alt="MassChallenge" class="h-5 w-auto" />
+        <span class="ml-auto hidden gap-4 text-[13px] text-[var(--gray-500)] sm:flex" aria-hidden="true">
+          <span>Challenge Areas</span><span>Our accelerators</span><span>Our network</span>
+        </span>
+        <span class="ml-auto rounded-full bg-[var(--teal-800)] px-3 py-1 text-[12px] font-semibold text-white sm:ml-0">
+          Apply
+        </span>
+      </div>
+      <div class="grid flex-1 grid-cols-1 sm:grid-cols-[1.1fr_1fr]">
+        <div class="flex flex-col justify-center gap-3 bg-[var(--teal-900)] px-6 py-8 text-white">
+          <p
+            class="m-0 font-[family-name:var(--type-family-brand)] text-[clamp(1.6rem,4vw,2.6rem)] font-medium uppercase leading-[1]"
+          >
+            {POSITIONING[0]}
+          </p>
+          <p class="m-0 max-w-[36ch] text-[14px] leading-[1.5] text-[var(--teal-100)]">
+            {PRIMARY_LINE}
+          </p>
+        </div>
+        <PhotoSlot tone="teal" class="min-h-[140px]" />
+      </div>
+    </div>
+  </Piece>
+
+  <Piece label="Social post, 4:5" class="md:col-span-2">
+    <div class="relative flex aspect-[4/5] flex-col justify-between bg-[var(--teal-900)] p-5 text-white">
+      <Image src={logoWhite} alt="MassChallenge" class="h-4 w-auto self-start" />
+      <PhotoSlot tone="mid" class="my-4 flex-1" />
+      <p
+        class="m-0 font-[family-name:var(--type-family-brand)] text-[clamp(1.4rem,3vw,1.9rem)] font-medium uppercase leading-[1]"
+      >
+        Your big line here
+      </p>
+      <p class="m-0 mt-2 text-[13px] text-[var(--teal-400)]">
+        Details and a call to action. {findSocial('instagram').handle}
+      </p>
+    </div>
+  </Piece>
+
+  <Piece label="Sign in page" class="md:col-span-3">
+    <div class="grid h-full grid-cols-[2fr_3fr] bg-[var(--gray-50)] text-[var(--gray-800)]">
+      <div class="flex flex-col justify-between gap-6 bg-[var(--teal-900)] p-5 text-white">
+        <Image src={logoWhite} alt="MassChallenge" class="h-4 w-auto self-start" />
+        <p class="m-0 text-[15px] font-semibold leading-[1.3]">
+          Sign in to keep building what the world needs next.
+        </p>
+      </div>
+      <div class="flex flex-col justify-center gap-3 p-5" aria-hidden="true">
+        <p class="m-0 text-[17px] font-semibold">Sign in</p>
+        <div class="flex flex-col gap-1">
+          <span class="text-[12px] font-semibold">Email</span>
+          <span class="block h-8 rounded-[var(--corner-md)] border border-solid border-[var(--gray-300)] bg-white"></span>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="text-[12px] font-semibold">Password</span>
+          <span class="block h-8 rounded-[var(--corner-md)] border border-solid border-[var(--gray-300)] bg-white"></span>
+        </div>
+        <span class="mt-1 rounded-full bg-[var(--teal-800)] py-2 text-center text-[13px] font-semibold text-white">
+          Sign in
+        </span>
+      </div>
+    </div>
+  </Piece>
+
+  <Piece label="Event banner" class="md:col-span-3">
+    <div class="grid h-full min-h-[180px] grid-cols-[3fr_2fr] bg-[var(--teal-900)] text-white">
+      <div class="flex flex-col justify-between gap-4 p-5">
+        <Image src={logoWhite} alt="MassChallenge" class="h-4 w-auto self-start" />
+        <div>
+          <p
+            class="m-0 font-[family-name:var(--type-family-brand)] text-[clamp(1.4rem,3vw,2rem)] font-medium uppercase leading-[1]"
+          >
+            Your event name
+          </p>
+          <p class="m-0 mt-2 text-[13px] text-[var(--teal-100)]">Date, time and place</p>
+          <p class="m-0 mt-1 text-[13px] text-[var(--teal-100)]">{WEBSITE_LABEL}</p>
+        </div>
+        <span class="self-start rounded-full bg-white px-3 py-1 text-[12px] font-semibold text-[var(--teal-900)]">
+          Register
+        </span>
+      </div>
+      <PhotoSlot tone="mid" />
+    </div>
+  </Piece>
+
+  <Piece label="Slide title" class="md:col-span-4">
+    <div class="flex aspect-[16/9] flex-col bg-[var(--teal-900)] p-[6%] text-white">
+      <Image src={logoWhite} alt="MassChallenge" class="h-[7%] min-h-3 w-auto self-start" />
+      <div class="mt-auto mb-auto">
+        <p
+          class="m-0 font-[family-name:var(--type-family-brand)] text-[clamp(1.6rem,4.5vw,3rem)] font-medium uppercase leading-[1]"
+        >
+          Presentation title
+        </p>
+        <p class="m-0 mt-3 text-[clamp(0.8rem,1.6vw,1rem)] text-[var(--teal-400)]">
+          Subtitle, presenter and date
+        </p>
+      </div>
+    </div>
+  </Piece>
+
+  <Piece label="Document cover" class="md:col-span-2">
+    <div class="flex aspect-[8.5/11] flex-col gap-3 bg-white p-[9%] text-[var(--gray-800)]">
+      <Image src={logoColor} alt="MassChallenge" class="h-4 w-auto self-start" />
+      <p
+        class="m-0 mt-6 font-[family-name:var(--type-family-brand)] text-[clamp(1.4rem,3vw,2rem)] font-medium uppercase leading-[1] text-[var(--teal-900)]"
+      >
+        Document title
+      </p>
+      <p class="m-0 text-[13px] text-[var(--gray-500)]">Subtitle</p>
+      <span class="mt-4 block h-1.5 w-4/5 rounded-full bg-[var(--gray-100)]" aria-hidden="true"></span>
+      <span class="block h-1.5 w-3/5 rounded-full bg-[var(--gray-100)]" aria-hidden="true"></span>
+      <span class="block h-1.5 w-2/3 rounded-full bg-[var(--gray-100)]" aria-hidden="true"></span>
+      <p class="m-0 mt-auto text-[11px] text-[var(--gray-500)]">
+        {copyrightLine()}. {CONTACT_EMAIL}
+      </p>
+    </div>
+  </Piece>
+
+  <Piece label="Email signature" class="md:col-span-6">
+    <div class="overflow-x-auto bg-white p-5">
+      <Fragment set:html={signature} />
+    </div>
+  </Piece>
+</div>

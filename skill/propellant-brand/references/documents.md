@@ -48,7 +48,7 @@ Headings are sentence case. Use real list styles, never typed dashes.
 ## Tables, callouts and images
 
 - **Tables:** header row with a Deep teal `#044451` fill and White bold text, thin Line `#DBE1E3`
-  rules between rows, Mist `#F3F6F7` on alternate rows, no vertical borders. Set the header row to
+  rules between rows, Mist `#F3FBFC` on alternate rows, no vertical borders. Set the header row to
   repeat. Left align text, right align numbers. No merged cells. The template's sample table shows
   the formatting; copy it.
 - **Callout:** one paragraph with a Pale teal `#D9F6FA` fill and a Teal `#065E6F` left border, as

@@ -1,0 +1,32 @@
+---
+import BrandLayout from '../../../layouts/BrandLayout.astro';
+import SignatureBuilder from '../../../components/signature/SignatureBuilder';
+---
+
+<BrandLayout
+  title="Email signature"
+  description="Build a MassChallenge email signature and copy it into your mail app."
+  current="signature"
+>
+  <div class="mx-auto max-w-[1200px] px-4 py-12 sm:px-6 sm:py-16">
+    <div class="mb-10 max-w-[68ch]">
+      <p
+        class="m-0 mb-2 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[var(--type-eyebrow-tracking)] text-[var(--tint)]"
+      >
+        Studio
+      </p>
+      <h1
+        class="m-0 font-[family-name:var(--type-family-brand)] text-[length:var(--type-display-size)] font-medium uppercase leading-[1.05] text-[var(--label)]"
+      >
+        Your email signature
+      </h1>
+      <p
+        class="m-0 mt-3 text-[length:var(--type-title3-size)] leading-[var(--type-title3-line)] text-[var(--label-secondary)]"
+      >
+        Fill in your details, check the preview, then copy it into your mail app. Nothing you type
+        leaves this page.
+      </p>
+    </div>
+    <SignatureBuilder client:only="react" />
+  </div>
+</BrandLayout>

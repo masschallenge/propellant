@@ -6,11 +6,10 @@ The documentation site for Propellant, the MassChallenge design system, publishe
 Propellant has one brand and one set of guidelines, and a version for each platform we build on.
 Each platform lives in its own repository. This site brings them together.
 
-| Platform     | Repository                                                                              |
-| ------------ | --------------------------------------------------------------------------------------- |
-| Web          | [`masschallenge/propellant-web`](https://github.com/masschallenge/propellant-web)       |
-| Office       | [`masschallenge/propellant-office`](https://github.com/masschallenge/propellant-office) |
-| iOS, Android | Planned                                                                                 |
+| Platform | Repository                                                                              |
+| -------- | --------------------------------------------------------------------------------------- |
+| Web      | [`masschallenge/propellant-web`](https://github.com/masschallenge/propellant-web)       |
+| Office   | [`masschallenge/propellant-office`](https://github.com/masschallenge/propellant-office) |
 
 ## How the site is built
 

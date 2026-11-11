@@ -19,6 +19,24 @@ import {
   rewriteMarkdown,
   toStarlightPage,
 } from './lib/doc-links.mjs';
+import {
+  BRAND_KIT_FOLDERS,
+  BRAND_KIT_NAME,
+  colorsJson,
+  colorsText,
+  isFontFile,
+  isLogoFile,
+  isPropellantMarkFile,
+  readmeText,
+} from './lib/brand-kit.mjs';
+import {
+  OFFICE_TEMPLATES,
+  conversionArguments,
+  previewCacheKey,
+  previewName,
+  previewSource,
+  templateFiles,
+} from './lib/office-templates.mjs';
 import { PLATFORMS } from './lib/platforms.mjs';
 import {
   SKILL_LOGOS,
@@ -173,6 +191,90 @@ const packageSkill = (checkouts) => {
   return true;
 };
 
+const renderPreview = (template, officeCheckout, output) => {
+  const source = join(officeCheckout, template.preview);
+  const cacheFolder = join(projectRoot, 'node_modules/.cache/propellant-template-previews');
+  const cached = join(cacheFolder, `${previewCacheKey(readFileSync(source))}.png`);
+  if (!existsSync(cached)) {
+    const working = mkdtempSync(join(tmpdir(), 'propellant-preview-'));
+    try {
+      execFileSync(
+        'soffice',
+        conversionArguments(source, join(working, 'out'), join(working, 'profile')),
+        { stdio: 'ignore' },
+      );
+      mkdirSync(cacheFolder, { recursive: true });
+      cpSync(join(working, 'out', previewName(template)), cached);
+    } catch {
+      return false;
+    } finally {
+      rmSync(working, { recursive: true, force: true });
+    }
+  }
+  cpSync(cached, output);
+  return true;
+};
+
+const publishTemplates = (officeCheckout) => {
+  const target = join(projectRoot, 'public/downloads/templates');
+  rmSync(target, { recursive: true, force: true });
+  if (!officeCheckout) return null;
+  mkdirSync(join(target, 'previews'), { recursive: true });
+  templateFiles().forEach((path) =>
+    cpSync(join(officeCheckout, path), join(target, basename(path))),
+  );
+  const previews = OFFICE_TEMPLATES.map((template) => {
+    const output = join(target, 'previews', previewName(template));
+    const published = join(officeCheckout, previewSource(template));
+    if (existsSync(published)) {
+      cpSync(published, output);
+      return 'published';
+    }
+    return renderPreview(template, officeCheckout, output) ? 'rendered' : 'missing';
+  });
+  return previews;
+};
+
+const publishLogos = (webCheckout) => {
+  const target = join(projectRoot, 'public/downloads/logos');
+  rmSync(target, { recursive: true, force: true });
+  if (!webCheckout) return 0;
+  mkdirSync(target, { recursive: true });
+  const logos = readdirSync(join(webCheckout, 'assets/logos')).filter(isLogoFile);
+  logos.forEach((name) => cpSync(join(webCheckout, 'assets/logos', name), join(target, name)));
+  return logos.length;
+};
+
+const packageBrandKit = (webCheckout) => {
+  const archive = join(projectRoot, 'public/downloads', `${BRAND_KIT_NAME}.zip`);
+  rmSync(archive, { force: true });
+  if (!webCheckout) return false;
+  const staging = mkdtempSync(join(tmpdir(), 'propellant-kit-'));
+  const kitRoot = join(staging, BRAND_KIT_NAME);
+  const copyMatching = (sourceFolder, matches, folder) => {
+    mkdirSync(join(kitRoot, folder), { recursive: true });
+    readdirSync(sourceFolder)
+      .filter(matches)
+      .sort()
+      .forEach((name) => cpSync(join(sourceFolder, name), join(kitRoot, folder, name)));
+  };
+  copyMatching(join(webCheckout, 'assets/logos'), isLogoFile, BRAND_KIT_FOLDERS.logos);
+  copyMatching(
+    join(webCheckout, 'assets/brand'),
+    isPropellantMarkFile,
+    BRAND_KIT_FOLDERS.designSystem,
+  );
+  copyMatching(join(webCheckout, 'assets/fonts'), isFontFile, BRAND_KIT_FOLDERS.fonts);
+  const colors = JSON.parse(readFileSync(join(projectRoot, 'src/brand/colors.json'), 'utf8'));
+  writeFileSync(join(kitRoot, 'colors.txt'), colorsText(colors));
+  writeFileSync(join(kitRoot, 'colors.json'), colorsJson(colors));
+  writeFileSync(join(kitRoot, 'README.txt'), readmeText());
+  mkdirSync(dirname(archive), { recursive: true });
+  execFileSync('zip', ['-q', '-r', '-X', archive, BRAND_KIT_NAME], { cwd: staging });
+  rmSync(staging, { recursive: true, force: true });
+  return true;
+};
+
 const results = PLATFORMS.map(syncPlatform);
 results.forEach(({ platform, ref, pages }) =>
   console.log(
@@ -188,5 +290,17 @@ console.log(
   packageSkill(checkouts)
     ? `Packaged the ${SKILL_NAME} skill for download`
     : `Skipped the ${SKILL_NAME} skill: it needs releases of the web and office platforms`,
+);
+console.log(`Published ${publishLogos(checkouts.web)} logo files for email signatures`);
+const previews = publishTemplates(checkouts.office);
+console.log(
+  previews
+    ? `Published the office templates, previews: ${previews.join(', ')}`
+    : 'Skipped the office templates: they need a release of the office platform',
+);
+console.log(
+  packageBrandKit(checkouts.web)
+    ? `Packaged the ${BRAND_KIT_NAME} for download`
+    : `Skipped the ${BRAND_KIT_NAME}: it needs a release of the web platform`,
 );
 Object.values(checkouts).forEach((checkout) => rmSync(checkout, { recursive: true, force: true }));

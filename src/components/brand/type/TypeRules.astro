@@ -1,0 +1,80 @@
+---
+const sampleFigures = ['111,111', '808,080', '11,711', '480,118'];
+const measureText =
+  'Get to the point. Use short sentences and everyday words, the way you would explain it to a colleague. Write as a person, not a system. Use "we" for MassChallenge and "you" for the person reading. Be confident without hype.';
+---
+
+<div class="grid gap-4 lg:grid-cols-3">
+  <article
+    class="flex flex-col gap-4 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5"
+  >
+    <h4 class="m-0 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">Sentence case</h4>
+    <p class="m-0 text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
+      For titles, labels and buttons. Capitals belong only to Oswald headlines and the wordmark.
+    </p>
+    <div class="flex flex-col gap-3">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex min-h-[var(--control-md)] items-center rounded-full bg-[var(--tint)] px-4 text-[length:var(--type-callout-size)] font-medium text-[var(--on-tint)]">Submit application</span>
+        <span class="flex items-center gap-1 text-[length:var(--type-footnote-size)] font-semibold text-[var(--success)]">
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+          Do
+        </span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="inline-flex min-h-[var(--control-md)] items-center rounded-full bg-[var(--fill-secondary)] px-4 text-[length:var(--type-callout-size)] font-medium text-[var(--label-secondary)] line-through">Submit Application</span>
+        <span class="flex items-center gap-1 text-[length:var(--type-footnote-size)] font-semibold text-[var(--critical)]">
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+          Don't
+        </span>
+      </div>
+    </div>
+  </article>
+
+  <article
+    class="flex flex-col gap-4 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5 lg:col-span-2"
+  >
+    <h4 class="m-0 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">About 68 characters a line</h4>
+    <p class="m-0 text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
+      Keep lines of running text to about 68 characters. The --type-measure token holds it.
+    </p>
+    <div class="overflow-hidden">
+      <div class="max-w-[var(--type-measure)]">
+        <div class="mb-2 flex items-center gap-2 text-[length:var(--type-caption-size)] font-semibold tabular-nums text-[var(--tint)]" aria-hidden="true">
+          <span class="h-px flex-1 bg-[var(--tint)]"></span>68ch<span class="h-px flex-1 bg-[var(--tint)]"></span>
+        </div>
+        <p class="m-0 text-[length:var(--type-body-size)] leading-[var(--type-body-line)] text-[var(--label)]">
+          {measureText}
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <article
+    class="flex flex-col gap-4 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5 lg:col-span-3"
+  >
+    <h4 class="m-0 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">Tabular figures</h4>
+    <p class="m-0 max-w-[68ch] text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
+      Use digits of equal width wherever numbers line up in columns. These are sample figures, set
+      both ways so you can see the difference.
+    </p>
+    <div class="grid grid-cols-2 gap-4 sm:max-w-[480px]">
+      {
+        [
+          { label: "Proportional (don't)", className: 'proportional-nums' },
+          { label: 'Tabular (do)', className: 'tabular-nums' },
+        ].map((column) => (
+          <div>
+            <p class="m-0 mb-2 text-[length:var(--type-footnote-size)] font-semibold text-[var(--label-secondary)]">
+              {column.label}
+            </p>
+            <ul class:list={['m-0 list-none p-0 text-right text-[length:var(--type-title2-size)] text-[var(--label)]', column.className]}>
+              {sampleFigures.map((figure) => (
+                <li class="border-b border-solid border-[var(--separator)] py-1">{figure}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </article>
+</div>

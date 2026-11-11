@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets';
+import { PRIMARY_LINE } from '../../brand/messaging';
+import logoWhite from '@masschallenge/propellant-web/assets/logos/masschallenge-logo-horizontal-white.png';
+---
+
+<section
+  class="relative overflow-hidden bg-[var(--teal-900)] text-white"
+  aria-labelledby="brand-hero-title"
+>
+  <div class="mx-auto flex min-h-[70vh] max-w-[1200px] flex-col justify-end gap-8 px-4 pb-16 pt-24 sm:px-6">
+    <Image src={logoWhite} alt="MassChallenge" class="h-10 w-auto self-start sm:h-14" loading="eager" />
+    <h1
+      id="brand-hero-title"
+      class="m-0 max-w-[16ch] font-[family-name:var(--type-family-brand)] text-[clamp(2.75rem,8vw,6rem)] font-medium uppercase leading-[0.95]"
+    >
+      The MassChallenge brand
+    </h1>
+    <p class="m-0 max-w-[48ch] text-[length:var(--type-title3-size)] leading-[1.5] text-[var(--teal-100)]">
+      {PRIMARY_LINE} This guide shows how we look and sound, and hands you everything you need to
+      make something on brand.
+    </p>
+    <div class="flex flex-wrap gap-3">
+      <a
+        href="#start-here"
+        class="inline-flex items-center rounded-full bg-white px-5 py-3 font-semibold text-[var(--teal-900)] no-underline hover:bg-[var(--teal-100)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >Start here</a
+      >
+      <a
+        href="/studio/"
+        class="inline-flex items-center rounded-full border border-solid border-white/70 px-5 py-3 font-semibold text-white no-underline hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >Open the studio</a
+      >
+    </div>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+---
+import { GUIDE_SECTIONS } from '../../brand/sections';
+---
+
+<nav
+  aria-label="Brand guide sections"
+  class="sticky top-[57px] z-40 border-b border-solid border-[var(--separator)] bg-[var(--bg)]/95 backdrop-blur"
+>
+  <ul class="mx-auto m-0 flex max-w-[1200px] list-none gap-1 overflow-x-auto px-4 py-2 sm:px-6">
+    {
+      GUIDE_SECTIONS.map((section) => (
+        <li>
+          <a
+            href={`#${section.id}`}
+            data-section-link={section.id}
+            class="block whitespace-nowrap rounded-full px-3 py-1.5 text-[length:var(--type-footnote-size)] font-semibold uppercase tracking-[0.06em] text-[var(--label-secondary)] no-underline hover:text-[var(--label)] data-[active=true]:bg-[var(--tint)] data-[active=true]:text-[var(--on-tint)] focus-visible:outline-2 focus-visible:outline-[var(--focus-color)]"
+          >
+            {section.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<script>
+  const links = document.querySelectorAll<HTMLAnchorElement>('[data-section-link]');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries
+        .filter((entry) => entry.isIntersecting)
+        .forEach((entry) => {
+          links.forEach((link) => {
+            link.dataset.active = String(link.dataset.sectionLink === entry.target.id);
+          });
+        });
+    },
+    { rootMargin: '-30% 0px -60% 0px' },
+  );
+  links.forEach((link) => {
+    const target = document.getElementById(link.dataset.sectionLink ?? '');
+    if (target) observer.observe(target);
+  });
+</script>

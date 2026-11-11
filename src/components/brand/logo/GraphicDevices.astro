@@ -1,0 +1,122 @@
+---
+import { GRAPHIC_DEVICES, OFF_PALETTE_MAPPINGS } from '../../../brand/graphic-devices';
+import { GRAPHIC_EXAMPLES } from '../../../brand/graphic-examples';
+import { pagePath, WEBSITE_RIGHTS_NOTE } from '../../../brand/photo-library';
+---
+
+<div class="flex flex-col gap-6">
+  {
+    GRAPHIC_DEVICES.map((device) => {
+      const examples = GRAPHIC_EXAMPLES[device.id] ?? [];
+      return (
+        <article
+          id={`device-${device.id}`}
+          class="grid gap-5 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]"
+        >
+          <div class="flex flex-col gap-2">
+            <h4 class="m-0 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">
+              {device.name}
+            </h4>
+            <p class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label)]">
+              {device.description}
+            </p>
+            <p class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">
+              <strong class="font-semibold text-[var(--label)]">Use it for:</strong> {device.use}
+            </p>
+            {device.note ? (
+              <p class="m-0 rounded-[var(--corner-md)] bg-[var(--bg-secondary)] p-3 text-[length:var(--type-footnote-size)] leading-[var(--type-footnote-line)] text-[var(--label)]">
+                {device.note}
+              </p>
+            ) : null}
+          </div>
+          {examples.length ? (
+            <ul class="m-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2 xl:grid-cols-3">
+              {examples.map((example) => (
+                <li class="m-0">
+                  <figure class="m-0 flex flex-col gap-1.5">
+                    <div
+                      class:list={[
+                        'flex aspect-[3/2] items-center justify-center overflow-hidden rounded-[var(--corner-lg)] border border-solid border-[var(--separator)]',
+                        example.isOnDark ? 'bg-[var(--gray-800)]' : 'bg-[var(--gray-0)]',
+                      ]}
+                    >
+                      <img
+                        src={example.src}
+                        alt={example.alt}
+                        width={example.width}
+                        height={example.height}
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                        class="block max-h-full w-full object-contain"
+                      />
+                    </div>
+                    <figcaption class="text-[length:var(--type-caption-size)] text-[var(--label-secondary)]">
+                      On{' '}
+                      <a
+                        href={example.page}
+                        class="break-all text-[var(--tint)] underline-offset-4 hover:underline"
+                      >
+                        {pagePath(example.page)}
+                      </a>
+                    </figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div class="flex items-center justify-center rounded-[var(--corner-lg)] border border-dashed border-[var(--separator-strong)] p-6 text-center text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
+              No separate example yet. Icons appear in the FinTech stats graphic under Stat callouts.
+            </div>
+          )}
+        </article>
+      );
+    })
+  }
+
+  <p class="m-0 max-w-[68ch] text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">
+    Examples load from masschallenge.org, read on 2026-11-11. {WEBSITE_RIGHTS_NOTE}
+  </p>
+
+  <div id="off-palette" class="scroll-mt-28">
+    <h4 class="m-0 mb-1 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">
+      Colors on the website that are off the palette
+    </h4>
+    <p class="m-0 mb-3 max-w-[68ch] text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
+      Map these to the palette when those pages are redone.
+    </p>
+    <div class="overflow-x-auto rounded-[var(--corner-xl)] border border-solid border-[var(--separator)]">
+      <table class="w-full border-collapse text-left text-[length:var(--type-callout-size)]">
+        <thead class="bg-[var(--bg-secondary)] text-[var(--label)]">
+          <tr>
+            <th scope="col" class="p-3 font-semibold">Seen on the website</th>
+            <th scope="col" class="p-3 font-semibold">Where</th>
+            <th scope="col" class="p-3 font-semibold">Use instead</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            OFF_PALETTE_MAPPINGS.map((mapping) => (
+              <tr class="border-0 border-t border-solid border-[var(--separator)] align-top">
+                <td class="p-3 text-[var(--label)]">
+                  <span class="flex flex-wrap items-center gap-1.5">
+                    {mapping.swatches.map((swatch) => (
+                      <span
+                        aria-hidden="true"
+                        class="inline-block h-4 w-4 rounded-[var(--corner-sm)] border border-solid border-[var(--separator-strong)]"
+                        style={`background: ${swatch}`}
+                      />
+                    ))}
+                    <span>{mapping.seen}</span>
+                  </span>
+                </td>
+                <td class="p-3 text-[var(--label-secondary)]">{mapping.where}</td>
+                <td class="p-3 text-[var(--label)]">{mapping.useInstead}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

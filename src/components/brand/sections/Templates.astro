@@ -1,0 +1,65 @@
+---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+import {
+  OFFICE_TEMPLATES,
+  OFFICE_THEME,
+  downloadUrl,
+  fileExtension,
+  previewUrl,
+} from '../../../../scripts/lib/office-templates.mjs';
+import SectionHeading from '../SectionHeading.astro';
+import TemplateCard from '../templates/TemplateCard';
+
+const isPublished = (url: string) => existsSync(join(process.cwd(), 'public', url));
+
+const cards = OFFICE_TEMPLATES.map((template) => ({
+  id: template.id,
+  name: template.name,
+  app: template.app,
+  guide: template.guide,
+  isWide: template.id === 'presentation',
+  previewUrl: isPublished(previewUrl(template)) ? previewUrl(template) : null,
+  downloads: template.files
+    .filter((file) => isPublished(downloadUrl(file.path)))
+    .map((file) => ({
+      label: file.label,
+      app: file.app,
+      href: downloadUrl(file.path),
+      extension: fileExtension(file.path),
+    })),
+}));
+const themeUrl = downloadUrl(OFFICE_THEME.path);
+---
+
+<section id="templates" class="scroll-mt-28 py-16">
+  <SectionHeading
+    eyebrow="Templates"
+    title="Start from a template"
+    lead="The fastest way to get every rule right. The colors, fonts, styles, logo and page setup are built in. Use the template file in Microsoft Office, and the other file in Google Workspace."
+  />
+  <ul class="m-0 grid list-none grid-cols-1 gap-5 p-0 md:grid-cols-3">
+    {
+      cards.map((card) => (
+        <li>
+          <TemplateCard {...card} />
+        </li>
+      ))
+    }
+  </ul>
+  <p class="m-0 mt-6 max-w-[68ch] text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
+    {
+      isPublished(themeUrl) ? (
+        <>
+          Working on an existing file? The{' '}
+          <a href={themeUrl} download class="text-[var(--tint)]">
+            Propellant theme (.thmx)
+          </a>{' '}
+          gives any Office file our colors and fonts.{' '}
+        </>
+      ) : null
+    }
+    The templates use Lato and Oswald, which Office computers need installed.{' '}
+    <a href="/office/templates/" class="text-[var(--tint)]">Installing the templates</a> explains how.
+  </p>
+</section>

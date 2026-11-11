@@ -15,8 +15,7 @@ Propellant has one set of foundations and one brand, and a version for each plat
 - **Shared by every platform:** the [brand](/brand/), the [guidelines](/guidelines/) and the way
   we [contribute](/contributing/).
 - **One version per platform:** each lives in its own repository and has its own releases. The
-  [web](/web/) and [Office](/office/) versions are available today. Versions for
-  [iOS](/platforms/ios/) and [Android](/platforms/android/) are planned.
+  [web](/web/) and [Office](/office/) versions are available today.
 
 ## Where this site comes from
 

@@ -1,0 +1,17 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import ComponentPreviews from '../components/ComponentPreviews';
+---
+
+<section id="components" class="scroll-mt-28 py-16">
+  <SectionHeading
+    eyebrow="Components"
+    title="Built, not drawn"
+    lead="These are the real Propellant components, running live. Try each one in light and dark, then copy the code into your product."
+  />
+  <ComponentPreviews client:visible />
+  <p class="m-0 mt-6 text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
+    Every component, with all its options, is in{' '}
+    <a href="/web/usage/" class="text-[var(--tint)]">using Propellant on the web</a>.
+  </p>
+</section>

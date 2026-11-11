@@ -1,0 +1,141 @@
+---
+import { findColor } from '../../../brand/palette';
+import { LOGO_FILES } from './logoFiles';
+
+const teal = findColor('teal').hex;
+
+const misuses = [
+  {
+    id: 'stretched',
+    reason: 'Stretch or squash it.',
+    stage: 'background: var(--gray-0)',
+    logo: 'transform: scale(1.5, 0.75)',
+  },
+  {
+    id: 'rotated',
+    reason: 'Rotate or skew it.',
+    stage: 'background: var(--gray-0)',
+    logo: 'transform: rotate(-14deg)',
+  },
+  {
+    id: 'recolored',
+    reason: 'Change its colors.',
+    stage: 'background: var(--gray-0)',
+    logo: 'filter: hue-rotate(150deg) saturate(2.5)',
+  },
+  {
+    id: 'shadow',
+    reason: 'Add shadows, glows or other effects.',
+    stage: 'background: var(--gray-0)',
+    logo: 'filter: drop-shadow(4px 6px 3px rgb(0 0 0 / 0.5))',
+  },
+  {
+    id: 'on-teal',
+    reason: 'Put the full color logo on teal. Use white.',
+    stage: `background: ${teal}`,
+    logo: '',
+  },
+  {
+    id: 'busy',
+    reason: 'Put it on a busy background.',
+    stage:
+      'background: repeating-linear-gradient(45deg, var(--yellow-400) 0 12px, var(--teal-400) 12px 24px, var(--magenta-600) 24px 36px, var(--gray-0) 36px 48px)',
+    logo: '',
+  },
+];
+---
+
+<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  <figure
+    class="m-0 flex flex-col overflow-hidden rounded-[var(--corner-xl)] border-2 border-solid border-[var(--success-solid)] bg-[var(--bg)]"
+  >
+    <div class="flex aspect-[16/9] sm:aspect-[4/3] items-center justify-center bg-[var(--gray-0)] p-8">
+      <img src={LOGO_FILES.horizontal.color} alt="" class="h-9 w-auto" />
+    </div>
+    <figcaption
+      class="flex items-start gap-2 p-4 text-[length:var(--type-callout-size)] text-[var(--label)]"
+    >
+      <span
+        class="mt-px inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-[var(--success-solid)] text-[var(--on-success)]"
+        aria-hidden="true"
+      >
+        <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+      </span>
+      <span><strong class="font-semibold">Do:</strong> the full color file on white, as supplied, with clear space all around.</span>
+    </figcaption>
+  </figure>
+
+  {
+    misuses.map((misuse) => (
+      <figure class="m-0 flex flex-col overflow-hidden rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)]">
+        <div class="flex aspect-[16/9] sm:aspect-[4/3] items-center justify-center overflow-hidden p-8" style={misuse.stage}>
+          <img src={LOGO_FILES.horizontal.color} alt="" class="h-9 w-auto" style={misuse.logo} />
+        </div>
+        <figcaption class="flex items-start gap-2 p-4 text-[length:var(--type-callout-size)] text-[var(--label)]">
+          <span
+            class="mt-px inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-[var(--critical-solid)] text-[var(--on-critical)]"
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </span>
+          <span>
+            <strong class="font-semibold">Don't:</strong> {misuse.reason}
+          </span>
+        </figcaption>
+      </figure>
+    ))
+  }
+
+  <figure
+    class="m-0 flex flex-col overflow-hidden rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)]"
+  >
+    <div class="flex aspect-[16/9] sm:aspect-[4/3] items-center justify-center bg-[var(--gray-0)] p-8">
+      <div
+        class="flex items-center gap-1 rounded-[var(--corner-sm)] border-2 border-solid border-[var(--gray-800)] p-0.5"
+      >
+        <img src={LOGO_FILES.horizontal.color} alt="" class="h-7 w-auto" />
+        <span
+          class="whitespace-nowrap font-[family-name:var(--type-family)] text-[length:var(--type-headline-size)] font-bold text-[var(--gray-800)]"
+          >Apply now</span
+        >
+      </div>
+    </div>
+    <figcaption
+      class="flex items-start gap-2 p-4 text-[length:var(--type-callout-size)] text-[var(--label)]"
+    >
+      <span
+        class="mt-px inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-[var(--critical-solid)] text-[var(--on-critical)]"
+        aria-hidden="true"
+      >
+        <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+      </span>
+      <span><strong class="font-semibold">Don't:</strong> Crowd its clear space with a box, text or edges.</span>
+    </figcaption>
+  </figure>
+
+  <figure
+    class="m-0 flex flex-col overflow-hidden rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)]"
+  >
+    <div class="flex aspect-[16/9] sm:aspect-[4/3] items-center justify-center bg-[var(--gray-0)] p-8">
+      <p
+        class="m-0 flex items-center gap-1 font-[family-name:var(--type-family-brand)] text-[length:var(--type-display-size)] font-medium uppercase leading-none text-[var(--gray-800)]"
+        aria-hidden="true"
+      >
+        <img src={LOGO_FILES.monogram.color} alt="" class="h-[0.84em] w-auto" />entors
+      </p>
+    </div>
+    <figcaption
+      class="flex items-start gap-2 p-4 text-[length:var(--type-callout-size)] text-[var(--label)]"
+    >
+      <span
+        class="mt-px inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-[var(--critical-solid)] text-[var(--on-critical)]"
+        aria-hidden="true"
+      >
+        <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+      </span>
+      <span><strong class="font-semibold">Don't:</strong> Use the monogram as a letter in a word or headline.</span>
+    </figcaption>
+  </figure>
+</div>

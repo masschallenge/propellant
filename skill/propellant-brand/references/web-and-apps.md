@@ -98,7 +98,7 @@ Text style sizes on the web (desktop, with mobile in brackets):
 
 ## Web layout rules
 
-- White page background, with Mist `#F3F6F7` for alternate sections and Deep teal `#044451`
+- White page background, with Mist `#F3FBFC` for alternate sections and Deep teal `#044451`
   bands for brand moments.
 - Sections about 96 px of padding top and bottom on desktop, 64 px on mobile.
 - Paragraphs at most about 720 px wide.
