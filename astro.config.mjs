@@ -20,6 +20,7 @@ export default defineConfig({
         replacesTitle: true,
       },
       favicon: '/favicon.svg',
+      components: { SiteTitle: './src/components/site/StarlightSiteTitle.astro' },
       customCss: ['./src/styles/propellant.css'],
       social: [
         {

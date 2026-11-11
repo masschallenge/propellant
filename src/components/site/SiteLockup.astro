@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets';
+import logoColor from '@masschallenge/propellant-web/assets/logos/masschallenge-logo-horizontal-color.png';
+import logoWhite from '@masschallenge/propellant-web/assets/logos/masschallenge-logo-horizontal-white.png';
+import lockupColor from '../../assets/brand/propellant-lockup-color.svg';
+import lockupWhite from '../../assets/brand/propellant-lockup-white.svg';
+
+interface Props {
+  lightOnlyClass: string;
+  darkOnlyClass: string;
+}
+
+const { lightOnlyClass, darkOnlyClass } = Astro.props;
+---
+
+<span class="site-lockup">
+  <Image src={logoColor} alt="MassChallenge" class:list={['site-lockup-logo', lightOnlyClass]} loading="eager" />
+  <Image src={logoWhite} alt="MassChallenge" class:list={['site-lockup-logo', darkOnlyClass]} loading="eager" />
+  <span class="site-lockup-divider" aria-hidden="true"></span>
+  <img src={lockupColor.src} alt="Propellant" class:list={['site-lockup-propellant', lightOnlyClass]} />
+  <img src={lockupWhite.src} alt="Propellant" class:list={['site-lockup-propellant', darkOnlyClass]} />
+</span>
+
+<style>
+  .site-lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+  .site-lockup-logo {
+    height: 1.375rem;
+    width: auto;
+  }
+  .site-lockup-divider {
+    width: 1px;
+    height: 1.5rem;
+    background: currentColor;
+    opacity: 0.35;
+  }
+  .site-lockup-propellant {
+    height: 1.5rem;
+    width: auto;
+  }
+  @media (max-width: 480px) {
+    .site-lockup-logo {
+      height: 1.125rem;
+    }
+    .site-lockup-propellant {
+      height: 1.25rem;
+    }
+    .site-lockup {
+      gap: 0.5rem;
+    }
+  }
+</style>

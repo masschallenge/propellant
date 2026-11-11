@@ -1,21 +1,22 @@
 ---
 import '../styles/brand-app.css';
-import lockupColor from '../assets/brand/propellant-lockup-color.svg';
-import lockupWhite from '../assets/brand/propellant-lockup-white.svg';
+import SiteFooter from '../components/site/SiteFooter.astro';
+import SiteLockup from '../components/site/SiteLockup.astro';
 
 interface Props {
   title: string;
   description: string;
-  current: 'brand' | 'studio' | 'signature';
+  current: 'home' | 'brand' | 'studio' | 'signature';
 }
 
 const { title, description, current } = Astro.props;
 
 const links = [
-  { id: 'docs', label: 'Docs', href: '/about/' },
   { id: 'brand', label: 'Brand guide', href: '/brand/' },
   { id: 'studio', label: 'Studio', href: '/studio/' },
   { id: 'signature', label: 'Email signature', href: '/studio/signature/' },
+  { id: 'web', label: 'Web', href: '/web/' },
+  { id: 'office', label: 'Office', href: '/office/' },
 ];
 ---
 
@@ -24,7 +25,7 @@ const links = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{`${title} | Propellant`}</title>
+    <title>{title === 'Propellant' ? 'Propellant | MassChallenge' : `${title} | Propellant`}</title>
     <meta name="description" content={description} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script is:inline>
@@ -49,9 +50,8 @@ const links = [
       class="sticky top-0 z-50 border-b border-solid border-[var(--separator)] bg-[var(--bg)]/95 backdrop-blur"
     >
       <div class="mx-auto flex max-w-[1200px] items-center gap-6 px-4 py-3 sm:px-6">
-        <a href="/" class="flex shrink-0 items-center" aria-label="Propellant home">
-          <img src={lockupColor.src} alt="" class="h-7 w-auto dark-hidden" />
-          <img src={lockupWhite.src} alt="" class="h-7 w-auto light-hidden" />
+        <a href="/" class="flex shrink-0 items-center text-[var(--label)] no-underline">
+          <SiteLockup lightOnlyClass="dark-hidden" darkOnlyClass="light-hidden" />
         </a>
         <nav aria-label="Propellant" class="ml-auto flex min-w-0 items-center gap-1 overflow-x-auto">
           {
@@ -82,12 +82,7 @@ const links = [
     <main id="main">
       <slot />
     </main>
-    <footer class="border-t border-solid border-[var(--separator)] px-4 py-8 sm:px-6">
-      <p class="mx-auto max-w-[1200px] text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">
-        Propellant is the MassChallenge design system. Read the full text in the
-        <a href="/brand/reference/" class="text-[var(--tint)]">brand reference</a>.
-      </p>
-    </footer>
+    <SiteFooter />
     <script>
       const toggle = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
       toggle?.addEventListener('click', () => {
