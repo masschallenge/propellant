@@ -4,6 +4,9 @@ import PhotoCheck from '../photos/PhotoCheck';
 import PhotoExamples from '../photos/PhotoExamples.astro';
 import PhotoLibrary from '../photos/PhotoLibrary';
 import { WEBSITE_PHOTOS } from '../../../brand/photo-manifest';
+import { VIDEO_RIGHTS_NOTE } from '../../../brand/video-library';
+import { WEBSITE_VIDEOS } from '../../../brand/video-manifest';
+import VideoLibrary from '../photos/VideoLibrary';
 ---
 
 <section id="photos" class="scroll-mt-28 py-16">
@@ -48,5 +51,17 @@ import { WEBSITE_PHOTOS } from '../../../brand/photo-manifest';
       the page each one appears on. Filter by category, and open any photo at full size.
     </p>
     <PhotoLibrary client:visible />
+  </div>
+
+  <div id="video" class="mt-12 scroll-mt-28">
+    <h3 class="m-0 text-[length:var(--type-title2-size)] font-semibold text-[var(--label)]">
+      Video
+    </h3>
+    <p class="m-0 mb-5 mt-2 max-w-[68ch] text-[length:var(--type-body-size)] text-[var(--label-secondary)]">
+      The {WEBSITE_VIDEOS.length} videos on masschallenge.org, read on 2026-11-11: embedded on its
+      pages or uploaded to its media library. Each one opens where it lives; nothing plays here.
+      Titles that were missing or unclear are labelled as they are, not renamed. {VIDEO_RIGHTS_NOTE}
+    </p>
+    <VideoLibrary client:visible />
   </div>
 </section>
