@@ -127,6 +127,12 @@ const LIST = 'm-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2';
             >
               {stat.label}
             </span>
+            <span
+              class="text-[length:var(--type-footnote-size)]"
+              style={`color: ${findColor(stat.labelColorId).hex}`}
+            >
+              {stat.asOf}
+            </span>
           </div>
         </li>
       ))}
