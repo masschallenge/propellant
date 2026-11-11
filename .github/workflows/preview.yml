@@ -41,6 +41,11 @@ jobs:
         run: yarn install --frozen-lockfile
       - if: steps.secrets.outputs.ready == 'true'
         run: yarn build
+      - name: Keep the preview out of search engines
+        if: steps.secrets.outputs.ready == 'true'
+        run: |
+          printf '/*\n  X-Robots-Tag: noindex\n' > dist/_headers
+          printf 'User-agent: *\nDisallow: /\n' > dist/robots.txt
       - name: Deploy the preview
         id: deploy
         if: steps.secrets.outputs.ready == 'true'
