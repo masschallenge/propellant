@@ -64,7 +64,7 @@ export const OFFICES: Office[] = [
     name: 'Dallas, TX',
     lines: ['3060 Pegasus Park Dr, Building 6', 'Dallas, TX 75247'],
   },
-  { id: 'israel', name: 'Israel', lines: ['10 Jaffa Street', 'Jerusalem, 9434251'] },
+  { id: 'israel', name: 'Israel', lines: ['10 Jaffa Street', 'Jerusalem, 9434251', 'Israel'] },
   {
     id: 'switzerland',
     name: 'Switzerland',
@@ -73,7 +73,12 @@ export const OFFICES: Office[] = [
   {
     id: 'united-kingdom',
     name: 'United Kingdom',
-    lines: ['Royal Docks Centre for Sustainability', '4-6 University Way', 'London E162RD'],
+    lines: [
+      'Royal Docks Centre for Sustainability',
+      '4-6 University Way',
+      'London E16 2RD',
+      'United Kingdom',
+    ],
   },
 ];
 

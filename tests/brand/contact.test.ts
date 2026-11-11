@@ -32,7 +32,10 @@ describe('contact, social and legal', () => {
   it('lists the five offices from the About page', () => {
     expect(OFFICES).toHaveLength(5);
     expect(officeAddress('dallas')).toBe('3060 Pegasus Park Dr, Building 6, Dallas, TX 75247');
-    expect(findOffice('united-kingdom').lines).toContain('London E162RD');
+    expect(officeAddress('united-kingdom')).toBe(
+      'Royal Docks Centre for Sustainability, 4-6 University Way, London E16 2RD, United Kingdom',
+    );
+    expect(officeAddress('israel')).toBe('10 Jaffa Street, Jerusalem, 9434251, Israel');
     expect(() => findOffice('paris' as never)).toThrow();
   });
 
