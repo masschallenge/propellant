@@ -1,5 +1,5 @@
 import { BRAND_DUOTONE, duotoneChannels } from './duotone';
-import { MINIMUM_LARGE_CONTRAST, MINIMUM_TEXT_CONTRAST, contrastRatio } from './contrast';
+import { MINIMUM_LARGE_CONTRAST, MINIMUM_TEXT_CONTRAST, contrastRatio, hexToRgb } from './contrast';
 import { findColor } from './palette';
 
 export interface PhotoShape {
@@ -123,12 +123,23 @@ const readingFrom = (ratios: number[]): ContrastReading => {
   return { typical: percentile(sorted, 0.5), weakest, verdict: verdictFor(weakest) };
 };
 
-export const readArea = (pixels: ArrayLike<number>): AreaReading => {
+export const PHOTO_BACKING = WHITE;
+
+const overBacking = (channel: number, alpha: number, backing: number) =>
+  Math.round(channel * alpha + backing * (1 - alpha));
+
+export const readArea = (pixels: ArrayLike<number>, backingHex = PHOTO_BACKING): AreaReading => {
+  const backing = hexToRgb(backingHex);
   const whiteRatios: number[] = [];
   const inkRatios: number[] = [];
   const cache = new Map<string, [number, number]>();
   for (let offset = 0; offset + 3 < pixels.length; offset += 4) {
-    const hex = rgbToHex(pixels[offset], pixels[offset + 1], pixels[offset + 2]);
+    const alpha = pixels[offset + 3] / 255;
+    const hex = rgbToHex(
+      overBacking(pixels[offset], alpha, backing.red),
+      overBacking(pixels[offset + 1], alpha, backing.green),
+      overBacking(pixels[offset + 2], alpha, backing.blue),
+    );
     const known = cache.get(hex) ?? [contrastRatio(WHITE, hex), contrastRatio(INK, hex)];
     cache.set(hex, known);
     whiteRatios.push(known[0]);

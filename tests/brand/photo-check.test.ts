@@ -119,3 +119,17 @@ describe('the brand duotone', () => {
     expect(Array.from(pixels)).toEqual([4, 68, 81, 128]);
   });
 });
+
+describe('transparent photo pixels', () => {
+  it('reads a fully transparent pixel as the white the preview shows, not black', () => {
+    const reading = readArea([0, 0, 0, 0]);
+    expect(reading.white.weakest).toBeCloseTo(1);
+    expect(reading.ink.weakest).toBeGreaterThan(10);
+  });
+
+  it('blends a half transparent pixel with the backing', () => {
+    const reading = readArea([0, 0, 0, 128], '#FFFFFF');
+    expect(reading.white.weakest).toBeGreaterThan(3);
+    expect(reading.white.weakest).toBeLessThan(5);
+  });
+});

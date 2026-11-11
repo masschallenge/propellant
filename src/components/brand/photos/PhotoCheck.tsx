@@ -19,6 +19,7 @@ import {
   SAFE_ZONE_INSET,
   TEXT_AREAS,
   WHITE,
+  PHOTO_BACKING,
   applyDuotone,
   betterText,
   fitBox,
@@ -78,6 +79,8 @@ const drawScaled = (image: HTMLImageElement, longest: number, treatment: Treatme
   canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
   const context = canvas.getContext('2d', { willReadFrequently: true });
   if (!context) throw new Error('This browser cannot read images');
+  context.fillStyle = PHOTO_BACKING;
+  context.fillRect(0, 0, canvas.width, canvas.height);
   context.drawImage(image, 0, 0, canvas.width, canvas.height);
   if (treatment === 'duotone') {
     const pixels = context.getImageData(0, 0, canvas.width, canvas.height);
@@ -152,13 +155,12 @@ const PhotoCheck = () => {
       if (!isCurrent) return;
       try {
         const analysis = drawScaled(image, ANALYSIS_SIZE, treatment);
-        const display =
-          treatment === 'natural' ? null : drawScaled(image, DISPLAY_SIZE, treatment).canvas;
+        const display = drawScaled(image, DISPLAY_SIZE, treatment).canvas;
         setPhoto({
           name: source.name,
           width: image.naturalWidth,
           height: image.naturalHeight,
-          displayUrl: display ? display.toDataURL('image/jpeg', 0.9) : source.url,
+          displayUrl: display.toDataURL('image/jpeg', 0.9),
           analysis: analysis.context.getImageData(
             0,
             0,
