@@ -11,6 +11,8 @@ import { BRAND_KIT_URL, brandKitFile } from '../../scripts/lib/brand-kit.mjs';
 import { OFFICE_TEMPLATES, previewUrl } from '../../scripts/lib/office-templates.mjs';
 import { BRAND_NEEDS, BRAND_RESOURCES, BRAND_TOOLS, FINDER } from '../brand/home';
 import { PRIMARY_LINE } from '../brand/messaging';
+import { WEBSITE_URL } from '../brand/contact';
+import { SUMMARY } from '../brand/llms';
 import { BRAND_COLORS, findColor } from '../brand/palette';
 import { WEBSITE_PHOTOS } from '../brand/photo-manifest';
 import { signatureHtml, EMPTY_SIGNATURE } from '../brand/signature';
@@ -53,6 +55,16 @@ const OFFICE_PREVIEW_PLACEMENT: Record<string, string> = {
   workbook: 'width: 26%; right: 0; top: 52%; z-index: 3',
 };
 
+const homeStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Propellant',
+  alternateName: 'The MassChallenge design system',
+  url: Astro.site?.href,
+  description: SUMMARY,
+  publisher: { '@type': 'Organization', name: 'MassChallenge', url: WEBSITE_URL },
+};
+
 const SECTION = 'mx-auto max-w-[1200px] px-4 sm:px-6';
 const EYEBROW =
   'm-0 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[0.1em] text-[var(--tint)]';
@@ -69,6 +81,7 @@ const SOLID_BUTTON =
 ---
 
 <BrandLayout
+  structuredData={homeStructuredData}
   title="Propellant"
   description="Everything you need to make something look and sound like MassChallenge: the logo, colors, fonts and words, tools for posts and email signatures, and our web and Office templates."
   current="home"
