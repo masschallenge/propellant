@@ -1,17 +1,11 @@
 ---
-import { Image } from 'astro:assets';
-import logoColor from '@masschallenge/propellant-web/assets/logos/masschallenge-logo-horizontal-color.png';
-import logoWhite from '@masschallenge/propellant-web/assets/logos/masschallenge-logo-horizontal-white.png';
-import {
-  CONTACT_EMAIL,
-  FOOTER_LINKS,
-  SOCIAL_LINKS,
-  WEBSITE_LABEL,
-  WEBSITE_URL,
-  copyrightLine,
-} from '../../brand/contact';
+import lockupColor from '../../assets/brand/propellant-lockup-color.svg';
+import lockupWhite from '../../assets/brand/propellant-lockup-white.svg';
+import { FOOTER_LINKS, WEBSITE_LABEL, WEBSITE_URL, copyrightLine } from '../../brand/contact';
 
-const [careers, support, privacy, terms] = FOOTER_LINKS;
+const [privacy, terms] = ['Privacy Policy', 'Terms of Use'].map(
+  (name) => FOOTER_LINKS.find((link) => link.name === name)!,
+);
 
 const columns = [
   {
@@ -35,16 +29,7 @@ const columns = [
   },
   {
     title: 'MassChallenge',
-    links: [
-      { label: WEBSITE_LABEL, href: WEBSITE_URL },
-      { label: careers.name, href: careers.url },
-      { label: support.name, href: support.url },
-      { label: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
-    ],
-  },
-  {
-    title: 'Follow',
-    links: SOCIAL_LINKS.map((social) => ({ label: social.name, href: social.url })),
+    links: [{ label: WEBSITE_LABEL, href: WEBSITE_URL }],
   },
 ];
 
@@ -56,13 +41,13 @@ const LINK =
   <div class="mx-auto flex max-w-[1200px] flex-col gap-10">
     <div class="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,3fr)]">
       <div class="flex flex-col gap-3">
-        <Image src={logoColor} alt="MassChallenge" class="dark-hidden h-7 w-auto self-start" />
-        <Image src={logoWhite} alt="MassChallenge" class="light-hidden h-7 w-auto self-start" />
+        <img src={lockupColor.src} alt="Propellant" class="dark-hidden h-7 w-auto self-start" />
+        <img src={lockupWhite.src} alt="Propellant" class="light-hidden h-7 w-auto self-start" />
         <p class="m-0 max-w-[36ch] text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">
           Propellant is the fuel that makes everything at MassChallenge take off.
         </p>
       </div>
-      <nav aria-label="Footer" class="grid grid-cols-2 gap-8 sm:grid-cols-4">
+      <nav aria-label="Footer" class="grid grid-cols-2 gap-8 sm:grid-cols-3">
         {
           columns.map((column) => (
             <div class="flex flex-col gap-2">
