@@ -55,7 +55,7 @@ These hold for every output.
 - Never show meaning by color alone: pair status colors with a word.
 - Use no other colors. No gradients, except the teal duotone in the photography reference.
 - The web palette is the standard everywhere, print included. For printing, use the CMYK values in
-  [references/graphics.md](references/graphics.md); Pantone matches are not set.
+  [references/graphics.md](references/graphics.md). Never suggest or quote Pantone colors.
 - How much of each: White and neutrals for most of the page, teals for brand surfaces and actions,
   a little Magenta and Yellow.
 

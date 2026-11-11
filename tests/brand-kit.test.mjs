@@ -70,12 +70,11 @@ describe('the color files', () => {
     expect(parsed.logoColors[1].cmyk).toBe('77, 11, 27, 0');
   });
 
-  it('says how the print values were made and that Pantone is not set', () => {
+  it('says how the print values were made and gives CMYK only', () => {
     [colorsText(colors), colorsJson(colors)].forEach((file) => {
       expect(file).toContain('Artifex CMYK SWOP profile');
-      expect(file).toContain('Pantone matches are not set; print from the CMYK values.');
+      expect(file).not.toMatch(/pantone|PMS\s*\d/i);
     });
-    expect(colorsText(colors)).not.toMatch(/PMS\s*\d|Pantone\s+\d/);
   });
 });
 
