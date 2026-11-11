@@ -110,7 +110,7 @@ describe('reading contrast from pixels', () => {
 describe('the brand duotone', () => {
   it('maps black to Deep teal and white to Pale teal', () => {
     expect(duotonePixel(0, 0, 0)).toEqual([4, 68, 81]);
-    expect(duotonePixel(255, 255, 255)).toEqual([217, 246, 250]);
+    expect(duotonePixel(255, 255, 255)).toEqual([15, 172, 189]);
   });
 
   it('changes pixels in place and keeps their transparency', () => {

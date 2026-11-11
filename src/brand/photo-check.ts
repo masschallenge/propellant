@@ -1,4 +1,5 @@
-import { MINIMUM_LARGE_CONTRAST, MINIMUM_TEXT_CONTRAST, contrastRatio, hexToRgb } from './contrast';
+import { BRAND_DUOTONE, duotoneChannels } from './duotone';
+import { MINIMUM_LARGE_CONTRAST, MINIMUM_TEXT_CONTRAST, contrastRatio } from './contrast';
 import { findColor } from './palette';
 
 export interface PhotoShape {
@@ -149,23 +150,8 @@ export const logoTreatmentFor = (reading: AreaReading): 'white' | 'black' =>
 
 export const formatRatio = (ratio: number) => `${(Math.floor(ratio * 10) / 10).toFixed(1)}:1`;
 
-const DUOTONE_SHADOW = hexToRgb(findColor('deep-teal').hex);
-const DUOTONE_HIGHLIGHT = hexToRgb(findColor('pale-teal').hex);
-
-export const duotonePixel = (
-  red: number,
-  green: number,
-  blue: number,
-): [number, number, number] => {
-  const gray = (0.2126 * red + 0.7152 * green + 0.0722 * blue) / 255;
-  const mix = (shadow: number, highlight: number) =>
-    Math.round(shadow + (highlight - shadow) * gray);
-  return [
-    mix(DUOTONE_SHADOW.red, DUOTONE_HIGHLIGHT.red),
-    mix(DUOTONE_SHADOW.green, DUOTONE_HIGHLIGHT.green),
-    mix(DUOTONE_SHADOW.blue, DUOTONE_HIGHLIGHT.blue),
-  ];
-};
+export const duotonePixel = (red: number, green: number, blue: number): [number, number, number] =>
+  duotoneChannels(red, green, blue, BRAND_DUOTONE);
 
 export const applyDuotone = (pixels: Uint8ClampedArray) => {
   for (let offset = 0; offset + 3 < pixels.length; offset += 4) {

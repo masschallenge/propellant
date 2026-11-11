@@ -1,4 +1,4 @@
-import { hexToRgb } from '../brand/contrast';
+import { BRAND_DUOTONE, duotoneChannels, type Duotone } from '../brand/duotone';
 import { findColor, type BrandColor } from '../brand/palette';
 
 export type PatternId = 'triangles';
@@ -68,25 +68,24 @@ export const trianglePattern = (
   return triangles;
 };
 
-export interface Duotone {
-  shadowId: string;
-  highlightId: string;
-}
+export type { Duotone };
 
-export const TEAL_DUOTONE: Duotone = { shadowId: 'deep-teal', highlightId: 'bright-teal' };
+export const TEAL_DUOTONE: Duotone = BRAND_DUOTONE;
 
 export type PixelData = Uint8ClampedArray | number[];
 
 export const duotonePixels = (pixels: PixelData, duotone: Duotone = TEAL_DUOTONE): PixelData => {
-  const shadow = hexToRgb(findColor(duotone.shadowId).hex);
-  const highlight = hexToRgb(findColor(duotone.highlightId).hex);
   const result = pixels.slice() as PixelData;
   for (let offset = 0; offset + 3 < pixels.length; offset += 4) {
-    const lightness =
-      (0.2126 * pixels[offset] + 0.7152 * pixels[offset + 1] + 0.0722 * pixels[offset + 2]) / 255;
-    result[offset] = Math.round(shadow.red + (highlight.red - shadow.red) * lightness);
-    result[offset + 1] = Math.round(shadow.green + (highlight.green - shadow.green) * lightness);
-    result[offset + 2] = Math.round(shadow.blue + (highlight.blue - shadow.blue) * lightness);
+    const [red, green, blue] = duotoneChannels(
+      pixels[offset],
+      pixels[offset + 1],
+      pixels[offset + 2],
+      duotone,
+    );
+    result[offset] = red;
+    result[offset + 1] = green;
+    result[offset + 2] = blue;
     result[offset + 3] = pixels[offset + 3];
   }
   return result;
