@@ -1,11 +1,10 @@
 ---
 import { existsSync, statSync } from 'node:fs';
-import { join } from 'node:path';
 import { Button } from '@masschallenge/propellant-web';
-import { BRAND_KIT_NAME } from '../../../../scripts/lib/brand-kit.mjs';
+import { BRAND_KIT_URL, brandKitFile } from '../../../../scripts/lib/brand-kit.mjs';
 
-const kitUrl = `/downloads/${BRAND_KIT_NAME}.zip`;
-const kitFile = join(process.cwd(), 'public', kitUrl);
+const kitUrl = BRAND_KIT_URL;
+const kitFile = brandKitFile(process.cwd());
 const kitSize = existsSync(kitFile) ? `${Math.round(statSync(kitFile).size / 1024)} KB` : null;
 
 const CONTENTS = [

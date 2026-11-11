@@ -1,3 +1,5 @@
+import { BRAND_KIT_URL } from '../../scripts/lib/brand-kit.mjs';
+
 export type BrandNeedVisual =
   | 'logo'
   | 'colors'
@@ -79,7 +81,7 @@ export const BRAND_NEEDS: BrandNeed[] = [
     id: 'kit',
     title: 'The brand kit',
     description: 'One download with every logo, the fonts and the color codes.',
-    href: '/downloads/masschallenge-brand-kit.zip',
+    href: BRAND_KIT_URL,
     action: 'Download the kit',
     visual: 'kit',
     isDownload: true,

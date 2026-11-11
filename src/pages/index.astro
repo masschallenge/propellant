@@ -7,6 +7,7 @@ import logoColor from '@masschallenge/propellant-web/assets/logos/masschallenge-
 import logoWhite from '@masschallenge/propellant-web/assets/logos/masschallenge-logo-horizontal-white.png';
 import BrandLayout from '../layouts/BrandLayout.astro';
 import propellantMark from '../assets/brand/propellant-mark-color.svg';
+import { BRAND_KIT_URL, brandKitFile } from '../../scripts/lib/brand-kit.mjs';
 import { OFFICE_TEMPLATES, previewUrl } from '../../scripts/lib/office-templates.mjs';
 import {
   CONTACT_EMAIL,
@@ -33,6 +34,8 @@ const pointList = (points: [number, number][]) =>
 const swatches = ['deep-teal', 'teal', 'bright-teal', 'pale-teal', 'yellow', 'ink'].map(findColor);
 const photo = WEBSITE_PHOTOS.find((candidate) => candidate.category === 'teal-duotone');
 const mediumBoilerplate = findBoilerplate('medium').text;
+const hasBrandKit = existsSync(brandKitFile(process.cwd()));
+const brandNeeds = BRAND_NEEDS.filter((need) => hasBrandKit || !need.isDownload);
 
 const sampleSignature = signatureHtml({
   ...EMPTY_SIGNATURE,
@@ -111,12 +114,17 @@ const SOLID_BUTTON =
           class={`${SOLID_BUTTON} bg-white text-[var(--teal-900)] hover:bg-[var(--teal-100)] focus-visible:outline-white`}
           >Open the brand guidelines</a
         >
-        <a
-          href="/downloads/masschallenge-brand-kit.zip"
-          download
-          class={`${SOLID_BUTTON} border border-solid border-white/70 text-white hover:bg-white/10 focus-visible:outline-white`}
-          >Download the brand kit</a
-        >
+        {
+          hasBrandKit && (
+            <a
+              href={BRAND_KIT_URL}
+              download
+              class={`${SOLID_BUTTON} border border-solid border-white/70 text-white hover:bg-white/10 focus-visible:outline-white`}
+            >
+              Download the brand kit
+            </a>
+          )
+        }
       </div>
     </div>
   </section>
@@ -133,7 +141,7 @@ const SOLID_BUTTON =
       </div>
       <ul class="m-0 grid list-none grid-cols-1 gap-5 p-0 sm:grid-cols-2 lg:grid-cols-4">
         {
-          BRAND_NEEDS.map((need) => (
+          brandNeeds.map((need) => (
             <li class="m-0">
               <a href={need.href} class={CARD} download={need.isDownload ? '' : undefined}>
                 <div class="flex h-36 items-center justify-center overflow-hidden border-0 border-b border-solid border-[var(--separator)] bg-[var(--bg-secondary)]" aria-hidden="true">

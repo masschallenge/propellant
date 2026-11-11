@@ -1,4 +1,10 @@
+import { join } from 'node:path';
+
 export const BRAND_KIT_NAME = 'masschallenge-brand-kit';
+
+export const BRAND_KIT_URL = `/downloads/${BRAND_KIT_NAME}.zip`;
+
+export const brandKitFile = (projectRoot) => join(projectRoot, 'public', BRAND_KIT_URL);
 
 export const BRAND_KIT_FOLDERS = {
   logos: 'logos',
