@@ -28,8 +28,17 @@ export const useFontsReady = (): boolean => {
   return isReady;
 };
 
-export const useLogoImages = (): RenderAssets['logos'] => {
+export interface LogoImages {
+  logos: RenderAssets['logos'];
+  error: string | null;
+}
+
+export const LOGO_LOAD_ERROR =
+  'The MassChallenge logo could not be loaded, so posts cannot include it. Reload the page to try again.';
+
+export const useLogoImages = (): LogoImages => {
   const [logos, setLogos] = useState<RenderAssets['logos']>({});
+  const [error, setError] = useState<string | null>(null);
   useEffect(() => {
     let isActive = true;
     const entries = Object.entries(LOGO_URLS) as [LogoKey, string][];
@@ -37,12 +46,14 @@ export const useLogoImages = (): RenderAssets['logos'] => {
       .then((pairs) => {
         if (isActive) setLogos(Object.fromEntries(pairs));
       })
-      .catch(() => undefined);
+      .catch(() => {
+        if (isActive) setError(LOGO_LOAD_ERROR);
+      });
     return () => {
       isActive = false;
     };
   }, []);
-  return logos;
+  return { logos, error };
 };
 
 export const useMeasure = (fontsReady: boolean) =>

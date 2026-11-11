@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { renderScene } from '../../src/studio/render';
+import { missingLogoKeys, renderScene } from '../../src/studio/render';
 import { BASE_DEFAULTS, type Scene } from '../../src/studio/scene';
 import { fakeMeasure } from './helpers';
 
@@ -103,5 +103,37 @@ describe('renderScene', () => {
       },
     );
     expect(calls.some((call) => call.name === 'fillText')).toBe(false);
+  });
+});
+
+describe('missingLogoKeys', () => {
+  const logoScene: Scene = {
+    formatId: 'instagram-post',
+    backgroundId: 'deep-teal',
+    elements: [
+      {
+        ...BASE_DEFAULTS,
+        id: 'logo',
+        kind: 'logo',
+        lockup: 'horizontal',
+        left: 72,
+        top: 1100,
+        height: 90,
+        width: 90 * (1671 / 225),
+      },
+    ],
+  };
+
+  it('names the logo image the scene still needs before it can be exported', () => {
+    expect(missingLogoKeys(logoScene, { logos: {}, photos: {} })).toEqual(['horizontal-white']);
+  });
+
+  it('is empty once that image has loaded, and ignores hidden logos', () => {
+    const image = { width: 1, height: 1 } as unknown as HTMLImageElement;
+    expect(
+      missingLogoKeys(logoScene, { logos: { 'horizontal-white': image }, photos: {} }),
+    ).toEqual([]);
+    const hidden = { ...logoScene, elements: [{ ...logoScene.elements[0], hidden: true }] };
+    expect(missingLogoKeys(hidden, { logos: {}, photos: {} })).toEqual([]);
   });
 });

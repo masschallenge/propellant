@@ -92,9 +92,20 @@ const drawShape = (context: Context, element: ShapeElement) => {
   context.fillRect(0, 0, element.width, element.height);
 };
 
+export const logoKeyFor = (scene: Scene, element: LogoElement): LogoKey =>
+  `${element.lockup}-${logoTreatment(backdropFor(scene, element.id))}`;
+
+export const missingLogoKeys = (scene: Scene, assets: RenderAssets): LogoKey[] => [
+  ...new Set(
+    scene.elements
+      .filter((element): element is LogoElement => element.kind === 'logo' && !element.hidden)
+      .map((element) => logoKeyFor(scene, element))
+      .filter((key) => !assets.logos[key]),
+  ),
+];
+
 const drawLogo = (context: Context, element: LogoElement, scene: Scene, assets: RenderAssets) => {
-  const treatment = logoTreatment(backdropFor(scene, element.id));
-  const image = assets.logos[`${element.lockup}-${treatment}`];
+  const image = assets.logos[logoKeyFor(scene, element)];
   if (image) context.drawImage(image, 0, 0, element.width, element.height);
 };
 

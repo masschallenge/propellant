@@ -1,5 +1,5 @@
 import { needsMeasuring, type SampleMap } from './guardrails';
-import { renderScene, textFontFaces, type RenderAssets } from './render';
+import { missingLogoKeys, renderScene, textFontFaces, type RenderAssets } from './render';
 import { sceneFormat, type Scene } from './scene';
 import { fileNameFromLine, type MeasureText } from './text';
 
@@ -69,6 +69,11 @@ export const renderSceneToBlob = async (
   measure: MeasureText,
 ): Promise<Blob> => {
   await waitForFonts();
+  if (missingLogoKeys(scene, assets).length) {
+    throw new Error(
+      'The MassChallenge logo has not finished loading. Wait a moment and try again.',
+    );
+  }
   const format = sceneFormat(scene);
   const canvas = document.createElement('canvas');
   canvas.width = format.width;

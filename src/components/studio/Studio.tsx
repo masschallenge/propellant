@@ -103,7 +103,7 @@ const firstHeadline = (scene: Scene) =>
 export const Studio = () => {
   const fontsReady = useFontsReady();
   const measure = useMeasure(fontsReady);
-  const logos = useLogoImages();
+  const { logos, error: logoError } = useLogoImages();
   const [photos, setPhotos] = useState<PhotoAsset[]>([]);
   const [history, setHistory] = useState(() => createHistory(blankScene(DEFAULT_FORMAT_ID)));
   const [draftScene, setDraftScene] = useState<Scene | null>(null);
@@ -121,6 +121,10 @@ export const Studio = () => {
   const historyRef = useRef(history);
   historyRef.current = history;
 
+  useEffect(() => {
+    if (logoError) showToast({ title: 'Logo not loaded', body: logoError, tone: 'error' });
+  }, [logoError, showToast]);
+
   const scene = draftScene ?? history.present;
   const format = sceneFormat(scene);
   const assets = useMemo<RenderAssets>(
@@ -130,6 +134,8 @@ export const Studio = () => {
     }),
     [logos, photos],
   );
+  const assetsRef = useRef(assets);
+  assetsRef.current = assets;
   const issues = useMemo(() => checkScene(history.present, samples), [history.present, samples]);
   const selected = findElement(scene, selectedId);
   const briefPhoto = photos.find((photo) => photo.id === brief.photoId) ?? null;
@@ -425,8 +431,8 @@ export const Studio = () => {
   const download = async () => {
     setIsDownloading(true);
     try {
-      const target = history.present;
-      const blob = await renderSceneToBlob(target, assets, measure);
+      const target = historyRef.current.present;
+      const blob = await renderSceneToBlob(target, assetsRef.current, measure);
       const targetFormat = findFormat(target.formatId);
       const fileName = downloadBlob(blob, postLine || firstHeadline(target));
       showToast({
