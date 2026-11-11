@@ -1,4 +1,4 @@
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { BRAND_NEEDS, BRAND_RESOURCES, BRAND_TOOLS, FINDER } from '../../src/brand/home';
 
@@ -15,7 +15,16 @@ const pageFor = (href: string): string => {
   return candidates.find((candidate) => existsSync(candidate)) ?? '';
 };
 
-const ownPage = (href: string) => href.startsWith('#') || pageFor(href) !== '';
+const SYNCED_DOCS = readFileSync('.gitignore', 'utf8')
+  .split('\n')
+  .filter((line) => line.startsWith('src/content/docs/'))
+  .map((line) => `/${line.replace('src/content/docs/', '').replace(/\.md$/, '/')}`);
+
+const isSyncedFromAPlatform = (href: string) =>
+  SYNCED_DOCS.some((prefix) => href.split('#')[0].startsWith(prefix));
+
+const ownPage = (href: string) =>
+  href.startsWith('#') || pageFor(href) !== '' || isSyncedFromAPlatform(href);
 
 describe('the home page content', () => {
   it('leads with the brand guidelines, starting with the logo', () => {
@@ -44,9 +53,8 @@ describe('the home page content', () => {
       ...BRAND_RESOURCES,
       ...FINDER,
     ].map((entry) => entry.href);
-    brandAndToolLinks
-      .filter((href) => !href.startsWith('/web/') && !href.startsWith('/office/'))
-      .forEach((href) => expect(ownPage(href), href).toBe(true));
+    brandAndToolLinks.forEach((href) => expect(ownPage(href), href).toBe(true));
+    expect(ownPage('/no-such-page/')).toBe(false);
   });
 
   it('names actions plainly and never asks people to start with one platform', () => {
