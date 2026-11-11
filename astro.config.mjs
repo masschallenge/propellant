@@ -52,16 +52,6 @@ export default defineConfig({
               ],
             },
             {
-              label: 'iOS',
-              link: '/platforms/ios/',
-              badge: { text: 'Planned', variant: 'default' },
-            },
-            {
-              label: 'Android',
-              link: '/platforms/android/',
-              badge: { text: 'Planned', variant: 'default' },
-            },
-            {
               label: 'Office',
               items: [
                 { label: 'Overview', link: '/office/' },
