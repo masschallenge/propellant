@@ -29,7 +29,8 @@ import {
 export type Backdrop =
   | { kind: 'color'; color: BrandColor; elementId: string | null }
   | { kind: 'photo'; elementId: string }
-  | { kind: 'pattern'; pattern: PatternId; colors: BrandColor[]; elementId: null };
+  | { kind: 'pattern'; pattern: PatternId; colors: BrandColor[]; elementId: null }
+  | { kind: 'mixed'; colors: BrandColor[]; elementId: null };
 
 export type PixelSamples = ArrayLike<number>;
 
@@ -149,21 +150,66 @@ const backdropBelow = (
   };
 };
 
+const SAMPLE_FRACTIONS = [0.05, 0.5, 0.95];
+
+const samplePoints = (element: SceneElement) =>
+  SAMPLE_FRACTIONS.flatMap((fractionY) =>
+    SAMPLE_FRACTIONS.map((fractionX) => {
+      const offsetX = (fractionX - 0.5) * element.width;
+      const offsetY = (fractionY - 0.5) * element.height;
+      const angle = (element.rotation * Math.PI) / 180;
+      return {
+        horizontal:
+          element.left + element.width / 2 + offsetX * Math.cos(angle) - offsetY * Math.sin(angle),
+        vertical:
+          element.top + element.height / 2 + offsetX * Math.sin(angle) + offsetY * Math.cos(angle),
+      };
+    }),
+  );
+
+const backdropColors = (backdrop: Backdrop): BrandColor[] =>
+  backdrop.kind === 'color' ? [backdrop.color] : backdrop.kind === 'photo' ? [] : backdrop.colors;
+
+const isSameBackdrop = (first: Backdrop, second: Backdrop): boolean => {
+  if (first.kind !== second.kind || first.elementId !== second.elementId) return false;
+  const firstHexes = backdropColors(first)
+    .map((color) => color.hex)
+    .join();
+  return (
+    firstHexes ===
+    backdropColors(second)
+      .map((color) => color.hex)
+      .join()
+  );
+};
+
 export const backdropFor = (scene: Scene, elementId: string): Backdrop => {
   const index = scene.elements.findIndex((element) => element.id === elementId);
   const target = scene.elements[index];
   if (!target) return sceneBackground(scene);
-  return backdropBelow(
-    scene,
-    index,
-    target.left + target.width / 2,
-    target.top + target.height / 2,
+  const backdrops = samplePoints(target).map((point) =>
+    backdropBelow(scene, index, point.horizontal, point.vertical),
   );
+  const photo = backdrops.find((backdrop) => backdrop.kind === 'photo');
+  if (photo) return photo;
+  const [first] = backdrops;
+  if (backdrops.every((backdrop) => isSameBackdrop(backdrop, first))) return first;
+  const colors = backdrops
+    .flatMap(backdropColors)
+    .filter(
+      (color, position, all) =>
+        all.findIndex((candidate) => candidate.hex === color.hex) === position,
+    );
+  return { kind: 'mixed', colors, elementId: null };
 };
+
+const listNames = (names: string[]): string =>
+  names.length < 2 ? (names[0] ?? '') : `${names.slice(0, -1).join(', ')} and ${names.at(-1)}`;
 
 export const backdropName = (backdrop: Backdrop): string => {
   if (backdrop.kind === 'photo') return 'Photo';
   if (backdrop.kind === 'pattern') return PATTERN_NAMES[backdrop.pattern];
+  if (backdrop.kind === 'mixed') return listNames(backdrop.colors.map((color) => color.name));
   return backdrop.color.name;
 };
 
@@ -211,7 +257,7 @@ export const backdropRatio = (
   opacity = 1,
 ): number | null => {
   if (backdrop.kind === 'color') return renderedRatio(hex, backdrop.color.hex, opacity);
-  if (backdrop.kind === 'pattern') {
+  if (backdrop.kind === 'pattern' || backdrop.kind === 'mixed') {
     return Math.min(
       ...backdrop.colors.map((patternColor) => renderedRatio(hex, patternColor.hex, opacity)),
     );
@@ -333,7 +379,7 @@ const TREATMENT_HEXES: Record<LogoTreatment, string> = {
 
 export const logoTreatment = (backdrop: Backdrop): LogoTreatment => {
   if (backdrop.kind === 'photo') return 'white';
-  if (backdrop.kind === 'pattern') {
+  if (backdrop.kind === 'pattern' || backdrop.kind === 'mixed') {
     const treatments: LogoTreatment[] = ['color', 'white', 'black'];
     return (
       treatments.find(

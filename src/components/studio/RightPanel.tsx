@@ -214,6 +214,12 @@ const TextControls = ({
             Each ratio is the lower of the two pattern colors, so the words read on every triangle.
           </p>
         ) : null}
+        {backdrop.kind === 'mixed' ? (
+          <p className="m-0 text-[length:var(--type-caption-size)] text-[var(--label-secondary)]">
+            This text spans more than one background. Each ratio is the lowest across them, so every
+            word reads.
+          </p>
+        ) : null}
       </PanelSection>
       <PanelSection title="Layout">
         <SegmentedControl

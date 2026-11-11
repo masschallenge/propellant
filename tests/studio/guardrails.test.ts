@@ -233,6 +233,39 @@ describe('backdrops', () => {
     expect(measuredContrast('#1E282B', pixelsOf('#FFFFFF', 4), 0.1)).toBeLessThan(1.3);
   });
 
+  it('judges text that spans more than one background against all of them', () => {
+    const scene: Scene = {
+      formatId: 'instagram-post',
+      backgroundId: 'white',
+      elements: [
+        {
+          ...BASE_DEFAULTS,
+          id: 'panel',
+          kind: 'shape',
+          shape: 'block',
+          colorId: 'deep-teal',
+          left: 490,
+          top: 0,
+          width: 100,
+          height: 1350,
+        },
+        body({ left: 290, top: 600, width: 500, height: 60, colorId: 'white' }),
+      ],
+    };
+    const backdrop = backdropFor(scene, 'body');
+    expect(backdrop.kind).toBe('mixed');
+    if (backdrop.kind !== 'mixed') throw new Error('Expected a mixed backdrop');
+    expect(backdrop.colors.map((color) => color.id).sort()).toEqual(['deep-teal', 'white']);
+    const issues = checkScene(scene, {});
+    expect(
+      issues.some((issue) => /Deep teal and White|White and Deep teal/.test(issue.message)),
+    ).toBe(true);
+    const enforced = enforceTextColors(scene).scene.elements.find(
+      (element) => element.id === 'body',
+    ) as TextElement;
+    expect(enforced.colorId).not.toBe('white');
+  });
+
   it('looks through a fully transparent shape to the background', () => {
     const scene: Scene = {
       formatId: 'instagram-post',
