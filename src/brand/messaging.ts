@@ -1,8 +1,4 @@
-export const MESSAGING_AS_OF = '2026-11-11';
-
-export const HOME_URL = 'https://masschallenge.org/';
-
-export const ABOUT_URL = 'https://masschallenge.org/about-us/';
+export const MESSAGING_AS_OF = 'November 2026';
 
 export const PRIMARY_LINE =
   'We back the rare humans with the grit to solve the toughest challenges.';
@@ -64,10 +60,7 @@ export const APPROVED_FIGURES: ApprovedFigure[] = [
   { id: 'partners', value: '500+', label: 'Partners worldwide' },
 ];
 
-export const figureSourceLine = (): string => `As of ${MESSAGING_AS_OF}, from ${ABOUT_URL}`;
-
-export const JOBS_CONFLICT =
-  'A graphic on the website says "77K direct jobs created by alumni" while the About page says 90K jobs. Use 90K until the brand team confirms.';
+export const figureAsOfLine = (): string => `As of ${MESSAGING_AS_OF}`;
 
 export const CHALLENGE_AREAS = [
   'Healthcare and Life Sciences',
@@ -88,4 +81,4 @@ export const PRODUCT_WORDS = ['startups', 'applications', 'mentors', 'judges', '
 export const MISATTRIBUTED_LINE = 'It takes a community to raise a startup.';
 
 export const MISATTRIBUTION_NOTE =
-  'This is a founder testimonial on the home page (Rick Whittaker, CEO and CoFounder of AirShare), not a MassChallenge line. Never present it as a tagline.';
+  "This is a founder's testimonial, not a MassChallenge line. Never present it as a tagline.";

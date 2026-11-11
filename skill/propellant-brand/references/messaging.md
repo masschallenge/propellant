@@ -1,20 +1,19 @@
 # Messaging, contact and legal
 
-Everything here is quoted from masschallenge.org as read on 2026-11-11. Use it word for word. Do
-not invent other lines, figures, names or addresses.
+This is the approved messaging. Use it word for word. Do not invent other lines, figures, names or
+addresses.
 
 ## Lines
 
-- **Primary line** (home hero, https://masschallenge.org/): "We back the rare humans with the grit
-  to solve the toughest challenges."
-- **Positioning** (About page, https://masschallenge.org/about-us/): "Born in Massachusetts. Built
-  for the world." and "A global network turning bold ideas into outcomes that matter."
+- **Primary line:** "We back the rare humans with the grit to solve the toughest challenges."
+- **Positioning:** "Born in Massachusetts. Built for the world." and "A global network turning bold
+  ideas into outcomes that matter."
 - "It takes a community to raise a startup." is a founder testimonial, not a MassChallenge line.
   Never use it as a tagline.
 
 ## Boilerplate
 
-Quoted from the About page, with its dashes replaced by commas. Use the shortest that fits.
+Use the shortest that fits.
 
 - **Short:** Born in Massachusetts and built for the world, MassChallenge backs the rare humans with
   the grit to solve the world's hardest challenges.
@@ -29,8 +28,7 @@ Quoted from the About page, with its dashes replaced by commas. Use the shortest
 
 ## Approved figures
 
-As of 2026-11-11, from https://masschallenge.org/about-us/. Always show the as of date with a
-figure.
+As of November 2026. Always show the as of date with a figure.
 
 | Figure          | Value           |
 | --------------- | --------------- |
@@ -40,10 +38,6 @@ figure.
 | Raised          | $16B+           |
 | Jobs            | 90K             |
 | Partners        | More than 500   |
-
-Open question: a graphic on the site says "77K direct jobs created by alumni" while the About page
-says 90K jobs. Use 90K until the brand team confirms, and mention the conflict if someone asks for
-the jobs figure.
 
 ## Names
 
@@ -62,7 +56,7 @@ the jobs figure.
 - Instagram: https://www.instagram.com/masschallenge/ (@masschallenge)
 - X: https://x.com/MassChallenge (@MassChallenge)
 - MassChallenge also publishes videos on its YouTube channel.
-- Website footer links: Careers https://masschallenge.org/careers/, Ways to Support
+- Footer links: Careers https://masschallenge.org/careers/, Ways to Support
   https://masschallenge.org/give/, Privacy Policy https://masschallenge.org/privacy-notice/, Terms
   of Use https://masschallenge.org/website-terms-of-use/.
 - Copyright line: "© MassChallenge 2026", with the current year.

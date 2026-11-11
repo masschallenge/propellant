@@ -17,7 +17,7 @@ const ISSUE_NAME: Record<VoiceIssue['kind'], string> = {
 };
 
 const STARTER =
-  'Oops! Our robust Mass Challenge portal lets you leverage MC mentors.\nIt takes a community to raise a startup, and our alumni created 77K jobs & more.\nSubmit Application';
+  'Oops! Our robust Mass Challenge portal lets you leverage MC mentors.\nIt takes a community to raise a startup & grow it.\nSubmit Application';
 
 const VoiceChecker = () => {
   const [text, setText] = React.useState(STARTER);

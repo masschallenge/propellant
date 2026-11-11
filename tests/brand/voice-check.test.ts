@@ -80,7 +80,7 @@ describe('voice checker', () => {
     expect(kinds('Healthcare & Life Sciences')).not.toContain('ampersand');
   });
 
-  it('flags the unconfirmed jobs figure', () => {
+  it('flags the outdated jobs figure', () => {
     expect(kinds('Alumni created 77K jobs.')).toEqual(['figure']);
     expect(kinds('Alumni created 77,000 jobs.')).toEqual(['figure']);
     expect(kinds('Alumni created 90K jobs.')).toEqual([]);

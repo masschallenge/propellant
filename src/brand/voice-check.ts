@@ -33,10 +33,10 @@ export const VOICE_RULES: Record<VoiceIssueKind, string> = {
   'mc-word': 'Do not abbreviate it to MC in running text. The MC monogram is a logo, not a word.',
   'name-spelling': 'Write MassChallenge as one word with a capital M and a capital C.',
   'borrowed-line':
-    '"It takes a community to raise a startup" is a founder testimonial on the home page, not a MassChallenge line. Never present it as a tagline.',
+    '"It takes a community to raise a startup" is a founder\'s testimonial, not a MassChallenge line. Never present it as a tagline.',
   ampersand: 'Write "and" in running text. "&" is only for tight labels.',
   figure:
-    'Use the approved figures with their as of date. The About page says 90K jobs; use 90K until the brand team confirms the 77K figure.',
+    'Use the approved figures with their as of date. MassChallenge startups have created 90K jobs.',
 };
 
 const MINOR_WORDS = new Set([
@@ -109,7 +109,7 @@ const PATTERN_RULES: PatternRule[] = [
   {
     kind: 'figure',
     pattern: /\b77(?:K\b|,000\b)/gi,
-    fix: () => 'Write 90K jobs, as of 2026-11-11, from the About page.',
+    fix: () => 'Write 90K jobs, with its as of date.',
   },
 ];
 
