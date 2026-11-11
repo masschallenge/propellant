@@ -36,6 +36,11 @@ appears within a day without anyone touching this repository. To publish right a
 The workflow publishes to the `gh-pages` branch with a `CNAME` file for
 `propellant.masschallenge.org`, which is how GitHub Pages knows the address.
 
+Deploys from a merge or a run by hand post to the `#deploy-prod` Slack channel when they start, and
+again when they succeed or fail. The morning rebuild does not post. The workflow posts through a
+Slack incoming webhook for `#deploy-prod`, stored as the `SLACK_WEBHOOK_URL` repository secret.
+Without the secret it skips the post and still deploys.
+
 ## Working on the site
 
 ```bash
