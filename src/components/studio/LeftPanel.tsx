@@ -200,8 +200,8 @@ export const LeftPanel = ({
           hint="Deep teal shadows to Bright teal highlights. Not for portraits."
         />
         <p className="m-0 text-[length:var(--type-caption-size)] text-[var(--label-secondary)]">
-          Your photos stay in this browser and are never uploaded. To pick a photo from
-          masschallenge.org, download it from the photo library in the brand guide.
+          Your photos stay in this browser and are never uploaded. To use a MassChallenge photo,
+          download it from the photo library in the brand guide.
         </p>
         {libraryPhotos.length ? (
           <div className="grid grid-cols-3 gap-1.5">

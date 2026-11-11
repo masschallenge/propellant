@@ -4,7 +4,6 @@ import PhotoCheck from '../photos/PhotoCheck';
 import PhotoExamples from '../photos/PhotoExamples.astro';
 import PhotoLibrary from '../photos/PhotoLibrary';
 import { WEBSITE_PHOTOS } from '../../../brand/photo-manifest';
-import { VIDEO_RIGHTS_NOTE } from '../../../brand/video-library';
 import { WEBSITE_VIDEOS } from '../../../brand/video-manifest';
 import VideoLibrary from '../photos/VideoLibrary';
 ---
@@ -47,8 +46,8 @@ import VideoLibrary from '../photos/VideoLibrary';
       Photo library
     </h3>
     <p class="m-0 mb-5 mt-2 max-w-[68ch] text-[length:var(--type-body-size)] text-[var(--label-secondary)]">
-      The {WEBSITE_PHOTOS.length} photos shown on masschallenge.org today, read on 2026-11-11, with
-      the page each one appears on. Filter by category, and open any photo at full size.
+      {WEBSITE_PHOTOS.length} MassChallenge photos for MassChallenge work. Filter by category, and
+      open any photo at full size.
     </p>
     <PhotoLibrary client:visible />
   </div>
@@ -58,10 +57,8 @@ import VideoLibrary from '../photos/VideoLibrary';
       Video
     </h3>
     <p class="m-0 mb-5 mt-2 max-w-[68ch] text-[length:var(--type-body-size)] text-[var(--label-secondary)]">
-      The {WEBSITE_VIDEOS.length} videos on masschallenge.org, read on 2026-11-11: embedded on its
-      pages or uploaded to its media library. Each one opens where it lives; nothing plays here.
-      Titles that were missing or unclear are labelled as they are, not renamed. {VIDEO_RIGHTS_NOTE}
+      {WEBSITE_VIDEOS.length} MassChallenge videos. Each one opens on YouTube.
     </p>
-    <VideoLibrary client:visible />
+    <VideoLibrary />
   </div>
 </section>
