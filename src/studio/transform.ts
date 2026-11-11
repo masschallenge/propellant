@@ -29,7 +29,7 @@ export const moveElement = (
 const growsLeft = (handle: HandleId) => handle === 'left' || handle.endsWith('-left');
 const growsUp = (handle: HandleId) => handle.startsWith('top');
 
-export const resizeElement = (
+const resizeUnrotated = (
   element: SceneElement,
   handle: HandleId,
   deltaX: number,
@@ -64,6 +64,56 @@ export const resizeElement = (
   const height = Math.max(minimum, element.height + heightChange);
   const top = growsUp(handle) ? bottom - height : element.top;
   return { ...element, width, height, left, top };
+};
+
+const rotatePoint = (horizontal: number, vertical: number, degrees: number) => {
+  const angle = (degrees * Math.PI) / 180;
+  return {
+    horizontal: horizontal * Math.cos(angle) - vertical * Math.sin(angle),
+    vertical: horizontal * Math.sin(angle) + vertical * Math.cos(angle),
+  };
+};
+
+const oppositeAnchor = (element: SceneElement, handle: HandleId) => {
+  const horizontal = growsLeft(handle) ? element.width : 0;
+  const isSide = handle === 'left' || handle === 'right';
+  const vertical = isSide ? element.height / 2 : growsUp(handle) ? element.height : 0;
+  const fromCenter = rotatePoint(
+    horizontal - element.width / 2,
+    vertical - element.height / 2,
+    element.rotation,
+  );
+  return {
+    horizontal: element.left + element.width / 2 + fromCenter.horizontal,
+    vertical: element.top + element.height / 2 + fromCenter.vertical,
+  };
+};
+
+export const resizeElement = (
+  element: SceneElement,
+  handle: HandleId,
+  deltaX: number,
+  deltaY: number,
+  format: PostFormat,
+  measure: MeasureText,
+): SceneElement => {
+  if (!element.rotation) return resizeUnrotated(element, handle, deltaX, deltaY, format, measure);
+  const local = rotatePoint(deltaX, deltaY, -element.rotation);
+  const resized = resizeUnrotated(
+    element,
+    handle,
+    local.horizontal,
+    local.vertical,
+    format,
+    measure,
+  );
+  const before = oppositeAnchor(element, handle);
+  const after = oppositeAnchor(resized, handle);
+  return {
+    ...resized,
+    left: resized.left + before.horizontal - after.horizontal,
+    top: resized.top + before.vertical - after.vertical,
+  };
 };
 
 export const NUDGE_UNITS = 2;

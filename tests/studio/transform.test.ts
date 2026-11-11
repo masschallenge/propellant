@@ -3,6 +3,7 @@ import { findFormat } from '../../src/studio/formats';
 import {
   BASE_DEFAULTS,
   type ImageElement,
+  type ShapeElement,
   type LogoElement,
   type TextElement,
 } from '../../src/studio/scene';
@@ -90,5 +91,51 @@ describe('transform', () => {
     expect(nudgeDistance(format, false)).toBe(6);
     expect(nudgeDistance(format, true)).toBe(30);
     expect(scaleAroundCenter(image, 200, 150)).toMatchObject({ left: 200, top: 175 });
+  });
+});
+
+describe('resizing a rotated element', () => {
+  const block: ShapeElement = {
+    ...BASE_DEFAULTS,
+    id: 'block',
+    kind: 'shape',
+    shape: 'block',
+    colorId: 'deep-teal',
+    rotation: 90,
+    left: 100,
+    top: 100,
+    width: 400,
+    height: 100,
+  };
+
+  const worldPoint = (element: ShapeElement, horizontal: number, vertical: number) => {
+    const angle = (element.rotation * Math.PI) / 180;
+    const offsetX = horizontal - element.width / 2;
+    const offsetY = vertical - element.height / 2;
+    return {
+      horizontal:
+        element.left + element.width / 2 + offsetX * Math.cos(angle) - offsetY * Math.sin(angle),
+      vertical:
+        element.top + element.height / 2 + offsetX * Math.sin(angle) + offsetY * Math.cos(angle),
+    };
+  };
+
+  it('grows along the element when its right handle is dragged the way it now points', () => {
+    const resized = resizeElement(block, 'right', 0, 100, format, fakeMeasure) as ShapeElement;
+    expect(resized.width).toBeCloseTo(500);
+    expect(resized.height).toBeCloseTo(100);
+  });
+
+  it('keeps the opposite edge where it was', () => {
+    const before = worldPoint(block, 0, block.height / 2);
+    const resized = resizeElement(block, 'right', 0, 100, format, fakeMeasure) as ShapeElement;
+    const after = worldPoint(resized, 0, resized.height / 2);
+    expect(after.horizontal).toBeCloseTo(before.horizontal);
+    expect(after.vertical).toBeCloseTo(before.vertical);
+  });
+
+  it('ignores movement across the element on a side handle', () => {
+    const resized = resizeElement(block, 'right', 100, 0, format, fakeMeasure) as ShapeElement;
+    expect(resized.width).toBeCloseTo(400);
   });
 });
