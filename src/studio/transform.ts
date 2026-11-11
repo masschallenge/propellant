@@ -54,9 +54,16 @@ const resizeUnrotated = (
   if (element.kind === 'logo' || (element.kind === 'image' && isCorner)) {
     const ratio =
       element.kind === 'logo' ? LOGO_ASPECT[element.lockup] : element.width / element.height;
-    const height = width / ratio;
+    const heightChange = growsUp(handle) ? -deltaY : deltaY;
+    const widthFromHeight = (element.height + heightChange) * ratio;
+    const scaledWidth =
+      isCorner && Math.abs(widthFromHeight - element.width) > Math.abs(width - element.width)
+        ? Math.max(smallest, widthFromHeight)
+        : width;
+    const height = scaledWidth / ratio;
+    const scaledLeft = growsLeft(handle) ? right - scaledWidth : element.left;
     const top = growsUp(handle) ? bottom - height : element.top;
-    const resized = { ...element, width, height, left, top };
+    const resized = { ...element, width: scaledWidth, height, left: scaledLeft, top };
     return resized.kind === 'logo' ? constrainLogo(resized, format) : resized;
   }
   if (!isCorner) return { ...element, width, left };

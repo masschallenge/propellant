@@ -139,3 +139,20 @@ describe('resizing a rotated element', () => {
     expect(resized.width).toBeCloseTo(400);
   });
 });
+
+describe('resizing photos and logos from a corner', () => {
+  it('follows a straight down drag and keeps the shape', () => {
+    const resized = resizeElement(image, 'bottom-right', 0, 150, format, fakeMeasure);
+    expect(resized.height).toBeCloseTo(image.height + 150);
+    expect(resized.width / resized.height).toBeCloseTo(image.width / image.height);
+    expect(resized.left).toBe(image.left);
+    expect(resized.top).toBe(image.top);
+  });
+
+  it('grows upward from a top corner and keeps the bottom edge in place', () => {
+    const resized = resizeElement(image, 'top-left', 0, -150, format, fakeMeasure);
+    expect(resized.height).toBeCloseTo(image.height + 150);
+    expect(resized.top + resized.height).toBeCloseTo(image.top + image.height);
+    expect(resized.left + resized.width).toBeCloseTo(image.left + image.width);
+  });
+});
