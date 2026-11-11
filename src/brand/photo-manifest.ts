@@ -144,7 +144,7 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 866,
     height: 934,
     category: 'community',
-    credit: 'Anne-Laure Lechat (from the file name)',
+    credit: 'Anne-Laure Lechat',
   },
   {
     id: 'dsc09470-web-a-l-lechat-2-scaled-e1737069599990',
@@ -153,7 +153,7 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 883,
     height: 875,
     category: 'community',
-    credit: 'Anne-Laure Lechat (from the file name)',
+    credit: 'Anne-Laure Lechat',
   },
   {
     id: 'afl-pitch-square-1024x926',
@@ -218,7 +218,7 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 2560,
     height: 1920,
     category: 'community',
-    credit: 'Anne-Laure Lechat (from the file name)',
+    credit: 'Anne-Laure Lechat',
   },
   {
     id: 'dsc08158-md-anne-laure-lechat-scaled',
@@ -227,7 +227,7 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 2560,
     height: 1920,
     category: 'community',
-    credit: 'Anne-Laure Lechat (from the file name)',
+    credit: 'Anne-Laure Lechat',
   },
   {
     id: 'dsc08265-md-anne-laure-lechat-scaled',
@@ -236,7 +236,7 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 2560,
     height: 1920,
     category: 'community',
-    credit: 'Anne-Laure Lechat (from the file name)',
+    credit: 'Anne-Laure Lechat',
   },
   {
     id: 'mcuk-2025-awards-group-large-1024x682',
@@ -277,7 +277,7 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 768,
     height: 383,
     category: 'community',
-    credit: 'Anne-Laure Lechat (from the file name)',
+    credit: 'Anne-Laure Lechat',
   },
   {
     id: 'impact00131-3',
@@ -382,7 +382,7 @@ export const WEBSITE_PHOTOS: LibraryPhoto[] = [
     width: 1536,
     height: 1024,
     category: 'founders-at-work',
-    credit: 'Peter Morenus, UConn (shown on the image)',
+    credit: 'Peter Morenus, UConn',
   },
   {
     id: 'mc-mexico-1024x648',
