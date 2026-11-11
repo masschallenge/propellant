@@ -188,6 +188,51 @@ describe('backdrops', () => {
     expect(text.colorId).not.toBe('white');
   });
 
+  it('follows a rotated shape to where it is drawn', () => {
+    const scene: Scene = {
+      formatId: 'instagram-post',
+      backgroundId: 'white',
+      elements: [
+        {
+          ...BASE_DEFAULTS,
+          id: 'panel',
+          kind: 'shape',
+          shape: 'block',
+          colorId: 'deep-teal',
+          rotation: 90,
+          left: 0,
+          top: 600,
+          width: 1080,
+          height: 100,
+        },
+        body({ left: 0, top: 620, width: 100, height: 60 }),
+        body({ id: 'middle', left: 500, top: 620, width: 80, height: 60 }),
+      ],
+    };
+    expect(backdropFor(scene, 'body')).toMatchObject({ kind: 'color', elementId: null });
+    expect(backdropFor(scene, 'middle')).toMatchObject({ kind: 'color', elementId: 'panel' });
+  });
+
+  it('judges faded text by the color it is drawn in', () => {
+    const scene: Scene = {
+      formatId: 'instagram-post',
+      backgroundId: 'white',
+      elements: [body({ colorId: 'ink', opacity: 0.1 })],
+    };
+    const issues = checkScene(scene, {});
+    expect(issues.some((issue) => /at 10% opacity/.test(issue.message))).toBe(true);
+    const ink = textColorOptions(
+      { kind: 'color', color: findColor('white'), elementId: null },
+      'body',
+      'body',
+      undefined,
+      0.1,
+    ).find((option) => option.color.id === 'ink');
+    expect(ink?.allowed).toBe(false);
+    expect(ink?.ratio).toBeLessThan(1.3);
+    expect(measuredContrast('#1E282B', pixelsOf('#FFFFFF', 4), 0.1)).toBeLessThan(1.3);
+  });
+
   it('looks through a fully transparent shape to the background', () => {
     const scene: Scene = {
       formatId: 'instagram-post',

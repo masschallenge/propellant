@@ -35,7 +35,25 @@ export type PixelSamples = ArrayLike<number>;
 
 export type SampleMap = Record<string, PixelSamples | undefined>;
 
-const containsPoint = (element: SceneElement, horizontal: number, vertical: number): boolean => {
+const toLocalPoint = (
+  element: SceneElement,
+  horizontal: number,
+  vertical: number,
+): { horizontal: number; vertical: number } => {
+  if (!element.rotation) return { horizontal, vertical };
+  const centerX = element.left + element.width / 2;
+  const centerY = element.top + element.height / 2;
+  const angle = (-element.rotation * Math.PI) / 180;
+  const offsetX = horizontal - centerX;
+  const offsetY = vertical - centerY;
+  return {
+    horizontal: centerX + offsetX * Math.cos(angle) - offsetY * Math.sin(angle),
+    vertical: centerY + offsetX * Math.sin(angle) + offsetY * Math.cos(angle),
+  };
+};
+
+const containsPoint = (element: SceneElement, pointX: number, pointY: number): boolean => {
+  const { horizontal, vertical } = toLocalPoint(element, pointX, pointY);
   if (element.kind === 'shape' && element.shape === 'circle') {
     const radiusX = element.width / 2;
     const radiusY = element.height / 2;
@@ -157,14 +175,12 @@ export const formatRatio = (ratio: number): string =>
 
 export const PHOTO_PERCENTILE = 0.1;
 
-export const measuredContrast = (hex: string, pixels: PixelSamples): number | null => {
-  const textLuminance = relativeLuminance(hex);
+export const measuredContrast = (hex: string, pixels: PixelSamples, opacity = 1): number | null => {
   const ratios: number[] = [];
   for (let offset = 0; offset + 3 < pixels.length; offset += 4) {
     if (pixels[offset + 3] === 0) continue;
-    const pixelHex = `#${[pixels[offset], pixels[offset + 1], pixels[offset + 2]]
-      .map((channel) => Math.round(channel).toString(16).padStart(2, '0'))
-      .join('')}`;
+    const pixelHex = toHex([pixels[offset], pixels[offset + 1], pixels[offset + 2]]);
+    const textLuminance = relativeLuminance(opacity < 1 ? blendOver(hex, pixelHex, opacity) : hex);
     const pixelLuminance = relativeLuminance(pixelHex);
     const lighter = Math.max(textLuminance, pixelLuminance);
     const darker = Math.min(textLuminance, pixelLuminance);
@@ -185,14 +201,22 @@ export interface TextColorOption {
 const sizeWords = (roleId: TextRoleId, sizeId: SizeStepId): string =>
   isLargeText(roleId, sizeId) ? 'Large text' : 'Text this size';
 
+const renderedRatio = (hex: string, backdropHex: string, opacity: number): number =>
+  contrastRatio(opacity < 1 ? blendOver(hex, backdropHex, opacity) : hex, backdropHex);
+
 export const backdropRatio = (
   hex: string,
   backdrop: Backdrop,
   samples?: PixelSamples,
+  opacity = 1,
 ): number | null => {
-  if (backdrop.kind === 'color') return contrastRatio(hex, backdrop.color.hex);
-  if (backdrop.kind === 'pattern') return lowestRatio(hex, backdrop.colors);
-  return samples ? measuredContrast(hex, samples) : null;
+  if (backdrop.kind === 'color') return renderedRatio(hex, backdrop.color.hex, opacity);
+  if (backdrop.kind === 'pattern') {
+    return Math.min(
+      ...backdrop.colors.map((patternColor) => renderedRatio(hex, patternColor.hex, opacity)),
+    );
+  }
+  return samples ? measuredContrast(hex, samples, opacity) : null;
 };
 
 export const textColorOptions = (
@@ -200,10 +224,12 @@ export const textColorOptions = (
   roleId: TextRoleId,
   sizeId: SizeStepId,
   samples?: PixelSamples,
+  opacity = 1,
 ): TextColorOption[] => {
   const required = requiredContrast(roleId, sizeId);
+  const faded = opacity < 1 ? ` at ${Math.round(opacity * 100)}% opacity` : '';
   return BRAND_COLORS.map((color) => {
-    const ratio = backdropRatio(color.hex, backdrop, samples);
+    const ratio = backdropRatio(color.hex, backdrop, samples, opacity);
     const reservation = textReservation(color.id);
     if (reservation) return { color, ratio, allowed: false, reason: reservation };
     if (ratio !== null && ratio < required) {
@@ -213,7 +239,7 @@ export const textColorOptions = (
         color,
         ratio,
         allowed: false,
-        reason: `Only ${formatRatio(ratio)} ${measured}. ${sizeWords(roleId, sizeId)} needs ${required}:1.`,
+        reason: `Only ${formatRatio(ratio)} ${measured}${faded}. ${sizeWords(roleId, sizeId)} needs ${required}:1.`,
       };
     }
     return { color, ratio, allowed: true, reason: null };
@@ -261,7 +287,13 @@ export const optionsForText = (
   samples: SampleMap,
 ): TextColorOption[] => {
   const backdrop = backdropFor(scene, element.id);
-  return textColorOptions(backdrop, element.role, element.size, samples[element.id]);
+  return textColorOptions(
+    backdrop,
+    element.role,
+    element.size,
+    samples[element.id],
+    element.opacity,
+  );
 };
 
 export const enforceTextColors = (
@@ -378,14 +410,21 @@ const textIssues = (scene: Scene, element: TextElement, samples: SampleMap): Bra
     issues.push({ elementId: element.id, message: `${name}: ${reservation}` });
   } else {
     const backdrop = backdropFor(scene, element.id);
-    const ratio = backdropRatio(findColor(element.colorId).hex, backdrop, samples[element.id]);
+    const ratio = backdropRatio(
+      findColor(element.colorId).hex,
+      backdrop,
+      samples[element.id],
+      element.opacity,
+    );
     const required = requiredContrast(element.role, element.size);
     if (ratio !== null && ratio < required) {
       const where =
         backdrop.kind === 'photo' ? 'measured on the photo' : `on ${backdropName(backdrop)}`;
       issues.push({
         elementId: element.id,
-        message: `${name} is ${formatRatio(ratio)} ${where}, it needs ${required}:1.`,
+        message: `${name} is ${formatRatio(ratio)} ${where}${
+          element.opacity < 1 ? ` at ${Math.round(element.opacity * 100)}% opacity` : ''
+        }, it needs ${required}:1.`,
       });
     }
   }
