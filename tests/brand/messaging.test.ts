@@ -1,17 +1,15 @@
 import { describe, expect, it } from 'vitest';
 import {
-  ABOUT_URL,
   ACCELERATORS,
   APPROVED_FIGURES,
   AUDIENCES,
   BOILERPLATES,
   CHALLENGE_AREAS,
-  JOBS_CONFLICT,
   MESSAGING_AS_OF,
   POSITIONING,
   PRIMARY_LINE,
   findBoilerplate,
-  figureSourceLine,
+  figureAsOfLine,
   wordCount,
 } from '../../src/brand/messaging';
 
@@ -19,11 +17,10 @@ const everything = [
   PRIMARY_LINE,
   ...POSITIONING,
   ...BOILERPLATES.map((boilerplate) => boilerplate.text),
-  JOBS_CONFLICT,
 ].join('\n');
 
 describe('the messaging standard', () => {
-  it('quotes the primary line from the home hero', () => {
+  it('states the primary line', () => {
     expect(PRIMARY_LINE).toBe(
       'We back the rare humans with the grit to solve the toughest challenges.',
     );
@@ -43,15 +40,15 @@ describe('the messaging standard', () => {
     const long = findBoilerplate('long').text;
     ['2009', '5,000', '$16B+', '90K', '500'].forEach((figure) => expect(long).toContain(figure));
     expect(APPROVED_FIGURES.map((figure) => figure.value)).toContain('90K');
-    expect(everything).not.toMatch(/77K jobs\./);
+    expect(everything).not.toMatch(/77K/);
   });
 
-  it('shows the date and source with every figure', () => {
-    expect(MESSAGING_AS_OF).toBe('2026-11-11');
-    expect(figureSourceLine()).toBe(`As of 2026-11-11, from ${ABOUT_URL}`);
+  it('dates every figure without citing another site', () => {
+    expect(MESSAGING_AS_OF).toBe('November 2026');
+    expect(figureAsOfLine()).toBe('As of November 2026');
   });
 
-  it('lists the areas, accelerators and audiences from the website', () => {
+  it('lists the areas, accelerators and audiences', () => {
     expect(CHALLENGE_AREAS).toHaveLength(5);
     expect(CHALLENGE_AREAS.join(' ')).not.toContain('&');
     expect(ACCELERATORS).toEqual(['Traction', 'Challenge', 'Breakthrough Bio']);

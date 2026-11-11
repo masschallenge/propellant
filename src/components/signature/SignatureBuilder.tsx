@@ -178,7 +178,7 @@ const SignatureBuilder = () => {
         </div>
         <PopUpButton
           label="Office address"
-          hint="Optional. The addresses are the offices listed on the MassChallenge About page."
+          hint="Optional. Pick the MassChallenge office you work from."
           value={fields.office}
           onChange={(office) => updateField('office', office as SignatureOffice)}
           options={SIGNATURE_OFFICES.map((office) => ({ value: office.id, label: office.label }))}

@@ -1,13 +1,13 @@
 # Voice
 
 MassChallenge sounds bold and ambitious, founder first, and about outcomes and access. Our primary
-line, from the website's home hero, is "We back the rare humans with the grit to solve the toughest
+line is "We back the rare humans with the grit to solve the toughest
 challenges." Everything we write should sound like the same people: direct, plain spoken and on the
 side of the founders we back. For the positioning, boilerplate, approved figures and names, read
 [messaging.md](messaging.md).
 
-"It takes a community to raise a startup." is a founder testimonial on our home page (Rick
-Whittaker, CEO and CoFounder of AirShare), not a MassChallenge line. Never present it as a tagline.
+"It takes a community to raise a startup." is a founder's testimonial, not a
+MassChallenge line. Never present it as a tagline.
 
 ## Rules
 
@@ -18,8 +18,7 @@ Whittaker, CEO and CoFounder of AirShare), not a MassChallenge line. Never prese
   empower or best in class. No exclamation marks.
 - **Use the community's words:** programs, startups, founders, applications, mentors, judges,
   partners, cohorts. A mentor or judge is one kind of expert.
-- **No buzzwords from the website either:** the site uses "leverage" once and uses em dashes; the
-  standard drops both.
+- **No dashes:** use commas, colons, parentheses or periods instead of em or en dashes.
 - **Sentence case** for every title, heading, label and button. Capitals only in Oswald headlines.
 - **Buttons say what happens:** "Save changes", "Submit application", "Download the template".
 - **When something goes wrong,** say what happened and how to fix it, without apologizing or
@@ -27,7 +26,7 @@ Whittaker, CEO and CoFounder of AirShare), not a MassChallenge line. Never prese
 - **Punctuation:** commas, colons and periods. Never em dashes or en dashes; rewrite the sentence
   instead. Use real quotation marks and apostrophes.
 - **Facts:** never invent statistics, quotes, names, dates or results. Use what the person gave
-  you, cite sources, and say plainly when something is not known.
+  you, cite sources, and say plainly when you do not know something.
 
 ## Headlines
 

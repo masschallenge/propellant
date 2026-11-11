@@ -1,20 +1,17 @@
 import { Badge, Banner, Button } from '@masschallenge/propellant-web';
 import {
-  ABOUT_URL,
   ACCELERATORS,
   APPROVED_FIGURES,
   AUDIENCES,
   BOILERPLATES,
   CHALLENGE_AREAS,
-  HOME_URL,
-  JOBS_CONFLICT,
-  MESSAGING_AS_OF,
   MISATTRIBUTED_LINE,
   MISATTRIBUTION_NOTE,
   PARTNERSHIP_OFFER,
   POSITIONING,
   PRIMARY_LINE,
   PRODUCT_WORDS,
+  figureAsOfLine,
   wordCount,
 } from '../../../brand/messaging';
 import { CopyIcon } from '../logo/icons';
@@ -25,8 +22,6 @@ const CARD =
 
 const EYEBROW =
   'm-0 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[0.08em] text-[var(--label-secondary)]';
-
-const SOURCE_LINK = 'text-[var(--tint)] underline-offset-4 hover:underline';
 
 interface CopyButtonProps {
   label: string;
@@ -79,13 +74,6 @@ const Messaging = () => {
           <p className="m-0 font-[family-name:var(--type-family-brand)] text-[clamp(1.6rem,3.4vw,2.4rem)] font-medium uppercase leading-[1.05]">
             {PRIMARY_LINE}
           </p>
-          <p className="m-0 text-[length:var(--type-footnote-size)] text-[var(--teal-100)]">
-            From the{' '}
-            <a href={HOME_URL} className="text-[var(--gray-0)] underline underline-offset-4">
-              home page hero
-            </a>
-            .
-          </p>
           <div data-theme="dark" className="bg-transparent">
             <Button
               size="sm"
@@ -109,13 +97,6 @@ const Messaging = () => {
               </li>
             ))}
           </ul>
-          <p className="m-0 text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">
-            From the{' '}
-            <a href={ABOUT_URL} className={SOURCE_LINK}>
-              About page
-            </a>
-            .
-          </p>
           <div className="mt-auto">
             <CopyButton
               label="Copy the positioning"
@@ -130,12 +111,7 @@ const Messaging = () => {
           Boilerplate
         </h4>
         <p className="m-0 mb-4 max-w-[68ch] text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
-          Quoted from the{' '}
-          <a href={ABOUT_URL} className={SOURCE_LINK}>
-            About page
-          </a>
-          , with its dashes replaced by commas. Each length adds to the one before it. Pick the
-          shortest one that fits.
+          Each length adds to the one before it. Pick the shortest one that fits.
         </p>
         <div className="grid gap-4 lg:grid-cols-3">
           {BOILERPLATES.map((boilerplate) => (
@@ -169,11 +145,7 @@ const Messaging = () => {
           Approved figures
         </h4>
         <p className="m-0 mb-4 max-w-[68ch] text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
-          As of {MESSAGING_AS_OF}, from the{' '}
-          <a href={ABOUT_URL} className={SOURCE_LINK}>
-            About page
-          </a>
-          . Always show the as of date with a figure.
+          {figureAsOfLine()}. Always show the as of date with a figure.
         </p>
         <dl className="m-0 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
           {APPROVED_FIGURES.map((figure) => (
@@ -190,26 +162,23 @@ const Messaging = () => {
             </div>
           ))}
         </dl>
-        <Banner tone="info" title="Open question: 77K or 90K jobs" className="mt-4">
-          {JOBS_CONFLICT}
-        </Banner>
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
         <WordList
           title="Challenge Areas"
           words={CHALLENGE_AREAS}
-          note='From the website navigation. Write "and" in running text; "&" only in tight labels, as the home hero does.'
+          note='Write "and" in running text, and "&" only in tight labels.'
         />
         <WordList
           title="Accelerators"
           words={ACCELERATORS}
-          note={`From "Our accelerators" in the website navigation. ${PARTNERSHIP_OFFER} is the partnership offer.`}
+          note={`${PARTNERSHIP_OFFER} is the partnership offer.`}
         />
         <WordList
           title="Audiences"
           words={AUDIENCES}
-          note={`The website's "Our network". In products, keep the words people use there: ${PRODUCT_WORDS.join(', ')}. A mentor or judge is one kind of expert.`}
+          note={`The people in our network. In products, keep the words people use there: ${PRODUCT_WORDS.join(', ')}. A mentor or judge is one kind of expert.`}
         />
       </div>
 
