@@ -133,7 +133,6 @@
     }
   ],
   "print": {
-    "cmyk": "CMYK values are calculated from the sRGB values with the Artifex CMYK SWOP profile (US web coated), relative colorimetric intent, rounded to whole percent. Check a printed proof before a large run.",
-    "pantone": "Pantone matches are not set; print from the CMYK values."
+    "cmyk": "CMYK values are calculated from the sRGB values with the Artifex CMYK SWOP profile (US web coated), relative colorimetric intent, rounded to whole percent. Check a printed proof before a large run."
   }
 }

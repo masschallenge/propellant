@@ -54,10 +54,10 @@ describe('one source for the colors', () => {
     expect(formatCmyk(BRAND_COLORS[0].cmyk)).toBe('100, 64, 53, 50');
   });
 
-  it('explains the print values and sets no Pantone matches', () => {
+  it('explains the print values and gives CMYK only', () => {
     expect(PRINT_NOTES.cmyk).toMatch(/Artifex CMYK SWOP profile/);
     expect(PRINT_NOTES.cmyk).toMatch(/printed proof/);
-    expect(PRINT_NOTES.pantone).toBe('Pantone matches are not set; print from the CMYK values.');
+    expect(JSON.stringify(colorData)).not.toMatch(/pantone/i);
   });
 
   it('adds the two supporting neutrals from the Propellant tokens', () => {

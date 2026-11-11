@@ -6,7 +6,6 @@ export interface GraphicExample {
   alt: string;
   width: number;
   height: number;
-  page: string;
   isOnDark?: boolean;
 }
 
@@ -32,7 +31,7 @@ const ratioText = (foreground: string, background: string): string =>
   `${(Math.floor(contrastRatio(findColor(foreground).hex, findColor(background).hex) * 10) / 10).toFixed(1)}:1`;
 
 export const patternLabelNote = (): string =>
-  `White on Bright teal is only ${ratioText('white', 'bright-teal')}, below the 3:1 that even large text needs, so the white label on the website does not pass. Set the label in Ink (${ratioText('ink', 'bright-teal')} on Bright teal, ${ratioText('ink', 'pale-teal')} on Pale teal), or put it on a solid Deep teal panel.`;
+  `Set the label in Ink (${ratioText('ink', 'bright-teal')} on Bright teal, ${ratioText('ink', 'pale-teal')} on Pale teal), or in White on a solid Deep teal panel (${ratioText('white', 'deep-teal')}). Never set it in White straight on the triangles: White on Bright teal is only ${ratioText('white', 'bright-teal')}, below the 3:1 that even large text needs.`;
 
 export const GRAPHIC_DEVICES: GraphicDevice[] = [
   {
@@ -73,51 +72,22 @@ export const GRAPHIC_DEVICES: GraphicDevice[] = [
     id: 'stat-callout',
     name: 'Stat callouts',
     description: 'A large number with a short label in capitals.',
-    use: 'One figure that matters, with its as of date and source.',
-    note: 'The website sets these numbers in crimson. In new work use Deep teal on light backgrounds and Bright teal on dark ones. Never Magenta: it only ever means something is wrong. The 77K jobs graphic conflicts with the About page, which says 90K; use 90K until the brand team confirms.',
+    use: 'One figure that matters, with its as of date.',
+    note: 'Set the number in Deep teal on light backgrounds and Bright teal on dark ones, and the label in Ink or White. Never Magenta: it only ever means something is wrong.',
   },
   {
     id: 'timeline',
     name: 'Program timelines',
-    description: 'Dots on a line, with dates above and below.',
+    description: 'Dots on a line, with each step above or below its dot.',
     use: 'Program and application dates.',
-    note: 'Color the dots in the chart order rather than the orange, purple and green the website uses today.',
+    note: 'Color the dots in the chart order: Teal, Yellow, Slate, Bright teal, Deep teal, Gray 300. The words beside each dot carry the meaning, so the colors never have to.',
   },
   {
     id: 'icons',
     name: 'Icons',
     description:
-      'Single color line icons (Noun Project), in Teal on light backgrounds and Bright teal on dark ones.',
-    use: 'Labels for areas, steps and features, as in the FinTech stats graphic above.',
-    note: 'The Noun Project licence MassChallenge holds is not known. It needs confirming before new icons are used.',
-  },
-];
-
-export interface OffPaletteMapping {
-  seen: string;
-  swatches: string[];
-  where: string;
-  useInstead: string;
-}
-
-export const OFF_PALETTE_MAPPINGS: OffPaletteMapping[] = [
-  {
-    seen: '#00708E, #00BBC3, #5CE1E6 and #0EABBC',
-    swatches: ['#00708E', '#00BBC3', '#5CE1E6', '#0EABBC'],
-    where: 'Icon tints',
-    useInstead: 'Teal or Bright teal',
-  },
-  {
-    seen: 'Crimson',
-    swatches: [],
-    where: 'Stat numbers',
-    useInstead: 'Deep teal on light, Bright teal on dark. Never Magenta, which means wrong.',
-  },
-  {
-    seen: 'Orange, purple and green',
-    swatches: [],
-    where: 'Timeline dots',
-    useInstead: 'The chart order: Teal, Yellow, Slate, Bright teal, Deep teal, Gray 300',
+      'Single color line icons with rounded ends, in Teal on light backgrounds and Bright teal on dark ones.',
+    use: 'Labels for areas, steps and features, always beside a word.',
   },
 ];
 

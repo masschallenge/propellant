@@ -87,7 +87,11 @@ describe('the skill references', () => {
     [...colors.brandColors, ...colors.supportingColors, ...colors.logoColors].forEach((color) => {
       expect(graphics).toMatch(new RegExp(`\`${color.hex}\`\\s*\\|\\s*${color.cmyk.join(' ')}\\s`));
     });
-    expect(graphics).toContain('Pantone matches are not set; print from the CMYK values.');
+    expect(graphics).not.toMatch(/pantone/i);
+  });
+
+  it('tells Claude never to suggest Pantone', () => {
+    expect(skill).toContain('Never suggest or quote Pantone colors.');
   });
 
   it('uses the settled Mist and Magenta values', () => {

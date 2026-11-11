@@ -1,7 +1,7 @@
 ---
-import { GRAPHIC_DEVICES, OFF_PALETTE_MAPPINGS } from '../../../brand/graphic-devices';
+import { GRAPHIC_DEVICES } from '../../../brand/graphic-devices';
 import { GRAPHIC_EXAMPLES } from '../../../brand/graphic-examples';
-import { pagePath, WEBSITE_RIGHTS_NOTE } from '../../../brand/photo-library';
+import DeviceExample from './DeviceExample.astro';
 ---
 
 <div class="flex flex-col gap-6">
@@ -51,72 +51,15 @@ import { pagePath, WEBSITE_RIGHTS_NOTE } from '../../../brand/photo-library';
                         class="block max-h-full w-full object-contain"
                       />
                     </div>
-                    <figcaption class="text-[length:var(--type-caption-size)] text-[var(--label-secondary)]">
-                      On{' '}
-                      <a
-                        href={example.page}
-                        class="break-all text-[var(--tint)] underline-offset-4 hover:underline"
-                      >
-                        {pagePath(example.page)}
-                      </a>
-                    </figcaption>
                   </figure>
                 </li>
               ))}
             </ul>
           ) : (
-            <div class="flex items-center justify-center rounded-[var(--corner-lg)] border border-dashed border-[var(--separator-strong)] p-6 text-center text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
-              No separate example yet. Icons appear in the FinTech stats graphic under Stat callouts.
-            </div>
+            <DeviceExample deviceId={device.id} />
           )}
         </article>
       );
     })
   }
-
-  <p class="m-0 max-w-[68ch] text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">
-    Examples load from masschallenge.org, read on 2026-11-11. {WEBSITE_RIGHTS_NOTE}
-  </p>
-
-  <div id="off-palette" class="scroll-mt-28">
-    <h4 class="m-0 mb-1 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">
-      Colors on the website that are off the palette
-    </h4>
-    <p class="m-0 mb-3 max-w-[68ch] text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
-      Map these to the palette when those pages are redone.
-    </p>
-    <div class="overflow-x-auto rounded-[var(--corner-xl)] border border-solid border-[var(--separator)]">
-      <table class="w-full border-collapse text-left text-[length:var(--type-callout-size)]">
-        <thead class="bg-[var(--bg-secondary)] text-[var(--label)]">
-          <tr>
-            <th scope="col" class="p-3 font-semibold">Seen on the website</th>
-            <th scope="col" class="p-3 font-semibold">Where</th>
-            <th scope="col" class="p-3 font-semibold">Use instead</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            OFF_PALETTE_MAPPINGS.map((mapping) => (
-              <tr class="border-0 border-t border-solid border-[var(--separator)] align-top">
-                <td class="p-3 text-[var(--label)]">
-                  <span class="flex flex-wrap items-center gap-1.5">
-                    {mapping.swatches.map((swatch) => (
-                      <span
-                        aria-hidden="true"
-                        class="inline-block h-4 w-4 rounded-[var(--corner-sm)] border border-solid border-[var(--separator-strong)]"
-                        style={`background: ${swatch}`}
-                      />
-                    ))}
-                    <span>{mapping.seen}</span>
-                  </span>
-                </td>
-                <td class="p-3 text-[var(--label-secondary)]">{mapping.where}</td>
-                <td class="p-3 text-[var(--label)]">{mapping.useInstead}</td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
-    </div>
-  </div>
 </div>

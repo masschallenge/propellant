@@ -188,7 +188,7 @@ const ColorCards = () => {
       </div>
 
       <p className="m-0 mt-4 max-w-[68ch] text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">
-        {PRINT_NOTES.cmyk} {PRINT_NOTES.pantone}
+        {PRINT_NOTES.cmyk}
       </p>
 
       <div className="mt-10 flex flex-col gap-4">

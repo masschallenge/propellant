@@ -83,7 +83,6 @@ export const colorsText = ({ brandColors, supportingColors, logoColors, print })
     'PRINT',
     '',
     print.cmyk,
-    print.pantone,
     '',
   ].join('\n');
 
@@ -103,8 +102,7 @@ export const readmeText = () =>
     '  black: for one color printing.',
     '  Give the logo clear space of half its height on every side. Keep the horizontal logo at',
     '  least 24px tall on screen, and the monogram at least 16px.',
-    '  Never stretch, recolor, redraw, outline or crop it. There is no vector original of the',
-    '  MassChallenge logo, so always use these files.',
+    '  Never stretch, recolor, redraw, outline or crop it. Always use these files.',
     '',
     'design-system-only/',
     '  The Propellant mark, as SVG. It stands for the Propellant design system and nothing',
