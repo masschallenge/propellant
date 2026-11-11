@@ -156,6 +156,60 @@ describe('backdrops', () => {
     const hidden = { ...scene, elements: [{ ...scene.elements[0], hidden: true }, headline()] };
     expect(backdropFor(hidden, 'headline')).toMatchObject({ elementId: null });
   });
+
+  it('blends a translucent shape with what is under it before judging contrast', () => {
+    const scene: Scene = {
+      formatId: 'instagram-post',
+      backgroundId: 'white',
+      elements: [
+        {
+          ...BASE_DEFAULTS,
+          id: 'panel',
+          kind: 'shape',
+          shape: 'block',
+          colorId: 'deep-teal',
+          opacity: 0.1,
+          left: 0,
+          top: 0,
+          width: 1080,
+          height: 600,
+        },
+        body({ top: 100, colorId: 'white' }),
+      ],
+    };
+    const backdrop = backdropFor(scene, 'body');
+    expect(backdrop).toMatchObject({ kind: 'color', elementId: 'panel' });
+    if (backdrop.kind !== 'color') throw new Error('Expected a color backdrop');
+    expect(backdrop.color.hex).toBe('#E6ECEE');
+    expect(backdrop.color.name).toBe('Deep teal at 10%');
+    expect(contrastRatio('#FFFFFF', backdrop.color.hex)).toBeLessThan(1.3);
+    const enforced = enforceTextColors(scene);
+    const text = enforced.scene.elements.find((element) => element.id === 'body') as TextElement;
+    expect(text.colorId).not.toBe('white');
+  });
+
+  it('looks through a fully transparent shape to the background', () => {
+    const scene: Scene = {
+      formatId: 'instagram-post',
+      backgroundId: 'white',
+      elements: [
+        {
+          ...BASE_DEFAULTS,
+          id: 'panel',
+          kind: 'shape',
+          shape: 'block',
+          colorId: 'deep-teal',
+          opacity: 0,
+          left: 0,
+          top: 0,
+          width: 1080,
+          height: 600,
+        },
+        body({ top: 100 }),
+      ],
+    };
+    expect(backdropFor(scene, 'body')).toMatchObject({ kind: 'color', elementId: null });
+  });
 });
 
 describe('logo', () => {

@@ -1,5 +1,5 @@
 import { BRAND_COLORS, findColor, type BrandColor } from '../brand/palette';
-import { contrastRatio, isDark, relativeLuminance } from '../brand/contrast';
+import { contrastRatio, hexToRgb, isDark, relativeLuminance } from '../brand/contrast';
 import { LOGO_GRAY, textReservation } from './colorRules';
 import { PATTERN_NAMES, patternColors, type PatternId } from './patterns';
 import type { PostFormat } from './formats';
@@ -56,10 +56,33 @@ const canBeBackdrop = (element: SceneElement): boolean =>
   !element.hidden &&
   (element.kind === 'image' || (element.kind === 'shape' && element.shape !== 'line'));
 
-export const backdropFor = (scene: Scene, elementId: string): Backdrop => {
-  const index = scene.elements.findIndex((element) => element.id === elementId);
-  const target = scene.elements[index];
-  const background: Backdrop = scene.pattern
+const toHex = (channels: number[]): string =>
+  `#${channels
+    .map((channel) => Math.round(channel).toString(16).padStart(2, '0'))
+    .join('')
+    .toUpperCase()}`;
+
+export const blendOver = (top: string, bottom: string, opacity: number): string => {
+  const upper = hexToRgb(top);
+  const lower = hexToRgb(bottom);
+  const blend = (upperChannel: number, lowerChannel: number) =>
+    upperChannel * opacity + lowerChannel * (1 - opacity);
+  return toHex([
+    blend(upper.red, lower.red),
+    blend(upper.green, lower.green),
+    blend(upper.blue, lower.blue),
+  ]);
+};
+
+const translucentColor = (color: BrandColor, opacity: number, beneath: string): BrandColor => ({
+  ...color,
+  id: `${color.id}-at-${Math.round(opacity * 100)}`,
+  name: `${color.name} at ${Math.round(opacity * 100)}%`,
+  hex: blendOver(color.hex, beneath, opacity),
+});
+
+const sceneBackground = (scene: Scene): Backdrop =>
+  scene.pattern
     ? {
         kind: 'pattern',
         pattern: scene.pattern,
@@ -71,19 +94,53 @@ export const backdropFor = (scene: Scene, elementId: string): Backdrop => {
         color: findColor(scene.backgroundId),
         elementId: null,
       };
-  if (!target) return background;
-  const horizontal = target.left + target.width / 2;
-  const vertical = target.top + target.height / 2;
-  const below = scene.elements.slice(0, index).reverse();
-  const cover = below.find(
-    (candidate) => canBeBackdrop(candidate) && containsPoint(candidate, horizontal, vertical),
+
+const backdropBelow = (
+  scene: Scene,
+  index: number,
+  horizontal: number,
+  vertical: number,
+): Backdrop => {
+  const below = scene.elements.slice(0, index);
+  const coverIndex = below.findLastIndex(
+    (candidate) =>
+      canBeBackdrop(candidate) &&
+      candidate.opacity > 0 &&
+      containsPoint(candidate, horizontal, vertical),
   );
-  if (!cover) return background;
+  if (coverIndex < 0) return sceneBackground(scene);
+  const cover = below[coverIndex];
   if (cover.kind === 'image') return { kind: 'photo', elementId: cover.id };
-  if (cover.kind === 'shape') {
-    return { kind: 'color', color: findColor(cover.colorId), elementId: cover.id };
+  if (cover.kind !== 'shape') return sceneBackground(scene);
+  const color = findColor(cover.colorId);
+  if (cover.opacity >= 1) return { kind: 'color', color, elementId: cover.id };
+  const beneath = backdropBelow(scene, coverIndex, horizontal, vertical);
+  if (beneath.kind === 'photo') return beneath;
+  if (beneath.kind === 'pattern') {
+    return {
+      ...beneath,
+      colors: beneath.colors.map((patternColor) =>
+        translucentColor(color, cover.opacity, patternColor.hex),
+      ),
+    };
   }
-  return background;
+  return {
+    kind: 'color',
+    color: translucentColor(color, cover.opacity, beneath.color.hex),
+    elementId: cover.id,
+  };
+};
+
+export const backdropFor = (scene: Scene, elementId: string): Backdrop => {
+  const index = scene.elements.findIndex((element) => element.id === elementId);
+  const target = scene.elements[index];
+  if (!target) return sceneBackground(scene);
+  return backdropBelow(
+    scene,
+    index,
+    target.left + target.width / 2,
+    target.top + target.height / 2,
+  );
 };
 
 export const backdropName = (backdrop: Backdrop): string => {
