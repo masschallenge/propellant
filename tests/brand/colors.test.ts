@@ -1,5 +1,7 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import colorData from '../../src/brand/colors.json';
+import { parseTokenSheet } from '../../src/brand/design-tokens';
 import {
   BRAND_COLORS,
   LOGO_COLORS,
@@ -13,6 +15,17 @@ describe('one source for the colors', () => {
   it('re-exports the colors from the shared JSON file', () => {
     expect(BRAND_COLORS).toEqual(colorData.brandColors);
     expect(LOGO_COLORS).toEqual(colorData.logoColors);
+  });
+
+  it('matches every named color to its Propellant token', () => {
+    const colorTokens = parseTokenSheet(
+      readFileSync('node_modules/@masschallenge/propellant-web/tokens/color.css', 'utf8'),
+    ).base;
+    [...BRAND_COLORS, ...SUPPORTING_COLORS].forEach((color) => {
+      expect(colorTokens[color.token]?.toUpperCase(), `${color.name} ${color.token}`).toBe(
+        color.hex,
+      );
+    });
   });
 
   it('keeps the logo colors from the brand guidelines', () => {
