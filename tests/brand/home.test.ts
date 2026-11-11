@@ -57,6 +57,14 @@ describe('the home page content', () => {
     expect(ownPage('/no-such-page/')).toBe(false);
   });
 
+  it('talks to people in the hero and tells why it is called Propellant', () => {
+    const page = readFileSync('src/pages/index.astro', 'utf8');
+    expect(page).toContain('Make it look and sound like MassChallenge');
+    expect(page).not.toMatch(/in one place/i);
+    expect(page).toContain('Propellant is the fuel that makes everything at MassChallenge');
+    expect(page).not.toMatch(/\bas of\b/i);
+  });
+
   it('names actions plainly and never asks people to start with one platform', () => {
     const text = JSON.stringify([BRAND_NEEDS, BRAND_TOOLS, BRAND_RESOURCES, FINDER]);
     expect(text).not.toMatch(/start with/i);
