@@ -1,5 +1,6 @@
 ---
 import BrandLayout from '../../layouts/BrandLayout.astro';
+import Studio from '../../components/studio/Studio';
 ---
 
 <BrandLayout
@@ -7,5 +8,10 @@ import BrandLayout from '../../layouts/BrandLayout.astro';
   description="Your own little design studio. It only hands you MassChallenge fonts, colors and logos, used the way they are meant to be."
   current="studio"
 >
-  <div class="mx-auto max-w-[1200px] px-4 py-16 sm:px-6">Studio</div>
+  <Studio client:only="react" />
+  <noscript>
+    <p class="mx-auto max-w-[1200px] px-4 py-16 sm:px-6">
+      The content studio needs JavaScript to draw your post.
+    </p>
+  </noscript>
 </BrandLayout>
