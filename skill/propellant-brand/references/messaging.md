@@ -28,7 +28,7 @@ Use the shortest that fits.
 
 ## Approved figures
 
-As of November 2026. Always show the as of date with a figure.
+These are the numbers to quote. When one changes, it changes in Propellant first.
 
 | Figure          | Value           |
 | --------------- | --------------- |

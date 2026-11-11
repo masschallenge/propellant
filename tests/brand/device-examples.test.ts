@@ -36,7 +36,7 @@ describe('the drawn graphic device examples', () => {
 
   it('uses the approved figures with teal numbers and readable labels', () => {
     expect(STAT_CALLOUTS.map((stat) => stat.value)).toEqual(['90K', '$16B+']);
-    STAT_CALLOUTS.forEach((stat) => expect(stat.asOf).toBe('As of November 2026'));
+    STAT_CALLOUTS.forEach((stat) => expect(stat).not.toHaveProperty('asOf'));
     STAT_CALLOUTS.forEach((stat) => {
       expect(['deep-teal', 'bright-teal']).toContain(stat.numberColorId);
       expect(exampleContrast(stat.numberColorId, stat.surfaceColorId)).toBeGreaterThanOrEqual(3);

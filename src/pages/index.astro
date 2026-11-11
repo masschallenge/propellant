@@ -1,0 +1,443 @@
+---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+import { Image } from 'astro:assets';
+import { Badge, Button, TextField } from '@masschallenge/propellant-web';
+import logoColor from '@masschallenge/propellant-web/assets/logos/masschallenge-logo-horizontal-color.png';
+import logoWhite from '@masschallenge/propellant-web/assets/logos/masschallenge-logo-horizontal-white.png';
+import BrandLayout from '../layouts/BrandLayout.astro';
+import propellantMark from '../assets/brand/propellant-mark-color.svg';
+import { BRAND_KIT_URL, brandKitFile } from '../../scripts/lib/brand-kit.mjs';
+import { OFFICE_TEMPLATES, previewUrl } from '../../scripts/lib/office-templates.mjs';
+import {
+  CONTACT_EMAIL,
+  OFFICES,
+  SOCIAL_LINKS,
+  copyrightLine,
+  officeAddress,
+} from '../brand/contact';
+import { BRAND_NEEDS, BRAND_RESOURCES, BRAND_TOOLS, FINDER } from '../brand/home';
+import { APPROVED_FIGURES, PRIMARY_LINE, findBoilerplate } from '../brand/messaging';
+import { BRAND_COLORS, findColor } from '../brand/palette';
+import { WEBSITE_PHOTOS } from '../brand/photo-manifest';
+import { signatureHtml, EMPTY_SIGNATURE } from '../brand/signature';
+import { trianglePattern } from '../studio/patterns';
+
+const HERO_WIDTH = 720;
+const HERO_HEIGHT = 720;
+const heroTriangles = trianglePattern(HERO_WIDTH, HERO_HEIGHT, 72, 3);
+const POST_SIZE = 400;
+const postTriangles = trianglePattern(POST_SIZE, 140, 36, 5);
+const pointList = (points: [number, number][]) =>
+  points.map(([horizontal, vertical]) => `${horizontal},${vertical}`).join(' ');
+
+const swatches = ['deep-teal', 'teal', 'bright-teal', 'pale-teal', 'yellow', 'ink'].map(findColor);
+const photo = WEBSITE_PHOTOS.find((candidate) => candidate.category === 'teal-duotone');
+const mediumBoilerplate = findBoilerplate('medium').text;
+const hasBrandKit = existsSync(brandKitFile(process.cwd()));
+const brandNeeds = BRAND_NEEDS.filter((need) => hasBrandKit || !need.isDownload);
+
+const sampleSignature = signatureHtml({
+  ...EMPTY_SIGNATURE,
+  name: 'Alex Rivera',
+  pronouns: 'they/them',
+  title: 'Program manager',
+  team: 'Programs',
+  email: 'you@example.org',
+  office: 'boston',
+  showSocial: true,
+});
+
+const officePreviews = OFFICE_TEMPLATES.map((template) => ({
+  id: template.id,
+  app: template.app,
+  name: template.name,
+  url: previewUrl(template),
+})).filter((preview) => existsSync(join(process.cwd(), 'public', preview.url)));
+
+const OFFICE_PREVIEW_PLACEMENT: Record<string, string> = {
+  presentation: 'width: 78%; left: 11%; top: 0; z-index: 1',
+  document: 'width: 26%; left: 0; top: 46%; z-index: 2',
+  workbook: 'width: 26%; right: 0; top: 52%; z-index: 3',
+};
+
+const SECTION = 'mx-auto max-w-[1200px] px-4 sm:px-6';
+const EYEBROW =
+  'm-0 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[0.1em] text-[var(--tint)]';
+const HEADLINE =
+  'm-0 font-[family-name:var(--type-family-brand)] text-[clamp(2rem,4.5vw,3.25rem)] font-medium uppercase leading-[1] text-[var(--label)]';
+const LEAD =
+  'm-0 max-w-[60ch] text-[length:var(--type-title3-size)] leading-[1.5] text-[var(--label-secondary)]';
+const CARD =
+  'group flex h-full flex-col overflow-hidden rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] text-[var(--label)] no-underline transition-shadow hover:shadow-[var(--shadow-float)] focus-visible:outline-[length:var(--focus-width)] focus-visible:outline-solid focus-visible:outline-offset-[var(--focus-offset)] focus-visible:outline-[var(--focus-color)]';
+const ACTION =
+  'mt-auto inline-flex items-center gap-1 text-[length:var(--type-callout-size)] font-semibold text-[var(--tint)] group-hover:underline';
+const SOLID_BUTTON =
+  'inline-flex items-center rounded-full px-5 py-3 font-semibold no-underline focus-visible:outline-2 focus-visible:outline-offset-2';
+---
+
+<BrandLayout
+  title="Propellant"
+  description="Everything you need to make something look and sound like MassChallenge: the logo, colors, fonts and words, tools for posts and email signatures, and our web and Office templates."
+  current="home"
+>
+  <section class="relative overflow-hidden bg-[var(--teal-900)] text-white" aria-labelledby="home-title">
+    <svg
+      viewBox={`0 0 ${HERO_WIDTH} ${HERO_HEIGHT}`}
+      aria-hidden="true"
+      class="absolute inset-y-0 right-0 hidden h-full w-[46%] lg:block"
+      preserveAspectRatio="xMinYMid slice"
+      style="clip-path: polygon(22% 0, 100% 0, 100% 100%, 0 100%)"
+    >
+      {heroTriangles.map((triangle) => <polygon points={pointList(triangle.points)} fill={findColor(triangle.colorId).hex} />)}
+    </svg>
+    <div class={`${SECTION} relative flex min-h-[620px] flex-col justify-center gap-7 py-20`}>
+      <Image src={logoWhite} alt="MassChallenge" class="h-10 w-auto self-start sm:h-12" loading="eager" />
+      <p class="m-0 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[0.12em] text-[var(--teal-100)]">
+        Brand and design system
+      </p>
+      <h1
+        id="home-title"
+        class="m-0 max-w-[14ch] font-[family-name:var(--type-family-brand)] text-[clamp(2.75rem,7vw,5.5rem)] font-medium uppercase leading-[0.95]"
+      >
+        Make it look and sound like MassChallenge
+      </h1>
+      <p class="m-0 max-w-[52ch] text-[length:var(--type-title3-size)] leading-[1.5] text-[var(--teal-100)]">
+        Working on a deck, a social post, an event page or a new website? You're in the right place.
+        Grab the logo, pick the right colors, borrow the words we use to describe ourselves, or set
+        up your email signature in a couple of minutes. What you find here is always the latest, so
+        you never have to wonder if you have the right version.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a
+          href="/brand/"
+          class={`${SOLID_BUTTON} bg-white text-[var(--teal-900)] hover:bg-[var(--teal-100)] focus-visible:outline-white`}
+          >Open the brand guidelines</a
+        >
+        {
+          hasBrandKit && (
+            <a
+              href={BRAND_KIT_URL}
+              download
+              class={`${SOLID_BUTTON} border border-solid border-white/70 text-white hover:bg-white/10 focus-visible:outline-white`}
+            >
+              Download the brand kit
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="brand" class="scroll-mt-24 py-20" aria-labelledby="brand-title">
+    <div class={`${SECTION} flex flex-col gap-10`}>
+      <div class="flex flex-col gap-3">
+        <p class={EYEBROW}>Brand guidelines</p>
+        <h2 id="brand-title" class={HEADLINE}>What people look for most</h2>
+        <p class={LEAD}>
+          Whether you are new to MassChallenge or have been here for years, start here. Each card
+          opens the part of the brand guide you need.
+        </p>
+      </div>
+      <ul class="m-0 grid list-none grid-cols-1 gap-5 p-0 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          brandNeeds.map((need) => (
+            <li class="m-0">
+              <a href={need.href} class={CARD} download={need.isDownload ? '' : undefined}>
+                <div class="flex h-36 items-center justify-center overflow-hidden border-0 border-b border-solid border-[var(--separator)] bg-[var(--bg-secondary)]" aria-hidden="true">
+                  {need.visual === 'logo' ? (
+                    <div class="flex h-full w-full items-center justify-center bg-white px-8">
+                      <Image src={logoColor} alt="" class="h-9 w-auto" />
+                    </div>
+                  ) : need.visual === 'colors' ? (
+                    <div class="flex h-full w-full">
+                      {swatches.map((color) => (
+                        <span class="h-full flex-1" style={`background: ${color.hex}`} />
+                      ))}
+                    </div>
+                  ) : need.visual === 'fonts' ? (
+                    <div class="flex items-end gap-5 text-[var(--label)]">
+                      <span class="font-[family-name:var(--type-family-brand)] text-[64px] font-medium uppercase leading-none">Aa</span>
+                      <span class="font-[family-name:var(--type-family)] text-[56px] leading-none">Aa</span>
+                    </div>
+                  ) : need.visual === 'about' ? (
+                    <div class="flex h-full w-full items-center bg-[var(--teal-900)] px-5">
+                      <p class="m-0 font-[family-name:var(--type-family-brand)] text-[19px] font-medium uppercase leading-[1.1] text-white">
+                        {PRIMARY_LINE}
+                      </p>
+                    </div>
+                  ) : need.visual === 'photos' && photo ? (
+                    <img src={photo.src} alt="" class="h-full w-full object-cover" loading="lazy" referrerpolicy="no-referrer" />
+                  ) : need.visual === 'voice' ? (
+                    <div class="flex flex-col gap-2 px-5 text-[length:var(--type-callout-size)]">
+                      <span class="text-[var(--label-secondary)] line-through">Leverage our seamless platform!</span>
+                      <span class="font-semibold text-[var(--label)]">Find mentors who know your market.</span>
+                    </div>
+                  ) : need.visual === 'contact' ? (
+                    <div class="flex flex-col items-center gap-1 text-center">
+                      <span class="font-semibold text-[var(--label)]">{CONTACT_EMAIL}</span>
+                      <span class="text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">{copyrightLine()}</span>
+                    </div>
+                  ) : (
+                    <div class="flex items-center gap-3">
+                      <span class="flex h-16 w-14 items-end justify-center rounded-[var(--corner-md)] bg-[var(--teal-900)] pb-2 text-[length:var(--type-footnote-size)] font-bold text-white">ZIP</span>
+                      <span class="flex flex-col text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">
+                        <span>Logos</span>
+                        <span>Fonts</span>
+                        <span>Color codes</span>
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <div class="flex flex-1 flex-col gap-2 p-5">
+                  <h3 class="m-0 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">{need.title}</h3>
+                  <p class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">
+                    {need.description}
+                  </p>
+                  <span class={ACTION}>{need.action}</span>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-[var(--bg-secondary)] py-20" aria-labelledby="about-title">
+    <div class={`${SECTION} grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center`}>
+      <div class="flex flex-col gap-4">
+        <p class={EYEBROW}>About MassChallenge</p>
+        <h2 id="about-title" class={HEADLINE}>Born in Massachusetts. Built for the world.</h2>
+        <p class="m-0 max-w-[60ch] text-[length:var(--type-body-size)] leading-[1.6] text-[var(--label)]">
+          {mediumBoilerplate}
+        </p>
+        <a href="/brand/#messaging" class="self-start text-[length:var(--type-callout-size)] font-semibold text-[var(--tint)]">
+          Copy the approved boilerplate
+        </a>
+      </div>
+      <div>
+        <dl class="m-0 grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {
+            APPROVED_FIGURES.map((figure) => (
+              <div class="flex flex-col-reverse gap-1 rounded-[var(--corner-lg)] bg-[var(--bg)] p-4">
+                <dt class="text-[length:var(--type-caption-size)] font-bold uppercase tracking-[0.08em] text-[var(--label-secondary)]">
+                  {figure.label}
+                </dt>
+                <dd class="m-0 font-[family-name:var(--type-family-brand)] text-[length:var(--type-large-title-size)] font-medium text-[var(--label)]">
+                  {figure.value}
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="tools" class="scroll-mt-24 py-20" aria-labelledby="tools-title">
+    <div class={`${SECTION} flex flex-col gap-10`}>
+      <div class="flex flex-col gap-3">
+        <p class={EYEBROW}>Tools</p>
+        <h2 id="tools-title" class={HEADLINE}>Make something on brand today</h2>
+        <p class={LEAD}>
+          Two tools anyone at MassChallenge can use, with no design software and nothing to install.
+          They only offer our fonts, colors and logo, so what you make comes out right.
+        </p>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2">
+        {
+          BRAND_TOOLS.map((tool) => (
+            <a href={tool.href} class={CARD}>
+              <div class="flex h-72 items-center justify-center overflow-hidden border-0 border-b border-solid border-[var(--separator)] bg-[var(--bg-secondary)] p-6" aria-hidden="true" inert>
+                {tool.id === 'studio' ? (
+                  <div class="relative flex aspect-square h-full flex-col gap-4 overflow-hidden rounded-[var(--corner-lg)] bg-[var(--teal-900)] p-5 pb-[34%] shadow-[var(--shadow-float)]">
+                    <Image src={logoWhite} alt="" class="relative z-[1] h-4 w-auto self-start" />
+                    <p class="relative z-[1] m-0 mt-auto font-[family-name:var(--type-family-brand)] text-[20px] font-medium uppercase leading-[1] text-white">
+                      {PRIMARY_LINE}
+                    </p>
+                    <svg viewBox={`0 0 ${POST_SIZE} 140`} class="absolute inset-x-0 bottom-0 h-[28%] w-full" preserveAspectRatio="xMidYMid slice">
+                      {postTriangles.map((triangle) => <polygon points={pointList(triangle.points)} fill={findColor(triangle.colorId).hex} />)}
+                    </svg>
+                  </div>
+                ) : (
+                  <div class="w-full max-w-[420px] rounded-[var(--corner-lg)] bg-white p-5 shadow-[var(--shadow-float)]" set:html={sampleSignature} />
+                )}
+              </div>
+              <div class="flex flex-1 flex-col gap-3 p-6">
+                <h3 class="m-0 text-[length:var(--type-title2-size)] font-semibold text-[var(--label)]">{tool.title}</h3>
+                <p class="m-0 text-[length:var(--type-body-size)] leading-[1.55] text-[var(--label-secondary)]">{tool.description}</p>
+                <ul class="m-0 flex flex-col gap-1 pl-5 text-[length:var(--type-callout-size)] text-[var(--label)]">
+                  {tool.points.map((point) => <li>{point}</li>)}
+                </ul>
+                <span class={ACTION}>{tool.action}</span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="resources" class="scroll-mt-24 bg-[var(--bg-secondary)] py-20" aria-labelledby="resources-title">
+    <div class={`${SECTION} flex flex-col gap-10`}>
+      <div class="flex flex-col gap-3">
+        <p class={EYEBROW}>Resources</p>
+        <h2 id="resources-title" class={HEADLINE}>Web and Office</h2>
+        <p class={LEAD}>
+          The same brand, ready for the places we work. Go to Web if you build or run a website or a
+          product. Go to Office if you make documents, decks or spreadsheets.
+        </p>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2">
+        {
+          BRAND_RESOURCES.map((resource) => (
+            <a href={resource.href} class={CARD}>
+              <div class="flex h-80 items-center justify-center overflow-hidden border-0 border-b border-solid border-[var(--separator)] bg-[var(--teal-50)] p-6">
+                {resource.id === 'web' ? (
+                  <div class="flex w-full max-w-[460px] flex-col overflow-hidden rounded-[var(--corner-lg)] border border-solid border-[var(--separator)] bg-[var(--bg)] shadow-[var(--shadow-float)]" aria-hidden="true" inert>
+                    <div class="flex items-center gap-1.5 border-0 border-b border-solid border-[var(--separator)] bg-[var(--bg-secondary)] px-3 py-2">
+                      <span class="h-2.5 w-2.5 rounded-full bg-[var(--gray-300)]" />
+                      <span class="h-2.5 w-2.5 rounded-full bg-[var(--gray-300)]" />
+                      <span class="h-2.5 w-2.5 rounded-full bg-[var(--gray-300)]" />
+                    </div>
+                    <div class="flex flex-col gap-3 p-5">
+                      <div class="flex items-center justify-between">
+                        <Image src={logoColor} alt="" class="dark-hidden h-4 w-auto" />
+                        <Image src={logoWhite} alt="" class="light-hidden h-4 w-auto" />
+                        <Badge size="sm">Open</Badge>
+                      </div>
+                      <p class="m-0 font-[family-name:var(--type-family-brand)] text-[26px] font-medium uppercase leading-none text-[var(--label)]">Apply to the program</p>
+                      <TextField label="Company name" placeholder="Your company" />
+                      <div class="flex gap-2">
+                        <Button>Submit application</Button>
+                        <Button variant="gray">Save draft</Button>
+                      </div>
+                    </div>
+                  </div>
+                ) : officePreviews.length ? (
+                  <div class="relative h-full w-full max-w-[460px]" aria-hidden="true">
+                    {officePreviews.map((preview) => (
+                      <img
+                        src={preview.url}
+                        alt=""
+                        loading="lazy"
+                        class="absolute rounded-[var(--corner-md)] border border-solid border-[var(--separator)] bg-white shadow-[var(--shadow-float)]"
+                        style={OFFICE_PREVIEW_PLACEMENT[preview.id]}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div class="flex gap-3" aria-hidden="true">
+                    {['Word', 'PowerPoint', 'Excel'].map((app) => (
+                      <span class="rounded-[var(--corner-md)] bg-[var(--bg)] px-4 py-6 font-semibold text-[var(--label)] shadow-[var(--shadow-float)]">{app}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <div class="flex flex-1 flex-col gap-3 p-6">
+                <h3 class="m-0 text-[length:var(--type-title2-size)] font-semibold text-[var(--label)]">{resource.title}</h3>
+                <p class="m-0 text-[length:var(--type-callout-size)] font-semibold text-[var(--label)]">{resource.audience}</p>
+                <p class="m-0 text-[length:var(--type-body-size)] leading-[1.55] text-[var(--label-secondary)]">{resource.description}</p>
+                <ul class="m-0 flex flex-col gap-1 pl-5 text-[length:var(--type-callout-size)] text-[var(--label)]">
+                  {resource.includes.map((item) => <li>{item}</li>)}
+                </ul>
+                <span class={ACTION}>{resource.action}</span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="find" class="scroll-mt-24 py-20" aria-labelledby="find-title">
+    <div class={`${SECTION} grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]`}>
+      <div class="flex flex-col gap-3">
+        <p class={EYEBROW}>Where to find it</p>
+        <h2 id="find-title" class={HEADLINE}>I want to</h2>
+        <p class="m-0 text-[length:var(--type-body-size)] leading-[1.55] text-[var(--label-secondary)]">
+          The most common tasks, and where to go for each one.
+        </p>
+      </div>
+      <ul class="m-0 grid list-none grid-cols-1 gap-x-8 p-0 sm:grid-cols-2">
+        {
+          FINDER.map((entry) => (
+            <li class="m-0 border-0 border-b border-solid border-[var(--separator)]">
+              <a
+                href={entry.href}
+                class="flex items-baseline justify-between gap-4 py-3 text-[var(--label)] no-underline hover:text-[var(--tint)] focus-visible:outline-2 focus-visible:outline-[var(--focus-color)]"
+              >
+                <span class="font-semibold">{entry.need}</span>
+                <span class="shrink-0 text-right text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">{entry.place}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="scroll-mt-24 bg-[var(--bg-secondary)] py-20" aria-labelledby="contact-title">
+    <div class={`${SECTION} flex flex-col gap-8`}>
+      <div class="flex flex-col gap-3">
+        <p class={EYEBROW}>Contact, social and legal</p>
+        <h2 id="contact-title" class={HEADLINE}>The details to use</h2>
+      </div>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="flex flex-col gap-2">
+          <h3 class="m-0 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">Contact and legal</h3>
+          <a href={`mailto:${CONTACT_EMAIL}`} class="text-[var(--tint)]">{CONTACT_EMAIL}</a>
+          <p class="m-0 text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
+            Copyright line: {copyrightLine()}, with the current year. No trademark symbol on the name or the logo.
+          </p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <h3 class="m-0 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">Social</h3>
+          <ul class="m-0 flex list-none flex-col gap-1 p-0">
+            {
+              SOCIAL_LINKS.map((social) => (
+                <li class="m-0">
+                  <a href={social.url} class="text-[var(--tint)]">{social.name}</a>
+                  <span class="text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]"> {social.handle}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="flex flex-col gap-2">
+          <h3 class="m-0 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">Offices</h3>
+          <ul class="m-0 flex list-none flex-col gap-2 p-0 text-[length:var(--type-callout-size)]">
+            {
+              OFFICES.map((office) => (
+                <li class="m-0">
+                  <span class="font-semibold text-[var(--label)]">{office.name}</span>
+                  <span class="block text-[var(--label-secondary)]">{officeAddress(office.id)}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16" aria-labelledby="propellant-title">
+    <div class={`${SECTION} flex flex-col gap-5 sm:flex-row sm:items-center`}>
+      <img src={propellantMark.src} alt="" class="h-16 w-16 shrink-0" />
+      <div class="flex flex-col gap-2">
+        <h2 id="propellant-title" class="m-0 text-[length:var(--type-title2-size)] font-semibold text-[var(--label)]">
+          Why we call it Propellant
+        </h2>
+        <p class="m-0 max-w-[70ch] text-[length:var(--type-body-size)] leading-[1.55] text-[var(--label-secondary)]">
+          A rocket can have a brilliant design, but it doesn't leave the pad without propellant.
+          MassChallenge works the same way. Founders bring the big ideas, and we help them take off.
+          We wanted the same lift for our own work, so every team can move fast and still look and
+          sound like one MassChallenge. Propellant is the fuel that makes everything at MassChallenge
+          take off.{' '}
+          <a href="/about/" class="text-[var(--tint)]">More about Propellant</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</BrandLayout>

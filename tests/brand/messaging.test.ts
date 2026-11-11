@@ -5,11 +5,9 @@ import {
   AUDIENCES,
   BOILERPLATES,
   CHALLENGE_AREAS,
-  MESSAGING_AS_OF,
   POSITIONING,
   PRIMARY_LINE,
   findBoilerplate,
-  figureAsOfLine,
   wordCount,
 } from '../../src/brand/messaging';
 
@@ -43,9 +41,9 @@ describe('the messaging standard', () => {
     expect(everything).not.toMatch(/77K/);
   });
 
-  it('dates every figure without citing another site', () => {
-    expect(MESSAGING_AS_OF).toBe('November 2026');
-    expect(figureAsOfLine()).toBe('As of November 2026');
+  it('presents every figure as current, with no as of date', () => {
+    const figures = APPROVED_FIGURES.map((figure) => `${figure.label} ${figure.value}`).join('\n');
+    expect(`${everything}\n${figures}`).not.toMatch(/\bas of\b/i);
   });
 
   it('lists the areas, accelerators and audiences', () => {

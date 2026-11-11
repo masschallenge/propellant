@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets';
+import logoColor from '@masschallenge/propellant-web/assets/logos/masschallenge-logo-horizontal-color.png';
+import logoWhite from '@masschallenge/propellant-web/assets/logos/masschallenge-logo-horizontal-white.png';
+import {
+  CONTACT_EMAIL,
+  FOOTER_LINKS,
+  SOCIAL_LINKS,
+  WEBSITE_LABEL,
+  WEBSITE_URL,
+  copyrightLine,
+} from '../../brand/contact';
+
+const [careers, support, privacy, terms] = FOOTER_LINKS;
+
+const columns = [
+  {
+    title: 'Brand',
+    links: [
+      { label: 'Brand guide', href: '/brand/' },
+      { label: 'Brand reference', href: '/brand/reference/' },
+      { label: 'Content studio', href: '/studio/' },
+      { label: 'Email signature', href: '/studio/signature/' },
+    ],
+  },
+  {
+    title: 'Resources',
+    links: [
+      { label: 'Web', href: '/web/' },
+      { label: 'Office', href: '/office/' },
+      { label: 'Guidelines', href: '/guidelines/' },
+      { label: 'Propellant in Claude', href: '/claude/' },
+      { label: 'About Propellant', href: '/about/' },
+    ],
+  },
+  {
+    title: 'MassChallenge',
+    links: [
+      { label: WEBSITE_LABEL, href: WEBSITE_URL },
+      { label: careers.name, href: careers.url },
+      { label: support.name, href: support.url },
+      { label: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
+    ],
+  },
+  {
+    title: 'Follow',
+    links: SOCIAL_LINKS.map((social) => ({ label: social.name, href: social.url })),
+  },
+];
+
+const LINK =
+  'text-[length:var(--type-callout-size)] text-[var(--label-secondary)] no-underline hover:text-[var(--label)] hover:underline focus-visible:outline-2 focus-visible:outline-[var(--focus-color)]';
+---
+
+<footer class="border-t border-solid border-[var(--separator)] bg-[var(--bg-secondary)] px-4 py-12 sm:px-6">
+  <div class="mx-auto flex max-w-[1200px] flex-col gap-10">
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,3fr)]">
+      <div class="flex flex-col gap-3">
+        <Image src={logoColor} alt="MassChallenge" class="dark-hidden h-7 w-auto self-start" />
+        <Image src={logoWhite} alt="MassChallenge" class="light-hidden h-7 w-auto self-start" />
+        <p class="m-0 max-w-[36ch] text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">
+          Propellant is the fuel that makes everything at MassChallenge take off.
+        </p>
+      </div>
+      <nav aria-label="Footer" class="grid grid-cols-2 gap-8 sm:grid-cols-4">
+        {
+          columns.map((column) => (
+            <div class="flex flex-col gap-2">
+              <h2 class="m-0 mb-1 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[0.08em] text-[var(--label)]">
+                {column.title}
+              </h2>
+              <ul class="m-0 flex list-none flex-col gap-2 p-0">
+                {column.links.map((link) => (
+                  <li class="m-0">
+                    <a href={link.href} class={LINK}>
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </nav>
+    </div>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-solid border-[var(--separator)] pt-6 text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">
+      <span>{copyrightLine()}</span>
+      <a href={privacy.url} class={LINK}>{privacy.name}</a>
+      <a href={terms.url} class={LINK}>{terms.name}</a>
+    </div>
+  </div>
+</footer>

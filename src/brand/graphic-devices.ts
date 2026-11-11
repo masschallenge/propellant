@@ -72,7 +72,7 @@ export const GRAPHIC_DEVICES: GraphicDevice[] = [
     id: 'stat-callout',
     name: 'Stat callouts',
     description: 'A large number with a short label in capitals.',
-    use: 'One figure that matters, with its as of date.',
+    use: 'One figure that matters.',
     note: 'Set the number in Deep teal on light backgrounds and Bright teal on dark ones, and the label in Ink or White. Never Magenta: it only ever means something is wrong.',
   },
   {

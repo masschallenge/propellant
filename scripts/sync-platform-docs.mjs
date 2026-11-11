@@ -22,6 +22,7 @@ import {
 import {
   BRAND_KIT_FOLDERS,
   BRAND_KIT_NAME,
+  brandKitFile,
   colorsJson,
   colorsText,
   isFontFile,
@@ -246,7 +247,7 @@ const publishLogos = (webCheckout) => {
 };
 
 const packageBrandKit = (webCheckout) => {
-  const archive = join(projectRoot, 'public/downloads', `${BRAND_KIT_NAME}.zip`);
+  const archive = brandKitFile(projectRoot);
   rmSync(archive, { force: true });
   if (!webCheckout) return false;
   const staging = mkdtempSync(join(tmpdir(), 'propellant-kit-'));

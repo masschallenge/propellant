@@ -1,0 +1,19 @@
+---
+import SiteLockup from './SiteLockup.astro';
+
+const { siteTitleHref } = Astro.locals.starlightRoute;
+---
+
+<a href={siteTitleHref} class="site-title">
+  <SiteLockup lightOnlyClass="dark:sl-hidden" darkOnlyClass="light:sl-hidden" />
+</a>
+
+<style>
+  .site-title {
+    display: flex;
+    align-items: center;
+    color: var(--sl-color-gray-3);
+    text-decoration: none;
+    min-width: 0;
+  }
+</style>

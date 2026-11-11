@@ -11,7 +11,6 @@ import {
   POSITIONING,
   PRIMARY_LINE,
   PRODUCT_WORDS,
-  figureAsOfLine,
   wordCount,
 } from '../../../brand/messaging';
 import { CopyIcon } from '../logo/icons';
@@ -145,7 +144,7 @@ const Messaging = () => {
           Approved figures
         </h4>
         <p className="m-0 mb-4 max-w-[68ch] text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
-          {figureAsOfLine()}. Always show the as of date with a figure.
+          These are the numbers to quote. When one changes, it changes here first.
         </p>
         <dl className="m-0 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
           {APPROVED_FIGURES.map((figure) => (
