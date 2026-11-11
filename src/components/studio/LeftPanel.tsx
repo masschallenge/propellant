@@ -143,8 +143,8 @@ export const LeftPanel = ({
           Upload your own
         </Button>
         <p className="m-0 text-[length:var(--type-caption-size)] text-[var(--label-secondary)]">
-          Your photos stay in this browser and are never uploaded. There is no approved
-          MassChallenge photo library here yet.
+          Your photos stay in this browser and are never uploaded. To pick a photo from
+          masschallenge.org, download it from the photo library in the brand guide.
         </p>
         {photos.length ? (
           <div className="grid grid-cols-3 gap-1.5">

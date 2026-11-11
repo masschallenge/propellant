@@ -3,6 +3,7 @@ import SectionHeading from '../SectionHeading.astro';
 import PhotoCheck from '../photos/PhotoCheck';
 import PhotoExamples from '../photos/PhotoExamples.astro';
 import PhotoLibrary from '../photos/PhotoLibrary';
+import { WEBSITE_PHOTOS } from '../../../brand/photo-manifest';
 ---
 
 <section id="photos" class="scroll-mt-28 py-16">
@@ -39,9 +40,13 @@ import PhotoLibrary from '../photos/PhotoLibrary';
   </div>
 
   <div class="mt-12">
-    <h3 class="m-0 mb-4 text-[length:var(--type-title2-size)] font-semibold text-[var(--label)]">
+    <h3 class="m-0 text-[length:var(--type-title2-size)] font-semibold text-[var(--label)]">
       Photo library
     </h3>
-    <PhotoLibrary />
+    <p class="m-0 mb-5 mt-2 max-w-[68ch] text-[length:var(--type-body-size)] text-[var(--label-secondary)]">
+      The {WEBSITE_PHOTOS.length} photos shown on masschallenge.org today, read on 2026-11-11, with
+      the page each one appears on. Filter by category, and open any photo at full size.
+    </p>
+    <PhotoLibrary client:visible />
   </div>
 </section>
