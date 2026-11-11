@@ -65,6 +65,14 @@ describe('the home page content', () => {
     expect(page).not.toMatch(/\bas of\b/i);
   });
 
+  it('keeps the tool previews out of reach so each card only opens its tool', () => {
+    const page = readFileSync('src/pages/index.astro', 'utf8');
+    const previews = page.match(/<div[^>]*aria-hidden="true"[^>]*>/g) ?? [];
+    const toolPreview = previews.find((tag) => tag.includes('h-72'));
+    expect(toolPreview).toBeDefined();
+    expect(toolPreview).toMatch(/\binert\b/);
+  });
+
   it('names actions plainly and never asks people to start with one platform', () => {
     const text = JSON.stringify([BRAND_NEEDS, BRAND_TOOLS, BRAND_RESOURCES, FINDER]);
     expect(text).not.toMatch(/start with/i);
