@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   ICON_SURFACES,
   PATTERN_COVERS,
+  PROGRAM_LOCKUPS,
   STAT_CALLOUTS,
   TIMELINE_LINE_HEX,
   TIMELINE_STEP_NAMES,
@@ -16,6 +17,19 @@ describe('the drawn graphic device examples', () => {
       const backgrounds = cover.panelColorId ? [cover.panelColorId] : ['bright-teal', 'pale-teal'];
       backgrounds.forEach((background) =>
         expect(exampleContrast(cover.labelColorId, background)).toBeGreaterThanOrEqual(4.5),
+      );
+    });
+  });
+
+  it('draws the program lockup on brand surfaces with a readable name and divider', () => {
+    expect(PROGRAM_LOCKUPS.map((lockup) => lockup.surfaceColorId)).toEqual(['white', 'deep-teal']);
+    PROGRAM_LOCKUPS.forEach((lockup) => {
+      expect(lockup.name).toBe(lockup.name.toUpperCase());
+      expect(exampleContrast(lockup.nameColorId, lockup.surfaceColorId)).toBeGreaterThanOrEqual(
+        4.5,
+      );
+      expect(exampleContrast(lockup.dividerColorId, lockup.surfaceColorId)).toBeGreaterThanOrEqual(
+        3,
       );
     });
   });

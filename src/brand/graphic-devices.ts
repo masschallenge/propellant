@@ -65,7 +65,7 @@ export const GRAPHIC_DEVICES: GraphicDevice[] = [
     id: 'program-lockup',
     name: 'Program lockup',
     description:
-      'The MC monogram, a thin vertical divider and the program name in capitals, such as MC | RESOLVE 2026, or SMU Cox | MC.',
+      'The MC monogram, a thin vertical divider and the program name in capitals, such as MC | RESOLVE 2026.',
     use: 'A named program or event.',
   },
   {

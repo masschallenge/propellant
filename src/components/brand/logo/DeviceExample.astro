@@ -2,6 +2,7 @@
 import {
   ICON_SURFACES,
   PATTERN_COVERS,
+  PROGRAM_LOCKUPS,
   STAT_CALLOUTS,
   TIMELINE_LINE_HEX,
   timelineSteps,
@@ -9,6 +10,7 @@ import {
 import type { GraphicDeviceId } from '../../../brand/graphic-devices';
 import { findColor } from '../../../brand/palette';
 import { trianglePattern } from '../../../studio/patterns';
+import { LOGO_FILES } from './logoFiles';
 
 interface Props {
   deviceId: GraphicDeviceId;
@@ -103,6 +105,34 @@ const LIST = 'm-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2';
                 {cover.label}
               </text>
             </svg>
+          </div>
+        </li>
+      ))}
+    </ul>
+  ) : deviceId === 'program-lockup' ? (
+    <ul class={LIST}>
+      {PROGRAM_LOCKUPS.map((lockup) => (
+        <li class="m-0">
+          <div
+            class={`${FRAME} gap-4 p-6`}
+            style={`background: ${findColor(lockup.surfaceColorId).hex}`}
+          >
+            <img
+              src={LOGO_FILES.monogram[lockup.monogramTreatment]}
+              alt="MC"
+              class="block h-10 w-auto"
+            />
+            <span
+              aria-hidden="true"
+              class="block h-12 w-0.5"
+              style={`background: ${findColor(lockup.dividerColorId).hex}`}
+            />
+            <span
+              class="font-[family-name:var(--type-family-brand)] text-[length:var(--type-title1-size)] font-medium uppercase leading-none"
+              style={`color: ${findColor(lockup.nameColorId).hex}`}
+            >
+              {lockup.name}
+            </span>
           </div>
         </li>
       ))}

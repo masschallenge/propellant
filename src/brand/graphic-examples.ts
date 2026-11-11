@@ -27,21 +27,6 @@ export const GRAPHIC_EXAMPLES: Partial<Record<GraphicDeviceId, GraphicExample[]>
       height: 800,
     },
   ],
-  'program-lockup': [
-    {
-      src: 'https://masschallenge.org/wp-content/uploads/2026/04/RESOLVE-%E2%80%9826-1-1024x218.png',
-      alt: 'The white MC monogram, a thin vertical divider and RESOLVE 2026 in capitals, on black',
-      width: 1024,
-      height: 218,
-      isOnDark: true,
-    },
-    {
-      src: 'https://masschallenge.org/wp-content/uploads/2026/10/SMU-cox-1024x1024.png',
-      alt: 'The SMU Cox and MassChallenge logos split by a thin divider above the words Fintech Coalition, on a blue brush stroke over teal',
-      width: 1024,
-      height: 1024,
-    },
-  ],
   'hexagon-frame': [
     {
       src: 'https://masschallenge.org/wp-content/uploads/2025/11/Screenshot-2025-11-05-at-6.52.12-PM-1024x725.png',
