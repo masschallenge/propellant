@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+@import '@masschallenge/propellant-web/styles.scoped.css';
+@import '@masschallenge/propellant-web/utilities.css';
+@source '../../node_modules/@masschallenge/propellant-web/src';
+@source '../components';
+@source '../layouts';
+@source '../pages';
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--label);
+  font-family: var(--type-family);
+}

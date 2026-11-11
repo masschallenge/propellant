@@ -31,7 +31,7 @@ describe('resolveRepositoryPath', () => {
 
 describe('pageForPath and routeForPage', () => {
   it('maps every web guide to its page on the site', () => {
-    expect(pageForPath('docs/brand.md', web.pages, web.patterns)).toBe('brand/index.md');
+    expect(pageForPath('docs/brand.md', web.pages, web.patterns)).toBe('brand/reference.md');
     expect(pageForPath('docs/websites/squarespace.md', web.pages, web.patterns)).toBe(
       'web/websites/squarespace.md',
     );
@@ -48,7 +48,9 @@ describe('pageForPath and routeForPage', () => {
 
 describe('createLinkRewriter', () => {
   it('points links between guides at site routes and keeps their anchors', () => {
-    expect(rewriter.rewriteLink('docs/websites/wix.md', '../brand.md#logo')).toBe('/brand/#logo');
+    expect(rewriter.rewriteLink('docs/websites/wix.md', '../brand.md#logo')).toBe(
+      '/brand/reference/#logo',
+    );
     expect(rewriter.rewriteLink('docs/websites.md', 'websites/webflow.md')).toBe(
       '/web/websites/webflow/',
     );

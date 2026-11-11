@@ -17,9 +17,15 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
+    "@astrojs/react": "7.1.7",
     "@astrojs/starlight": "0.42.6",
+    "@masschallenge/propellant-web": "https://codeload.github.com/masschallenge/propellant-web/tar.gz/f8e9eb9d3255107dbd5e12628886116545d88a40",
+    "@tailwindcss/vite": "4.3.5",
     "astro": "7.3.8",
-    "sharp": "0.34.4"
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "sharp": "0.34.4",
+    "tailwindcss": "4.3.5"
   },
   "devDependencies": {
     "prettier": "3.6.2",

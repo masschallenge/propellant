@@ -1,0 +1,30 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  lead?: string;
+}
+
+const { eyebrow, title, lead } = Astro.props;
+---
+
+<div class="mb-8 max-w-[68ch]">
+  <p
+    class="m-0 mb-2 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[var(--type-eyebrow-tracking)] text-[var(--tint)]"
+  >
+    {eyebrow}
+  </p>
+  <h2
+    class="m-0 font-[family-name:var(--type-family-brand)] text-[length:var(--type-display-size)] font-medium uppercase leading-[1.05] text-[var(--label)]"
+  >
+    {title}
+  </h2>
+  {
+    lead ? (
+      <p class="m-0 mt-3 text-[length:var(--type-title3-size)] leading-[var(--type-title3-line)] text-[var(--label-secondary)]">
+        {lead}
+      </p>
+    ) : null
+  }
+  <slot />
+</div>

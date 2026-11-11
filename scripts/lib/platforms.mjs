@@ -8,7 +8,7 @@ export const PLATFORMS = [
       'README.md': 'web/index.md',
       'docs/usage.md': 'web/usage.md',
       'docs/websites.md': 'web/websites/index.md',
-      'docs/brand.md': 'brand/index.md',
+      'docs/brand.md': 'brand/reference.md',
       'docs/images.md': 'guidelines/images.md',
     },
     patterns: [
