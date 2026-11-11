@@ -1,0 +1,79 @@
+---
+import propellantMarkColor from '../../../assets/brand/propellant-mark-color.svg';
+import propellantMarkWhite from '../../../assets/brand/propellant-mark-white.svg';
+import { LOGO_FILES } from './logoFiles';
+
+const marks = [
+  {
+    id: 'horizontal',
+    name: 'MassChallenge horizontal lockup',
+    note: 'The MC monogram, a thin divider and the MASSCHALLENGE wordmark. Keep the three parts together, at the proportions in the files.',
+  },
+  {
+    id: 'monogram',
+    name: 'MassChallenge monogram',
+    note: 'The MC monogram on its own, only where the MassChallenge name is already clear from the context.',
+  },
+];
+---
+
+<div class="grid gap-4 md:grid-cols-3">
+  {
+    marks.map((mark) => (
+      <article class="flex flex-col overflow-hidden rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)]">
+        <div class="flex h-40 items-center justify-center bg-[var(--gray-0)] p-6">
+          <img
+            src={LOGO_FILES[mark.id as 'horizontal' | 'monogram'].color}
+            alt={mark.name}
+            class:list={['w-auto max-w-full', mark.id === 'horizontal' ? 'h-9' : 'h-14']}
+          />
+        </div>
+        <div class="flex flex-col gap-2 p-5">
+          <h4 class="m-0 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">{mark.name}</h4>
+          <p class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">
+            {mark.note}
+          </p>
+        </div>
+      </article>
+    ))
+  }
+  <article
+    class="flex flex-col overflow-hidden rounded-[var(--corner-xl)] border border-dashed border-[var(--separator-strong)] bg-[var(--bg)]"
+  >
+    <div class="flex h-40 items-center justify-center bg-[var(--bg-secondary)] p-6">
+      <img src={propellantMarkColor.src} alt="Propellant mark" class="dark-hidden h-24 w-auto" />
+      <img src={propellantMarkWhite.src} alt="Propellant mark" class="light-hidden h-24 w-auto" />
+    </div>
+    <div class="flex flex-col gap-2 p-5">
+      <div class="flex flex-wrap items-center gap-2">
+        <h4 class="m-0 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">
+          Propellant mark
+        </h4>
+        <span
+          class="inline-flex min-h-5 items-center rounded-full border border-solid border-[var(--separator-strong)] px-2 text-[length:var(--type-caption-size)] font-semibold text-[var(--label-secondary)]"
+          >Design system only</span
+        >
+      </div>
+      <p
+        class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]"
+      >
+        It stands for the design system and nothing else: its documentation, Storybook, the
+        repository and the package. Never use it in place of the MassChallenge logo, and never place
+        the two so they read as one.
+      </p>
+    </div>
+  </article>
+</div>
+
+<div
+  class="mt-4 flex flex-col gap-1 rounded-[var(--corner-xl)] border border-dashed border-[var(--separator-strong)] p-5"
+>
+  <p class="m-0 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">
+    No patterns yet
+  </p>
+  <p
+    class="m-0 max-w-[68ch] text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]"
+  >
+    The brand guidelines do not define any MassChallenge patterns, so this guide shows none.
+  </p>
+</div>

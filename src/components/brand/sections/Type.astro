@@ -1,7 +1,32 @@
 ---
 import SectionHeading from '../SectionHeading.astro';
+import SubHeading from '../logo/SubHeading.astro';
+import Specimens from '../type/Specimens.astro';
+import TypeRules from '../type/TypeRules.astro';
+import TypeTester from '../type/TypeTester';
+import { TYPOGRAPHY_TOKENS } from '../type/tokenSources';
+import { stylesOverriddenBy } from '../../../brand/design-tokens';
+
+const shrinkingStyles = Object.values(TYPOGRAPHY_TOKENS.overrides)
+  .flatMap((overrides) => stylesOverriddenBy(overrides))
+  .map((style) => style.id);
 ---
 
 <section id="type" class="scroll-mt-28 py-16">
-  <SectionHeading eyebrow="Type" title="Type" />
+  <SectionHeading
+    eyebrow="Type"
+    title="Type"
+    lead="Propellant Sans for everything. Oswald, in capitals, for display headlines on public pages. Both load with Propellant."
+  />
+  <Specimens />
+
+  <SubHeading
+    id="type-tester"
+    title="Try it"
+    lead="Type your own words and pick one of the eleven named text styles. The preview uses the real tokens, and the CSS below it is ready to copy."
+  />
+  <TypeTester client:visible tokens={TYPOGRAPHY_TOKENS.base} shrinkingStyles={shrinkingStyles} />
+
+  <SubHeading id="type-rules" title="The rules" />
+  <TypeRules />
 </section>

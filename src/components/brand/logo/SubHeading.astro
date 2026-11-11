@@ -1,0 +1,24 @@
+---
+interface Props {
+  id?: string;
+  title: string;
+  lead?: string;
+}
+
+const { id, title, lead } = Astro.props;
+---
+
+<div class="mb-6 mt-16 max-w-[68ch] scroll-mt-28" id={id}>
+  <h3
+    class="m-0 text-[length:var(--type-large-title-size)] font-bold leading-[var(--type-large-title-line)] tracking-[var(--type-large-title-tracking)] text-[var(--label)]"
+  >
+    {title}
+  </h3>
+  {
+    lead ? (
+      <p class="m-0 mt-2 text-[length:var(--type-body-size)] leading-[var(--type-body-line)] text-[var(--label-secondary)]">
+        {lead}
+      </p>
+    ) : null
+  }
+</div>

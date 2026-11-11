@@ -1,0 +1,51 @@
+---
+import { recipePortions } from '../../../brand/color-recipe';
+import { isDark } from '../../../brand/contrast';
+
+const portions = recipePortions();
+const description = portions.map((portion) => `${portion.color.name} ${portion.share}%`).join(', ');
+---
+
+<div
+  class="flex flex-col gap-5 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5 sm:p-6"
+>
+  <div
+    class="flex h-20 overflow-hidden rounded-[var(--corner-lg)] border border-solid border-[var(--separator-strong)]"
+    role="img"
+    aria-label={`A rough recipe: ${description}.`}
+  >
+    {
+      portions.map((portion) => (
+        <div
+          class:list={[
+            'flex items-end p-2 text-[length:var(--type-caption-size)] font-semibold tabular-nums',
+            isDark(portion.color.hex) ? 'text-[var(--gray-0)]' : 'text-[var(--gray-800)]',
+          ]}
+          style={`width: ${portion.share}%; background: ${portion.color.hex}`}
+          aria-hidden="true"
+        >
+          {portion.share >= 8 ? `${portion.share}%` : null}
+        </div>
+      ))
+    }
+  </div>
+  <ul class="m-0 grid list-none gap-x-6 gap-y-2 p-0 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      portions.map((portion) => (
+        <li class="flex items-start gap-3">
+          <span
+            class="mt-0.5 h-4 w-4 flex-none rounded-[var(--corner-sm)] border border-solid border-[var(--separator-strong)]"
+            style={`background: ${portion.color.hex}`}
+            aria-hidden="true"
+          />
+          <span class="text-[length:var(--type-subheadline-size)] leading-[var(--type-subheadline-line)] text-[var(--label-secondary)]">
+            <strong class="font-semibold tabular-nums text-[var(--label)]">
+              {portion.color.name} {portion.share}%
+            </strong>{' '}
+            {portion.reason}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</div>
