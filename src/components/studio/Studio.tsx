@@ -245,7 +245,7 @@ export const Studio = () => {
   };
 
   const insertElement = (element: SceneElement) => {
-    commitGuarded(addElement(history.present, element), null, false);
+    commitGuarded(addElement(historyRef.current.present, element), null, false);
     setSelectedId(element.id);
   };
 
@@ -314,7 +314,8 @@ export const Studio = () => {
   };
 
   const addPhoto = (photo: PhotoAsset) => {
-    const width = format.width * 0.6;
+    const latestFormat = sceneFormat(historyRef.current.present);
+    const width = latestFormat.width * 0.6;
     const height = (width * photo.height) / photo.width;
     insertElement({
       ...BASE_DEFAULTS,
@@ -324,8 +325,8 @@ export const Studio = () => {
       naturalWidth: photo.width,
       naturalHeight: photo.height,
       zoom: 1,
-      left: (format.width - width) / 2,
-      top: (format.height - height) / 2,
+      left: (latestFormat.width - width) / 2,
+      top: (latestFormat.height - height) / 2,
       width,
       height,
     });
