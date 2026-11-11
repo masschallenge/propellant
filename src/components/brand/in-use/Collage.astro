@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import logoColor from '@masschallenge/propellant-web/assets/logos/masschallenge-logo-horizontal-color.png';
 import logoWhite from '@masschallenge/propellant-web/assets/logos/masschallenge-logo-horizontal-white.png';
+import { CONTACT_EMAIL, WEBSITE_LABEL, copyrightLine, findSocial } from '../../../brand/contact';
 import { POSITIONING, PRIMARY_LINE } from '../../../brand/messaging';
 import { EMPTY_SIGNATURE, signatureHtml } from '../../../brand/signature';
 import PhotoSlot from './PhotoSlot.astro';
@@ -15,6 +16,8 @@ const signature = signatureHtml(
     title: 'Your title',
     team: 'your team',
     email: 'Your email address',
+    office: 'boston',
+    showSocial: true,
   },
   '',
 );
@@ -57,7 +60,9 @@ const signature = signatureHtml(
       >
         Your big line here
       </p>
-      <p class="m-0 mt-2 text-[13px] text-[var(--teal-400)]">Details and a call to action</p>
+      <p class="m-0 mt-2 text-[13px] text-[var(--teal-400)]">
+        Details and a call to action. {findSocial('instagram').handle}
+      </p>
     </div>
   </Piece>
 
@@ -97,6 +102,7 @@ const signature = signatureHtml(
             Your event name
           </p>
           <p class="m-0 mt-2 text-[13px] text-[var(--teal-100)]">Date, time and place</p>
+          <p class="m-0 mt-1 text-[13px] text-[var(--teal-100)]">{WEBSITE_LABEL}</p>
         </div>
         <span class="self-start rounded-full bg-white px-3 py-1 text-[12px] font-semibold text-[var(--teal-900)]">
           Register
@@ -134,6 +140,9 @@ const signature = signatureHtml(
       <span class="mt-4 block h-1.5 w-4/5 rounded-full bg-[var(--gray-100)]" aria-hidden="true"></span>
       <span class="block h-1.5 w-3/5 rounded-full bg-[var(--gray-100)]" aria-hidden="true"></span>
       <span class="block h-1.5 w-2/3 rounded-full bg-[var(--gray-100)]" aria-hidden="true"></span>
+      <p class="m-0 mt-auto text-[11px] text-[var(--gray-500)]">
+        {copyrightLine()}. {CONTACT_EMAIL}
+      </p>
     </div>
   </Piece>
 

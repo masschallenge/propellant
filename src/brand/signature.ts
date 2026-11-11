@@ -1,6 +1,9 @@
+import { OFFICES, SOCIAL_LINKS, officeAddress, type OfficeId } from './contact';
 import { findColor } from './palette';
 
 export type SignatureLogo = 'horizontal' | 'monogram';
+
+export type SignatureOffice = OfficeId | 'none';
 
 export interface SignatureFields {
   name: string;
@@ -11,6 +14,8 @@ export interface SignatureFields {
   email: string;
   link: string;
   logo: SignatureLogo;
+  office: SignatureOffice;
+  showSocial: boolean;
 }
 
 export interface SignatureNote {
@@ -50,7 +55,17 @@ export const EMPTY_SIGNATURE: SignatureFields = {
   email: '',
   link: '',
   logo: 'horizontal',
+  office: 'none',
+  showSocial: false,
 };
+
+export const SIGNATURE_OFFICES: { id: SignatureOffice; label: string }[] = [
+  { id: 'none', label: 'No office address' },
+  ...OFFICES.map((office) => ({ id: office.id, label: office.name })),
+];
+
+const officeLine = (office: SignatureOffice): string =>
+  office === 'none' ? '' : officeAddress(office);
 
 const INK = findColor('ink').hex;
 const SLATE = findColor('slate').hex;
@@ -187,6 +202,14 @@ export const signatureHtml = (fields: SignatureFields, origin = SITE_ORIGIN): st
       row(link ? anchor(link, cleaned.link) : escapeHtml(cleaned.link), textStyle(14, 20, INK)),
     );
   }
+  const address = officeLine(cleaned.office);
+  if (address) rows.push(row(escapeHtml(address), textStyle(13, 20, SLATE)));
+  if (cleaned.showSocial) {
+    const socialLinks = SOCIAL_LINKS.map((social) => anchor(social.url, social.name)).join(
+      `<span style="color:${SLATE};">&nbsp;&nbsp;|&nbsp;&nbsp;</span>`,
+    );
+    rows.push(row(socialLinks, textStyle(13, 20, INK)));
+  }
   const logoCell =
     `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">` +
     `<tr><td bgcolor="${WHITE}" style="background-color:${WHITE};padding:${clearSpace}px;">` +
@@ -214,6 +237,8 @@ export const signatureText = (fields: SignatureFields): string => {
     cleaned.phone,
     cleaned.email,
     cleaned.link,
+    officeLine(cleaned.office),
+    ...(cleaned.showSocial ? SOCIAL_LINKS.map((social) => `${social.name}: ${social.url}`) : []),
     'MassChallenge',
   ]
     .filter(Boolean)

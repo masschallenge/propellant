@@ -3,6 +3,7 @@ import {
   EMAIL_FONT_STACK,
   EMPTY_SIGNATURE,
   SIGNATURE_LOGOS,
+  SIGNATURE_OFFICES,
   cleanFields,
   escapeHtml,
   fixBrandSpelling,
@@ -152,5 +153,41 @@ describe('the plain text version', () => {
         'MassChallenge',
       ].join('\n'),
     );
+  });
+});
+
+describe('office address and social links', () => {
+  it('leaves both out by default', () => {
+    expect(EMPTY_SIGNATURE.office).toBe('none');
+    expect(EMPTY_SIGNATURE.showSocial).toBe(false);
+    const html = signatureHtml(person);
+    expect(html).not.toContain('Fan Pier');
+    expect(html).not.toContain('linkedin.com');
+  });
+
+  it('offers every office from the About page', () => {
+    expect(SIGNATURE_OFFICES.map((office) => office.id)).toEqual([
+      'none',
+      'boston',
+      'dallas',
+      'israel',
+      'switzerland',
+      'united-kingdom',
+    ]);
+  });
+
+  it('adds the chosen office address', () => {
+    const fields = { ...person, office: 'boston' as const };
+    expect(signatureHtml(fields)).toContain('10 Fan Pier Blvd, 3rd Floor, Boston, MA 02210 USA');
+    expect(signatureText(fields)).toContain('10 Fan Pier Blvd, 3rd Floor, Boston, MA 02210 USA');
+  });
+
+  it('adds the official social links when asked', () => {
+    const fields = { ...person, showSocial: true };
+    const html = signatureHtml(fields);
+    expect(html).toContain('href="https://www.linkedin.com/company/masschallenge"');
+    expect(html).toContain('href="https://www.instagram.com/masschallenge/"');
+    expect(html).toContain('href="https://x.com/MassChallenge"');
+    expect(signatureText(fields)).toContain('X: https://x.com/MassChallenge');
   });
 });

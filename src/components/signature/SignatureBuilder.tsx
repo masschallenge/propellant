@@ -1,20 +1,28 @@
-import { Button, SegmentedControl, TextField } from '@masschallenge/propellant-web';
+import {
+  Button,
+  PopUpButton,
+  SegmentedControl,
+  Switch,
+  TextField,
+} from '@masschallenge/propellant-web';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { copyRich, copyText } from '../../brand/clipboard';
 import {
   EMAIL_FONT_STACK,
   EMPTY_SIGNATURE,
   SIGNATURE_LOGOS,
+  SIGNATURE_OFFICES,
   SITE_ORIGIN,
   signatureHtml,
   signatureNotes,
   signatureText,
   type SignatureFields,
   type SignatureLogo,
+  type SignatureOffice,
 } from '../../brand/signature';
 import MailWindow from './MailWindow';
 
-type TextFieldName = Exclude<keyof SignatureFields, 'logo'>;
+type TextFieldName = Exclude<keyof SignatureFields, 'logo' | 'office' | 'showSocial'>;
 
 interface FieldSetup {
   name: TextFieldName;
@@ -86,8 +94,10 @@ const SignatureBuilder = () => {
     ),
   );
 
-  const updateField = (name: keyof SignatureFields, value: string) =>
-    setFields((current) => ({ ...current, [name]: value }));
+  const updateField = <Name extends keyof SignatureFields>(
+    name: Name,
+    value: SignatureFields[Name],
+  ) => setFields((current) => ({ ...current, [name]: value }));
 
   const announce = (message: string) => {
     setStatus(message);
@@ -159,13 +169,26 @@ const SignatureBuilder = () => {
             aria-label="Logo"
             items={LOGO_ITEMS}
             value={fields.logo}
-            onChange={(id) => updateField('logo', id)}
+            onChange={(id) => updateField('logo', id as SignatureLogo)}
           />
           <p className="m-0 text-footnote text-[var(--label-secondary)]">
             The horizontal logo is the default. The monogram suits a short signature where your
             email already says MassChallenge.
           </p>
         </div>
+        <PopUpButton
+          label="Office address"
+          hint="Optional. The addresses are the offices listed on the MassChallenge About page."
+          value={fields.office}
+          onChange={(office) => updateField('office', office as SignatureOffice)}
+          options={SIGNATURE_OFFICES.map((office) => ({ value: office.id, label: office.label }))}
+        />
+        <Switch
+          label="Add the MassChallenge social links"
+          hint="LinkedIn, Instagram and X. Off by default."
+          checked={fields.showSocial}
+          onChange={(isChecked) => updateField('showSocial', isChecked)}
+        />
       </form>
 
       <div className="flex min-w-0 flex-col gap-6">

@@ -7,6 +7,7 @@ import {
   Textarea,
 } from '@masschallenge/propellant-web';
 import { useEffect, useRef } from 'react';
+import { WEBSITE_LABEL, findSocial } from '../../brand/contact';
 import { POST_FORMATS, formatSizeLabel } from '../../studio/formats';
 import type { LayoutOption } from '../../studio/layouts';
 import type { RenderAssets } from '../../studio/render';
@@ -129,7 +130,7 @@ export const BriefDialog = ({
           />
           <TextField
             label="Call to action or handle"
-            hint="Optional"
+            hint={`Optional. Our handles: ${findSocial('instagram').handle} on Instagram, ${findSocial('x').handle} on X, and ${WEBSITE_LABEL}.`}
             value={draft.callToAction}
             onChange={(event) => onDraft({ callToAction: event.target.value })}
           />
