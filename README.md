@@ -36,6 +36,17 @@ appears within a day without anyone touching this repository. To publish right a
 The workflow publishes to the `gh-pages` branch with a `CNAME` file for
 `propellant.masschallenge.org`, which is how GitHub Pages knows the address.
 
+## Previews
+
+Every pull request from a branch in this repository gets its own preview on Netlify, at
+`https://pr-<number>--<netlify-site>.netlify.app`. The **Preview site** workflow builds the site
+the same way as a real deploy, publishes it, and posts the link on the pull request. Each push
+updates the same link. The live site stays on GitHub Pages.
+
+The workflow needs two repository secrets: `NETLIFY_AUTH_TOKEN`, a Netlify personal access token,
+and `NETLIFY_SITE_ID`, the ID of the Netlify site that holds the previews. Without them it skips
+the preview and leaves a warning.
+
 ## Working on the site
 
 ```bash
