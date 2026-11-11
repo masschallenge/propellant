@@ -1,6 +1,7 @@
 import { BRAND_COLORS, findColor, type BrandColor } from '../brand/palette';
 import { contrastRatio, isDark, relativeLuminance } from '../brand/contrast';
 import { LOGO_GRAY, textReservation } from './colorRules';
+import { PATTERN_NAMES, patternColors, type PatternId } from './patterns';
 import type { PostFormat } from './formats';
 import {
   LOGO_ASPECT,
@@ -27,7 +28,8 @@ import {
 
 export type Backdrop =
   | { kind: 'color'; color: BrandColor; elementId: string | null }
-  | { kind: 'photo'; elementId: string };
+  | { kind: 'photo'; elementId: string }
+  | { kind: 'pattern'; pattern: PatternId; colors: BrandColor[]; elementId: null };
 
 export type PixelSamples = ArrayLike<number>;
 
@@ -57,11 +59,18 @@ const canBeBackdrop = (element: SceneElement): boolean =>
 export const backdropFor = (scene: Scene, elementId: string): Backdrop => {
   const index = scene.elements.findIndex((element) => element.id === elementId);
   const target = scene.elements[index];
-  const background: Backdrop = {
-    kind: 'color',
-    color: findColor(scene.backgroundId),
-    elementId: null,
-  };
+  const background: Backdrop = scene.pattern
+    ? {
+        kind: 'pattern',
+        pattern: scene.pattern,
+        colors: patternColors(scene.pattern),
+        elementId: null,
+      }
+    : {
+        kind: 'color',
+        color: findColor(scene.backgroundId),
+        elementId: null,
+      };
   if (!target) return background;
   const horizontal = target.left + target.width / 2;
   const vertical = target.top + target.height / 2;
@@ -77,8 +86,14 @@ export const backdropFor = (scene: Scene, elementId: string): Backdrop => {
   return background;
 };
 
-export const backdropName = (backdrop: Backdrop): string =>
-  backdrop.kind === 'photo' ? 'Photo' : backdrop.color.name;
+export const backdropName = (backdrop: Backdrop): string => {
+  if (backdrop.kind === 'photo') return 'Photo';
+  if (backdrop.kind === 'pattern') return PATTERN_NAMES[backdrop.pattern];
+  return backdrop.color.name;
+};
+
+export const lowestRatio = (hex: string, colors: BrandColor[]): number =>
+  Math.min(...colors.map((color) => contrastRatio(hex, color.hex)));
 
 export const formatRatio = (ratio: number): string =>
   `${(Math.floor(ratio * 10) / 10).toFixed(1)}:1`;
@@ -119,6 +134,7 @@ export const backdropRatio = (
   samples?: PixelSamples,
 ): number | null => {
   if (backdrop.kind === 'color') return contrastRatio(hex, backdrop.color.hex);
+  if (backdrop.kind === 'pattern') return lowestRatio(hex, backdrop.colors);
   return samples ? measuredContrast(hex, samples) : null;
 };
 
@@ -220,8 +236,23 @@ export const MINIMUM_LOGO_PIXELS: Record<LogoLockup, number> = {
 
 export const MINIMUM_GRAPHIC_CONTRAST = 3;
 
+const TREATMENT_HEXES: Record<LogoTreatment, string> = {
+  color: LOGO_GRAY,
+  white: '#FFFFFF',
+  black: '#000000',
+};
+
 export const logoTreatment = (backdrop: Backdrop): LogoTreatment => {
   if (backdrop.kind === 'photo') return 'white';
+  if (backdrop.kind === 'pattern') {
+    const treatments: LogoTreatment[] = ['color', 'white', 'black'];
+    return (
+      treatments.find(
+        (treatment) =>
+          lowestRatio(TREATMENT_HEXES[treatment], backdrop.colors) >= MINIMUM_GRAPHIC_CONTRAST,
+      ) ?? 'black'
+    );
+  }
   if (isDark(backdrop.color.hex)) return 'white';
   return contrastRatio(LOGO_GRAY, backdrop.color.hex) >= MINIMUM_GRAPHIC_CONTRAST
     ? 'color'

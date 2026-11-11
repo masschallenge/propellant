@@ -1,4 +1,5 @@
 import { findFormat, type PostFormat } from './formats';
+import type { PatternId } from './patterns';
 import { excerpt, wrapText, type MeasureText } from './text';
 import {
   findTextRole,
@@ -58,6 +59,7 @@ export type SceneElement = TextElement | LogoElement | ImageElement | ShapeEleme
 export interface Scene {
   formatId: string;
   backgroundId: string;
+  pattern?: PatternId | null;
   elements: SceneElement[];
 }
 

@@ -209,6 +209,11 @@ const TextControls = ({
             Ratios are measured from the photo pixels under this text, at the darkest tenth.
           </p>
         ) : null}
+        {backdrop.kind === 'pattern' ? (
+          <p className="m-0 text-[length:var(--type-caption-size)] text-[var(--label-secondary)]">
+            Each ratio is the lower of the two pattern colors, so the words read on every triangle.
+          </p>
+        ) : null}
       </PanelSection>
       <PanelSection title="Layout">
         <SegmentedControl

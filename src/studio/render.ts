@@ -1,5 +1,6 @@
 import { findColor } from '../brand/palette';
 import { backdropFor, logoTreatment } from './guardrails';
+import { PATTERN_COLOR_IDS, trianglePattern, type PatternId } from './patterns';
 import {
   sceneFormat,
   textLines,
@@ -97,6 +98,25 @@ const drawLogo = (context: Context, element: LogoElement, scene: Scene, assets: 
   if (image) context.drawImage(image, 0, 0, element.width, element.height);
 };
 
+const drawPattern = (context: Context, pattern: PatternId, width: number, height: number) => {
+  if (pattern !== 'triangles') return;
+  context.fillStyle = findColor(PATTERN_COLOR_IDS[pattern][0]).hex;
+  context.fillRect(0, 0, width, height);
+  context.lineWidth = 1;
+  trianglePattern(width, height).forEach((triangle) => {
+    const hex = findColor(triangle.colorId).hex;
+    context.fillStyle = hex;
+    context.strokeStyle = hex;
+    context.beginPath();
+    context.moveTo(...triangle.points[0]);
+    context.lineTo(...triangle.points[1]);
+    context.lineTo(...triangle.points[2]);
+    context.closePath();
+    context.fill();
+    context.stroke();
+  });
+};
+
 const drawElement = (
   context: Context,
   element: SceneElement,
@@ -128,6 +148,7 @@ export const renderScene = (
   context.setTransform(scale, 0, 0, scale, 0, 0);
   context.fillStyle = findColor(scene.backgroundId).hex;
   context.fillRect(0, 0, format.width, format.height);
+  if (scene.pattern) drawPattern(context, scene.pattern, format.width, format.height);
   const stopIndex = options.belowElementId
     ? scene.elements.findIndex((element) => element.id === options.belowElementId)
     : scene.elements.length;

@@ -1,6 +1,12 @@
-import { Button } from '@masschallenge/propellant-web';
-import { useRef } from 'react';
+import { Button, Switch } from '@masschallenge/propellant-web';
+import { useRef, useState } from 'react';
 import { backgroundColors } from '../../studio/colorRules';
+import {
+  PATTERN_NAMES,
+  patternColors,
+  trianglePattern,
+  type PatternId,
+} from '../../studio/patterns';
 import {
   LOGO_NAMES,
   type LayerDirection,
@@ -22,9 +28,10 @@ interface LeftPanelProps {
   onAddText: (role: TextRoleId) => void;
   onAddLogo: (lockup: LogoLockup) => void;
   onAddShape: (shape: ShapeKind) => void;
-  onAddPhoto: (photo: PhotoAsset) => void;
-  onUploadPhoto: (file: File) => void;
+  onAddPhoto: (photo: PhotoAsset, isDuotone: boolean) => void;
+  onUploadPhoto: (file: File, isDuotone: boolean) => void;
   onBackground: (colorId: string) => void;
+  onPattern: (pattern: PatternId | null) => void;
   onSelect: (id: string | null) => void;
   onMove: (id: string, direction: LayerDirection) => void;
   onToggle: (id: string, property: 'hidden' | 'locked') => void;
@@ -45,6 +52,32 @@ const SHAPE_BUTTONS: { shape: ShapeKind; label: string }[] = [
 
 const LOGO_BUTTONS: LogoLockup[] = ['horizontal', 'monogram'];
 
+const SWATCH_SIDE = 20;
+
+const PatternSwatch = () => (
+  <svg
+    viewBox={`0 0 ${SWATCH_SIDE} ${SWATCH_SIDE}`}
+    aria-hidden="true"
+    className="h-5 w-5 shrink-0 rounded-[var(--corner-sm)] border border-solid border-[var(--separator-strong)]"
+  >
+    {trianglePattern(SWATCH_SIDE, SWATCH_SIDE, 8).map((triangle, index) => (
+      <polygon
+        key={index}
+        points={triangle.points.map((point) => point.join(',')).join(' ')}
+        fill={patternColors('triangles').find((color) => color.id === triangle.colorId)?.hex}
+      />
+    ))}
+  </svg>
+);
+
+const OPTION_CLASS =
+  'flex cursor-pointer items-center gap-2 rounded-[var(--corner-md)] border border-solid px-2 py-1.5 text-left text-[length:var(--type-subheadline-size)] text-[var(--label)] focus-visible:outline-[length:var(--focus-width)] focus-visible:outline-solid focus-visible:outline-[var(--focus-color)]';
+
+const optionState = (isCurrent: boolean) =>
+  isCurrent
+    ? 'border-[var(--tint)] bg-[var(--tint-fill)] font-semibold'
+    : 'border-transparent bg-transparent hover:bg-[var(--fill-tertiary)]';
+
 export const LeftPanel = ({
   scene,
   selectedId,
@@ -55,12 +88,16 @@ export const LeftPanel = ({
   onAddPhoto,
   onUploadPhoto,
   onBackground,
+  onPattern,
   onSelect,
   onMove,
   onToggle,
   onRemove,
 }: LeftPanelProps) => {
   const fileRef = useRef<HTMLInputElement>(null);
+  const [isDuotone, setIsDuotone] = useState(false);
+  const libraryPhotos = photos.filter((photo) => !photo.isDuotone);
+  const isPatternOn = scene.pattern === 'triangles';
   return (
     <aside aria-label="Add to the post" className="flex flex-col">
       <div className="px-4 pt-4">
@@ -98,14 +135,14 @@ export const LeftPanel = ({
       <PanelSection title="Backgrounds">
         <div className="grid grid-cols-1 gap-1" role="group" aria-label="Background color">
           {backgroundColors().map((color) => {
-            const isCurrent = scene.backgroundId === color.id;
+            const isCurrent = !isPatternOn && scene.backgroundId === color.id;
             return (
               <button
                 key={color.id}
                 type="button"
                 aria-pressed={isCurrent}
                 onClick={() => onBackground(color.id)}
-                className={`flex cursor-pointer items-center gap-2 rounded-[var(--corner-md)] border border-solid px-2 py-1.5 text-left text-[length:var(--type-subheadline-size)] text-[var(--label)] focus-visible:outline-[length:var(--focus-width)] focus-visible:outline-solid focus-visible:outline-[var(--focus-color)] ${isCurrent ? 'border-[var(--tint)] bg-[var(--tint-fill)] font-semibold' : 'border-transparent bg-transparent hover:bg-[var(--fill-tertiary)]'}`}
+                className={`${OPTION_CLASS} ${optionState(isCurrent)}`}
               >
                 <span
                   aria-hidden="true"
@@ -119,9 +156,22 @@ export const LeftPanel = ({
               </button>
             );
           })}
+          <button
+            type="button"
+            aria-pressed={isPatternOn}
+            onClick={() => onPattern(isPatternOn ? null : 'triangles')}
+            className={`${OPTION_CLASS} ${optionState(isPatternOn)}`}
+          >
+            <PatternSwatch />
+            <span className="flex-1">{PATTERN_NAMES.triangles}</span>
+            {isPatternOn ? (
+              <span className="text-[length:var(--type-caption-size)]">Current</span>
+            ) : null}
+          </button>
         </div>
         <p className="m-0 text-[length:var(--type-caption-size)] text-[var(--label-secondary)]">
-          MassChallenge has no brand patterns yet, so there are none to add here.
+          The brand pattern: Bright teal and Pale teal triangles. Text on it must read on both
+          colors, so white text is switched to a color that does.
         </p>
       </PanelSection>
       <PanelSection title="Photos">
@@ -135,25 +185,32 @@ export const LeftPanel = ({
           data-studio-photo-input
           onChange={(event) => {
             const file = event.target.files?.[0];
-            if (file) onUploadPhoto(file);
+            if (file) onUploadPhoto(file, isDuotone);
             event.target.value = '';
           }}
         />
         <Button size="sm" variant="gray" onClick={() => fileRef.current?.click()}>
           Upload your own
         </Button>
+        <Switch
+          size="sm"
+          checked={isDuotone}
+          onChange={setIsDuotone}
+          label="Add in teal duotone"
+          hint="Deep teal shadows to Bright teal highlights. Not for portraits."
+        />
         <p className="m-0 text-[length:var(--type-caption-size)] text-[var(--label-secondary)]">
           Your photos stay in this browser and are never uploaded. To pick a photo from
           masschallenge.org, download it from the photo library in the brand guide.
         </p>
-        {photos.length ? (
+        {libraryPhotos.length ? (
           <div className="grid grid-cols-3 gap-1.5">
-            {photos.map((photo) => (
+            {libraryPhotos.map((photo) => (
               <button
                 key={photo.id}
                 type="button"
-                onClick={() => onAddPhoto(photo)}
-                aria-label={`Add ${photo.name} to the canvas`}
+                onClick={() => onAddPhoto(photo, isDuotone)}
+                aria-label={`Add ${photo.name} to the canvas${isDuotone ? ' in teal duotone' : ''}`}
                 className="aspect-square cursor-pointer overflow-hidden rounded-[var(--corner-sm)] border border-solid border-[var(--separator-strong)] bg-[var(--bg-secondary)] p-0 focus-visible:outline-[length:var(--focus-width)] focus-visible:outline-solid focus-visible:outline-[var(--focus-color)]"
               >
                 <img src={photo.url} alt="" className="h-full w-full object-cover" />

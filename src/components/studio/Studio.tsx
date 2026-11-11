@@ -30,6 +30,7 @@ import {
   undoHistory,
 } from '../../studio/history';
 import { generateLayouts, type Brief, type LayoutOption } from '../../studio/layouts';
+import type { PatternId } from '../../studio/patterns';
 import { reflowScene } from '../../studio/reflow';
 import type { RenderAssets } from '../../studio/render';
 import {
@@ -66,6 +67,8 @@ import { Stage } from './Stage';
 import { ToastRegion, useToasts } from './Toasts';
 import { TopBar } from './TopBar';
 import {
+  duotoneId,
+  makeDuotonePhoto,
   readPhoto,
   useFontsReady,
   useLogoImages,
@@ -328,6 +331,25 @@ export const Studio = () => {
     });
   };
 
+  const addPhotoAs = async (photo: PhotoAsset, isDuotone: boolean) => {
+    if (!isDuotone) {
+      addPhoto(photo);
+      return;
+    }
+    const existing = photos.find((candidate) => candidate.id === duotoneId(photo.id));
+    try {
+      const toned = existing ?? (await makeDuotonePhoto(photo));
+      if (!existing) setPhotos((current) => [...current, toned]);
+      addPhoto(toned);
+    } catch (error) {
+      showToast({
+        title: 'Duotone not made',
+        body: error instanceof Error ? error.message : 'The duotone could not be made.',
+        tone: 'error',
+      });
+    }
+  };
+
   const removeSelected = (id: string) => {
     commitGuarded(removeElement(history.present, id));
     setSelectedId(null);
@@ -368,8 +390,13 @@ export const Studio = () => {
   };
 
   const changeBackground = (colorId: string) => {
-    if (colorId === history.present.backgroundId) return;
-    commitGuarded({ ...history.present, backgroundId: colorId });
+    if (colorId === history.present.backgroundId && !history.present.pattern) return;
+    commitGuarded({ ...history.present, backgroundId: colorId, pattern: null });
+  };
+
+  const changePattern = (pattern: PatternId | null) => {
+    if ((history.present.pattern ?? null) === pattern) return;
+    commitGuarded({ ...history.present, pattern });
   };
 
   const changeFormat = (formatId: string) => {
@@ -444,12 +471,13 @@ export const Studio = () => {
             onAddText={addText}
             onAddLogo={addLogo}
             onAddShape={addShape}
-            onAddPhoto={addPhoto}
-            onUploadPhoto={async (file) => {
+            onAddPhoto={addPhotoAs}
+            onUploadPhoto={async (file, isDuotone) => {
               const photo = await addPhotoFile(file);
-              if (photo) addPhoto(photo);
+              if (photo) await addPhotoAs(photo, isDuotone);
             }}
             onBackground={changeBackground}
+            onPattern={changePattern}
             onSelect={setSelectedId}
             onMove={moveSelectedLayer}
             onToggle={toggleElement}
