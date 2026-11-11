@@ -145,9 +145,11 @@ const PhotoCheck = () => {
   );
 
   useEffect(() => {
-    if (!source) return;
+    if (!source) return undefined;
+    let isCurrent = true;
     const image = new Image();
     image.onload = () => {
+      if (!isCurrent) return;
       try {
         const analysis = drawScaled(image, ANALYSIS_SIZE, treatment);
         const display =
@@ -169,8 +171,15 @@ const PhotoCheck = () => {
         setError('We could not read that photo. Try a JPG or PNG.');
       }
     };
-    image.onerror = () => setError('We could not open that file. Try a JPG or PNG.');
+    image.onerror = () => {
+      if (isCurrent) setError('We could not open that file. Try a JPG or PNG.');
+    };
     image.src = source.url;
+    return () => {
+      isCurrent = false;
+      image.onload = null;
+      image.onerror = null;
+    };
   }, [source, treatment]);
 
   const handleFiles = (files: FileList) => {
