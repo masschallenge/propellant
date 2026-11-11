@@ -1,4 +1,5 @@
 import { needsMeasuring, type SampleMap } from './guardrails';
+import { footprintBounds, maskOutsideFootprint } from './footprint';
 import { missingLogoKeys, renderScene, textFontFaces, type RenderAssets } from './render';
 import { sceneFormat, type Scene } from './scene';
 import { fileNameFromLine, type MeasureText } from './text';
@@ -46,16 +47,16 @@ export const sampleBackdrops = (
       scale: SAMPLE_SCALE,
       belowElementId: element.id,
     });
-    const left = Math.max(0, Math.floor(element.left * SAMPLE_SCALE));
-    const top = Math.max(0, Math.floor(element.top * SAMPLE_SCALE));
-    const right = Math.min(canvas.width, Math.ceil((element.left + element.width) * SAMPLE_SCALE));
-    const bottom = Math.min(
-      canvas.height,
-      Math.ceil((element.top + element.height) * SAMPLE_SCALE),
-    );
+    const bounds = footprintBounds(element);
+    const left = Math.max(0, Math.floor(bounds.left * SAMPLE_SCALE));
+    const top = Math.max(0, Math.floor(bounds.top * SAMPLE_SCALE));
+    const right = Math.min(canvas.width, Math.ceil((bounds.left + bounds.width) * SAMPLE_SCALE));
+    const bottom = Math.min(canvas.height, Math.ceil((bounds.top + bounds.height) * SAMPLE_SCALE));
     if (right <= left || bottom <= top) return;
     try {
-      samples[element.id] = context.getImageData(left, top, right - left, bottom - top).data;
+      const region = { left, top, width: right - left, height: bottom - top };
+      const pixels = context.getImageData(left, top, region.width, region.height).data;
+      samples[element.id] = maskOutsideFootprint(pixels, element, region, SAMPLE_SCALE);
     } catch {
       return;
     }
