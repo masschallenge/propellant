@@ -5,7 +5,10 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://propellant.masschallenge.org',
-  vite: { plugins: [tailwindcss()] },
+  vite: {
+    plugins: [tailwindcss()],
+    optimizeDeps: { include: ['react', 'react-dom', 'react-dom/client'] },
+  },
   integrations: [
     react(),
     starlight({

@@ -32,11 +32,14 @@ const links = [
         const saved = localStorage.getItem('propellant-theme');
         if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
       } catch (error) {
-        document.documentElement.dataset.theme = 'light';
+        delete document.documentElement.dataset.theme;
       }
     </script>
   </head>
-  <body data-propellant>
+  <body data-propellant data-appearance="system">
+    <script is:inline>
+      if (document.documentElement.dataset.theme) delete document.body.dataset.appearance;
+    </script>
     <a
       href="#main"
       class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-[var(--corner-md)] focus:bg-[var(--bg)] focus:px-4 focus:py-2"
@@ -50,7 +53,7 @@ const links = [
           <img src={lockupColor.src} alt="" class="h-7 w-auto dark-hidden" />
           <img src={lockupWhite.src} alt="" class="h-7 w-auto light-hidden" />
         </a>
-        <nav aria-label="Propellant" class="ml-auto flex items-center gap-1 overflow-x-auto">
+        <nav aria-label="Propellant" class="ml-auto flex min-w-0 items-center gap-1 overflow-x-auto">
           {
             links.map((link) => (
               <a
@@ -94,6 +97,7 @@ const links = [
           (!root.dataset.theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
         const next = isDark ? 'light' : 'dark';
         root.dataset.theme = next;
+        delete document.body.dataset.appearance;
         try {
           localStorage.setItem('propellant-theme', next);
         } catch (error) {
