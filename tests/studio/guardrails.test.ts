@@ -317,6 +317,47 @@ describe('logo', () => {
   });
 });
 
+describe('rotated text and logos across backgrounds', () => {
+  it('flags rotated text that the export would cut off', () => {
+    const scene: Scene = {
+      formatId: 'instagram-square',
+      backgroundId: 'white',
+      elements: [
+        headline({ colorId: 'ink', left: 240, top: 0, width: 600, height: 132, rotation: 90 }),
+      ],
+    };
+    expect(checkScene(scene).some((issue) => /runs off the edge/.test(issue.message))).toBe(true);
+    const upright = { ...scene, elements: [{ ...scene.elements[0], rotation: 0 }] };
+    expect(checkScene(upright).some((issue) => /runs off the edge/.test(issue.message))).toBe(
+      false,
+    );
+  });
+
+  it('says so when no version of the logo reads on every background under it', () => {
+    const scene: Scene = {
+      formatId: 'instagram-post',
+      backgroundId: 'white',
+      elements: [
+        {
+          ...BASE_DEFAULTS,
+          id: 'panel',
+          kind: 'shape',
+          shape: 'block',
+          colorId: 'deep-teal',
+          left: 0,
+          top: 0,
+          width: 300,
+          height: 1350,
+        },
+        logo({ left: 120, top: 1100 }),
+      ],
+    };
+    expect(
+      checkScene(scene).some((issue) => /No version of the logo reads/.test(issue.message)),
+    ).toBe(true);
+  });
+});
+
 describe('checkScene', () => {
   it('is quiet for an on brand scene', () => {
     const scene: Scene = {

@@ -1,5 +1,6 @@
 import { BRAND_COLORS, findColor, type BrandColor } from '../brand/palette';
 import { contrastRatio, hexToRgb, isDark, relativeLuminance } from '../brand/contrast';
+import { footprintBounds } from './footprint';
 import { LOGO_GRAY, textReservation } from './colorRules';
 import { PATTERN_NAMES, patternColors, type PatternId } from './patterns';
 import type { PostFormat } from './formats';
@@ -474,11 +475,12 @@ const textIssues = (scene: Scene, element: TextElement, samples: SampleMap): Bra
       });
     }
   }
+  const drawn = footprintBounds(element);
   if (
-    element.left < -EDGE_TOLERANCE ||
-    element.top < -EDGE_TOLERANCE ||
-    element.left + element.width > format.width + EDGE_TOLERANCE ||
-    element.top + element.height > format.height + EDGE_TOLERANCE
+    drawn.left < -EDGE_TOLERANCE ||
+    drawn.top < -EDGE_TOLERANCE ||
+    drawn.left + drawn.width > format.width + EDGE_TOLERANCE ||
+    drawn.top + drawn.height > format.height + EDGE_TOLERANCE
   ) {
     issues.push({ elementId: element.id, message: `${name} runs off the edge of the canvas.` });
   }
@@ -519,6 +521,17 @@ const logoIssues = (scene: Scene, element: LogoElement, samples: SampleMap): Bra
       issues.push({
         elementId: element.id,
         message: `The photo behind the logo is too light for the white logo (${formatRatio(ratio)}).`,
+      });
+    }
+  } else if (backdrop.kind !== 'photo') {
+    const treatment = logoTreatment(backdrop);
+    const ratio = lowestRatio(TREATMENT_HEXES[treatment], backdropColors(backdrop));
+    if (ratio < MINIMUM_GRAPHIC_CONTRAST) {
+      issues.push({
+        elementId: element.id,
+        message: `No version of the logo reads on ${backdropName(backdrop)}: the ${TREATMENT_NAMES[
+          treatment
+        ].toLowerCase()} logo is only ${formatRatio(ratio)}. Move it onto one background.`,
       });
     }
   }
