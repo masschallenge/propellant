@@ -1,7 +1,47 @@
 ---
 import SectionHeading from '../SectionHeading.astro';
+import PhotoCheck from '../photos/PhotoCheck';
+import PhotoExamples from '../photos/PhotoExamples.astro';
+import PhotoLibrary from '../photos/PhotoLibrary';
 ---
 
 <section id="photos" class="scroll-mt-28 py-16">
-  <SectionHeading eyebrow="Photos" title="Photos" />
+  <SectionHeading
+    eyebrow="Photos"
+    title="Real people, doing real things"
+    lead="People are at the heart of how MassChallenge looks. Choose photos of our community at work, together, and give the words somewhere calm to sit."
+  />
+
+  <h3 class="m-0 mb-4 text-[length:var(--type-title2-size)] font-semibold text-[var(--label)]">
+    What works and what does not
+  </h3>
+  <PhotoExamples />
+  <p class="m-0 mt-4 text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">
+    These are diagrams, not photos. The rules come from the{' '}
+    <a href="/guidelines/photography/" class="text-[var(--tint)]">photography and video guide</a>.
+  </p>
+
+  <div
+    id="check-your-photo"
+    class="mt-12 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5 sm:p-8"
+  >
+    <h3 class="m-0 text-[length:var(--type-title2-size)] font-semibold text-[var(--label)]">
+      Check your photo
+    </h3>
+    <p class="m-0 mb-1 mt-2 max-w-[68ch] text-[length:var(--type-body-size)] text-[var(--label-secondary)]">
+      Drop in a photo to see it with the logo and a headline over it, measure whether the words can
+      be read, and see how it fits common shapes.
+    </p>
+    <p class="m-0 mb-6 max-w-[68ch] text-[length:var(--type-body-size)] font-semibold text-[var(--label)]">
+      Your photo stays in your browser. It is never uploaded or saved.
+    </p>
+    <PhotoCheck client:visible />
+  </div>
+
+  <div class="mt-12">
+    <h3 class="m-0 mb-4 text-[length:var(--type-title2-size)] font-semibold text-[var(--label)]">
+      Photo library
+    </h3>
+    <PhotoLibrary />
+  </div>
 </section>

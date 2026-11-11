@@ -1,0 +1,59 @@
+---
+import { existsSync, statSync } from 'node:fs';
+import { join } from 'node:path';
+import { Button } from '@masschallenge/propellant-web';
+import { BRAND_KIT_NAME } from '../../../../scripts/lib/brand-kit.mjs';
+
+const kitUrl = `/downloads/${BRAND_KIT_NAME}.zip`;
+const kitFile = join(process.cwd(), 'public', kitUrl);
+const kitSize = existsSync(kitFile) ? `${Math.round(statSync(kitFile).size / 1024)} KB` : null;
+
+const CONTENTS = [
+  { folder: 'logos', text: 'Every MassChallenge logo PNG: horizontal and monogram, in color, white and black.' },
+  { folder: 'fonts', text: 'Propellant Sans (Lato) and Oswald web fonts, with their Open Font License files.' },
+  { folder: 'colors.txt and colors.json', text: 'Every brand and logo color, with HEX, RGB and the Propellant token.' },
+  { folder: 'design-system-only', text: 'The Propellant mark as SVG. It stands for the design system, never for MassChallenge.' },
+  { folder: 'README.txt', text: 'What each file is for.' },
+];
+---
+
+<div
+  id="take-it-with-you"
+  class="scroll-mt-28 grid grid-cols-1 gap-8 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-6 sm:p-10 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"
+>
+  <div class="flex flex-col items-start gap-4">
+    <p class="m-0 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[var(--type-eyebrow-tracking)] text-[var(--tint)]">
+      Take it all with you
+    </p>
+    <h3 class="m-0 font-[family-name:var(--type-family-brand)] text-[length:var(--type-title1-size)] font-medium uppercase leading-[1.05] text-[var(--label)]">
+      One zip, the whole brand
+    </h3>
+    <p class="m-0 text-[length:var(--type-body-size)] text-[var(--label-secondary)]">
+      Every logo as a PNG, the fonts, and the color codes in a text file. There is no vector
+      original of the MassChallenge logo, so these PNG files are the ones to use.
+    </p>
+    {
+      kitSize ? (
+        <Button size="lg" href={kitUrl} download>
+          Download everything (ZIP, {kitSize})
+        </Button>
+      ) : (
+        <p class="m-0 text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
+          The brand kit is built when the site syncs with a release of Propellant for the web.
+        </p>
+      )
+    }
+  </div>
+  <ul class="m-0 flex list-none flex-col gap-0 p-0">
+    {
+      CONTENTS.map((item) => (
+        <li class="flex flex-col gap-1 border-0 border-b border-solid border-[var(--separator)] py-3 last:border-b-0 sm:flex-row sm:gap-4">
+          <span class="font-[family-name:var(--type-family-mono)] text-[length:var(--type-footnote-size)] font-semibold text-[var(--label)] sm:w-48 sm:flex-none">
+            {item.folder}
+          </span>
+          <span class="text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">{item.text}</span>
+        </li>
+      ))
+    }
+  </ul>
+</div>

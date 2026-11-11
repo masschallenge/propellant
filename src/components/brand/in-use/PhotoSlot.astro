@@ -1,0 +1,18 @@
+---
+interface Props {
+  tone: 'teal' | 'mid';
+  class?: string;
+}
+
+const { tone, class: className } = Astro.props;
+---
+
+<div
+  class:list={[
+    'flex items-center justify-center border-2 border-dashed border-white/60 text-[13px] font-semibold uppercase tracking-[0.08em] text-white',
+    tone === 'teal' ? 'bg-[var(--teal-800)]' : 'bg-[var(--teal-600)]',
+    className,
+  ]}
+>
+  Your photo
+</div>

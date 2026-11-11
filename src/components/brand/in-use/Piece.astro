@@ -1,0 +1,19 @@
+---
+interface Props {
+  label: string;
+  class?: string;
+}
+
+const { label, class: className } = Astro.props;
+---
+
+<figure class:list={['m-0 flex min-w-0 flex-col gap-2', className]}>
+  <div
+    class="overflow-hidden rounded-[var(--corner-lg)] shadow-[0_0_0_1px_var(--separator),var(--shadow-float)]"
+  >
+    <slot />
+  </div>
+  <figcaption class="text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">
+    {label}
+  </figcaption>
+</figure>

@@ -1,3 +1,5 @@
+import colorData from './colors.json';
+
 export type ColorFamily = 'brand' | 'accent' | 'neutral';
 
 export interface BrandColor {
@@ -9,101 +11,15 @@ export interface BrandColor {
   role: string;
 }
 
-export const BRAND_COLORS: BrandColor[] = [
-  {
-    id: 'deep-teal',
-    name: 'Deep teal',
-    hex: '#044451',
-    token: '--teal-900',
-    family: 'brand',
-    role: 'Brand surfaces, such as the panel of a sign in page',
-  },
-  {
-    id: 'teal',
-    name: 'Teal',
-    hex: '#065E6F',
-    token: '--teal-800',
-    family: 'brand',
-    role: 'The primary interactive color in light mode',
-  },
-  {
-    id: 'mid-teal',
-    name: 'Mid teal',
-    hex: '#068DA4',
-    token: '--teal-600',
-    family: 'brand',
-    role: 'Supporting accents',
-  },
-  {
-    id: 'bright-teal',
-    name: 'Bright teal',
-    hex: '#0FACBD',
-    token: '--teal-400',
-    family: 'brand',
-    role: 'Accents on dark surfaces',
-  },
-  {
-    id: 'pale-teal',
-    name: 'Pale teal',
-    hex: '#D9F6FA',
-    token: '--teal-100',
-    family: 'brand',
-    role: 'Tinted backgrounds',
-  },
-  {
-    id: 'mist',
-    name: 'Mist',
-    hex: '#F3FBFC',
-    token: '--teal-50',
-    family: 'brand',
-    role: 'The lightest tint',
-  },
-  {
-    id: 'magenta',
-    name: 'Magenta',
-    hex: '#BF0261',
-    token: '--magenta-600',
-    family: 'accent',
-    role: 'Destructive actions and errors',
-  },
-  {
-    id: 'yellow',
-    name: 'Yellow',
-    hex: '#FFC801',
-    token: '--yellow-400',
-    family: 'accent',
-    role: 'Highlights, such as search matches and new items',
-  },
-  {
-    id: 'ink',
-    name: 'Ink',
-    hex: '#1E282B',
-    token: '--gray-800',
-    family: 'neutral',
-    role: 'Text on light backgrounds',
-  },
-  {
-    id: 'slate',
-    name: 'Slate',
-    hex: '#4B575B',
-    token: '--gray-500',
-    family: 'neutral',
-    role: 'Secondary text',
-  },
-  {
-    id: 'white',
-    name: 'White',
-    hex: '#FFFFFF',
-    token: '--gray-0',
-    family: 'neutral',
-    role: 'The page and content surfaces',
-  },
-];
+export interface LogoColor {
+  name: string;
+  hex: string;
+  part: string;
+}
 
-export const LOGO_COLORS = [
-  { name: 'Logo gray', hex: '#828486', part: 'M and wordmark' },
-  { name: 'Logo teal', hex: '#17ACBC', part: 'C and divider' },
-];
+export const BRAND_COLORS: BrandColor[] = colorData.brandColors as BrandColor[];
+
+export const LOGO_COLORS: LogoColor[] = colorData.logoColors;
 
 export const findColor = (id: string): BrandColor => {
   const color = BRAND_COLORS.find((candidate) => candidate.id === id);

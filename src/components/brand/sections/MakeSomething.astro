@@ -1,7 +1,29 @@
 ---
-import SectionHeading from '../SectionHeading.astro';
+import { Button } from '@masschallenge/propellant-web';
+import BrandKit from '../kit/BrandKit.astro';
 ---
 
 <section id="make-something" class="scroll-mt-28 py-16">
-  <SectionHeading eyebrow="MakeSomething" title="MakeSomething" />
+  <div class="mb-12 overflow-hidden rounded-[var(--corner-xl)] bg-[var(--teal-900)] px-6 py-10 text-white sm:px-10 sm:py-14">
+    <p class="m-0 mb-2 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[var(--type-eyebrow-tracking)] text-[var(--teal-400)]">
+      Make something
+    </p>
+    <h2 class="m-0 max-w-[18ch] font-[family-name:var(--type-family-brand)] text-[length:var(--type-display-size)] font-medium uppercase leading-[1.05]">
+      Your own little design studio
+    </h2>
+    <p class="m-0 mt-4 max-w-[56ch] text-[length:var(--type-title3-size)] leading-[1.5] text-[var(--teal-100)]">
+      It only hands you MassChallenge fonts, colors and logos, used the way they are meant to be, so
+      whatever you make comes out on brand. You bring the words. It lays them out; it does not write
+      for you.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-3" data-theme="dark">
+      <Button size="lg" href="/studio/?brief=open">I need a post about...</Button>
+      <Button size="lg" variant="gray" href="/studio/">Open the studio</Button>
+    </div>
+    <p class="m-0 mt-6 text-[length:var(--type-callout-size)] text-[var(--teal-100)]">
+      Need an email signature?{' '}
+      <a href="/studio/signature/" class="font-semibold text-white">Build one in a minute</a>.
+    </p>
+  </div>
+  <BrandKit />
 </section>
