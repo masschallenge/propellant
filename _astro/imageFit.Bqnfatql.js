@@ -1,0 +1,1 @@
+var e=(e=!1)=>e?`object-cover`:`object-contain`;export{e as t};
