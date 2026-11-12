@@ -25,7 +25,7 @@ const shape = (id: string): ShapeElement => ({
   id,
   kind: 'shape',
   shape: 'block',
-  colorId: 'mid-teal',
+  colorId: 'mc-blue',
   left: 0,
   top: 0,
   width: 100,
@@ -38,7 +38,7 @@ const text: TextElement = {
   kind: 'text',
   role: 'headline',
   size: 'display',
-  colorId: 'ink',
+  colorId: 'black',
   align: 'left',
   text: 'Demo day',
   left: 72,
@@ -80,7 +80,7 @@ describe('scene editing', () => {
       { ...blankScene('instagram-post'), elements: [text] },
       fakeMeasure,
     );
-    expect(scene.elements[0].height).toBe(132 * 2);
+    expect(scene.elements[0].height).toBe(120 * 2);
   });
 });
 

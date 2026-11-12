@@ -130,7 +130,7 @@ const run = async () => {
   const liveRegion = await page.locator('[aria-live="polite"]:has([data-studio-toast])').count();
   check('5b. Toasts sit in an aria-live region', liveRegion === 1);
 
-  await page.getByRole('button', { name: 'Deep teal', exact: true }).click();
+  await page.getByRole('button', { name: 'Navy', exact: true }).click();
   await page.waitForTimeout(400);
   const switchToast = await toastText(page);
   check(

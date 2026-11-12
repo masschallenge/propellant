@@ -37,7 +37,7 @@ type Context = CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D;
 const drawText = (context: Context, element: TextElement, scene: Scene, measure: MeasureText) => {
   const format = sceneFormat(scene);
   const lines = textLines(element, format, measure);
-  const lineHeight = linePixels(element.size, format);
+  const lineHeight = linePixels(element.size, format, element.role);
   const anchors = { left: 0, center: element.width / 2, right: element.width };
   context.font = fontString(element.role, element.size, format);
   context.fillStyle = findColor(element.colorId).hex;

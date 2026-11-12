@@ -1,4 +1,3 @@
-import { BRAND_DUOTONE, duotoneChannels, type Duotone } from '../brand/duotone';
 import { findColor, type BrandColor } from '../brand/palette';
 
 export type PatternId = 'triangles';
@@ -8,7 +7,7 @@ export const PATTERN_NAMES: Record<PatternId, string> = {
 };
 
 export const PATTERN_COLOR_IDS: Record<PatternId, string[]> = {
-  triangles: ['bright-teal', 'pale-teal'],
+  triangles: ['mc-blue', 'light-tint'],
 };
 
 export const patternColors = (pattern: PatternId): BrandColor[] =>
@@ -21,7 +20,7 @@ export interface PatternTriangle {
   colorId: string;
 }
 
-export const PALE_SHARE = 0.3;
+export const LIGHT_SHARE = 0.3;
 
 const cellNoise = (row: number, column: number, seed: number): number => {
   const mixed = Math.sin(row * 127.1 + column * 311.7 + seed * 74.7) * 43758.5453;
@@ -39,7 +38,7 @@ export const trianglePattern = (
 ): PatternTriangle[] => {
   const rowHeight = (side * Math.sqrt(3)) / 2;
   const halfSide = side / 2;
-  const [mainId, paleId] = PATTERN_COLOR_IDS.triangles;
+  const [mainId, lightId] = PATTERN_COLOR_IDS.triangles;
   const triangles: PatternTriangle[] = [];
   const rows = Math.ceil(height / rowHeight);
   const columns = Math.ceil(width / halfSide) + 2;
@@ -61,32 +60,9 @@ export const trianglePattern = (
             [left + side, top],
             [left + halfSide, bottom],
           ];
-      const colorId = cellNoise(row, column, seed) < PALE_SHARE ? paleId : mainId;
+      const colorId = cellNoise(row, column, seed) < LIGHT_SHARE ? lightId : mainId;
       triangles.push({ points, colorId });
     }
   }
   return triangles;
-};
-
-export type { Duotone };
-
-export const TEAL_DUOTONE: Duotone = BRAND_DUOTONE;
-
-export type PixelData = Uint8ClampedArray | number[];
-
-export const duotonePixels = (pixels: PixelData, duotone: Duotone = TEAL_DUOTONE): PixelData => {
-  const result = pixels.slice() as PixelData;
-  for (let offset = 0; offset + 3 < pixels.length; offset += 4) {
-    const [red, green, blue] = duotoneChannels(
-      pixels[offset],
-      pixels[offset + 1],
-      pixels[offset + 2],
-      duotone,
-    );
-    result[offset] = red;
-    result[offset + 1] = green;
-    result[offset + 2] = blue;
-    result[offset + 3] = pixels[offset + 3];
-  }
-  return result;
 };

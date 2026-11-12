@@ -1,6 +1,6 @@
 import { contrastRatio } from './contrast';
 import { APPROVED_FIGURES } from './messaging';
-import { SUPPORTING_COLORS, chartColors, findColor } from './palette';
+import { chartColors, findColor } from './palette';
 
 export interface PatternCover {
   label: string;
@@ -12,42 +12,63 @@ export interface PatternCover {
 export const PATTERN_COVERS: PatternCover[] = [
   {
     label: 'ACCELERATOR',
-    labelColorId: 'ink',
+    labelColorId: 'black',
     panelColorId: null,
-    alt: 'ACCELERATOR in Ink capitals over a pattern of Bright teal and Pale teal triangles',
+    alt: 'ACCELERATOR in Black capitals over a pattern of MC Blue and light tint triangles',
   },
   {
     label: 'CHALLENGE',
     labelColorId: 'white',
-    panelColorId: 'deep-teal',
-    alt: 'CHALLENGE in White capitals on a Deep teal panel over a pattern of Bright teal and Pale teal triangles',
+    panelColorId: 'navy',
+    alt: 'CHALLENGE in White capitals on a Navy panel over a pattern of MC Blue and light tint triangles',
   },
 ];
 
-export interface ProgramLockup {
+export interface SubBrandLockup {
   name: string;
+  location: string;
   surfaceColorId: string;
   monogramTreatment: 'color' | 'white';
-  dividerColorId: string;
-  nameColorId: string;
+  ruleColorId: string;
+  textColorId: string;
 }
 
-export const PROGRAM_LOCKUPS: ProgramLockup[] = [
+export const SUB_BRAND_LOCKUPS: SubBrandLockup[] = [
   {
-    name: 'RESOLVE 2026',
+    name: 'PROGRAM NAME',
+    location: 'LOCATION',
     surfaceColorId: 'white',
     monogramTreatment: 'color',
-    dividerColorId: 'teal',
-    nameColorId: 'ink',
+    ruleColorId: 'mc-blue',
+    textColorId: 'black',
   },
   {
-    name: 'RESOLVE 2026',
-    surfaceColorId: 'deep-teal',
+    name: 'PROGRAM NAME',
+    location: 'LOCATION',
+    surfaceColorId: 'navy',
     monogramTreatment: 'white',
-    dividerColorId: 'bright-teal',
-    nameColorId: 'white',
+    ruleColorId: 'cyan',
+    textColorId: 'white',
   },
 ];
+
+export interface PartnerLockup {
+  surfaceColorId: string;
+  ruleColorId: string;
+  textColorId: string;
+}
+
+export const PARTNER_LOCKUPS: PartnerLockup[] = [
+  { surfaceColorId: 'white', ruleColorId: 'mc-gray', textColorId: 'black' },
+  { surfaceColorId: 'navy', ruleColorId: 'white', textColorId: 'white' },
+];
+
+export const ENDORSEMENT_EXAMPLE = {
+  initiative: 'INITIATIVE NAME',
+  endorsement: 'WITH MASSCHALLENGE',
+  surfaceColorId: 'white',
+  textColorId: 'black',
+};
 
 export interface StatCallout {
   value: string;
@@ -55,6 +76,7 @@ export interface StatCallout {
   surfaceColorId: string;
   numberColorId: string;
   labelColorId: string;
+  accentRuleColorId: string | null;
 }
 
 const figureValue = (id: string): string => {
@@ -68,15 +90,17 @@ export const STAT_CALLOUTS: StatCallout[] = [
     value: figureValue('jobs'),
     label: 'JOBS CREATED',
     surfaceColorId: 'white',
-    numberColorId: 'deep-teal',
-    labelColorId: 'ink',
+    numberColorId: 'teal',
+    labelColorId: 'black',
+    accentRuleColorId: 'yellow',
   },
   {
     value: figureValue('raised'),
     label: 'RAISED BY STARTUPS',
-    surfaceColorId: 'deep-teal',
-    numberColorId: 'bright-teal',
+    surfaceColorId: 'navy',
+    numberColorId: 'cyan',
     labelColorId: 'white',
+    accentRuleColorId: null,
   },
 ];
 
@@ -95,7 +119,7 @@ export const TIMELINE_STEP_NAMES = [
   'Finale',
 ];
 
-export const TIMELINE_LINE_HEX = SUPPORTING_COLORS.find((color) => color.id === 'gray-300')?.hex;
+export const TIMELINE_LINE_HEX = findColor('gray-300').hex;
 
 export const timelineSteps = (): TimelineStep[] => {
   const colors = chartColors();
@@ -109,12 +133,25 @@ export const timelineSteps = (): TimelineStep[] => {
 export interface IconSurface {
   surfaceColorId: string;
   iconColorId: string;
+  labelColorId: string;
 }
 
 export const ICON_SURFACES: IconSurface[] = [
-  { surfaceColorId: 'white', iconColorId: 'teal' },
-  { surfaceColorId: 'deep-teal', iconColorId: 'bright-teal' },
+  { surfaceColorId: 'white', iconColorId: 'teal', labelColorId: 'black' },
+  { surfaceColorId: 'navy', iconColorId: 'cyan', labelColorId: 'white' },
 ];
+
+export const HEXAGON_FRAME = {
+  hexagonColorId: 'mc-blue',
+  lineColorId: 'light-tint',
+  surfaceColorId: 'navy',
+};
+
+export const hexagonPoints = (centerX: number, centerY: number, radius: number): string =>
+  Array.from({ length: 6 }, (emptySlot, corner) => {
+    const angle = (Math.PI / 3) * corner + Math.PI / 6;
+    return `${(centerX + radius * Math.cos(angle)).toFixed(1)},${(centerY + radius * Math.sin(angle)).toFixed(1)}`;
+  }).join(' ');
 
 export const exampleContrast = (foregroundId: string, backgroundId: string): number =>
   contrastRatio(findColor(foregroundId).hex, findColor(backgroundId).hex);

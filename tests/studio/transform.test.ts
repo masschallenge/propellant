@@ -49,7 +49,7 @@ const text: TextElement = {
   kind: 'text',
   role: 'body',
   size: 'body',
-  colorId: 'ink',
+  colorId: 'black',
   align: 'left',
   text: 'Meet the startups',
   left: 100,

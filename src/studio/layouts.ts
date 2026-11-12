@@ -64,7 +64,7 @@ interface StackRequest {
   box: Box;
   align: TextAlign;
   anchor: 'top' | 'center' | 'bottom';
-  backdropHex: string;
+  backdropId: string;
   preferences: ColorPreferences;
   choose: Chooser;
   measure: MeasureText;
@@ -81,28 +81,30 @@ interface SlotPlan {
 const HEADLINE_SIZES: SizeStepId[] = ['display', 'heading-1', 'heading-2'];
 
 const LIGHT_TEXT: ColorPreferences = {
-  eyebrow: ['deep-teal', 'slate', 'ink'],
-  headline: ['ink', 'deep-teal'],
-  details: ['slate', 'ink'],
-  cta: ['deep-teal', 'ink'],
+  eyebrow: ['teal', 'black'],
+  headline: ['black', 'teal'],
+  details: ['black'],
+  cta: ['teal', 'black'],
 };
 
 const DARK_TEXT: ColorPreferences = {
-  eyebrow: ['white', 'bright-teal'],
-  headline: ['white', 'bright-teal'],
+  eyebrow: ['cyan', 'white'],
+  headline: ['white', 'cyan'],
   details: ['white'],
-  cta: ['white', 'bright-teal'],
+  cta: ['white', 'cyan'],
 };
 
 const spacing = (format: PostFormat, units: number) => units * canvasScale(format);
 
-const passingColors = (preferences: string[], backdropHex: string, required: number) => {
+const passingColors = (preferences: string[], backdropId: string, required: number) => {
+  const backdropHex = findColor(backdropId).hex;
   const passing = preferences.filter(
     (colorId) =>
-      !textReservation(colorId) && contrastRatio(findColor(colorId).hex, backdropHex) >= required,
+      !textReservation(colorId, [backdropId]) &&
+      contrastRatio(findColor(colorId).hex, backdropHex) >= required,
   );
   if (passing.length) return passing;
-  return ['white', 'ink'].sort(
+  return ['white', 'black'].sort(
     (first, second) =>
       contrastRatio(findColor(second).hex, backdropHex) -
       contrastRatio(findColor(first).hex, backdropHex),
@@ -130,13 +132,13 @@ const planSlots = (brief: Brief, headlineSize: SizeStepId): SlotPlan[] =>
 const SLOT_GAPS: Record<SlotId, number> = { eyebrow: 8, headline: 14, details: 14, cta: 0 };
 
 export const buildTextStack = (request: StackRequest): TextElement[] => {
-  const { brief, format, box, align, anchor, backdropHex, preferences, choose, measure, prefix } =
+  const { brief, format, box, align, anchor, backdropId, preferences, choose, measure, prefix } =
     request;
   const build = (headlineSize: SizeStepId) => {
     const elements = planSlots(brief, headlineSize).map((plan) => {
       const colors = passingColors(
         preferences[plan.slot],
-        backdropHex,
+        backdropId,
         requiredContrast(plan.role, plan.size),
       );
       const element: TextElement = {
@@ -151,7 +153,7 @@ export const buildTextStack = (request: StackRequest): TextElement[] => {
         left: box.left,
         top: 0,
         width: box.width,
-        height: linePixels(plan.size, format),
+        height: linePixels(plan.size, format, plan.role),
       };
       return { plan, element: layoutTextElement(element, format, measure) };
     });
@@ -225,10 +227,13 @@ const photoElement = (id: string, photo: BriefPhoto, box: Box): ImageElement => 
   zoom: 1,
 });
 
-const preferencesFor = (backdropHex: string) =>
-  contrastRatio('#FFFFFF', backdropHex) >= contrastRatio('#1E282B', backdropHex)
+const preferencesFor = (backdropId: string) => {
+  const backdropHex = findColor(backdropId).hex;
+  return contrastRatio(findColor('white').hex, backdropHex) >=
+    contrastRatio(findColor('black').hex, backdropHex)
     ? DARK_TEXT
     : LIGHT_TEXT;
+};
 
 const colorName = (colorId: string) => findColor(colorId).name;
 
@@ -249,8 +254,7 @@ const headlineColorName = (elements: SceneElement[]) => {
 
 const brandColorLayout = (context: LayoutContext): LayoutOption => {
   const { brief, format, choose, measure, margin } = context;
-  const backgroundId = choose(['deep-teal', 'teal']);
-  const backgroundHex = findColor(backgroundId).hex;
+  const backgroundId = choose(['navy', 'deep-teal', 'black']);
   const logo = placeLogo(
     format,
     'horizontal',
@@ -269,7 +273,7 @@ const brandColorLayout = (context: LayoutContext): LayoutOption => {
     },
     align: 'left',
     anchor: 'center',
-    backdropHex: backgroundHex,
+    backdropId: backgroundId,
     preferences: DARK_TEXT,
     choose,
     measure,
@@ -294,13 +298,12 @@ const stackHeight = (elements: SceneElement[]) =>
 
 const photoPanelLayout = (context: LayoutContext): LayoutOption => {
   const { brief, format, choose, measure, margin } = context;
-  const panelId = choose(['deep-teal', 'teal', 'white']);
-  const panelHex = findColor(panelId).hex;
+  const panelId = choose(['navy', 'deep-teal', 'white']);
   const landscape = isLandscape(format);
   const fullCanvas: Box = { left: 0, top: 0, width: format.width, height: format.height };
   const base: SceneElement = brief.photo
     ? photoElement('panel-photo', brief.photo, fullCanvas)
-    : block('panel-color-block', choose(['mid-teal', 'pale-teal', 'bright-teal']), fullCanvas);
+    : block('panel-color-block', choose(['mc-blue', 'warm-white']), fullCanvas);
   const logo = placeLogo(format, 'horizontal', margin, margin, 'panel-logo');
   const stack = (box: Box, anchor: 'top' | 'center') =>
     buildTextStack({
@@ -309,8 +312,8 @@ const photoPanelLayout = (context: LayoutContext): LayoutOption => {
       box,
       align: 'left',
       anchor,
-      backdropHex: panelHex,
-      preferences: preferencesFor(panelHex),
+      backdropId: panelId,
+      preferences: preferencesFor(panelId),
       choose,
       measure,
       prefix: 'panel',
@@ -369,10 +372,9 @@ const photoPanelLayout = (context: LayoutContext): LayoutOption => {
 
 const cutInLayout = (context: LayoutContext): LayoutOption => {
   const { brief, format, choose, measure, margin } = context;
-  const backgroundId = choose(['white', 'mist', 'pale-teal']);
-  const backgroundHex = findColor(backgroundId).hex;
+  const backgroundId = choose(['white', 'warm-white']);
   const landscape = isLandscape(format);
-  const blockId = brief.photo ? null : choose(['deep-teal', 'teal', 'mid-teal']);
+  const blockId = brief.photo ? null : choose(['navy', 'deep-teal', 'mc-blue']);
   const textLeft = landscape ? margin + format.width * 0.45 + margin : margin;
   const textWidth = landscape ? format.width - textLeft - margin : format.width - margin * 2;
   const logo = placeLogo(
@@ -390,7 +392,7 @@ const cutInLayout = (context: LayoutContext): LayoutOption => {
       box: { left: textLeft, top, width: textWidth, height },
       align: 'left',
       anchor: 'top',
-      backdropHex: backgroundHex,
+      backdropId: backgroundId,
       preferences: LIGHT_TEXT,
       choose,
       measure,
@@ -442,7 +444,7 @@ const cutInLayout = (context: LayoutContext): LayoutOption => {
 
 const typeOnlyLayout = (context: LayoutContext): LayoutOption => {
   const { brief, format, choose, measure, margin } = context;
-  const backgroundId = choose(['white', 'mist']);
+  const backgroundId = choose(['white', 'warm-white']);
   const logo = placeLogo(
     format,
     'horizontal',
@@ -461,7 +463,7 @@ const typeOnlyLayout = (context: LayoutContext): LayoutOption => {
     },
     align: 'left',
     anchor: 'bottom',
-    backdropHex: findColor(backgroundId).hex,
+    backdropId: backgroundId,
     preferences: LIGHT_TEXT,
     choose,
     measure,
@@ -475,9 +477,9 @@ const typeOnlyLayout = (context: LayoutContext): LayoutOption => {
   };
 };
 
-const paleTealLayout = (context: LayoutContext): LayoutOption => {
+const centeredLayout = (context: LayoutContext): LayoutOption => {
   const { brief, format, choose, measure, margin } = context;
-  const backgroundId = 'pale-teal';
+  const backgroundId = 'warm-white';
   const height = logoHeight(format, 'horizontal');
   const width = height * LOGO_ASPECT.horizontal;
   const logo = placeLogo(
@@ -485,7 +487,7 @@ const paleTealLayout = (context: LayoutContext): LayoutOption => {
     'horizontal',
     (format.width - width) / 2,
     format.height - margin - height,
-    'pale-logo',
+    'centered-logo',
   );
   const text = buildTextStack({
     brief,
@@ -498,24 +500,24 @@ const paleTealLayout = (context: LayoutContext): LayoutOption => {
     },
     align: 'center',
     anchor: 'center',
-    backdropHex: findColor(backgroundId).hex,
-    preferences: { ...LIGHT_TEXT, headline: ['deep-teal', 'ink'] },
+    backdropId: backgroundId,
+    preferences: { ...LIGHT_TEXT, headline: ['teal', 'black'] },
     choose,
     measure,
-    prefix: 'pale',
+    prefix: 'centered',
   });
   const elements: SceneElement[] = [...text, logo];
   return {
-    id: 'pale-teal',
-    name: `Pale teal background, centered, ${headlineColorName(elements)} headline`,
+    id: 'centered',
+    name: `Warm White background, centered, ${headlineColorName(elements)} headline`,
     scene: { formatId: format.id, backgroundId, elements },
   };
 };
 
 const accentStripLayout = (context: LayoutContext): LayoutOption => {
   const { brief, format, choose, measure, margin } = context;
-  const backgroundId = choose(['white', 'mist']);
-  const stripId = choose(['bright-teal', 'yellow', 'mid-teal', 'deep-teal']);
+  const backgroundId = choose(['white', 'warm-white']);
+  const stripId = choose(['mc-blue', 'yellow', 'navy', 'deep-teal']);
   const stripWidth = spacing(format, 14);
   const strip = block('strip-accent', stripId, {
     left: 0,
@@ -542,7 +544,7 @@ const accentStripLayout = (context: LayoutContext): LayoutOption => {
     },
     align: 'left',
     anchor: 'top',
-    backdropHex: findColor(backgroundId).hex,
+    backdropId: backgroundId,
     preferences: LIGHT_TEXT,
     choose,
     measure,
@@ -560,7 +562,7 @@ const LAYOUT_BUILDERS = [
   photoPanelLayout,
   cutInLayout,
   typeOnlyLayout,
-  paleTealLayout,
+  centeredLayout,
   accentStripLayout,
 ];
 

@@ -8,6 +8,7 @@ import {
   Textarea,
 } from '@masschallenge/propellant-web';
 import { useEffect, useRef } from 'react';
+import { findLockup, minimumLabel } from '../../brand/logo-usage';
 import { BRAND_COLORS } from '../../brand/palette';
 import { shapeReservation } from '../../studio/colorRules';
 import { findFormat } from '../../studio/formats';
@@ -18,7 +19,6 @@ import {
   logoMaximumHeight,
   logoMinimumHeight,
   logoTreatment,
-  MINIMUM_LOGO_PIXELS,
   optionsForText,
   type SampleMap,
 } from '../../studio/guardrails';
@@ -440,9 +440,11 @@ const LogoControls = ({
           }
         />
         <p className="m-0 text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">
-          Never below {MINIMUM_LOGO_PIXELS[element.lockup]}px on screen ({Math.round(minimum)}px on
-          this {findFormat(scene.formatId).name} canvas). Half its height stays clear from every
-          edge.
+          Never below {minimumLabel(findLockup(element.lockup))} on screen ({Math.round(minimum)}px
+          tall on this {findFormat(scene.formatId).name} canvas).{' '}
+          {element.lockup === 'horizontal'
+            ? 'The height of the M in the wordmark stays clear from every edge.'
+            : 'Half its height stays clear from every edge.'}
         </p>
       </PanelSection>
       <PanelSection title="Treatment">

@@ -81,7 +81,7 @@ describe('renderScene', () => {
     expect(calls.find((call) => call.name === 'setTransform')?.values).toEqual([
       0.5, 0, 0, 0.5, 0, 0,
     ]);
-    expect(calls.find((call) => call.name === 'fillRect')?.fillStyle).toBe('#044451');
+    expect(calls.find((call) => call.name === 'fillRect')?.fillStyle).toBe('#004F73');
     const lines = calls.filter((call) => call.name === 'fillText');
     expect(lines.map((call) => call.values[0])).toEqual(['DEMO DAY', 'IS HERE']);
     expect(String(lines[0].font)).toContain('Oswald');

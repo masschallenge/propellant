@@ -1,3 +1,4 @@
+import { LOGO_ASPECT } from '../brand/logo-usage';
 import { findFormat, type PostFormat } from './formats';
 import type { PatternId } from './patterns';
 import { excerpt, wrapText, type MeasureText } from './text';
@@ -63,14 +64,11 @@ export interface Scene {
   elements: SceneElement[];
 }
 
-export const LOGO_ASPECT: Record<LogoLockup, number> = {
-  horizontal: 1671 / 225,
-  monogram: 321 / 177,
-};
+export { LOGO_ASPECT };
 
 export const LOGO_NAMES: Record<LogoLockup, string> = {
   horizontal: 'MassChallenge horizontal logo',
-  monogram: 'MassChallenge monogram',
+  monogram: 'MassChallenge MC mark',
 };
 
 export const SHAPE_NAMES: Record<ShapeKind, string> = {
@@ -179,7 +177,8 @@ export const layoutTextElement = (
   format: PostFormat,
   measure: MeasureText,
 ): TextElement => {
-  const height = textLines(element, format, measure).length * linePixels(element.size, format);
+  const height =
+    textLines(element, format, measure).length * linePixels(element.size, format, element.role);
   return element.height === height ? element : { ...element, height };
 };
 

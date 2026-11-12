@@ -1,65 +1,33 @@
 ---
 import { GRAPHIC_DEVICES } from '../../../brand/graphic-devices';
-import { GRAPHIC_EXAMPLES } from '../../../brand/graphic-examples';
 import DeviceExample from './DeviceExample.astro';
 ---
 
 <div class="flex flex-col gap-6">
   {
-    GRAPHIC_DEVICES.map((device) => {
-      const examples = GRAPHIC_EXAMPLES[device.id] ?? [];
-      return (
-        <article
-          id={`device-${device.id}`}
-          class="grid gap-5 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]"
-        >
-          <div class="flex flex-col gap-2">
-            <h4 class="m-0 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">
-              {device.name}
-            </h4>
-            <p class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label)]">
-              {device.description}
+    GRAPHIC_DEVICES.map((device) => (
+      <article
+        id={`device-${device.id}`}
+        class="grid gap-5 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]"
+      >
+        <div class="flex flex-col gap-2">
+          <h4 class="m-0 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">
+            {device.name}
+          </h4>
+          <p class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label)]">
+            {device.description}
+          </p>
+          <p class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">
+            <strong class="font-semibold text-[var(--label)]">Use it for:</strong> {device.use}
+          </p>
+          {device.note ? (
+            <p class="m-0 rounded-[var(--corner-md)] bg-[var(--bg-secondary)] p-3 text-[length:var(--type-footnote-size)] leading-[var(--type-footnote-line)] text-[var(--label)]">
+              {device.note}
             </p>
-            <p class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">
-              <strong class="font-semibold text-[var(--label)]">Use it for:</strong> {device.use}
-            </p>
-            {device.note ? (
-              <p class="m-0 rounded-[var(--corner-md)] bg-[var(--bg-secondary)] p-3 text-[length:var(--type-footnote-size)] leading-[var(--type-footnote-line)] text-[var(--label)]">
-                {device.note}
-              </p>
-            ) : null}
-          </div>
-          {examples.length ? (
-            <ul class="m-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2 xl:grid-cols-3">
-              {examples.map((example) => (
-                <li class="m-0">
-                  <figure class="m-0 flex flex-col gap-1.5">
-                    <div
-                      class:list={[
-                        'flex aspect-[3/2] items-center justify-center overflow-hidden rounded-[var(--corner-lg)] border border-solid border-[var(--separator)]',
-                        example.isOnDark ? 'bg-[var(--gray-800)]' : 'bg-[var(--gray-0)]',
-                      ]}
-                    >
-                      <img
-                        src={example.src}
-                        alt={example.alt}
-                        width={example.width}
-                        height={example.height}
-                        loading="lazy"
-                        decoding="async"
-                        referrerpolicy="no-referrer"
-                        class="block max-h-full w-full object-contain"
-                      />
-                    </div>
-                  </figure>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <DeviceExample deviceId={device.id} />
-          )}
-        </article>
-      );
-    })
+          ) : null}
+        </div>
+        <DeviceExample deviceId={device.id} />
+      </article>
+    ))
   }
 </div>

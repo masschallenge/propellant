@@ -7,6 +7,7 @@ import {
   fontPixels,
   fontString,
   isLargeText,
+  linePixels,
   nearestAllowedSize,
   requiredContrast,
 } from '../../src/studio/typography';
@@ -40,6 +41,17 @@ describe('typography', () => {
     expect(TEXT_ROLES.filter((role) => role.capitals === 'never')).toHaveLength(2);
     expect(nearestAllowedSize('headline', 'small')).toBe('heading-2');
     expect(nearestAllowedSize('body', 'display')).toBe('lead');
+  });
+
+  it('sets headlines in Oswald SemiBold at line height 1.0 with Aptos fallbacks, never Arial', () => {
+    const format = findFormat('instagram-post');
+    expect(fontString('headline', 'display', format)).toBe(
+      "600 120px 'Oswald', 'Aptos Narrow', sans-serif",
+    );
+    expect(fontString('body', 'body', format)).toContain("'Lato', 'Aptos', sans-serif");
+    TEXT_ROLES.forEach((role) => expect(role.family).not.toMatch(/arial/i));
+    expect(linePixels('display', format, 'headline')).toBe(120);
+    expect(linePixels('display', format)).toBe(132);
   });
 
   it('uses 3:1 for large text and 4.5:1 for the rest', () => {

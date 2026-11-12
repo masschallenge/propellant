@@ -45,13 +45,14 @@ export interface TextRole {
   family: string;
   weight: number;
   capitals: CapitalsRule;
+  lineHeight: number | null;
   rule: string;
   sizes: SizeStepId[];
   defaultSize: SizeStepId;
 }
 
-const OSWALD_FAMILY = "'Oswald', 'Arial Narrow', sans-serif";
-const SANS_FAMILY = "'Propellant Sans', 'Lato', sans-serif";
+const OSWALD_FAMILY = "'Oswald', 'Aptos Narrow', sans-serif";
+const SANS_FAMILY = "'Propellant Sans', 'Lato', 'Aptos', sans-serif";
 
 export const TEXT_ROLES: TextRole[] = [
   {
@@ -60,9 +61,10 @@ export const TEXT_ROLES: TextRole[] = [
     roleName: 'Headline',
     label: 'Oswald, Headline',
     family: OSWALD_FAMILY,
-    weight: 700,
+    weight: 600,
     capitals: 'always',
-    rule: 'Display headlines on public websites and pages, set in capitals. It is made for short, large headlines and is hard to read in long text, so never use it for paragraphs. Display sizes only.',
+    lineHeight: 1,
+    rule: 'Headlines in Oswald SemiBold, always in capitals, with lines set tight. It is made for short, large headlines and is hard to read in long text, so never use it for paragraphs. Display sizes only.',
     sizes: ['display', 'heading-1', 'heading-2'],
     defaultSize: 'display',
   },
@@ -74,7 +76,8 @@ export const TEXT_ROLES: TextRole[] = [
     family: SANS_FAMILY,
     weight: 400,
     capitals: 'never',
-    rule: 'All interface and body text. Use sentence case: capitals belong only to Oswald headlines and the wordmark. Letter spacing is fixed.',
+    lineHeight: null,
+    rule: 'Lato for reading text, in sentence case. Never body copy in Oswald or in capitals. Letter spacing is fixed.',
     sizes: ['lead', 'body', 'small'],
     defaultSize: 'body',
   },
@@ -86,7 +89,8 @@ export const TEXT_ROLES: TextRole[] = [
     family: SANS_FAMILY,
     weight: 700,
     capitals: 'never',
-    rule: 'Headings are Lato Bold in sentence case: a capital first letter and lower case after it, except for names. Letter spacing is fixed.',
+    lineHeight: null,
+    rule: 'Lato Bold for emphasis and short lines such as a call to action, in sentence case. Letter spacing is fixed.',
     sizes: ['heading-2', 'heading-3', 'lead', 'body', 'small'],
     defaultSize: 'lead',
   },
@@ -112,8 +116,16 @@ export const canvasScale = (format: PostFormat): number =>
 export const fontPixels = (sizeId: SizeStepId, format: PostFormat): number =>
   Math.round(findSizeStep(sizeId).pixels * canvasScale(format));
 
-export const linePixels = (sizeId: SizeStepId, format: PostFormat): number =>
-  Math.round(findSizeStep(sizeId).linePixels * canvasScale(format));
+export const linePixels = (
+  sizeId: SizeStepId,
+  format: PostFormat,
+  roleId: TextRoleId = 'body',
+): number => {
+  const step = findSizeStep(sizeId);
+  const { lineHeight } = findTextRole(roleId);
+  const designPixels = lineHeight === null ? step.linePixels : step.pixels * lineHeight;
+  return Math.round(designPixels * canvasScale(format));
+};
 
 export const fontString = (roleId: TextRoleId, sizeId: SizeStepId, format: PostFormat): string => {
   const role = findTextRole(roleId);
