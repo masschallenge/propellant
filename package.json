@@ -19,7 +19,7 @@
   "dependencies": {
     "@astrojs/react": "7.1.7",
     "@astrojs/starlight": "0.42.6",
-    "@masschallenge/propellant-web": "https://codeload.github.com/masschallenge/propellant-web/tar.gz/f8e9eb9d3255107dbd5e12628886116545d88a40",
+    "@masschallenge/propellant-web": "https://codeload.github.com/masschallenge/propellant-web/tar.gz/73f8cfd8ae2c4378e731a197d669dffaa383a81b",
     "@tailwindcss/vite": "4.3.5",
     "astro": "7.3.8",
     "react": "19.3.1",

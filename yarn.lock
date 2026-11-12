@@ -705,9 +705,9 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@masschallenge/propellant-web@https://codeload.github.com/masschallenge/propellant-web/tar.gz/f8e9eb9d3255107dbd5e12628886116545d88a40":
-  version "1.1.1"
-  resolved "https://codeload.github.com/masschallenge/propellant-web/tar.gz/f8e9eb9d3255107dbd5e12628886116545d88a40#484a06a2ad329c8ef962afaa850c6a7577af907c"
+"@masschallenge/propellant-web@https://codeload.github.com/masschallenge/propellant-web/tar.gz/73f8cfd8ae2c4378e731a197d669dffaa383a81b":
+  version "2.0.0"
+  resolved "https://codeload.github.com/masschallenge/propellant-web/tar.gz/73f8cfd8ae2c4378e731a197d669dffaa383a81b#11fa1dfca6a662f2a330bd0b8fd90f33e8bbd2e3"
 
 "@napi-rs/wasm-runtime@1.2.6":
   version "1.2.6"
