@@ -4,6 +4,7 @@ import SubHeading from '../logo/SubHeading.astro';
 import Specimens from '../type/Specimens.astro';
 import TypeRules from '../type/TypeRules.astro';
 import TypeTester from '../type/TypeTester';
+import BrandType from '../type/BrandType.astro';
 import { TYPOGRAPHY_TOKENS } from '../type/tokenSources';
 import { stylesOverriddenBy } from '../../../brand/design-tokens';
 
@@ -16,9 +17,16 @@ const shrinkingStyles = Object.values(TYPOGRAPHY_TOKENS.overrides)
   <SectionHeading
     eyebrow="Type"
     title="Type"
-    lead="Propellant Sans for everything. Oswald, in capitals, for display headlines on public pages. Both load with Propellant."
+    lead="Oswald for headlines, always in capitals. Lato, shipped as Propellant Sans, for reading text and for everything in the signed in product. Both load with Propellant."
   />
   <Specimens />
+
+  <SubHeading
+    id="type-brand"
+    title="Type in brand work"
+    lead="The text styles from the brand guide for websites, graphics, slides, documents and print. The signed in product keeps its own text styles and never uses Oswald."
+  />
+  <BrandType />
 
   <SubHeading
     id="type-tester"

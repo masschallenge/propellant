@@ -40,7 +40,7 @@ export const BRAND_NEEDS: BrandNeed[] = [
   {
     id: 'fonts',
     title: 'Fonts',
-    description: 'Lato for everything we write, and Oswald capitals for big headlines.',
+    description: 'Oswald capitals for headlines, and Lato for everything we write.',
     href: '/brand/#type',
     action: 'See the fonts',
     visual: 'fonts',

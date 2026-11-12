@@ -70,7 +70,7 @@ const Messaging = () => {
           <p className="m-0 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[0.08em] text-[var(--teal-100)]">
             Primary line
           </p>
-          <p className="m-0 font-[family-name:var(--type-family-brand)] text-[clamp(1.6rem,3.4vw,2.4rem)] font-medium uppercase leading-[1.05]">
+          <p className="m-0 font-[family-name:var(--type-family-brand)] text-[clamp(1.6rem,3.4vw,2.4rem)] font-semibold uppercase leading-[1.05]">
             {PRIMARY_LINE}
           </p>
           <div data-theme="dark" className="bg-transparent">
@@ -155,7 +155,7 @@ const Messaging = () => {
               <dt className="text-[length:var(--type-caption-size)] font-bold uppercase tracking-[0.08em] text-[var(--label-secondary)]">
                 {figure.label}
               </dt>
-              <dd className="m-0 font-[family-name:var(--type-family-brand)] text-[length:var(--type-large-title-size)] font-medium tabular-nums text-[var(--label)]">
+              <dd className="m-0 font-[family-name:var(--type-family-brand)] text-[length:var(--type-large-title-size)] font-semibold tabular-nums text-[var(--label)]">
                 {figure.value}
               </dd>
             </div>
