@@ -1,4 +1,5 @@
 import { OFFICES, SOCIAL_LINKS, officeAddress, type OfficeId } from './contact';
+import { clearSpaceFor } from './logo-usage';
 import { findColor } from './palette';
 
 export type SignatureLogo = 'horizontal' | 'monogram';
@@ -26,7 +27,7 @@ export interface SignatureNote {
 
 export const SITE_ORIGIN = 'https://propellant.masschallenge.org';
 
-export const EMAIL_FONT_STACK = 'Lato, Arial, Helvetica, sans-serif';
+export const EMAIL_FONT_STACK = 'Lato, Aptos, sans-serif';
 
 export const SIGNATURE_LOGO_FOLDER = 'email-signature';
 
@@ -69,7 +70,7 @@ export const SIGNATURE_OFFICES: { id: SignatureOffice; label: string }[] = [
 const officeLine = (office: SignatureOffice): string =>
   office === 'none' ? '' : officeAddress(office);
 
-const INK = findColor('ink').hex;
+const BLACK = findColor('black').hex;
 const SLATE = findColor('slate').hex;
 const TEAL = findColor('teal').hex;
 const WHITE = findColor('white').hex;
@@ -175,7 +176,7 @@ const anchor = (href: string, text: string) =>
 export const signatureHtml = (fields: SignatureFields, origin = SITE_ORIGIN): string => {
   const cleaned = cleanFields(fields);
   const logo = SIGNATURE_LOGOS[cleaned.logo];
-  const clearSpace = Math.round(logo.height / 2);
+  const clearSpace = Math.round(clearSpaceFor(cleaned.logo, logo.height));
   const rows: string[] = [];
   const nameLine = [
     escapeHtml(cleaned.name || 'Your name'),
@@ -183,25 +184,28 @@ export const signatureHtml = (fields: SignatureFields, origin = SITE_ORIGIN): st
       ? ` <span style="${textStyle(14, 22, SLATE)}">(${escapeHtml(cleaned.pronouns)})</span>`
       : '',
   ].join('');
-  rows.push(row(nameLine, textStyle(16, 22, INK, 'bold'), 2));
+  rows.push(row(nameLine, textStyle(16, 22, BLACK, 'bold'), 2));
   const roleLine = [cleaned.title, cleaned.team].filter(Boolean).map(escapeHtml).join(', ');
   if (roleLine) rows.push(row(roleLine, textStyle(14, 20, SLATE), 8));
   const phone = cleaned.phone ? phoneHref(cleaned.phone) : null;
   if (cleaned.phone) {
     rows.push(
-      row(phone ? anchor(phone, cleaned.phone) : escapeHtml(cleaned.phone), textStyle(14, 20, INK)),
+      row(
+        phone ? anchor(phone, cleaned.phone) : escapeHtml(cleaned.phone),
+        textStyle(14, 20, BLACK),
+      ),
     );
   }
   if (cleaned.email) {
     const content = isValidEmail(cleaned.email)
       ? anchor(`mailto:${cleaned.email}`, cleaned.email)
       : escapeHtml(cleaned.email);
-    rows.push(row(content, textStyle(14, 20, INK)));
+    rows.push(row(content, textStyle(14, 20, BLACK)));
   }
   const link = cleaned.link ? linkHref(cleaned.link) : null;
   if (cleaned.link) {
     rows.push(
-      row(link ? anchor(link, cleaned.link) : escapeHtml(cleaned.link), textStyle(14, 20, INK)),
+      row(link ? anchor(link, cleaned.link) : escapeHtml(cleaned.link), textStyle(14, 20, BLACK)),
     );
   }
   const address = officeLine(cleaned.office);
@@ -210,7 +214,7 @@ export const signatureHtml = (fields: SignatureFields, origin = SITE_ORIGIN): st
     const socialLinks = SOCIAL_LINKS.map((social) => anchor(social.url, social.name)).join(
       `<span style="color:${SLATE};">&nbsp;&nbsp;|&nbsp;&nbsp;</span>`,
     );
-    rows.push(row(socialLinks, textStyle(13, 20, INK)));
+    rows.push(row(socialLinks, textStyle(13, 20, BLACK)));
   }
   const logoCell =
     `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">` +

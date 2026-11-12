@@ -133,9 +133,20 @@ describe('the email HTML', () => {
     });
   });
 
-  it('keeps the logo on white with clear space of half its height', () => {
-    expect(html).toContain(`padding:${SIGNATURE_LOGOS.horizontal.height / 2}px;`);
+  it('keeps the logo on white with clear space the height of the M in the wordmark', () => {
+    expect(html).toContain('padding:11px;');
     expect(html).toContain('bgcolor="#FFFFFF"');
+    expect(signatureHtml({ ...person, logo: 'monogram' })).toContain(
+      `padding:${SIGNATURE_LOGOS.monogram.height / 2}px;`,
+    );
+  });
+
+  it('falls back to Aptos, never Arial, and uses the new Black and Teal', () => {
+    expect(EMAIL_FONT_STACK).toBe('Lato, Aptos, sans-serif');
+    expect(html).not.toMatch(/arial|helvetica/i);
+    expect(html).toContain('color:#222222;');
+    expect(html).toContain('color:#00708E;');
+    expect(html).not.toContain('#1E282B');
   });
 
   it('includes every filled in field and leaves out empty ones', () => {
