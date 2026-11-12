@@ -44,6 +44,7 @@ import {
   SKILL_NAME,
   SKILL_TEMPLATES,
   artifactStylesheet,
+  stampVersions,
 } from './lib/skill-package.mjs';
 
 const projectRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -166,13 +167,17 @@ const syncPlatform = (platform) => {
   return { platform: platform.id, ref, pages, checkout };
 };
 
-const packageSkill = (checkouts) => {
+const packageSkill = (checkouts, versions) => {
   const archive = join(projectRoot, 'public/downloads', `${SKILL_NAME}.zip`);
   rmSync(archive, { force: true });
   if (!checkouts.web || !checkouts.office) return false;
   const staging = mkdtempSync(join(tmpdir(), 'propellant-skill-'));
   const skillRoot = join(staging, SKILL_NAME);
   cpSync(join(projectRoot, 'skill', SKILL_NAME), skillRoot, { recursive: true });
+  markdownFiles(skillRoot).forEach((path) => {
+    const file = join(skillRoot, path);
+    writeFileSync(file, stampVersions(readFileSync(file, 'utf8'), versions));
+  });
   mkdirSync(join(skillRoot, 'assets/templates'), { recursive: true });
   mkdirSync(join(skillRoot, 'assets/logos'), { recursive: true });
   SKILL_TEMPLATES.forEach((template) =>
@@ -287,8 +292,11 @@ results.forEach(({ platform, ref, pages }) =>
 const checkouts = Object.fromEntries(
   results.filter(({ checkout }) => checkout).map(({ platform, checkout }) => [platform, checkout]),
 );
+const versions = Object.fromEntries(
+  results.filter(({ ref }) => ref).map(({ platform, ref }) => [`propellant-${platform}`, ref]),
+);
 console.log(
-  packageSkill(checkouts)
+  packageSkill(checkouts, versions)
     ? `Packaged the ${SKILL_NAME} skill for download`
     : `Skipped the ${SKILL_NAME} skill: it needs releases of the web and office platforms`,
 );
