@@ -42,17 +42,20 @@ Accelerators: Traction, Challenge, Breakthrough Bio
 "It takes a community to raise a startup." This is a founder's testimonial, not a MassChallenge line. Never present it as a tagline.
 
 Brand colors:
-- Deep teal #044451 (--teal-900): Brand surfaces, such as the panel of a sign in page
-- Teal #065E6F (--teal-800): The primary interactive color in light mode
-- Mid teal #068DA4 (--teal-600): Supporting accents
-- Bright teal #0FACBD (--teal-400): Accents on dark surfaces
-- Pale teal #D9F6FA (--teal-100): Tinted backgrounds
-- Mist #F3FBFC (--teal-50): The lightest tint
-- Magenta #BF0261 (--magenta-600): Destructive actions and errors
-- Yellow #FFC801 (--yellow-400): Highlights, such as search matches and new items
-- Ink #1E282B (--gray-800): Text on light backgrounds
-- Slate #4B575B (--gray-500): Secondary text
-- White #FFFFFF (--gray-0): The page and content surfaces
+- MC Blue #0EABBC (undefined): The logo and graphic shapes. Never text.
+- MC Gray #808285 (undefined): The logo only.
+- Navy #10263F (undefined): Dark sections and gradients.
+- Black #222222 (undefined): Dark sections and body text.
+- Warm White #F8F8F5 (undefined): Light sections.
+- White #FFFFFF (--gray-0): Pages, cards and light sections, and text on dark backgrounds.
+- Deep Teal #004F73 (undefined): Dark sections.
+- Teal #00708E (undefined): Headings and links on light backgrounds. Colored text on a light background is always Teal.
+- Cyan #54EEFF (undefined): Text and accents on dark backgrounds only: Navy, Black and Deep Teal.
+- Ocean #037AA6 (undefined): A gradient stop only, never a flat fill. The MC Gradient runs from Navy to Ocean at any angle.
+- Yellow #FFC801 (--yellow-400): Tags, rules and stats, in small doses. Set dark text on it.
+- Orange #FF6B35 (undefined): Small accents with dark text on them, never white.
+- Raspberry #D14170 (undefined): Shapes and rules on dark backgrounds.
+- Lime #C6F135 (undefined): Accents on dark backgrounds.
 
 # Making things on brand: Charts
 
@@ -61,23 +64,23 @@ Brand colors:
 Series colors come in this fixed order. In Office files they are the theme accents, so native
 charts pick them up automatically; in HTML, set them in this order.
 
-| Order | Name        | Hex       |
-| ----- | ----------- | --------- |
-| 1     | Teal        | `#065E6F` |
-| 2     | Yellow      | `#FFC801` |
-| 3     | Slate       | `#4B575B` |
-| 4     | Bright teal | `#0FACBD` |
-| 5     | Deep teal   | `#044451` |
-| 6     | Gray 300    | `#848F92` |
+| Order | Name      | Hex       |
+| ----- | --------- | --------- |
+| 1     | Teal      | `#00708E` |
+| 2     | Yellow    | `#FFC801` |
+| 3     | Navy      | `#10263F` |
+| 4     | MC Blue   | `#0EABBC` |
+| 5     | Deep Teal | `#004F73` |
+| 6     | Gray 300  | `#848F92` |
 
 - A single series is Teal. Most charts need only one series.
 - The order follows the entity, not its rank: if a filter removes a series, the others keep their
   colors.
-- Yellow, Bright teal and Gray 300 are light on White, so any chart with two or more series must show
+- Yellow, MC Blue and Gray 300 are light on White, so any chart with two or more series must show
   direct labels (series names or values on the chart) as well as a legend.
 - Four series at most. Fold the rest into Other, or use small multiples.
-- Never Magenta, Orange or Green for a series: they are reserved for status.
-- This palette is the best available from today's brand colors; it does not meet every
+- Never Raspberry, Orange or Lime for a series, and never to show status. Status is a word.
+- This order is how Propellant applies the brand palette to charts; it does not meet every
   colorblind safety check on its own, which is why labels are required.
 
 ## Form
@@ -91,9 +94,10 @@ charts pick them up automatically; in HTML, set them in this order.
 
 ## Text
 
-- Title states the takeaway: "Applications doubled since 2024", with the source below in Slate.
-- Axis labels with units. Labels and values in Ink or Slate, never in the series color.
-- Lato for all chart text.
+- Title states the takeaway: "Applications doubled since 2024", with the source below in Black at a
+  smaller size.
+- Axis labels with units. Labels and values in Black, never in the series color.
+- Lato for all chart text, or Aptos where Lato will not load. Never Arial.
 - Alt text that states the takeaway and the key numbers, or a table of the data beside the chart.
 
 ## Interactive charts in HTML
@@ -118,12 +122,12 @@ the logo in the header, "MassChallenge | Page n" in the footer, the Propellant t
 style below, plus sample content. Replace the sample content and keep the styles. Never build the
 document on a blank file.
 
-This template replaces any other default document style: Propellant is the MassChallenge
-standard.
+This template replaces any other default document style: it applies the MassChallenge brand
+guide, which MassChallenge Marketing owns.
 
 ## Structure
 
-1. **Title** in the Title style: Oswald, 32 pt, Deep teal, shown in capitals by the style.
+1. **Title** in the Title style: Oswald SemiBold, 32 pt, Teal, shown in capitals by the style.
 2. **Subtitle** (optional) in the Subtitle style: the program, period or audience.
 3. **Status line** in italics, such as "Status: Draft", and "Author: name" on the line below.
 4. **Overview** as Heading 1, with one or two paragraphs that give the point, the ask or the
@@ -136,25 +140,28 @@ Keep documents to about four pages unless the person asks for more. Move detail 
 
 Apply styles; never format text by hand to look like a heading.
 
-| Style                    | Font             | Size                    | Color               |
-| ------------------------ | ---------------- | ----------------------- | ------------------- |
-| Title                    | Oswald, capitals | 32 pt                   | Deep teal `#044451` |
-| Subtitle                 | Lato             | 14 pt                   | Slate `#4B575B`     |
-| Heading 1                | Lato Bold        | 20 pt                   | Ink `#1E282B`       |
-| Heading 2                | Lato Bold        | 15 pt                   | Ink                 |
-| Heading 3                | Lato Bold        | 12.5 pt                 | Ink                 |
-| Normal                   | Lato             | 11 pt, line spacing 1.4 | Ink                 |
-| List Bullet, List Number | Lato             | 11 pt                   | Ink                 |
+| Style                    | Font                      | Size                    | Color           |
+| ------------------------ | ------------------------- | ----------------------- | --------------- |
+| Title                    | Oswald SemiBold, capitals | 32 pt                   | Teal `#00708E`  |
+| Subtitle                 | Lato                      | 14 pt                   | Black `#222222` |
+| Heading 1                | Lato Bold                 | 20 pt                   | Teal            |
+| Heading 2                | Lato Bold                 | 15 pt                   | Black           |
+| Heading 3                | Lato Bold                 | 12.5 pt                 | Black           |
+| Normal                   | Lato                      | 11 pt, line spacing 1.5 | Black           |
+| List Bullet, List Number | Lato                      | 11 pt                   | Black           |
 
-Headings are sentence case. Use real list styles, never typed dashes.
+Headings are sentence case. Use real list styles, never typed dashes. Colored text is always Teal.
+Where Lato or Oswald will not load, Aptos Narrow Bold in capitals stands in for the title and
+Aptos for the text. Never Arial. If the template's styles differ from this table, follow the
+template.
 
 ## Tables, callouts and images
 
-- **Tables:** header row with a Deep teal `#044451` fill and White bold text, thin Line `#DBE1E3`
-  rules between rows, Mist `#F3FBFC` on alternate rows, no vertical borders. Set the header row to
-  repeat. Left align text, right align numbers. No merged cells. The template's sample table shows
-  the formatting; copy it.
-- **Callout:** one paragraph with a Pale teal `#D9F6FA` fill and a Teal `#065E6F` left border, as
+- **Tables:** header row with a Navy `#10263F` fill and White bold text, thin Gray 100 `#DBE1E3`
+  rules between rows, Warm White `#F8F8F5` on alternate rows, no vertical borders. Set the header
+  row to repeat. Left align text, right align numbers. No merged cells. The template's sample table
+  shows the formatting; copy it.
+- **Callout:** one paragraph with a Warm White `#F8F8F5` fill and a Teal `#00708E` left border, as
   in the template. At most one per page.
 - **Images:** in line with text, full or half text width, with alt text and a caption when context
   helps. Follow [photography.md](photography.md).
@@ -175,49 +182,65 @@ Recommend a PDF for readers outside MassChallenge, since they may not have the f
 These are the standard graphic devices. Build them from the palette and the logo files; never
 redraw the logo.
 
-| Device                | What it is                                                                                                                  | Use it for                               |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| Geometric pattern     | Bright teal and Pale teal triangles with an Oswald label in capitals on top, such as ACCELERATOR. The brand pattern.        | Covers and headers                       |
-| Teal duotone          | A photo washed from Deep teal to Bright teal                                                                                | Backgrounds behind text, section headers |
-| Hexagon network frame | A circular photo crop inside a pale teal network of hexagons and lines                                                      | One photo beside text                    |
-| Co-brand lockup       | MassChallenge logo, a plus sign and the partner logo, on white with a thin teal border, or a teal panel with the white logo | Work made with a partner                 |
-| Program lockup        | The MC monogram, a thin vertical divider and the program name in capitals, such as MC \| RESOLVE 2026                       | A named program or event                 |
-| Stat callouts         | A large number with a short label in capitals                                                                               | One figure that matters                  |
-| Program timelines     | Dots on a line, with each step above or below its dot                                                                       | Program and application dates            |
-| Icons                 | Single color line icons with rounded ends, Teal on light, Bright teal on dark                                               | Labels for areas and steps               |
+| Device                         | What it is                                                                                                                                 | Use it for                                |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- |
+| Geometric pattern              | MC Blue triangles with a scatter of light tint `#F3FAFC` triangles, and an Oswald label in capitals on top, such as ACCELERATOR            | Covers and headers                        |
+| Hero overlay                   | A thin linear gradient over a photo from Navy-black `#051925` on the text side to Ocean `#037AA6` toward the subject, at 15 to 30% opacity | Heroes, social posts and event graphics   |
+| Hexagon network frame          | A circular photo crop inside a network of MC Blue hexagons joined by lines in the light tint                                               | One photo beside text                     |
+| Corporate partner lockup       | The partner logo first, a 1pt vertical rule, then the MassChallenge vertical logo                                                          | A challenge program a partner commissions |
+| Sub-brand lockup               | The MC mark, an MC Blue rule (Cyan on dark), the program name in Oswald SemiBold and the location in tracked Oswald Regular                | Programs MassChallenge runs by name       |
+| Partner initiative endorsement | The initiative name above a 1pt rule, with WITH MASSCHALLENGE or WITH PARTNER & MASSCHALLENGE below, left aligned                          | Partner programs MassChallenge guides     |
+| Stat callouts                  | A large number in Oswald Bold with a short label in capitals                                                                               | One figure that matters                   |
+| Program timelines              | Dots on a line, with each step above or below its dot                                                                                      | Program and application dates             |
+| Icons                          | Single color line icons with rounded ends, Teal on light, Cyan on dark                                                                     | Labels for areas and steps                |
 
-- Text on the pattern must pass contrast against both colors. Set the label in Ink, or in White on a
-  solid Deep teal panel. Never White straight on the triangles: White on Bright teal is about 2.7:1,
-  below 3:1 even for large text.
-- Stat numbers are Deep teal on light backgrounds and Bright teal on dark ones, with the label in
-  Ink or White. Never Magenta: it only ever means something is wrong.
-- Timeline dots follow the chart order: Teal, Yellow, Slate, Bright teal, Deep teal, Gray 300. The
-  words beside each dot carry the meaning.
+- Text on the pattern must pass contrast against both colors. Set the label in Black (5.7:1 on MC
+  Blue), or in White on a solid Navy or Deep Teal panel. Never White straight on the triangles:
+  White on MC Blue is 2.8:1, below 3:1 even for large text.
+- The teal duotone is retired. Never wash a photo in teal or any full-frame cool duotone. Use the
+  hero overlay, and keep it light enough that warm light glows through.
+- Only MassChallenge Marketing creates sub-brand lockups, partner lockups and endorsement marks.
+  Describe the structure if asked, but never assemble a lockup yourself, and never draw the
+  vertical or local logos. Partner logos never join a sub-brand lockup.
+- In a corporate partner lockup the gap on each side of the rule equals the height of the M in the
+  MC mark. The rule is MC Gray on light, white or light gray on dark. Both logos full color on
+  white, or both white on dark or on the partner's brand color. Never put MassChallenge first, mix
+  a full color logo with a white one, let one overpower the other, drop the rule or use a plus
+  sign. Whether a partner logo appears beside ours is set in the partnership agreement.
+- Stat numbers are Teal on light backgrounds and Cyan on dark ones, with the label in Black or
+  White. One Yellow accent rule is optional. Never Raspberry for numbers.
+- Timeline dots follow the chart order: Teal, Yellow, Navy, MC Blue, Deep Teal, Gray 300. The words
+  beside each dot carry the meaning.
 - Icons are always paired with a word.
+- One warm accent per piece: Yellow, Orange, Raspberry or Lime, never two together. Raspberry only
+  on dark backgrounds; Orange always with dark text.
 
 ## Print color
 
-| Name        | Hex       | CMYK         |
-| ----------- | --------- | ------------ |
-| Deep teal   | `#044451` | 100 64 53 50 |
-| Teal        | `#065E6F` | 100 55 45 24 |
-| Mid teal    | `#068DA4` | 87 31 31 2   |
-| Bright teal | `#0FACBD` | 78 11 26 0   |
-| Pale teal   | `#D9F6FA` | 13 0 2 0     |
-| Mist        | `#F3FBFC` | 3 0 1 0      |
-| Magenta     | `#BF0261` | 21 100 42 5  |
-| Yellow      | `#FFC801` | 0 22 100 0   |
-| Ink         | `#1E282B` | 81 66 63 83  |
-| Slate       | `#4B575B` | 73 57 55 35  |
-| White       | `#FFFFFF` | 0 0 0 0      |
-| Gray 100    | `#DBE1E3` | 13 7 8 0     |
-| Gray 300    | `#848F92` | 53 38 39 4   |
-| Logo gray   | `#828486` | 53 44 43 7   |
-| Logo teal   | `#17ACBC` | 77 11 27 0   |
+| Name       | Hex       | CMYK (approximate) | Print substitute |
+| ---------- | --------- | ------------------ | ---------------- |
+| MC Blue    | `#0EABBC` | 93 9 0 26          |                  |
+| MC Gray    | `#808285` | 4 2 0 48           |                  |
+| Navy       | `#10263F` | 75 40 0 75         |                  |
+| Black      | `#222222` | 0 0 0 87           |                  |
+| Warm White | `#F8F8F5` | 0 0 1 3            |                  |
+| White      | `#FFFFFF` | 0 0 0 0            |                  |
+| Deep Teal  | `#004F73` | 100 31 0 55        |                  |
+| Teal       | `#00708E` | 100 21 0 44        |                  |
+| Cyan       | `#54EEFF` | 100 11 0 9         | `#00CFE8`        |
+| Yellow     | `#FFC801` | 0 22 100 0         |                  |
+| Orange     | `#FF6B35` | 0 47 73 4          | `#F58242`        |
+| Raspberry  | `#D14170` | 0 73 41 15         | `#D83B80`        |
+| Lime       | `#C6F135` | 32 0 74 17         | `#91D438`        |
+| Gray 100   | `#DBE1E3` | 13 7 8 0           |                  |
+| Gray 300   | `#848F92` | 53 38 39 4         |                  |
+| Slate      | `#4B575B` | 73 57 55 35        |                  |
 
-CMYK values are calculated from the sRGB values with the Artifex CMYK SWOP profile (US web coated),
-relative colorimetric intent, rounded to whole percent. Check a printed proof before a large run.
-Logo gray and Logo teal belong to the logo artwork only.
+CMYK values are approximate, so confirm with a printer proof before a large run. Where a color has
+a print substitute, use the substitute in print. Ocean `#037AA6` is a gradient stop only and has no
+print value of its own. MC Blue and MC Gray belong to the logo artwork and to graphic shapes in MC
+Blue; never use them to recolor the logo. The supporting blues and warm accents are reviewed with
+each version of the brand guide.
 
 # Making things on brand: Messaging, contact and legal
 
@@ -297,56 +320,80 @@ These are the numbers to quote. When one changes, it changes in Propellant first
 
 ## What to show
 
-- People first: founders, mentors, partners and staff doing something together: working,
-  pitching, talking, celebrating.
-- Real moments over poses. Posed group shots only for celebrations.
+- Every image carries some warmth: skin tones, natural or lamp light, wood, brick, city lights.
+- Real work and real people: labs, workbenches, prototypes, conversations. Founders, mentors,
+  partners and staff doing something together.
+- Mostly candid moments, with the occasional founder hero portrait.
 - The whole community: a range of genders, ages, backgrounds and abilities.
-- Our own event and program photos before stock.
-- Photos with a calm area where a headline or the logo can sit.
+- Asymmetric frames that leave room for text, and a range that includes wide shots.
+
+## How it is shot
+
+- Natural light and balanced exposure, with soft flash for dark rooms.
+- Shot in RAW and edited only for exposure and contrast.
+- No artistic filters and no black and white.
+
+## Avoid
+
+- People on phones or looking bored, visible alcohol, crowds from behind and cluttered
+  compositions.
+- Black and white.
+- Generic stock: handshakes, posed smiles, abstract tech with no people.
+- Obviously AI generated images: waxy skin, warped hands or text, impossible lighting, glowing
+  suns, lens flares, holograms.
+- The full-frame cool duotone, which is retired because it reads clinical.
+- Overlays so heavy the subject disappears.
 
 ## Sources
 
-- Use photos the person provides, MassChallenge's own photos, or licensed stock the person has the
-  rights to. Never pull images from a web search or social media.
-- MassChallenge's own photos and videos are in the brand guide's photo library
-  (propellant.masschallenge.org/brand/#photos). Use them for MassChallenge work.
-- Never present a stock photo as a real person, startup, partner or event.
-- Never generate images of real, named people. If an image is AI generated, it must not depict a
-  real person or event, and the person should know it is generated.
-- Avoid clichés: handshakes, people pointing at blank screens, light bulbs, puzzle and chess
-  pieces, staged high fives.
+- MassChallenge's own professional event photography comes first. Its photos and videos are in
+  the brand guide's photo library (propellant.masschallenge.org/brand/#photos). Some of those
+  photos carry the retired teal duotone: use them as they are, and never duotone a new photo.
+- Licensed stock photography that MassChallenge holds a license for may be used when it looks
+  believable and follows these rules. Ask MassChallenge Marketing for it.
+- Location photos for each site, by city in the US and by country elsewhere, follow the same rules.
+- Use photos the person provides only if they have the rights. Never pull images from a web search
+  or social media.
+- Never present a stock or AI generated image as a real founder, partner, startup or event. Never
+  generate images of real, named people.
 - Only feature identifiable people prominently, or name them, if they agreed.
 
 ## Treatment
 
-| Treatment     | Use it for                                                                                                                                                                                                |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Natural color | News, event recaps, real people's stories, documentation                                                                                                                                                  |
-| Brand duotone | Big brand moments: a title slide, a cover, a hero. Grayscale photo washed from Deep teal `#044451` in the shadows to Bright teal `#0FACBD` in the highlights. Use it behind text and for section headers. |
+| Treatment        | Use it for                                                                                                                                                                                                           |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 01 Overlay       | Heroes, social posts and event graphics. A thin hero overlay: a linear gradient from Navy-black `#051925` on the text side to Ocean `#037AA6` toward the subject, at 15 to 30% opacity, so warm light glows through. |
+| 02 Full color    | Content photos, spaces and people. No overlay and no duotone.                                                                                                                                                        |
+| 03 Accent rescue | A cool photo with no warmth gets one warm accent, Yellow, Orange or Lime, on a tag, a rule or a subhead.                                                                                                             |
 
-- Never duotone a portrait or a photo where people's identity matters.
-- No filters, heavy vignettes or color casts.
-- Text and the logo go on a calm area of the photo or on a Deep teal band, never on a busy part.
+- Judge by eye: if warm areas go gray or blue, the overlay is too heavy.
+- Text goes only on a calm, high contrast area of a photo. Otherwise move it, add the hero overlay,
+  or set it on a solid Navy, Black or Deep Teal block.
 
-In HTML, a duotone can be made with a grayscale photo under a Deep teal overlay using
-`mix-blend-mode: multiply`, or with an SVG color matrix filter.
+In HTML, the overlay is a second background layer over the photo, for example
+`background: linear-gradient(90deg, rgb(5 25 37 / 0.3), rgb(3 122 166 / 0.3)), url(photo.jpg)`
+with the text on the left. Turn the angle so the dark end sits under the words.
 
 ## Cropping and size
 
 - Crop on purpose: keep faces and heads whole, never crop at the neck, elbows or knees, and leave
-  people facing into the page.
+  lead room in the direction people face.
 - Never stretch or squash. Keep proportions.
 - One strong photo beats a collage.
-- Round photo corners 12 px on the web, about 3 mm in documents; full bleed photos stay square.
-- Photos people upload, such as profile photos, are shown whole and never auto cropped.
+- On websites and in graphics, photos have square corners. Photos people upload, such as profile
+  photos, are shown whole and never auto cropped.
 
 ## Video
 
-- Captions on every video. Short: under a minute for social, under three for recaps.
-- Strong first frame and thumbnail with people in it.
-- An Oswald title on Deep teal at the start and the white logo on Deep teal at the end, not a logo
-  on screen throughout.
-- Play on click, never autoplay with sound. Licensed music and footage only.
+- The photography rules apply: real people, balanced exposure and warmth in the frame.
+- Every video uses the standard logo open and end slates and consistent lower thirds: a Navy block
+  with a Cyan rule, the name in Oswald SemiBold and the title in Lato, bottom left, inside the
+  title safe area.
+- Frame interviews on the rule of thirds, with the eyes near a top intersection and lead room in
+  the direction the subject faces.
+- Only use footage MassChallenge has licensed or shot itself, and licensed music.
+- Final exports are approved by MassChallenge Marketing before they go live.
+- Captions on every video. Play on click, never autoplay with sound.
 
 ## Alt text
 
@@ -366,9 +413,14 @@ people only if they agreed to be featured. Mark decorative images as decorative.
 ## Start from the template
 
 Open `assets/templates/propellant-presentation.pptx`. It is 16:9 (13.333 by 7.5 inches) and has
-the Propellant theme (Oswald headings, Lato body, the brand colors), the logo on every layout, and
-eight sample slides showing each layout. Delete the sample slides you do not need and add slides
-from the template's layouts. Never draw your own title boxes or change the slide size.
+the Propellant theme (Oswald headings, Lato body, the brand colors from the MassChallenge brand
+guide), the logo on every layout, and eight sample slides showing each layout. Delete the sample
+slides you do not need and add slides from the template's layouts. Never draw your own title boxes
+or change the slide size.
+
+Install Oswald and Lato before you edit, and keep the fonts embedded when you save (**File**,
+**Options**, **Save**, **Embed fonts in the file**). Where Oswald or Lato will not load, the
+fallback is Aptos Narrow Bold in capitals for titles and Aptos for text. Never Arial.
 
 ## The layouts
 
@@ -376,9 +428,9 @@ The layouts are in this order in the slide master (index from 0):
 
 | Index | Layout               | Use it for                                                              |
 | ----- | -------------------- | ----------------------------------------------------------------------- |
-| 0     | Title Slide          | The first slide. Deep teal with the white logo.                         |
+| 0     | Title Slide          | The first slide. Navy with the white logo.                              |
 | 1     | Title and Content    | Most slides: a title and up to five bullets, or a chart, table or photo |
-| 2     | Section Header       | Section breaks and the closing slide. Deep teal.                        |
+| 2     | Section Header       | Section breaks and the closing slide. Navy.                             |
 | 3     | Two Content          | Two things side by side                                                 |
 | 4     | Comparison           | Two options, each with a short heading                                  |
 | 5     | Title Only           | A big number, a quote or a diagram you place yourself                   |
@@ -386,7 +438,8 @@ The layouts are in this order in the slide master (index from 0):
 | 7     | Content with Caption | A chart or table with an explanation beside it                          |
 | 8     | Picture with Caption | One photo on the left half, title and caption on the right              |
 
-Use Deep teal layouts only for the title, section breaks and the closing slide.
+Use the dark layouts for the title, section breaks and the closing slide. Navy, Black and the blues
+carry the deck; add one warm accent at most, in small doses.
 
 ## Slide content
 
@@ -397,7 +450,8 @@ Use Deep teal layouts only for the title, section breaks and the closing slide.
 - Never below 18 pt. Body text is 24 pt at the first level and 20 pt at the second. Cut words
   rather than shrinking text.
 - Put detail in the speaker notes.
-- Text in Ink on white slides, White on Deep teal. Teal only for links.
+- Text in Black on white slides, White on Navy. Colored text on white is Teal, and Cyan is only
+  for accents on Navy, Black or Deep Teal.
 - No animations beyond Appear or Fade, no transitions beyond Fade, no shadows, outlines,
   gradients, 3D or clip art.
 - A typical deck: title slide, an agenda or the point in one slide, sections with a Section Header
@@ -405,15 +459,15 @@ Use Deep teal layouts only for the title, section breaks and the closing slide.
 
 ## Big numbers, quotes and photos
 
-- **Big number:** on Title Only, the number in Oswald (use the theme heading font) at about 120 pt
-  in Deep teal `#044451`, with one Lato line below at about 22 pt in Slate `#4B575B` saying what it
-  means and its source. Only use numbers the person gave you or that come from a cited source.
-  Never invent statistics.
-- **Quote:** on Title Only, the quote in Lato at about 36 pt in Ink with curly quote marks, and the
-  name, role and company below at 18 pt in Slate. Only real quotes from people who agreed.
+- **Big number:** on Title Only, the number in Oswald Bold (use the theme heading font) at about
+  120 pt in Teal `#00708E` on white, or Cyan `#54EEFF` on Navy, with one Lato line below at about
+  22 pt in Black `#222222` (White on Navy) saying what it means and its source. Only use numbers
+  the person gave you or that come from a cited source. Never invent statistics.
+- **Quote:** on Title Only, the quote in Lato at about 36 pt in Black with curly quote marks, and
+  the name, role and company below at 18 pt. Only real quotes from people who agreed.
 - **Photo:** Picture with Caption, or a full bleed photo on Blank. Follow
-  [photography.md](photography.md). On a dark full bleed photo, hide the background graphics and
-  place the white logo in a dark corner.
+  [photography.md](photography.md). On a full bleed photo, add the hero overlay so the title side
+  is dark, hide the background graphics and place the white logo on a calm, dark corner.
 - **Charts:** native charts so they use the theme colors; follow [charts.md](charts.md).
 
 ## Google Slides
@@ -440,14 +494,16 @@ real.
 - **Sheet names** describe the contents, such as "Budget 2026", never "Sheet1".
 - **One table per sheet**, starting near the top left, with the header in one row and no blank
   rows or columns inside it.
-- **Sheet title:** Oswald, 24 pt, Deep teal `#044451`, typed in capitals, above the table.
-- **Header row:** Lato Bold 11 pt, White on Deep teal, sentence case, with units, such as
+- **Sheet title:** Oswald SemiBold, 24 pt, Teal `#00708E`, typed in capitals, above the table.
+- **Header row:** Lato Bold 11 pt, White on Navy `#10263F`, sentence case, with units, such as
   "Budget (USD)". Freeze it.
-- **Cells:** Lato 11 pt, Ink. Mist `#F3FBFC` stripes on alternate rows.
+- **Cells:** Lato 11 pt, Black `#222222`. Warm White `#F8F8F5` stripes on alternate rows. Where
+  Lato will not load, Aptos, never Arial.
 - **Numbers:** right aligned, thousands separators, the same decimals down a column, real dates.
   Negative numbers with a minus sign, never red alone.
-- **Status:** a word in its own column (On track, At risk, Late). Highlights in Pale teal
-  `#D9F6FA`, attention in Yellow `#FFC801` with Ink text, problems in Magenta `#BF0261` with a word.
+- **Status:** a word in its own column (On track, At risk, Late). The word carries the meaning.
+  Never use Raspberry, Orange or Lime to show status: they are decorative brand accents. One
+  highlight color at most, such as Yellow `#FFC801` with Black text.
 - **No merged cells** in tables, no hidden data others depend on, gridlines off on summary sheets.
 - **Formulas** others can follow: put inputs in labeled cells rather than typing numbers into
   formulas.
@@ -459,9 +515,9 @@ label them clearly as examples.
 ## Google Sheets
 
 Google Sheets opens the same `.xlsx` with the formatting intact. To set brand colors for new charts
-there: **Format**, then **Theme**, then **Customize**: font Lato, text Ink, accents in the order
-Teal `#065E6F`, Yellow `#FFC801`, Slate `#4B575B`, Bright teal `#0FACBD`, Deep teal `#044451`,
-Gray `#848F92`, links Teal.
+there: **Format**, then **Theme**, then **Customize**: font Lato, text Black `#222222`, accents
+in the order Teal `#00708E`, Yellow `#FFC801`, Navy `#10263F`, MC Blue `#0EABBC`, Deep Teal
+`#004F73`, Gray `#848F92`, links Teal.
 
 # Making things on brand: Voice
 
@@ -568,28 +624,32 @@ signed in apps, `AuthLayout` for sign in pages, `PageContainer`, `Button`, `Card
   `var(--separator)` and `var(--corner-lg)`, never raw hex values.
 - Use the named text styles (`text-large-title`, `text-title2`, `text-headline`, `text-body`,
   `text-callout`, `text-footnote`) rather than sizes by eye.
-- Signed in apps never use Oswald. Use Lato (named Propellant Sans in the package) throughout.
-- Teal means actionable: buttons, links, selected controls and focus.
+- Signed in apps never use Oswald. Use Lato (named Propellant Sans in the package) throughout,
+  with sentence case buttons and the package's rounded corners.
+- In the product, the `--tint` token means actionable: buttons, links, selected controls and focus.
+  Keep the product's own interface tokens, including its status colors, rather than the brand hex
+  values below.
 - Follow the package's own README and docs for anything not covered here.
 
 ## Prototypes, HTML artifacts and landing pages
 
-Inline the whole of `assets/propellant-website.css` in a `<style>` tag, keeping its start and end
-comments. It loads Lato and Oswald from Google Fonts and defines the brand tokens and classes. Put
+These are websites, so the website rules below apply. Inline the whole of
+`assets/propellant-website.css` in a `<style>` tag, keeping its start and end comments. It loads
+Lato and Oswald from Google Fonts and defines the brand tokens and classes. Put
 `class="propellant-text"` on `<body>` so the whole page gets the font and text color, give the page
 a White background, then use these classes:
 
-| Class                                                            | Use it for                                                        |
-| ---------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `propellant-text`                                                | On `<body>`: Lato and Ink text for the whole page                 |
-| `propellant-headline`                                            | The one big headline, Oswald in capitals                          |
-| `propellant-title-1`, `propellant-title-2`, `propellant-title-3` | Section headings, Lato Bold                                       |
-| `propellant-body`, `propellant-text`                             | Paragraphs                                                        |
-| `propellant-caption`                                             | Captions and small print                                          |
-| `propellant-link`                                                | Links                                                             |
-| `propellant-button`                                              | The primary button, a Teal pill                                   |
-| `propellant-button propellant-button-secondary`                  | A secondary button, a Pale teal pill (both classes)               |
-| `propellant-brand-band`                                          | A Deep teal section with White text; buttons inside it turn White |
+| Class                                                            | Use it for                                              |
+| ---------------------------------------------------------------- | ------------------------------------------------------- |
+| `propellant-text`                                                | On `<body>`: Lato and the text color for the whole page |
+| `propellant-headline`                                            | The big headline, Oswald in capitals                    |
+| `propellant-title-1`, `propellant-title-2`, `propellant-title-3` | Section headings, Oswald SemiBold in capitals           |
+| `propellant-body`, `propellant-text`                             | Paragraphs                                              |
+| `propellant-caption`                                             | Captions and small print                                |
+| `propellant-link`                                                | Links                                                   |
+| `propellant-button`                                              | The primary button, a pill                              |
+| `propellant-button propellant-button-secondary`                  | A secondary button (both classes)                       |
+| `propellant-brand-band`                                          | A dark section with White text                          |
 
 The tokens are CSS custom properties on `:root`, such as `--tint`, `--label`, `--bg`, so you can
 style your own elements with them. A minimal page:
@@ -612,23 +672,44 @@ Text style sizes on the web (desktop, with mobile in brackets):
 
 | Style                        | Font             | Weight | Size          |
 | ---------------------------- | ---------------- | ------ | ------------- |
-| Heading 1 (the big headline) | Oswald, capitals | 500    | 64 px (40 px) |
-| Heading 2                    | Lato             | 700    | 40 px (30 px) |
-| Heading 3                    | Lato             | 700    | 30 px (24 px) |
-| Heading 4                    | Lato             | 700    | 24 px (20 px) |
+| Heading 1 (the big headline) | Oswald, capitals | 600    | 64 px (40 px) |
+| Heading 2                    | Oswald, capitals | 600    | 40 px (30 px) |
+| Heading 3 (subhead)          | Oswald, capitals | 600    | 30 px (24 px) |
+| Heading 4 (small subhead)    | Oswald, capitals | 600    | 24 px (20 px) |
 | Paragraph large              | Lato             | 400    | 20 px (18 px) |
 | Paragraph                    | Lato             | 400    | 17 px (16 px) |
 | Small                        | Lato             | 400    | 14 px         |
-| Button                       | Lato             | 700    | 16 px         |
+| Button                       | Oswald, capitals | 600    | 16 px         |
+
+Headlines set line height 1.0; body text 1.5. An eyebrow in Oswald Regular capitals, tracked
++300 (0.3em), can sit above a headline.
 
 ## Web layout rules
 
-- White page background, with Mist `#F3FBFC` for alternate sections and Deep teal `#044451`
-  bands for brand moments.
-- Sections about 96 px of padding top and bottom on desktop, 64 px on mobile.
-- Paragraphs at most about 720 px wide.
-- Cards and images rounded 12 px. Buttons are pills, padded about 14 px by 28 px.
-- Put the full color logo at the start of the header on white; the white logo on Deep teal.
+These come from the MassChallenge brand guide and apply to websites, website builders and public
+pages, not to signed in applications.
+
+- Alternate dark sections (Navy `#10263F`, Black `#222222`, Deep Teal `#004F73`) with light ones
+  (White, Warm White `#F8F8F5`). Mark each change with a downward notch centered on the edge, in
+  the color of the section above.
+- Square corners on cards and photos. Generous margins: when in doubt, add white space. Sections
+  about 96 px of padding top and bottom on desktop, 64 px on mobile. Paragraphs at most about
+  720 px wide.
+- Eyebrow plus two-tone headline: the tracked eyebrow above; on dark, the lead phrase White and the
+  payoff Cyan `#54EEFF`; on light, the lead phrase Black and the payoff Teal `#00708E`.
+- Numbered blocks: a heavy Black rule, a Teal number, an Oswald title and Lato body.
+- The core pattern: a dark section with white cards and the notch, with Teal card titles.
+- A light section can rise into a pale tint `#F3FAFC` on a gentle angle from white, with a Teal
+  headline and a Teal pill button.
+- Buttons are always fully rounded pills in Oswald capitals. On light: a solid Teal fill with White
+  text, clearing to a Teal outline with Teal text on hover. On dark: a Cyan outline with White text,
+  filling with Teal on hover. An arrow (→) is optional for "see all" links. Square buttons are
+  retired. Event tags on graphics, such as EVENTS or NEWS, stay rectangular.
+- Text over photos only on a calm, high contrast area; otherwise move it, add the hero overlay from
+  [photography.md](photography.md), or set it on a solid Navy, Black or Deep Teal block.
+- One warm accent per piece, in small doses, never as a large background.
+- The full color logo goes at the start of the header on White or Warm White; the white logo on
+  dark sections.
 - Work at phone width: 16 px side gutters and no horizontal scrolling.
 - For dashboards and charts, follow [charts.md](charts.md).
 
@@ -871,11 +952,11 @@ handing it over.
 - Points people to the [content studio](/studio/) for social posts and the
   [signature builder](/studio/signature/) for email signatures.
 - Reads the newest rules from [llms-full.txt](/llms-full.txt) when it can reach the web.
-- Applies the palette, Lato and Oswald, the logo rules, sentence case and our voice, including no
-  em dashes.
+- Applies the MassChallenge brand guide: the palette, Oswald and Lato, the logo rules, photography
+  and our voice, including no em dashes.
 - Follows the chart, photography and accessibility guidelines.
-- Runs a checker that flags colors outside the palette, other fonts and dashes in the files it
-  makes.
+- Runs a checker that flags colors outside the palette, more than one warm accent, other fonts
+  and dashes in the files it makes.
 - Never invents numbers, quotes or results to fill a template.
 
 ## Install it for everyone on claude.ai
