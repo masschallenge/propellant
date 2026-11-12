@@ -31,8 +31,9 @@ const postTriangles = trianglePattern(POST_SIZE, 140, 36, 5);
 const pointList = (points: [number, number][]) =>
   points.map(([horizontal, vertical]) => `${horizontal},${vertical}`).join(' ');
 
-const swatches = ['deep-teal', 'teal', 'bright-teal', 'pale-teal', 'yellow', 'ink'].map(findColor);
-const photo = WEBSITE_PHOTOS.find((candidate) => candidate.category === 'teal-duotone');
+const swatches = ['navy', 'deep-teal', 'teal', 'mc-blue', 'cyan', 'yellow'].map(findColor);
+const navy = findColor('navy').hex;
+const photo = WEBSITE_PHOTOS.find((candidate) => candidate.category === 'founders-at-work');
 const mediumBoilerplate = findBoilerplate('medium').text;
 const hasBrandKit = existsSync(brandKitFile(process.cwd()));
 const brandNeeds = BRAND_NEEDS.filter((need) => hasBrandKit || !need.isDownload);
@@ -65,7 +66,7 @@ const SECTION = 'mx-auto max-w-[1200px] px-4 sm:px-6';
 const EYEBROW =
   'm-0 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[0.1em] text-[var(--tint)]';
 const HEADLINE =
-  'm-0 font-[family-name:var(--type-family-brand)] text-[clamp(2rem,4.5vw,3.25rem)] font-medium uppercase leading-[1] text-[var(--label)]';
+  'm-0 font-[family-name:var(--type-family-brand)] text-[clamp(2rem,4.5vw,3.25rem)] font-semibold uppercase leading-[1] text-[var(--label)]';
 const LEAD =
   'm-0 max-w-[60ch] text-[length:var(--type-title3-size)] leading-[1.5] text-[var(--label-secondary)]';
 const CARD =
@@ -81,7 +82,7 @@ const SOLID_BUTTON =
   description="Everything you need to make something look and sound like MassChallenge: the logo, colors, fonts and words, tools for posts and email signatures, and our web and Office templates."
   current="home"
 >
-  <section class="relative overflow-hidden bg-[var(--teal-900)] text-white" aria-labelledby="home-title">
+  <section class="relative overflow-hidden text-white" style={`background: ${navy}`} aria-labelledby="home-title">
     <svg
       viewBox={`0 0 ${HERO_WIDTH} ${HERO_HEIGHT}`}
       aria-hidden="true"
@@ -98,7 +99,7 @@ const SOLID_BUTTON =
       </p>
       <h1
         id="home-title"
-        class="m-0 max-w-[14ch] font-[family-name:var(--type-family-brand)] text-[clamp(2.75rem,7vw,5.5rem)] font-medium uppercase leading-[0.95]"
+        class="m-0 max-w-[14ch] font-[family-name:var(--type-family-brand)] text-[clamp(2.75rem,7vw,5.5rem)] font-semibold uppercase leading-[0.95]"
       >
         Make it look and sound like MassChallenge
       </h1>
@@ -157,12 +158,12 @@ const SOLID_BUTTON =
                     </div>
                   ) : need.visual === 'fonts' ? (
                     <div class="flex items-end gap-5 text-[var(--label)]">
-                      <span class="font-[family-name:var(--type-family-brand)] text-[64px] font-medium uppercase leading-none">Aa</span>
+                      <span class="font-[family-name:var(--type-family-brand)] text-[64px] font-semibold uppercase leading-none">Aa</span>
                       <span class="font-[family-name:var(--type-family)] text-[56px] leading-none">Aa</span>
                     </div>
                   ) : need.visual === 'about' ? (
-                    <div class="flex h-full w-full items-center bg-[var(--teal-900)] px-5">
-                      <p class="m-0 font-[family-name:var(--type-family-brand)] text-[19px] font-medium uppercase leading-[1.1] text-white">
+                    <div class="flex h-full w-full items-center px-5" style={`background: ${navy}`}>
+                      <p class="m-0 font-[family-name:var(--type-family-brand)] text-[19px] font-semibold uppercase leading-[1.1] text-white">
                         {PRIMARY_LINE}
                       </p>
                     </div>
@@ -180,7 +181,7 @@ const SOLID_BUTTON =
                     </div>
                   ) : (
                     <div class="flex items-center gap-3">
-                      <span class="flex h-16 w-14 items-end justify-center rounded-[var(--corner-md)] bg-[var(--teal-900)] pb-2 text-[length:var(--type-footnote-size)] font-bold text-white">ZIP</span>
+                      <span class="flex h-16 w-14 items-end justify-center rounded-[var(--corner-md)] pb-2 text-[length:var(--type-footnote-size)] font-bold text-white" style={`background: ${navy}`}>ZIP</span>
                       <span class="flex flex-col text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">
                         <span>Logos</span>
                         <span>Fonts</span>
@@ -224,7 +225,7 @@ const SOLID_BUTTON =
                 <dt class="text-[length:var(--type-caption-size)] font-bold uppercase tracking-[0.08em] text-[var(--label-secondary)]">
                   {figure.label}
                 </dt>
-                <dd class="m-0 font-[family-name:var(--type-family-brand)] text-[length:var(--type-large-title-size)] font-medium text-[var(--label)]">
+                <dd class="m-0 font-[family-name:var(--type-family-brand)] text-[length:var(--type-large-title-size)] font-semibold text-[var(--label)]">
                   {figure.value}
                 </dd>
               </div>
@@ -251,9 +252,9 @@ const SOLID_BUTTON =
             <a href={tool.href} class={CARD}>
               <div class="flex h-72 items-center justify-center overflow-hidden border-0 border-b border-solid border-[var(--separator)] bg-[var(--bg-secondary)] p-6" aria-hidden="true" inert>
                 {tool.id === 'studio' ? (
-                  <div class="relative flex aspect-square h-full flex-col gap-4 overflow-hidden rounded-[var(--corner-lg)] bg-[var(--teal-900)] p-5 pb-[34%] shadow-[var(--shadow-float)]">
+                  <div class="relative flex aspect-square h-full flex-col gap-4 overflow-hidden p-5 pb-[34%] shadow-[var(--shadow-float)]" style={`background: ${navy}`}>
                     <Image src={logoWhite} alt="" class="relative z-[1] h-4 w-auto self-start" />
-                    <p class="relative z-[1] m-0 mt-auto font-[family-name:var(--type-family-brand)] text-[20px] font-medium uppercase leading-[1] text-white">
+                    <p class="relative z-[1] m-0 mt-auto font-[family-name:var(--type-family-brand)] text-[20px] font-semibold uppercase leading-[1] text-white">
                       {PRIMARY_LINE}
                     </p>
                     <svg viewBox={`0 0 ${POST_SIZE} 140`} class="absolute inset-x-0 bottom-0 h-[28%] w-full" preserveAspectRatio="xMidYMid slice">
@@ -307,7 +308,7 @@ const SOLID_BUTTON =
                         <Image src={logoWhite} alt="" class="light-hidden h-4 w-auto" />
                         <Badge size="sm">Open</Badge>
                       </div>
-                      <p class="m-0 font-[family-name:var(--type-family-brand)] text-[26px] font-medium uppercase leading-none text-[var(--label)]">Apply to the program</p>
+                      <p class="m-0 font-[family-name:var(--type-family-brand)] text-[26px] font-semibold uppercase leading-none text-[var(--label)]">Apply to the program</p>
                       <TextField label="Company name" placeholder="Your company" />
                       <div class="flex gap-2">
                         <Button>Submit application</Button>

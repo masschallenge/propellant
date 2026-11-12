@@ -5,8 +5,13 @@ import logoWhite from '@masschallenge/propellant-web/assets/logos/masschallenge-
 import { CONTACT_EMAIL, WEBSITE_LABEL, copyrightLine, findSocial } from '../../../brand/contact';
 import { POSITIONING, PRIMARY_LINE } from '../../../brand/messaging';
 import { EMPTY_SIGNATURE, signatureHtml } from '../../../brand/signature';
+import { findColor } from '../../../brand/palette';
 import PhotoSlot from './PhotoSlot.astro';
 import Piece from './Piece.astro';
+
+const brandColors = ['navy', 'deep-teal', 'teal', 'cyan', 'mc-blue']
+  .map((id) => `--brand-${id}: ${findColor(id).hex}`)
+  .join('; ');
 
 const signature = signatureHtml(
   {
@@ -23,7 +28,7 @@ const signature = signatureHtml(
 );
 ---
 
-<div class="grid grid-cols-1 items-start gap-5 md:grid-cols-6">
+<div class="grid grid-cols-1 items-start gap-5 md:grid-cols-6" style={brandColors}>
   <Piece label="Website header" class="md:col-span-4">
     <div class="flex h-full flex-col bg-white text-[var(--gray-800)]">
       <div class="flex items-center gap-4 border-0 border-b border-solid border-[var(--gray-100)] px-5 py-3">
@@ -31,14 +36,14 @@ const signature = signatureHtml(
         <span class="ml-auto hidden gap-4 text-[13px] text-[var(--gray-500)] sm:flex" aria-hidden="true">
           <span>Challenge Areas</span><span>Our accelerators</span><span>Our network</span>
         </span>
-        <span class="ml-auto rounded-full bg-[var(--teal-800)] px-3 py-1 text-[12px] font-semibold text-white sm:ml-0">
+        <span class="ml-auto rounded-full bg-[var(--brand-teal)] px-3 py-1 font-[family-name:var(--type-family-brand)] text-[12px] font-semibold uppercase text-white sm:ml-0">
           Apply
         </span>
       </div>
       <div class="grid flex-1 grid-cols-1 sm:grid-cols-[1.1fr_1fr]">
-        <div class="flex flex-col justify-center gap-3 bg-[var(--teal-900)] px-6 py-8 text-white">
+        <div class="flex flex-col justify-center gap-3 bg-[var(--brand-navy)] px-6 py-8 text-white">
           <p
-            class="m-0 font-[family-name:var(--type-family-brand)] text-[clamp(1.6rem,4vw,2.6rem)] font-medium uppercase leading-[1]"
+            class="m-0 font-[family-name:var(--type-family-brand)] text-[clamp(1.6rem,4vw,2.6rem)] font-semibold uppercase leading-[1]"
           >
             {POSITIONING[0]}
           </p>
@@ -46,21 +51,21 @@ const signature = signatureHtml(
             {PRIMARY_LINE}
           </p>
         </div>
-        <PhotoSlot tone="teal" class="min-h-[140px]" />
+        <PhotoSlot tone="deep" class="min-h-[140px]" />
       </div>
     </div>
   </Piece>
 
   <Piece label="Social post, 4:5" class="md:col-span-2">
-    <div class="relative flex aspect-[4/5] flex-col justify-between bg-[var(--teal-900)] p-5 text-white">
+    <div class="relative flex aspect-[4/5] flex-col justify-between bg-[var(--brand-navy)] p-5 text-white">
       <Image src={logoWhite} alt="MassChallenge" class="h-4 w-auto self-start" />
-      <PhotoSlot tone="mid" class="my-4 flex-1" />
+      <PhotoSlot tone="blue" class="my-4 flex-1" />
       <p
-        class="m-0 font-[family-name:var(--type-family-brand)] text-[clamp(1.4rem,3vw,1.9rem)] font-medium uppercase leading-[1]"
+        class="m-0 font-[family-name:var(--type-family-brand)] text-[clamp(1.4rem,3vw,1.9rem)] font-semibold uppercase leading-[1]"
       >
         Your big line here
       </p>
-      <p class="m-0 mt-2 text-[13px] text-[var(--teal-400)]">
+      <p class="m-0 mt-2 text-[13px] text-[var(--brand-cyan)]">
         Details and a call to action. {findSocial('instagram').handle}
       </p>
     </div>
@@ -68,7 +73,7 @@ const signature = signatureHtml(
 
   <Piece label="Sign in page" class="md:col-span-3">
     <div class="grid h-full grid-cols-[2fr_3fr] bg-[var(--gray-50)] text-[var(--gray-800)]">
-      <div class="flex flex-col justify-between gap-6 bg-[var(--teal-900)] p-5 text-white">
+      <div class="flex flex-col justify-between gap-6 bg-[var(--brand-navy)] p-5 text-white">
         <Image src={logoWhite} alt="MassChallenge" class="h-4 w-auto self-start" />
         <p class="m-0 text-[15px] font-semibold leading-[1.3]">
           Sign in to keep building what the world needs next.
@@ -84,7 +89,7 @@ const signature = signatureHtml(
           <span class="text-[12px] font-semibold">Password</span>
           <span class="block h-8 rounded-[var(--corner-md)] border border-solid border-[var(--gray-300)] bg-white"></span>
         </div>
-        <span class="mt-1 rounded-full bg-[var(--teal-800)] py-2 text-center text-[13px] font-semibold text-white">
+        <span class="mt-1 rounded-full bg-[var(--brand-teal)] py-2 text-center text-[13px] font-semibold text-white">
           Sign in
         </span>
       </div>
@@ -92,36 +97,36 @@ const signature = signatureHtml(
   </Piece>
 
   <Piece label="Event banner" class="md:col-span-3">
-    <div class="grid h-full min-h-[180px] grid-cols-[3fr_2fr] bg-[var(--teal-900)] text-white">
+    <div class="grid h-full min-h-[180px] grid-cols-[3fr_2fr] bg-[var(--brand-navy)] text-white">
       <div class="flex flex-col justify-between gap-4 p-5">
         <Image src={logoWhite} alt="MassChallenge" class="h-4 w-auto self-start" />
         <div>
           <p
-            class="m-0 font-[family-name:var(--type-family-brand)] text-[clamp(1.4rem,3vw,2rem)] font-medium uppercase leading-[1]"
+            class="m-0 font-[family-name:var(--type-family-brand)] text-[clamp(1.4rem,3vw,2rem)] font-semibold uppercase leading-[1]"
           >
             Your event name
           </p>
           <p class="m-0 mt-2 text-[13px] text-[var(--teal-100)]">Date, time and place</p>
           <p class="m-0 mt-1 text-[13px] text-[var(--teal-100)]">{WEBSITE_LABEL}</p>
         </div>
-        <span class="self-start rounded-full bg-white px-3 py-1 text-[12px] font-semibold text-[var(--teal-900)]">
+        <span class="self-start rounded-full bg-white px-3 py-1 text-[12px] font-semibold text-[var(--brand-teal)]">
           Register
         </span>
       </div>
-      <PhotoSlot tone="mid" />
+      <PhotoSlot tone="blue" />
     </div>
   </Piece>
 
   <Piece label="Slide title" class="md:col-span-4">
-    <div class="flex aspect-[16/9] flex-col bg-[var(--teal-900)] p-[6%] text-white">
+    <div class="flex aspect-[16/9] flex-col bg-[var(--brand-navy)] p-[6%] text-white">
       <Image src={logoWhite} alt="MassChallenge" class="h-[7%] min-h-3 w-auto self-start" />
       <div class="mt-auto mb-auto">
         <p
-          class="m-0 font-[family-name:var(--type-family-brand)] text-[clamp(1.6rem,4.5vw,3rem)] font-medium uppercase leading-[1]"
+          class="m-0 font-[family-name:var(--type-family-brand)] text-[clamp(1.6rem,4.5vw,3rem)] font-semibold uppercase leading-[1]"
         >
           Presentation title
         </p>
-        <p class="m-0 mt-3 text-[clamp(0.8rem,1.6vw,1rem)] text-[var(--teal-400)]">
+        <p class="m-0 mt-3 text-[clamp(0.8rem,1.6vw,1rem)] text-[var(--brand-cyan)]">
           Subtitle, presenter and date
         </p>
       </div>
@@ -132,7 +137,7 @@ const signature = signatureHtml(
     <div class="flex aspect-[8.5/11] flex-col gap-3 bg-white p-[9%] text-[var(--gray-800)]">
       <Image src={logoColor} alt="MassChallenge" class="h-4 w-auto self-start" />
       <p
-        class="m-0 mt-6 font-[family-name:var(--type-family-brand)] text-[clamp(1.4rem,3vw,2rem)] font-medium uppercase leading-[1] text-[var(--teal-900)]"
+        class="m-0 mt-6 font-[family-name:var(--type-family-brand)] text-[clamp(1.4rem,3vw,2rem)] font-semibold uppercase leading-[1] text-[var(--brand-teal)]"
       >
         Document title
       </p>
