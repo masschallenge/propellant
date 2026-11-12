@@ -1,6 +1,5 @@
 ---
 import { COLOR_BALANCE } from '../../../brand/color-balance';
-import { isDark } from '../../../brand/contrast';
 import { findColor } from '../../../brand/palette';
 
 const [carry, smallDoses, oneAccent] = COLOR_BALANCE;
@@ -28,17 +27,12 @@ const white = findColor('white').hex;
     class="flex flex-col gap-4 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5"
     aria-labelledby="balance-small-doses"
   >
-    <ul class="m-0 flex h-24 list-none items-center gap-2 p-0" aria-hidden="true">
+    <ul class="m-0 grid h-24 list-none grid-cols-4 items-end gap-2 p-0">
       {
         smallDoses.colors.map((color) => (
-          <li
-            class:list={[
-              'px-2 py-1 text-[length:var(--type-caption-size)] font-bold uppercase tracking-[0.1em]',
-              isDark(color.hex) ? 'text-[var(--gray-0)]' : 'text-[var(--gray-800)]',
-            ]}
-            style={`background: ${color.hex}`}
-          >
-            {color.name}
+          <li class="flex flex-col gap-1">
+            <span class="block h-10 w-full" style={`background: ${color.hex}`} aria-hidden="true" />
+            <span class="text-[length:var(--type-caption-size)] font-semibold text-[var(--label-secondary)]">{color.name}</span>
           </li>
         ))
       }
