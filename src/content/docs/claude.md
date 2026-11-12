@@ -6,8 +6,9 @@ description: The Propellant skill makes everything people create with Claude on 
 The Propellant skill teaches Claude the MassChallenge brand. Once it is installed, anyone who asks
 Claude for an app, a prototype, a web page, a slide deck, a document or a spreadsheet gets one that
 already uses our colors, fonts, logo, layouts and voice. Nobody has to describe the brand or think
-about design: Claude starts from the Propellant templates and checks its own work before handing it
-over.
+about design, or even mention MassChallenge: Claude treats work for MassChallenge as on brand by
+default, starts from the Propellant templates and components, and checks its own work before
+handing it over.
 
 [Download the Propellant skill](/downloads/propellant-brand.zip)
 
@@ -15,6 +16,11 @@ over.
 
 - Picks the right starting point for what you asked for: the Propellant PowerPoint, Word or Excel
   template, the web stylesheet for prototypes and pages, or the `propellant-web` package for apps.
+- In an existing codebase, builds with the Propellant components and tokens already there, adds the
+  `propellant-web` package to MassChallenge apps that lack it, and never hardcodes colors or fonts.
+- Points people to the [content studio](/studio/) for social posts and the
+  [signature builder](/studio/signature/) for email signatures.
+- Reads the newest rules from [llms-full.txt](/llms-full.txt) when it can reach the web.
 - Applies the palette, Lato and Oswald, the logo rules, sentence case and our voice, including no
   em dashes.
 - Follows the chart, photography and accessibility guidelines.
@@ -38,15 +44,24 @@ has the current steps, which may be named differently in your admin console.
 
 ## Install it in Claude Code
 
-To use it in one repository, unzip the file into `.claude/skills/` so that
-`.claude/skills/propellant-brand/SKILL.md` exists, and commit it. To use it on your own computer
-for every project, unzip it into `~/.claude/skills/` instead.
+For engineers, the quickest way is to install it for every project on your computer:
+
+```bash
+curl -fsSL https://propellant.masschallenge.org/downloads/propellant-brand.zip -o /tmp/propellant-brand.zip && unzip -o /tmp/propellant-brand.zip -d ~/.claude/skills/
+```
+
+That leaves `~/.claude/skills/propellant-brand/SKILL.md` in place. Run the same command again to
+update it.
+
+To share it with everyone who works in one repository, unzip it into that repository's
+`.claude/skills/` folder instead, so that `.claude/skills/propellant-brand/SKILL.md` exists, and
+commit it.
 
 ## Keep it current
 
 The skill on this page is rebuilt every time this site is published, from the latest releases of
-`propellant-web` and `propellant-office`. After a Propellant release, download it again and upload
-it again in the same place. Check that the new version replaced the old one rather than adding a
+`propellant-web` and `propellant-office`. Its `SKILL.md` names the two releases it was built from.
+After a Propellant release, download it again and upload it again in the same place. Check that the new version replaced the old one rather than adding a
 second copy.
 
 ## Org instructions
