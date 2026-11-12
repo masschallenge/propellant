@@ -43,7 +43,9 @@ The build publishes files that help search engines and AI assistants find and us
 - `robots.txt` lets every crawler in and points to the sitemap.
 - `llms.txt` is a short guide for AI assistants: what Propellant is, that it is the source of
   truth for the brand, and a link to every page.
-- `llms-full.txt` is the whole site in one plain text file, starting with the brand facts.
+- `llms-full.txt` is one plain text file with the brand facts, the rules for making documents,
+  decks, graphics and web pages on brand (from the Propellant skill), and every docs page. The
+  visual brand guide, studio and signature pages are listed in `llms.txt` but are not text pages.
 
 All three are built from the site's own content, so they stay current with every deploy. The
 home and brand pages also carry canonical, social and structured data tags.

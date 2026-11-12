@@ -1,4 +1,5 @@
 ---
+import { BRAND_GUIDE_PAGE } from '../../brand/site-pages';
 import BrandLayout from '../../layouts/BrandLayout.astro';
 import Hero from '../../components/brand/Hero.astro';
 import SectionNav from '../../components/brand/SectionNav.astro';
@@ -16,8 +17,8 @@ import MakeSomething from '../../components/brand/sections/MakeSomething.astro';
 ---
 
 <BrandLayout
-  title="Brand guide"
-  description="The MassChallenge brand, shown rather than told: logos, color, type, photos, voice and motion, with everything ready to copy and download."
+  title={BRAND_GUIDE_PAGE.title}
+  description={BRAND_GUIDE_PAGE.description}
   current="brand"
 >
   <Hero />
