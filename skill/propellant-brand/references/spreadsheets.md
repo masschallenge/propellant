@@ -15,14 +15,16 @@ real.
 - **Sheet names** describe the contents, such as "Budget 2026", never "Sheet1".
 - **One table per sheet**, starting near the top left, with the header in one row and no blank
   rows or columns inside it.
-- **Sheet title:** Oswald, 24 pt, Deep teal `#044451`, typed in capitals, above the table.
-- **Header row:** Lato Bold 11 pt, White on Deep teal, sentence case, with units, such as
+- **Sheet title:** Oswald SemiBold, 24 pt, Teal `#00708E`, typed in capitals, above the table.
+- **Header row:** Lato Bold 11 pt, White on Navy `#10263F`, sentence case, with units, such as
   "Budget (USD)". Freeze it.
-- **Cells:** Lato 11 pt, Ink. Mist `#F3FBFC` stripes on alternate rows.
+- **Cells:** Lato 11 pt, Black `#222222`. Warm White `#F8F8F5` stripes on alternate rows. Where
+  Lato will not load, Aptos, never Arial.
 - **Numbers:** right aligned, thousands separators, the same decimals down a column, real dates.
   Negative numbers with a minus sign, never red alone.
-- **Status:** a word in its own column (On track, At risk, Late). Highlights in Pale teal
-  `#D9F6FA`, attention in Yellow `#FFC801` with Ink text, problems in Magenta `#BF0261` with a word.
+- **Status:** a word in its own column (On track, At risk, Late). The word carries the meaning.
+  Never use Raspberry, Orange or Lime to show status: they are decorative brand accents. One
+  highlight color at most, such as Yellow `#FFC801` with Black text.
 - **No merged cells** in tables, no hidden data others depend on, gridlines off on summary sheets.
 - **Formulas** others can follow: put inputs in labeled cells rather than typing numbers into
   formulas.
@@ -34,6 +36,6 @@ label them clearly as examples.
 ## Google Sheets
 
 Google Sheets opens the same `.xlsx` with the formatting intact. To set brand colors for new charts
-there: **Format**, then **Theme**, then **Customize**: font Lato, text Ink, accents in the order
-Teal `#065E6F`, Yellow `#FFC801`, Slate `#4B575B`, Bright teal `#0FACBD`, Deep teal `#044451`,
-Gray `#848F92`, links Teal.
+there: **Format**, then **Theme**, then **Customize**: font Lato, text Black `#222222`, accents
+in the order Teal `#00708E`, Yellow `#FFC801`, Navy `#10263F`, MC Blue `#0EABBC`, Deep Teal
+`#004F73`, Gray `#848F92`, links Teal.

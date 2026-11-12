@@ -43,28 +43,32 @@ signed in apps, `AuthLayout` for sign in pages, `PageContainer`, `Button`, `Card
   `var(--separator)` and `var(--corner-lg)`, never raw hex values.
 - Use the named text styles (`text-large-title`, `text-title2`, `text-headline`, `text-body`,
   `text-callout`, `text-footnote`) rather than sizes by eye.
-- Signed in apps never use Oswald. Use Lato (named Propellant Sans in the package) throughout.
-- Teal means actionable: buttons, links, selected controls and focus.
+- Signed in apps never use Oswald. Use Lato (named Propellant Sans in the package) throughout,
+  with sentence case buttons and the package's rounded corners.
+- In the product, the `--tint` token means actionable: buttons, links, selected controls and focus.
+  Keep the product's own interface tokens, including its status colors, rather than the brand hex
+  values below.
 - Follow the package's own README and docs for anything not covered here.
 
 ## Prototypes, HTML artifacts and landing pages
 
-Inline the whole of `assets/propellant-website.css` in a `<style>` tag, keeping its start and end
-comments. It loads Lato and Oswald from Google Fonts and defines the brand tokens and classes. Put
+These are websites, so the website rules below apply. Inline the whole of
+`assets/propellant-website.css` in a `<style>` tag, keeping its start and end comments. It loads
+Lato and Oswald from Google Fonts and defines the brand tokens and classes. Put
 `class="propellant-text"` on `<body>` so the whole page gets the font and text color, give the page
 a White background, then use these classes:
 
-| Class                                                            | Use it for                                                        |
-| ---------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `propellant-text`                                                | On `<body>`: Lato and Ink text for the whole page                 |
-| `propellant-headline`                                            | The one big headline, Oswald in capitals                          |
-| `propellant-title-1`, `propellant-title-2`, `propellant-title-3` | Section headings, Lato Bold                                       |
-| `propellant-body`, `propellant-text`                             | Paragraphs                                                        |
-| `propellant-caption`                                             | Captions and small print                                          |
-| `propellant-link`                                                | Links                                                             |
-| `propellant-button`                                              | The primary button, a Teal pill                                   |
-| `propellant-button propellant-button-secondary`                  | A secondary button, a Pale teal pill (both classes)               |
-| `propellant-brand-band`                                          | A Deep teal section with White text; buttons inside it turn White |
+| Class                                                            | Use it for                                              |
+| ---------------------------------------------------------------- | ------------------------------------------------------- |
+| `propellant-text`                                                | On `<body>`: Lato and the text color for the whole page |
+| `propellant-headline`                                            | The big headline, Oswald in capitals                    |
+| `propellant-title-1`, `propellant-title-2`, `propellant-title-3` | Section headings, Lato Bold                             |
+| `propellant-body`, `propellant-text`                             | Paragraphs                                              |
+| `propellant-caption`                                             | Captions and small print                                |
+| `propellant-link`                                                | Links                                                   |
+| `propellant-button`                                              | The primary button, a pill                              |
+| `propellant-button propellant-button-secondary`                  | A secondary button (both classes)                       |
+| `propellant-brand-band`                                          | A dark section with White text                          |
 
 The tokens are CSS custom properties on `:root`, such as `--tint`, `--label`, `--bg`, so you can
 style your own elements with them. A minimal page:
@@ -87,23 +91,44 @@ Text style sizes on the web (desktop, with mobile in brackets):
 
 | Style                        | Font             | Weight | Size          |
 | ---------------------------- | ---------------- | ------ | ------------- |
-| Heading 1 (the big headline) | Oswald, capitals | 500    | 64 px (40 px) |
+| Heading 1 (the big headline) | Oswald, capitals | 600    | 64 px (40 px) |
 | Heading 2                    | Lato             | 700    | 40 px (30 px) |
 | Heading 3                    | Lato             | 700    | 30 px (24 px) |
 | Heading 4                    | Lato             | 700    | 24 px (20 px) |
 | Paragraph large              | Lato             | 400    | 20 px (18 px) |
 | Paragraph                    | Lato             | 400    | 17 px (16 px) |
 | Small                        | Lato             | 400    | 14 px         |
-| Button                       | Lato             | 700    | 16 px         |
+| Button                       | Oswald, capitals | 600    | 16 px         |
+
+Headlines set line height 1.0; body text 1.5. An eyebrow in Oswald Regular capitals, tracked
++300 (0.3em), can sit above a headline.
 
 ## Web layout rules
 
-- White page background, with Mist `#F3FBFC` for alternate sections and Deep teal `#044451`
-  bands for brand moments.
-- Sections about 96 px of padding top and bottom on desktop, 64 px on mobile.
-- Paragraphs at most about 720 px wide.
-- Cards and images rounded 12 px. Buttons are pills, padded about 14 px by 28 px.
-- Put the full color logo at the start of the header on white; the white logo on Deep teal.
+These come from the MassChallenge brand guide and apply to websites, website builders and public
+pages, not to signed in applications.
+
+- Alternate dark sections (Navy `#10263F`, Black `#222222`, Deep Teal `#004F73`) with light ones
+  (White, Warm White `#F8F8F5`). Mark each change with a downward notch centered on the edge, in
+  the color of the section above.
+- Square corners on cards and photos. Generous margins: when in doubt, add white space. Sections
+  about 96 px of padding top and bottom on desktop, 64 px on mobile. Paragraphs at most about
+  720 px wide.
+- Eyebrow plus two-tone headline: the tracked eyebrow above; on dark, the lead phrase White and the
+  payoff Cyan `#54EEFF`; on light, the lead phrase Black and the payoff Teal `#00708E`.
+- Numbered blocks: a heavy Black rule, a Teal number, an Oswald title and Lato body.
+- The core pattern: a dark section with white cards and the notch, with Teal card titles.
+- A light section can rise into a pale tint `#F3FAFC` on a gentle angle from white, with a Teal
+  headline and a Teal pill button.
+- Buttons are always fully rounded pills in Oswald capitals. On light: a solid Teal fill with White
+  text, clearing to a Teal outline with Teal text on hover. On dark: a Cyan outline with White text,
+  filling with Teal on hover. An arrow (→) is optional for "see all" links. Square buttons are
+  retired. Event tags on graphics, such as EVENTS or NEWS, stay rectangular.
+- Text over photos only on a calm, high contrast area; otherwise move it, add the hero overlay from
+  [photography.md](photography.md), or set it on a solid Navy, Black or Deep Teal block.
+- One warm accent per piece, in small doses, never as a large background.
+- The full color logo goes at the start of the header on White or Warm White; the white logo on
+  dark sections.
 - Work at phone width: 16 px side gutters and no horizontal scrolling.
 - For dashboards and charts, follow [charts.md](charts.md).
 

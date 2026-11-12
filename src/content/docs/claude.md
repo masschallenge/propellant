@@ -15,11 +15,11 @@ over.
 
 - Picks the right starting point for what you asked for: the Propellant PowerPoint, Word or Excel
   template, the web stylesheet for prototypes and pages, or the `propellant-web` package for apps.
-- Applies the palette, Lato and Oswald, the logo rules, sentence case and our voice, including no
-  em dashes.
+- Applies the MassChallenge brand guide: the palette, Oswald and Lato, the logo rules, photography
+  and our voice, including no em dashes.
 - Follows the chart, photography and accessibility guidelines.
-- Runs a checker that flags colors outside the palette, other fonts and dashes in the files it
-  makes.
+- Runs a checker that flags colors outside the palette, more than one warm accent, other fonts
+  and dashes in the files it makes.
 - Never invents numbers, quotes or results to fill a template.
 
 ## Install it for everyone on claude.ai
