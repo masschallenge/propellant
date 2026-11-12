@@ -119,7 +119,7 @@ export const findBrandTextStyle = (id: string): BrandTextStyle => {
 
 export const brandTextCss = (style: BrandTextStyle): string =>
   [
-    `font-family: ${style.font === 'Oswald' ? "'Oswald', 'Aptos Narrow', sans-serif" : "'Lato', 'Aptos', sans-serif"};`,
+    `font-family: ${style.font === 'Oswald' ? "'Oswald', 'Aptos Narrow', sans-serif" : "'Propellant Sans', 'Lato', 'Aptos', sans-serif"};`,
     `font-weight: ${style.weight};`,
     ...(style.isCapitals ? ['text-transform: uppercase;'] : []),
     ...(style.lineHeight !== null ? [`line-height: ${style.lineHeight};`] : []),

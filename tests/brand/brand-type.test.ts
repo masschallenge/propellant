@@ -77,7 +77,9 @@ describe('brand type', () => {
     expect(headlineCss).toContain('font-weight: 600;');
     expect(headlineCss).toContain('text-transform: uppercase;');
     expect(headlineCss).toContain('line-height: 1;');
-    expect(brandTextCss(findBrandTextStyle('body'))).toContain("'Lato', 'Aptos', sans-serif");
+    expect(brandTextCss(findBrandTextStyle('body'))).toContain(
+      "font-family: 'Propellant Sans', 'Lato', 'Aptos', sans-serif;",
+    );
     BRAND_TEXT_STYLES.forEach((style) => expect(brandTextCss(style)).not.toMatch(/arial/i));
   });
 
