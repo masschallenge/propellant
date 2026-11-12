@@ -3,6 +3,7 @@ import {
   brandFacts,
   docsPath,
   groupPages,
+  guideFromMarkdown,
   llmsFull,
   llmsIndex,
   robotsText,
@@ -13,6 +14,7 @@ import { BRAND_COLORS } from '../../src/brand/palette';
 
 const site: LlmsSite = {
   origin: 'https://propellant.masschallenge.org',
+  guides: [{ title: 'Voice', body: 'Lead with the point.' }],
   skillPath: '/downloads/propellant-brand.zip',
   pages: [
     { path: '/brand/', title: 'Visual brand guide', description: 'The whole brand.' },
@@ -70,6 +72,19 @@ describe('the LLM files', () => {
     expect(full).toContain('Install the package.');
     expect(full).not.toContain('import Card');
     expect(full).not.toContain('# Visual brand guide');
+  });
+
+  it('reads a skill reference into a guide', () => {
+    expect(guideFromMarkdown('# Voice\n\nLead with the point.\n')).toEqual({
+      title: 'Voice',
+      body: 'Lead with the point.',
+    });
+  });
+
+  it('puts the guides for making things on brand in llms-full.txt', () => {
+    expect(llmsFull(site)).toContain('# Making things on brand: Voice\n\nLead with the point.');
+    expect(llmsIndex(site)).toContain('rules for making documents, decks, graphics, web pages');
+    expect(llmsIndex(site)).not.toContain('whole site');
   });
 
   it('states the brand facts from the same data the site shows', () => {
