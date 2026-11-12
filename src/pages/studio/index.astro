@@ -1,11 +1,12 @@
 ---
+import { STUDIO_PAGE } from '../../brand/site-pages';
 import BrandLayout from '../../layouts/BrandLayout.astro';
 import Studio from '../../components/studio/Studio';
 ---
 
 <BrandLayout
-  title="Content studio"
-  description="Your own little design studio. It only hands you MassChallenge fonts, colors and logos, used the way they are meant to be."
+  title={STUDIO_PAGE.title}
+  description={STUDIO_PAGE.description}
   current="studio"
 >
   <Studio client:only="react" />

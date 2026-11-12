@@ -3,6 +3,7 @@
 ## Contents
 
 - Choose the setup
+- Working in an existing codebase
 - Production React apps
 - Prototypes, HTML artifacts and landing pages
 - Web layout rules
@@ -16,13 +17,27 @@
 | A quick prototype, a single HTML file, a claude.ai artifact or a dashboard  | `assets/propellant-website.css` inlined in a `<style>` tag, plus the class names below         |
 | A page in a website builder (WordPress, Squarespace, Webflow, Wix, HubSpot) | The builder's own style settings, following the website guides at propellant.masschallenge.org |
 
+## Working in an existing codebase
+
+- Look for `@masschallenge/propellant-web` in `package.json`. If it is there, use its components
+  and tokens, and follow the patterns the code already uses.
+- If it is a MassChallenge app without the package, add it as below instead of another UI library
+  or kit, such as Material UI, Chakra, Bootstrap or a default shadcn theme. If the app already
+  depends on another kit, ask before replacing it, and style new work with Propellant tokens in the
+  meantime.
+- Never hardcode hex colors, font names or radii. Use the tokens. If you need a value the tokens do
+  not have, ask instead of inventing one.
+- Before writing a component, read the package README in
+  `node_modules/@masschallenge/propellant-web/README.md` for the current components and their
+  props. The one you need may already exist.
+
 ## Production React apps
 
-Install from GitHub at the latest release tag (check the releases of
-`masschallenge/propellant-web`; it was v1.1.1 when this skill was last updated):
+Install from GitHub at the release this skill was built from, {{propellant-web}}, or a newer
+release of `masschallenge/propellant-web` if one exists:
 
 ```bash
-npm install github:masschallenge/propellant-web#v1.1.1
+npm install github:masschallenge/propellant-web#{{propellant-web}}
 ```
 
 In the global stylesheet:

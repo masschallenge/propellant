@@ -1,11 +1,12 @@
 ---
+import { SIGNATURE_PAGE } from '../../../brand/site-pages';
 import BrandLayout from '../../../layouts/BrandLayout.astro';
 import SignatureBuilder from '../../../components/signature/SignatureBuilder';
 ---
 
 <BrandLayout
-  title="Email signature"
-  description="Build a MassChallenge email signature and copy it into your mail app."
+  title={SIGNATURE_PAGE.title}
+  description={SIGNATURE_PAGE.description}
   current="signature"
 >
   <div class="mx-auto max-w-[1200px] px-4 py-12 sm:px-6 sm:py-16">

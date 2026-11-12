@@ -1,6 +1,15 @@
-import { readFileSync, readdirSync } from 'node:fs';
+import { mkdtempSync, readFileSync, readdirSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { SKILL_NAME, artifactStylesheet } from '../scripts/lib/skill-package.mjs';
+import {
+  SKILL_NAME,
+  UNRELEASED_VERSIONS,
+  artifactStylesheet,
+  readVersions,
+  stampVersions,
+  writeVersions,
+} from '../scripts/lib/skill-package.mjs';
 
 const skill = readFileSync(`skill/${SKILL_NAME}/SKILL.md`, 'utf8');
 const frontmatter = skill.match(/^---\n([\s\S]*?)\n---/)[1];
@@ -29,6 +38,83 @@ describe('the skill definition', () => {
 
   it('never uses em or en dashes', () => {
     expect(skill).not.toMatch(/[–—]/);
+  });
+});
+
+describe('the skill as the default for MassChallenge work', () => {
+  const webReference = readFileSync(`skill/${SKILL_NAME}/references/web-and-apps.md`, 'utf8');
+
+  it('triggers on the things people make, even without the brand named', () => {
+    const description = field('description');
+    [
+      'web application',
+      'React',
+      'slide deck',
+      'PowerPoint',
+      'Word',
+      'spreadsheet',
+      'Excel',
+      'even when they do not mention the brand',
+    ].forEach((phrase) => expect(description).toContain(phrase));
+  });
+
+  it('names the source of truth and where facts about MassChallenge live', () => {
+    expect(skill).toContain('https://propellant.masschallenge.org/llms-full.txt');
+    expect(skill).toContain('https://masschallenge.org/');
+    expect(skill).toContain('{{propellant-web}}');
+    expect(skill).toContain('{{propellant-office}}');
+  });
+
+  it('leaves the package version to the build instead of hardcoding it', () => {
+    expect(webReference).toContain('propellant-web#{{propellant-web}}');
+    expect(webReference).not.toMatch(/propellant-web#v\d/);
+  });
+
+  it('tells engineers how to work in an existing codebase', () => {
+    expect(webReference).toContain('## Working in an existing codebase');
+    expect(webReference).toMatch(/Never hardcode hex colors/);
+  });
+});
+
+describe('stampVersions', () => {
+  const versions = { 'propellant-web': 'v1.1.1', 'propellant-office': 'v1.0.0' };
+
+  it('fills in every release placeholder', () => {
+    expect(
+      stampVersions(
+        'web {{propellant-web}}, office {{propellant-office}}, {{propellant-web}}',
+        versions,
+      ),
+    ).toBe('web v1.1.1, office v1.0.0, v1.1.1');
+  });
+
+  it('leaves text without placeholders alone', () => {
+    expect(stampVersions('No versions here.', versions)).toBe('No versions here.');
+  });
+
+  it('fails the build when a release is missing', () => {
+    expect(() => stampVersions('{{propellant-office}}', { 'propellant-web': 'v1.1.1' })).toThrow(
+      /propellant-office/,
+    );
+  });
+});
+
+describe('the recorded release versions', () => {
+  it('reads back the versions the build recorded', () => {
+    const root = mkdtempSync(join(tmpdir(), 'propellant-versions-'));
+    writeVersions(root, { 'propellant-web': 'v2.0.0', 'propellant-office': 'v1.4.0' });
+    expect(readVersions(root)).toEqual({
+      'propellant-web': 'v2.0.0',
+      'propellant-office': 'v1.4.0',
+    });
+    rmSync(root, { recursive: true, force: true });
+  });
+
+  it('falls back to main when nothing was released yet', () => {
+    const root = mkdtempSync(join(tmpdir(), 'propellant-versions-'));
+    expect(readVersions(root)).toEqual(UNRELEASED_VERSIONS);
+    expect(stampVersions('#{{propellant-web}}', readVersions(root))).toBe('#main');
+    rmSync(root, { recursive: true, force: true });
   });
 });
 

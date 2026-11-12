@@ -51,10 +51,8 @@ describe('the home page content', () => {
       'logo',
       'colors',
       'fonts',
-      'about',
       'photos',
       'voice',
-      'contact',
       'kit',
     ]);
   });
@@ -107,6 +105,16 @@ describe('the home page content', () => {
     const toolPreview = previews.find((tag) => tag.includes('h-72'));
     expect(toolPreview).toBeDefined();
     expect(toolPreview).toMatch(/\binert\b/);
+  });
+
+  it('stays a design system and leaves MassChallenge itself to masschallenge.org', () => {
+    const page = readFileSync('src/pages/index.astro', 'utf8');
+    const footer = readFileSync('src/components/site/SiteFooter.astro', 'utf8');
+    expect(page).not.toMatch(/alt="MassChallenge"/);
+    expect(page).not.toMatch(/about-title|id="contact"|OFFICES|SOCIAL_LINKS|APPROVED_FIGURES/);
+    expect(footer).not.toMatch(/masschallenge-logo|OFFICES|SOCIAL_LINKS|CONTACT_EMAIL/);
+    expect(footer).toContain('WEBSITE_URL');
+    expect(FINDER.map((entry) => entry.href)).not.toContain('#contact');
   });
 
   it('names actions plainly and never asks people to start with one platform', () => {

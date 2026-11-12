@@ -1,6 +1,6 @@
 ---
 name: propellant-brand
-description: Applies Propellant, the MassChallenge design system, to anything made for or about MassChallenge, so it is on brand without the person asking. Use it whenever creating or editing a web app, prototype, web page, HTML artifact, dashboard, slide deck or presentation, Word or Google document, memo, report, one pager, spreadsheet, chart, email or social graphic for MassChallenge, or when someone asks for MassChallenge branding, colors, fonts, logo, photography or voice. Covers React apps, plain HTML, PowerPoint, Word, Excel and Google Slides, Docs and Sheets.
+description: Makes everything created at MassChallenge follow Propellant, the MassChallenge design system, automatically. Use it whenever someone at MassChallenge creates or edits a web application, React or Next.js app, front end component or page, prototype, HTML artifact, dashboard, slide deck or PowerPoint, Word or Google document, memo, report, one pager, spreadsheet or Excel workbook, chart, social graphic or email, even when they do not mention the brand. Also use it for questions about MassChallenge colors, fonts, logo, photography, voice, messaging or approved figures. Covers React with the propellant-web package, plain HTML, PowerPoint, Word, Excel and Google Slides, Docs and Sheets.
 ---
 
 # Propellant brand
@@ -10,11 +10,26 @@ which MassChallenge Marketing owns and which sets the standard. When this skill 
 output follow it automatically. Do not ask the person to choose colors or fonts, and do not offer
 "unbranded" options: the brand is the default for everything made for MassChallenge.
 
+Treat anything you make for someone at MassChallenge as MassChallenge work unless they say it is
+for another organization or for themselves. Inherit the brand without being asked.
+
+## Where the brand lives
+
+Propellant is the source of truth for the MassChallenge brand. This copy of the skill was built
+from propellant-web {{propellant-web}} and propellant-office {{propellant-office}}.
+
+- If you can reach the web, [llms-full.txt](https://propellant.masschallenge.org/llms-full.txt)
+  has the newest rules in plain text. When it differs from this skill, follow it.
+- The figures in Propellant are always current. Quote them without an "as of" date.
+- For facts about MassChallenge itself, such as programs, events, dates, people and offices, use
+  [masschallenge.org](https://masschallenge.org/). Never invent them.
+
 ## Step 1: pick the reference for what you are making
 
 | Making                                                                            | Read                                                       | Start from                                                                                     |
 | --------------------------------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | A React app or production web page                                                | [references/web-and-apps.md](references/web-and-apps.md)   | The `@masschallenge/propellant-web` package                                                    |
+| A change to an existing MassChallenge app or repository                           | [references/web-and-apps.md](references/web-and-apps.md)   | The Propellant components and tokens already in the code                                       |
 | A prototype, HTML artifact, dashboard or landing page                             | [references/web-and-apps.md](references/web-and-apps.md)   | [assets/propellant-website.css](assets/propellant-website.css)                                 |
 | A slide deck (PowerPoint or Google Slides)                                        | [references/presentations.md](references/presentations.md) | [assets/templates/propellant-presentation.pptx](assets/templates/propellant-presentation.pptx) |
 | A document (Word or Google Docs)                                                  | [references/documents.md](references/documents.md)         | [assets/templates/propellant-document.docx](assets/templates/propellant-document.docx)         |
@@ -23,6 +38,8 @@ output follow it automatically. Do not ask the person to choose colors or fonts,
 | Anything with photos or video                                                     | [references/photography.md](references/photography.md)     |                                                                                                |
 | Copy about MassChallenge: lines, boilerplate, figures, contact details, addresses | [references/messaging.md](references/messaging.md)         |                                                                                                |
 | Graphics (pattern, overlay, lockups, stats, timelines, icons) or anything printed | [references/graphics.md](references/graphics.md)           |                                                                                                |
+| A social post or graphic someone will make themselves                             | [references/graphics.md](references/graphics.md)           | The [content studio](https://propellant.masschallenge.org/studio/)                             |
+| An email signature                                                                |                                                            | The [signature builder](https://propellant.masschallenge.org/studio/signature/)                |
 
 For Office files, use the built-in document skills (docx, pptx, xlsx) for the file mechanics, but
 always open the Propellant template from `assets/templates` instead of creating a blank file. The
@@ -167,4 +184,7 @@ For work that is not for MassChallenge at all, this skill does not apply.
 
 ## More detail
 
-The full, human guides are at [propellant.masschallenge.org](https://propellant.masschallenge.org).
+- The full, human guides: [propellant.masschallenge.org](https://propellant.masschallenge.org)
+- A short index for AI assistants: [llms.txt](https://propellant.masschallenge.org/llms.txt)
+- The web package, with its components and tokens:
+  [masschallenge/propellant-web](https://github.com/masschallenge/propellant-web)
