@@ -1,0 +1,63 @@
+---
+import { COLOR_BALANCE } from '../../../brand/color-balance';
+import { isDark } from '../../../brand/contrast';
+import { findColor } from '../../../brand/palette';
+
+const [carry, smallDoses, oneAccent] = COLOR_BALANCE;
+const navy = findColor('navy').hex;
+const yellow = findColor('yellow').hex;
+const white = findColor('white').hex;
+---
+
+<div class="grid gap-4 lg:grid-cols-3">
+  <article
+    class="flex flex-col gap-4 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5"
+    aria-labelledby="balance-carry"
+  >
+    <div class="grid h-24 grid-cols-4 overflow-hidden rounded-[var(--corner-lg)] border border-solid border-[var(--separator-strong)]" aria-hidden="true">
+      {carry.colors.map((color) => <span style={`background: ${color.hex}`} />)}
+    </div>
+    <h4 id="balance-carry" class="m-0 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">{carry.title}</h4>
+    <p class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">{carry.text}</p>
+    <p class="m-0 text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">
+      {carry.colors.map((color) => color.name).join(', ')}
+    </p>
+  </article>
+
+  <article
+    class="flex flex-col gap-4 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5"
+    aria-labelledby="balance-small-doses"
+  >
+    <ul class="m-0 flex h-24 list-none items-center gap-2 p-0" aria-hidden="true">
+      {
+        smallDoses.colors.map((color) => (
+          <li
+            class:list={[
+              'px-2 py-1 text-[length:var(--type-caption-size)] font-bold uppercase tracking-[0.1em]',
+              isDark(color.hex) ? 'text-[var(--gray-0)]' : 'text-[var(--gray-800)]',
+            ]}
+            style={`background: ${color.hex}`}
+          >
+            {color.name}
+          </li>
+        ))
+      }
+    </ul>
+    <h4 id="balance-small-doses" class="m-0 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">{smallDoses.title}</h4>
+    <p class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">{smallDoses.text}</p>
+  </article>
+
+  <article
+    class="flex flex-col gap-4 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5"
+    aria-labelledby="balance-one-accent"
+  >
+    <div class="flex h-24 flex-col justify-center gap-2 px-4" style={`background: ${navy}`} aria-hidden="true">
+      <span class="block h-1 w-12" style={`background: ${yellow}`}></span>
+      <span class="font-[family-name:var(--type-family-brand)] text-[length:var(--type-title2-size)] font-semibold uppercase leading-none" style={`color: ${white}`}>
+        One accent
+      </span>
+    </div>
+    <h4 id="balance-one-accent" class="m-0 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">{oneAccent.title}</h4>
+    <p class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">{oneAccent.text}</p>
+  </article>
+</div>

@@ -4,37 +4,37 @@ import { BRAND_COLORS } from '../../../brand/palette';
 
 const rules = [
   {
-    before: 'Reach for the ',
-    key: 'horizontal logo',
-    after: ' first. Pick a background on its card and you get the right treatment.',
+    before: 'Use the ',
+    key: 'logo files as supplied',
+    after: ': vertical for most layouts, horizontal for headers and banners. Pick a background on a card and you get the right treatment.',
     href: '#logo',
     section: 'Logo',
   },
   {
     before: `These ${BRAND_COLORS.length} colors are the `,
     key: 'palette',
-    after: '. Copy the codes, and use the tokens in interfaces.',
+    after: '. Navy, Black and the blues carry the layout, with one warm accent per piece.',
     href: '#color',
     section: 'Color',
   },
   {
-    before: '',
+    before: 'On light backgrounds, colored text is ',
     key: 'Teal',
-    after: ' means you can act: buttons, links, selected controls and focus. Never headings.',
+    after: '. Cyan only on Navy, Black or Deep Teal. MC Blue is for the logo and shapes, never text.',
     href: '#color-pairings',
     section: 'Color',
   },
   {
     before: '',
-    key: 'Propellant Sans',
-    after: ' for everything. Oswald capitals only for display headlines on public pages.',
+    key: 'Oswald',
+    after: ' capitals for headlines, Lato for reading text. Never Oswald inside the signed in product.',
     href: '#type',
     section: 'Type',
   },
   {
     before: 'Use ',
     key: 'sentence case',
-    after: ' for every title, label and button.',
+    after: ' for reading text, and for every label and button in the signed in product.',
     href: '#type-rules',
     section: 'Type',
   },
@@ -59,7 +59,7 @@ const rules = [
       rules.map((rule, index) => (
         <li class="flex items-baseline gap-4 border-t border-solid border-[var(--separator)] py-4 last:border-b sm:gap-6">
           <span
-            class="w-8 flex-none font-[family-name:var(--type-family-brand)] text-[length:var(--type-title1-size)] font-medium tabular-nums text-[var(--tint)]"
+            class="w-8 flex-none font-[family-name:var(--type-family-brand)] text-[length:var(--type-title1-size)] font-semibold tabular-nums text-[var(--tint)]"
             aria-hidden="true"
           >
             {String(index + 1).padStart(2, '0')}
