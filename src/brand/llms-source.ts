@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { getCollection } from 'astro:content';
-import { SKILL_NAME } from '../../scripts/lib/skill-package.mjs';
+import { SKILL_NAME, readVersions, stampVersions } from '../../scripts/lib/skill-package.mjs';
 import { docsPath, guideFromMarkdown, type LlmsSite } from './llms';
 import { SITE_PAGES } from './site-pages';
 
@@ -9,11 +9,17 @@ const skillPath = `/downloads/${SKILL_NAME}.zip`;
 
 const SKILL_REFERENCES = join(process.cwd(), 'skill', SKILL_NAME, 'references');
 
-const skillGuides = () =>
-  readdirSync(SKILL_REFERENCES)
+const skillGuides = () => {
+  const versions = readVersions(process.cwd());
+  return readdirSync(SKILL_REFERENCES)
     .filter((name) => name.endsWith('.md'))
     .sort()
-    .map((name) => guideFromMarkdown(readFileSync(join(SKILL_REFERENCES, name), 'utf8')));
+    .map((name) =>
+      guideFromMarkdown(
+        stampVersions(readFileSync(join(SKILL_REFERENCES, name), 'utf8'), versions),
+      ),
+    );
+};
 
 export const requireSite = (site: URL | undefined): URL => {
   if (!site)
