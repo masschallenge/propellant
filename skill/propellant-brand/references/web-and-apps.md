@@ -77,7 +77,7 @@ a White background, then use these classes:
 | ---------------------------------------------------------------- | ------------------------------------------------------- |
 | `propellant-text`                                                | On `<body>`: Lato and the text color for the whole page |
 | `propellant-headline`                                            | The big headline, Oswald in capitals                    |
-| `propellant-title-1`, `propellant-title-2`, `propellant-title-3` | Section headings, Lato Bold                             |
+| `propellant-title-1`, `propellant-title-2`, `propellant-title-3` | Section headings, Oswald SemiBold in capitals           |
 | `propellant-body`, `propellant-text`                             | Paragraphs                                              |
 | `propellant-caption`                                             | Captions and small print                                |
 | `propellant-link`                                                | Links                                                   |
@@ -107,9 +107,9 @@ Text style sizes on the web (desktop, with mobile in brackets):
 | Style                        | Font             | Weight | Size          |
 | ---------------------------- | ---------------- | ------ | ------------- |
 | Heading 1 (the big headline) | Oswald, capitals | 600    | 64 px (40 px) |
-| Heading 2                    | Lato             | 700    | 40 px (30 px) |
-| Heading 3                    | Lato             | 700    | 30 px (24 px) |
-| Heading 4                    | Lato             | 700    | 24 px (20 px) |
+| Heading 2                    | Oswald, capitals | 600    | 40 px (30 px) |
+| Heading 3 (subhead)          | Oswald, capitals | 600    | 30 px (24 px) |
+| Heading 4 (small subhead)    | Oswald, capitals | 600    | 24 px (20 px) |
 | Paragraph large              | Lato             | 400    | 20 px (18 px) |
 | Paragraph                    | Lato             | 400    | 17 px (16 px) |
 | Small                        | Lato             | 400    | 14 px         |

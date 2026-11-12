@@ -70,6 +70,14 @@ describe('the skill as the default for MassChallenge work', () => {
     expect(webReference).not.toMatch(/propellant-web#v\d/);
   });
 
+  it('describes website headings as the stylesheet sets them, in Oswald SemiBold capitals', () => {
+    ['Heading 2', 'Heading 3 (subhead)', 'Heading 4 (small subhead)'].forEach((heading) => {
+      const row = webReference.split('\n').find((line) => line.startsWith(`| ${heading} `));
+      expect(row).toMatch(/\| Oswald, capitals \| 600 /);
+    });
+    expect(webReference).toContain('Section headings, Oswald SemiBold in capitals');
+  });
+
   it('tells engineers how to work in an existing codebase', () => {
     expect(webReference).toContain('## Working in an existing codebase');
     expect(webReference).toMatch(/Never hardcode hex colors/);
