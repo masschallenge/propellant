@@ -1,6 +1,15 @@
-import { readFileSync, readdirSync } from 'node:fs';
+import { mkdtempSync, readFileSync, readdirSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { SKILL_NAME, artifactStylesheet, stampVersions } from '../scripts/lib/skill-package.mjs';
+import {
+  SKILL_NAME,
+  UNRELEASED_VERSIONS,
+  artifactStylesheet,
+  readVersions,
+  stampVersions,
+  writeVersions,
+} from '../scripts/lib/skill-package.mjs';
 
 const skill = readFileSync(`skill/${SKILL_NAME}/SKILL.md`, 'utf8');
 const frontmatter = skill.match(/^---\n([\s\S]*?)\n---/)[1];
@@ -87,6 +96,25 @@ describe('stampVersions', () => {
     expect(() => stampVersions('{{propellant-office}}', { 'propellant-web': 'v1.1.1' })).toThrow(
       /propellant-office/,
     );
+  });
+});
+
+describe('the recorded release versions', () => {
+  it('reads back the versions the build recorded', () => {
+    const root = mkdtempSync(join(tmpdir(), 'propellant-versions-'));
+    writeVersions(root, { 'propellant-web': 'v2.0.0', 'propellant-office': 'v1.4.0' });
+    expect(readVersions(root)).toEqual({
+      'propellant-web': 'v2.0.0',
+      'propellant-office': 'v1.4.0',
+    });
+    rmSync(root, { recursive: true, force: true });
+  });
+
+  it('falls back to main when nothing was released yet', () => {
+    const root = mkdtempSync(join(tmpdir(), 'propellant-versions-'));
+    expect(readVersions(root)).toEqual(UNRELEASED_VERSIONS);
+    expect(stampVersions('#{{propellant-web}}', readVersions(root))).toBe('#main');
+    rmSync(root, { recursive: true, force: true });
   });
 });
 

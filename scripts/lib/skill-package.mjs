@@ -1,3 +1,6 @@
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+
 export const SKILL_NAME = 'propellant-brand';
 
 export const SKILL_TEMPLATES = [
@@ -21,6 +24,22 @@ export const stampVersions = (text, versions) =>
     if (!version) throw new Error(`No release version for ${name}`);
     return version;
   });
+
+export const VERSIONS_FILE = 'node_modules/.cache/propellant/versions.json';
+
+export const UNRELEASED_VERSIONS = { 'propellant-web': 'main', 'propellant-office': 'main' };
+
+export const writeVersions = (projectRoot, versions) => {
+  const file = join(projectRoot, VERSIONS_FILE);
+  mkdirSync(dirname(file), { recursive: true });
+  writeFileSync(file, `${JSON.stringify(versions, null, 2)}\n`);
+};
+
+export const readVersions = (projectRoot) => {
+  const file = join(projectRoot, VERSIONS_FILE);
+  const recorded = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : {};
+  return { ...UNRELEASED_VERSIONS, ...recorded };
+};
 
 const GOOGLE_FONTS =
   "@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Oswald:wght@500&display=swap');";

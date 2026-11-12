@@ -9,15 +9,10 @@ import BrandLayout from '../layouts/BrandLayout.astro';
 import propellantMark from '../assets/brand/propellant-mark-color.svg';
 import { BRAND_KIT_URL, brandKitFile } from '../../scripts/lib/brand-kit.mjs';
 import { OFFICE_TEMPLATES, previewUrl } from '../../scripts/lib/office-templates.mjs';
-import {
-  CONTACT_EMAIL,
-  OFFICES,
-  SOCIAL_LINKS,
-  copyrightLine,
-  officeAddress,
-} from '../brand/contact';
 import { BRAND_NEEDS, BRAND_RESOURCES, BRAND_TOOLS, FINDER } from '../brand/home';
-import { APPROVED_FIGURES, PRIMARY_LINE, findBoilerplate } from '../brand/messaging';
+import { PRIMARY_LINE } from '../brand/messaging';
+import { WEBSITE_URL } from '../brand/contact';
+import { SUMMARY } from '../brand/llms';
 import { BRAND_COLORS, findColor } from '../brand/palette';
 import { WEBSITE_PHOTOS } from '../brand/photo-manifest';
 import { signatureHtml, EMPTY_SIGNATURE } from '../brand/signature';
@@ -33,7 +28,6 @@ const pointList = (points: [number, number][]) =>
 
 const swatches = ['deep-teal', 'teal', 'bright-teal', 'pale-teal', 'yellow', 'ink'].map(findColor);
 const photo = WEBSITE_PHOTOS.find((candidate) => candidate.category === 'teal-duotone');
-const mediumBoilerplate = findBoilerplate('medium').text;
 const hasBrandKit = existsSync(brandKitFile(process.cwd()));
 const brandNeeds = BRAND_NEEDS.filter((need) => hasBrandKit || !need.isDownload);
 
@@ -61,6 +55,16 @@ const OFFICE_PREVIEW_PLACEMENT: Record<string, string> = {
   workbook: 'width: 26%; right: 0; top: 52%; z-index: 3',
 };
 
+const homeStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Propellant',
+  alternateName: 'The MassChallenge design system',
+  url: Astro.site?.href,
+  description: SUMMARY,
+  publisher: { '@type': 'Organization', name: 'MassChallenge', url: WEBSITE_URL },
+};
+
 const SECTION = 'mx-auto max-w-[1200px] px-4 sm:px-6';
 const EYEBROW =
   'm-0 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[0.1em] text-[var(--tint)]';
@@ -77,6 +81,7 @@ const SOLID_BUTTON =
 ---
 
 <BrandLayout
+  structuredData={homeStructuredData}
   title="Propellant"
   description="Everything you need to make something look and sound like MassChallenge: the logo, colors, fonts and words, tools for posts and email signatures, and our web and Office templates."
   current="home"
@@ -92,9 +97,8 @@ const SOLID_BUTTON =
       {heroTriangles.map((triangle) => <polygon points={pointList(triangle.points)} fill={findColor(triangle.colorId).hex} />)}
     </svg>
     <div class={`${SECTION} relative flex min-h-[620px] flex-col justify-center gap-7 py-20`}>
-      <Image src={logoWhite} alt="MassChallenge" class="h-10 w-auto self-start sm:h-12" loading="eager" />
       <p class="m-0 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[0.12em] text-[var(--teal-100)]">
-        Brand and design system
+        Propellant, the MassChallenge design system
       </p>
       <h1
         id="home-title"
@@ -139,7 +143,7 @@ const SOLID_BUTTON =
           opens the part of the brand guide you need.
         </p>
       </div>
-      <ul class="m-0 grid list-none grid-cols-1 gap-5 p-0 sm:grid-cols-2 lg:grid-cols-4">
+      <ul class="m-0 grid list-none grid-cols-1 gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3">
         {
           brandNeeds.map((need) => (
             <li class="m-0">
@@ -160,23 +164,12 @@ const SOLID_BUTTON =
                       <span class="font-[family-name:var(--type-family-brand)] text-[64px] font-medium uppercase leading-none">Aa</span>
                       <span class="font-[family-name:var(--type-family)] text-[56px] leading-none">Aa</span>
                     </div>
-                  ) : need.visual === 'about' ? (
-                    <div class="flex h-full w-full items-center bg-[var(--teal-900)] px-5">
-                      <p class="m-0 font-[family-name:var(--type-family-brand)] text-[19px] font-medium uppercase leading-[1.1] text-white">
-                        {PRIMARY_LINE}
-                      </p>
-                    </div>
                   ) : need.visual === 'photos' && photo ? (
                     <img src={photo.src} alt="" class="h-full w-full object-cover" loading="lazy" referrerpolicy="no-referrer" />
                   ) : need.visual === 'voice' ? (
                     <div class="flex flex-col gap-2 px-5 text-[length:var(--type-callout-size)]">
                       <span class="text-[var(--label-secondary)] line-through">Leverage our seamless platform!</span>
                       <span class="font-semibold text-[var(--label)]">Find mentors who know your market.</span>
-                    </div>
-                  ) : need.visual === 'contact' ? (
-                    <div class="flex flex-col items-center gap-1 text-center">
-                      <span class="font-semibold text-[var(--label)]">{CONTACT_EMAIL}</span>
-                      <span class="text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">{copyrightLine()}</span>
                     </div>
                   ) : (
                     <div class="flex items-center gap-3">
@@ -204,38 +197,7 @@ const SOLID_BUTTON =
     </div>
   </section>
 
-  <section class="bg-[var(--bg-secondary)] py-20" aria-labelledby="about-title">
-    <div class={`${SECTION} grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center`}>
-      <div class="flex flex-col gap-4">
-        <p class={EYEBROW}>About MassChallenge</p>
-        <h2 id="about-title" class={HEADLINE}>Born in Massachusetts. Built for the world.</h2>
-        <p class="m-0 max-w-[60ch] text-[length:var(--type-body-size)] leading-[1.6] text-[var(--label)]">
-          {mediumBoilerplate}
-        </p>
-        <a href="/brand/#messaging" class="self-start text-[length:var(--type-callout-size)] font-semibold text-[var(--tint)]">
-          Copy the approved boilerplate
-        </a>
-      </div>
-      <div>
-        <dl class="m-0 grid grid-cols-2 gap-3 sm:grid-cols-3">
-          {
-            APPROVED_FIGURES.map((figure) => (
-              <div class="flex flex-col-reverse gap-1 rounded-[var(--corner-lg)] bg-[var(--bg)] p-4">
-                <dt class="text-[length:var(--type-caption-size)] font-bold uppercase tracking-[0.08em] text-[var(--label-secondary)]">
-                  {figure.label}
-                </dt>
-                <dd class="m-0 font-[family-name:var(--type-family-brand)] text-[length:var(--type-large-title-size)] font-medium text-[var(--label)]">
-                  {figure.value}
-                </dd>
-              </div>
-            ))
-          }
-        </dl>
-      </div>
-    </div>
-  </section>
-
-  <section id="tools" class="scroll-mt-24 py-20" aria-labelledby="tools-title">
+  <section id="tools" class="scroll-mt-24 bg-[var(--bg-secondary)] py-20" aria-labelledby="tools-title">
     <div class={`${SECTION} flex flex-col gap-10`}>
       <div class="flex flex-col gap-3">
         <p class={EYEBROW}>Tools</p>
@@ -279,7 +241,7 @@ const SOLID_BUTTON =
     </div>
   </section>
 
-  <section id="resources" class="scroll-mt-24 bg-[var(--bg-secondary)] py-20" aria-labelledby="resources-title">
+  <section id="resources" class="scroll-mt-24 py-20" aria-labelledby="resources-title">
     <div class={`${SECTION} flex flex-col gap-10`}>
       <div class="flex flex-col gap-3">
         <p class={EYEBROW}>Resources</p>
@@ -351,7 +313,7 @@ const SOLID_BUTTON =
     </div>
   </section>
 
-  <section id="find" class="scroll-mt-24 py-20" aria-labelledby="find-title">
+  <section id="find" class="scroll-mt-24 bg-[var(--bg-secondary)] py-20" aria-labelledby="find-title">
     <div class={`${SECTION} grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]`}>
       <div class="flex flex-col gap-3">
         <p class={EYEBROW}>Where to find it</p>
@@ -375,50 +337,6 @@ const SOLID_BUTTON =
           ))
         }
       </ul>
-    </div>
-  </section>
-
-  <section id="contact" class="scroll-mt-24 bg-[var(--bg-secondary)] py-20" aria-labelledby="contact-title">
-    <div class={`${SECTION} flex flex-col gap-8`}>
-      <div class="flex flex-col gap-3">
-        <p class={EYEBROW}>Contact, social and legal</p>
-        <h2 id="contact-title" class={HEADLINE}>The details to use</h2>
-      </div>
-      <div class="grid gap-8 md:grid-cols-3">
-        <div class="flex flex-col gap-2">
-          <h3 class="m-0 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">Contact and legal</h3>
-          <a href={`mailto:${CONTACT_EMAIL}`} class="text-[var(--tint)]">{CONTACT_EMAIL}</a>
-          <p class="m-0 text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
-            Copyright line: {copyrightLine()}, with the current year. No trademark symbol on the name or the logo.
-          </p>
-        </div>
-        <div class="flex flex-col gap-2">
-          <h3 class="m-0 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">Social</h3>
-          <ul class="m-0 flex list-none flex-col gap-1 p-0">
-            {
-              SOCIAL_LINKS.map((social) => (
-                <li class="m-0">
-                  <a href={social.url} class="text-[var(--tint)]">{social.name}</a>
-                  <span class="text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]"> {social.handle}</span>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-        <div class="flex flex-col gap-2">
-          <h3 class="m-0 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">Offices</h3>
-          <ul class="m-0 flex list-none flex-col gap-2 p-0 text-[length:var(--type-callout-size)]">
-            {
-              OFFICES.map((office) => (
-                <li class="m-0">
-                  <span class="font-semibold text-[var(--label)]">{office.name}</span>
-                  <span class="block text-[var(--label-secondary)]">{officeAddress(office.id)}</span>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      </div>
     </div>
   </section>
 

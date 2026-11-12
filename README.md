@@ -36,6 +36,32 @@ appears within a day without anyone touching this repository. To publish right a
 The workflow publishes to the `gh-pages` branch with a `CNAME` file for
 `propellant.masschallenge.org`, which is how GitHub Pages knows the address.
 
+## Search engines and AI tools
+
+The build publishes files that help search engines and AI assistants find and use Propellant:
+
+- `robots.txt` lets every crawler in and points to the sitemap.
+- `llms.txt` is a short guide for AI assistants: what Propellant is, that it is the source of
+  truth for the brand, and a link to every page.
+- `llms-full.txt` is one plain text file with the brand facts, the rules for making documents,
+  decks, graphics and web pages on brand (from the Propellant skill), and every docs page. The
+  visual brand guide, studio and signature pages are listed in `llms.txt` but are not text pages.
+
+All three are built from the site's own content, so they stay current with every deploy. The
+home and brand pages also carry canonical, social and structured data tags.
+
+## Previews
+
+Every pull request from a branch in this repository gets its own preview on Netlify, at
+`https://pr-<number>--<netlify-site>.netlify.app`. The **Preview site** workflow builds the site
+the same way as a real deploy, publishes it, and posts the link on the pull request. Each push
+updates the same link. The live site stays on GitHub Pages. Previews tell search engines not to
+index them, so only the live site shows up in search.
+
+The workflow needs two repository secrets: `NETLIFY_AUTH_TOKEN`, a Netlify personal access token,
+and `NETLIFY_SITE_ID`, the ID of the Netlify site that holds the previews. Without them it skips
+the preview and leaves a warning.
+
 ## Working on the site
 
 ```bash

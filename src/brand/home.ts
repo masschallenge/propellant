@@ -1,14 +1,6 @@
 import { BRAND_KIT_URL } from '../../scripts/lib/brand-kit.mjs';
 
-export type BrandNeedVisual =
-  | 'logo'
-  | 'colors'
-  | 'fonts'
-  | 'about'
-  | 'photos'
-  | 'voice'
-  | 'contact'
-  | 'kit';
+export type BrandNeedVisual = 'logo' | 'colors' | 'fonts' | 'photos' | 'voice' | 'kit';
 
 export interface BrandNeed {
   id: string;
@@ -46,14 +38,6 @@ export const BRAND_NEEDS: BrandNeed[] = [
     visual: 'fonts',
   },
   {
-    id: 'about',
-    title: 'About MassChallenge',
-    description: 'Our primary line, the approved boilerplate and the figures to quote.',
-    href: '/brand/#messaging',
-    action: 'Copy the words',
-    visual: 'about',
-  },
-  {
     id: 'photos',
     title: 'Photos and video',
     description: 'MassChallenge photos and videos, and how to choose and treat your own.',
@@ -64,18 +48,10 @@ export const BRAND_NEEDS: BrandNeed[] = [
   {
     id: 'voice',
     title: 'Voice and writing',
-    description: 'How we sound, with words to use, words to skip and a checker for your draft.',
+    description: 'How we sound, the approved words to describe us, and a checker for your draft.',
     href: '/brand/#voice',
     action: 'Check your words',
     visual: 'voice',
-  },
-  {
-    id: 'contact',
-    title: 'Contact, social and legal',
-    description: 'The email address, social links, offices and copyright line to use.',
-    href: '#contact',
-    action: 'Find the details',
-    visual: 'contact',
   },
   {
     id: 'kit',
@@ -172,11 +148,6 @@ export interface FinderEntry {
 export const FINDER: FinderEntry[] = [
   { need: 'Download the logo', place: 'Brand guide, Logo', href: '/brand/#logo' },
   { need: 'Find a color code', place: 'Brand guide, Color', href: '/brand/#color' },
-  {
-    need: 'Find our email, socials or offices',
-    place: 'Contact, social and legal',
-    href: '#contact',
-  },
   {
     need: 'Describe MassChallenge',
     place: 'Brand guide, Voice and messaging',

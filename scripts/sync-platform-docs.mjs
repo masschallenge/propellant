@@ -45,6 +45,7 @@ import {
   SKILL_TEMPLATES,
   artifactStylesheet,
   stampVersions,
+  writeVersions,
 } from './lib/skill-package.mjs';
 
 const projectRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -295,6 +296,7 @@ const checkouts = Object.fromEntries(
 const versions = Object.fromEntries(
   results.filter(({ ref }) => ref).map(({ platform, ref }) => [`propellant-${platform}`, ref]),
 );
+writeVersions(projectRoot, versions);
 console.log(
   packageSkill(checkouts, versions)
     ? `Packaged the ${SKILL_NAME} skill for download`
