@@ -132,6 +132,10 @@ describe('artifactStylesheet', () => {
     expect(stylesheet).toContain('--tint: #065e6f;');
   });
 
+  it('loads every Oswald weight the brand type uses', () => {
+    expect(stylesheet).toContain('family=Oswald:wght@400;500;600;700&');
+  });
+
   it('marks its own start and end so the brand checker can skip it', () => {
     expect(stylesheet.startsWith('/* propellant-website.css start */')).toBe(true);
     expect(stylesheet.trim().endsWith('/* propellant-website.css end */')).toBe(true);
