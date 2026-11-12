@@ -28,8 +28,8 @@ interface LeftPanelProps {
   onAddText: (role: TextRoleId) => void;
   onAddLogo: (lockup: LogoLockup) => void;
   onAddShape: (shape: ShapeKind) => void;
-  onAddPhoto: (photo: PhotoAsset, isDuotone: boolean) => void;
-  onUploadPhoto: (file: File, isDuotone: boolean) => void;
+  onAddPhoto: (photo: PhotoAsset, hasOverlay: boolean) => void;
+  onUploadPhoto: (file: File, hasOverlay: boolean) => void;
   onBackground: (colorId: string) => void;
   onPattern: (pattern: PatternId | null) => void;
   onSelect: (id: string | null) => void;
@@ -95,8 +95,8 @@ export const LeftPanel = ({
   onRemove,
 }: LeftPanelProps) => {
   const fileRef = useRef<HTMLInputElement>(null);
-  const [isDuotone, setIsDuotone] = useState(false);
-  const libraryPhotos = photos.filter((photo) => !photo.isDuotone);
+  const [hasOverlay, setHasOverlay] = useState(false);
+  const libraryPhotos = photos.filter((photo) => !photo.hasOverlay);
   const isPatternOn = scene.pattern === 'triangles';
   return (
     <aside aria-label="Add to the post" className="flex flex-col">
@@ -170,8 +170,8 @@ export const LeftPanel = ({
           </button>
         </div>
         <p className="m-0 text-[length:var(--type-caption-size)] text-[var(--label-secondary)]">
-          The brand pattern: Bright teal and Pale teal triangles. Text on it must read on both
-          colors, so white text is switched to a color that does.
+          The brand pattern: MC Blue and light tint triangles. Text on it must read on both colors,
+          so white text is switched to a color that does.
         </p>
       </PanelSection>
       <PanelSection title="Photos">
@@ -185,7 +185,7 @@ export const LeftPanel = ({
           data-studio-photo-input
           onChange={(event) => {
             const file = event.target.files?.[0];
-            if (file) onUploadPhoto(file, isDuotone);
+            if (file) onUploadPhoto(file, hasOverlay);
             event.target.value = '';
           }}
         />
@@ -194,10 +194,10 @@ export const LeftPanel = ({
         </Button>
         <Switch
           size="sm"
-          checked={isDuotone}
-          onChange={setIsDuotone}
-          label="Add in teal duotone"
-          hint="Deep teal shadows to Bright teal highlights. Not for portraits."
+          checked={hasOverlay}
+          onChange={setHasOverlay}
+          label="Add with the hero overlay"
+          hint="Navy-black on the left, where the words sit, to Ocean on the right, at 30%. Keep the subject on the right."
         />
         <p className="m-0 text-[length:var(--type-caption-size)] text-[var(--label-secondary)]">
           Your photos stay in this browser and are never uploaded. To use a MassChallenge photo,
@@ -209,8 +209,8 @@ export const LeftPanel = ({
               <button
                 key={photo.id}
                 type="button"
-                onClick={() => onAddPhoto(photo, isDuotone)}
-                aria-label={`Add ${photo.name} to the canvas${isDuotone ? ' in teal duotone' : ''}`}
+                onClick={() => onAddPhoto(photo, hasOverlay)}
+                aria-label={`Add ${photo.name} to the canvas${hasOverlay ? ' with the hero overlay' : ''}`}
                 className="aspect-square cursor-pointer overflow-hidden rounded-[var(--corner-sm)] border border-solid border-[var(--separator-strong)] bg-[var(--bg-secondary)] p-0 focus-visible:outline-[length:var(--focus-width)] focus-visible:outline-solid focus-visible:outline-[var(--focus-color)]"
               >
                 <img src={photo.url} alt="" className="h-full w-full object-cover" />

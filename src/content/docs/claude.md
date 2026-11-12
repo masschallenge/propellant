@@ -21,11 +21,11 @@ handing it over.
 - Points people to the [content studio](/studio/) for social posts and the
   [signature builder](/studio/signature/) for email signatures.
 - Reads the newest rules from [llms-full.txt](/llms-full.txt) when it can reach the web.
-- Applies the palette, Lato and Oswald, the logo rules, sentence case and our voice, including no
-  em dashes.
+- Applies the MassChallenge brand guide: the palette, Oswald and Lato, the logo rules, photography
+  and our voice, including no em dashes.
 - Follows the chart, photography and accessibility guidelines.
-- Runs a checker that flags colors outside the palette, other fonts and dashes in the files it
-  makes.
+- Runs a checker that flags colors outside the palette, more than one warm accent, other fonts
+  and dashes in the files it makes.
 - Never invents numbers, quotes or results to fill a template.
 
 ## Install it for everyone on claude.ai

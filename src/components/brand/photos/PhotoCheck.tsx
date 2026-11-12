@@ -13,14 +13,14 @@ import { contrastRatio } from '../../../brand/contrast';
 import { findColor } from '../../../brand/palette';
 import { MINIMUM_PHOTO_WIDTH } from '../../../brand/photo-library';
 import {
-  INK,
+  BLACK,
   LOGO_AREA,
   PHOTO_SHAPES,
   SAFE_ZONE_INSET,
   TEXT_AREAS,
   WHITE,
   PHOTO_BACKING,
-  applyDuotone,
+  applyOverlayFor,
   betterText,
   fitBox,
   formatRatio,
@@ -45,13 +45,13 @@ interface LoadedPhoto {
   analysis: ImageData;
 }
 
-type Treatment = 'natural' | 'duotone';
-type TextColor = 'white' | 'ink';
+type Treatment = 'full-color' | 'overlay';
+type TextColor = 'white' | 'black';
 
 const ANALYSIS_SIZE = 480;
 const DISPLAY_SIZE = 1600;
 const FULL_SLIDE_WIDTH = 1920;
-const DEEP_TEAL = findColor('deep-teal').hex;
+const PANEL = findColor('navy').hex;
 
 const VERDICT_TEXT: Record<ContrastVerdict, string> = {
   any: 'Passes for text of any size',
@@ -72,7 +72,12 @@ const percentBox = (box: Box, frameWidth: number, frameHeight: number) => ({
   height: `${(box.height / frameHeight) * 100}%`,
 });
 
-const drawScaled = (image: HTMLImageElement, longest: number, treatment: Treatment) => {
+const drawScaled = (
+  image: HTMLImageElement,
+  longest: number,
+  treatment: Treatment,
+  placement: TextPlacement,
+) => {
   const scale = Math.min(1, longest / Math.max(image.naturalWidth, image.naturalHeight));
   const canvas = document.createElement('canvas');
   canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
@@ -82,9 +87,9 @@ const drawScaled = (image: HTMLImageElement, longest: number, treatment: Treatme
   context.fillStyle = PHOTO_BACKING;
   context.fillRect(0, 0, canvas.width, canvas.height);
   context.drawImage(image, 0, 0, canvas.width, canvas.height);
-  if (treatment === 'duotone') {
+  if (treatment === 'overlay') {
     const pixels = context.getImageData(0, 0, canvas.width, canvas.height);
-    applyDuotone(pixels.data);
+    applyOverlayFor(pixels.data, canvas.width, canvas.height, placement);
     context.putImageData(pixels, 0, 0);
   }
   return { canvas, context };
@@ -130,7 +135,7 @@ const PhotoCheck = () => {
   const [source, setSource] = useState<{ url: string; name: string } | null>(null);
   const [photo, setPhoto] = useState<LoadedPhoto | null>(null);
   const [error, setError] = useState('');
-  const [treatment, setTreatment] = useState<Treatment>('natural');
+  const [treatment, setTreatment] = useState<Treatment>('full-color');
   const [placement, setPlacement] = useState<TextPlacement>('bottom');
   const [textColor, setTextColor] = useState<TextColor | null>(null);
   const [hasPanel, setHasPanel] = useState(false);
@@ -154,8 +159,8 @@ const PhotoCheck = () => {
     image.onload = () => {
       if (!isCurrent) return;
       try {
-        const analysis = drawScaled(image, ANALYSIS_SIZE, treatment);
-        const display = drawScaled(image, DISPLAY_SIZE, treatment).canvas;
+        const analysis = drawScaled(image, ANALYSIS_SIZE, treatment, placement);
+        const display = drawScaled(image, DISPLAY_SIZE, treatment, placement).canvas;
         setPhoto({
           name: source.name,
           width: image.naturalWidth,
@@ -182,7 +187,7 @@ const PhotoCheck = () => {
       image.onload = null;
       image.onerror = null;
     };
-  }, [source, treatment]);
+  }, [source, treatment, placement]);
 
   const handleFiles = (files: FileList) => {
     const file = files[0];
@@ -219,7 +224,7 @@ const PhotoCheck = () => {
   const chosenColor: TextColor = hasPanel
     ? 'white'
     : (textColor ?? (readings ? betterText(readings.text) : 'white'));
-  const panelRatio = contrastRatio(chosenColor === 'white' ? WHITE : INK, DEEP_TEAL);
+  const panelRatio = contrastRatio(chosenColor === 'white' ? WHITE : BLACK, PANEL);
   const chosenReading = readings ? readings.text[chosenColor] : null;
 
   if (!photo || !readings || !chosenReading) {
@@ -244,10 +249,11 @@ const PhotoCheck = () => {
   const textArea = TEXT_AREAS[placement];
   const textStyle = percentBox(textArea, 1, 1);
   const logoStyle = percentBox(LOGO_AREA, 1, 1);
-  const textHex = chosenColor === 'white' ? WHITE : INK;
+  const textHex = chosenColor === 'white' ? WHITE : BLACK;
+  const colorName = chosenColor === 'white' ? 'White' : 'Black';
   const summary = hasPanel
-    ? `On the Deep teal panel, ${chosenColor === 'white' ? 'White' : 'Ink'} text measures ${formatRatio(panelRatio)}. ${VERDICT_TEXT[verdictFor(panelRatio)]}.`
-    : `${chosenColor === 'white' ? 'White' : 'Ink'} text over this part of the photo measures ${formatRatio(chosenReading.weakest)} at its weakest. ${VERDICT_TEXT[chosenReading.verdict]}.`;
+    ? `On the Navy panel, ${colorName} text measures ${formatRatio(panelRatio)}. ${VERDICT_TEXT[verdictFor(panelRatio)]}.`
+    : `${colorName} text over this part of the photo measures ${formatRatio(chosenReading.weakest)} at its weakest. ${VERDICT_TEXT[chosenReading.verdict]}.`;
 
   return (
     <div className="flex flex-col gap-8">
@@ -294,10 +300,10 @@ const PhotoCheck = () => {
               }}
             >
               <p
-                className={`m-0 font-[family-name:var(--type-family-brand)] text-[7cqw] font-medium uppercase leading-[1.02] ${
-                  hasPanel ? 'rounded-[var(--corner-md)] px-[2.4cqw] py-[1.6cqw]' : ''
+                className={`m-0 font-[family-name:var(--type-family-brand)] text-[7cqw] font-semibold uppercase leading-none ${
+                  hasPanel ? 'px-[2.4cqw] py-[1.6cqw]' : ''
                 }`}
-                style={{ color: textHex, backgroundColor: hasPanel ? DEEP_TEAL : undefined }}
+                style={{ color: textHex, backgroundColor: hasPanel ? PANEL : undefined }}
               >
                 {headline.trim() || 'Your headline'}
               </p>
@@ -340,31 +346,32 @@ const PhotoCheck = () => {
               aria-label="Text color"
               items={[
                 { id: 'white', label: 'White' },
-                { id: 'ink', label: 'Ink', disabled: hasPanel },
+                { id: 'black', label: 'Black', disabled: hasPanel },
               ]}
               value={chosenColor}
               onChange={(id) => setTextColor(id as TextColor)}
             />
           </div>
           <div className="flex flex-col gap-2">
-            <span className="text-callout font-semibold">Color treatment</span>
+            <span className="text-callout font-semibold">Treatment</span>
             <SegmentedControl
-              aria-label="Color treatment"
+              aria-label="Treatment"
               items={[
-                { id: 'natural', label: 'Natural color' },
-                { id: 'duotone', label: 'Brand duotone' },
+                { id: 'full-color', label: 'Full color' },
+                { id: 'overlay', label: 'Hero overlay' },
               ]}
               value={treatment}
               onChange={(id) => setTreatment(id as Treatment)}
             />
             <p className="m-0 text-footnote text-[var(--label-secondary)]">
-              Duotone is for big brand moments. Never use it where the people need to look like
-              themselves, such as a founder portrait.
+              The hero overlay runs from Navy-black on the text side to Ocean toward the subject, at
+              30% opacity, so warm light still glows through. If warm areas go gray or blue, it is
+              too heavy for this photo.
             </p>
           </div>
           <Switch
-            label="Put the text on a Deep teal panel"
-            hint="The fix when the photo is too busy behind the words. Text on Deep teal is always White."
+            label="Put the text on a Navy panel"
+            hint="The fix when the photo is too busy behind the words. Text on Navy is always White."
             checked={hasPanel}
             onChange={setHasPanel}
           />
@@ -379,7 +386,7 @@ const PhotoCheck = () => {
         <div className="overflow-x-auto">
           <table className="w-full min-w-[520px] border-collapse text-callout">
             <caption className="sr-only">
-              Contrast of White and Ink text over the measured area of your photo
+              Contrast of White and Black text over the measured area of your photo
             </caption>
             <thead>
               <tr className="text-left text-footnote text-[var(--label-secondary)]">
@@ -404,18 +411,18 @@ const PhotoCheck = () => {
                 isChosen={chosenColor === 'white'}
               />
               <ReadingRow
-                label="Ink"
-                reading={readings.text.ink}
-                isChosen={chosenColor === 'ink'}
+                label="Black"
+                reading={readings.text.black}
+                isChosen={chosenColor === 'black'}
               />
             </tbody>
           </table>
         </div>
         <p className="m-0 text-footnote text-[var(--label-secondary)]">
-          We read every pixel in the measured area and compare it with White and Ink. Typical is the
-          middle value. Weakest 5% is the value that the lowest twentieth of the area falls below,
-          so a busy patch shows up even when most of the area is calm. Text needs 4.5:1, or 3:1 when
-          it is 18 pt (24px) and up.
+          We read every pixel in the measured area and compare it with White and Black. Typical is
+          the middle value. Weakest 5% is the value that the lowest twentieth of the area falls
+          below, so a busy patch shows up even when most of the area is calm. Text needs 4.5:1, or
+          3:1 when it is 18 pt (24px) and up.
         </p>
       </div>
 

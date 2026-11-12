@@ -1,100 +1,82 @@
 ---
 import { isDark } from '../../../brand/contrast';
-import { BRAND_COLORS } from '../../../brand/palette';
-import { pairingsOn } from '../../../brand/pairings';
+import {
+  APPROVED_PAIRINGS,
+  FAILING_PAIRINGS,
+  VERIFIED_PAIRINGS,
+  resolvePairings,
+} from '../../../brand/pairings';
 
-const cards = BRAND_COLORS.map((background) => {
-  const isDarkBackground = isDark(background.hex);
-  return {
-    background,
-    groups: pairingsOn(background),
-    chrome: isDarkBackground ? 'text-[var(--gray-0)]' : 'text-[var(--gray-800)]',
-  };
-});
+const approved = resolvePairings(APPROVED_PAIRINGS);
+const verified = resolvePairings(VERIFIED_PAIRINGS);
+const failing = resolvePairings(FAILING_PAIRINGS);
+const describe = (pairing: (typeof approved)[number]) =>
+  `${pairing.foreground.name} on ${pairing.background.name}`;
 ---
 
-<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+<ul class="m-0 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3">
   {
-    cards.map((card) => (
-      <article
-        class:list={[
-          'flex flex-col gap-4 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] p-5',
-          card.chrome,
-        ]}
-        style={`background: ${card.background.hex}`}
-        aria-labelledby={`pairing-${card.background.id}`}
+    approved.map((pairing) => (
+      <li
+        class="flex min-h-[160px] flex-col justify-between gap-4 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] p-5"
+        style={`background: ${pairing.background.hex}; color: ${pairing.foreground.hex}`}
       >
-        <header>
-          <p class="m-0 text-[length:var(--type-caption-size)] font-bold uppercase tracking-[0.1em] opacity-80">
-            Background
-          </p>
-          <h4 id={`pairing-${card.background.id}`} class="m-0 text-[length:var(--type-title2-size)] font-semibold">
-            {card.background.name}
-          </h4>
-        </header>
-
-        {card.groups.any.length ? (
-          <div>
-            <p class="m-0 mb-2 text-[length:var(--type-footnote-size)] font-bold">Any text, any size</p>
-            <ul class="m-0 flex list-none flex-col gap-1.5 p-0">
-              {card.groups.any.map((pairing) => (
-                <li class="flex items-baseline gap-3">
-                  <span
-                    class="w-10 flex-none text-[length:var(--type-title2-size)] font-semibold leading-none"
-                    style={`color: ${pairing.color.hex}`}
-                    aria-hidden="true"
-                  >
-                    Aa
-                  </span>
-                  <span class="flex-1 text-[length:var(--type-callout-size)]">{pairing.color.name}</span>
-                  <span class="text-[length:var(--type-footnote-size)] tabular-nums opacity-80">{pairing.label}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-
-        {card.groups.large.length ? (
-          <div class:list={['border-t border-solid pt-3', 'border-current/25']}>
-            <p class="m-0 mb-2 text-[length:var(--type-footnote-size)] font-bold">Headlines and graphics only</p>
-            <ul class="m-0 flex list-none flex-col gap-1.5 p-0">
-              {card.groups.large.map((pairing) => (
-                <li class="flex items-baseline gap-3">
-                  <span
-                    class="w-10 flex-none text-[length:var(--type-title1-size)] font-bold leading-none"
-                    style={`color: ${pairing.color.hex}`}
-                    aria-hidden="true"
-                  >
-                    Aa
-                  </span>
-                  <span class="flex-1 text-[length:var(--type-callout-size)]">{pairing.color.name}</span>
-                  <span class="text-[length:var(--type-footnote-size)] tabular-nums opacity-80">{pairing.label}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-
-        {card.groups.never.length ? (
-          <div class:list={['mt-auto border-t border-solid pt-3', 'border-current/25']}>
-            <p class="m-0 mb-2 text-[length:var(--type-footnote-size)] font-bold">Never on {card.background.name.toLowerCase()}</p>
-            <ul class="m-0 flex list-none flex-wrap gap-x-3 gap-y-1.5 p-0">
-              {card.groups.never.map((pairing) => (
-                <li class="flex items-center gap-1.5 text-[length:var(--type-footnote-size)]">
-                  <span
-                    class:list={['h-3 w-3 flex-none rounded-full border border-solid', 'border-current/25']}
-                    style={`background: ${pairing.color.hex}`}
-                    aria-hidden="true"
-                  />
-                  <span>
-                    {pairing.color.name} <span class="tabular-nums opacity-80">{pairing.label}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-      </article>
+        <span class="font-[family-name:var(--type-family-brand)] text-[length:var(--type-title1-size)] font-semibold uppercase leading-none">
+          {pairing.foreground.name}
+        </span>
+        <span
+          class:list={[
+            'flex items-baseline justify-between gap-3 text-[length:var(--type-callout-size)]',
+            isDark(pairing.background.hex) ? 'text-[var(--gray-0)]' : 'text-[var(--gray-800)]',
+          ]}
+        >
+          <span>{describe(pairing)}</span>
+          <span class="font-semibold tabular-nums">{pairing.label}</span>
+        </span>
+      </li>
     ))
   }
+</ul>
+
+<div class="mt-6 grid gap-4 md:grid-cols-2">
+  <article class="rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5">
+    <h4 class="m-0 mb-3 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">Also verified</h4>
+    <ul class="m-0 flex list-none flex-col gap-2 p-0">
+      {
+        verified.map((pairing) => (
+          <li class="flex items-center gap-3 text-[length:var(--type-callout-size)] text-[var(--label)]">
+            <span
+              class="inline-flex h-8 w-12 flex-none items-center justify-center rounded-[var(--corner-sm)] border border-solid border-[var(--separator-strong)] font-semibold"
+              style={`background: ${pairing.background.hex}; color: ${pairing.foreground.hex}`}
+              aria-hidden="true"
+            >
+              Aa
+            </span>
+            <span class="flex-1">{describe(pairing)}</span>
+            <span class="tabular-nums text-[var(--label-secondary)]">{pairing.label}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+  <article class="rounded-[var(--corner-xl)] border border-solid border-[var(--critical)] bg-[var(--critical-fill)] p-5">
+    <h4 class="m-0 mb-3 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">Never for text</h4>
+    <ul class="m-0 flex list-none flex-col gap-2 p-0">
+      {
+        failing.map((pairing) => (
+          <li class="flex items-center gap-3 text-[length:var(--type-callout-size)] text-[var(--label)]">
+            <span
+              class="inline-flex h-8 w-12 flex-none items-center justify-center rounded-[var(--corner-sm)] border border-solid border-[var(--separator-strong)] font-semibold"
+              style={`background: ${pairing.background.hex}; color: ${pairing.foreground.hex}`}
+              aria-hidden="true"
+            >
+              Aa
+            </span>
+            <span class="flex-1">{describe(pairing)}</span>
+            <span class="tabular-nums text-[var(--label-secondary)]">{pairing.label}, fails</span>
+          </li>
+        ))
+      }
+    </ul>
+  </article>
 </div>

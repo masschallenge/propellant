@@ -1,0 +1,82 @@
+---
+import {
+  BRAND_TEXT_STYLES,
+  OFFICE_FONT_FALLBACK,
+  RETIRED_FONTS,
+  TWO_TONE_HEADLINES,
+  brandTextCss,
+} from '../../../brand/brand-type';
+import { findColor } from '../../../brand/palette';
+
+const SAMPLE_SIZE: Record<string, string> = {
+  headline: 'font-size: clamp(2rem, 5vw, 3rem)',
+  eyebrow: 'font-size: 0.875rem',
+  subhead: 'font-size: 1.5rem',
+  body: 'font-size: 1.0625rem',
+  'big-stat': 'font-size: clamp(3rem, 7vw, 4.5rem)',
+};
+---
+
+<div class="flex flex-col gap-6">
+  <ul class="m-0 flex list-none flex-col p-0">
+    {
+      BRAND_TEXT_STYLES.map((style) => (
+        <li class="grid gap-3 border-t border-solid border-[var(--separator)] py-5 last:border-b md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+          <div class="flex flex-col gap-1">
+            <h4 class="m-0 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">{style.name}</h4>
+            <p class="m-0 text-[length:var(--type-footnote-size)] tabular-nums text-[var(--label-secondary)]">
+              {style.font} {style.weightName} ({style.weight})
+              {style.isCapitals ? ', capitals' : ''}
+              {style.lineHeight !== null ? `, line height ${style.lineHeight.toFixed(1)}` : ''}
+              {style.tracking ? `, tracking ${style.tracking}` : ''}
+            </p>
+            <p class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">
+              {style.use}
+            </p>
+          </div>
+          <p class="m-0 max-w-[60ch] text-[var(--label)]" style={`${brandTextCss(style)} ${SAMPLE_SIZE[style.id]}`}>
+            {style.sample}
+          </p>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="grid gap-4 md:grid-cols-2">
+    {
+      TWO_TONE_HEADLINES.map((headline) => (
+        <div class="flex min-h-[160px] flex-col justify-center gap-2 p-6" style={`background: ${findColor(headline.surfaceId).hex}`}>
+          <p
+            class="m-0"
+            style={`${brandTextCss(BRAND_TEXT_STYLES[0])} font-size: clamp(1.75rem, 4vw, 2.5rem); color: ${findColor(headline.leadColorId).hex}`}
+          >
+            {headline.lead}{' '}
+            <span style={`color: ${findColor(headline.payoffColorId).hex}`}>{headline.payoff}</span>
+          </p>
+          <p class="m-0 text-[length:var(--type-footnote-size)]" style={`color: ${findColor(headline.leadColorId).hex}`}>
+            Two-tone headline: lead phrase in {findColor(headline.leadColorId).name}, payoff in{' '}
+            {findColor(headline.payoffColorId).name}.
+          </p>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="grid gap-4 md:grid-cols-2">
+    <article class="flex flex-col gap-2 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5">
+      <h4 class="m-0 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">When Oswald or Lato will not load</h4>
+      <p class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label)]">
+        Headers in {OFFICE_FONT_FALLBACK.headers}. Text in {OFFICE_FONT_FALLBACK.body}. Never {OFFICE_FONT_FALLBACK.never}.
+      </p>
+      <p class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">
+        {OFFICE_FONT_FALLBACK.note}
+      </p>
+    </article>
+    <article class="flex flex-col gap-2 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5">
+      <h4 class="m-0 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">Retired fonts</h4>
+      <p class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label)]">
+        {RETIRED_FONTS.join(', ')}. Replace them with Oswald and Lato wherever you find them.
+      </p>
+    </article>
+  </div>
+</div>

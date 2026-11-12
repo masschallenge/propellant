@@ -23,27 +23,23 @@ const hexToRgbText = (hex) => {
   return [0, 2, 4].map((offset) => parseInt(digits.slice(offset, offset + 2), 16)).join(', ');
 };
 
-const cmykText = (cmyk) => cmyk.join(', ');
+const cmykText = (cmyk) => (cmyk ? cmyk.join(', ') : null);
+
+const paletteEntry = (color) => ({
+  name: color.name,
+  hex: color.hex,
+  rgb: hexToRgbText(color.hex),
+  cmyk: cmykText(color.cmyk),
+  printSubstitute: color.printSubstitute ?? null,
+  token: color.token ?? null,
+  role: color.role,
+});
 
 export const colorsJson = ({ brandColors, supportingColors, logoColors, print }) =>
   `${JSON.stringify(
     {
-      brandColors: brandColors.map((color) => ({
-        name: color.name,
-        hex: color.hex,
-        rgb: hexToRgbText(color.hex),
-        cmyk: cmykText(color.cmyk),
-        token: color.token,
-        role: color.role,
-      })),
-      supportingColors: supportingColors.map((color) => ({
-        name: color.name,
-        hex: color.hex,
-        rgb: hexToRgbText(color.hex),
-        cmyk: cmykText(color.cmyk),
-        token: color.token,
-        role: color.role,
-      })),
+      brandColors: brandColors.map(paletteEntry),
+      supportingColors: supportingColors.map(paletteEntry),
       logoColors: logoColors.map((color) => ({
         name: color.name,
         hex: color.hex,
@@ -61,7 +57,8 @@ const colorLines = (color, detail) => [
   color.name,
   `  HEX    ${color.hex}`,
   `  RGB    ${hexToRgbText(color.hex)}`,
-  `  CMYK   ${cmykText(color.cmyk)}`,
+  ...(color.cmyk ? [`  CMYK   ${cmykText(color.cmyk)} (approximate)`] : []),
+  ...(color.printSubstitute ? [`  Print  ${color.printSubstitute}`] : []),
   ...(color.token ? [`  Token  var(${color.token})`] : []),
   `  ${detail}`,
   '',
@@ -76,9 +73,9 @@ export const colorsText = ({ brandColors, supportingColors, logoColors, print })
     'BRAND PALETTE',
     '',
     ...brandColors.flatMap((color) => colorLines(color, color.role)),
-    'SUPPORTING NEUTRALS',
+    'SUPPORTING NEUTRALS AND TINT',
     '',
-    'For rules, table lines and charts.',
+    'For website sections, rules, table lines, secondary text and charts.',
     '',
     ...supportingColors.flatMap((color) => colorLines(color, color.role)),
     'LOGO COLORS',
@@ -89,6 +86,8 @@ export const colorsText = ({ brandColors, supportingColors, logoColors, print })
     'PRINT',
     '',
     print.cmyk,
+    print.review,
+    print.logoFiles,
     '',
   ].join('\n');
 
@@ -100,15 +99,19 @@ export const readmeText = () =>
     'file, is at https://propellant.masschallenge.org/brand/',
     '',
     'logos/',
-    '  The MassChallenge logo as PNG files, in two lockups and three treatments.',
-    '  Horizontal is the default. Use the monogram only in small spaces, such as a favicon or',
-    '  an avatar, where the MassChallenge name is already clear.',
-    '  color: on white and light backgrounds.',
-    '  white: on Deep teal, dark backgrounds and dark, calm parts of photos.',
-    '  black: for one color printing.',
-    '  Give the logo clear space of half its height on every side. Keep the horizontal logo at',
-    '  least 24px tall on screen, and the monogram at least 16px.',
-    '  Never stretch, recolor, redraw, outline or crop it. Always use these files.',
+    '  The MassChallenge horizontal logo and MC mark as PNG files, in three treatments.',
+    '  The vertical logo is the default for most layouts, and the horizontal logo is for',
+    '  headers, footers, sponsor slides and banners. Vertical and local logo files come from',
+    '  MassChallenge Marketing. Use the MC mark where the audience already knows us, such as',
+    '  a favicon, an avatar or compact navigation.',
+    '  color: on White or Warm White only.',
+    '  white: on Navy, Black, Deep Teal, Teal, MC Blue and photos with enough contrast.',
+    '  black: for one color printing, and light backgrounds the color logo does not suit.',
+    '  Give the logo clear space equal to the height of the M in MASSCHALLENGE on every side.',
+    '  Keep the horizontal logo at least 160px wide on screen (30mm in print), and the MC mark',
+    '  at least 16px tall on screen (8mm in print).',
+    '  Never recolor, stretch, rotate, outline, flip, crop, rebuild or retype it. Always use',
+    '  these files.',
     '',
     'design-system-only/',
     '  The Propellant mark, as SVG. It stands for the Propellant design system and nothing',
@@ -116,12 +119,14 @@ export const readmeText = () =>
     '',
     'fonts/',
     '  Propellant Sans (Lato 2.0) and Oswald, as web fonts (.woff2), with their SIL Open Font',
-    '  License files. Lato is for everything. Oswald is only for big display headlines, set in',
-    '  capitals. For Word, PowerPoint and Excel, install Lato and Oswald from Google Fonts:',
+    '  License files. Oswald is for headlines, always in capitals. Lato is for reading text.',
+    '  For Word, PowerPoint and Excel, install Lato and Oswald from Google Fonts:',
     '  https://fonts.google.com/specimen/Lato and https://fonts.google.com/specimen/Oswald',
+    '  Where they will not load, use Aptos Narrow Bold in capitals for headers and Aptos for',
+    '  text. Never Arial.',
     '',
     'colors.txt and colors.json',
-    '  The brand palette, the supporting neutrals and the logo colors with HEX, RGB, print CMYK',
-    '  and the Propellant token for each, and how the CMYK values were calculated.',
+    '  The brand palette, the supporting neutrals and the logo colors with HEX, RGB,',
+    '  approximate CMYK, print substitutes and Propellant tokens where they exist.',
     '',
   ].join('\n');

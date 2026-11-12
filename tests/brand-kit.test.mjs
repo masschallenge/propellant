@@ -53,12 +53,13 @@ describe('the color files', () => {
     [...colors.brandColors, ...colors.supportingColors, ...colors.logoColors].forEach((color) => {
       expect(text).toContain(color.name);
       expect(text).toContain(color.hex);
-      expect(text).toContain(`CMYK   ${color.cmyk.join(', ')}`);
+      if (color.cmyk) expect(text).toContain(`CMYK   ${color.cmyk.join(', ')} (approximate)`);
     });
-    expect(text).toContain('RGB    4, 68, 81');
-    expect(text).toContain('CMYK   100, 64, 53, 50');
-    expect(text).toContain('Token  var(--teal-900)');
-    expect(text).toContain('SUPPORTING NEUTRALS');
+    expect(text).toContain('RGB    16, 38, 63');
+    expect(text).toContain('CMYK   75, 40, 0, 75 (approximate)');
+    expect(text).toContain('Print  #00CFE8');
+    expect(text).toContain('Token  var(--yellow-400)');
+    expect(text).toContain('SUPPORTING NEUTRALS AND TINT');
   });
 
   it('writes valid JSON with the same colors', () => {
@@ -67,20 +68,22 @@ describe('the color files', () => {
     expect(parsed.logoColors).toHaveLength(colors.logoColors.length);
     expect(parsed.supportingColors).toHaveLength(colors.supportingColors.length);
     expect(parsed.brandColors[0]).toEqual({
-      name: 'Deep teal',
-      hex: '#044451',
-      rgb: '4, 68, 81',
-      cmyk: '100, 64, 53, 50',
-      token: '--teal-900',
+      name: 'MC Blue',
+      hex: '#0EABBC',
+      rgb: '14, 171, 188',
+      cmyk: '93, 9, 0, 26',
+      printSubstitute: null,
+      token: null,
       role: colors.brandColors[0].role,
     });
-    expect(parsed.logoColors[1].cmyk).toBe('77, 11, 27, 0');
+    expect(parsed.brandColors.find((color) => color.name === 'Ocean').cmyk).toBeNull();
+    expect(parsed.logoColors[1].cmyk).toBe('93, 9, 0, 26');
   });
 
-  it('says how the print values were made and gives CMYK only', () => {
+  it('says the print values are approximate and gives CMYK only', () => {
     [colorsText(colors), colorsJson(colors)].forEach((file) => {
-      expect(file).toContain('Artifex CMYK SWOP profile');
-      expect(file).not.toMatch(/pantone|PMS\s*\d/i);
+      expect(file).toContain('confirm with a printer proof');
+      expect(file).not.toMatch(/pantone|PMS\s*\d|artifex/i);
     });
   });
 });
@@ -91,6 +94,15 @@ describe('the readme', () => {
     Object.values(BRAND_KIT_FOLDERS).forEach((folder) => expect(readme).toContain(`${folder}/`));
     expect(readme).toContain('colors.txt');
     expect(readme).toContain('colors.json');
+  });
+
+  it('gives the logo and font rules from the brand guide', () => {
+    const readme = readmeText().replace(/\s+/g, ' ');
+    expect(readme).toContain('height of the M in MASSCHALLENGE');
+    expect(readme).toContain('160px wide on screen');
+    expect(readme).toContain('Vertical and local logo files come from MassChallenge Marketing');
+    expect(readme).toContain('Aptos Narrow Bold');
+    expect(readme).toContain('Never Arial');
   });
 
   it('follows the writing rules', () => {

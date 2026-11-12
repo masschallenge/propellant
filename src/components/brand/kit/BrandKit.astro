@@ -10,7 +10,7 @@ const kitSize = existsSync(kitFile) ? `${Math.round(statSync(kitFile).size / 102
 const CONTENTS = [
   { folder: 'logos', text: 'Every MassChallenge logo PNG: horizontal and monogram, in color, white and black.' },
   { folder: 'fonts', text: 'Propellant Sans (Lato) and Oswald web fonts, with their Open Font License files.' },
-  { folder: 'colors.txt and colors.json', text: 'Every brand, supporting and logo color, with HEX, RGB, print CMYK and the Propellant token.' },
+  { folder: 'colors.txt and colors.json', text: 'Every brand, supporting and logo color, with HEX, RGB, approximate CMYK, print substitutes and Propellant tokens where they exist.' },
   { folder: 'design-system-only', text: 'The Propellant mark as SVG. It stands for the design system, never for MassChallenge.' },
   { folder: 'README.txt', text: 'What each file is for.' },
 ];
@@ -24,7 +24,7 @@ const CONTENTS = [
     <p class="m-0 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[var(--type-eyebrow-tracking)] text-[var(--tint)]">
       Take it all with you
     </p>
-    <h3 class="m-0 font-[family-name:var(--type-family-brand)] text-[length:var(--type-title1-size)] font-medium uppercase leading-[1.05] text-[var(--label)]">
+    <h3 class="m-0 font-[family-name:var(--type-family-brand)] text-[length:var(--type-title1-size)] font-semibold uppercase leading-[1.05] text-[var(--label)]">
       One zip, the whole brand
     </h3>
     <p class="m-0 text-[length:var(--type-body-size)] text-[var(--label-secondary)]">

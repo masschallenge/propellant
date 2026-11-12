@@ -59,7 +59,7 @@ const LogoCard = ({ lockup }: LogoCardProps) => {
       >
         <img
           src={LOGO_FILES[lockup.id][treatmentId]}
-          alt={`MassChallenge ${lockup.name.toLowerCase()} logo, ${treatment.name.toLowerCase()}, on ${background.name.toLowerCase()}`}
+          alt={`MassChallenge ${lockup.name} logo, ${treatment.name.toLowerCase()}, on ${background.name}`}
           className={`${PREVIEW_HEIGHT[lockup.id]} w-auto max-w-full object-contain`}
           draggable={false}
         />
@@ -161,7 +161,7 @@ const LogoCard = ({ lockup }: LogoCardProps) => {
           >
             {isSuitable
               ? treatment.useOn
-              : `${treatment.name} is not for ${background.name.toLowerCase()}. Use ${recommended.name.toLowerCase()} here.`}
+              : `${treatment.name} is not for ${background.isPhoto ? 'a photo' : background.name}. Use ${recommended.name.toLowerCase()} here.`}
           </p>
         </fieldset>
 

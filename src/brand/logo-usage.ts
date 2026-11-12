@@ -1,8 +1,17 @@
-import { isDark } from './contrast';
 import { findColor } from './palette';
 
 export type LogoLockupId = 'horizontal' | 'monogram';
 export type LogoTreatmentId = 'color' | 'white' | 'black';
+export type LogoVersionId = 'vertical' | 'horizontal' | 'monogram' | 'local';
+
+export interface LogoVersion {
+  id: LogoVersionId;
+  name: string;
+  use: string;
+  screenMinimum: string | null;
+  printMinimum: string | null;
+  isShipped: boolean;
+}
 
 export interface LogoLockup {
   id: LogoLockupId;
@@ -10,6 +19,7 @@ export interface LogoLockup {
   badge: string;
   use: string;
   minimumHeight: number;
+  minimumWidth: number | null;
   minimumNote: string;
 }
 
@@ -24,24 +34,74 @@ export interface LogoBackground {
   name: string;
   hex: string | null;
   isPhoto: boolean;
+  treatment: 'color' | 'white';
 }
+
+export const LOGO_ASPECT: Record<LogoLockupId, number> = {
+  horizontal: 1671 / 225,
+  monogram: 321 / 177,
+};
+
+export const WORDMARK_M_SHARE = 91 / 225;
+
+export const MARKETING_FILES_NOTE =
+  'Propellant ships the horizontal logo and the MC mark. Vertical and local logo files come from MassChallenge Marketing; never draw or assemble them yourself.';
+
+export const LOGO_VERSIONS: LogoVersion[] = [
+  {
+    id: 'vertical',
+    name: 'Vertical',
+    use: 'The default for most layouts.',
+    screenMinimum: '60px wide',
+    printMinimum: '20mm wide',
+    isShipped: false,
+  },
+  {
+    id: 'horizontal',
+    name: 'Horizontal',
+    use: 'When width is plentiful and height is tight: headers, footers, sponsor slides and banners.',
+    screenMinimum: '160px wide',
+    printMinimum: '30mm wide',
+    isShipped: true,
+  },
+  {
+    id: 'monogram',
+    name: 'MC mark',
+    use: 'Where the audience already knows us. In Propellant: compact navigation, favicons, avatars and app icons.',
+    screenMinimum: '16px tall',
+    printMinimum: '8mm',
+    isShipped: true,
+  },
+  {
+    id: 'local',
+    name: 'Local logos',
+    use: 'Work tied to one site: US sites use the city and international sites use the country. Approved local files exist for Boston, Israel, UK and Switzerland; for any other site, ask MassChallenge Marketing. Never type a location next to the logo.',
+    screenMinimum: null,
+    printMinimum: null,
+    isShipped: false,
+  },
+];
 
 export const LOGO_LOCKUPS: LogoLockup[] = [
   {
     id: 'horizontal',
     name: 'Horizontal',
-    badge: 'Primary',
-    use: 'The default. Headers, sign in pages, footers, documents and anywhere the full name should be read.',
-    minimumHeight: 24,
-    minimumNote: 'Below this the wordmark stops being readable; use the monogram instead.',
+    badge: 'Wide spaces',
+    use: 'Headers, footers, sponsor slides and banners, where width is plentiful and height is tight. Align it to a corner or the top edge of its area.',
+    minimumHeight: Math.ceil(160 / LOGO_ASPECT.horizontal),
+    minimumWidth: 160,
+    minimumNote:
+      'At least 160px wide on screen and 30mm in print. Below that the wordmark stops being readable; use the MC mark instead.',
   },
   {
     id: 'monogram',
-    name: 'Monogram',
+    name: 'MC mark',
     badge: 'Small spaces',
-    use: 'Small spaces where the horizontal lockup would fall below its minimum size: favicons, app icons, avatars and compact navigation.',
+    use: 'Where the audience already knows us: favicons, app icons, avatars and compact navigation.',
     minimumHeight: 16,
-    minimumNote: 'Use it on its own only where the MassChallenge name is already clear.',
+    minimumWidth: null,
+    minimumNote:
+      'At least 8mm in print. Use it on its own only where the MassChallenge name is already clear.',
   },
 ];
 
@@ -49,35 +109,47 @@ export const LOGO_TREATMENTS: LogoTreatment[] = [
   {
     id: 'color',
     name: 'Full color',
-    useOn: 'White and light neutral backgrounds, such as the page and content surfaces.',
+    useOn: 'White or Warm White only.',
   },
   {
     id: 'white',
     name: 'White',
     useOn:
-      'The brand teal, dark surfaces, dark mode and photographs dark enough to keep the logo legible.',
+      'Navy, Black, Deep Teal, Teal, MC Blue, or a photo with enough contrast. Never on light colors such as Cyan, Yellow or Lime.',
   },
   {
     id: 'black',
     name: 'Black',
-    useOn:
-      'Places where only one dark color is available, such as single color print, and light backgrounds that the full color logo does not suit.',
+    useOn: 'One color print, and light backgrounds that the full color logo does not suit.',
   },
 ];
 
-const backgroundFromPalette = (id: string): LogoBackground => {
+export const FULL_COLOR_LOGO_BACKGROUND_IDS = ['white', 'warm-white'];
+
+export const WHITE_LOGO_BACKGROUND_IDS = ['navy', 'black', 'deep-teal', 'teal', 'mc-blue'];
+
+export const NO_WHITE_LOGO_BACKGROUND_IDS = ['cyan', 'yellow', 'lime'];
+
+export const LOGO_NEVER = [
+  'Recolor it.',
+  'Stretch or squash it.',
+  'Rotate it.',
+  'Outline it or add shadows, glows or other effects.',
+  'Flip it.',
+  'Crop it.',
+  'Rearrange, rebuild or retype it.',
+  'Create new lockups or sub-logos outside the sub-brand system.',
+];
+
+const backgroundFromPalette = (id: string, treatment: LogoBackground['treatment']) => {
   const color = findColor(id);
-  return { id: color.id, name: color.name, hex: color.hex, isPhoto: false };
+  return { id: color.id, name: color.name, hex: color.hex, isPhoto: false, treatment };
 };
 
 export const LOGO_BACKGROUNDS: LogoBackground[] = [
-  backgroundFromPalette('white'),
-  backgroundFromPalette('mist'),
-  backgroundFromPalette('pale-teal'),
-  backgroundFromPalette('deep-teal'),
-  backgroundFromPalette('teal'),
-  backgroundFromPalette('ink'),
-  { id: 'photo', name: 'On a photo', hex: null, isPhoto: true },
+  ...FULL_COLOR_LOGO_BACKGROUND_IDS.map((id) => backgroundFromPalette(id, 'color')),
+  ...WHITE_LOGO_BACKGROUND_IDS.map((id) => backgroundFromPalette(id, 'white')),
+  { id: 'photo', name: 'On a photo', hex: null, isPhoto: true, treatment: 'white' },
 ];
 
 export const findLockup = (id: LogoLockupId): LogoLockup => {
@@ -98,24 +170,32 @@ export const findBackground = (id: string): LogoBackground => {
   return background;
 };
 
-const isDarkBackground = (background: LogoBackground): boolean =>
-  background.isPhoto || (background.hex !== null && isDark(background.hex));
-
-export const treatmentFor = (background: LogoBackground): LogoTreatmentId =>
-  isDarkBackground(background) ? 'white' : 'color';
+export const treatmentFor = (background: LogoBackground): LogoTreatmentId => background.treatment;
 
 export const suitsBackground = (
   treatment: LogoTreatmentId,
   background: LogoBackground,
 ): boolean => {
-  if (treatment === 'white') return isDarkBackground(background);
-  return !isDarkBackground(background);
+  if (treatment === 'white') return background.treatment === 'white';
+  return background.treatment === 'color';
 };
 
-export const clearSpaceFor = (logoHeight: number): number => logoHeight / 2;
+export const clearSpaceFor = (lockupId: LogoLockupId, logoHeight: number): number =>
+  lockupId === 'horizontal' ? logoHeight * WORDMARK_M_SHARE : logoHeight / 2;
 
-export const isBelowMinimum = (lockupId: LogoLockupId, logoHeight: number): boolean =>
-  logoHeight < findLockup(lockupId).minimumHeight;
+export const logoWidthFor = (lockupId: LogoLockupId, logoHeight: number): number =>
+  logoHeight * LOGO_ASPECT[lockupId];
+
+export const isBelowMinimum = (lockupId: LogoLockupId, logoHeight: number): boolean => {
+  const lockup = findLockup(lockupId);
+  if (lockup.minimumWidth !== null) {
+    return logoWidthFor(lockupId, logoHeight) < lockup.minimumWidth;
+  }
+  return logoHeight < lockup.minimumHeight;
+};
+
+export const minimumLabel = (lockup: LogoLockup): string =>
+  lockup.minimumWidth !== null ? `${lockup.minimumWidth}px wide` : `${lockup.minimumHeight}px tall`;
 
 export const logoFileName = (lockupId: LogoLockupId, treatment: LogoTreatmentId): string =>
   `masschallenge-logo-${lockupId}-${treatment}.png`;

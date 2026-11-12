@@ -1,94 +1,49 @@
 {
   "brandColors": [
     {
-      "id": "deep-teal",
-      "name": "Deep teal",
-      "hex": "#044451",
-      "token": "--teal-900",
-      "family": "brand",
-      "role": "Brand surfaces, such as the panel of a sign in page",
-      "cmyk": [100, 64, 53, 50]
+      "id": "mc-blue",
+      "name": "MC Blue",
+      "hex": "#0EABBC",
+      "family": "core",
+      "role": "The logo and graphic shapes. Never text.",
+      "cmyk": [93, 9, 0, 26],
+      "printSubstitute": null
     },
     {
-      "id": "teal",
-      "name": "Teal",
-      "hex": "#065E6F",
-      "token": "--teal-800",
-      "family": "brand",
-      "role": "The primary interactive color in light mode",
-      "cmyk": [100, 55, 45, 24]
+      "id": "mc-gray",
+      "name": "MC Gray",
+      "hex": "#808285",
+      "family": "core",
+      "role": "The logo only.",
+      "cmyk": [4, 2, 0, 48],
+      "printSubstitute": null
     },
     {
-      "id": "mid-teal",
-      "name": "Mid teal",
-      "hex": "#068DA4",
-      "token": "--teal-600",
-      "family": "brand",
-      "role": "Supporting accents",
-      "cmyk": [87, 31, 31, 2]
+      "id": "navy",
+      "name": "Navy",
+      "hex": "#10263F",
+      "family": "core",
+      "role": "Dark sections and gradients.",
+      "cmyk": [75, 40, 0, 75],
+      "printSubstitute": null
     },
     {
-      "id": "bright-teal",
-      "name": "Bright teal",
-      "hex": "#0FACBD",
-      "token": "--teal-400",
-      "family": "brand",
-      "role": "Accents on dark surfaces",
-      "cmyk": [78, 11, 26, 0]
+      "id": "black",
+      "name": "Black",
+      "hex": "#222222",
+      "family": "core",
+      "role": "Dark sections and body text.",
+      "cmyk": [0, 0, 0, 87],
+      "printSubstitute": null
     },
     {
-      "id": "pale-teal",
-      "name": "Pale teal",
-      "hex": "#D9F6FA",
-      "token": "--teal-100",
-      "family": "brand",
-      "role": "Tinted backgrounds",
-      "cmyk": [13, 0, 2, 0]
-    },
-    {
-      "id": "mist",
-      "name": "Mist",
-      "hex": "#F3FBFC",
-      "token": "--teal-50",
-      "family": "brand",
-      "role": "The lightest tint",
-      "cmyk": [3, 0, 1, 0]
-    },
-    {
-      "id": "magenta",
-      "name": "Magenta",
-      "hex": "#BF0261",
-      "token": "--magenta-600",
-      "family": "accent",
-      "role": "Destructive actions and errors",
-      "cmyk": [21, 100, 42, 5]
-    },
-    {
-      "id": "yellow",
-      "name": "Yellow",
-      "hex": "#FFC801",
-      "token": "--yellow-400",
-      "family": "accent",
-      "role": "Highlights, such as search matches and new items",
-      "cmyk": [0, 22, 100, 0]
-    },
-    {
-      "id": "ink",
-      "name": "Ink",
-      "hex": "#1E282B",
-      "token": "--gray-800",
-      "family": "neutral",
-      "role": "Text on light backgrounds",
-      "cmyk": [81, 66, 63, 83]
-    },
-    {
-      "id": "slate",
-      "name": "Slate",
-      "hex": "#4B575B",
-      "token": "--gray-500",
-      "family": "neutral",
-      "role": "Secondary text",
-      "cmyk": [73, 57, 55, 35]
+      "id": "warm-white",
+      "name": "Warm White",
+      "hex": "#F8F8F5",
+      "family": "core",
+      "role": "Light sections.",
+      "cmyk": [0, 0, 1, 3],
+      "printSubstitute": null
     },
     {
       "id": "white",
@@ -96,43 +51,142 @@
       "hex": "#FFFFFF",
       "token": "--gray-0",
       "family": "neutral",
-      "role": "The page and content surfaces",
-      "cmyk": [0, 0, 0, 0]
+      "role": "Pages, cards and light sections, and text on dark backgrounds.",
+      "cmyk": [0, 0, 0, 0],
+      "printSubstitute": null
+    },
+    {
+      "id": "deep-teal",
+      "name": "Deep Teal",
+      "hex": "#004F73",
+      "family": "supporting",
+      "role": "Dark sections.",
+      "cmyk": [100, 31, 0, 55],
+      "printSubstitute": null
+    },
+    {
+      "id": "teal",
+      "name": "Teal",
+      "hex": "#00708E",
+      "family": "supporting",
+      "role": "Headings and links on light backgrounds. Colored text on a light background is always Teal.",
+      "cmyk": [100, 21, 0, 44],
+      "printSubstitute": null
+    },
+    {
+      "id": "cyan",
+      "name": "Cyan",
+      "hex": "#54EEFF",
+      "family": "supporting",
+      "role": "Text and accents on dark backgrounds only: Navy, Black and Deep Teal.",
+      "cmyk": [100, 11, 0, 9],
+      "printSubstitute": "#00CFE8"
+    },
+    {
+      "id": "ocean",
+      "name": "Ocean",
+      "hex": "#037AA6",
+      "family": "supporting",
+      "role": "A gradient stop only, never a flat fill. The MC Gradient runs from Navy to Ocean at any angle.",
+      "cmyk": null,
+      "printSubstitute": null
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow",
+      "hex": "#FFC801",
+      "token": "--yellow-400",
+      "family": "accent",
+      "role": "Tags, rules and stats, in small doses. Set dark text on it.",
+      "cmyk": [0, 22, 100, 0],
+      "printSubstitute": null
+    },
+    {
+      "id": "orange",
+      "name": "Orange",
+      "hex": "#FF6B35",
+      "family": "accent",
+      "role": "Small accents with dark text on them, never white.",
+      "cmyk": [0, 47, 73, 4],
+      "printSubstitute": "#F58242"
+    },
+    {
+      "id": "raspberry",
+      "name": "Raspberry",
+      "hex": "#D14170",
+      "family": "accent",
+      "role": "Shapes and rules on dark backgrounds.",
+      "cmyk": [0, 73, 41, 15],
+      "printSubstitute": "#D83B80"
+    },
+    {
+      "id": "lime",
+      "name": "Lime",
+      "hex": "#C6F135",
+      "family": "accent",
+      "role": "Accents on dark backgrounds.",
+      "cmyk": [32, 0, 74, 17],
+      "printSubstitute": "#91D438"
     }
   ],
   "supportingColors": [
+    {
+      "id": "light-tint",
+      "name": "Light tint",
+      "hex": "#F3FAFC",
+      "family": "neutral",
+      "role": "The pale tint that rises on an angle in light website sections, and the light triangles of the pattern.",
+      "cmyk": null,
+      "printSubstitute": null
+    },
     {
       "id": "gray-100",
       "name": "Gray 100",
       "hex": "#DBE1E3",
       "token": "--gray-100",
+      "family": "neutral",
+      "role": "Rules and table lines.",
       "cmyk": [13, 7, 8, 0],
-      "role": "Rules and table lines"
+      "printSubstitute": null
     },
     {
       "id": "gray-300",
       "name": "Gray 300",
       "hex": "#848F92",
       "token": "--gray-300",
+      "family": "neutral",
+      "role": "The sixth chart color.",
       "cmyk": [53, 38, 39, 4],
-      "role": "The sixth chart color"
+      "printSubstitute": null
+    },
+    {
+      "id": "slate",
+      "name": "Slate",
+      "hex": "#4B575B",
+      "token": "--gray-500",
+      "family": "neutral",
+      "role": "Secondary text in interfaces and email signatures. In graphics, use Black at a smaller size or lighter weight instead.",
+      "cmyk": [73, 57, 55, 35],
+      "printSubstitute": null
     }
   ],
   "logoColors": [
     {
-      "name": "Logo gray",
-      "hex": "#828486",
+      "name": "MC Gray",
+      "hex": "#808285",
       "part": "M and wordmark",
-      "cmyk": [53, 44, 43, 7]
+      "cmyk": [4, 2, 0, 48]
     },
     {
-      "name": "Logo teal",
-      "hex": "#17ACBC",
+      "name": "MC Blue",
+      "hex": "#0EABBC",
       "part": "C and divider",
-      "cmyk": [77, 11, 27, 0]
+      "cmyk": [93, 9, 0, 26]
     }
   ],
   "print": {
-    "cmyk": "CMYK values are calculated from the sRGB values with the Artifex CMYK SWOP profile (US web coated), relative colorimetric intent, rounded to whole percent. Check a printed proof before a large run."
+    "cmyk": "CMYK values are approximate, confirm with a printer proof before a large run. Where a color lists a print substitute, use the substitute in print.",
+    "review": "The core colors are locked. The supporting blues and warm accents are reviewed with each version of the MassChallenge brand guide.",
+    "logoFiles": "The logo files Propellant ships today measure #17ACBC and #828486. Updated official artwork from MassChallenge Marketing will replace them. Never recolor the files yourself."
   }
 }

@@ -44,22 +44,22 @@ describe('text and logos on the triangle pattern', () => {
     const backdrop = backdropFor(patternScene, 'headline');
     const options = textColorOptions(backdrop, 'headline', 'display');
     const white = options.find((option) => option.color.id === 'white');
-    const ink = options.find((option) => option.color.id === 'ink');
+    const black = options.find((option) => option.color.id === 'black');
     expect(white?.ratio).toBeCloseTo(
       Math.min(
-        contrastRatio('#FFFFFF', findColor('bright-teal').hex),
-        contrastRatio('#FFFFFF', findColor('pale-teal').hex),
+        contrastRatio('#FFFFFF', findColor('mc-blue').hex),
+        contrastRatio('#FFFFFF', findColor('light-tint').hex),
       ),
     );
     expect(white?.allowed).toBe(false);
-    expect(ink?.allowed).toBe(true);
+    expect(black?.allowed).toBe(true);
   });
 
   it('switches white text to a color that reads on the pattern and reports nothing left', () => {
     expect(checkScene(patternScene)).toHaveLength(1);
     const { scene, switches } = enforceTextColors(patternScene);
     expect(switches).toHaveLength(1);
-    expect(['ink', 'deep-teal']).toContain(
+    expect(['black', 'navy']).toContain(
       scene.elements[0].kind === 'text' && scene.elements[0].colorId,
     );
     expect(checkScene(scene)).toEqual([]);

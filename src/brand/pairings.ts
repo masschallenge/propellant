@@ -1,11 +1,5 @@
-import {
-  MINIMUM_LARGE_CONTRAST,
-  MINIMUM_TEXT_CONTRAST,
-  contrastRatio,
-  pairingLevel,
-} from './contrast';
-import type { PairingLevel } from './contrast';
-import { BRAND_COLORS, findColor } from './palette';
+import { MINIMUM_LARGE_CONTRAST, MINIMUM_TEXT_CONTRAST, contrastRatio } from './contrast';
+import { findColor } from './palette';
 import type { BrandColor } from './palette';
 
 export type WcagGrade = 'AA' | 'AA Large' | 'Fail';
@@ -17,19 +11,50 @@ export interface ContrastScore {
   grade: WcagGrade;
 }
 
-export interface Pairing {
-  color: BrandColor;
-  ratio: number;
-  label: string;
+export interface PairingSpec {
+  foregroundId: string;
+  backgroundId: string;
 }
 
-export type PairingGroups = Record<PairingLevel, Pairing[]>;
+export interface Pairing {
+  foreground: BrandColor;
+  background: BrandColor;
+  ratio: number;
+  label: string;
+  grade: WcagGrade;
+}
+
+export const APPROVED_PAIRINGS: PairingSpec[] = [
+  { foregroundId: 'cyan', backgroundId: 'navy' },
+  { foregroundId: 'white', backgroundId: 'black' },
+  { foregroundId: 'teal', backgroundId: 'white' },
+  { foregroundId: 'white', backgroundId: 'deep-teal' },
+  { foregroundId: 'navy', backgroundId: 'warm-white' },
+  { foregroundId: 'lime', backgroundId: 'navy' },
+];
+
+export const VERIFIED_PAIRINGS: PairingSpec[] = [
+  { foregroundId: 'white', backgroundId: 'teal' },
+  { foregroundId: 'black', backgroundId: 'yellow' },
+  { foregroundId: 'black', backgroundId: 'orange' },
+  { foregroundId: 'white', backgroundId: 'navy' },
+  { foregroundId: 'cyan', backgroundId: 'deep-teal' },
+];
+
+export const FAILING_PAIRINGS: PairingSpec[] = [
+  { foregroundId: 'white', backgroundId: 'mc-blue' },
+  { foregroundId: 'mc-blue', backgroundId: 'white' },
+  { foregroundId: 'teal', backgroundId: 'navy' },
+  { foregroundId: 'white', backgroundId: 'orange' },
+];
 
 export const formatRatio = (ratio: number): string => {
   const truncated = Math.floor(ratio * 10) / 10;
   const digits = truncated.toFixed(1).replace(/\.0$/, '');
   return `${digits}:1`;
 };
+
+export const formatGuideRatio = (ratio: number): string => `${ratio.toFixed(1)}:1`;
 
 export const wcagGrade = (ratio: number): WcagGrade => {
   if (ratio >= MINIMUM_TEXT_CONTRAST) return 'AA';
@@ -38,25 +63,16 @@ export const wcagGrade = (ratio: number): WcagGrade => {
 };
 
 export const contrastScores = (hex: string): ContrastScore[] =>
-  [findColor('white'), findColor('ink')].map((against) => {
+  [findColor('white'), findColor('black')].map((against) => {
     const ratio = contrastRatio(hex, against.hex);
     return { against: against.name, ratio, label: formatRatio(ratio), grade: wcagGrade(ratio) };
   });
 
-export const pairingsOn = (
-  background: BrandColor,
-  palette: BrandColor[] = BRAND_COLORS,
-): PairingGroups => {
-  const groups: PairingGroups = { any: [], large: [], never: [] };
-  palette
-    .filter((candidate) => candidate.id !== background.id)
-    .map((candidate) => {
-      const ratio = contrastRatio(candidate.hex, background.hex);
-      return { color: candidate, ratio, label: formatRatio(ratio) };
-    })
-    .sort((first, second) => second.ratio - first.ratio)
-    .forEach((pairing) => {
-      groups[pairingLevel(pairing.color.hex, background.hex)].push(pairing);
-    });
-  return groups;
+export const resolvePairing = (spec: PairingSpec): Pairing => {
+  const foreground = findColor(spec.foregroundId);
+  const background = findColor(spec.backgroundId);
+  const ratio = contrastRatio(foreground.hex, background.hex);
+  return { foreground, background, ratio, label: formatGuideRatio(ratio), grade: wcagGrade(ratio) };
 };
+
+export const resolvePairings = (specs: PairingSpec[]): Pairing[] => specs.map(resolvePairing);

@@ -1,14 +1,15 @@
 ---
 import { Button } from '@masschallenge/propellant-web';
 import BrandKit from '../kit/BrandKit.astro';
+import { findColor } from '../../../brand/palette';
 ---
 
 <section id="make-something" class="scroll-mt-28 py-16">
-  <div class="mb-12 overflow-hidden rounded-[var(--corner-xl)] bg-[var(--teal-900)] px-6 py-10 text-white sm:px-10 sm:py-14">
-    <p class="m-0 mb-2 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[var(--type-eyebrow-tracking)] text-[var(--teal-400)]">
+  <div class="mb-12 overflow-hidden rounded-[var(--corner-xl)] px-6 py-10 text-white sm:px-10 sm:py-14" style={`background: ${findColor('navy').hex}`}>
+    <p class="m-0 mb-2 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[var(--type-eyebrow-tracking)]" style={`color: ${findColor('cyan').hex}`}>
       Make something
     </p>
-    <h2 class="m-0 max-w-[18ch] font-[family-name:var(--type-family-brand)] text-[length:var(--type-display-size)] font-medium uppercase leading-[1.05]">
+    <h2 class="m-0 max-w-[18ch] font-[family-name:var(--type-family-brand)] text-[length:var(--type-display-size)] font-semibold uppercase leading-[1.05]">
       Your own little design studio
     </h2>
     <p class="m-0 mt-4 max-w-[56ch] text-[length:var(--type-title3-size)] leading-[1.5] text-[var(--teal-100)]">

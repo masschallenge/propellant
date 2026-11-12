@@ -1,6 +1,12 @@
 import * as React from 'react';
 import { AlertCircleIcon, SegmentedControl, Slider } from '@masschallenge/propellant-web';
-import { clearSpaceFor, findLockup, isBelowMinimum } from '../../../brand/logo-usage';
+import {
+  clearSpaceFor,
+  findLockup,
+  isBelowMinimum,
+  logoWidthFor,
+  minimumLabel,
+} from '../../../brand/logo-usage';
 import type { LogoLockupId } from '../../../brand/logo-usage';
 import { CheckIcon } from './icons';
 import { LOGO_FILES } from './logoFiles';
@@ -16,7 +22,8 @@ const ClearSpaceTool = () => {
   const [lockupId, setLockupId] = React.useState<LogoLockupId>('horizontal');
   const [logoHeight, setLogoHeight] = React.useState(32);
   const lockup = findLockup(lockupId);
-  const clearSpace = clearSpaceFor(logoHeight);
+  const clearSpace = clearSpaceFor(lockupId, logoHeight);
+  const logoWidth = logoWidthFor(lockupId, logoHeight);
   const isTooSmall = isBelowMinimum(lockupId, logoHeight);
 
   return (
@@ -26,7 +33,7 @@ const ClearSpaceTool = () => {
           aria-label="Logo"
           items={[
             { id: 'horizontal', label: 'Horizontal' },
-            { id: 'monogram', label: 'Monogram' },
+            { id: 'monogram', label: 'MC mark' },
           ]}
           value={lockupId}
           onChange={(nextId) => setLockupId(nextId as LogoLockupId)}
@@ -53,7 +60,7 @@ const ClearSpaceTool = () => {
             <div className="relative outline-1 outline-dashed outline-[var(--tint)]">
               <img
                 src={LOGO_FILES[lockupId].color}
-                alt={`MassChallenge ${lockup.name.toLowerCase()} logo at ${logoHeight}px tall`}
+                alt={`MassChallenge ${lockup.name} logo at ${logoHeight}px tall`}
                 style={{ height: logoHeight }}
                 className="block w-auto max-w-none bg-[var(--gray-0)]"
                 draggable={false}
@@ -73,10 +80,10 @@ const ClearSpaceTool = () => {
       <dl className="m-0 grid grid-cols-2 gap-4 sm:grid-cols-3">
         <div>
           <dt className="text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">
-            Logo height
+            Logo size
           </dt>
           <dd className="m-0 text-[length:var(--type-title2-size)] font-semibold tabular-nums text-[var(--label)]">
-            {logoHeight}px
+            {formatPixels(logoWidth)} by {logoHeight}px
           </dd>
         </div>
         <div>
@@ -89,10 +96,10 @@ const ClearSpaceTool = () => {
         </div>
         <div>
           <dt className="text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">
-            Smallest height
+            Smallest on screen
           </dt>
           <dd className="m-0 text-[length:var(--type-title2-size)] font-semibold tabular-nums text-[var(--label)]">
-            {lockup.minimumHeight}px
+            {minimumLabel(lockup)}
           </dd>
         </div>
       </dl>
@@ -102,16 +109,16 @@ const ClearSpaceTool = () => {
           <p className="m-0 flex items-start gap-2 rounded-[var(--corner-lg)] bg-[var(--warning-fill)] p-3 text-[length:var(--type-callout-size)] text-[var(--label)]">
             <AlertCircleIcon className="h-5 w-5 flex-none text-[var(--warning)]" />
             <span>
-              <strong className="font-semibold">Too small.</strong> The {lockup.name.toLowerCase()}{' '}
-              logo needs to be at least {lockup.minimumHeight}px tall. {lockup.minimumNote}
+              <strong className="font-semibold">Too small.</strong> {lockup.name}: at least{' '}
+              {minimumLabel(lockup)} on screen. {lockup.minimumNote}
             </span>
           </p>
         ) : (
           <p className="m-0 flex items-start gap-2 p-3 text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
             <CheckIcon className="mt-0.5 h-4 w-4 flex-none text-[var(--success)]" />
             <span>
-              Big enough. Keep {formatPixels(clearSpace)} clear of text, images and edges on every
-              side.
+              Big enough. Keep {formatPixels(clearSpace)} clear of type, images, edges and other
+              logos on every side.
             </span>
           </p>
         )}

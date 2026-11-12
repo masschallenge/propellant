@@ -1,9 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { hexToRgb } from '../../src/brand/contrast';
-import { findColor } from '../../src/brand/palette';
 import {
-  PALE_SHARE,
-  duotonePixels,
+  LIGHT_SHARE,
   patternColors,
   trianglePattern,
   type PatternTriangle,
@@ -30,13 +27,13 @@ describe('the triangle pattern', () => {
   const height = 1350;
   const triangles = trianglePattern(width, height, 180);
 
-  it('uses only Bright teal and Pale teal', () => {
+  it('uses only MC Blue and the light tint', () => {
     expect(patternColors('triangles').map((color) => color.name)).toEqual([
-      'Bright teal',
-      'Pale teal',
+      'MC Blue',
+      'Light tint',
     ]);
     const used = new Set(triangles.map((triangle) => triangle.colorId));
-    expect([...used].sort()).toEqual(['bright-teal', 'pale-teal']);
+    expect([...used].sort()).toEqual(['light-tint', 'mc-blue']);
   });
 
   it('covers the whole canvas with no gaps', () => {
@@ -47,38 +44,10 @@ describe('the triangle pattern', () => {
     }
   });
 
-  it('is mostly Bright teal, and the same every time', () => {
-    const pale = triangles.filter((triangle) => triangle.colorId === 'pale-teal').length;
-    expect(pale / triangles.length).toBeGreaterThan(PALE_SHARE / 2);
-    expect(pale / triangles.length).toBeLessThan(0.5);
+  it('is mostly MC Blue, and the same every time', () => {
+    const light = triangles.filter((triangle) => triangle.colorId === 'light-tint').length;
+    expect(light / triangles.length).toBeGreaterThan(LIGHT_SHARE / 2);
+    expect(light / triangles.length).toBeLessThan(0.5);
     expect(trianglePattern(width, height, 180)).toEqual(triangles);
-  });
-});
-
-describe('the teal duotone', () => {
-  const deep = hexToRgb(findColor('deep-teal').hex);
-  const bright = hexToRgb(findColor('bright-teal').hex);
-
-  it('maps black to Deep teal and white to Bright teal', () => {
-    const result = Array.from(duotonePixels([0, 0, 0, 255, 255, 255, 255, 255]));
-    expect(result).toEqual([
-      deep.red,
-      deep.green,
-      deep.blue,
-      255,
-      bright.red,
-      bright.green,
-      bright.blue,
-      255,
-    ]);
-  });
-
-  it('keeps transparency and leaves the input alone', () => {
-    const input = new Uint8ClampedArray([128, 64, 32, 90]);
-    const result = duotonePixels(input);
-    expect(result[3]).toBe(90);
-    expect(Array.from(input)).toEqual([128, 64, 32, 90]);
-    expect(result[0]).toBeGreaterThan(deep.red);
-    expect(result[0]).toBeLessThan(bright.red);
   });
 });

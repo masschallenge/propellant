@@ -5,9 +5,10 @@ description: Makes everything created at MassChallenge follow Propellant, the Ma
 
 # Propellant brand
 
-Propellant is how MassChallenge looks, sounds and works. When this skill is active, make the output
-follow it automatically. Do not ask the person to choose colors or fonts, and do not offer
-"unbranded" options: Propellant is the default for everything made for MassChallenge.
+Propellant is how MassChallenge looks, sounds and works. It applies the MassChallenge brand guide,
+which MassChallenge Marketing owns and which sets the standard. When this skill is active, make the
+output follow it automatically. Do not ask the person to choose colors or fonts, and do not offer
+"unbranded" options: the brand is the default for everything made for MassChallenge.
 
 Treat anything you make for someone at MassChallenge as MassChallenge work unless they say it is
 for another organization or for themselves. Inherit the brand without being asked.
@@ -36,7 +37,7 @@ from propellant-web {{propellant-web}} and propellant-office {{propellant-office
 | Anything with a chart                                                             | [references/charts.md](references/charts.md)               |                                                                                                |
 | Anything with photos or video                                                     | [references/photography.md](references/photography.md)     |                                                                                                |
 | Copy about MassChallenge: lines, boilerplate, figures, contact details, addresses | [references/messaging.md](references/messaging.md)         |                                                                                                |
-| Graphics (pattern, duotone, lockups, stats, timelines, icons) or anything printed | [references/graphics.md](references/graphics.md)           |                                                                                                |
+| Graphics (pattern, overlay, lockups, stats, timelines, icons) or anything printed | [references/graphics.md](references/graphics.md)           |                                                                                                |
 | A social post or graphic someone will make themselves                             | [references/graphics.md](references/graphics.md)           | The [content studio](https://propellant.masschallenge.org/studio/)                             |
 | An email signature                                                                |                                                            | The [signature builder](https://propellant.masschallenge.org/studio/signature/)                |
 
@@ -51,61 +52,80 @@ These hold for every output.
 
 ### Color
 
-| Name        | Hex       | Use it for                                                         |
-| ----------- | --------- | ------------------------------------------------------------------ |
-| Ink         | `#1E282B` | Body text and headings                                             |
-| Slate       | `#4B575B` | Secondary text, captions                                           |
-| White       | `#FFFFFF` | Page and slide backgrounds                                         |
-| Mist        | `#F3FBFC` | Alternate sections and table rows                                  |
-| Gray 100    | `#DBE1E3` | Dividers, rules and table lines                                    |
-| Teal        | `#065E6F` | Links, buttons and the first chart series. Never headings.         |
-| Deep teal   | `#044451` | Brand surfaces: title slides, covers, dark sections, table headers |
-| Mid teal    | `#068DA4` | Supporting accents, shapes and icons                               |
-| Bright teal | `#0FACBD` | Accents on Deep teal only, at 18 pt or larger                      |
-| Pale teal   | `#D9F6FA` | Callouts, secondary buttons, tinted sections                       |
-| Yellow      | `#FFC801` | Highlights, always with Ink text                                   |
-| Magenta     | `#BF0261` | Errors and things that are wrong. Never decorative.                |
+| Name       | Hex       | Use it for                                                                      |
+| ---------- | --------- | ------------------------------------------------------------------------------- |
+| Navy       | `#10263F` | Dark sections, title slides, covers, table headers, gradients                   |
+| Black      | `#222222` | Body text, and dark sections                                                    |
+| Warm White | `#F8F8F5` | Light sections, alternate rows                                                  |
+| White      | `#FFFFFF` | Page and slide backgrounds, text on dark                                        |
+| Deep Teal  | `#004F73` | Dark sections                                                                   |
+| Teal       | `#00708E` | Headings and links on light. Colored text on a light background is always Teal. |
+| Cyan       | `#54EEFF` | Text and accents on Navy, Black or Deep Teal only                               |
+| MC Blue    | `#0EABBC` | The logo and graphic shapes. Never text.                                        |
+| MC Gray    | `#808285` | The logo only                                                                   |
+| Ocean      | `#037AA6` | A gradient stop only: the MC Gradient runs from Navy to Ocean at any angle      |
+| Yellow     | `#FFC801` | Warm accent: tags, rules, stats, with dark text on it                           |
+| Orange     | `#FF6B35` | Warm accent, with dark text on it, never white                                  |
+| Raspberry  | `#D14170` | Warm accent: shapes and rules on dark only                                      |
+| Lime       | `#C6F135` | Warm accent: accents on dark                                                    |
+| Gray 100   | `#DBE1E3` | Dividers, rules and table lines                                                 |
 
-- Mostly White with Ink text. Deep teal is for a few big moments, not every surface.
-- On Deep teal: White text, White buttons with Deep teal text, Bright teal accents. Never Teal on
-  Deep teal.
-- Never show meaning by color alone: pair status colors with a word.
-- Use no other colors. No gradients, except the teal duotone in the photography reference.
-- The web palette is the standard everywhere, print included. For printing, use the CMYK values in
-  [references/graphics.md](references/graphics.md). Never suggest or quote Pantone colors.
-- How much of each: White and neutrals for most of the page, teals for brand surfaces and actions,
-  a little Magenta and Yellow.
+- Navy, Black and the blues carry most of every layout, with White and Warm White for light
+  sections. Use one warm accent per piece, in small doses (a word, a tag, a rule, a stat), never as
+  a large background.
+- On light backgrounds colored text is Teal. On dark: White text, with Cyan or Lime for accents.
+  Never Teal on Navy, White on MC Blue or White on Orange.
+- Raspberry, Orange and Lime are decoration, never status. Show status with a word, and never by
+  color alone.
+- No other colors and no other gradients: only the MC Gradient and the hero overlay in the
+  photography reference. The teal duotone is retired.
+- For print, use the CMYK values and print substitutes in
+  [references/graphics.md](references/graphics.md). They are approximate, so confirm with a printer
+  proof. Never suggest or quote Pantone colors.
 
 ### Type
 
-| Font   | Use it for                                                                                |
-| ------ | ----------------------------------------------------------------------------------------- |
-| Lato   | Everything: body, headings, labels, tables, buttons                                       |
-| Oswald | Only the one big headline: a page hero, a document title, a slide title. Always capitals. |
+| Font   | Use it for                                                                                               |
+| ------ | -------------------------------------------------------------------------------------------------------- |
+| Oswald | Headlines in SemiBold, always capitals, line height 1.0. Eyebrows and subheads. Bold only for big stats. |
+| Lato   | Reading text, line height 1.5, with Lato Bold for emphasis                                               |
 
-- Only Oswald headlines are in capitals. Everything else, buttons and headings included, is in
-  sentence case.
-- Never use Oswald for paragraphs, bullets, tables or anything inside a signed in application.
-- Bold Lato for headings, regular Lato for text. No other fonts. If Lato or Oswald cannot load,
-  fall back to `system-ui, sans-serif`, never to a decorative font.
+- Eyebrows and tags: Oswald Regular, capitals, tracked +300 (0.3em). Subheads: Oswald SemiBold
+  capitals, smaller than the headline.
+- A two-tone headline sets the lead phrase in Black or White and the payoff in Teal on light or
+  Cyan on dark.
+- Never body copy in Oswald or in capitals. Never Oswald inside a signed in application: there,
+  Lato does everything in sentence case.
+- Where Oswald or Lato will not load, such as Office and email, use Aptos Narrow Bold in capitals
+  for headers and Aptos for text. Never Arial. Gotham, Bebas, Arial, Montserrat and Open Sans are
+  retired.
 
 ### Logo
 
-- Use only the files in [assets/logos](assets/logos): `masschallenge-logo-horizontal-color.png`
-  on white or light backgrounds, `-white.png` on Deep teal, dark surfaces and dark photos,
-  `-black.png` for one color printing. The `monogram` files are for small spaces only.
-- Place it once, in a corner, with clear space of half its height all around.
-- Never recolor, stretch, crop, outline, add effects to, redraw or retype it. Never put the full
-  color logo on Deep teal.
+- Use only the files in [assets/logos](assets/logos): the horizontal logo and the MC mark
+  (`monogram`). The vertical logo is the default for most layouts, and local logos are for work
+  tied to one site; both come from MassChallenge Marketing. Never draw or assemble them.
+- The horizontal logo is for headers, footers, sponsor slides and banners. The MC mark is for
+  places where the audience knows us, such as favicons, avatars and compact navigation.
+- Full color only on White or Warm White. White on Navy, Black, Deep Teal, Teal, MC Blue or a photo
+  with enough contrast, never on Cyan, Yellow or Lime. Black for one color print and light
+  backgrounds the full color logo does not suit. On a busy photo, add the hero overlay or a solid
+  block behind it.
+- Clear space on every side equals the height of the M in the MASSCHALLENGE wordmark. At least
+  160px wide on screen (30mm in print) for the horizontal logo, and 16px tall (8mm) for the MC mark.
+- Never recolor, stretch, rotate, outline, add effects to, flip, crop, rearrange, rebuild or retype
+  it, and never type a location next to it. Only MassChallenge Marketing makes lockups.
 - Do not use the Propellant mark in place of the MassChallenge logo: it stands for the design
   system only.
 
 ### Shape and space
 
-- Buttons are pills (fully rounded ends), with no borders, shadows or capitals.
-- Round cards and photos by 12 px (about 3 mm in documents). Logos and charts stay square.
-- Generous space: sections of about 96 px top and bottom on the web, wide margins in documents.
-- Lines of running text stay near 68 characters.
+- On websites and public pages: buttons are fully rounded pills in Oswald capitals; cards and
+  photos have square corners; sections alternate dark and light. See
+  [references/web-and-apps.md](references/web-and-apps.md).
+- In signed in applications: buttons are pills in Lato, sentence case, and cards keep their
+  rounded corners, from the Propellant package.
+- Generous space: when in doubt, add white space. Lines of running text stay near 68 characters.
 
 ### Voice
 
@@ -140,22 +160,25 @@ For Office files and HTML, run the checker and fix what it reports:
 python3 scripts/check_brand.py path/to/output.pptx
 ```
 
-It flags colors outside the palette, fonts other than Lato and Oswald, and em or en dashes. Then
-look at the result (render slides or pages to images where you can) and confirm:
+It flags colors outside the palette (naming the retired Propellant colors and what replaces
+them), fonts other than Lato, Oswald and the Aptos fallback, more than one warm accent, and em or en
+dashes. Then look at the result (render slides or pages to images where you can) and confirm:
 
 - [ ] Started from the Propellant template or stylesheet, not from scratch.
-- [ ] Only palette colors, Lato and Oswald, with Oswald only on the big headline.
-- [ ] The right logo file for the background, once, unaltered.
-- [ ] Sentence case everywhere except Oswald headlines.
+- [ ] Only palette colors, with Navy, Black and the blues carrying the layout and one warm accent.
+- [ ] Oswald capitals for headlines, Lato for reading text.
+- [ ] The right logo file for the background, once, unaltered, with its clear space.
+- [ ] Sentence case for reading text and for everything in a signed in application.
 - [ ] The writing leads with the point and has no em or en dashes.
 - [ ] Alt text, real headings and readable contrast.
 
 ## When the person asks for something off brand
 
 If someone asks for a different look for a MassChallenge piece, such as other colors or fonts,
-explain briefly that Propellant is the MassChallenge standard and offer the closest on brand
-option. If they still want it, do it, and say it is outside the brand guidelines. Co-branded work
-with a partner keeps the MassChallenge logo and rules for our part.
+explain briefly that the brand guide is the MassChallenge standard and offer the closest on brand
+option. If they still want it, do it, and say it is outside the brand guidelines. Work with a
+partner follows the partner lockup rules in [references/graphics.md](references/graphics.md);
+only MassChallenge Marketing makes the lockup itself.
 
 For work that is not for MassChallenge at all, this skill does not apply.
 

@@ -1,8 +1,10 @@
 ---
+import { findColor } from '../../../brand/palette';
+
 type Scene =
   | 'people-first'
   | 'room-to-breathe'
-  | 'teal-panel'
+  | 'solid-block'
   | 'crop-whole'
   | 'logo-calm'
   | 'empty-room'
@@ -33,10 +35,10 @@ const EXAMPLES: Example[] = [
     text: 'A calm area, such as a wall or the sky, where a headline or the logo can sit.',
   },
   {
-    scene: 'teal-panel',
+    scene: 'solid-block',
     isApproved: true,
-    title: 'Words on a Deep teal panel',
-    text: 'When the photo is busy, put the text on a Deep teal band or panel beside or over it.',
+    title: 'Words on a solid block',
+    text: 'When the photo is busy, add the hero overlay or set the text on a Navy, Black or Deep Teal block.',
   },
   {
     scene: 'crop-whole',
@@ -48,13 +50,13 @@ const EXAMPLES: Example[] = [
     scene: 'logo-calm',
     isApproved: true,
     title: 'White logo on a dark, calm part',
-    text: 'The full color logo goes only on white.',
+    text: 'The full color logo goes only on White or Warm White.',
   },
   {
     scene: 'empty-room',
     isApproved: false,
-    title: 'Empty rooms and objects',
-    text: 'Empty offices and objects on desks say little about us.',
+    title: 'Empty rooms and clutter',
+    text: 'Empty offices and cluttered compositions say little about us. Show real work and real people.',
   },
   {
     scene: 'busy-text',
@@ -78,13 +80,13 @@ const EXAMPLES: Example[] = [
     scene: 'filters',
     isApproved: false,
     title: 'Filters and effects',
-    text: 'No filters, heavy vignettes, color casts or phone app effects.',
+    text: 'No artistic filters, black and white, heavy vignettes or color casts. Edit only exposure and contrast.',
   },
   {
     scene: 'cliches',
     isApproved: false,
-    title: 'Stock clichés',
-    text: 'No handshakes, light bulbs, puzzle pieces or chess pieces.',
+    title: 'Generic stock',
+    text: 'No handshakes, posed smiles, light bulbs or abstract tech with no people.',
   },
 ];
 
@@ -96,7 +98,7 @@ const FLOOR = 'var(--teal-150)';
 const PERSON_ONE = 'var(--teal-800)';
 const PERSON_TWO = 'var(--gray-500)';
 const PERSON_THREE = 'var(--teal-600)';
-const DEEP = 'var(--teal-900)';
+const DEEP = findColor('navy').hex;
 const LIGHT = 'var(--gray-0)';
 
 const room = (inside: string) =>
@@ -117,7 +119,7 @@ const SCENES: Record<Scene, string> = {
     `<rect x="54" y="20" width="58" height="36" rx="2" fill="${LIGHT}"/><path d="M62 32 h24 M62 40 h36 M62 48 h18" stroke="${PERSON_TWO}" stroke-width="2"/>${person(40, 74, 1, PERSON_ONE)}${person(122, 74, 1, PERSON_TWO)}${person(84, 86, 0.9, PERSON_THREE)}`,
   ),
   'room-to-breathe': `<rect width="160" height="100" fill="var(--teal-150)"/>${textBars(12, 14, DEEP)}<rect y="70" width="160" height="30" fill="${FLOOR}"/>${person(108, 86, 0.95, PERSON_ONE)}${person(136, 86, 0.95, PERSON_THREE)}`,
-  'teal-panel': `<rect width="160" height="100" fill="${WALL}"/>${busyPattern}<rect x="96" width="64" height="100" fill="${DEEP}"/>${textBars(100, 38, LIGHT)}`,
+  'solid-block': `<rect width="160" height="100" fill="${WALL}"/>${busyPattern}<rect x="96" width="64" height="100" fill="${DEEP}"/>${textBars(100, 38, LIGHT)}`,
   'crop-whole': room(
     `${person(80, 92, 1.9, PERSON_ONE)}<rect x="40" y="6" width="80" height="90" fill="none" stroke="${DEEP}" stroke-width="1.5" stroke-dasharray="4 3"/>`,
   ),

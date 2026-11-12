@@ -1,0 +1,41 @@
+---
+import { LOWER_THIRD, VIDEO_GUIDANCE } from '../../../brand/imagery';
+import { findColor } from '../../../brand/palette';
+
+const block = findColor(LOWER_THIRD.blockId).hex;
+const rule = findColor(LOWER_THIRD.ruleId).hex;
+const white = findColor('white').hex;
+---
+
+<div class="grid gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+  <figure class="m-0 flex flex-col gap-2">
+    <div
+      class="relative aspect-video overflow-hidden"
+      style="background: linear-gradient(160deg, #E7C7A4 0%, #A9785A 55%, #4E3B33 100%)"
+      role="img"
+      aria-label={`A lower third: a ${findColor(LOWER_THIRD.blockId).name} block with a ${findColor(LOWER_THIRD.ruleId).name} rule, the name in ${LOWER_THIRD.nameStyle} and the title in ${LOWER_THIRD.titleStyle}, bottom left`}
+    >
+      <div class="absolute bottom-[10%] left-[10%] flex flex-col gap-0.5 px-3 py-2" style={`background: ${block}; border-left: 3px solid ${rule}`}>
+        <span class="font-[family-name:var(--type-family-brand)] text-[length:var(--type-callout-size)] font-semibold uppercase leading-none" style={`color: ${white}`}>
+          Name Surname
+        </span>
+        <span class="text-[length:var(--type-caption-size)]" style={`color: ${white}`}>Title, Company</span>
+      </div>
+    </div>
+    <figcaption class="text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">
+      A lower third, shown as a diagram. {LOWER_THIRD.position}.
+    </figcaption>
+  </figure>
+  <div class="grid gap-4 sm:grid-cols-2">
+    {
+      VIDEO_GUIDANCE.map((group) => (
+        <article class="rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5">
+          <h4 class="m-0 mb-2 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">{group.title}</h4>
+          <ul class="m-0 flex flex-col gap-1 pl-5 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label)]">
+            {group.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </article>
+      ))
+    }
+  </div>
+</div>

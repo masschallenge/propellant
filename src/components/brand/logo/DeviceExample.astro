@@ -1,13 +1,18 @@
 ---
 import {
+  ENDORSEMENT_EXAMPLE,
+  HEXAGON_FRAME,
   ICON_SURFACES,
+  PARTNER_LOCKUPS,
   PATTERN_COVERS,
-  PROGRAM_LOCKUPS,
   STAT_CALLOUTS,
+  SUB_BRAND_LOCKUPS,
   TIMELINE_LINE_HEX,
+  hexagonPoints,
   timelineSteps,
 } from '../../../brand/device-examples';
 import type { GraphicDeviceId } from '../../../brand/graphic-devices';
+import { heroOverlayCss } from '../../../brand/imagery';
 import { findColor } from '../../../brand/palette';
 import { trianglePattern } from '../../../studio/patterns';
 import { LOGO_FILES } from './logoFiles';
@@ -62,6 +67,17 @@ const ICONS = [
   },
 ];
 
+const OVERLAY_SIDES = ['left', 'bottom'] as const;
+const WARM_STAND_IN = 'linear-gradient(160deg, #F2C9A0 0%, #C98B5A 45%, #6B4A3A 100%)';
+const HEXAGON_NODES = [
+  { x: 52, y: 52, radius: 22 },
+  { x: 312, y: 44, radius: 18 },
+  { x: 40, y: 186, radius: 16 },
+  { x: 318, y: 190, radius: 24 },
+  { x: 268, y: 116, radius: 12 },
+  { x: 96, y: 128, radius: 10 },
+];
+
 const FRAME =
   'flex aspect-[3/2] items-center justify-center overflow-hidden rounded-[var(--corner-lg)] border border-solid border-[var(--separator)]';
 const LIST = 'm-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2';
@@ -98,7 +114,7 @@ const LIST = 'm-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2';
                 text-anchor="middle"
                 dominant-baseline="central"
                 font-size="84"
-                font-weight="500"
+                font-weight="600"
                 fill={findColor(cover.labelColorId).hex}
                 style="font-family: var(--type-family-brand)"
               >
@@ -109,34 +125,104 @@ const LIST = 'm-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2';
         </li>
       ))}
     </ul>
-  ) : deviceId === 'program-lockup' ? (
+  ) : deviceId === 'hero-overlay' ? (
     <ul class={LIST}>
-      {PROGRAM_LOCKUPS.map((lockup) => (
+      {OVERLAY_SIDES.map((side) => (
         <li class="m-0">
           <div
-            class={`${FRAME} gap-4 p-6`}
-            style={`background: ${findColor(lockup.surfaceColorId).hex}`}
+            class={`${FRAME} items-end justify-start p-6`}
+            style={`background: ${heroOverlayCss(side)}, ${WARM_STAND_IN}`}
+            role="img"
+            aria-label={`A diagram of the hero overlay over a warm photo, dark on the ${side} where the words sit and clear toward the subject`}
           >
-            <img
-              src={LOGO_FILES.monogram[lockup.monogramTreatment]}
-              alt="MC"
-              class="block h-10 w-auto"
-            />
-            <span
-              aria-hidden="true"
-              class="block h-12 w-0.5"
-              style={`background: ${findColor(lockup.dividerColorId).hex}`}
-            />
-            <span
-              class="font-[family-name:var(--type-family-brand)] text-[length:var(--type-title1-size)] font-medium uppercase leading-none"
-              style={`color: ${findColor(lockup.nameColorId).hex}`}
-            >
-              {lockup.name}
+            <span class="font-[family-name:var(--type-family-brand)] text-[length:var(--type-title1-size)] font-semibold uppercase leading-none" style={`color: ${findColor('white').hex}`} aria-hidden="true">
+              Headline
             </span>
           </div>
         </li>
       ))}
     </ul>
+  ) : deviceId === 'hexagon-frame' ? (
+    <div class={FRAME} style={`background: ${findColor(HEXAGON_FRAME.surfaceColorId).hex}`}>
+      <svg viewBox="0 0 360 240" role="img" aria-label="A diagram of a circular photo crop inside a network of MC Blue hexagons joined by light tint lines" class="block h-full w-full">
+        {HEXAGON_NODES.map((node) => (
+          <line x1="180" y1="120" x2={node.x} y2={node.y} stroke={findColor(HEXAGON_FRAME.lineColorId).hex} stroke-width="2" />
+        ))}
+        {HEXAGON_NODES.map((node) => (
+          <polygon points={hexagonPoints(node.x, node.y, node.radius)} fill={findColor(HEXAGON_FRAME.hexagonColorId).hex} />
+        ))}
+        <circle cx="180" cy="120" r="78" fill="none" stroke={findColor(HEXAGON_FRAME.hexagonColorId).hex} stroke-width="4" />
+        <circle cx="180" cy="120" r="70" fill="url(#hexagon-photo)" />
+        <defs>
+          <linearGradient id="hexagon-photo" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#E7C7A4" />
+            <stop offset="1" stop-color="#7A5444" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  ) : deviceId === 'partner-lockup' ? (
+    <ul class={LIST}>
+      {PARTNER_LOCKUPS.map((lockup) => (
+        <li class="m-0">
+          <div
+            class={`${FRAME} gap-5 p-6`}
+            style={`background: ${findColor(lockup.surfaceColorId).hex}; color: ${findColor(lockup.textColorId).hex}`}
+            role="img"
+            aria-label="A diagram of the corporate partner lockup: the partner logo first, a thin vertical rule, then the MassChallenge vertical logo"
+          >
+            <span class="flex h-20 w-24 items-center justify-center border border-dashed border-current p-2 text-center text-[length:var(--type-caption-size)] font-semibold" aria-hidden="true">
+              Partner logo
+            </span>
+            <span aria-hidden="true" class="block h-24 w-px" style={`background: ${findColor(lockup.ruleColorId).hex}`} />
+            <span class="flex h-20 w-24 items-center justify-center border border-dashed border-current p-2 text-center text-[length:var(--type-caption-size)] font-semibold" aria-hidden="true">
+              MassChallenge vertical logo
+            </span>
+          </div>
+        </li>
+      ))}
+    </ul>
+  ) : deviceId === 'sub-brand-lockup' ? (
+    <ul class={LIST}>
+      {SUB_BRAND_LOCKUPS.map((lockup) => (
+        <li class="m-0">
+          <div
+            class={`${FRAME} gap-4 p-6`}
+            style={`background: ${findColor(lockup.surfaceColorId).hex}`}
+            role="img"
+            aria-label={`A diagram of the sub-brand lockup structure on ${findColor(lockup.surfaceColorId).name}: the MC mark, a ${findColor(lockup.ruleColorId).name} rule, the program name and the location`}
+          >
+            <img src={LOGO_FILES.monogram[lockup.monogramTreatment]} alt="" class="block h-10 w-auto" />
+            <span aria-hidden="true" class="block h-12 w-0.5" style={`background: ${findColor(lockup.ruleColorId).hex}`} />
+            <span class="flex flex-col gap-1" style={`color: ${findColor(lockup.textColorId).hex}`} aria-hidden="true">
+              <span class="font-[family-name:var(--type-family-brand)] text-[length:var(--type-title2-size)] font-semibold uppercase leading-none">
+                {lockup.name}
+              </span>
+              <span class="font-[family-name:var(--type-family-brand)] text-[length:var(--type-caption-size)] uppercase leading-none tracking-[0.3em]">
+                {lockup.location}
+              </span>
+            </span>
+          </div>
+        </li>
+      ))}
+    </ul>
+  ) : deviceId === 'partner-endorsement' ? (
+    <div
+      class={`${FRAME} justify-start p-8`}
+      style={`background: ${findColor(ENDORSEMENT_EXAMPLE.surfaceColorId).hex}; color: ${findColor(ENDORSEMENT_EXAMPLE.textColorId).hex}`}
+      role="img"
+      aria-label="A diagram of the partner initiative endorsement: the initiative name above a thin rule, with WITH MASSCHALLENGE below, left aligned"
+    >
+      <span class="flex flex-col items-start gap-2" aria-hidden="true">
+        <span class="font-[family-name:var(--type-family-brand)] text-[length:var(--type-title1-size)] font-semibold uppercase leading-none">
+          {ENDORSEMENT_EXAMPLE.initiative}
+        </span>
+        <span class="block h-px w-full bg-current" />
+        <span class="font-[family-name:var(--type-family-brand)] text-[length:var(--type-caption-size)] uppercase tracking-[0.3em]">
+          {ENDORSEMENT_EXAMPLE.endorsement}
+        </span>
+      </span>
+    </div>
   ) : deviceId === 'stat-callout' ? (
     <ul class={LIST}>
       {STAT_CALLOUTS.map((stat) => (
@@ -146,11 +232,14 @@ const LIST = 'm-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2';
             style={`background: ${findColor(stat.surfaceColorId).hex}`}
           >
             <span
-              class="font-[family-name:var(--type-family-brand)] text-[length:var(--type-large-title-size)] font-medium uppercase leading-none"
+              class="font-[family-name:var(--type-family-brand)] text-[length:var(--type-large-title-size)] font-bold uppercase leading-none"
               style={`color: ${findColor(stat.numberColorId).hex}; font-size: 4.5rem`}
             >
               {stat.value}
             </span>
+            {stat.accentRuleColorId ? (
+              <span aria-hidden="true" class="block h-1 w-12" style={`background: ${findColor(stat.accentRuleColorId).hex}`} />
+            ) : null}
             <span
               class="text-[length:var(--type-headline-size)] font-bold tracking-[0.04em]"
               style={`color: ${findColor(stat.labelColorId).hex}`}
@@ -190,7 +279,7 @@ const LIST = 'm-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2';
               cy={TIMELINE_HEIGHT / 2}
               r="11"
               fill={step.hex}
-              stroke={findColor('ink').hex}
+              stroke={findColor('black').hex}
               stroke-width="1.5"
             />
             <text
@@ -199,7 +288,7 @@ const LIST = 'm-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2';
               text-anchor="middle"
               font-size="16"
               font-weight="700"
-              fill={findColor('ink').hex}
+              fill={findColor('black').hex}
               style="font-family: var(--type-family)"
             >
               {step.name}
@@ -236,7 +325,7 @@ const LIST = 'm-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2';
                   </svg>
                   <span
                     class="text-[length:var(--type-callout-size)] font-semibold"
-                    style={`color: ${findColor(surface.surfaceColorId === 'white' ? 'ink' : 'white').hex}`}
+                    style={`color: ${findColor(surface.labelColorId).hex}`}
                   >
                     {icon.name}
                   </span>

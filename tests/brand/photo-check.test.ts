@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import {
-  INK,
+  BLACK,
   PHOTO_SHAPES,
   SAFE_ZONE_INSET,
   TEXT_AREAS,
-  applyDuotone,
-  duotonePixel,
+  TEXT_SIDES,
+  applyOverlayFor,
   betterText,
   fitBox,
   formatRatio,
@@ -70,11 +70,11 @@ describe('reading contrast from pixels', () => {
     expect(rgbToHex(4, 68, 81)).toBe('#044451');
   });
 
-  it('measures a dark area against white and Ink', () => {
-    const reading = readArea(solid(4, 68, 81));
-    expect(reading.white.typical).toBeCloseTo(10.5, 0);
+  it('measures a dark area against White and Black', () => {
+    const reading = readArea(solid(16, 38, 63));
+    expect(reading.white.typical).toBeCloseTo(15.3, 0);
     expect(reading.white.verdict).toBe('any');
-    expect(reading.ink.verdict).toBe('never');
+    expect(reading.black.verdict).toBe('never');
     expect(betterText(reading)).toBe('white');
     expect(logoTreatmentFor(reading)).toBe('white');
     expect(reading.sampleCount).toBe(10);
@@ -88,11 +88,11 @@ describe('reading contrast from pixels', () => {
     expect(reading.white.verdict).toBe('never');
   });
 
-  it('picks Ink and the black logo on a light area', () => {
-    const reading = readArea(solid(243, 251, 252));
-    expect(betterText(reading)).toBe('ink');
+  it('picks Black and the black logo on a light area', () => {
+    const reading = readArea(solid(248, 248, 245));
+    expect(betterText(reading)).toBe('black');
     expect(logoTreatmentFor(reading)).toBe('black');
-    expect(INK).toBe('#1E282B');
+    expect(BLACK).toBe('#222222');
   });
 
   it('refuses an empty area', () => {
@@ -107,16 +107,19 @@ describe('reading contrast from pixels', () => {
   });
 });
 
-describe('the brand duotone', () => {
-  it('maps black to Deep teal and white to Pale teal', () => {
-    expect(duotonePixel(0, 0, 0)).toEqual([4, 68, 81]);
-    expect(duotonePixel(255, 255, 255)).toEqual([15, 172, 189]);
+describe('the hero overlay in the photo check', () => {
+  it('runs the overlay toward the subject, away from the words', () => {
+    expect(TEXT_SIDES).toEqual({ top: 'top', bottom: 'bottom' });
   });
 
-  it('changes pixels in place and keeps their transparency', () => {
-    const pixels = new Uint8ClampedArray([0, 0, 0, 128]);
-    applyDuotone(pixels);
-    expect(Array.from(pixels)).toEqual([4, 68, 81, 128]);
+  it('darkens the text side more than the subject side and keeps transparency', () => {
+    const white = [255, 255, 255, 128];
+    const pixels = new Uint8ClampedArray([...white, ...white]);
+    applyOverlayFor(pixels, 1, 2, 'bottom');
+    const brightness = (offset: number) => pixels[offset] + pixels[offset + 1] + pixels[offset + 2];
+    expect(pixels[3]).toBe(128);
+    expect(pixels[7]).toBe(128);
+    expect(brightness(4)).toBeLessThan(brightness(0));
   });
 });
 
@@ -124,7 +127,7 @@ describe('transparent photo pixels', () => {
   it('reads a fully transparent pixel as the white the preview shows, not black', () => {
     const reading = readArea([0, 0, 0, 0]);
     expect(reading.white.weakest).toBeCloseTo(1);
-    expect(reading.ink.weakest).toBeGreaterThan(10);
+    expect(reading.black.weakest).toBeGreaterThan(10);
   });
 
   it('blends a half transparent pixel with the backing', () => {

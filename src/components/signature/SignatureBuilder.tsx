@@ -236,8 +236,8 @@ const SignatureBuilder = () => {
             </li>
             <li>
               The logo loads from {SITE_ORIGIN.replace('https://', '')}, sits on its own white tile
-              with clear space of half its height, and stays on white even when a mail app turns
-              dark.
+              with clear space the height of the M in the wordmark (half its height for the MC
+              mark), and stays on white even when a mail app turns dark.
             </li>
             <li>
               We fix the spelling of MassChallenge, swap long dashes for commas and suggest sentence

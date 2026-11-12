@@ -1,7 +1,15 @@
 import { BRAND_COLORS, findColor, type BrandColor } from '../brand/palette';
-import { contrastRatio, hexToRgb, isDark, relativeLuminance } from '../brand/contrast';
+import { contrastRatio, hexToRgb, relativeLuminance } from '../brand/contrast';
+import { warmAccentsIn } from '../brand/color-balance';
+import {
+  FULL_COLOR_LOGO_BACKGROUND_IDS,
+  WHITE_LOGO_BACKGROUND_IDS,
+  clearSpaceFor,
+  findLockup,
+  minimumLabel,
+} from '../brand/logo-usage';
 import { footprintBounds } from './footprint';
-import { LOGO_GRAY, textReservation } from './colorRules';
+import { LOGO_GRAY, onDarkOnlyReason, shapeNeedsDark, textReservation } from './colorRules';
 import { PATTERN_NAMES, patternColors, type PatternId } from './patterns';
 import type { PostFormat } from './formats';
 import {
@@ -13,6 +21,7 @@ import {
   type LogoTreatment,
   type Scene,
   type SceneElement,
+  type ShapeElement,
   type TextElement,
 } from './scene';
 import { excerpt, isAllCaps, toSentenceCase } from './text';
@@ -94,12 +103,15 @@ export const blendOver = (top: string, bottom: string, opacity: number): string 
   ]);
 };
 
-const translucentColor = (color: BrandColor, opacity: number, beneath: string): BrandColor => ({
-  ...color,
-  id: `${color.id}-at-${Math.round(opacity * 100)}`,
-  name: `${color.name} at ${Math.round(opacity * 100)}%`,
-  hex: blendOver(color.hex, beneath, opacity),
-});
+const translucentColor = (color: BrandColor, opacity: number, beneath: string): BrandColor =>
+  color.hex.toLowerCase() === beneath.toLowerCase()
+    ? color
+    : {
+        ...color,
+        id: `${color.id}-at-${Math.round(opacity * 100)}`,
+        name: `${color.name} at ${Math.round(opacity * 100)}%`,
+        hex: blendOver(color.hex, beneath, opacity),
+      };
 
 const sceneBackground = (scene: Scene): Backdrop =>
   scene.pattern
@@ -170,6 +182,9 @@ const samplePoints = (element: SceneElement) =>
 
 const backdropColors = (backdrop: Backdrop): BrandColor[] =>
   backdrop.kind === 'color' ? [backdrop.color] : backdrop.kind === 'photo' ? [] : backdrop.colors;
+
+export const backdropColorIds = (backdrop: Backdrop): string[] | null =>
+  backdrop.kind === 'photo' ? null : backdropColors(backdrop).map((color) => color.id);
 
 const isSameBackdrop = (first: Backdrop, second: Backdrop): boolean => {
   if (first.kind !== second.kind || first.elementId !== second.elementId) return false;
@@ -275,9 +290,10 @@ export const textColorOptions = (
 ): TextColorOption[] => {
   const required = requiredContrast(roleId, sizeId);
   const faded = opacity < 1 ? ` at ${Math.round(opacity * 100)}% opacity` : '';
+  const backdropIds = backdropColorIds(backdrop);
   return BRAND_COLORS.map((color) => {
     const ratio = backdropRatio(color.hex, backdrop, samples, opacity);
-    const reservation = textReservation(color.id);
+    const reservation = textReservation(color.id, backdropIds);
     if (reservation) return { color, ratio, allowed: false, reason: reservation };
     if (ratio !== null && ratio < required) {
       const measured =
@@ -366,8 +382,8 @@ export const enforceTextColors = (
 };
 
 export const MINIMUM_LOGO_PIXELS: Record<LogoLockup, number> = {
-  horizontal: 24,
-  monogram: 16,
+  horizontal: findLockup('horizontal').minimumHeight,
+  monogram: findLockup('monogram').minimumHeight,
 };
 
 export const MINIMUM_GRAPHIC_CONTRAST = 3;
@@ -389,11 +405,16 @@ export const logoTreatment = (backdrop: Backdrop): LogoTreatment => {
       ) ?? 'black'
     );
   }
-  if (isDark(backdrop.color.hex)) return 'white';
-  return contrastRatio(LOGO_GRAY, backdrop.color.hex) >= MINIMUM_GRAPHIC_CONTRAST
-    ? 'color'
+  if (FULL_COLOR_LOGO_BACKGROUND_IDS.includes(backdrop.color.id)) return 'color';
+  if (WHITE_LOGO_BACKGROUND_IDS.includes(backdrop.color.id)) return 'white';
+  return contrastRatio(TREATMENT_HEXES.white, backdrop.color.hex) >= MINIMUM_GRAPHIC_CONTRAST
+    ? 'white'
     : 'black';
 };
+
+const isApprovedLogoBackground = (backdrop: Backdrop): boolean =>
+  backdrop.kind === 'color' &&
+  [...FULL_COLOR_LOGO_BACKGROUND_IDS, ...WHITE_LOGO_BACKGROUND_IDS].includes(backdrop.color.id);
 
 export const TREATMENT_NAMES: Record<LogoTreatment, string> = {
   color: 'Full color',
@@ -404,7 +425,8 @@ export const TREATMENT_NAMES: Record<LogoTreatment, string> = {
 export const logoMinimumHeight = (lockup: LogoLockup, format: PostFormat): number =>
   MINIMUM_LOGO_PIXELS[lockup] * canvasScale(format);
 
-export const logoClearSpace = (height: number): number => height / 2;
+export const logoClearSpace = (lockup: LogoLockup, height: number): number =>
+  clearSpaceFor(lockup, height);
 
 export const logoMaximumHeight = (lockup: LogoLockup, format: PostFormat): number =>
   Math.min(format.width / (LOGO_ASPECT[lockup] + 1), format.height / 2);
@@ -415,7 +437,7 @@ export const constrainLogo = (element: LogoElement, format: PostFormat): LogoEle
     logoMaximumHeight(element.lockup, format),
   );
   const width = height * LOGO_ASPECT[element.lockup];
-  const clear = logoClearSpace(height);
+  const clear = logoClearSpace(element.lockup, height);
   const left = Math.min(Math.max(element.left, clear), format.width - clear - width);
   const top = Math.min(Math.max(element.top, clear), format.height - clear - height);
   return { ...element, height, width, left, top, rotation: 0, opacity: 1 };
@@ -452,7 +474,10 @@ const textIssues = (scene: Scene, element: TextElement, samples: SampleMap): Bra
       message: `${name} uses ${findSizeStep(element.size).name}, which ${role.fontName} does not use.`,
     });
   }
-  const reservation = textReservation(element.colorId);
+  const reservation = textReservation(
+    element.colorId,
+    backdropColorIds(backdropFor(scene, element.id)),
+  );
   if (reservation) {
     issues.push({ elementId: element.id, message: `${name}: ${reservation}` });
   } else {
@@ -491,14 +516,14 @@ const logoIssues = (scene: Scene, element: LogoElement, samples: SampleMap): Bra
   const format = sceneFormat(scene);
   const issues: BrandIssue[] = [];
   const minimum = logoMinimumHeight(element.lockup, format);
-  const label = element.lockup === 'horizontal' ? 'The horizontal logo' : 'The monogram';
+  const label = element.lockup === 'horizontal' ? 'The horizontal logo' : 'The MC mark';
   if (element.height < minimum - EDGE_TOLERANCE) {
     issues.push({
       elementId: element.id,
-      message: `${label} is below its minimum size of ${MINIMUM_LOGO_PIXELS[element.lockup]}px.`,
+      message: `${label} is below its minimum size of ${minimumLabel(findLockup(element.lockup))}.`,
     });
   }
-  const clear = logoClearSpace(element.height);
+  const clear = logoClearSpace(element.lockup, element.height);
   if (
     element.left < clear - EDGE_TOLERANCE ||
     element.top < clear - EDGE_TOLERANCE ||
@@ -507,7 +532,10 @@ const logoIssues = (scene: Scene, element: LogoElement, samples: SampleMap): Bra
   ) {
     issues.push({
       elementId: element.id,
-      message: `${label} is inside its clear space: keep half its height from the edge.`,
+      message:
+        element.lockup === 'horizontal'
+          ? `${label} is inside its clear space: keep the height of the M in the wordmark from the edge.`
+          : `${label} is inside its clear space: keep half its height from the edge.`,
     });
   }
   if (element.rotation !== 0 || element.opacity !== 1) {
@@ -523,7 +551,7 @@ const logoIssues = (scene: Scene, element: LogoElement, samples: SampleMap): Bra
         message: `The photo behind the logo is too light for the white logo (${formatRatio(ratio)}).`,
       });
     }
-  } else if (backdrop.kind !== 'photo') {
+  } else if (backdrop.kind !== 'photo' && !isApprovedLogoBackground(backdrop)) {
     const treatment = logoTreatment(backdrop);
     const ratio = lowestRatio(TREATMENT_HEXES[treatment], backdropColors(backdrop));
     if (ratio < MINIMUM_GRAPHIC_CONTRAST) {
@@ -538,13 +566,41 @@ const logoIssues = (scene: Scene, element: LogoElement, samples: SampleMap): Bra
   return issues;
 };
 
-export const checkScene = (scene: Scene, samples: SampleMap = {}): BrandIssue[] =>
-  scene.elements.flatMap((element) => {
+const shapeIssues = (scene: Scene, element: ShapeElement): BrandIssue[] =>
+  shapeNeedsDark(element.colorId, backdropColorIds(backdropFor(scene, element.id)))
+    ? [{ elementId: element.id, message: `A shape: ${onDarkOnlyReason(element.colorId)}` }]
+    : [];
+
+export const sceneColorIds = (scene: Scene): string[] => [
+  scene.backgroundId,
+  ...scene.elements.flatMap((element) =>
+    !element.hidden && (element.kind === 'text' || element.kind === 'shape')
+      ? [element.colorId]
+      : [],
+  ),
+];
+
+const accentIssues = (scene: Scene): BrandIssue[] => {
+  const accents = warmAccentsIn(sceneColorIds(scene));
+  if (accents.length < 2) return [];
+  return [
+    {
+      elementId: null,
+      message: `Use one warm accent per piece: ${listNames(accents.map((color) => color.name))} are all in this piece.`,
+    },
+  ];
+};
+
+export const checkScene = (scene: Scene, samples: SampleMap = {}): BrandIssue[] => [
+  ...scene.elements.flatMap((element) => {
     if (element.hidden) return [];
     if (element.kind === 'text') return textIssues(scene, element, samples);
     if (element.kind === 'logo') return logoIssues(scene, element, samples);
+    if (element.kind === 'shape') return shapeIssues(scene, element);
     return [];
-  });
+  }),
+  ...accentIssues(scene),
+];
 
 export const needsMeasuring = (scene: Scene, element: SceneElement): boolean =>
   !element.hidden &&

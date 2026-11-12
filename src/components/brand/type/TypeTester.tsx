@@ -117,7 +117,7 @@ const TypeTester = ({ tokens, shrinkingStyles }: TypeTesterProps) => {
           aria-live="polite"
         >
           {isOswald
-            ? 'Oswald is always set in capitals, so the preview turns your words into capitals. Use it only for display headlines on public pages, never inside signed in applications.'
+            ? 'Oswald is always set in capitals, so the preview turns your words into capitals. Use it for headlines in brand work, never inside the signed in product.'
             : `${style.name} in Propellant Sans, the font for all interface and body text.`}
           {shrinkingStyles.includes(styleId)
             ? ` ${style.name} gets smaller on screens under 640px wide.`

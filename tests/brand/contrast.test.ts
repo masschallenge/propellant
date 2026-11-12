@@ -43,7 +43,7 @@ describe('palette', () => {
   });
 
   it('finds colors by id and refuses unknown ones', () => {
-    expect(findColor('teal').hex).toBe('#065E6F');
+    expect(findColor('teal').hex).toBe('#00708E');
     expect(() => findColor('purple')).toThrow();
   });
 });

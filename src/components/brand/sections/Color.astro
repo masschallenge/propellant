@@ -2,7 +2,7 @@
 import SectionHeading from '../SectionHeading.astro';
 import SubHeading from '../logo/SubHeading.astro';
 import ColorCards from '../color/ColorCards';
-import RecipeBar from '../color/RecipeBar.astro';
+import ColorBalance from '../color/ColorBalance.astro';
 import Pairings from '../color/Pairings.astro';
 import { BRAND_COLORS } from '../../../brand/palette';
 ---
@@ -11,7 +11,7 @@ import { BRAND_COLORS } from '../../../brand/palette';
   <SectionHeading
     eyebrow="Color"
     title="Color"
-    lead={`These ${BRAND_COLORS.length} colors are the palette. Click any value to copy it. In interfaces, use the token rather than the hex value.`}
+    lead={`These ${BRAND_COLORS.length} colors are the MassChallenge palette, from the brand guide by MassChallenge Marketing. Click any value to copy it.`}
   />
 
   <ColorCards client:visible />
@@ -19,22 +19,29 @@ import { BRAND_COLORS } from '../../../brand/palette';
   <p
     class="m-0 mt-4 max-w-[68ch] text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]"
   >
-    Contrast is shown with white and with Ink as a ratio, then graded: AA means any text, AA Large
-    means text 18pt or larger and graphics only, Fail means neither. The web palette is the standard
-    everywhere: web, Office, Google, print, the studio and the Claude skill.
+    Contrast is shown with White and with Black as a ratio, then graded: AA means any text, AA
+    Large means text 18pt or larger and graphics only, Fail means neither. The brand guide sets the
+    palette, and Propellant applies it to websites, Office, print, the studio and the Claude skill.
+  </p>
+  <p
+    class="m-0 mt-3 max-w-[68ch] text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]"
+  >
+    Status is separate. The signed in product keeps its own interface colors, and its error,
+    warning and success colors only ever signal status. Raspberry, Orange and Lime are decorative
+    brand accents and never signal status.
   </p>
 
   <SubHeading
-    id="color-recipe"
-    title="How much of each"
-    lead="The standard mix for every page, slide and post: White and the neutrals for most of it, the teals for brand surfaces and things you can act on, and a little Magenta and Yellow."
+    id="color-balance"
+    title="How to balance it"
+    lead="There is no fixed share of each color. Navy, Black and the blues carry most of every layout, and one warm accent adds a small dose of warmth."
   />
-  <RecipeBar />
+  <ColorBalance />
 
   <SubHeading
     id="color-pairings"
     title="Pairings that work"
-    lead="Each card is a background. The words on it show which colors can sit on top and how big the text needs to be, worked out from the contrast ratio of each pair. Contrast is the floor: magenta still only means something is wrong."
+    lead="The approved pairings from the brand guide, with their contrast ratios. On light backgrounds colored text is always Teal, and Cyan only ever sits on Navy, Black or Deep Teal."
   />
   <Pairings />
 </section>

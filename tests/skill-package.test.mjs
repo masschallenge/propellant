@@ -70,6 +70,14 @@ describe('the skill as the default for MassChallenge work', () => {
     expect(webReference).not.toMatch(/propellant-web#v\d/);
   });
 
+  it('describes website headings as the stylesheet sets them, in Oswald SemiBold capitals', () => {
+    ['Heading 2', 'Heading 3 (subhead)', 'Heading 4 (small subhead)'].forEach((heading) => {
+      const row = webReference.split('\n').find((line) => line.startsWith(`| ${heading} `));
+      expect(row).toMatch(/\| Oswald, capitals \| 600 /);
+    });
+    expect(webReference).toContain('Section headings, Oswald SemiBold in capitals');
+  });
+
   it('tells engineers how to work in an existing codebase', () => {
     expect(webReference).toContain('## Working in an existing codebase');
     expect(webReference).toMatch(/Never hardcode hex colors/);
@@ -132,6 +140,10 @@ describe('artifactStylesheet', () => {
     expect(stylesheet).toContain('--tint: #065e6f;');
   });
 
+  it('loads every Oswald weight the brand type uses', () => {
+    expect(stylesheet).toContain('family=Oswald:wght@400;500;600;700&');
+  });
+
   it('marks its own start and end so the brand checker can skip it', () => {
     expect(stylesheet.startsWith('/* propellant-website.css start */')).toBe(true);
     expect(stylesheet.trim().endsWith('/* propellant-website.css end */')).toBe(true);
@@ -168,19 +180,46 @@ describe('the skill references', () => {
     expect(messaging).toContain('90K');
   });
 
-  it('lists the same print CMYK values as the guide', () => {
+  it('lists the same print CMYK values and substitutes as the guide', () => {
     const graphics = references['graphics.md'];
-    [...colors.brandColors, ...colors.supportingColors, ...colors.logoColors].forEach((color) => {
-      expect(graphics).toMatch(new RegExp(`\`${color.hex}\`\\s*\\|\\s*${color.cmyk.join(' ')}\\s`));
+    [...colors.brandColors, ...colors.supportingColors, ...colors.logoColors]
+      .filter((color) => color.cmyk)
+      .forEach((color) => {
+        expect(graphics).toMatch(
+          new RegExp(`\`${color.hex}\`\\s*\\|\\s*${color.cmyk.join(' ')}\\s`),
+        );
+      });
+    colors.brandColors
+      .filter((color) => color.printSubstitute)
+      .forEach((color) => expect(graphics).toContain(`\`${color.printSubstitute}\``));
+    expect(graphics).toContain('approximate, so confirm with a printer proof');
+    expect(graphics).not.toMatch(/pantone|artifex/i);
+  });
+
+  it('retires the teal duotone and the old brand colors everywhere in the skill', () => {
+    const editable = Object.entries(references)
+      .filter(([name]) => !['voice.md', 'messaging.md'].includes(name))
+      .map(([, reference]) => reference);
+    [skill, ...editable].forEach((text) => {
+      ['#044451', '#065E6F', '#0FACBD', '#D9F6FA', '#F3FBFC', '#1E282B', '#BF0261'].forEach(
+        (retired) => expect(text).not.toContain(retired),
+      );
+      expect(text).not.toMatch(/Bright teal|Pale teal|Mist|\bInk\b|Magenta/);
     });
-    expect(graphics).not.toMatch(/pantone/i);
+    expect(skill).toMatch(/The teal duotone is retired/);
+    expect(references['photography.md']).toMatch(/hero overlay/);
+  });
+
+  it('falls back to Aptos and never Arial', () => {
+    expect(skill).toMatch(/Aptos Narrow Bold/);
+    expect(skill).toMatch(/Never Arial/);
   });
 
   it('tells Claude never to suggest Pantone', () => {
     expect(skill).toContain('Never suggest or quote Pantone colors.');
   });
 
-  it('uses the settled Mist and Magenta values', () => {
+  it('never quotes the interface gray or status magenta as brand colors', () => {
     [skill, ...Object.values(references)].forEach((text) => {
       expect(text).not.toContain('#F3F6F7');
       expect(text).not.toContain('#A30253');

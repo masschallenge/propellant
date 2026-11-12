@@ -7,14 +7,20 @@ import Marks from '../logo/Marks.astro';
 import GraphicDevices from '../logo/GraphicDevices.astro';
 import SubHeading from '../logo/SubHeading.astro';
 import { LOGO_FILES } from '../logo/logoFiles';
-import { LOGO_LOCKUPS } from '../../../brand/logo-usage';
+import {
+  LOGO_LOCKUPS,
+  LOGO_NEVER,
+  LOGO_VERSIONS,
+  MARKETING_FILES_NOTE,
+  minimumLabel,
+} from '../../../brand/logo-usage';
 
 const fileColumns = [
   {
     id: 'png',
     title: 'PNG',
     tag: 'Files',
-    body: 'For documents, slides and anything you make outside the code. Each lockup comes in full color, white and black. Download it from the cards above.',
+    body: 'For documents, slides and anything you make outside the code. The horizontal logo and the MC mark come in full color, white and black. Download them from the cards above. Vertical and local logo files come from MassChallenge Marketing.',
   },
   {
     id: 'component',
@@ -36,10 +42,43 @@ const fileColumns = [
   <SectionHeading
     eyebrow="Logo"
     title="Logo"
-    lead="Use the files we supply or the Logo component. Never redraw, retype or recolor it. Pick a background on a card and the logo switches to the right treatment for it."
+    lead="Use the supplied files or the Logo component. Never recolor, stretch, rotate, outline, flip, crop, rebuild or retype it. Pick a background on a card and the logo switches to the right treatment for it."
   />
 
   <LogoCards client:visible />
+
+  <SubHeading
+    id="logo-versions"
+    title="Which version?"
+    lead={MARKETING_FILES_NOTE}
+  />
+  <ul class="m-0 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      LOGO_VERSIONS.map((version) => (
+        <li
+          class:list={[
+            'flex flex-col gap-2 rounded-[var(--corner-xl)] border p-5',
+            version.isShipped
+              ? 'border-solid border-[var(--separator)] bg-[var(--bg)]'
+              : 'border-dashed border-[var(--separator-strong)] bg-[var(--bg)]',
+          ]}
+        >
+          <p class="m-0 text-[length:var(--type-footnote-size)] font-bold uppercase tracking-[0.08em] text-[var(--label-secondary)]">
+            {version.isShipped ? 'In Propellant' : 'From MassChallenge Marketing'}
+          </p>
+          <h4 class="m-0 text-[length:var(--type-title3-size)] font-semibold text-[var(--label)]">{version.name}</h4>
+          <p class="m-0 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">
+            {version.use}
+          </p>
+          {version.screenMinimum ? (
+            <p class="m-0 mt-auto text-[length:var(--type-footnote-size)] text-[var(--label)]">
+              At least {version.screenMinimum} on screen, {version.printMinimum} in print.
+            </p>
+          ) : null}
+        </li>
+      ))
+    }
+  </ul>
 
   <SubHeading id="logo-files" title="Which file do I use?" />
   <div class="grid gap-4 md:grid-cols-3">
@@ -87,14 +126,14 @@ const fileColumns = [
   <SubHeading
     id="logo-room"
     title="Give it room"
-    lead="The clear space on every side is half the height of the logo. Keep it free of text, images and edges. Move the slider to see it."
+    lead="The clear space on every side equals the height of the M in the MASSCHALLENGE wordmark. Nothing enters it: no type, images, edges or other logos. The MC mark keeps clear space of half its height. Move the slider to see it."
   />
   <ClearSpaceTool client:visible />
 
   <SubHeading
     id="logo-size"
     title="Not too small"
-    lead="These are the smallest heights on screen, shown at actual size. Below them, the slider above shows a warning."
+    lead="These are the smallest sizes on screen, shown at actual size. Below them, the slider above shows a warning."
   />
   <div class="grid gap-4 sm:grid-cols-2">
     {
@@ -103,7 +142,7 @@ const fileColumns = [
           <div class="flex h-28 items-center justify-center rounded-[var(--corner-lg)] bg-[var(--gray-0)]">
             <img
               src={LOGO_FILES[lockup.id].color}
-              alt={`MassChallenge ${lockup.name.toLowerCase()} logo at ${lockup.minimumHeight}px tall`}
+              alt={`MassChallenge ${lockup.name} logo at ${minimumLabel(lockup)}`}
               style={`height: ${lockup.minimumHeight}px`}
               class="block w-auto"
             />
@@ -113,7 +152,7 @@ const fileColumns = [
               {lockup.name}
             </p>
             <p class="m-0 text-[length:var(--type-title1-size)] font-bold tabular-nums text-[var(--label)]">
-              {lockup.minimumHeight}px
+              {minimumLabel(lockup)}
             </p>
             <p class="m-0 mt-1 text-[length:var(--type-callout-size)] text-[var(--label-secondary)]">
               {lockup.minimumNote}
@@ -127,14 +166,20 @@ const fileColumns = [
   <SubHeading
     id="logo-misuse"
     title="Please don't"
-    lead="Each of these is the real logo, changed with a few lines of CSS to show what to avoid."
+    lead="Each of these is the real logo, changed with a few lines of CSS to show what to avoid. Never create new lockups or sub-logos outside the sub-brand system."
   />
   <MisuseGrid />
+  <div class="mt-4 rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5">
+    <h4 class="m-0 mb-2 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">Never</h4>
+    <ul class="m-0 grid gap-x-6 gap-y-1 pl-5 text-[length:var(--type-callout-size)] text-[var(--label)] sm:grid-cols-2">
+      {LOGO_NEVER.map((rule) => <li>{rule}</li>)}
+    </ul>
+  </div>
 
   <SubHeading
     id="marks"
     title="Marks"
-    lead="The MassChallenge logo in its two lockups, and the Propellant mark, which belongs to the design system."
+    lead="The two MassChallenge logo files Propellant ships, and the Propellant mark, which belongs to the design system."
   />
   <Marks />
 

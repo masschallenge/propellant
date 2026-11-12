@@ -42,7 +42,7 @@ export const readVersions = (projectRoot) => {
 };
 
 const GOOGLE_FONTS =
-  "@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Oswald:wght@500&display=swap');";
+  "@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;500;600;700&display=swap');";
 
 const FONT_OVERRIDES = `:root {
   --type-family: 'Lato', system-ui, sans-serif;

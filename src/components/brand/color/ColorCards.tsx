@@ -2,22 +2,22 @@ import * as React from 'react';
 import { formatRgb, isDark } from '../../../brand/contrast';
 import {
   BRAND_COLORS,
+  FAMILY_NAMES,
   LOGO_COLORS,
+  MC_GRADIENT,
   PRINT_NOTES,
   SUPPORTING_COLORS,
   chartColors,
   formatCmyk,
+  gradientCss,
 } from '../../../brand/palette';
 import type { BrandColor, Cmyk } from '../../../brand/palette';
 import { contrastScores } from '../../../brand/pairings';
 import { CopyIcon } from '../logo/icons';
 import { useCopyToast } from './useCopyToast';
 
-const FAMILY_LABEL: Record<BrandColor['family'], string> = {
-  brand: 'Brand',
-  accent: 'Accent',
-  neutral: 'Neutral',
-};
+const swatchBackground = (color: BrandColor) =>
+  color.id === MC_GRADIENT.toId ? gradientCss() : color.hex;
 
 const rgbDigits = (hex: string) => formatRgb(hex).replace(/^rgb\(|\)$/g, '');
 
@@ -59,10 +59,10 @@ const ColorCard = ({ color, onCopy }: ColorCardProps) => (
   <article className="flex flex-col overflow-hidden rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)]">
     <div
       className={`flex min-h-[104px] flex-col justify-between gap-4 p-3 sm:min-h-[140px] sm:p-4 ${paintText(color.hex)}`}
-      style={{ background: color.hex }}
+      style={{ background: swatchBackground(color) }}
     >
       <p className="m-0 text-[length:var(--type-caption-size)] font-bold uppercase tracking-[0.1em]">
-        {FAMILY_LABEL[color.family]}
+        {FAMILY_NAMES[color.family]}
       </p>
       <h4 className="m-0 text-[length:var(--type-title2-size)] font-semibold">{color.name}</h4>
     </div>
@@ -73,13 +73,20 @@ const ColorCard = ({ color, onCopy }: ColorCardProps) => (
       <div className="flex flex-col gap-1.5">
         <CopyValue label="Hex" value={color.hex} onCopy={onCopy} />
         <CopyValue label="RGB" value={rgbDigits(color.hex)} onCopy={onCopy} />
-        <CopyValue label="CMYK" value={formatCmyk(color.cmyk)} onCopy={onCopy} />
-        <CopyValue
-          label="Token"
-          value={color.token}
-          copied={`var(${color.token})`}
-          onCopy={onCopy}
-        />
+        {color.cmyk ? (
+          <CopyValue label="CMYK, approximate" value={formatCmyk(color.cmyk)} onCopy={onCopy} />
+        ) : null}
+        {color.printSubstitute ? (
+          <CopyValue label="Print substitute" value={color.printSubstitute} onCopy={onCopy} />
+        ) : null}
+        {color.token ? (
+          <CopyValue
+            label="Token"
+            value={color.token}
+            copied={`var(${color.token})`}
+            onCopy={onCopy}
+          />
+        ) : null}
       </div>
       <dl className="m-0 mt-auto grid grid-cols-2 gap-2 border-t border-solid border-[var(--separator)] pt-3">
         {contrastScores(color.hex).map((score) => (
@@ -129,7 +136,7 @@ const SmallHeading = ({ title, badge, lead }: SmallHeadingProps) => (
 interface SmallColorCardProps {
   name: string;
   hex: string;
-  cmyk: Cmyk;
+  cmyk: Cmyk | null;
   detail: string;
   tag: string;
   token?: string;
@@ -165,7 +172,9 @@ const SmallColorCard = ({
       </p>
       <CopyValue label="Hex" value={hex} onCopy={onCopy} />
       <CopyValue label="RGB" value={rgbDigits(hex)} onCopy={onCopy} />
-      <CopyValue label="CMYK" value={formatCmyk(cmyk)} onCopy={onCopy} />
+      {cmyk ? (
+        <CopyValue label="CMYK, approximate" value={formatCmyk(cmyk)} onCopy={onCopy} />
+      ) : null}
       {token ? (
         <CopyValue label="Token" value={token} copied={`var(${token})`} onCopy={onCopy} />
       ) : null}
@@ -187,15 +196,16 @@ const ColorCards = () => {
         ))}
       </div>
 
-      <p className="m-0 mt-4 max-w-[68ch] text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">
-        {PRINT_NOTES.cmyk}
-      </p>
+      <div className="m-0 mt-4 flex max-w-[68ch] flex-col gap-2 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label-secondary)]">
+        <p className="m-0">{PRINT_NOTES.cmyk}</p>
+        <p className="m-0">{PRINT_NOTES.review}</p>
+      </div>
 
       <div className="mt-10 flex flex-col gap-4">
         <SmallHeading
-          title="Supporting neutrals"
-          badge="Lines and charts"
-          lead={`Two grays from the Propellant tokens for rules, table lines and charts. Chart colors always go in this order, with direct labels: ${chartColors()
+          title="Supporting neutrals and tint"
+          badge="Lines, text and charts"
+          lead={`The light tint for website sections, and grays from the Propellant tokens for rules, table lines, secondary text and charts. Chart colors always go in this order, with direct labels: ${chartColors()
             .map((color) => color.name)
             .join(', ')}.`}
         />
@@ -219,7 +229,7 @@ const ColorCards = () => {
         <SmallHeading
           title="Logo colors"
           badge="Logo only"
-          lead="These are the colors of the logo files. They belong to the logo only; interface colors come from the palette above."
+          lead={`The official logo colors from the brand guide. They belong to the logo only. ${PRINT_NOTES.logoFiles}`}
         />
         <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
           {LOGO_COLORS.map((color) => (

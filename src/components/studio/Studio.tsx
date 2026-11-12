@@ -67,8 +67,8 @@ import { Stage } from './Stage';
 import { ToastRegion, useToasts } from './Toasts';
 import { TopBar } from './TopBar';
 import {
-  duotoneId,
-  makeDuotonePhoto,
+  makeOverlayPhoto,
+  overlayId,
   readPhoto,
   useFontsReady,
   useLogoImages,
@@ -264,7 +264,7 @@ export const Studio = () => {
       kind: 'text',
       role,
       size: findTextRole(role).defaultSize,
-      colorId: 'ink',
+      colorId: 'black',
       align: 'left',
       text: NEW_TEXT[role],
       left: (format.width - width) / 2,
@@ -312,7 +312,7 @@ export const Studio = () => {
       id: createElementId('shape'),
       kind: 'shape',
       shape,
-      colorId: shape === 'line' ? 'deep-teal' : 'bright-teal',
+      colorId: shape === 'line' ? 'navy' : 'mc-blue',
       left: (format.width - size.width) / 2,
       top: (format.height - size.height) / 2,
       ...size,
@@ -338,20 +338,20 @@ export const Studio = () => {
     });
   };
 
-  const addPhotoAs = async (photo: PhotoAsset, isDuotone: boolean) => {
-    if (!isDuotone) {
+  const addPhotoAs = async (photo: PhotoAsset, hasOverlay: boolean) => {
+    if (!hasOverlay) {
       addPhoto(photo);
       return;
     }
-    const existing = photos.find((candidate) => candidate.id === duotoneId(photo.id));
+    const existing = photos.find((candidate) => candidate.id === overlayId(photo.id));
     try {
-      const toned = existing ?? (await makeDuotonePhoto(photo));
+      const toned = existing ?? (await makeOverlayPhoto(photo));
       if (!existing) setPhotos((current) => [...current, toned]);
       addPhoto(toned);
     } catch (error) {
       showToast({
-        title: 'Duotone not made',
-        body: error instanceof Error ? error.message : 'The duotone could not be made.',
+        title: 'Overlay not added',
+        body: error instanceof Error ? error.message : 'The hero overlay could not be added.',
         tone: 'error',
       });
     }
@@ -479,9 +479,9 @@ export const Studio = () => {
             onAddLogo={addLogo}
             onAddShape={addShape}
             onAddPhoto={addPhotoAs}
-            onUploadPhoto={async (file, isDuotone) => {
+            onUploadPhoto={async (file, hasOverlay) => {
               const photo = await addPhotoFile(file);
-              if (photo) await addPhotoAs(photo, isDuotone);
+              if (photo) await addPhotoAs(photo, hasOverlay);
             }}
             onBackground={changeBackground}
             onPattern={changePattern}
