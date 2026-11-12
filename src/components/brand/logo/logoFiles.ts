@@ -10,8 +10,3 @@ export const LOGO_FILES: Record<LogoLockupId, Record<LogoTreatmentId, string>> =
   horizontal: { color: horizontalColor, white: horizontalWhite, black: horizontalBlack },
   monogram: { color: monogramColor, white: monogramWhite, black: monogramBlack },
 };
-
-export const LOGO_ASPECT: Record<LogoLockupId, number> = {
-  horizontal: 1671 / 225,
-  monogram: 321 / 177,
-};
