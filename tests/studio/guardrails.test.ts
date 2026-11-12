@@ -188,6 +188,34 @@ describe('backdrops', () => {
     expect(backdropFor(hidden, 'headline')).toMatchObject({ elementId: null });
   });
 
+  it('keeps a translucent shape over the same color as that brand color', () => {
+    const scene: Scene = {
+      formatId: 'instagram-post',
+      backgroundId: 'navy',
+      elements: [
+        {
+          ...BASE_DEFAULTS,
+          id: 'panel',
+          kind: 'shape',
+          shape: 'block',
+          colorId: 'navy',
+          opacity: 0.95,
+          left: 0,
+          top: 0,
+          width: 1080,
+          height: 600,
+        },
+        body({ top: 100, colorId: 'cyan' }),
+      ],
+    };
+    const backdrop = backdropFor(scene, 'body');
+    if (backdrop.kind !== 'color') throw new Error('Expected a color backdrop');
+    expect(backdrop.color.id).toBe('navy');
+    const enforced = enforceTextColors(scene);
+    const text = enforced.scene.elements.find((element) => element.id === 'body') as TextElement;
+    expect(text.colorId).toBe('cyan');
+  });
+
   it('blends a translucent shape with what is under it before judging contrast', () => {
     const scene: Scene = {
       formatId: 'instagram-post',

@@ -103,12 +103,15 @@ export const blendOver = (top: string, bottom: string, opacity: number): string 
   ]);
 };
 
-const translucentColor = (color: BrandColor, opacity: number, beneath: string): BrandColor => ({
-  ...color,
-  id: `${color.id}-at-${Math.round(opacity * 100)}`,
-  name: `${color.name} at ${Math.round(opacity * 100)}%`,
-  hex: blendOver(color.hex, beneath, opacity),
-});
+const translucentColor = (color: BrandColor, opacity: number, beneath: string): BrandColor =>
+  color.hex.toLowerCase() === beneath.toLowerCase()
+    ? color
+    : {
+        ...color,
+        id: `${color.id}-at-${Math.round(opacity * 100)}`,
+        name: `${color.name} at ${Math.round(opacity * 100)}%`,
+        hex: blendOver(color.hex, beneath, opacity),
+      };
 
 const sceneBackground = (scene: Scene): Backdrop =>
   scene.pattern
