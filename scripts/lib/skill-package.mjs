@@ -15,6 +15,13 @@ export const SKILL_LOGOS = [
   'masschallenge-logo-monogram-black.png',
 ];
 
+export const stampVersions = (text, versions) =>
+  text.replace(/\{\{(propellant-[a-z]+)\}\}/g, (placeholder, name) => {
+    const version = versions[name];
+    if (!version) throw new Error(`No release version for ${name}`);
+    return version;
+  });
+
 const GOOGLE_FONTS =
   "@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Oswald:wght@500&display=swap');";
 
