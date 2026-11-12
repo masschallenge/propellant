@@ -9,7 +9,7 @@ export const PHOTO_CATEGORIES: PhotoCategoryInfo[] = [
   { id: 'community', name: 'Community' },
   { id: 'founders-at-work', name: 'Founders at work' },
   { id: 'places', name: 'Places' },
-  { id: 'teal-duotone', name: 'Teal duotone' },
+  { id: 'teal-duotone', name: 'Teal duotone, retired' },
 ];
 
 export const WEBSITE_ORIGIN = 'https://masschallenge.org/';

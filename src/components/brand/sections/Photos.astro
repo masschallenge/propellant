@@ -6,16 +6,23 @@ import PhotoLibrary from '../photos/PhotoLibrary';
 import { WEBSITE_PHOTOS } from '../../../brand/photo-manifest';
 import { WEBSITE_VIDEOS } from '../../../brand/video-manifest';
 import VideoLibrary from '../photos/VideoLibrary';
+import ImageryGuide from '../photos/ImageryGuide.astro';
+import VideoGuide from '../photos/VideoGuide.astro';
 ---
 
 <section id="photos" class="scroll-mt-28 py-16">
   <SectionHeading
     eyebrow="Photos"
     title="Real people, doing real things"
-    lead="People are at the heart of how MassChallenge looks. Choose photos of our community at work, together, and give the words somewhere calm to sit."
+    lead="People are at the heart of how MassChallenge looks. Choose photos of real work and real people with some warmth in every frame, and give the words somewhere calm to sit."
   />
 
   <h3 class="m-0 mb-4 text-[length:var(--type-title2-size)] font-semibold text-[var(--label)]">
+    Three treatments
+  </h3>
+  <ImageryGuide />
+
+  <h3 class="m-0 mb-4 mt-12 text-[length:var(--type-title2-size)] font-semibold text-[var(--label)]">
     What works and what does not
   </h3>
   <PhotoExamples />
@@ -46,8 +53,9 @@ import VideoLibrary from '../photos/VideoLibrary';
       Photo library
     </h3>
     <p class="m-0 mb-5 mt-2 max-w-[68ch] text-[length:var(--type-body-size)] text-[var(--label-secondary)]">
-      {WEBSITE_PHOTOS.length} MassChallenge photos for MassChallenge work. Filter by category, and
-      open any photo at full size.
+      {WEBSITE_PHOTOS.length} MassChallenge photos from our website for MassChallenge work. Filter
+      by category, and open any photo at full size. The teal duotone photos show a retired
+      treatment: use them as they are, and never duotone a new photo.
     </p>
     <PhotoLibrary client:visible />
   </div>
@@ -57,6 +65,11 @@ import VideoLibrary from '../photos/VideoLibrary';
       Video
     </h3>
     <p class="m-0 mb-5 mt-2 max-w-[68ch] text-[length:var(--type-body-size)] text-[var(--label-secondary)]">
+      Every video follows the photography rules, opens and ends on the standard logo slates, and
+      is approved by MassChallenge Marketing before it goes live.
+    </p>
+    <VideoGuide />
+    <p class="m-0 mb-5 mt-8 max-w-[68ch] text-[length:var(--type-body-size)] text-[var(--label-secondary)]">
       {WEBSITE_VIDEOS.length} MassChallenge videos. Each one opens on YouTube.
     </p>
     <VideoLibrary />

@@ -1,0 +1,64 @@
+---
+import { HERO_OVERLAY, IMAGE_TREATMENTS, PHOTO_GUIDANCE, heroOverlayCss } from '../../../brand/imagery';
+import { findColor } from '../../../brand/palette';
+
+const warmScene = `linear-gradient(160deg, #F2C9A0 0%, #C98B5A 45%, #6B4A3A 100%)`;
+const yellow = findColor('yellow').hex;
+const white = findColor('white').hex;
+const black = findColor('black').hex;
+const PREVIEWS: Record<string, string> = {
+  overlay: `background: ${heroOverlayCss('left')}, ${warmScene}`,
+  'full-color': `background: ${warmScene}`,
+  'accent-rescue': 'background: linear-gradient(160deg, #B9C7CF 0%, #7D919C 55%, #4A5A63 100%)',
+};
+---
+
+<ul class="m-0 grid list-none gap-4 p-0 md:grid-cols-3">
+  {
+    IMAGE_TREATMENTS.map((treatment) => (
+      <li class="flex flex-col overflow-hidden rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)]">
+        <div class="relative flex aspect-[16/10] items-end p-4" style={PREVIEWS[treatment.id]} aria-hidden="true">
+          {treatment.id === 'accent-rescue' ? (
+            <span
+              class="px-2 py-1 font-[family-name:var(--type-family-brand)] text-[length:var(--type-caption-size)] uppercase tracking-[0.3em]"
+              style={`background: ${yellow}; color: ${black}`}
+            >
+              News
+            </span>
+          ) : treatment.id === 'overlay' ? (
+            <span
+              class="font-[family-name:var(--type-family-brand)] text-[length:var(--type-title2-size)] font-semibold uppercase leading-none"
+              style={`color: ${white}`}
+            >
+              Headline
+            </span>
+          ) : null}
+        </div>
+        <div class="flex flex-col gap-1 p-4">
+          <p class="m-0 text-[length:var(--type-footnote-size)] font-bold tabular-nums text-[var(--label-secondary)]">{treatment.number}</p>
+          <h4 class="m-0 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">{treatment.name}</h4>
+          <p class="m-0 text-[length:var(--type-subheadline-size)] text-[var(--label-secondary)]">{treatment.use}</p>
+        </div>
+      </li>
+    ))
+  }
+</ul>
+<p class="m-0 mt-3 max-w-[68ch] text-[length:var(--type-footnote-size)] text-[var(--label-secondary)]">
+  The previews are color diagrams, not photos. The hero overlay is a linear gradient from
+  {HERO_OVERLAY.fromHex} to Ocean {HERO_OVERLAY.toHex} at {HERO_OVERLAY.minimumOpacity * 100} to
+  {HERO_OVERLAY.maximumOpacity * 100}% opacity, running toward the subject: the text side dark, the
+  subject side clear. The teal duotone is retired.
+</p>
+
+<div class="mt-8 grid gap-4 md:grid-cols-2">
+  {
+    PHOTO_GUIDANCE.map((group) => (
+      <article class="rounded-[var(--corner-xl)] border border-solid border-[var(--separator)] bg-[var(--bg)] p-5">
+        <h4 class="m-0 mb-2 text-[length:var(--type-headline-size)] font-semibold text-[var(--label)]">{group.title}</h4>
+        <ul class="m-0 flex flex-col gap-1 pl-5 text-[length:var(--type-callout-size)] leading-[var(--type-callout-line)] text-[var(--label)]">
+          {group.items.map((item) => <li>{item}</li>)}
+        </ul>
+      </article>
+    ))
+  }
+</div>

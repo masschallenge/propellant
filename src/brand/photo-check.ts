@@ -1,4 +1,4 @@
-import { BRAND_DUOTONE, duotoneChannels } from './duotone';
+import { applyHeroOverlay, type OverlayTextSide } from './imagery';
 import { MINIMUM_LARGE_CONTRAST, MINIMUM_TEXT_CONTRAST, contrastRatio, hexToRgb } from './contrast';
 import { findColor } from './palette';
 
@@ -31,12 +31,12 @@ export interface ContrastReading {
 
 export interface AreaReading {
   white: ContrastReading;
-  ink: ContrastReading;
+  black: ContrastReading;
   sampleCount: number;
 }
 
 export const WHITE = findColor('white').hex;
-export const INK = findColor('ink').hex;
+export const BLACK = findColor('black').hex;
 
 export const PHOTO_SHAPES: PhotoShape[] = [
   { id: 'square', label: '1:1', width: 1, height: 1, description: 'Square' },
@@ -131,7 +131,7 @@ const overBacking = (channel: number, alpha: number, backing: number) =>
 export const readArea = (pixels: ArrayLike<number>, backingHex = PHOTO_BACKING): AreaReading => {
   const backing = hexToRgb(backingHex);
   const whiteRatios: number[] = [];
-  const inkRatios: number[] = [];
+  const blackRatios: number[] = [];
   const cache = new Map<string, [number, number]>();
   for (let offset = 0; offset + 3 < pixels.length; offset += 4) {
     const alpha = pixels[offset + 3] / 255;
@@ -140,36 +140,35 @@ export const readArea = (pixels: ArrayLike<number>, backingHex = PHOTO_BACKING):
       overBacking(pixels[offset + 1], alpha, backing.green),
       overBacking(pixels[offset + 2], alpha, backing.blue),
     );
-    const known = cache.get(hex) ?? [contrastRatio(WHITE, hex), contrastRatio(INK, hex)];
+    const known = cache.get(hex) ?? [contrastRatio(WHITE, hex), contrastRatio(BLACK, hex)];
     cache.set(hex, known);
     whiteRatios.push(known[0]);
-    inkRatios.push(known[1]);
+    blackRatios.push(known[1]);
   }
   if (!whiteRatios.length) throw new Error('No pixels to read');
   return {
     white: readingFrom(whiteRatios),
-    ink: readingFrom(inkRatios),
+    black: readingFrom(blackRatios),
     sampleCount: whiteRatios.length,
   };
 };
 
-export const betterText = (reading: AreaReading): 'white' | 'ink' =>
-  reading.white.weakest >= reading.ink.weakest ? 'white' : 'ink';
+export const betterText = (reading: AreaReading): 'white' | 'black' =>
+  reading.white.weakest >= reading.black.weakest ? 'white' : 'black';
 
 export const logoTreatmentFor = (reading: AreaReading): 'white' | 'black' =>
   betterText(reading) === 'white' ? 'white' : 'black';
 
 export const formatRatio = (ratio: number) => `${(Math.floor(ratio * 10) / 10).toFixed(1)}:1`;
 
-export const duotonePixel = (red: number, green: number, blue: number): [number, number, number] =>
-  duotoneChannels(red, green, blue, BRAND_DUOTONE);
-
-export const applyDuotone = (pixels: Uint8ClampedArray) => {
-  for (let offset = 0; offset + 3 < pixels.length; offset += 4) {
-    const [red, green, blue] = duotonePixel(pixels[offset], pixels[offset + 1], pixels[offset + 2]);
-    pixels[offset] = red;
-    pixels[offset + 1] = green;
-    pixels[offset + 2] = blue;
-  }
-  return pixels;
+export const TEXT_SIDES: Record<TextPlacement, OverlayTextSide> = {
+  top: 'top',
+  bottom: 'bottom',
 };
+
+export const applyOverlayFor = (
+  pixels: Uint8ClampedArray,
+  width: number,
+  height: number,
+  placement: TextPlacement,
+) => applyHeroOverlay(pixels, width, height, TEXT_SIDES[placement]);
