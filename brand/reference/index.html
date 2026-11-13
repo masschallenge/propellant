@@ -71,65 +71,94 @@
 		})();
 	</script></sl-sidebar-state-persist><div class="md:sl-hidden"><div class="mobile-preferences sl-flex astro-p4azlveh"><div class="social-icons astro-p4azlveh"><a href="https://github.com/masschallenge/propellant" rel="me" class="sl-flex astro-n2mnl6yq"><span class="sr-only astro-n2mnl6yq">Propellant on GitHub</span><svg aria-hidden="true" class="astro-n2mnl6yq astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-2z5xp7gb"><span class="sr-only astro-2z5xp7gb">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-2z5xp7gb"><option value="dark" class="astro-2z5xp7gb">Dark</option><option value="light" class="astro-2z5xp7gb">Light</option><option value="auto" selected class="astro-2z5xp7gb">Auto</option></select><svg aria-hidden="true" class="icon caret astro-2z5xp7gb astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
 	StarlightThemeProvider.updatePickers();
-</script></div></div></div></sl-sidebar-pane></nav><div class="main-frame astro-yntsjkba"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-lrzkfocr"><aside class="right-sidebar-container print:hidden astro-lrzkfocr"><div class="right-sidebar astro-lrzkfocr"><div class="lg:sl-hidden astro-qok35upx"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-66cqc7ze"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-66cqc7ze"><details id="starlight__mobile-toc" class="astro-66cqc7ze"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-66cqc7ze"><span class="toggle sl-flex astro-66cqc7ze">On this page<svg aria-hidden="true" class="caret astro-66cqc7ze astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-66cqc7ze"></span></summary><div class="dropdown astro-66cqc7ze"><ul class="isMobile astro-jugkfwgx" style="--depth: 0;"><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#_top" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Overview</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#the-name" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">The name</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#logo" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Logo</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#lockups" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Lockups</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#logo-colors" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Logo colors</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#treatments" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Treatments</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#clear-space" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Clear space</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#minimum-size" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Minimum size</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#placement" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Placement</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#things-to-avoid" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Things to avoid</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#color" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Color</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#brand-palette" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Brand palette</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#using-color" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Using color</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#typography" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Typography</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#voice" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Voice</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#do-and-dont" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Do and don’t</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#iconography" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Iconography</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#the-propellant-mark" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">The Propellant mark</span></a></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C3fM4Kra.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-qok35upx"><div class="sl-container astro-qok35upx"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-jugkfwgx" style="--depth: 0;"><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#_top" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Overview</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#the-name" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">The name</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#logo" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Logo</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#lockups" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Lockups</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#logo-colors" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Logo colors</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#treatments" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Treatments</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#clear-space" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Clear space</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#minimum-size" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Minimum size</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#placement" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Placement</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#things-to-avoid" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Things to avoid</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#color" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Color</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#brand-palette" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Brand palette</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#using-color" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Using color</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#typography" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Typography</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#voice" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Voice</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#do-and-dont" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Do and don’t</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#iconography" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Iconography</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#the-propellant-mark" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">The Propellant mark</span></a></li></ul></nav></starlight-toc><script type="module" src="/_astro/TableOfContents.astro_astro_type_script_index_0_lang.BpJaGz7G.js"></script></div></div></div></aside><div class="main-pane astro-lrzkfocr"><main data-pagefind-body class="astro-g5ptsecz" lang="en" dir="ltr"><div class="content-panel astro-a7po4psb"><div class="sl-container astro-a7po4psb"><h1 id="_top" class="astro-bebwqqxs">MassChallenge brand guidelines</h1></div></div><div class="content-panel astro-a7po4psb"><div class="sl-container astro-a7po4psb"><div class="sl-markdown-content"><p>How MassChallenge shows up in our web products and websites: the name, the logo, color, type and
-voice. Most of it is already built into Propellant, so when you use its components and tokens (the
-named values for color, type and spacing), you follow these guidelines without extra work.</p>
+</script></div></div></div></sl-sidebar-pane></nav><div class="main-frame astro-yntsjkba"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-lrzkfocr"><aside class="right-sidebar-container print:hidden astro-lrzkfocr"><div class="right-sidebar astro-lrzkfocr"><div class="lg:sl-hidden astro-qok35upx"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-66cqc7ze"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-66cqc7ze"><details id="starlight__mobile-toc" class="astro-66cqc7ze"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-66cqc7ze"><span class="toggle sl-flex astro-66cqc7ze">On this page<svg aria-hidden="true" class="caret astro-66cqc7ze astro-hkc32dio" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-66cqc7ze"></span></summary><div class="dropdown astro-66cqc7ze"><ul class="isMobile astro-jugkfwgx" style="--depth: 0;"><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#_top" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Overview</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#the-name" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">The name</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#logo" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Logo</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#versions" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Versions</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#logo-colors" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Logo colors</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#treatments" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Treatments</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#clear-space" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Clear space</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#minimum-size" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Minimum size</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#placement" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Placement</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#things-to-avoid" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Things to avoid</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#color" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Color</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#core-colors" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Core colors</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#supporting-blues" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Supporting blues</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#warm-accents" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Warm accents</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#print-color" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Print color</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#using-color" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Using color</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#approved-pairings" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Approved pairings</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#status-colors-are-separate" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Status colors are separate</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#charts" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Charts</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#in-the-signed-in-products" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">In the signed in products</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#typography" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Typography</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#text-styles" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Text styles</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#where-each-font-applies" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Where each font applies</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#in-the-signed-in-products-1" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">In the signed in products</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#voice" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Voice</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#do-and-dont" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Do and don’t</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#messaging" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Messaging</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#primary-line" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Primary line</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#positioning" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Positioning</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#boilerplate" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Boilerplate</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#approved-figures" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Approved figures</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#challenge-areas" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Challenge Areas</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#accelerators" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Accelerators</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#audiences" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Audiences</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#leadership" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Leadership</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#naming-rules" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Naming rules</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#contact-social-and-legal" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Contact, social and legal</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#contact" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Contact</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#social" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Social</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#footer-links" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Footer links</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#copyright-and-trademarks" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Copyright and trademarks</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#offices" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Offices</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#graphic-devices" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Graphic devices</span></a><ul class="isMobile astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#hero-overlay" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Hero overlay</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#hexagon-network-frame" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Hexagon network frame</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#geometric-pattern" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Geometric pattern</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#stat-callouts" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Stat callouts</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#program-lockup" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Program lockup</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#partner-lockup" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Partner lockup</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#program-timelines" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Program timelines</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#icons" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Icons</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#event-tags" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Event tags</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#imagery" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Imagery</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#video" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Video</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#sub-brands-and-partners" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Sub-brands and partners</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#iconography" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Iconography</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#the-propellant-mark" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">The Propellant mark</span></a></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C3fM4Kra.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-qok35upx"><div class="sl-container astro-qok35upx"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-jugkfwgx" style="--depth: 0;"><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#_top" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Overview</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#the-name" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">The name</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#logo" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Logo</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#versions" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Versions</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#logo-colors" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Logo colors</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#treatments" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Treatments</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#clear-space" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Clear space</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#minimum-size" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Minimum size</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#placement" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Placement</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#things-to-avoid" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Things to avoid</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#color" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Color</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#core-colors" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Core colors</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#supporting-blues" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Supporting blues</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#warm-accents" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Warm accents</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#print-color" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Print color</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#using-color" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Using color</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#approved-pairings" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Approved pairings</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#status-colors-are-separate" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Status colors are separate</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#charts" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Charts</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#in-the-signed-in-products" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">In the signed in products</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#typography" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Typography</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#text-styles" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Text styles</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#where-each-font-applies" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Where each font applies</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#in-the-signed-in-products-1" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">In the signed in products</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#voice" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Voice</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#do-and-dont" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Do and don’t</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#messaging" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Messaging</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#primary-line" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Primary line</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#positioning" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Positioning</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#boilerplate" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Boilerplate</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#approved-figures" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Approved figures</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#challenge-areas" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Challenge Areas</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#accelerators" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Accelerators</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#audiences" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Audiences</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#leadership" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Leadership</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#naming-rules" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Naming rules</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#contact-social-and-legal" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Contact, social and legal</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#contact" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Contact</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#social" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Social</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#footer-links" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Footer links</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#copyright-and-trademarks" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Copyright and trademarks</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#offices" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Offices</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#graphic-devices" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Graphic devices</span></a><ul class="astro-jugkfwgx" style="--depth: 1;"><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#hero-overlay" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Hero overlay</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#hexagon-network-frame" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Hexagon network frame</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#geometric-pattern" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Geometric pattern</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#stat-callouts" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Stat callouts</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#program-lockup" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Program lockup</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#partner-lockup" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Partner lockup</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#program-timelines" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Program timelines</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#icons" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Icons</span></a></li><li style="--depth: 1;" class="astro-jugkfwgx"><a href="#event-tags" style="--depth: 1;" class="astro-jugkfwgx"><span style="--depth: 1;" class="astro-jugkfwgx">Event tags</span></a></li></ul></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#imagery" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Imagery</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#video" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Video</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#sub-brands-and-partners" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Sub-brands and partners</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#iconography" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">Iconography</span></a></li><li style="--depth: 0;" class="astro-jugkfwgx"><a href="#the-propellant-mark" style="--depth: 0;" class="astro-jugkfwgx"><span style="--depth: 0;" class="astro-jugkfwgx">The Propellant mark</span></a></li></ul></nav></starlight-toc><script type="module" src="/_astro/TableOfContents.astro_astro_type_script_index_0_lang.BpJaGz7G.js"></script></div></div></div></aside><div class="main-pane astro-lrzkfocr"><main data-pagefind-body class="astro-g5ptsecz" lang="en" dir="ltr"><div class="content-panel astro-a7po4psb"><div class="sl-container astro-a7po4psb"><h1 id="_top" class="astro-bebwqqxs">MassChallenge brand guidelines</h1></div></div><div class="content-panel astro-a7po4psb"><div class="sl-container astro-a7po4psb"><div class="sl-markdown-content"><p>How MassChallenge shows up everywhere we make things: web products, websites, Office and Google
+Workspace files, print, slides, video and social graphics. It covers the name, the logo, color,
+type, voice, messaging, contact and legal details, the graphic devices, imagery and video.</p>
+<p>The standard is the MassChallenge brand guidelines from MassChallenge Marketing. This page applies
+them to the things Propellant builds, and adds the rules for the signed in products. If this page
+and the brand guidelines ever disagree, the brand guidelines win; ask MassChallenge Marketing.
+Most of the interface side is already built into Propellant, so when you use its components and
+tokens (the named values for color, type and spacing), you follow these guidelines without extra
+work.</p>
 <div class="sl-heading-wrapper level-h2"><h2 id="the-name">The name</h2><a class="sl-anchor-link" href="#the-name"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “The name”</span></a></div>
 <ul>
 <li>Write MassChallenge as one word with a capital M and a capital C.</li>
 <li>Do not abbreviate it to MC in running text. The MC monogram is a logo, not a word.</li>
-<li>Do not add a trademark symbol in interfaces.</li>
+<li>Do not add a trademark symbol to the name or the logo.</li>
 </ul>
 <div class="sl-heading-wrapper level-h2"><h2 id="logo">Logo</h2><a class="sl-anchor-link" href="#logo"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Logo”</span></a></div>
 <p>The logo is the most recognizable part of the MassChallenge brand, so we treat it with care. Use
-the files we supply or the <code dir="auto">Logo</code> component, and never redraw, retype or recolor it.</p>
-<div class="sl-heading-wrapper level-h3"><h3 id="lockups">Lockups</h3><a class="sl-anchor-link" href="#lockups"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Lockups”</span></a></div>
-<p>A lockup is a fixed arrangement of the logo’s parts. There are two.</p>
+the approved files or the <code dir="auto">Logo</code> component, and never redraw, retype or recolor it.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="versions">Versions</h3><a class="sl-anchor-link" href="#versions"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Versions”</span></a></div>
 <table>
 <thead>
 <tr>
-<th>Lockup</th>
+<th>Version</th>
 <th>Use it for</th>
-<th>Files</th>
+<th>Where to get it</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Horizontal</td>
-<td>The default. Headers, sign in pages, footers, documents and anywhere the full name should be read.</td>
-<td><code dir="auto">assets/logos/masschallenge-logo-horizontal-*.png</code></td>
+<td>Vertical</td>
+<td>The default for most layouts.</td>
+<td>From MassChallenge Marketing.</td>
 </tr>
 <tr>
-<td>Monogram</td>
-<td>Small spaces where the horizontal lockup would fall below its minimum size: favicons, app icons, avatars and compact navigation.</td>
-<td><code dir="auto">assets/logos/masschallenge-logo-monogram-*.png</code></td>
+<td>Horizontal</td>
+<td>Where width is plentiful and height is tight: headers, footers, sponsor slides and banners. It is the version Propellant uses in product headers and sign in pages.</td>
+<td><code dir="auto">assets/logos/masschallenge-logo-horizontal-*.png</code>, <code dir="auto">&lt;Logo /&gt;</code></td>
+</tr>
+<tr>
+<td>MC mark (the monogram)</td>
+<td>Where the audience already knows us. In Propellant: compact navigation, favicons, app icons and avatars.</td>
+<td><code dir="auto">assets/logos/masschallenge-logo-monogram-*.png</code>, <code dir="auto">&lt;Logo lockup="monogram" /&gt;</code></td>
+</tr>
+<tr>
+<td>Local logos</td>
+<td>Work tied to one site. US sites use the city and international sites use the country.</td>
+<td>From MassChallenge Marketing.</td>
 </tr>
 </tbody>
 </table>
-<p>The horizontal lockup is the MC monogram, a thin vertical divider and the MASSCHALLENGE wordmark.
-Keep the three parts together, at the proportions in the files. Use the monogram on its own only
-where the MassChallenge name is already clear from the context.</p>
+<p>Propellant ships the horizontal logo and the MC mark only. The vertical logo and the local logos
+come from MassChallenge Marketing; never draw or assemble them yourself.</p>
+<p>The horizontal logo is the MC mark, a thin vertical divider and the MASSCHALLENGE wordmark. Keep the
+parts together, at the proportions in the files. Use the MC mark on its own only where the
+MassChallenge name is already clear from the context.</p>
+<p><strong>Local logos.</strong> Approved local files exist for Boston, Israel, the UK and Switzerland. Dallas is
+not produced yet. Use only the approved local files, and never type a location next to the logo.</p>
 <div class="sl-heading-wrapper level-h3"><h3 id="logo-colors">Logo colors</h3><a class="sl-anchor-link" href="#logo-colors"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Logo colors”</span></a></div>
 <table>
 <thead>
 <tr>
 <th>Part</th>
 <th>Color</th>
+<th>Hex</th>
+<th>RGB</th>
+<th>Print CMYK (approximate)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>M and wordmark</td>
-<td>Gray <code dir="auto">#828486</code></td>
+<td>MC Gray</td>
+<td><code dir="auto">#808285</code></td>
+<td>128 130 133</td>
+<td>4 2 0 48</td>
 </tr>
 <tr>
 <td>C and divider</td>
-<td>Teal <code dir="auto">#17ACBC</code></td>
+<td>MC Blue</td>
+<td><code dir="auto">#0EABBC</code></td>
+<td>14 171 188</td>
+<td>93 9 0 26</td>
 </tr>
 </tbody>
 </table>
-<p>These are the colors of the logo files. They belong to the logo only; interface colors come from
-the palette below.</p>
+<p>These are the official logo colors. The PNG files Propellant ships today measure <code dir="auto">#828486</code> and
+<code dir="auto">#17ACBC</code>, a shade off. Do not recolor them: official artwork from MassChallenge Marketing will
+replace them. MC Gray is for the logo only. MC Blue is for the logo and graphic shapes, never text.</p>
 <div class="sl-heading-wrapper level-h3"><h3 id="treatments">Treatments</h3><a class="sl-anchor-link" href="#treatments"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Treatments”</span></a></div>
 <table>
 <thead>
@@ -142,43 +171,59 @@ the palette below.</p>
 <tbody>
 <tr>
 <td>Full color</td>
-<td>White and light neutral backgrounds, such as the page and content surfaces.</td>
+<td>White and Warm White only.</td>
 <td><code dir="auto">*-color.png</code>, <code dir="auto">&lt;Logo /&gt;</code></td>
 </tr>
 <tr>
 <td>White</td>
-<td>The brand teal, dark surfaces, dark mode and photographs dark enough to keep the logo legible.</td>
+<td>Navy, Black, Deep Teal, Teal, MC Blue, and photographs with enough contrast.</td>
 <td><code dir="auto">*-white.png</code>, <code dir="auto">&lt;Logo treatment="white" /&gt;</code></td>
 </tr>
 <tr>
 <td>Black</td>
-<td>Places where only one dark color is available, such as single color print, and light backgrounds that the full color logo does not suit.</td>
+<td>One color print, and light backgrounds that the full color logo does not suit.</td>
 <td><code dir="auto">*-black.png</code>, <code dir="auto">&lt;Logo treatment="black" /&gt;</code></td>
 </tr>
 </tbody>
 </table>
 <p>A treatment is the color version of the logo you pick for a background. The one color treatments
 are the same artwork in a single color, so the gap between the M and the C stays open. Each
-treatment exists for both lockups.</p>
+treatment exists for both versions Propellant ships.</p>
+<ul>
+<li>Never put the white logo on light colors such as Cyan, Yellow or Lime.</li>
+<li>On a busy photograph, add the <a href="#hero-overlay">hero overlay</a> or a solid color block behind the
+logo.</li>
+</ul>
 <div class="sl-heading-wrapper level-h3"><h3 id="clear-space">Clear space</h3><a class="sl-anchor-link" href="#clear-space"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Clear space”</span></a></div>
-<p>Give the logo room to breathe. Keep the space around it free of text, images and edges. The clear
-space on every side is half the height of the logo. A horizontal logo shown 32px tall needs 16px of clear space all around.</p>
+<p>Keep a clear space around the logo equal to the height of the “M” in the MASSCHALLENGE wordmark, on
+every side. Nothing enters it: no type, images, edges or other logos. In the horizontal files the M
+is about 40% of the logo’s height, so a horizontal logo shown 32px tall needs about 13px of clear
+space all around. For the MC mark on its own, take the same measure from the M of the mark.</p>
+<p>Align the horizontal logo to a corner or the top edge of its area.</p>
 <div class="sl-heading-wrapper level-h3"><h3 id="minimum-size">Minimum size</h3><a class="sl-anchor-link" href="#minimum-size"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Minimum size”</span></a></div>
 <table>
 <thead>
 <tr>
-<th>Lockup</th>
-<th>Smallest height on screen</th>
+<th>Version</th>
+<th>Smallest on screen</th>
+<th>Smallest in print</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Horizontal</td>
-<td>24px. Below this the wordmark stops being readable; use the monogram instead.</td>
+<td>Vertical</td>
+<td>60px wide</td>
+<td>20mm wide</td>
 </tr>
 <tr>
-<td>Monogram</td>
-<td>16px.</td>
+<td>Horizontal</td>
+<td>160px wide. At Propellant’s default height of 24px it is about 178px wide. Narrower than 160px, use the MC mark instead.</td>
+<td>30mm wide</td>
+</tr>
+<tr>
+<td>MC mark</td>
+<td>16px tall (about 29px wide, above the guide’s 24px wide)</td>
+<td>8mm</td>
 </tr>
 </tbody>
 </table>
@@ -193,82 +238,325 @@ the logo as decorative with <code dir="auto">&lt;Logo label="" /&gt;</code>.</li
 </ul>
 <div class="sl-heading-wrapper level-h3"><h3 id="things-to-avoid">Things to avoid</h3><a class="sl-anchor-link" href="#things-to-avoid"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Things to avoid”</span></a></div>
 <ul>
-<li>Do not change the logo colors or color the monogram and wordmark differently from the files.</li>
-<li>Do not stretch, squash, rotate, skew or crop the logo.</li>
-<li>Do not add shadows, glows, outlines, gradients or other effects.</li>
-<li>Do not rearrange the lockup, resize its parts or remove the divider.</li>
-<li>Do not place the full color logo on the brand teal, dark backgrounds or busy photographs; use the
-white treatment.</li>
-<li>Do not recreate the wordmark in a font or type the name in its place.</li>
+<li>Do not recolor, stretch, rotate, outline, flip or crop the logo.</li>
+<li>Do not add shadows, glows, gradients or other effects.</li>
+<li>Do not rearrange, rebuild or retype the logo, resize its parts or remove the divider.</li>
+<li>Do not create new lockups or sub-logos outside the <a href="#sub-brands-and-partners">sub-brand system</a>.</li>
+<li>Do not place the full color logo on dark colors or busy photographs; use the white treatment.</li>
+<li>Do not place the white logo on light colors such as Cyan, Yellow or Lime.</li>
 <li>Do not place the logo inside a shape or container that crowds its clear space.</li>
-<li>Do not use the monogram as a letter in a word or headline.</li>
+<li>Do not use the MC mark as a letter in a word or headline.</li>
 </ul>
 <div class="sl-heading-wrapper level-h2"><h2 id="color">Color</h2><a class="sl-anchor-link" href="#color"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Color”</span></a></div>
-<div class="sl-heading-wrapper level-h3"><h3 id="brand-palette">Brand palette</h3><a class="sl-anchor-link" href="#brand-palette"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Brand palette”</span></a></div>
+<p>The palette comes from the MassChallenge brand guidelines. It applies everywhere the brand appears:
+websites, Office and Google Workspace files, print, slides, video and social graphics. Propellant
+holds each color as a token with an <code dir="auto">--mc-</code> prefix, so the token column below is the name to use in
+code.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="core-colors">Core colors</h3><a class="sl-anchor-link" href="#core-colors"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Core colors”</span></a></div>
+<p>These are locked.</p>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Hex</th>
-<th>Role</th>
+<th>RGB</th>
+<th>Print CMYK (approximate)</th>
+<th>Token</th>
+<th>Use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MC Blue</td>
+<td><code dir="auto">#0EABBC</code></td>
+<td>14 171 188</td>
+<td>93 9 0 26</td>
+<td><code dir="auto">--mc-blue</code></td>
+<td>The logo and graphic shapes. Never text.</td>
+</tr>
+<tr>
+<td>MC Gray</td>
+<td><code dir="auto">#808285</code></td>
+<td>128 130 133</td>
+<td>4 2 0 48</td>
+<td><code dir="auto">--mc-gray</code></td>
+<td>The logo only.</td>
+</tr>
+<tr>
+<td>Navy</td>
+<td><code dir="auto">#10263F</code></td>
+<td>16 38 63</td>
+<td>75 40 0 75</td>
+<td><code dir="auto">--mc-navy</code></td>
+<td>Dark sections and gradients.</td>
+</tr>
+<tr>
+<td>Black</td>
+<td><code dir="auto">#222222</code></td>
+<td>34 34 34</td>
+<td>0 0 0 87</td>
+<td><code dir="auto">--mc-black</code></td>
+<td>Dark sections and body text.</td>
+</tr>
+<tr>
+<td>Warm White</td>
+<td><code dir="auto">#F8F8F5</code></td>
+<td>248 248 245</td>
+<td>0 0 1 3</td>
+<td><code dir="auto">--mc-warm-white</code></td>
+<td>Light sections.</td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="supporting-blues">Supporting blues</h3><a class="sl-anchor-link" href="#supporting-blues"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Supporting blues”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Hex</th>
+<th>RGB</th>
+<th>Print CMYK (approximate)</th>
+<th>Token</th>
+<th>Use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deep Teal</td>
+<td><code dir="auto">#004F73</code></td>
+<td>0 79 115</td>
+<td>100 31 0 55</td>
+<td><code dir="auto">--mc-deep-teal</code></td>
+<td>Dark sections.</td>
+</tr>
+<tr>
+<td>Teal</td>
+<td><code dir="auto">#00708E</code></td>
+<td>0 112 142</td>
+<td>100 21 0 44</td>
+<td><code dir="auto">--mc-teal</code></td>
+<td>Headings and links on light backgrounds. Colored text on a light background is always Teal.</td>
+</tr>
+<tr>
+<td>Cyan</td>
+<td><code dir="auto">#54EEFF</code></td>
+<td>84 238 255</td>
+<td>100 11 0 9</td>
+<td><code dir="auto">--mc-cyan</code></td>
+<td>Text and accents on dark backgrounds only (Navy, Black, Deep Teal). In print, use <code dir="auto">#00CFE8</code> (<code dir="auto">--mc-cyan-print</code>).</td>
+</tr>
+<tr>
+<td>Ocean</td>
+<td><code dir="auto">#037AA6</code></td>
+<td>3 122 166</td>
+<td></td>
+<td><code dir="auto">--mc-ocean</code></td>
+<td>A gradient stop only, never a flat fill.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The MC Gradient</strong> runs from Navy <code dir="auto">#10263F</code> to Ocean <code dir="auto">#037AA6</code>, at any angle (<code dir="auto">--mc-gradient</code>).</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="warm-accents">Warm accents</h3><a class="sl-anchor-link" href="#warm-accents"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Warm accents”</span></a></div>
+<p>Use one warm accent per piece, in small doses: a word, a tag, a rule or a stat. Never as a large
+background.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Hex</th>
+<th>Print substitute</th>
+<th>Print CMYK (approximate)</th>
+<th>Token</th>
+<th>Use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yellow</td>
+<td><code dir="auto">#FFC801</code></td>
+<td>None</td>
+<td>0 22 100 0</td>
+<td><code dir="auto">--mc-yellow</code></td>
+<td>Tags, rules and stats. Dark text on it.</td>
+</tr>
+<tr>
+<td>Orange</td>
+<td><code dir="auto">#FF6B35</code></td>
+<td><code dir="auto">#F58242</code></td>
+<td>0 47 73 4</td>
+<td><code dir="auto">--mc-orange</code></td>
+<td>Dark text only, never white.</td>
+</tr>
+<tr>
+<td>Raspberry</td>
+<td><code dir="auto">#D14170</code></td>
+<td><code dir="auto">#D83B80</code></td>
+<td>0 73 41 15</td>
+<td><code dir="auto">--mc-raspberry</code></td>
+<td>Shapes and rules on dark backgrounds.</td>
+</tr>
+<tr>
+<td>Lime</td>
+<td><code dir="auto">#C6F135</code></td>
+<td><code dir="auto">#91D438</code></td>
+<td>32 0 74 17</td>
+<td><code dir="auto">--mc-lime</code></td>
+<td>Accents on dark backgrounds.</td>
+</tr>
+</tbody>
+</table>
+<p>The print substitutes have tokens of their own: <code dir="auto">--mc-orange-print</code>, <code dir="auto">--mc-raspberry-print</code> and
+<code dir="auto">--mc-lime-print</code>. The supporting blues and the warm accents are reviewed with each version of the
+brand guidelines.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="print-color">Print color</h3><a class="sl-anchor-link" href="#print-color"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Print color”</span></a></div>
+<p>The CMYK values are approximate until they are confirmed with a printer’s proof. For print, use the
+listed substitute wherever one exists, and check a printed proof before a large run.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="using-color">Using color</h3><a class="sl-anchor-link" href="#using-color"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Using color”</span></a></div>
+<ul>
+<li>One warm accent per piece, and never as a large background.</li>
+<li>Cyan only on dark backgrounds: Navy, Black and Deep Teal.</li>
+<li>MC Blue is for the logo and shapes, not text. On light backgrounds, colored text is Teal.</li>
+<li>Orange takes dark text, never white.</li>
+<li>Pair every status color with a word or a symbol, never color alone.</li>
+<li>Text stands out from its background by a contrast ratio of at least 4.5:1, and large text and the
+edges of controls by at least 3:1.</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="approved-pairings">Approved pairings</h3><a class="sl-anchor-link" href="#approved-pairings"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Approved pairings”</span></a></div>
+<p>These pairings are verified for contrast.</p>
+<table>
+<thead>
+<tr>
+<th>Pairing</th>
+<th>Contrast ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cyan on Navy</td>
+<td>11.0:1</td>
+</tr>
+<tr>
+<td>White on Black</td>
+<td>15.9:1</td>
+</tr>
+<tr>
+<td>Teal on White</td>
+<td>5.7:1</td>
+</tr>
+<tr>
+<td>White on Deep Teal</td>
+<td>8.9:1</td>
+</tr>
+<tr>
+<td>Navy on Warm White</td>
+<td>14.4:1</td>
+</tr>
+<tr>
+<td>Lime on Navy</td>
+<td>11.7:1</td>
+</tr>
+</tbody>
+</table>
+<p>Also verified: White on Teal 5.7:1, Black on Yellow 10.2:1, Black on Orange 5.6:1, White on Navy
+15.3:1 and Cyan on Deep Teal 6.4:1.</p>
+<p>Never use these for text, because they fail: White on MC Blue 2.8:1, MC Blue on White 2.8:1, Teal
+on Navy 2.7:1 and White on Orange 2.8:1.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="status-colors-are-separate">Status colors are separate</h3><a class="sl-anchor-link" href="#status-colors-are-separate"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Status colors are separate”</span></a></div>
+<p>Propellant’s error, warning and success colors (the magenta, orange and green tokens, such as
+<code dir="auto">--critical</code>, <code dir="auto">--warning</code> and <code dir="auto">--success</code>) stay for interface status. Raspberry, Orange and Lime are
+decorative brand accents: never use them to signal status, and never use a status color as
+decoration.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="charts">Charts</h3><a class="sl-anchor-link" href="#charts"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Charts”</span></a></div>
+<p>Use the chart colors in this order: Teal, Yellow, Navy, MC Blue, Deep Teal and Gray 300 (<code dir="auto">#848F92</code>,
+<code dir="auto">--gray-300</code>). This order is Propellant’s application of the palette. Label the data directly, on
+or beside each line, bar or slice, rather than relying on a legend and color alone.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="in-the-signed-in-products">In the signed in products</h3><a class="sl-anchor-link" href="#in-the-signed-in-products"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “In the signed in products”</span></a></div>
+<p>The products keep their interface colors for now. Their primary color is still the interface teal,
+<code dir="auto">--tint</code> (<code dir="auto">#065E6F</code> in light mode), with the teal and gray scales and dark mode behind it, and
+Propellant’s semantic tokens are tuned for contrast in both themes. A later release moves the
+products’ primary color to the new Teal. In interfaces, keep using the semantic tokens (named for
+their job, not their color) rather than the hex values above.</p>
+<p>These older names belonged to Propellant’s earlier palette. They are no longer brand colors. The
+values stay as interface tokens, but brand material (graphics, documents, templates and websites)
+uses the new color in their place:</p>
+<table>
+<thead>
+<tr>
+<th>Old name</th>
+<th>Hex</th>
+<th>Interface token</th>
+<th>In brand material, use</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Deep teal</td>
 <td><code dir="auto">#044451</code></td>
-<td>Brand surfaces, such as the panel of a sign in page</td>
+<td><code dir="auto">--teal-900</code></td>
+<td>Deep Teal <code dir="auto">#004F73</code>, or Navy <code dir="auto">#10263F</code> for dark sections</td>
 </tr>
 <tr>
 <td>Teal</td>
 <td><code dir="auto">#065E6F</code></td>
-<td>The primary interactive color in light mode</td>
+<td><code dir="auto">--teal-800</code></td>
+<td>Teal <code dir="auto">#00708E</code></td>
 </tr>
 <tr>
 <td>Mid teal</td>
 <td><code dir="auto">#068DA4</code></td>
-<td>Supporting accents</td>
+<td><code dir="auto">--teal-600</code></td>
+<td>Teal <code dir="auto">#00708E</code></td>
 </tr>
 <tr>
 <td>Bright teal</td>
 <td><code dir="auto">#0FACBD</code></td>
-<td>Accents on dark surfaces</td>
+<td><code dir="auto">--teal-400</code></td>
+<td>MC Blue <code dir="auto">#0EABBC</code> for shapes, Cyan <code dir="auto">#54EEFF</code> for text and accents on dark</td>
 </tr>
 <tr>
 <td>Pale teal</td>
 <td><code dir="auto">#D9F6FA</code></td>
-<td>Tinted backgrounds</td>
+<td><code dir="auto">--teal-100</code></td>
+<td>Warm White <code dir="auto">#F8F8F5</code> for light sections, <code dir="auto">#F3FAFC</code> for the angled tint</td>
 </tr>
 <tr>
 <td>Mist</td>
 <td><code dir="auto">#F3FBFC</code></td>
-<td>The lightest tint</td>
+<td><code dir="auto">--teal-50</code></td>
+<td>Warm White <code dir="auto">#F8F8F5</code> for light sections, <code dir="auto">#F3FAFC</code> for the angled tint</td>
+</tr>
+<tr>
+<td>Ink</td>
+<td><code dir="auto">#1E282B</code></td>
+<td><code dir="auto">--gray-800</code></td>
+<td>Black <code dir="auto">#222222</code> for text</td>
+</tr>
+<tr>
+<td>Slate</td>
+<td><code dir="auto">#4B575B</code></td>
+<td><code dir="auto">--gray-500</code></td>
+<td>Black at reduced emphasis, through size or weight. Slate stays a neutral for secondary text on websites and in interfaces.</td>
 </tr>
 <tr>
 <td>Magenta</td>
 <td><code dir="auto">#BF0261</code></td>
-<td>Destructive actions and errors</td>
+<td><code dir="auto">--magenta-600</code></td>
+<td>Not a brand color. It stays the interface error color. In graphics, use Raspberry on dark backgrounds.</td>
 </tr>
 <tr>
-<td>Yellow</td>
-<td><code dir="auto">#FFC801</code></td>
-<td>Highlights, such as search matches and new items</td>
+<td>Logo teal</td>
+<td><code dir="auto">#17ACBC</code></td>
+<td></td>
+<td>MC Blue <code dir="auto">#0EABBC</code></td>
+</tr>
+<tr>
+<td>Logo gray</td>
+<td><code dir="auto">#828486</code></td>
+<td></td>
+<td>MC Gray <code dir="auto">#808285</code></td>
 </tr>
 </tbody>
 </table>
-<div class="sl-heading-wrapper level-h3"><h3 id="using-color">Using color</h3><a class="sl-anchor-link" href="#using-color"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Using color”</span></a></div>
-<ul>
-<li>Teal means you can act on something: buttons, links, selected controls and focus. Do not use it
-for headings, names or numbers.</li>
-<li>Magenta means something is wrong or cannot be undone. Never use it decoratively.</li>
-<li>Yellow highlights. Always set dark text on it.</li>
-<li>Our grays carry a slight teal tint, so they sit comfortably next to the teals.</li>
-<li>Pair every status color with a word or a symbol, never color alone.</li>
-<li>Text stands out from its background by a contrast ratio of at least 4.5:1, and the edges of
-controls by at least 3:1, in light and dark themes. Propellant’s semantic tokens (named for their
-job, not their color) are tuned for this, so in interfaces use the tokens rather than the hex
-values above.</li>
-</ul>
 <div class="sl-heading-wrapper level-h2"><h2 id="typography">Typography</h2><a class="sl-anchor-link" href="#typography"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Typography”</span></a></div>
 <table>
 <thead>
@@ -279,27 +567,126 @@ values above.</li>
 </thead>
 <tbody>
 <tr>
-<td>Propellant Sans</td>
-<td>All interface and body text. It is Lato 2.0 at 400, 500, 600 and 700, plus 400 italic, shipped with Propellant.</td>
+<td>Oswald</td>
+<td>Headlines, always in capitals. Also eyebrows, subheads, big stats and website buttons.</td>
 </tr>
 <tr>
-<td>Oswald</td>
-<td>Display headlines on public websites and pages, set in capitals. Never inside signed in applications.</td>
+<td>Lato</td>
+<td>Reading text. In Propellant it ships as Propellant Sans: Lato 2.0 at 400, 500, 600 and 700, plus 400 italic.</td>
 </tr>
 </tbody>
 </table>
+<p>Gotham, Bebas, Arial, Montserrat and Open Sans are retired.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="text-styles">Text styles</h3><a class="sl-anchor-link" href="#text-styles"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Text styles”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Style</th>
+<th>Font</th>
+<th>Case</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Headline</td>
+<td>Oswald SemiBold (600)</td>
+<td>ALL CAPS</td>
+<td>Line height 1.0. Two toned if you like: the lead phrase in Black or White, the payoff in Teal (on light) or Cyan (on dark).</td>
+</tr>
+<tr>
+<td>Eyebrow or tag</td>
+<td>Oswald Regular (400)</td>
+<td>ALL CAPS</td>
+<td>Tracked +300 (0.3em). Above headlines, and on tags, labels and footers.</td>
+</tr>
+<tr>
+<td>Subhead</td>
+<td>Oswald SemiBold (600)</td>
+<td>ALL CAPS</td>
+<td>Smaller than the headline. Card titles, numbered blocks and section labels.</td>
+</tr>
+<tr>
+<td>Body</td>
+<td>Lato Regular (400)</td>
+<td>Sentence case</td>
+<td>Line height 1.5. Lato Bold for emphasis.</td>
+</tr>
+<tr>
+<td>Big stat (optional)</td>
+<td>Oswald Bold (700)</td>
+<td>Numbers</td>
+<td>Display size only. The only use of Oswald Bold.</td>
+</tr>
+</tbody>
+</table>
+<p>Never set body copy in Oswald or in capitals.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="where-each-font-applies">Where each font applies</h3><a class="sl-anchor-link" href="#where-each-font-applies"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Where each font applies”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Where</th>
+<th>Lato (Propellant Sans)</th>
+<th>Oswald</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web products</td>
+<td>Shipped with Propellant as Propellant Sans.</td>
+<td>Never inside signed in product screens.</td>
+</tr>
+<tr>
+<td>Websites</td>
+<td>Shipped with Propellant. Builders that do not use Propellant pick Lato.</td>
+<td>Shipped with Propellant through <code dir="auto">--type-family-brand</code>. The <a href="/web/websites/">websites guide</a> has the full spec.</td>
+</tr>
+<tr>
+<td>Microsoft Office</td>
+<td>Install Lato.</td>
+<td>Install Oswald.</td>
+</tr>
+<tr>
+<td>Google Workspace</td>
+<td>Lato, from Google Fonts.</td>
+<td>Oswald, from Google Fonts.</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>Lato, falling back to Aptos.</td>
+<td>Aptos Narrow Bold in capitals for headers.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Office and email fallback.</strong> When Oswald or Lato will not load, use Aptos Narrow Bold, in
+capitals, for headers and Aptos for body text. Both ship with Microsoft 365. Never Arial. Install
+Oswald and Lato on every staff computer, and embed the fonts in PowerPoint templates (<strong>File &gt;
+Options &gt; Save &gt; Embed fonts in the file</strong>).</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="in-the-signed-in-products-1">In the signed in products</h3><a class="sl-anchor-link" href="#in-the-signed-in-products-1"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “In the signed in products”</span></a></div>
+<p>The product text styles do not change, and Oswald is never used inside a signed in product.</p>
 <ul>
-<li>Use sentence case for titles, labels and buttons. Capitals belong only to Oswald headlines and
-the wordmark.</li>
+<li>Use sentence case for titles, labels and buttons. Capitals belong only to Oswald, the wordmark
+and the labels of the graphic devices below.</li>
 <li>Use the eleven named text styles in Propellant rather than choosing sizes by eye.</li>
 <li>Use tabular figures (digits of equal width) wherever numbers line up in columns.</li>
 <li>Keep lines of running text to about 68 characters.</li>
 </ul>
 <div class="sl-heading-wrapper level-h2"><h2 id="voice">Voice</h2><a class="sl-anchor-link" href="#voice"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Voice”</span></a></div>
-<p>MassChallenge sounds bold and human. On our website we say “We back the rare humans with the grit
-to solve the toughest challenges” and “It takes a community to raise a startup.” Our products
-should sound like the same people: direct, plain spoken and on the side of the community we serve.
-In a product the stakes are practical, so keep the confidence and drop the slogans.</p>
+<p>MassChallenge sounds bold and ambitious. Our primary line is “We back the rare humans with the grit
+to solve the toughest challenges,” and we are “a global network turning bold ideas into outcomes
+that matter.” Our products should sound like the same
+people: direct, plain spoken and on the side of the founders we serve. In a product the stakes are
+practical, so keep the confidence and drop the slogans.</p>
+<p>What that sounds like:</p>
+<ul>
+<li><strong>Bold and ambitious.</strong> “Rare humans”, “grit”, “toughest challenges”.</li>
+<li><strong>Founder first.</strong> “We back the rare humans with the grit to solve the toughest challenges.”</li>
+<li><strong>About outcomes and access.</strong> “From proof to scale”, “outcomes that matter”, “access to the
+people and power that move markets”.</li>
+<li><strong>Short declarative headlines in capitals.</strong> On public pages, in Oswald.</li>
+</ul>
+<p>“It takes a community to raise a startup.” is not a MassChallenge line. It is a founder’s testimonial. Never present it
+as a tagline or as our words.</p>
 <ul>
 <li>Get to the point. Use short sentences and everyday words, the way you would explain it to a
 colleague.</li>
@@ -308,7 +695,7 @@ colleague.</li>
 exclamation marks.</li>
 <li>Write for the whole community. Use the words the people using the product use: programs,
 startups, applications, mentors, judges.</li>
-<li>Use sentence case for every title, label and button.</li>
+<li>Use sentence case for every title, label and button in a product.</li>
 <li>Put a verb on every button that says what happens, such as Save changes or Submit application.</li>
 <li>When something goes wrong, say what happened and how to fix it. Do not apologize or blame.</li>
 <li>Use commas, colons and periods. Do not use em dashes or en dashes.</li>
@@ -336,10 +723,302 @@ startups, applications, mentors, judges.</li>
 </tr>
 </tbody>
 </table>
+<div class="sl-heading-wrapper level-h2"><h2 id="messaging">Messaging</h2><a class="sl-anchor-link" href="#messaging"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Messaging”</span></a></div>
+<p>Quote these lines as written.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="primary-line">Primary line</h3><a class="sl-anchor-link" href="#primary-line"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Primary line”</span></a></div>
+<p>“We back the rare humans with the grit to solve the toughest challenges.”</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="positioning">Positioning</h3><a class="sl-anchor-link" href="#positioning"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Positioning”</span></a></div>
+<ul>
+<li>“Born in Massachusetts. Built for the world.”</li>
+<li>“A global network turning bold ideas into outcomes that matter.”</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="boilerplate">Boilerplate</h3><a class="sl-anchor-link" href="#boilerplate"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Boilerplate”</span></a></div>
+<p>Each version adds to the one before. Use the shortest that fits.</p>
+<p><strong>Short</strong></p>
+<blockquote>
+<p>Born in Massachusetts and built for the world, MassChallenge backs the rare humans with the grit
+to solve the world’s hardest challenges.</p>
+</blockquote>
+<p><strong>Medium</strong></p>
+<blockquote>
+<p>Born in Massachusetts and built for the world, MassChallenge backs the rare humans with the grit
+to solve the world’s hardest challenges. What began in New England’s innovation corridor is now a
+global network connecting startups, experts, and partners across industries and continents, all
+working to turn bold ideas into outcomes that matter.</p>
+</blockquote>
+<p><strong>Long</strong></p>
+<blockquote>
+<p>Born in Massachusetts and built for the world, MassChallenge backs the rare humans with the grit
+to solve the world’s hardest challenges. What began in New England’s innovation corridor is now a
+global network connecting startups, experts, and partners across industries and continents, all
+working to turn bold ideas into outcomes that matter. We are the earliest believer in founders
+tackling complex, regulated, and high-stakes problems, providing the infrastructure, access, and
+catalytic capital to move from proof to scale. Since 2009, MassChallenge has supported more than
+5,000 startups across five Challenge Areas, helping them raise $16B+ in funding, create 90K jobs,
+and collaborate with more than 500 partners worldwide.</p>
+</blockquote>
+<div class="sl-heading-wrapper level-h3"><h3 id="approved-figures">Approved figures</h3><a class="sl-anchor-link" href="#approved-figures"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Approved figures”</span></a></div>
+<p>As of November 2026.</p>
+<table>
+<thead>
+<tr>
+<th>Figure</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Founded</td>
+<td>2009</td>
+</tr>
+<tr>
+<td>Startups supported</td>
+<td>More than 5,000</td>
+</tr>
+<tr>
+<td>Challenge Areas</td>
+<td>Five</td>
+</tr>
+<tr>
+<td>Funding raised by those startups</td>
+<td>$16B+</td>
+</tr>
+<tr>
+<td>Jobs created</td>
+<td>90K</td>
+</tr>
+<tr>
+<td>Partners</td>
+<td>More than 500</td>
+</tr>
+</tbody>
+</table>
+<p>Always show the as-of date with a figure, for example “more than 5,000 startups (as of November
+2026)”, or in a note under a chart or slide.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="challenge-areas">Challenge Areas</h3><a class="sl-anchor-link" href="#challenge-areas"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Challenge Areas”</span></a></div>
+<ul>
+<li>Healthcare and Life Sciences</li>
+<li>Security and Resiliency</li>
+<li>Sustainable Food Systems</li>
+<li>Climate</li>
+<li>Global Financial Systems</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="accelerators">Accelerators</h3><a class="sl-anchor-link" href="#accelerators"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Accelerators”</span></a></div>
+<p>Traction, Challenge and Breakthrough Bio.
+Corporate Partners is the partnership offer, not an accelerator.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="audiences">Audiences</h3><a class="sl-anchor-link" href="#audiences"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Audiences”</span></a></div>
+<p>Our network has three audiences: Founders, Experts and Collaborators. In products, keep
+the words people use there: startups, applications, mentors, judges and programs. A mentor or a
+judge is one kind of expert.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="leadership">Leadership</h3><a class="sl-anchor-link" href="#leadership"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Leadership”</span></a></div>
+<p>Cait Brumme, CEO of MassChallenge.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="naming-rules">Naming rules</h3><a class="sl-anchor-link" href="#naming-rules"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Naming rules”</span></a></div>
+<ul>
+<li>Write the name as in <a href="#the-name">The name</a>: MassChallenge, one word, no trademark symbol.</li>
+<li>Write the Challenge Areas with “and” in running text. Use “&amp;” only in tight labels.</li>
+<li>Write the Challenge Areas and the accelerator names exactly as listed above.</li>
+<li>Say founders, experts and collaborators when talking about the network, and the product words
+(startups, mentors, judges) inside a product.</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="contact-social-and-legal">Contact, social and legal</h2><a class="sl-anchor-link" href="#contact-social-and-legal"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Contact, social and legal”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="contact">Contact</h3><a class="sl-anchor-link" href="#contact"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Contact”</span></a></div>
+<p>Email: <a href="mailto:contact@masschallenge.org">contact@masschallenge.org</a></p>
+<div class="sl-heading-wrapper level-h3"><h3 id="social">Social</h3><a class="sl-anchor-link" href="#social"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Social”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Channel</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LinkedIn</td>
+<td><a href="https://www.linkedin.com/company/masschallenge">linkedin.com/company/masschallenge</a></td>
+</tr>
+<tr>
+<td>Instagram</td>
+<td><a href="https://www.instagram.com/masschallenge/">instagram.com/masschallenge</a></td>
+</tr>
+<tr>
+<td>X</td>
+<td><a href="https://x.com/MassChallenge">x.com/MassChallenge</a></td>
+</tr>
+<tr>
+<td>YouTube</td>
+<td>The MassChallenge YouTube channel.</td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="footer-links">Footer links</h3><a class="sl-anchor-link" href="#footer-links"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Footer links”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Link</th>
+<th>Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Careers</td>
+<td><a href="https://masschallenge.org/careers/">masschallenge.org/careers</a></td>
+</tr>
+<tr>
+<td>Ways to Support</td>
+<td><a href="https://masschallenge.org/give/">masschallenge.org/give</a></td>
+</tr>
+<tr>
+<td>Privacy Policy</td>
+<td><a href="https://masschallenge.org/privacy-notice/">masschallenge.org/privacy-notice</a></td>
+</tr>
+<tr>
+<td>Terms of Use</td>
+<td><a href="https://masschallenge.org/website-terms-of-use/">masschallenge.org/website-terms-of-use</a></td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h3"><h3 id="copyright-and-trademarks">Copyright and trademarks</h3><a class="sl-anchor-link" href="#copyright-and-trademarks"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Copyright and trademarks”</span></a></div>
+<ul>
+<li>Copyright line: “© MassChallenge 2026”. Use the current year.</li>
+<li>Do not put a trademark symbol on the name or the logo.</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="offices">Offices</h3><a class="sl-anchor-link" href="#offices"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Offices”</span></a></div>
+<table>
+<thead>
+<tr>
+<th>Office</th>
+<th>Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boston, MA</td>
+<td>10 Fan Pier Blvd, 3rd Floor, Boston, MA 02210 USA</td>
+</tr>
+<tr>
+<td>Dallas, TX</td>
+<td>3060 Pegasus Park Dr, Building 6, Dallas, TX 75247</td>
+</tr>
+<tr>
+<td>Israel</td>
+<td>10 Jaffa Street, Jerusalem, 9434251, Israel</td>
+</tr>
+<tr>
+<td>Switzerland</td>
+<td>Chemin du Closel 5, 1020 Renens, Switzerland</td>
+</tr>
+<tr>
+<td>United Kingdom</td>
+<td>Royal Docks Centre for Sustainability, 4-6 University Way, London E16 2RD, United Kingdom</td>
+</tr>
+</tbody>
+</table>
+<div class="sl-heading-wrapper level-h2"><h2 id="graphic-devices">Graphic devices</h2><a class="sl-anchor-link" href="#graphic-devices"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Graphic devices”</span></a></div>
+<p>These are the standard graphic devices. Build them from the palette and the logo files, and never
+redraw the logo.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="hero-overlay">Hero overlay</h3><a class="sl-anchor-link" href="#hero-overlay"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Hero overlay”</span></a></div>
+<p>A thin linear gradient over a hero photo, from Navy black <code dir="auto">#051925</code> to Ocean <code dir="auto">#037AA6</code>, at 15 to 30%
+opacity. It runs toward the subject: the side with the text is darker, and the subject’s side stays
+clear, so warm light still glows through. Use it on heroes, social posts and event graphics. On the
+web it is the <code dir="auto">propellant-hero</code> class, or the <code dir="auto">--mc-hero-overlay-text-side</code> and
+<code dir="auto">--mc-hero-overlay-subject-side</code> tokens.</p>
+<p>The overlay alone does not make text readable: at 15 to 30% it barely darkens a bright area, so
+white text over one stays near 2:1. Use it only where the text sits on an area that is already
+dark and calm, and check that the text still reaches 4.5:1 (3:1 for large headlines). Otherwise
+set the text on a solid Navy, Black or Deep Teal block.</p>
+<p>The full frame teal duotone (<code dir="auto">#C7F2EF</code> to <code dir="auto">#003349</code>) is retired, because it reads as clinical. Use
+the hero overlay instead.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="hexagon-network-frame">Hexagon network frame</h3><a class="sl-anchor-link" href="#hexagon-network-frame"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Hexagon network frame”</span></a></div>
+<p>A circular photo crop set inside a network of hexagons and lines. Draw the hexagon shapes in MC
+Blue and the lines in the light tint <code dir="auto">#F3FAFC</code>. Use it for a single photo beside text.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="geometric-pattern">Geometric pattern</h3><a class="sl-anchor-link" href="#geometric-pattern"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Geometric pattern”</span></a></div>
+<p>The brand pattern: MC Blue triangles with the light tint <code dir="auto">#F3FAFC</code> or Warm White, and an Oswald
+label in capitals on top, such as “ACCELERATOR” or “CHALLENGE”. Use it for covers and headers.</p>
+<p>Set the label in Black on the light parts of the pattern, or in White on a solid Navy or Deep Teal
+panel. Check the contrast of every label: never set White straight on the triangles, because White
+on MC Blue is only 2.8:1.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="stat-callouts">Stat callouts</h3><a class="sl-anchor-link" href="#stat-callouts"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Stat callouts”</span></a></div>
+<p>A large number in Oswald Bold with a short label. Set the number in Teal on light backgrounds and
+Cyan on dark ones, with the label in Black or White. A single Yellow rule is an optional warm
+accent. Never use Raspberry for numbers. Use the <a href="#approved-figures">approved figures</a>, with their
+as-of date.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="program-lockup">Program lockup</h3><a class="sl-anchor-link" href="#program-lockup"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Program lockup”</span></a></div>
+<p>Use the <a href="#sub-brands-and-partners">sub-brand lockup</a> structure. Only MassChallenge Marketing creates
+real lockups; this page only describes the structure.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="partner-lockup">Partner lockup</h3><a class="sl-anchor-link" href="#partner-lockup"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Partner lockup”</span></a></div>
+<p>Use the <a href="#sub-brands-and-partners">corporate partner lockup</a>.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="program-timelines">Program timelines</h3><a class="sl-anchor-link" href="#program-timelines"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Program timelines”</span></a></div>
+<p>Dots on a line, with each step above or below its dot. Color the dots in the
+<a href="#charts">chart order</a>. The words beside each dot carry the meaning, so the colors never have to.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="icons">Icons</h3><a class="sl-anchor-link" href="#icons"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Icons”</span></a></div>
+<p>Single color line icons, in Teal on light backgrounds and Cyan on dark ones, always beside a word.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="event-tags">Event tags</h3><a class="sl-anchor-link" href="#event-tags"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Event tags”</span></a></div>
+<p>Tags such as EVENTS or NEWS on graphics stay rectangular, in the eyebrow style, with dark text on
+Yellow.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="imagery">Imagery</h2><a class="sl-anchor-link" href="#imagery"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Imagery”</span></a></div>
+<p>Every image carries some warmth, and shows real work and real people. Pick one of three treatments:</p>
+<table>
+<thead>
+<tr>
+<th>Treatment</th>
+<th>Use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01 Overlay</td>
+<td>Heroes, social posts and event graphics, with a thin <a href="#hero-overlay">hero overlay</a> so warm light glows through.</td>
+</tr>
+<tr>
+<td>02 Full color</td>
+<td>Content photos, spaces and people, with no overlay or duotone.</td>
+</tr>
+<tr>
+<td>03 Accent rescue</td>
+<td>A cool photo with no warmth gets one warm accent (Yellow, Orange or Lime) on a tag, a rule or a subhead.</td>
+</tr>
+</tbody>
+</table>
+<p>The <a href="/guidelines/images/#brand-photography">images guide</a> has the full photography direction: what to shoot,
+what to avoid, the rule on AI images and where photos come from.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="video">Video</h2><a class="sl-anchor-link" href="#video"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Video”</span></a></div>
+<ul>
+<li>The photography rules apply: real people, balanced exposure and warmth in the frame.</li>
+<li>Every video uses the standard logo open and end slates and consistent lower thirds. MassChallenge
+Marketing approves final exports before they go live.</li>
+<li>Frame interviews on the rule of thirds, with the eyes near a top intersection and lead room in
+the direction the subject faces.</li>
+<li>Lower thirds: a Navy block with a Cyan rule. The name in Oswald SemiBold and the title in Lato,
+bottom left, inside the title safe area.</li>
+<li>Use only footage MassChallenge has licensed or shot itself.</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="sub-brands-and-partners">Sub-brands and partners</h2><a class="sl-anchor-link" href="#sub-brands-and-partners"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Sub-brands and partners”</span></a></div>
+<p>Only MassChallenge Marketing creates sub-brand lockups and endorsement marks. The structures below
+describe what they look like, so you can recognize and place them; never build one yourself.</p>
+<p><strong>Sub-brand lockup.</strong> For programs MassChallenge runs under its own name, such as Breakthrough Bio:
+the MC mark, an MC Blue rule (Cyan on dark), the program name in Oswald SemiBold and the location
+in tracked Oswald Regular. Partner logos never join a lockup.</p>
+<p><strong>Partner initiative endorsement.</strong> For programs that partners own and run with MassChallenge
+guidance: the initiative name above a 1pt rule, and an endorsement line below it (“WITH
+MASSCHALLENGE” or “WITH PARTNER &amp; MASSCHALLENGE”), aligned left.</p>
+<p><strong>Corporate partner lockup.</strong> For a challenge program a partner commissions:</p>
+<ul>
+<li>The partner’s logo first, on the left, then a 1pt vertical rule a little taller than the logos,
+then the MassChallenge vertical logo on the right.</li>
+<li>Give both logos equal visual weight. The gap on each side of the rule equals the height of the M
+in the MC mark.</li>
+<li>The rule is MC Gray on light backgrounds, and white or light gray on dark ones.</li>
+<li>Both logos are full color on white, or both white on dark or on the partner’s brand color.</li>
+<li>Do not put MassChallenge first, mix a full color logo with a white one, let one logo overpower
+the other, drop the rule or use a plus sign.</li>
+</ul>
+<p>Whether a partner’s logo appears alongside ours is set in the partnership agreement.</p>
 <div class="sl-heading-wrapper level-h2"><h2 id="iconography">Iconography</h2><a class="sl-anchor-link" href="#iconography"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Iconography”</span></a></div>
 <ul>
-<li>Icons sit beside text: their stroke follows the weight of the text and their size follows its
-text style.</li>
+<li>In brand material, icons are single color line icons, in Teal on light backgrounds and Cyan on
+dark ones, always beside a word.</li>
+<li>In products, icons sit beside text: their stroke follows the weight of the text and their size
+follows its text style.</li>
 <li>Use one icon per idea across a product.</li>
 <li>An icon that acts alone, without a visible label, needs an accessible name.</li>
 </ul>
