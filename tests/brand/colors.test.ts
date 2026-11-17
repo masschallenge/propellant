@@ -48,6 +48,10 @@ describe('one source for the colors', () => {
 });
 
 describe('the brand guide palette', () => {
+  it('names a Propellant token for every brand color', () => {
+    BRAND_COLORS.forEach((color) => expect(color.token, color.name).toBeTruthy());
+  });
+
   it('holds the core, supporting and warm accent colors with their official values', () => {
     const values = Object.fromEntries(BRAND_COLORS.map((color) => [color.name, color.hex]));
     expect(values).toEqual({
@@ -151,7 +155,7 @@ describe('logo colors', () => {
 describe('supporting neutrals and charts', () => {
   it('adds the light tint and the grays from the Propellant tokens', () => {
     expect(SUPPORTING_COLORS.map((color) => [color.name, color.hex, color.token ?? null])).toEqual([
-      ['Light tint', '#F3FAFC', null],
+      ['Light tint', '#F3FAFC', '--mc-light-tint'],
       ['Gray 100', '#DBE1E3', '--gray-100'],
       ['Gray 300', '#848F92', '--gray-300'],
       ['Slate', '#4B575B', '--gray-500'],

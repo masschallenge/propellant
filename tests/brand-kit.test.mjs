@@ -58,7 +58,8 @@ describe('the color files', () => {
     expect(text).toContain('RGB    16, 38, 63');
     expect(text).toContain('CMYK   75, 40, 0, 75 (approximate)');
     expect(text).toContain('Print  #00CFE8');
-    expect(text).toContain('Token  var(--yellow-400)');
+    expect(text).toContain('Token  var(--mc-blue)');
+    expect(text).toContain('Token  var(--mc-yellow)');
     expect(text).toContain('SUPPORTING NEUTRALS AND TINT');
   });
 
@@ -73,7 +74,7 @@ describe('the color files', () => {
       rgb: '14, 171, 188',
       cmyk: '93, 9, 0, 26',
       printSubstitute: null,
-      token: null,
+      token: '--mc-blue',
       role: colors.brandColors[0].role,
     });
     expect(parsed.brandColors.find((color) => color.name === 'Ocean').cmyk).toBeNull();
