@@ -599,11 +599,11 @@ believer." Keep them under about eight words.
 
 ## Production React apps
 
-Install from GitHub at the release this skill was built from, v2.2.0, or a newer
+Install from GitHub at the release this skill was built from, v2.3.0, or a newer
 release of `masschallenge/propellant-web` if one exists:
 
 ```bash
-npm install github:masschallenge/propellant-web#v2.2.0
+npm install github:masschallenge/propellant-web#v2.3.0
 ```
 
 In the global stylesheet:
@@ -1016,7 +1016,7 @@ The product text styles do not change, and Oswald is never used inside a signed 
 
 - Use sentence case for titles, labels and buttons. Capitals belong only to Oswald, the wordmark
   and the labels of the graphic devices below.
-- Use the eleven named text styles in Propellant rather than choosing sizes by eye.
+- Use the twelve named text styles in Propellant rather than choosing sizes by eye.
 - Use tabular figures (digits of equal width) wherever numbers line up in columns.
 - Keep lines of running text to about 68 characters.
 
@@ -2707,7 +2707,7 @@ Google.
 ## Install
 
 ```bash
-npm install github:masschallenge/propellant-web#v2.2.0
+npm install github:masschallenge/propellant-web#v2.3.0
 ```
 
 ```css
@@ -2737,8 +2737,8 @@ install: one stylesheet and a few class names.
 - [Websites and site builders](/web/websites/): WordPress, Squarespace, Webflow, Wix, HubSpot and plain HTML
 - [Brand guidelines](/brand/reference/), including logo usage
 - [Images and uploads](/guidelines/images/): how to handle photos and logos people upload
-- [Contributing](https://github.com/masschallenge/propellant-web/blob/v2.2.0/CONTRIBUTING.md)
-- [Changelog](https://github.com/masschallenge/propellant-web/blob/v2.2.0/CHANGELOG.md)
+- [Contributing](https://github.com/masschallenge/propellant-web/blob/v2.3.0/CONTRIBUTING.md)
+- [Changelog](https://github.com/masschallenge/propellant-web/blob/v2.3.0/CHANGELOG.md)
 
 The documentation site and Storybook run locally:
 
@@ -2750,9 +2750,9 @@ yarn site:build   # the documentation site as one HTML file in site/dist
 
 ## Getting help
 
-- **Bugs, questions and ideas:** open an issue on GitHub. The [contributing guide](https://github.com/masschallenge/propellant-web/blob/v2.2.0/CONTRIBUTING.md)
+- **Bugs, questions and ideas:** open an issue on GitHub. The [contributing guide](https://github.com/masschallenge/propellant-web/blob/v2.3.0/CONTRIBUTING.md)
   explains how we handle them.
-- **Security problems:** report them privately, as described in [SECURITY.md](https://github.com/masschallenge/propellant-web/blob/v2.2.0/SECURITY.md).
+- **Security problems:** report them privately, as described in [SECURITY.md](https://github.com/masschallenge/propellant-web/blob/v2.3.0/SECURITY.md).
 - **Using the MassChallenge name or logo:** read the [brand guidelines](/brand/reference/). For
   anything they do not cover, contact MassChallenge through
   [masschallenge.org](https://masschallenge.org).
@@ -2780,7 +2780,7 @@ docker run --rm --ipc=host -v "$PWD":/work -w /work mcr.microsoft.com/playwright
 
 ## License
 
-The code is free to use under the [MIT License](https://github.com/masschallenge/propellant-web/blob/v2.2.0/LICENSE). The MassChallenge and Propellant names
+The code is free to use under the [MIT License](https://github.com/masschallenge/propellant-web/blob/v2.3.0/LICENSE). The MassChallenge and Propellant names
 and logos are trademarks of MassChallenge, Inc. and are not covered by that license; see
 [the brand guidelines](/brand/reference/) for how they may be used. The fonts are licensed under the
 SIL Open Font License 1.1.
@@ -2822,11 +2822,11 @@ Propellant needs Node 22 or later and, for components, React 19.
 Install the package from GitHub at a released version:
 
 ```bash
-npm install github:masschallenge/propellant-web#v2.2.0
+npm install github:masschallenge/propellant-web#v2.3.0
 ```
 
 ```bash
-yarn add github:masschallenge/propellant-web#v2.2.0
+yarn add github:masschallenge/propellant-web#v2.3.0
 ```
 
 The package is published as `@masschallenge/propellant-web`.
@@ -2923,6 +2923,86 @@ export const Layout = ({ children }: { children: React.ReactNode }) => (
 `SidebarItem` and `Button` render plain links by default. Pass your router's link component to
 `linkAs` to keep client side navigation, where pages change without a full reload.
 
+#### Nest destinations in a tree
+
+A `SidebarItem` takes `subitems`, more `SidebarItem`s shown in a nested list below it. Top level
+rows and rows with an icon are the largest, and a parent with `collapsible={false}` is the program
+row. Below them, a row that holds more items or carries a `marker` keeps the label color, and a
+row with nothing below it is a leaf, smaller and in the secondary label color. The children of a
+row with an icon line up with its label. Labels wrap to two lines and the row grows with them.
+
+A top level item with nothing nested keeps the height its `size` gives it, `sm` by default, so a
+flat sidebar looks as it did. With `sidebarCollapse="rail"` every top level row takes the tree
+size. An explicit `size` sets the height of any row in the list.
+
+- A parent is a button that only opens and closes its list, with `aria-expanded` and
+  `aria-controls`; Enter and Space toggle it. It never navigates and never closes the compact
+  overlay, so only leaves are destinations. Any `href` on a parent is ignored. Leave it
+  uncontrolled with `defaultExpanded`, or control it with `expanded` and `onExpandedChange`,
+  usually open for the branch that holds the current page.
+- Set `collapsible={false}` on a parent that always shows its list, such as a program whose
+  stages are always in view. It has no chevron and no `aria-expanded`. With an `href` it stays a
+  link; without one it is a plain row that takes no focus and no clicks. At any depth, with or
+  without `media`, it starts at the top level icon column and its children take the stage indent,
+  so a program nested under a persona lines up the same way with or without a logo.
+- Put a `SidebarSeparator` between groups for a hairline. Inside a branch it lines up with the
+  rows of that branch. The rail leaves it out.
+- Set `current` on the current page only. Set `inTrail` on the top level item whose branch holds
+  it, so the rail can show where people are.
+- `marker` shows a stage as `done`, `now` or `next` with its number, and its `label` is read by
+  assistive technology. `media` fills a 60 by 36 thumbnail with 5px corners,
+  `--corner-thumbnail`, cropping the logo to cover it, beside a name of up to two lines. The
+  program row and its rows sit 6px in from the sidebar edge, as one inset block.
+- Pass a `RoleTag` to `accessory` to name the role a destination belongs to. Assistive technology
+  reads it once, after the label, and not at all when it repeats the label.
+- Role tags and marker numbers use the Caption 2 text style, `text-caption2`: 10px with 0.06em
+  tracking. The component sets the weight.
+
+```tsx
+<SidebarItem
+  marker={{ state: 'now', label: 'in progress' }}
+  defaultExpanded
+  subitems={
+    <>
+      <SidebarItem href="/program/review/judges" current>
+        Judges
+      </SidebarItem>
+      <SidebarItem href="/program/review/progress">Progress</SidebarItem>
+    </>
+  }
+>
+  Online review
+</SidebarItem>
+```
+
+#### Collapse to a rail
+
+By default the toolbar button hides the sidebar. Set `sidebarCollapse="rail"` to collapse it to a
+column of icons instead:
+
+```tsx
+<AppShell sidebarCollapse="rail" sidebarStorageKey="console-sidebar" defaultSidebarCollapsed>
+```
+
+- The sidebar header carries the Collapse menu and Expand menu button, with `aria-expanded` and
+  `aria-controls`, and the toolbar drops its toggle on wide windows.
+- The rail shows top level items as their icon, logo or marker, so give each one of them. Each is
+  a 32px button with an 18px icon, 38px apart, and a logo is a 34 by 20 thumbnail. Their names
+  stay available to assistive technology.
+- The rail opens and closes only by click. Expand menu pins the full tree in its column again,
+  and clicking a parent's icon pins it with that parent expanded. A leaf's icon is a link and
+  keeps the rail. Only Collapse menu returns to the rail: choosing a destination, Escape and a
+  press outside leave the pinned tree open.
+- In the rail, the `inTrail` row carries `aria-current="true"`, since the current page itself is
+  not shown.
+- `sidebarStorageKey` remembers the choice in local storage, across tabs.
+  `defaultSidebarCollapsed` sets the state when nothing is stored. Both work in the default hide
+  mode too, where collapsed means hidden.
+- Below 1024px the toolbar button opens the full tree as an overlay, as in hide mode.
+- `useAppShell()` reports `collapseMode`, `isCollapsed` and `isRail`, so content you put in the
+  sidebar footer can fit the rail, and `toggleCollapsed` to switch between the rail and the
+  pinned tree.
+
 ### 5. Choose light or dark
 
 `AppShell` takes an `appearance` value:
@@ -2982,8 +3062,8 @@ Use tokens by their role, never the raw values behind them:
 | Kind | Examples |
 | --- | --- |
 | Color | `--label`, `--label-secondary`, `--bg`, `--bg-grouped`, `--tint`, `--critical`, `--separator` |
-| Type | `--type-family`, `--type-family-brand`, and the `text-body`, `text-headline` utilities |
-| Shape | `--corner-sm`, `--corner-md`, `--corner-lg`, `--corner-xl`, `--corner-capsule` |
+| Type | `--type-family`, `--type-family-brand`, and the `text-body`, `text-headline`, `text-caption2` utilities |
+| Shape | `--corner-sm`, `--corner-thumbnail`, `--corner-md`, `--corner-lg`, `--corner-xl`, `--corner-capsule` |
 | Depth | `--shadow-float`, `--shadow-sheet`, `--material-bar` |
 | Motion | `--spring-snappy`, `--spring-smooth`, `--ease-standard` |
 | Layout | `--control-md`, `--row`, `--page-margin`, `--width-form`, `--space-4` |
@@ -3188,12 +3268,12 @@ so it never changes the rest of your site. Load it with this line, wherever a gu
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/dist/website.css"
+  href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/dist/website.css"
 />
 ```
 
-The `@v2.2.0` part pins your site to one release, so it never changes under you. A complete
-example page is in [`examples/website.html`](https://github.com/masschallenge/propellant-web/blob/v2.2.0/examples/website.html).
+The `@v2.3.0` part pins your site to one release, so it never changes under you. A complete
+example page is in [`examples/website.html`](https://github.com/masschallenge/propellant-web/blob/v2.3.0/examples/website.html).
 
 **Type**
 
@@ -3280,7 +3360,7 @@ Add this line inside the `<head>` of every page, before your own stylesheets:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/dist/website.css"
+  href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/dist/website.css"
 />
 ```
 
@@ -3324,7 +3404,7 @@ Copy this into a new file named `index.html`, open it in a browser, and change t
     <title>Your page title</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/dist/website.css"
+      href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/dist/website.css"
     />
     <style>
       body { margin: 0; }
@@ -3340,7 +3420,7 @@ Copy this into a new file named `index.html`, open it in a browser, and change t
     <section class="propellant-section-navy propellant-notch">
       <div class="content">
         <img
-          src="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/logos/masschallenge-logo-horizontal-white.png"
+          src="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/logos/masschallenge-logo-horizontal-white.png"
           alt="MassChallenge"
           height="32"
         />
@@ -3393,7 +3473,7 @@ Copy this into a new file named `index.html`, open it in a browser, and change t
 ```
 
 A similar finished page is in
-[`examples/website.html`](https://github.com/masschallenge/propellant-web/blob/v2.2.0/examples/website.html).
+[`examples/website.html`](https://github.com/masschallenge/propellant-web/blob/v2.3.0/examples/website.html).
 
 ## Part 4: Use the colors in your own CSS
 
@@ -3479,11 +3559,11 @@ defaults permission. To change site wide code you need the Website settings perm
 
 **Download the logo files.** Save these from our logo folder to your computer:
 
-- https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/logos/masschallenge-logo-horizontal-color.png
+- https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/logos/masschallenge-logo-horizontal-color.png
   (the main logo, for White and Warm White backgrounds)
-- https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/logos/masschallenge-logo-horizontal-white.png
+- https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/logos/masschallenge-logo-horizontal-white.png
   (for Navy, Black and Deep Teal backgrounds)
-- https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/logos/masschallenge-logo-monogram-color.png
+- https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/logos/masschallenge-logo-monogram-color.png
   (the MC monogram, for the site icon)
 
 The monogram also comes in `-white` and `-black` versions. Read the
@@ -3933,7 +4013,7 @@ HTML (Option A) on its own, outside any `<style>` tags:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/dist/website.css"
+  href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/dist/website.css"
 />
 ```
 
@@ -4024,11 +4104,11 @@ Keep it open in another tab so you can copy hex codes from it.
 and save the image to your computer:
 
 - Full color horizontal logo, for the header on White:
-  https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/logos/masschallenge-logo-horizontal-color.png
+  https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/logos/masschallenge-logo-horizontal-color.png
 - White horizontal logo, for Navy, Black and Deep Teal backgrounds:
-  https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/logos/masschallenge-logo-horizontal-white.png
+  https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/logos/masschallenge-logo-horizontal-white.png
 - Full color monogram (the MC mark on its own), for the browser icon:
-  https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/logos/masschallenge-logo-monogram-color.png
+  https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/logos/masschallenge-logo-monogram-color.png
 - There are also `-white` and `-black` versions of the monogram, and a `-black` horizontal logo,
   at the same address with the color word changed. The [brand guidelines](/brand/reference/) say when to
   use each one.
@@ -4610,7 +4690,7 @@ cannot do on their own, such as the notch, the angled tint and the hero overlay.
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/dist/website.css"
+  href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/dist/website.css"
 />
 ```
 
@@ -4730,11 +4810,11 @@ guide comes from it.
 **The logo files.** Download these from our public file store (right click each link, then save):
 
 - Horizontal logo, full color, for White and Warm White backgrounds:
-  [masschallenge-logo-horizontal-color.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/logos/masschallenge-logo-horizontal-color.png)
+  [masschallenge-logo-horizontal-color.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/logos/masschallenge-logo-horizontal-color.png)
 - Horizontal logo, white, for Navy, Black and Deep Teal backgrounds:
-  [masschallenge-logo-horizontal-white.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/logos/masschallenge-logo-horizontal-white.png)
+  [masschallenge-logo-horizontal-white.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/logos/masschallenge-logo-horizontal-white.png)
 - Monogram, full color, for the site icon:
-  [masschallenge-logo-monogram-color.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/logos/masschallenge-logo-monogram-color.png)
+  [masschallenge-logo-monogram-color.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/logos/masschallenge-logo-monogram-color.png)
 
 There are also `-black` versions of both lockups, and a `-white` monogram, at the same address. Use
 these files only, never a copy of the logo from somewhere else. The
@@ -5191,7 +5271,7 @@ This needs a paid Core, Growth, Agency or Freelancer Workspace, or an active Sit
    <!-- Propellant website styles: see github.com/masschallenge/propellant-web -->
    <link
      rel="stylesheet"
-     href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/dist/website.css"
+     href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/dist/website.css"
    />
    ```
 
@@ -5312,11 +5392,11 @@ character color codes that start with `#`) straight from it.
 
 **Download the logo files.** Use only the official files. Save these to your computer:
 
-- [masschallenge-logo-horizontal-color.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/logos/masschallenge-logo-horizontal-color.png),
+- [masschallenge-logo-horizontal-color.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/logos/masschallenge-logo-horizontal-color.png),
   for white and light backgrounds.
-- [masschallenge-logo-horizontal-white.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/logos/masschallenge-logo-horizontal-white.png),
+- [masschallenge-logo-horizontal-white.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/logos/masschallenge-logo-horizontal-white.png),
   for Navy, Black and Deep Teal sections and dark photos.
-- [masschallenge-logo-monogram-color.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/logos/masschallenge-logo-monogram-color.png),
+- [masschallenge-logo-monogram-color.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/logos/masschallenge-logo-monogram-color.png),
   for the site icon.
 
 There are also `-black` versions of both lockups (for example
@@ -5910,7 +5990,7 @@ Editor there is usually no way to attach class names, so this step does little t
    <!-- Propellant website styles: see github.com/masschallenge/propellant-web -->
    <link
      rel="stylesheet"
-     href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/dist/website.css"
+     href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/dist/website.css"
    />
    ```
 
@@ -6022,11 +6102,11 @@ version at the bottom of any dashboard screen, or under **Dashboard > Updates**.
 
 - The [website spec](/web/websites/) in another tab. Every value in this guide comes from it.
 - The logo files, downloaded to your computer. Open each link and save the image:
-  - [Horizontal logo, color](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/logos/masschallenge-logo-horizontal-color.png)
+  - [Horizontal logo, color](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/logos/masschallenge-logo-horizontal-color.png)
     for white and light backgrounds.
-  - [Horizontal logo, white](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/logos/masschallenge-logo-horizontal-white.png)
+  - [Horizontal logo, white](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/logos/masschallenge-logo-horizontal-white.png)
     for Navy, Black, Deep Teal and other dark backgrounds.
-  - [Monogram, color](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/logos/masschallenge-logo-monogram-color.png)
+  - [Monogram, color](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/logos/masschallenge-logo-monogram-color.png)
     for the site icon (the small picture in the browser tab).
   - The same folder also has `-black` versions, and a `masschallenge-logo-monogram-white.png`.
 
@@ -6672,7 +6752,7 @@ adds ready made class names. In a classic theme, put this line at the very top o
 CSS**:
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/dist/website.css");
+@import url("https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/dist/website.css");
 ```
 
 Then type class names into a block's **Advanced > Additional CSS class(es)** box:
@@ -6730,7 +6810,7 @@ styles (Warm White and Navy) that anyone can pick from a Group or Cover block's 
 ```php
 <?php
 const PROPELLANT_STYLESHEET =
-	'https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/dist/website.css';
+	'https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/dist/website.css';
 
 add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'propellant-website', PROPELLANT_STYLESHEET, array(), null );
@@ -6809,13 +6889,13 @@ you installed in the Font Library so there is only one copy.
               "fontFamily": "Lato",
               "fontWeight": "400",
               "fontStyle": "normal",
-              "src": "https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/fonts/propellant-sans-400-latin.woff2"
+              "src": "https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/fonts/propellant-sans-400-latin.woff2"
             },
             {
               "fontFamily": "Lato",
               "fontWeight": "700",
               "fontStyle": "normal",
-              "src": "https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/fonts/propellant-sans-700-latin.woff2"
+              "src": "https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/fonts/propellant-sans-700-latin.woff2"
             }
           ]
         },
@@ -6828,7 +6908,7 @@ you installed in the Font Library so there is only one copy.
               "fontFamily": "Oswald",
               "fontWeight": "400 700",
               "fontStyle": "normal",
-              "src": "https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.2.0/assets/fonts/oswald-latin-variable.woff2"
+              "src": "https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.3.0/assets/fonts/oswald-latin-variable.woff2"
             }
           ]
         }
