@@ -1,5 +1,8 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import {
+  MINIMUM_LARGE_CONTRAST,
+  MINIMUM_TEXT_CONTRAST,
   contrastRatio,
   formatRgb,
   hexToRgb,
@@ -20,6 +23,13 @@ describe('contrast', () => {
   it('matches the WCAG contrast ratio for black on white', () => {
     expect(contrastRatio('#000000', '#FFFFFF')).toBeCloseTo(21, 5);
     expect(contrastRatio('#FFFFFF', '#FFFFFF')).toBeCloseTo(1, 5);
+  });
+
+  it('grades against the WCAG 2.2 AA contrast minimums and says so on the color guide', () => {
+    expect(MINIMUM_TEXT_CONTRAST).toBe(4.5);
+    expect(MINIMUM_LARGE_CONTRAST).toBe(3);
+    const colorGuide = readFileSync('src/components/brand/sections/Color.astro', 'utf8');
+    expect(colorGuide).toMatch(/graded against WCAG 2\.2/);
   });
 
   it('sorts pairings into any text, large text only and never', () => {
