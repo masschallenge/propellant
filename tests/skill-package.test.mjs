@@ -78,6 +78,21 @@ describe('the skill as the default for MassChallenge work', () => {
     expect(webReference).toContain('Section headings, Oswald SemiBold in capitals');
   });
 
+  it('holds everything made with it to WCAG 2.2 AA, with the criteria new in 2.2', () => {
+    expect(skill).toContain('Propellant meets WCAG 2.2 AA.');
+    expect(skill).not.toMatch(/WCAG 2\.[01]\b/);
+    expect(webReference).toContain('## Accessibility (WCAG 2.2 AA)');
+    [
+      'covering the control that has focus',
+      'at least 24 by 24 px',
+      'also works\n  with a single click or tap',
+      'in the same place on every page',
+      'never ask for the same information twice',
+      'Allow paste, set\n  `autocomplete`',
+    ].forEach((rule) => expect(webReference).toContain(rule));
+    expect(webReference).not.toContain('4.1.1');
+  });
+
   it('tells engineers how to work in an existing codebase', () => {
     expect(webReference).toContain('## Working in an existing codebase');
     expect(webReference).toMatch(/Never hardcode hex colors/);

@@ -146,11 +146,18 @@ essentials:
 
 ### Accessibility
 
+Propellant meets WCAG 2.2 AA. For everything you make:
+
 - Text contrast at least 4.5:1, control edges at least 3:1. The color pairings above pass when used
   as described.
 - Real structure: headings, lists and slide titles from styles and layouts, not formatting.
 - Alt text on every meaningful image and chart. Captions on every video.
-- Keyboard access and visible focus in anything interactive.
+- Keyboard access and visible focus in anything interactive, and nothing sticky covering the focused
+  control.
+- In web pages and apps, the WCAG 2.2 rules in [references/web-and-apps.md](references/web-and-apps.md):
+  targets at least 24 by 24 px, a click alternative for every drag, help in the same place on every
+  page, no asking for the same information twice, and sign in that allows paste and password
+  managers.
 
 ## Step 3: check before you deliver
 
