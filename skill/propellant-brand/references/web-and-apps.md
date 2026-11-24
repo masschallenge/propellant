@@ -157,8 +157,9 @@ handle most of this; check these whenever you build your own pieces or pages:
 - Keyboard: every control reachable with Tab, a visible focus outline, and nothing sticky, such as
   a header, toolbar, cookie bar or toast, covering the control that has focus. A sticky header
   needs `scroll-padding-top` on the page equal to its height.
-- Targets: every button, link and control at least 24 by 24 px, or spaced so a 24 px circle
-  around each one touches no other target. Links inside a sentence are exempt.
+- Targets: every button, link and control at least 24 by 24 px. A smaller target passes only if a
+  24 px circle centered on it overlaps no other target and no other small target's circle, so two
+  small targets need their centers at least 24 px apart. Links inside a sentence are exempt.
 - Dragging: anything people can drag, such as a slider, a sortable list or a drop zone, also works
   with a single click or tap, such as Move up and Move down buttons or a file chooser.
 - Help: a support link, chat or contact details sit in the same place on every page, such as the

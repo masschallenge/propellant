@@ -85,6 +85,7 @@ describe('the skill as the default for MassChallenge work', () => {
     [
       'covering the control that has focus',
       'at least 24 by 24 px',
+      "overlaps no other target and no other small target's circle",
       'also works\n  with a single click or tap',
       'in the same place on every page',
       'never ask for the same information twice',
