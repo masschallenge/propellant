@@ -599,11 +599,11 @@ believer." Keep them under about eight words.
 
 ## Production React apps
 
-Install from GitHub at the release this skill was built from, v2.5.0, or a newer
+Install from GitHub at the release this skill was built from, v2.7.0, or a newer
 release of `masschallenge/propellant-web` if one exists:
 
 ```bash
-npm install github:masschallenge/propellant-web#v2.5.0
+npm install github:masschallenge/propellant-web#v2.7.0
 ```
 
 In the global stylesheet:
@@ -2707,7 +2707,7 @@ Google.
 ## Install
 
 ```bash
-npm install github:masschallenge/propellant-web#v2.5.0
+npm install github:masschallenge/propellant-web#v2.7.0
 ```
 
 ```css
@@ -2737,8 +2737,8 @@ install: one stylesheet and a few class names.
 - [Websites and site builders](/web/websites/): WordPress, Squarespace, Webflow, Wix, HubSpot and plain HTML
 - [Brand guidelines](/brand/reference/), including logo usage
 - [Images and uploads](/guidelines/images/): how to handle photos and logos people upload
-- [Contributing](https://github.com/masschallenge/propellant-web/blob/v2.5.0/CONTRIBUTING.md)
-- [Changelog](https://github.com/masschallenge/propellant-web/blob/v2.5.0/CHANGELOG.md)
+- [Contributing](https://github.com/masschallenge/propellant-web/blob/v2.7.0/CONTRIBUTING.md)
+- [Changelog](https://github.com/masschallenge/propellant-web/blob/v2.7.0/CHANGELOG.md)
 
 The documentation site and Storybook run locally:
 
@@ -2750,9 +2750,9 @@ yarn site:build   # the documentation site as one HTML file in site/dist
 
 ## Getting help
 
-- **Bugs, questions and ideas:** open an issue on GitHub. The [contributing guide](https://github.com/masschallenge/propellant-web/blob/v2.5.0/CONTRIBUTING.md)
+- **Bugs, questions and ideas:** open an issue on GitHub. The [contributing guide](https://github.com/masschallenge/propellant-web/blob/v2.7.0/CONTRIBUTING.md)
   explains how we handle them.
-- **Security problems:** report them privately, as described in [SECURITY.md](https://github.com/masschallenge/propellant-web/blob/v2.5.0/SECURITY.md).
+- **Security problems:** report them privately, as described in [SECURITY.md](https://github.com/masschallenge/propellant-web/blob/v2.7.0/SECURITY.md).
 - **Using the MassChallenge name or logo:** read the [brand guidelines](/brand/reference/). For
   anything they do not cover, contact MassChallenge through
   [masschallenge.org](https://masschallenge.org).
@@ -2780,7 +2780,7 @@ docker run --rm --ipc=host -v "$PWD":/work -w /work mcr.microsoft.com/playwright
 
 ## License
 
-The code is free to use under the [MIT License](https://github.com/masschallenge/propellant-web/blob/v2.5.0/LICENSE). The MassChallenge and Propellant names
+The code is free to use under the [MIT License](https://github.com/masschallenge/propellant-web/blob/v2.7.0/LICENSE). The MassChallenge and Propellant names
 and logos are trademarks of MassChallenge, Inc. and are not covered by that license; see
 [the brand guidelines](/brand/reference/) for how they may be used. The fonts are licensed under the
 SIL Open Font License 1.1.
@@ -2822,11 +2822,11 @@ Propellant needs Node 22 or later and, for components, React 19.
 Install the package from GitHub at a released version:
 
 ```bash
-npm install github:masschallenge/propellant-web#v2.5.0
+npm install github:masschallenge/propellant-web#v2.7.0
 ```
 
 ```bash
-yarn add github:masschallenge/propellant-web#v2.5.0
+yarn add github:masschallenge/propellant-web#v2.7.0
 ```
 
 The package is published as `@masschallenge/propellant-web`.
@@ -3268,12 +3268,12 @@ so it never changes the rest of your site. Load it with this line, wherever a gu
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/dist/website.css"
+  href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/dist/website.css"
 />
 ```
 
-The `@v2.5.0` part pins your site to one release, so it never changes under you. A complete
-example page is in [`examples/website.html`](https://github.com/masschallenge/propellant-web/blob/v2.5.0/examples/website.html).
+The `@v2.7.0` part pins your site to one release, so it never changes under you. A complete
+example page is in [`examples/website.html`](https://github.com/masschallenge/propellant-web/blob/v2.7.0/examples/website.html).
 
 **Type**
 
@@ -3360,7 +3360,7 @@ Add this line inside the `<head>` of every page, before your own stylesheets:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/dist/website.css"
+  href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/dist/website.css"
 />
 ```
 
@@ -3404,7 +3404,7 @@ Copy this into a new file named `index.html`, open it in a browser, and change t
     <title>Your page title</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/dist/website.css"
+      href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/dist/website.css"
     />
     <style>
       body { margin: 0; }
@@ -3420,7 +3420,7 @@ Copy this into a new file named `index.html`, open it in a browser, and change t
     <section class="propellant-section-navy propellant-notch">
       <div class="content">
         <img
-          src="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/logos/masschallenge-logo-horizontal-white.png"
+          src="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/logos/masschallenge-logo-horizontal-white.png"
           alt="MassChallenge"
           height="32"
         />
@@ -3473,7 +3473,7 @@ Copy this into a new file named `index.html`, open it in a browser, and change t
 ```
 
 A similar finished page is in
-[`examples/website.html`](https://github.com/masschallenge/propellant-web/blob/v2.5.0/examples/website.html).
+[`examples/website.html`](https://github.com/masschallenge/propellant-web/blob/v2.7.0/examples/website.html).
 
 ## Part 4: Use the colors in your own CSS
 
@@ -3559,11 +3559,11 @@ defaults permission. To change site wide code you need the Website settings perm
 
 **Download the logo files.** Save these from our logo folder to your computer:
 
-- https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/logos/masschallenge-logo-horizontal-color.png
+- https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/logos/masschallenge-logo-horizontal-color.png
   (the main logo, for White and Warm White backgrounds)
-- https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/logos/masschallenge-logo-horizontal-white.png
+- https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/logos/masschallenge-logo-horizontal-white.png
   (for Navy, Black and Deep Teal backgrounds)
-- https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/logos/masschallenge-logo-monogram-color.png
+- https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/logos/masschallenge-logo-monogram-color.png
   (the MC monogram, for the site icon)
 
 The monogram also comes in `-white` and `-black` versions. Read the
@@ -4013,7 +4013,7 @@ HTML (Option A) on its own, outside any `<style>` tags:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/dist/website.css"
+  href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/dist/website.css"
 />
 ```
 
@@ -4104,11 +4104,11 @@ Keep it open in another tab so you can copy hex codes from it.
 and save the image to your computer:
 
 - Full color horizontal logo, for the header on White:
-  https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/logos/masschallenge-logo-horizontal-color.png
+  https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/logos/masschallenge-logo-horizontal-color.png
 - White horizontal logo, for Navy, Black and Deep Teal backgrounds:
-  https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/logos/masschallenge-logo-horizontal-white.png
+  https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/logos/masschallenge-logo-horizontal-white.png
 - Full color monogram (the MC mark on its own), for the browser icon:
-  https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/logos/masschallenge-logo-monogram-color.png
+  https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/logos/masschallenge-logo-monogram-color.png
 - There are also `-white` and `-black` versions of the monogram, and a `-black` horizontal logo,
   at the same address with the color word changed. The [brand guidelines](/brand/reference/) say when to
   use each one.
@@ -4690,7 +4690,7 @@ cannot do on their own, such as the notch, the angled tint and the hero overlay.
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/dist/website.css"
+  href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/dist/website.css"
 />
 ```
 
@@ -4810,11 +4810,11 @@ guide comes from it.
 **The logo files.** Download these from our public file store (right click each link, then save):
 
 - Horizontal logo, full color, for White and Warm White backgrounds:
-  [masschallenge-logo-horizontal-color.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/logos/masschallenge-logo-horizontal-color.png)
+  [masschallenge-logo-horizontal-color.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/logos/masschallenge-logo-horizontal-color.png)
 - Horizontal logo, white, for Navy, Black and Deep Teal backgrounds:
-  [masschallenge-logo-horizontal-white.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/logos/masschallenge-logo-horizontal-white.png)
+  [masschallenge-logo-horizontal-white.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/logos/masschallenge-logo-horizontal-white.png)
 - Monogram, full color, for the site icon:
-  [masschallenge-logo-monogram-color.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/logos/masschallenge-logo-monogram-color.png)
+  [masschallenge-logo-monogram-color.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/logos/masschallenge-logo-monogram-color.png)
 
 There are also `-black` versions of both lockups, and a `-white` monogram, at the same address. Use
 these files only, never a copy of the logo from somewhere else. The
@@ -5271,7 +5271,7 @@ This needs a paid Core, Growth, Agency or Freelancer Workspace, or an active Sit
    <!-- Propellant website styles: see github.com/masschallenge/propellant-web -->
    <link
      rel="stylesheet"
-     href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/dist/website.css"
+     href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/dist/website.css"
    />
    ```
 
@@ -5392,11 +5392,11 @@ character color codes that start with `#`) straight from it.
 
 **Download the logo files.** Use only the official files. Save these to your computer:
 
-- [masschallenge-logo-horizontal-color.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/logos/masschallenge-logo-horizontal-color.png),
+- [masschallenge-logo-horizontal-color.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/logos/masschallenge-logo-horizontal-color.png),
   for white and light backgrounds.
-- [masschallenge-logo-horizontal-white.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/logos/masschallenge-logo-horizontal-white.png),
+- [masschallenge-logo-horizontal-white.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/logos/masschallenge-logo-horizontal-white.png),
   for Navy, Black and Deep Teal sections and dark photos.
-- [masschallenge-logo-monogram-color.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/logos/masschallenge-logo-monogram-color.png),
+- [masschallenge-logo-monogram-color.png](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/logos/masschallenge-logo-monogram-color.png),
   for the site icon.
 
 There are also `-black` versions of both lockups (for example
@@ -5990,7 +5990,7 @@ Editor there is usually no way to attach class names, so this step does little t
    <!-- Propellant website styles: see github.com/masschallenge/propellant-web -->
    <link
      rel="stylesheet"
-     href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/dist/website.css"
+     href="https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/dist/website.css"
    />
    ```
 
@@ -6102,11 +6102,11 @@ version at the bottom of any dashboard screen, or under **Dashboard > Updates**.
 
 - The [website spec](/web/websites/) in another tab. Every value in this guide comes from it.
 - The logo files, downloaded to your computer. Open each link and save the image:
-  - [Horizontal logo, color](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/logos/masschallenge-logo-horizontal-color.png)
+  - [Horizontal logo, color](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/logos/masschallenge-logo-horizontal-color.png)
     for white and light backgrounds.
-  - [Horizontal logo, white](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/logos/masschallenge-logo-horizontal-white.png)
+  - [Horizontal logo, white](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/logos/masschallenge-logo-horizontal-white.png)
     for Navy, Black, Deep Teal and other dark backgrounds.
-  - [Monogram, color](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/logos/masschallenge-logo-monogram-color.png)
+  - [Monogram, color](https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/logos/masschallenge-logo-monogram-color.png)
     for the site icon (the small picture in the browser tab).
   - The same folder also has `-black` versions, and a `masschallenge-logo-monogram-white.png`.
 
@@ -6752,7 +6752,7 @@ adds ready made class names. In a classic theme, put this line at the very top o
 CSS**:
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/dist/website.css");
+@import url("https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/dist/website.css");
 ```
 
 Then type class names into a block's **Advanced > Additional CSS class(es)** box:
@@ -6810,7 +6810,7 @@ styles (Warm White and Navy) that anyone can pick from a Group or Cover block's 
 ```php
 <?php
 const PROPELLANT_STYLESHEET =
-	'https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/dist/website.css';
+	'https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/dist/website.css';
 
 add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'propellant-website', PROPELLANT_STYLESHEET, array(), null );
@@ -6889,13 +6889,13 @@ you installed in the Font Library so there is only one copy.
               "fontFamily": "Lato",
               "fontWeight": "400",
               "fontStyle": "normal",
-              "src": "https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/fonts/propellant-sans-400-latin.woff2"
+              "src": "https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/fonts/propellant-sans-400-latin.woff2"
             },
             {
               "fontFamily": "Lato",
               "fontWeight": "700",
               "fontStyle": "normal",
-              "src": "https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/fonts/propellant-sans-700-latin.woff2"
+              "src": "https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/fonts/propellant-sans-700-latin.woff2"
             }
           ]
         },
@@ -6908,7 +6908,7 @@ you installed in the Font Library so there is only one copy.
               "fontFamily": "Oswald",
               "fontWeight": "400 700",
               "fontStyle": "normal",
-              "src": "https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.5.0/assets/fonts/oswald-latin-variable.woff2"
+              "src": "https://cdn.jsdelivr.net/gh/masschallenge/propellant-web@v2.7.0/assets/fonts/oswald-latin-variable.woff2"
             }
           ]
         }
