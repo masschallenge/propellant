@@ -147,6 +147,29 @@ pages, not to signed in applications.
 - Work at phone width: 16 px side gutters and no horizontal scrolling.
 - For dashboards and charts, follow [charts.md](charts.md).
 
+## Accessibility (WCAG 2.2 AA)
+
+Propellant meets WCAG 2.2 AA, and so does anything built with it. The `propellant-web` components
+handle most of this; check these whenever you build your own pieces or pages:
+
+- Contrast: text at least 4.5:1 (3:1 for text 24 px and up, or about 18.7 px and bold), control
+  edges and icons that carry meaning at least 3:1.
+- Keyboard: every control reachable with Tab, a visible focus outline, and nothing sticky, such as
+  a header, toolbar, cookie bar or toast, covering the control that has focus. A sticky header
+  needs `scroll-padding-top` on the page equal to its height.
+- Targets: every button, link and control at least 24 by 24 px. A smaller target passes only if a
+  24 px circle centered on it overlaps no other target and no other small target's circle, so two
+  small targets need their centers at least 24 px apart. Links inside a sentence are exempt.
+- Dragging: anything people can drag, such as a slider, a sortable list or a drop zone, also works
+  with a single click or tap, such as Move up and Move down buttons or a file chooser.
+- Help: a support link, chat or contact details sit in the same place on every page: Help in the
+  account menu, in the sidebar footer, and below the form on every sign in screen.
+- Forms: never ask for the same information twice in one process. Fill it in or offer it to pick,
+  such as Same as mailing address.
+- Sign in: never require remembering, retyping or solving something. Allow paste, set
+  `autocomplete` (`email`, `username`, `current-password`, `new-password`, `one-time-code`), offer
+  a show password button, and prefer email links or single sign on.
+
 ## Uploaded images
 
 Photos and logos that people upload are never cropped by the interface. Show them whole with
