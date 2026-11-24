@@ -88,6 +88,7 @@ describe('the skill as the default for MassChallenge work', () => {
       "overlaps no other target and no other small target's circle",
       'also works\n  with a single click or tap',
       'in the same place on every page',
+      'Help in the\n  account menu, in the sidebar footer',
       'never ask for the same information twice',
       'Allow paste, set\n  `autocomplete`',
     ].forEach((rule) => expect(webReference).toContain(rule));

@@ -162,8 +162,8 @@ handle most of this; check these whenever you build your own pieces or pages:
   small targets need their centers at least 24 px apart. Links inside a sentence are exempt.
 - Dragging: anything people can drag, such as a slider, a sortable list or a drop zone, also works
   with a single click or tap, such as Move up and Move down buttons or a file chooser.
-- Help: a support link, chat or contact details sit in the same place on every page, such as the
-  sidebar footer, or below the form on every sign in screen.
+- Help: a support link, chat or contact details sit in the same place on every page: Help in the
+  account menu, in the sidebar footer, and below the form on every sign in screen.
 - Forms: never ask for the same information twice in one process. Fill it in or offer it to pick,
   such as Same as mailing address.
 - Sign in: never require remembering, retyping or solving something. Allow paste, set
