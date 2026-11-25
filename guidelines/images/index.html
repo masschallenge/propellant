@@ -123,9 +123,9 @@ are the minimums: larger images are welcome, smaller ones still work but may loo
 </tr>
 <tr>
 <td>Program logo</td>
-<td>Square (1:1)</td>
-<td>400 × 400 px</td>
-<td>Whole, on a quiet background</td>
+<td>Wide (5:3)</td>
+<td>500 × 300 px</td>
+<td>Whole, on a quiet background, never less than 64 px wide on screen</td>
 <td>Optional. Starts with the whole logo.</td>
 </tr>
 <tr>
@@ -168,6 +168,10 @@ crop later without uploading again.</li>
 and <code dir="auto">PopUpButton</code>, use <code dir="auto">object-fit: contain</code>. They show the whole image and never crop it.</li>
 <li><code dir="auto">Avatar</code> and <code dir="auto">EmptyState</code> tiles accept <code dir="auto">autoCrop</code> for images we own. Use it only for designated
 images, never for uploads.</li>
+<li>Program logos keep their wide shape. A <code dir="auto">ListRow</code> logo and a <code dir="auto">Sidebar</code> program row show the
+whole logo in a 64 by 38 box, the smallest a program logo appears. Show a program on its own
+row or header, never mixed into a row with another program’s items.</li>
+<li>Person photos are circles, through <code dir="auto">Avatar</code>.</li>
 </ul>
 <p>In your own code:</p>
 <ul>
